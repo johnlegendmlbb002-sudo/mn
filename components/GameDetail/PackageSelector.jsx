@@ -15,54 +15,37 @@ export default function PackageSelector({
   scrollToItem,
 }) {
   return (
-    <div className="max-w-6xl mx-auto px-4 md:px-0">
+    <div className="max-w-7xl mx-auto px-4 md:px-0">
       {/* ================= HEADER & VIEW TOGGLE ================= */}
-      <div className="mb-6 flex items-center justify-between gap-4 border-b border-white/5 pb-4">
+      <div className="mb-5 flex items-center justify-between gap-4 border-b border-[var(--border)] pb-3">
         <div className="flex flex-col gap-0.5">
-          <h2 className="text-xl font-[1000] tracking-tighter text-[var(--foreground)] uppercase italic">
-            Pick <span className="text-[var(--accent)] drop-shadow-[0_0_10px_rgba(var(--accent-rgb),0.3)]">Your Pack</span>
+          <h2 className="text-lg font-[1000] tracking-tighter text-[var(--foreground)] uppercase italic leading-none">
+            Pick <span className="text-[var(--accent)] drop-shadow-[0_0_8px_rgba(var(--accent-rgb),0.3)]">Your Pack</span>
           </h2>
-          <p className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)]/40 flex items-center gap-2">
-            <span className="w-4 h-[1px] bg-[var(--accent)]/30" />
-            {items.length} items available
+          <p className="text-[8px] font-black uppercase tracking-widest text-[var(--muted)]/40 flex items-center gap-2">
+            <span className="w-3 h-[1px] bg-[var(--accent)]/30 rounded-full" />
+            {items.length} Premium Options
           </p>
         </div>
 
-        {/* Compact Icon-Only Toggle */}
-        <div className="relative bg-[var(--card)]/40 backdrop-blur-2xl p-1 rounded-xl border border-white/10 flex items-center shadow-xl overflow-hidden">
-          {/* Animated Background Slider */}
+        {/* View Toggle */}
+        <div className="relative bg-[var(--card)]/40 backdrop-blur-3xl p-1 rounded-full border border-[var(--border)] flex items-center shadow-lg">
           <div 
-            className="absolute h-[calc(100%-8px)] rounded-lg bg-gradient-to-r from-[var(--accent)] to-emerald-500 shadow-[0_4px_12px_rgba(var(--accent-rgb),0.3)] transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+            className="absolute h-[calc(100%-8px)] rounded-full bg-gradient-to-r from-[var(--accent)] to-emerald-500 shadow-[0_4px_12px_rgba(var(--accent-rgb),0.3)] transition-all duration-600 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
             style={{
-              width: "32px",
+              width: "28px",
               left: viewMode === "grid" ? "4px" : "calc(50% + 2px)",
             }}
           />
-
-          <button
-            onClick={() => setViewMode("grid")}
-            title="Grid View"
-            className={`relative z-10 w-8 h-8 flex items-center justify-center transition-colors duration-300 ${viewMode === "grid" ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
-          >
-            <FiGrid size={15} />
-          </button>
-
-          <button
-            onClick={() => setViewMode("slider")}
-            title="Slider View"
-            className={`relative z-10 w-8 h-8 flex items-center justify-center transition-colors duration-300 ${viewMode === "slider" ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
-          >
-            <FiList size={15} />
-          </button>
+          <button onClick={() => setViewMode("grid")} className={`relative z-10 w-7 h-7 flex items-center justify-center transition-colors duration-300 ${viewMode === "grid" ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}><FiGrid size={13} /></button>
+          <button onClick={() => setViewMode("slider")} className={`relative z-10 w-7 h-7 flex items-center justify-center transition-colors duration-300 ${viewMode === "slider" ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}><FiList size={13} /></button>
         </div>
       </div>
 
       {/* ================= CONTENT ================= */}
-      <div
-        key={viewMode}
-      >
+      <div key={viewMode}>
         {viewMode === "grid" ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 pb-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 pb-10">
             {items.map((item) => {
               const discount = calculateDiscount(item.sellingPrice, item.dummyPrice);
               const isActive = activeItem.itemSlug === item.itemSlug;
@@ -72,128 +55,99 @@ export default function PackageSelector({
                   key={item.itemSlug}
                   onClick={() => {
                     setActiveItem(item);
-                    buyPanelRef.current?.scrollIntoView({
-                      behavior: "smooth",
-                      block: "center",
-                    });
+                    buyPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
                   }}
-                  className={`relative group rounded-2xl p-4 cursor-pointer border overflow-hidden
+                  className={`relative group rounded-[1.25rem] p-4 cursor-pointer border-2 transition-all duration-500 flex flex-col justify-between min-h-[7rem] bg-[var(--card)]/60 backdrop-blur-sm
                   ${isActive
-                      ? "border-[var(--accent)] bg-[var(--accent)]/[0.04] shadow-[0_10px_30px_-10px_rgba(var(--accent-rgb),0.3)] ring-1 ring-[var(--accent)]/30"
-                      : "border-[var(--border)] bg-[var(--card)]/40 hover:border-[var(--accent)]/30"
+                      ? "border-[var(--accent)] shadow-lg scale-[1.02] z-10"
+                      : "border-[var(--border)] hover:border-[var(--accent)]/40 hover:shadow-md"
                     }`}
                 >
+                  {/* WRAPPED CORNER BADGE */}
+                  {discount > 0 && (
+                    <div className="absolute -top-1 -left-1 z-20">
+                       <div className="relative scale-[0.75] origin-top-left">
+                          <div className="absolute top-5 left-0.5 w-1.2 h-2 bg-[var(--accent)] brightness-[0.4]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }} />
+                          <div className="bg-gradient-to-br from-[var(--accent)] via-[var(--accent)] to-[var(--accent-hover)] text-white text-[8px] font-[1000] uppercase pl-2 pr-3.5 py-1 shadow-md corner-ribbon flex items-center relative overflow-hidden group-hover:pl-2.5 transition-all duration-500">
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer-fast pointer-events-none" />
+                            {discount}% OFF
+                          </div>
+                       </div>
+                    </div>
+                  )}
+
+                  {/* RIBBON (TOP RIGHT) */}
+                  <div className={`absolute top-0 right-4 w-11 h-16 transition-all duration-700 ribbon-shape flex items-center justify-center pt-1 shadow-sm
+                    ${isActive 
+                        ? "bg-gradient-to-b from-[var(--accent)]/30 to-[var(--accent)]/10" 
+                        : "bg-gradient-to-b from-[var(--accent)]/[0.08] to-transparent -translate-y-1 group-hover:translate-y-0"
+                    }
+                  `}>
+                    <div className="relative w-6 h-6 transition-all duration-700 group-hover:scale-110 drop-shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
+                        <Image
+                            src={item?.itemImageId?.image || item?.image || "/logo.png"}
+                            alt=""
+                            fill
+                            unoptimized
+                            className={`object-contain transition-all duration-500 ${isActive ? "opacity-100 scale-110" : "opacity-40 grayscale-[0.2] group-hover:grayscale-0 group-hover:opacity-100"}`}
+                        />
+                    </div>
+                  </div>
+
+                  {/* CONTENT */}
+                  <div className="relative z-10 flex flex-col h-full pr-12 pt-3">
+                    <p className={`text-[10px] font-[1000] tracking-tighter uppercase italic leading-[1.1] mb-2 ${isActive ? "text-[var(--foreground)]" : "text-[var(--muted)] group-hover:text-[var(--foreground)]"}`}>
+                      {item.itemName}
+                    </p>
+
+                    <div className="flex flex-col mt-auto">
+                        <div className="flex items-baseline gap-1.5">
+                          <span className={`text-xl font-[1000] tracking-tighter italic leading-none ${isActive ? "text-[var(--accent)] drop-shadow-[0_0_8px_rgba(var(--accent-rgb),0.3)]" : "text-[var(--foreground)]"}`}>
+                            ₹{item.sellingPrice}
+                          </span>
+                          {item.dummyPrice > item.sellingPrice && (
+                            <span className="text-[8px] font-bold text-[var(--muted)]/30 line-through opacity-40">
+                              ₹{item.dummyPrice}
+                            </span>
+                          )}
+                        </div>
+                    </div>
+                  </div>
+
+                  {/* ACTIVE INDICATOR */}
                   {isActive && (
-                    <div className="absolute top-2 right-2 text-[var(--accent)] opacity-80">
+                    <div className="absolute bottom-2.5 right-2.5 text-[var(--accent)] animate-in zoom-in-50">
                       <FiCheckCircle size={12} />
                     </div>
                   )}
-
-                  {discount > 0 && (
-                    <span className="absolute top-0 left-0 bg-[var(--accent)] text-white text-[8px] font-black uppercase px-2 py-0.5 rounded-br-lg z-20">
-                      {discount}% OFF
-                    </span>
-                  )}
-
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className={`relative w-6 h-6 rounded-lg overflow-hidden shrink-0 ${isActive ? "ring-1 ring-[var(--accent)]" : "bg-[var(--muted)]/10"}`}>
-                        <Image
-                          src={item?.itemImageId?.image || item?.image || "/logo.png"}
-                          alt={item.itemName}
-                          fill
-                          unoptimized
-                          className={`object-cover ${(item.itemAvailablity === false || item.isOutOfStock === true) ? "grayscale opacity-50" : ""}`}
-                        />
-                      </div>
-                      <p className={`text-[10px] font-bold tracking-tight line-clamp-1 leading-none ${isActive ? "text-[var(--foreground)]" : "text-[var(--muted)]"}`}>
-                        {item.itemName}
-                      </p>
-                    </div>
-
-                    {(item.itemAvailablity === false || item.isOutOfStock === true) && (
-                      <div className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
-                        <span className="bg-rose-500/90 text-white text-[7px] font-black px-1.5 py-0.5 rounded-full uppercase tracking-widest border border-rose-400 shadow-[0_0_10px_rgba(244,63,94,0.4)]">
-                          Out of Stock
-                        </span>
-                      </div>
-                    )}
-
-                    <div className={`flex items-baseline gap-1.5 border-t border-[var(--border)] pt-3 ${(item.itemAvailablity === false || item.isOutOfStock === true) ? "opacity-30" : ""}`}>
-                      <span className={`text-xl font-[1000] tracking-tighter leading-none ${isActive ? "text-[var(--accent)]" : "text-[var(--foreground)]"}`}>
-                        ₹{item.sellingPrice}
-                      </span>
-                      {item.dummyPrice && (
-                        <span className="text-[10px] font-bold text-[var(--muted)] line-through opacity-20">
-                          ₹{item.dummyPrice}
-                        </span>
-                      )}
-                    </div>
-                  </div>
                 </div>
               );
             })}
           </div>
         ) : (
-          <div className="pb-10">
-            <div
-              ref={sliderRef}
-              className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-6 px-1 scrollbar-hide"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
+          <div className="pb-8">
+            <div ref={sliderRef} className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-6 px-1 scrollbar-hide no-scrollbar">
               {items.map((item) => {
-                const discount = calculateDiscount(item.sellingPrice, item.dummyPrice);
                 const isActive = activeItem.itemSlug === item.itemSlug;
-
                 return (
                   <div
                     key={item.itemSlug}
                     onClick={() => scrollToItem(item)}
-                    className={`relative snap-center min-w-[140px] rounded-xl p-3 cursor-pointer border flex flex-col justify-between overflow-hidden
-                    ${isActive
-                        ? "border-[var(--accent)] bg-[var(--accent)]/[0.04] shadow-[0_12px_24px_-8px_rgba(var(--accent-rgb),0.3)] ring-1 ring-[var(--accent)]/30"
-                        : "border-[var(--border)] bg-[var(--card)]/40 opacity-70 hover:opacity-100 hover:border-[var(--accent)]/30"
-                      }`}
-                  >
-                    <div className="mb-2">
-                      <div className={`relative w-7 h-7 rounded-lg overflow-hidden mb-2 ${isActive ? "shadow-md shadow-[var(--accent)]/30 ring-1 ring-[var(--accent)]" : "bg-[var(--card)] border border-[var(--border)]"}`}>
-                        <Image
-                          src={item?.itemImageId?.image || item?.image || "/logo.png"}
-                          alt={item.itemName}
-                          fill
-                          unoptimized
-                          className={`object-cover ${item.itemAvailablity === false ? "grayscale opacity-50" : ""}`}
-                        />
-                      </div>
-                      <p className={`text-[9px] font-[900] tracking-tight ${isActive ? "text-[var(--foreground)]" : "text-[var(--muted)]"}`}>
+                    className={`relative snap-center min-w-[160px] rounded-[1.25rem] p-4 cursor-pointer border-2 transition-all duration-500 flex flex-col justify-between min-h-[7rem] overflow-hidden bg-[var(--card)]/60
+                    ${isActive ? "border-[var(--accent)] bg-[var(--accent)]/[0.08] shadow-lg scale-[1.03]" : "border-[var(--border)] opacity-80 hover:opacity-100 hover:border-[var(--accent)]/40"}
+                  `}>
+                     <div className={`absolute top-0 right-3 w-10 h-16 transition-all duration-700 ribbon-shape flex items-center justify-center pt-1
+                        ${isActive ? "bg-gradient-to-b from-[var(--accent)]/30 to-transparent" : "bg-[var(--accent)]/5"}
+                     `}>
+                        <div className="relative w-6 h-6">
+                          <Image src={item?.itemImageId?.image || item?.image || "/logo.png"} alt="" fill unoptimized className={`object-contain transition-all duration-500 ${isActive ? "opacity-100 scale-110" : "opacity-30"}`} />
+                        </div>
+                     </div>
+                    <div className="relative z-10 flex flex-col h-full pr-10 pt-3">
+                      <p className={`text-[10px] font-[1000] tracking-tight uppercase italic leading-tight mb-2 ${isActive ? "text-[var(--foreground)]" : "text-[var(--muted)]"}`}>
                         {item.itemName}
                       </p>
-                    </div>
-
-                    {item.itemAvailablity === false && (
-                      <div className="absolute top-4 right-4 z-30">
-                        <span className="bg-rose-500 text-white text-[7px] font-[1000] px-2 py-0.5 rounded-full uppercase tracking-widest border border-rose-400">
-                          Out of Stock
-                        </span>
-                      </div>
-                    )}
-
-                    <div className={`pt-2 border-t border-[var(--border)] ${item.itemAvailablity === false ? "opacity-30" : ""}`}>
-                      <div className="flex items-baseline gap-1.5">
-                        <p className={`text-xl font-[1000] tracking-tighter ${isActive ? "text-[var(--accent)]" : "text-[var(--foreground)]"}`}>
-                          ₹{item.sellingPrice}
-                        </p>
-                        {item.dummyPrice && (
-                          <p className="text-[11px] font-bold text-[var(--muted)] line-through opacity-20">
-                            ₹{item.dummyPrice}
-                          </p>
-                        )}
-                      </div>
-                      {discount > 0 && item.itemAvailablity !== false && item.isOutOfStock !== true && (
-                        <p className="text-[8px] font-black text-[var(--accent)] uppercase tracking-[0.2em] mt-1">
-                           {discount}% off
-                        </p>
-                      )}
+                      <p className={`text-xl font-[1000] tracking-tighter italic leading-none mt-auto ${isActive ? "text-[var(--accent)]" : "text-[var(--foreground)]"}`}>₹{item.sellingPrice}</p>
                     </div>
                   </div>
                 );
@@ -202,6 +156,30 @@ export default function PackageSelector({
           </div>
         )}
       </div>
+
+      <style jsx>{`
+        .corner-ribbon {
+          clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+          border-top-left-radius: 4px;
+        }
+        .ribbon-shape {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 88%, 0 100%);
+        }
+        @keyframes shimmer-fast {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .animate-shimmer-fast {
+          animation: shimmer-fast 1.5s infinite linear;
+        }
+        .animate-in {
+          animation: zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        @keyframes zoomIn {
+          from { opacity: 0; transform: scale(0.5); }
+          to { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
     </div>
   );
 }
