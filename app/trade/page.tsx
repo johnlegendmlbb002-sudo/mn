@@ -46,66 +46,66 @@ export default function TradeLandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] p-4 md:p-12 lg:p-24 relative overflow-hidden flex items-center">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] p-4 md:p-8 lg:p-12 relative overflow-hidden flex items-start pt-8 md:pt-16 lg:pt-20">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--accent)]/10 blur-[120px] -z-10 rounded-full" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-purple-500/10 blur-[100px] -z-10 rounded-full" />
 
-      <div className="max-w-6xl mx-auto space-y-8 md:space-y-16 relative z-10 w-full">
-        <div className="space-y-3 md:space-y-4 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-1 md:mb-2 italic">
+      <div className="max-w-5xl mx-auto space-y-6 md:space-y-10 relative z-10 w-full">
+        <div className="space-y-2 md:space-y-3 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-1 italic">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
             Live Marketplace
           </div>
-          <h1 className="text-3xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
+          <h1 className="text-2xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tighter leading-none">
             Any Game <span className="text-[var(--accent)] drop-shadow-[0_0_15px_rgba(var(--accent-rgb),0.3)]">Any ID</span>
           </h1>
-          <p className="text-[var(--muted)] text-[10px] md:text-lg max-w-2xl mx-auto font-medium tracking-tight opacity-80">
+          <p className="text-[var(--muted)] text-[10px] md:text-sm max-w-xl mx-auto font-medium tracking-tight opacity-80 leading-relaxed">
             Get premium IDs with the skins and heroes you want. Value for money transactions with absolute security and 24/7 WhatsApp support.
           </p>
         </div>
 
         {/* 2x2 GRID FOR ALL SCREENS */}
-        <div className="grid grid-cols-2 gap-3 md:gap-8">
+        <div className="grid grid-cols-2 gap-3 md:gap-5">
           {SECTIONS.map((section, idx) => (
             <button
               key={idx}
               onClick={() => handleRedirect(section.helpText)}
-              className={`group relative flex flex-col items-start p-4 md:p-10 rounded-2xl md:rounded-[3rem] border border-[var(--foreground)]/5 bg-gradient-to-br ${section.color} hover:border-[var(--accent)]/30 transition-all duration-500 text-left overflow-hidden hover:scale-[1.02] active:scale-[0.98] shadow-xl md:shadow-2xl`}
+              className={`group relative flex flex-col items-start p-4 md:p-7 rounded-xl md:rounded-3xl border border-[var(--foreground)]/5 bg-gradient-to-br ${section.color} hover:border-[var(--accent)]/30 transition-all duration-500 text-left overflow-hidden hover:scale-[1.01] active:scale-[0.98] shadow-lg md:shadow-xl`}
             >
-              <div className={`mb-3 md:mb-8 p-3 md:p-6 rounded-xl md:rounded-3xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 ${section.accent} group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg relative overflow-hidden`}>
+              <div className={`mb-3 md:mb-5 p-2.5 md:p-4 rounded-xl md:rounded-2xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 ${section.accent} group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-md relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-[var(--foreground)]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="scale-75 md:scale-100">{section.icon}</div>
+                <div className="scale-75 md:scale-90">{section.icon}</div>
               </div>
               
-              <h3 className="text-sm md:text-3xl font-black mb-1 md:mb-4 group-hover:text-[var(--accent)] transition-colors italic uppercase tracking-tighter">
+              <h3 className="text-sm md:text-2xl font-black mb-1 md:mb-2 group-hover:text-[var(--accent)] transition-colors italic uppercase tracking-tighter">
                 {section.title}
               </h3>
               
-              <p className="text-[8px] md:text-xs text-[var(--muted)] font-bold leading-relaxed mb-4 md:mb-12 opacity-60 group-hover:opacity-100 transition-opacity line-clamp-2 md:line-clamp-none">
+              <p className="text-[8px] md:text-[11px] text-[var(--muted)] font-bold leading-relaxed mb-3 md:mb-6 opacity-60 group-hover:opacity-100 transition-opacity line-clamp-2 md:line-clamp-3">
                 {section.desc}
               </p>
               
-              <div className="mt-auto flex items-center gap-1 md:gap-2 text-[7px] md:text-[10px] font-black uppercase tracking-[0.2em] text-[var(--accent)] group-hover:gap-4 transition-all italic">
+              <div className="mt-auto flex items-center gap-1 md:gap-2 text-[7px] md:text-[9px] font-black uppercase tracking-[0.2em] text-[var(--accent)] group-hover:gap-4 transition-all italic">
                 Get Started <FiChevronRight className="text-[8px] md:text-xs" />
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute -bottom-6 -right-6 w-20 md:w-40 h-20 md:h-40 bg-[var(--foreground)]/5 blur-3xl rounded-full group-hover:bg-[var(--accent)]/10 transition-colors duration-700" />
+              <div className="absolute -bottom-6 -right-6 w-20 md:w-32 h-20 md:h-32 bg-[var(--foreground)]/5 blur-3xl rounded-full group-hover:bg-[var(--accent)]/10 transition-colors duration-700" />
               
               {/* Border shine effect */}
-              <div className="absolute inset-0 border border-transparent group-hover:border-[var(--foreground)]/5 rounded-2xl md:rounded-[3rem] transition-colors duration-500" />
+              <div className="absolute inset-0 border border-transparent group-hover:border-[var(--foreground)]/5 rounded-xl md:rounded-3xl transition-colors duration-500" />
             </button>
           ))}
         </div>
 
-        <div className="pt-4 md:pt-8 flex flex-col items-center gap-4">
+        <div className="pt-2 md:pt-4 flex flex-col items-center gap-4">
             <div className="flex items-center gap-4 text-[var(--muted)]/20">
-                <div className="h-[1px] w-8 md:w-12 bg-current" />
-                <p className="text-[7px] md:text-[9px] font-black uppercase tracking-[0.4em] italic">
+                <div className="h-[1px] w-8 md:w-10 bg-current" />
+                <p className="text-[7px] md:text-[8px] font-black uppercase tracking-[0.4em] italic">
                     Blue Buff Core Marketplace
                 </p>
-                <div className="h-[1px] w-8 md:w-12 bg-current" />
+                <div className="h-[1px] w-8 md:w-10 bg-current" />
             </div>
         </div>
       </div>
