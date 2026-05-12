@@ -14,6 +14,7 @@ import HomeReferralStats from "./HomeReferralStats";
 import PromoBanner from "./PromoBanner";
 import HomeEarnPromotion from "./HomeEarnPromotion";
 import SEOContent from "./SEOContent";
+import SupportBanner from "./SupportBanner";
 
 export default function HeroSection() {
 
@@ -42,6 +43,7 @@ export default function HeroSection() {
       </div>
 
       <GamesPage />
+      <SupportBanner />
 
       <div className="mt-1 space-y-12 pb-10">
         <HomeServices />
@@ -49,6 +51,7 @@ export default function HeroSection() {
       </div>
 
       <SEOContent />
+
 
       {/* <ScrollingNoticeBand /> */}
 
