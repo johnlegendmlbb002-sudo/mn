@@ -144,7 +144,7 @@ function BuyFlowContent() {
     }
 
     try {
-      const baseGameId = isMLBB ? "mobile-legends988" : (game?.gameId || slug);
+      const baseGameId = game?.gameId || slug;
       const productId = `${baseGameId}_${item?.itemId || itemSlug}`;
 
       const nameRes = await fetch("/api/check-region/namecheck", {
@@ -166,9 +166,7 @@ function BuyFlowContent() {
         const username = nameData?.data?.username || nameData?.data?.name || "Unknown";
         const region = nameData?.data?.region || "Global";
 
-        // Filter restricted regions
-        const restrictedSlugs = ["mobile-legends988", "mlbb-double332", "weeklymonthly-bundle931"];
-        if (restrictedSlugs.includes(slug)) {
+        if (isMLBB) {
           const restrictedRegions = ["INDO", "ID", "PH", "SG", "RU", "MY", "MM"];
           if (restrictedRegions.includes(region.toUpperCase())) {
             setError(`Sorry, we don't support orders from ${region} region for this item.`);

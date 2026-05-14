@@ -1,0 +1,49 @@
+.holi-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.holi-particle {
+  position: absolute;
+  opacity: 0;
+  animation: splash-pop var(--duration) linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes splash-pop {
+  0% {
+    transform: translate(0, 50px) scale(0) rotate(0deg);
+    opacity: 0;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Balloon shape */
+  }
+  2% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.4) rotate(0deg);
+  }
+  4% {
+    transform: translate(0, -10px) scale(0.5) rotate(5deg);
+  }
+  5% {
+    /* BURST POINT */
+    transform: translate(var(--drift-x), var(--drift-y)) scale(1) rotate(45deg);
+    opacity: 1;
+    border-radius: var(--splash-radius); /* Change to irregular splash */
+  }
+  12% {
+    opacity: 0.8;
+    transform: translate(calc(var(--drift-x) * 1.5), calc(var(--drift-y) * 1.5)) scale(1.1) rotate(180deg);
+  }
+  20% {
+    transform: translate(calc(var(--drift-x) * 2), calc(var(--drift-y) * 2)) scale(0) rotate(360deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

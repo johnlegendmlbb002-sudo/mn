@@ -20,6 +20,10 @@ import MaintenanceWrapper from "@/components/Layout/MaintenanceWrapper";
 import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { getAppSettings } from "@/lib/settings";
 import BottomNav from "@/components/Layout/BottomNav";
+import SeasonalEffectManager from "@/components/Seasonal/SeasonalEffectManager";
+import SeasonalToggle from "@/components/Seasonal/SeasonalToggle";
+
+
 
 
 
@@ -334,18 +338,8 @@ export default async function RootLayout({
         <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}>
           <Header />
 
-          {/* <div className="snow" />
-  <span className="big-snow"></span>
-  <span className="big-snow"></span>
-  <span className="big-snow"></span>  */}
-          {/* <div className="hearts" />
+          <SeasonalEffectManager />
 
-          {/* <ChristmasPopup />  */}
-          {/* <ValentineEffect />
-
-           */}
-          {/* <ValentineEffect /> */}
-          {/* <ValentinePopup /> */}
           <MaintenanceWrapper maintenanceMode={settings.maintenanceMode} />
           <main className="pt-14 pb-24 md:pb-0">{children}</main>
 
@@ -355,7 +349,9 @@ export default async function RootLayout({
           <Footer />
           <SocialFloat />
           <ChatbotWrapper />
+          <SeasonalToggle />
           <BottomNav />
+
 
 
           <div />

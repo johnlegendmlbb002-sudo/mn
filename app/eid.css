@@ -1,0 +1,40 @@
+.eid-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.eid-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+}
+
+.eid-moon, .eid-star {
+  position: absolute;
+  color: #10b981; /* Emerald Green */
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+  animation: eid-float infinite ease-in-out;
+  opacity: 0.6;
+}
+
+.eid-star {
+  color: #fbbf24; /* Amber/Gold Star */
+  filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.8));
+  animation: eid-star-shimmer infinite ease-in-out;
+}
+
+@keyframes eid-float {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-30px) rotate(10deg) scale(1.1); }
+}
+
+@keyframes eid-star-shimmer {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}

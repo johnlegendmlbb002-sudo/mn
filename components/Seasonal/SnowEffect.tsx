@@ -1,5 +1,7 @@
 "use client";
 
+import "@/app/Snow.css";
+
 export default function SnowEffect() {
   return (
     <div className="snow">
@@ -8,8 +10,6 @@ export default function SnowEffect() {
       <span className="big-snow"></span>
 
       <span className="santa-snow">🎅</span>
-
-      <div className="snow-ground"></div>
     </div>
   );
 }
