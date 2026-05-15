@@ -2,8 +2,8 @@
 
 import { useEffect, useState, Suspense, useMemo } from "react";
 import { useParams, useSearchParams, useRouter } from "next/navigation";
-import { 
-  FiCheck, FiShoppingBag, FiCreditCard, FiUserCheck, FiLoader, 
+import {
+  FiCheck, FiShoppingBag, FiCreditCard, FiUserCheck, FiLoader,
   FiArrowLeft, FiUser, FiGlobe, FiInfo, FiChevronRight, FiSmartphone,
   FiShield, FiArrowRight, FiCheckCircle, FiSearch
 } from "react-icons/fi";
@@ -23,7 +23,7 @@ function BuyFlowContent() {
   const [playerId, setPlayerId] = useState("");
   const [zoneId, setZoneId] = useState("");
   const [verifiedAccount, setVerifiedAccount] = useState(null);
-  
+
   const [paymentMethod, setPaymentMethod] = useState("upi");
   const [showSuccess, setShowSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -278,9 +278,9 @@ function BuyFlowContent() {
     <AuthGuard>
       <section className="min-h-screen bg-[var(--background)] text-[var(--foreground)] pt-2 pb-16 px-2 sm:px-4">
         <div className="max-w-5xl mx-auto">
-          
+
           {/* BACK BUTTON */}
-          <button 
+          <button
             onClick={() => router.back()}
             className="flex items-center gap-1.5 text-[var(--accent)] font-black uppercase tracking-widest text-[9px] mb-4 hover:opacity-70 transition-opacity"
           >
@@ -288,36 +288,36 @@ function BuyFlowContent() {
           </button>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            
+
             {/* LEFT COLUMN: ITEM HERO & MORE PACKS */}
             <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-4">
-              
+
               {/* HERO CARD */}
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-[2rem] p-5 sm:p-6 shadow-sm relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--accent)]/5 rounded-full blur-[60px] -z-0" />
-                
+
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 sm:gap-6 text-left">
                     <div className="relative w-20 h-20 sm:w-28 sm:h-28 shrink-0">
                       <div className="absolute inset-0 bg-[var(--accent)]/10 rounded-2xl blur-2xl group-hover:bg-[var(--accent)]/20 transition-all duration-500" />
-                      <img 
-                        src={item?.itemImageId?.image || fallbackImage || ""} 
+                      <img
+                        src={item?.itemImageId?.image || fallbackImage || ""}
                         alt={item?.itemName || fallbackName}
                         className="relative z-10 w-full h-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    
+
                     <div className="flex-1 min-w-0 space-y-1.5">
                       <div className="inline-flex items-center gap-1 px-2 py-0.5 bg-[var(--accent)]/10 rounded-full">
                         <div className="w-1 h-1 rounded-full bg-[var(--accent)] animate-pulse" />
                         <span className="text-[8px] font-black text-[var(--accent)] uppercase tracking-widest">Instant Delivery</span>
                       </div>
-                      
+
                       <h1 className="text-xl sm:text-2xl font-[1000] text-[var(--foreground)] leading-none tracking-tighter uppercase truncate">
                         {item?.itemName || fallbackName}
                       </h1>
-                      
-                      
+
+
                       <div className="flex items-baseline gap-2 pt-0.5">
                         <span className="text-xl sm:text-2xl font-[1000] text-[var(--accent)]">₹{item?.sellingPrice || 0}</span>
                         {item?.dummyPrice > item?.sellingPrice && (
@@ -330,7 +330,7 @@ function BuyFlowContent() {
 
                 {/* BACKGROUND DECOR */}
                 <div className="absolute bottom-2 right-2 opacity-[0.03]">
-                   <FiShoppingBag className="text-6xl text-[var(--foreground)]" />
+                  <FiShoppingBag className="text-6xl text-[var(--foreground)]" />
                 </div>
               </div>
 
@@ -341,18 +341,18 @@ function BuyFlowContent() {
                     <FiShoppingBag className="text-[var(--accent)] text-lg" />
                     <h2 className="text-[10px] font-[1000] uppercase tracking-[0.2em] text-[var(--foreground)]">More packs you may like</h2>
                   </div>
-                  
+
                   <div className="flex lg:grid lg:grid-cols-4 items-center gap-2 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 -mx-2 lg:mx-0 px-2 lg:px-0 scrollbar-hide no-scrollbar">
                     {otherItems.map((oi) => {
                       const isActive = oi.itemSlug === itemSlug;
                       return (
-                        <button 
+                        <button
                           key={oi._id}
                           onClick={() => router.push(`/games/${slug}/buy/${oi.itemSlug}`)}
                           className={`
                             p-3 rounded-2xl transition-all text-left group min-w-[120px] lg:min-w-0 shrink-0 border-2 relative
-                            ${isActive 
-                              ? "bg-[var(--accent)]/5 border-[var(--accent)] shadow-sm" 
+                            ${isActive
+                              ? "bg-[var(--accent)]/5 border-[var(--accent)] shadow-sm"
                               : "bg-[var(--card)] border-[var(--border)] hover:border-[var(--accent)]/30 hover:shadow-md"}
                           `}
                         >
@@ -375,7 +375,7 @@ function BuyFlowContent() {
 
             {/* RIGHT COLUMN: FORM & PAYMENT */}
             <div className="lg:col-span-7 space-y-5">
-              
+
               {/* 1. PLAYER INFO CARD */}
               <div className="bg-[var(--card)] border border-[var(--border)] rounded-[2rem] p-5 sm:p-7 shadow-sm">
                 <div className="flex items-center justify-between mb-6">
@@ -393,7 +393,7 @@ function BuyFlowContent() {
                       <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--muted)] group-focus-within:text-[var(--accent)] transition-colors">
                         <FiUser className="text-lg" />
                       </div>
-                      <input 
+                      <input
                         type="text"
                         placeholder={fieldOneLabel}
                         value={playerId}
@@ -408,7 +408,7 @@ function BuyFlowContent() {
                           <FiGlobe className="text-lg" />
                         </div>
                         {gameWithOptions?.inputFieldTwoOptions?.length > 0 ? (
-                          <select 
+                          <select
                             value={zoneId}
                             onChange={(e) => setZoneId(e.target.value)}
                             className="w-full bg-[var(--background)] border border-[var(--border)] focus:border-[var(--accent)] focus:ring-4 focus:ring-[var(--accent)]/5 rounded-xl py-3 pl-11 pr-3 font-bold text-[var(--foreground)] outline-none transition-all appearance-none cursor-pointer text-sm"
@@ -419,7 +419,7 @@ function BuyFlowContent() {
                             ))}
                           </select>
                         ) : (
-                          <input 
+                          <input
                             type="text"
                             placeholder={fieldTwoLabel}
                             value={zoneId}
@@ -433,7 +433,7 @@ function BuyFlowContent() {
 
                   {/* CHECK ACCOUNT BUTTON */}
                   <div className="space-y-3">
-                    <button 
+                    <button
                       onClick={handleValidate}
                       disabled={loading || !playerId}
                       className="w-full py-3.5 bg-[var(--accent)] text-white font-[1000] uppercase tracking-[0.2em] italic text-[11px] rounded-xl hover:shadow-[0_10px_20px_rgba(var(--accent-rgb),0.3)] disabled:opacity-50 disabled:grayscale transition-all flex items-center justify-center gap-2"
@@ -471,25 +471,25 @@ function BuyFlowContent() {
                         <FiUserCheck className="text-[var(--accent)] text-lg" />
                         <h3 className="text-[10px] font-black text-[var(--muted)] uppercase tracking-widest">Recent Players</h3>
                       </div>
-                      <button 
+                      <button
                         onClick={() => setShowSuggestions(!showSuggestions)}
                         className="text-[9px] font-black text-[var(--accent)] uppercase tracking-widest hover:opacity-70 transition-opacity"
                       >
                         {showSuggestions ? "Hide" : "Show"}
                       </button>
                     </div>
-                    
+
                     {/* Integrated Recent List */}
                     {showSuggestions && (
                       <div className="space-y-2 animate-in fade-in slide-in-from-top-1">
-                         <RecentVerifiedPlayers 
-                           limit={3}
-                           onSelect={(p) => {
-                             setPlayerId(p.playerId);
-                             setZoneId(p.zoneId);
-                             setVerifiedAccount(null); // Force re-verify for safety or just keep it
-                           }}
-                         />
+                        <RecentVerifiedPlayers
+                          limit={3}
+                          onSelect={(p) => {
+                            setPlayerId(p.playerId);
+                            setZoneId(p.zoneId);
+                            setVerifiedAccount(null); // Force re-verify for safety or just keep it
+                          }}
+                        />
                       </div>
                     )}
                   </div>
@@ -505,7 +505,7 @@ function BuyFlowContent() {
 
                 <div className="space-y-3.5">
                   {/* PAYMENT METHOD SELECTION */}
-                  <div 
+                  <div
                     onClick={() => setPaymentMethod("upi")}
                     className={`p-4 rounded-2xl border-2 transition-all cursor-pointer flex items-center justify-between group
                       ${paymentMethod === "upi" ? "bg-[var(--background)] border-[var(--accent)] shadow-md" : "bg-[var(--background)]/50 border-[var(--border)] hover:border-[var(--accent)]/30"}
@@ -530,7 +530,7 @@ function BuyFlowContent() {
                   </div>
 
                   {walletBalance > 0 && (
-                    <div 
+                    <div
                       onClick={() => setPaymentMethod("wallet")}
                       className={`p-5 rounded-3xl border-2 transition-all cursor-pointer flex items-center justify-between group
                         ${paymentMethod === "wallet" ? "bg-[var(--background)] border-[var(--accent)] shadow-md" : "bg-[var(--background)]/50 border-[var(--border)] hover:border-[var(--accent)]/30"}
@@ -577,16 +577,16 @@ function BuyFlowContent() {
                     )}
 
                     <div className="flex items-center justify-between mb-6 px-2">
-                       <span className="text-[10px] font-black text-[var(--muted)] uppercase tracking-[0.2em]">Total Amount</span>
-                       <span className="text-3xl font-[1000] text-[var(--foreground)] tracking-tighter italic">₹{item?.sellingPrice || 0}</span>
+                      <span className="text-[10px] font-black text-[var(--muted)] uppercase tracking-[0.2em]">Total Amount</span>
+                      <span className="text-3xl font-[1000] text-[var(--foreground)] tracking-tighter italic">₹{item?.sellingPrice || 0}</span>
                     </div>
 
-                    <button 
+                    <button
                       onClick={handleProceed}
                       disabled={isProcessing || !verifiedAccount}
                       className={`w-full py-5 rounded-[1.5rem] font-[1000] uppercase tracking-[0.2em] italic text-sm transition-all flex items-center justify-center gap-3
-                        ${isProcessing || !verifiedAccount 
-                          ? "bg-slate-100 text-slate-300 cursor-not-allowed" 
+                        ${isProcessing || !verifiedAccount
+                          ? "bg-slate-100 text-slate-300 cursor-not-allowed"
                           : "bg-[var(--accent)] text-white hover:shadow-[0_15px_30px_rgba(var(--accent-rgb),0.3)] hover:-translate-y-1"}
                       `}
                     >
@@ -602,7 +602,7 @@ function BuyFlowContent() {
                         </>
                       )}
                     </button>
-                    
+
                     {!verifiedAccount && (
                       <p className="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-4 animate-pulse">
                         Please verify account to proceed
@@ -616,7 +616,7 @@ function BuyFlowContent() {
           </div>
         </div>
       </section>
-      
+
       <style jsx>{`
         .animate-in {
           animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
