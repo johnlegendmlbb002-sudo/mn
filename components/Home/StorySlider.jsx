@@ -51,7 +51,7 @@ const storyData = [
     title: "MLBB Small",
     color: "#a855f7", // Purple
     image: "/game-assets/mlbb-ph-small.jpg",
-    link: "/games/mlbb-smallphp980",
+    link: "/games/mobile-legends-exclusive266",
   },
 
   {
