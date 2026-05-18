@@ -128,9 +128,9 @@ export default function BlogPage() {
       <p>
         <strong>Ready to unlock that M4 Prime skin or the latest Beatrix Collector?</strong> Looking cool while dominating the Land of Dawn is half the fun! Get your diamonds instantly and securely to grab the best skins for Beatrix.
       </p>
-      
+
       <p>
-        Check out our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Shop</Link> for the lowest prices in India. Top up now and start your climb to the top!
+        Check out our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Shop</Link> for the lowest prices in India. Top up now and start your climb to the top!
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

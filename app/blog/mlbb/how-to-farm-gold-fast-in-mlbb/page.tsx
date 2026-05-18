@@ -99,9 +99,9 @@ export default function BlogPage() {
       <p>
         Mastering the gold economy is what separates the casual player from the Mythical Glory ranker in the <strong>Indian servers</strong>. Focus on your last-hitting discipline, prioritize the Gold Lane carts, and never ignore global objectives like the Turtle.
       </p>
-      
+
       <p>
-        <strong>Ready to out-build your opponents?</strong> Don't enter the match at a disadvantage. Unlock the best heroes and the highest-fidelity skins from <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> to ensure your farming rotations are efficient and smooth. Visit our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and get the <strong>lowest diamond rates in India</strong> today!
+        <strong>Ready to out-build your opponents?</strong> Don't enter the match at a disadvantage. Unlock the best heroes and the highest-fidelity skins from <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> to ensure your farming rotations are efficient and smooth. Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and get the <strong>lowest diamond rates in India</strong> today!
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

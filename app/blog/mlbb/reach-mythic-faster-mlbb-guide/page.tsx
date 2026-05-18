@@ -39,8 +39,8 @@ export default function BlogPage() {
           Most players exhibit "Mirror Movement," meaning they just follow their own lane and only roam when they see a kill opportunity. Pro players use <strong>Counter-Ganking</strong>. If you see the enemy Jungler heading towards your Gold Lane on the mini-map, don't just stay in your lane; prepare to ambush them from the bush.
         </p>
         <div className="p-4 bg-[var(--accent)]/5 border border-[var(--accent)]/10 rounded-2xl italic text-sm opacity-70 flex items-center gap-3">
-           <FiInfo className="text-[var(--accent)] shrink-0" />
-           <p className="m-0 leading-relaxed"><strong>Pro Strategy:</strong> Instead of ganking the lane that is already winning, gank the lane that is about to be ganked by the enemy. Saving a teammate and getting a shutdown is worth double the gold of a normal kill.</p>
+          <FiInfo className="text-[var(--accent)] shrink-0" />
+          <p className="m-0 leading-relaxed"><strong>Pro Strategy:</strong> Instead of ganking the lane that is already winning, gank the lane that is about to be ganked by the enemy. Saving a teammate and getting a shutdown is worth double the gold of a normal kill.</p>
         </div>
       </section>
 
@@ -53,7 +53,7 @@ export default function BlogPage() {
           <p className="text-sm italic opacity-70 mb-6 leading-relaxed">
             Want to unlock the strongest meta heroes to carry your team? Don't enter the match at a disadvantage. Having the right hero pool is the first step to professional play.
           </p>
-          <Link href="/games/mobile-legends988" className="inline-flex items-center gap-2 bg-[var(--accent)] text-black px-6 py-3 rounded-full font-black italic text-xs uppercase tracking-widest hover:scale-105 transition-transform">
+          <Link href="/games/mobile-legends270" className="inline-flex items-center gap-2 bg-[var(--accent)] text-black px-6 py-3 rounded-full font-black italic text-xs uppercase tracking-widest hover:scale-105 transition-transform">
             Get Diamonds Instantly <FiArrowRight />
           </Link>
         </div>
@@ -89,7 +89,7 @@ export default function BlogPage() {
       </section>
 
       <p className="text-lg leading-relaxed pt-10 border-t border-[var(--border)]">
-        Reaching Mythic isn't just about how fast your fingers are; it's about how smart your brain is. By mastering rotations, lane freezing, and counter-building, you will outclass 90% of the player base. Ready to take the final step? Maximize your stats and hero pool by visiting our <Link href="/games/mobile-legends988" className="text-[var(--accent)] font-black italic underline uppercase">MLBB Store</Link> and get back into the Land of Dawn with the confidence of a Pro.
+        Reaching Mythic isn't just about how fast your fingers are; it's about how smart your brain is. By mastering rotations, lane freezing, and counter-building, you will outclass 90% of the player base. Ready to take the final step? Maximize your stats and hero pool by visiting our <Link href="/games/mobile-legends270" className="text-[var(--accent)] font-black italic underline uppercase">MLBB Store</Link> and get back into the Land of Dawn with the confidence of a Pro.
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)] bg-[var(--accent)]/5 p-8 rounded-3xl">

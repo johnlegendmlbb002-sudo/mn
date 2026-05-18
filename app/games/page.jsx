@@ -33,7 +33,7 @@ export default function GamesPage() {
   const [loading, setLoading] = useState(true);
 
   /* ================= CONFIG ================= */
-  const WEEKLY_PASS_SLUG = "mobile-legends988";
+  const WEEKLY_PASS_SLUG = "mobile-legends270";
 
   const outOfStockGames = [
     "mobile-legends-backup826"
@@ -133,8 +133,8 @@ export default function GamesPage() {
   const processedVouchers = useMemo(() => vouchers?.items ? processList(vouchers.items) : [], [vouchers, processList]);
   const processedServices = useMemo(() => services?.items ? processList(services.items) : [], [services, processList]);
 
-  const isEmpty = 
-    processedGames.length === 0 && 
+  const isEmpty =
+    processedGames.length === 0 &&
     processedMlbbGames.length === 0 &&
     processedOtts.length === 0 &&
     processedMemberships.length === 0 &&

@@ -66,11 +66,11 @@ export default function BlogPage() {
             Entering the right ID is important. One wrong digit can send diamonds to another player, and that cannot be reversed. Open <strong>Mobile Legends</strong> and tap your <strong>Avatar</strong> at the top-left.
           </p>
           <p>
-            Under your name and Level, you will see a series of numbers, usually formatted like <strong>123456789 (1234)</strong>. The long string is your <strong>Player ID</strong>, and the four or five digits in the brackets are your <strong>Zone ID</strong>. 
+            Under your name and Level, you will see a series of numbers, usually formatted like <strong>123456789 (1234)</strong>. The long string is your <strong>Player ID</strong>, and the four or five digits in the brackets are your <strong>Zone ID</strong>.
           </p>
           <div className="p-4 bg-[var(--accent)]/5 border border-[var(--accent)]/10 rounded-2xl italic text-sm opacity-70 flex items-center gap-3">
-             <FiInfo className="text-[var(--accent)] shrink-0" />
-             <p className="m-0 leading-relaxed"><strong>Pro Tip:</strong> Always copy-paste these from the app's settings menu rather than typing them manually to avoid the "typo trap."</p>
+            <FiInfo className="text-[var(--accent)] shrink-0" />
+            <p className="m-0 leading-relaxed"><strong>Pro Tip:</strong> Always copy-paste these from the app's settings menu rather than typing them manually to avoid the "typo trap."</p>
           </div>
         </section>
 
@@ -84,7 +84,7 @@ export default function BlogPage() {
           </p>
           <div className="p-8 rounded-[32px] bg-red-500/5 border border-red-500/10 space-y-4">
             <h4 className="text-red-500 font-black uppercase italic text-xs tracking-widest flex items-center gap-2">
-               <FiAlertTriangle /> Warning: The Social Media Scam
+              <FiAlertTriangle /> Warning: The Social Media Scam
             </h4>
             <p className="text-sm opacity-80 leading-relaxed m-0 italic text-justify">
               Scammers on WhatsApp, Instagram, and Telegram often offer 50-70% discounts. <strong>These are never legitimate.</strong> They either steal your money directly or use carded funds that put your account at risk. Real providers like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold underline">bluebuff.in</a> offer sustainable, Moonton-approved bulk discounts.
@@ -98,21 +98,21 @@ export default function BlogPage() {
             Once you have your ID and you are on the <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic underline">Verified MLBB Store</a>, the process is streamlined for speed and security. Follow these three sub-steps to finish your top-up.
           </p>
           <div className="space-y-6 border-l border-[var(--border)] ml-4 pl-8">
-             <div className="relative">
-                <div className="absolute -left-10 top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
-                <h4 className="font-black italic uppercase text-xs tracking-widest text-[var(--accent)] mb-2">1. Input Details & Verify Nickname</h4>
-                <p className="text-sm opacity-60 leading-relaxed text-justify">Enter your Player ID and Zone ID. Then wait for your <strong>In-Game Nickname (IGN)</strong> to appear. If it is not your name, stop and check your ID.</p>
-             </div>
-             <div className="relative">
-                <div className="absolute -left-10 top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
-                <h4 className="font-black italic uppercase text-xs tracking-widest text-[var(--accent)] mb-2">2. Secure UPI Gateway</h4>
-                <p className="text-sm opacity-60 leading-relaxed text-justify">Choose your bundle (Weekly Pass, Twilight Pass, or recharge). Pay using <strong>GPay, PhonePe, or Paytm</strong>.</p>
-             </div>
-             <div className="relative">
-                <div className="absolute -left-10 top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
-                <h4 className="font-black italic uppercase text-xs tracking-widest text-[var(--accent)] mb-2">3. Instant In-Game Delivery</h4>
-                <p className="text-sm opacity-60 leading-relaxed text-justify">After successful payment, diamonds are usually added within 60 seconds. Check in-game mail for confirmation.</p>
-             </div>
+            <div className="relative">
+              <div className="absolute -left-10 top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
+              <h4 className="font-black italic uppercase text-xs tracking-widest text-[var(--accent)] mb-2">1. Input Details & Verify Nickname</h4>
+              <p className="text-sm opacity-60 leading-relaxed text-justify">Enter your Player ID and Zone ID. Then wait for your <strong>In-Game Nickname (IGN)</strong> to appear. If it is not your name, stop and check your ID.</p>
+            </div>
+            <div className="relative">
+              <div className="absolute -left-10 top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
+              <h4 className="font-black italic uppercase text-xs tracking-widest text-[var(--accent)] mb-2">2. Secure UPI Gateway</h4>
+              <p className="text-sm opacity-60 leading-relaxed text-justify">Choose your bundle (Weekly Pass, Twilight Pass, or recharge). Pay using <strong>GPay, PhonePe, or Paytm</strong>.</p>
+            </div>
+            <div className="relative">
+              <div className="absolute -left-10 top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
+              <h4 className="font-black italic uppercase text-xs tracking-widest text-[var(--accent)] mb-2">3. Instant In-Game Delivery</h4>
+              <p className="text-sm opacity-60 leading-relaxed text-justify">After successful payment, diamonds are usually added within 60 seconds. Check in-game mail for confirmation.</p>
+            </div>
           </div>
         </section>
 
@@ -122,7 +122,7 @@ export default function BlogPage() {
             Your journey in Mobile Legends should be about mastering heroes and dominating your lane, not stressing over the safety of your account. By following these steps and sticking to verified platforms <strong>in India</strong> like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic underline">bluebuff.in</a>, you can recharge with total confidence.
           </p>
           <p className="text-lg leading-relaxed text-justify">
-            <strong>Ready to Top Up?</strong> Stop taking risks. Save more, play safer, and get back to the Land of Dawn. Head over to the <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> now and get your diamonds in 60 seconds!
+            <strong>Ready to Top Up?</strong> Stop taking risks. Save more, play safer, and get back to the Land of Dawn. Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> now and get your diamonds in 60 seconds!
           </p>
         </section>
 

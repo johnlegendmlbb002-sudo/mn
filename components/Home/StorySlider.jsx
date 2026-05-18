@@ -20,7 +20,7 @@ const storyData = [
     badge: "Best",
     color: "#22c55e", // Green
     image: "/game-assets/weeklypass.jpg",
-    link: "/games/mobile-legends988?type=weekly-pass",
+    link: "/games/mobile-legends270?type=weekly-pass",
   },
   {
     id: 1,
@@ -28,7 +28,7 @@ const storyData = [
     badge: "Hot",
     color: "#ff4d4d", // Red
     image: "/game-assets/weekly-monthly-bundle.jpg",
-    link: "/games/weeklymonthly-bundle931",
+    link: "/games/weeklymonthly-bundle261",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const storyData = [
     badge: "Live",
     color: "#22c55e", // Green
     image: "/game-assets/mlbbindia.jpg",
-    link: "/games/mobile-legends988",
+    link: "/games/mobile-legends270",
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const storyData = [
     title: "MLBB Small",
     color: "#a855f7", // Purple
     image: "/game-assets/mlbb-ph-small.jpg",
-    link: "/games/mobile-legends-exclusive266",
+    link: "/games/mobile-legends-exclusive952",
   },
 
   {

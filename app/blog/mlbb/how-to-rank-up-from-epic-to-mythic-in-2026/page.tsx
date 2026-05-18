@@ -34,7 +34,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        The journey from Epic to Mythic is the most challenging phase of the Mobile Legends: Bang Bang (MLBB) experience. In the <strong>Indian servers</strong>, you encounter a volatile mix of players—some are gifted mechanically but lack map sense, while others are still mastering the basics. To consistently win and escape this "black hole," you must become the most reliable and influential player on your team. 
+        The journey from Epic to Mythic is the most challenging phase of the Mobile Legends: Bang Bang (MLBB) experience. In the <strong>Indian servers</strong>, you encounter a volatile mix of players—some are gifted mechanically but lack map sense, while others are still mastering the basics. To consistently win and escape this "black hole," you must become the most reliable and influential player on your team.
       </p>
 
       <p>
@@ -87,7 +87,7 @@ export default function BlogPage() {
 
       <h2>5. Wave Control: The Secret of Map Pressure</h2>
       <p>
-        A common mistake in the Indian servers is leaving a lane completely empty to join a low-value fight in the middle of the map. 
+        A common mistake in the Indian servers is leaving a lane completely empty to join a low-value fight in the middle of the map.
       </p>
       <p>
         <strong>"Wave First, Rotate Second":</strong> Never leave your lane until your minion wave is pushed past the river. If you rotate to help a fight and the enemy Marksman destroys your tower, you have lost more gold and map pressure than any kill could provide. Clear the wave, push it as far as safely possible, and <strong>only then</strong> move to assist your team.
@@ -100,11 +100,11 @@ export default function BlogPage() {
 
       <h2>Conclusion: Mythic is within Reach</h2>
       <p>
-        Escaping Epic rank in <strong>India</strong> requires more than just mechanical skill—it requires consistency and discipline. You cannot control who your teammates are, but you can control your own impact on the map. Focus on objectives, watch your minimap, and never lose your cool. 
+        Escaping Epic rank in <strong>India</strong> requires more than just mechanical skill—it requires consistency and discipline. You cannot control who your teammates are, but you can control your own impact on the map. Focus on objectives, watch your minimap, and never lose your cool.
       </p>
-      
+
       <p>
-        <strong>Ready to speedrun to Mythic?</strong> Look like a pro and feel the difference in animation quality. Get the <strong>cheapest MLBB diamonds in India</strong> and treat yourself to the skins that define your playstyle. Visit the <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and start your climb today!
+        <strong>Ready to speedrun to Mythic?</strong> Look like a pro and feel the difference in animation quality. Get the <strong>cheapest MLBB diamonds in India</strong> and treat yourself to the skins that define your playstyle. Visit the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and start your climb today!
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

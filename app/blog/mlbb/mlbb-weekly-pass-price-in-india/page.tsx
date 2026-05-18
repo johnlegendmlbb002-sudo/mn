@@ -33,48 +33,48 @@ export default function BlogPage() {
         <p className="text-lg md:text-xl font-medium italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
           If you want a <strong>cheap way to buy MLBB diamonds in India</strong>, Weekly Diamond Pass is one of the best options.
         </p>        <p className="text-lg leading-relaxed text-justify">
-          In MLBB, the <strong>Weekly Diamond Pass</strong> gives better long-term value than small direct recharges. It is popular in the <strong>Indian scene</strong> for players who want to save. On trusted platforms like <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black font">bluebuff.in</Link>, you can buy it with UPI and get fast delivery.
+          In MLBB, the <strong>Weekly Diamond Pass</strong> gives better long-term value than small direct recharges. It is popular in the <strong>Indian scene</strong> for players who want to save. On trusted platforms like <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black font">bluebuff.in</Link>, you can buy it with UPI and get fast delivery.
         </p>
 
         {/* Value Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 border-y border-[var(--border)] py-10">
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiStar className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">High Value</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Around ₹140 can give much better total value than a small raw recharge.</p>
+            <FiStar className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">High Value</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Around ₹140 can give much better total value than a small raw recharge.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiClock className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Stacking Trick</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">You can stack up to 10 Weekly Passes (70 days). This helps for recharge events and daily diamonds.</p>
+            <FiClock className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Stacking Trick</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">You can stack up to 10 Weekly Passes (70 days). This helps for recharge events and daily diamonds.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiShield className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Zero Risk API</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">No login required. We use your Player ID to activate the pass instantly. Your account remains 100% safe from Moonton policy violations.</p>
+            <FiShield className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Zero Risk API</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">No login required. We use your Player ID to activate the pass instantly. Your account remains 100% safe from Moonton policy violations.</p>
           </div>
         </div>
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiShoppingBag className="text-[var(--accent)]" />
-             1. What Exactly is the Weekly Pass?
+            <FiShoppingBag className="text-[var(--accent)]" />
+            1. What Exactly is the Weekly Pass?
           </h2>
           <p>
             When you purchase the Weekly Diamond Pass, you don't just get diamonds; you get an entire bundle of account-boosting rewards delivered to your in-game mail over 7 days:
           </p>
           <ul className="space-y-4 list-none p-0">
-             <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>80 Diamonds Instant:</strong> Credit to your balance immediately.</li>
-             <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>20 Diamonds Daily:</strong> Totaling another 140 diamonds over the week.</li>
-             <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>Daily Rewards Box:</strong> Includes Crystal of Aurora (COA), Star Protection, and Starlight Points.</li>
-             <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>Event Tier Activator:</strong> Counts as a "Recharge" for Aspirants/Collector bonus tasks.</li>
+            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>80 Diamonds Instant:</strong> Credit to your balance immediately.</li>
+            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>20 Diamonds Daily:</strong> Totaling another 140 diamonds over the week.</li>
+            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>Daily Rewards Box:</strong> Includes Crystal of Aurora (COA), Star Protection, and Starlight Points.</li>
+            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>Event Tier Activator:</strong> Counts as a "Recharge" for Aspirants/Collector bonus tasks.</li>
           </ul>
         </section>
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-xl tracking-tighter">
-             <FiTrendingUp className="text-[var(--accent)]" />
-             Weekly Pass vs. Raw Recharge
+            <FiTrendingUp className="text-[var(--accent)]" />
+            Weekly Pass vs. Raw Recharge
           </h2>
           <div className="grid grid-cols-1 gap-4">
             <div className="flex items-center justify-between p-6 bg-[var(--accent)]/10 border border-[var(--accent)]/20 rounded-[32px] group">
@@ -102,11 +102,11 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="italic font-black text-2xl tracking-tighter flex items-center gap-2">
-             <FiInfo className="text-[var(--accent)]" />
-             2. The Stacking Masterstroke (Mythic Move)
+            <FiInfo className="text-[var(--accent)]" />
+            2. The Stacking Masterstroke (Mythic Move)
           </h2>
           <p className="text-lg leading-relaxed text-justify">
-             Moonton allows players to stack up to <strong>10 Weekly Passes</strong> (70 days) at once. When you stack 10 passes via <strong>bluebuff.in</strong>, you instantly receive 800 diamonds upfront. This is the single most efficient way to complete expensive "Recharge 500 Diamonds" tasks during Gacha events like <strong>Aspirants or Sanrio</strong>. You get the event tokens instantly plus 70 days of guaranteed daily diamonds.
+            Moonton allows players to stack up to <strong>10 Weekly Passes</strong> (70 days) at once. When you stack 10 passes via <strong>bluebuff.in</strong>, you instantly receive 800 diamonds upfront. This is the single most efficient way to complete expensive "Recharge 500 Diamonds" tasks during Gacha events like <strong>Aspirants or Sanrio</strong>. You get the event tokens instantly plus 70 days of guaranteed daily diamonds.
           </p>
         </section>
 
@@ -114,10 +114,10 @@ export default function BlogPage() {
           <div className="p-8 rounded-[40px] bg-[var(--card)] border border-[var(--border)] relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-2 h-full bg-[var(--accent)]" />
             <h4 className="italic font-black uppercase text-[var(--accent)] mb-3 tracking-tighter flex items-center gap-2">
-               <FiShield /> Safety First 🛡️
+              <FiShield /> Safety First 🛡️
             </h4>
             <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
-              Legit Weekly Pass purchases on <Link href="/games/mobile-legends988" className="text-[var(--accent)] font-bold italic">bluebuff.in</Link> only need your <strong>Player ID and Zone ID</strong>. If a site asks for login or OTP, it is likely a scam.
+              Legit Weekly Pass purchases on <Link href="/games/mobile-legends270" className="text-[var(--accent)] font-bold italic">bluebuff.in</Link> only need your <strong>Player ID and Zone ID</strong>. If a site asks for login or OTP, it is likely a scam.
             </p>
           </div>
         </section>
@@ -125,10 +125,10 @@ export default function BlogPage() {
         <section>
           <h2>Conclusion: The Smart Player's Choice</h2>
           <p className="text-lg leading-relaxed text-justify">
-            In 2026, the <strong>Weekly Diamond Pass</strong> remains the undisputed king of value in the Indian MLBB market. For any player looking to reach Mythic or collect the latest skins, it is the most logical starting point. 
+            In 2026, the <strong>Weekly Diamond Pass</strong> remains the undisputed king of value in the Indian MLBB market. For any player looking to reach Mythic or collect the latest skins, it is the most logical starting point.
           </p>
           <p className="mt-12 text-lg leading-relaxed text-justify">
-            <strong>Ready to maximize your savings?</strong> Stop overpaying for your diamonds. Head over to our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Weekly Pass Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and get your 500% value boost now with instant UPI delivery!
+            <strong>Ready to maximize your savings?</strong> Stop overpaying for your diamonds. Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Weekly Pass Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and get your 500% value boost now with instant UPI delivery!
           </p>
         </section>
 

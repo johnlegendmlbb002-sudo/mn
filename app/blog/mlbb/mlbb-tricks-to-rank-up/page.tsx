@@ -32,31 +32,31 @@ export default function BlogPage() {
       <div className="space-y-10">
         {/* Intro Highlight */}
         <p className="text-lg md:text-xl font-medium italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
-          Are you tired of being stuck in Epic or Legend rank? Most players in the <strong>Indian competitive scene</strong> believe they need "fast hands" to win. In reality, the secret to reaching Mythical Glory in 2026 is mastering the macro-mechanics 99% of players ignore. 
+          Are you tired of being stuck in Epic or Legend rank? Most players in the <strong>Indian competitive scene</strong> believe they need "fast hands" to win. In reality, the secret to reaching Mythical Glory in 2026 is mastering the macro-mechanics 99% of players ignore.
         </p>
 
         <p className="text-lg leading-relaxed text-justify">
-          In Mobile Legends: Bang Bang (MLBB), mechanical skill is only 40% of the victory. The remaining 60% is composed of <strong>Knowledge and Macro-Strategy</strong>. Pro players and top-tier streamers use specific "secret" techniques to win matches even when their teammates are underperforming. By understanding these 2026 elite maneuvers, you can start dominating your matches and climb the <strong>Indian leaderboards</strong> with clinical efficiency. 
+          In Mobile Legends: Bang Bang (MLBB), mechanical skill is only 40% of the victory. The remaining 60% is composed of <strong>Knowledge and Macro-Strategy</strong>. Pro players and top-tier streamers use specific "secret" techniques to win matches even when their teammates are underperforming. By understanding these 2026 elite maneuvers, you can start dominating your matches and climb the <strong>Indian leaderboards</strong> with clinical efficiency.
         </p>
 
         {/* Pro Tactics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 border-y border-[var(--border)] py-10">
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiEye className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The Fog Vision Hack</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Track enemies in the "Fog of War" by panning your camera to Lord/Turtle pits. Seeing skill-flashes or hp-bar ripples even when the hero is hidden is the ultimate pro hack.</p>
+            <FiEye className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The Fog Vision Hack</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Track enemies in the "Fog of War" by panning your camera to Lord/Turtle pits. Seeing skill-flashes or hp-bar ripples even when the hero is hidden is the ultimate pro hack.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiZap className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Frame-Perfect Gear</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Never use a fixed item build. Swap your items in the last 2 seconds of a match—like buying Winter Truncheon and swapping to Immortality instantly.</p>
+            <FiZap className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Frame-Perfect Gear</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Never use a fixed item build. Swap your items in the last 2 seconds of a match—like buying Winter Truncheon and swapping to Immortality instantly.</p>
           </div>
         </div>
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiTarget className="text-[var(--accent)]" />
-             1. The "Skill Glow" Visibility Trick
+            <FiTarget className="text-[var(--accent)]" />
+            1. The "Skill Glow" Visibility Trick
           </h2>
           <p>
             This is perhaps the most powerful <strong>MLBB pro trick</strong> for 2026. If an enemy hero like <strong>Kagura, Selena, or Franco</strong> is attacking a jungle buff or the Lord inside the fog, you can often see the faint color-flash of their skills through your screen, even if the hero model itself is invisible.
@@ -68,16 +68,16 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiSettings className="text-[var(--accent)]" />
-             2. Mastering the "Settings" Masterstroke
+            <FiSettings className="text-[var(--accent)]" />
+            2. Mastering the "Settings" Masterstroke
           </h2>
           <p>
-             Most casual players <strong>in India</strong> play with default settings, which is a major Rank-Stopper. To rank up fast, you must optimize your UI for high-stakes combat.
+            Most casual players <strong>in India</strong> play with default settings, which is a major Rank-Stopper. To rank up fast, you must optimize your UI for high-stakes combat.
           </p>
           <div className="p-8 rounded-[40px] bg-[var(--card)] border border-[var(--border)] relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-2 h-full bg-[var(--accent)]" />
             <h4 className="italic font-black uppercase text-[var(--accent)] mb-3 tracking-tighter flex items-center gap-2">
-               <FiZap /> Enable 'Hero Lock Mode' ⚙️
+              <FiZap /> Enable 'Hero Lock Mode' ⚙️
             </h4>
             <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
               This setting adds small avatars of enemy heroes near your skill buttons. In a crowded teamfight, clicking the enemy Marksman's icon ensures your Ultimate lands on the target that matters, rather than being wasted on the enemy Tank. This is mandatory for every <strong>Assassin and Mage player</strong> in 2026.
@@ -87,38 +87,38 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiTrendingUp className="text-[var(--accent)]" />
-             3. The "Lane Freeze" Psychological Warfare
+            <FiTrendingUp className="text-[var(--accent)]" />
+            3. The "Lane Freeze" Psychological Warfare
           </h2>
           <p>
-             In the 2026 season, <strong>Lane Freezing</strong> is the ultimate way to win your lane without getting a single kill. If you have a strong early-game hero like Martis or Terizla, do not kill the enemy minions instantly. 
+            In the 2026 season, <strong>Lane Freezing</strong> is the ultimate way to win your lane without getting a single kill. If you have a strong early-game hero like Martis or Terizla, do not kill the enemy minions instantly.
           </p>
           <p>
-             Instead, stand <strong>between</strong> the enemy minions and the enemy hero. Only take the "Last Hit" for gold. By refusing to push the wave into their tower, you force your opponent to either stay back and get <strong>Zero Gold/EXP</strong> or walk forward and risk being instantly burst down. Starving your opponent's economy is how you build a 2,000 gold lead in the first 5 minutes.
+            Instead, stand <strong>between</strong> the enemy minions and the enemy hero. Only take the "Last Hit" for gold. By refusing to push the wave into their tower, you force your opponent to either stay back and get <strong>Zero Gold/EXP</strong> or walk forward and risk being instantly burst down. Starving your opponent's economy is how you build a 2,000 gold lead in the first 5 minutes.
           </p>
         </section>
 
         <section className="space-y-8">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiLayout className="text-[var(--accent)]" />
-             4. The 3-Lane "Synchronized Siege"
+            <FiLayout className="text-[var(--accent)]" />
+            4. The 3-Lane "Synchronized Siege"
           </h2>
           <p>When your team secures the Lord, 90% of players just follow it down one lane. This is a massive mistake that often leads to a "throw."</p>
           <p className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px] text-sm italic opacity-70 leading-relaxed text-justify">
-             <strong>The Pro Move:</strong> You must clear the other two lanes simultaneously. Ideally, all three minion waves should hit the enemy base at the exact same moment as the Lord. This forces the defenders to split their damage between three points, making it impossible for them to clear the waves fast enough to protect their base wall.
+            <strong>The Pro Move:</strong> You must clear the other two lanes simultaneously. Ideally, all three minion waves should hit the enemy base at the exact same moment as the Lord. This forces the defenders to split their damage between three points, making it impossible for them to clear the waves fast enough to protect their base wall.
           </p>
         </section>
 
         <section className="space-y-6">
           <h2>Conclusion: Discipline over Speed</h2>
           <p className="text-lg leading-relaxed text-justify">
-            Ranking up instantly in the <strong>Indian servers</strong> requires a shift from "Hero Performance" to "Map Dominance." Fast hands are great, but a calm mind that tracks the enemy Jungler and builds the right counter-items is what truly builds Mythic ranks. 
+            Ranking up instantly in the <strong>Indian servers</strong> requires a shift from "Hero Performance" to "Map Dominance." Fast hands are great, but a calm mind that tracks the enemy Jungler and builds the right counter-items is what truly builds Mythic ranks.
           </p>
           <p className="text-lg leading-relaxed text-justify">
             Mental discipline is your best weapon. If you lose two matches in a row, <strong>Stop Playing</strong>. The "tilt" factor will ruin your macro-decisions. Take a break, recharge, and come back with a fresh focus.
           </p>
           <p className="mt-12 text-lg">
-            <strong>Ready to out-play the 99%?</strong> Don't play at a disadvantage. Unlock the best heroes and the cleanest, most responsive skins from <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic underline">bluebuff.in</a> to ensure your execution is as elite as your strategy. Visit our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now for the <strong>lowest rates in India</strong> and instant delivery!
+            <strong>Ready to out-play the 99%?</strong> Don't play at a disadvantage. Unlock the best heroes and the cleanest, most responsive skins from <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic underline">bluebuff.in</a> to ensure your execution is as elite as your strategy. Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now for the <strong>lowest rates in India</strong> and instant delivery!
           </p>
         </section>
 

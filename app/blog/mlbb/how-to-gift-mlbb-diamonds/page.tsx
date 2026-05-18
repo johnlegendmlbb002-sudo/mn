@@ -35,50 +35,50 @@ export default function BlogPage() {
         </p>
 
         <p className="text-lg leading-relaxed text-justify">
-          In MLBB, gifting used to be slow because of level rules and friend timers. In 2026, gifting is easier. In-game gifting still works for skins, but <strong>API gifting</strong> via <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-bold">bluebuff.in</Link> is faster and safer. This guide shows how to send gifts quickly and save money.
+          In MLBB, gifting used to be slow because of level rules and friend timers. In 2026, gifting is easier. In-game gifting still works for skins, but <strong>API gifting</strong> via <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-bold">bluebuff.in</Link> is faster and safer. This guide shows how to send gifts quickly and save money.
         </p>
 
         {/* Gifting Methods Comparison Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 border-y border-[var(--border)] py-10">
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiHeart className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">In-Game Skin Gifting</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Requires being friends for <strong>7 days</strong>. Must be Level 15+. Great for specific skins you've already unlocked coupons for, but slow for urgent event needs.</p>
+            <FiHeart className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">In-Game Skin Gifting</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Requires being friends for <strong>7 days</strong>. Must be Level 15+. Great for specific skins you've already unlocked coupons for, but slow for urgent event needs.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiZap className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Instant API Gifting</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">No friend timer and no level requirement. Use your friend's <strong>Player ID</strong> to send diamonds or passes fast via bluebuff.in.</p>
+            <FiZap className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Instant API Gifting</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">No friend timer and no level requirement. Use your friend's <strong>Player ID</strong> to send diamonds or passes fast via bluebuff.in.</p>
           </div>
         </div>
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiPackage className="text-[var(--accent)]" />
-             1. What Can You Gift in 2026?
+            <FiPackage className="text-[var(--accent)]" />
+            1. What Can You Gift in 2026?
           </h2>
           <p>
             Beyond raw diamonds, the 2026 season offers structured gifts that provide significantly more value for your money.
           </p>
           <ul className="space-y-6 list-none p-0">
-             <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
-                <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">The Weekly Diamond Pass (Best Value)</h5>
-                <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">Gifting a <strong>Weekly Pass</strong> is the smartest choice for budget-conscious squads. For a low price, your friend gets daily diamonds, helping them reach event recharge milestones for free.</p>
-             </li>
-             <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
-                <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">Event-Specific Diamonds</h5>
-                <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">During <strong>Aspirant or Collector</strong> phases, gifting 250-500 diamonds allows your friend to participate in the "Recharge Bonus" tasks, giving them extra free tokens they wouldn't have otherwise.</p>
-             </li>
+            <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
+              <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">The Weekly Diamond Pass (Best Value)</h5>
+              <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">Gifting a <strong>Weekly Pass</strong> is the smartest choice for budget-conscious squads. For a low price, your friend gets daily diamonds, helping them reach event recharge milestones for free.</p>
+            </li>
+            <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
+              <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">Event-Specific Diamonds</h5>
+              <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">During <strong>Aspirant or Collector</strong> phases, gifting 250-500 diamonds allows your friend to participate in the "Recharge Bonus" tasks, giving them extra free tokens they wouldn't have otherwise.</p>
+            </li>
           </ul>
         </section>
 
         <section className="space-y-8">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiGift className="text-[var(--accent)]" />
-             2. How to Gift via Player ID (Step-by-Step)
+            <FiGift className="text-[var(--accent)]" />
+            2. How to Gift via Player ID (Step-by-Step)
           </h2>
           <p>The fastest way to send gifts <strong>in India</strong> is skipping the friend-timer entirely. Here is the 2026 blueprint:</p>
-          
+
           <div className="space-y-8 ml-4 border-l border-[var(--border)] pl-8 pt-2">
             <div className="relative">
               <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--accent)] shadow-[0_0_15px_rgba(var(--accent-rgb),0.5)]" />
@@ -88,7 +88,7 @@ export default function BlogPage() {
             <div className="relative">
               <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
               <h4 className="text-sm font-black uppercase italic m-0 mb-2">Step 02: Verification</h4>
-              <p className="text-xs opacity-60 leading-relaxed text-justify">Enter their ID on <Link href="/games/mobile-legends988" className="text-[var(--accent)] font-bold">bluebuff.in</Link>. Our system will fetch their <strong>IGN (In-Game Name)</strong>. Double-check it before you pay.</p>
+              <p className="text-xs opacity-60 leading-relaxed text-justify">Enter their ID on <Link href="/games/mobile-legends270" className="text-[var(--accent)] font-bold">bluebuff.in</Link>. Our system will fetch their <strong>IGN (In-Game Name)</strong>. Double-check it before you pay.</p>
             </div>
             <div className="relative">
               <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
@@ -100,13 +100,13 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiShield className="text-[var(--accent)]" />
-             3. Why ID Gifting is Safer for the Indian Market
+            <FiShield className="text-[var(--accent)]" />
+            3. Why ID Gifting is Safer for the Indian Market
           </h2>
           <div className="p-8 rounded-[40px] bg-[var(--card)] border border-[var(--border)] relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-2 h-full bg-[var(--accent)]" />
             <h4 className="italic font-black uppercase text-[var(--accent)] mb-3 tracking-tighter flex items-center gap-2">
-               <FiUserCheck /> Zero Data Risk 🛡️
+              <FiUserCheck /> Zero Data Risk 🛡️
             </h4>
             <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
               Account safety is important. With Player ID gifting, you <strong>never</strong> need your friend's login details. This protects their privacy and account. Trusted platforms like <strong>bluebuff.in</strong> send legal and traceable diamonds.
@@ -116,11 +116,11 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiGlobe className="text-[var(--accent)]" />
-             4. Gifting Across Servers (Global Squads)
+            <FiGlobe className="text-[var(--accent)]" />
+            4. Gifting Across Servers (Global Squads)
           </h2>
           <p className="text-lg leading-relaxed text-justify">
-             Many Indian squads have friends on different servers. With <strong>global support</strong>, you can gift from India to any server if you have the player's ID. The gift is delivered quickly.
+            Many Indian squads have friends on different servers. With <strong>global support</strong>, you can gift from India to any server if you have the player's ID. The gift is delivered quickly.
           </p>
         </section>
 
@@ -130,7 +130,7 @@ export default function BlogPage() {
             Gifting helps your whole team progress. By skipping the 7-day friend limit and using secure API routes, you can keep your squad ready with new skins and passes.
           </p>
           <p className="mt-12 text-lg">
-            <strong>Ready to surprise your squad?</strong> Don't make your friends wait. Head over to the <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and send a gift that will be remembered in the Land of Dawn!
+            <strong>Ready to surprise your squad?</strong> Don't make your friends wait. Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and send a gift that will be remembered in the Land of Dawn!
           </p>
         </section>
 

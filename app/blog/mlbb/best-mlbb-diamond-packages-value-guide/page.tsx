@@ -41,26 +41,26 @@ export default function BlogPage() {
         {/* Value Tiers Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 border-y border-[var(--border)] py-10">
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiStar className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The Efficiency King</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">The <strong>Weekly Diamond Pass</strong> gives much better value than direct recharge. It is a good base option for budget players in India.</p>
+            <FiStar className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The Efficiency King</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">The <strong>Weekly Diamond Pass</strong> gives much better value than direct recharge. It is a good base option for budget players in India.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiPercent className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Small Pack Trap</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Avoid buying small 86-diamond packs again and again. Small packs usually cost more per diamond.</p>
+            <FiPercent className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Small Pack Trap</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Avoid buying small 86-diamond packs again and again. Small packs usually cost more per diamond.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiShield className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Bulk Discount</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Large bundles (5,000+ diamonds) usually have lower price per diamond, useful for big events like Aspirants.</p>
+            <FiShield className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Bulk Discount</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Large bundles (5,000+ diamonds) usually have lower price per diamond, useful for big events like Aspirants.</p>
           </div>
         </div>
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiShoppingBag className="text-[var(--accent)]" />
-             1. The "Weekly Diamond Pass" Breakdown
+            <FiShoppingBag className="text-[var(--accent)]" />
+            1. The "Weekly Diamond Pass" Breakdown
           </h2>
           <p>
             If you are looking for the <strong>lowest price-per-diamond in India</strong>, nothing beats the Weekly Pass. While a normal recharge gives you roughly 1 diamond for every ₹1.4 to ₹1.5, the Weekly Pass provides a total of 220 diamonds (plus additional rewards) for a fraction of that cost.
@@ -68,7 +68,7 @@ export default function BlogPage() {
           <div className="p-8 rounded-[40px] bg-[var(--card)] border border-[var(--border)] relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-2 h-full bg-[var(--accent)]" />
             <h4 className="italic font-black uppercase text-[var(--accent)] mb-3 tracking-tighter flex items-center gap-2">
-               <FiInfo /> Pro Tip: Weekly Pass Stacking ⏳
+              <FiInfo /> Pro Tip: Weekly Pass Stacking ⏳
             </h4>
             <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
               You can stack the Weekly Pass up to 10 weeks (70 days) in advance. If you buy 10 passes at once on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>, you receive 800 diamonds instantly and then 20 diamonds daily for the next 70 days. This is the fastest way to hit large "Recharge Bonus" milestones during events!
@@ -78,8 +78,8 @@ export default function BlogPage() {
 
         <section className="space-y-8">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiTrendingUp className="text-[var(--accent)]" />
-             Quick Value Comparison
+            <FiTrendingUp className="text-[var(--accent)]" />
+            Quick Value Comparison
           </h2>
           <div className="overflow-x-auto border border-[var(--border)] rounded-3xl">
             <table className="w-full text-left text-sm">
@@ -122,22 +122,22 @@ export default function BlogPage() {
             The smartest way to buy diamonds in India is to wait for the <strong>"Token Gift"</strong> phases. These usually happen twice during a 30-day event (Phase 1 and Phase 2).
           </p>
           <div className="flex items-start gap-4 p-6 bg-[var(--accent)]/5 border border-[var(--border)] rounded-2xl">
-             <FiCheckCircle className="text-[var(--accent)] shrink-0 mt-1" />
-             <p className="text-sm m-0 opacity-80 italic leading-relaxed text-justify">
-                <strong>Simple strategy:</strong> During a Phase event, topping up 250 diamonds can give 16-18 free tokens. Buying during these windows gives much better value.
-             </p>
+            <FiCheckCircle className="text-[var(--accent)] shrink-0 mt-1" />
+            <p className="text-sm m-0 opacity-80 italic leading-relaxed text-justify">
+              <strong>Simple strategy:</strong> During a Phase event, topping up 250 diamonds can give 16-18 free tokens. Buying during these windows gives much better value.
+            </p>
           </div>
         </section>
 
         <section className="space-y-6">
           <h2>3. Why Local Indian Platforms Beat In-App Stores?</h2>
           <p className="text-lg leading-relaxed text-justify">
-             Buying through app stores can include extra platform fees. That is why local Indian stores like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> can offer better rates.
+            Buying through app stores can include extra platform fees. That is why local Indian stores like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> can offer better rates.
           </p>
           <ul className="space-y-4 list-none p-0">
-             <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> No International Transaction Fees (Save ₹50-₹200)</li>
-             <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> Instant UPI Access (PhonePe, GPay, Paytm)</li>
-             <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> 24/7 Automated Delivery to your MLBB Inbox</li>
+            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> No International Transaction Fees (Save ₹50-₹200)</li>
+            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> Instant UPI Access (PhonePe, GPay, Paytm)</li>
+            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> 24/7 Automated Delivery to your MLBB Inbox</li>
           </ul>
         </section>
 
@@ -147,7 +147,7 @@ export default function BlogPage() {
             Smart spending is what separates the average player from the account with 100+ Epic skins. Focus on <strong>Weekly Pass stacking</strong> for your daily needs and save your large recharges for <strong>Event Phase windows</strong>.
           </p>
           <p className="mt-12 text-lg">
-            <strong>Ready to save big?</strong> Don't leave your money on the table. Head over to our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and get the <strong>best value MLBB packages in India</strong> with secure UPI and instant delivery!
+            <strong>Ready to save big?</strong> Don't leave your money on the table. Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and get the <strong>best value MLBB packages in India</strong> with secure UPI and instant delivery!
           </p>
         </section>
 

@@ -42,26 +42,26 @@ export default function BlogPage() {
         {/* Core Legality Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 border-y border-[var(--border)] py-10">
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiGlobe className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The Game Status</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">MLBB is fully playable in India. Servers are live, and regional matches are directly supported. If the game is playable, the transactions are valid.</p>
+            <FiGlobe className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The Game Status</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">MLBB is fully playable in India. Servers are live, and regional matches are directly supported. If the game is playable, the transactions are valid.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiBriefcase className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Commercial Law</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Buying digital diamonds through a registered Indian platform is a legitimate e-commerce activity, protected by consumer rights laws.</p>
+            <FiBriefcase className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Commercial Law</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Buying digital diamonds through a registered Indian platform is a legitimate e-commerce activity, protected by consumer rights laws.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiShield className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Account Safety</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Moonton allows authorized third-party distributors. Using a verified API site like bluebuff is legal and safer.</p>
+            <FiShield className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Account Safety</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Moonton allows authorized third-party distributors. Using a verified API site like bluebuff is legal and safer.</p>
           </div>
         </div>
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiCheckCircle className="text-[var(--accent)]" />
-             1. Authorized API vs. Underground Agents
+            <FiCheckCircle className="text-[var(--accent)]" />
+            1. Authorized API vs. Underground Agents
           </h2>
           <p>
             This is the most important legal distinction <strong>in India</strong>. There are two ways to buy diamonds, but only one is 100% legal and safe:
@@ -80,16 +80,16 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiLock className="text-[var(--accent)]" />
-             2. The "No Password" Legal Mandate
+            <FiLock className="text-[var(--accent)]" />
+            2. The "No Password" Legal Mandate
           </h2>
           <p>
-             A key sign of a <strong>legal MLBB top-up site</strong> in India is that you use a proper system, not random personal payments.
+            A key sign of a <strong>legal MLBB top-up site</strong> in India is that you use a proper system, not random personal payments.
           </p>
           <div className="p-8 rounded-[40px] bg-[var(--card)] border border-[var(--border)] relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-2 h-full bg-[var(--accent)]" />
             <h4 className="italic font-black uppercase text-[var(--accent)] mb-3 tracking-tighter flex items-center gap-2">
-               <FiInfo /> Legality Litmus Test ⚖️
+              <FiInfo /> Legality Litmus Test ⚖️
             </h4>
             <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
               Legitimate API recharges on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> only need your public <strong>Player ID and Zone ID</strong>. If a site asks for password or OTP, leave right away.
@@ -99,20 +99,20 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiGlobe className="text-[var(--accent)]" />
-             3. Why are prices lower than the In-App Store?
+            <FiGlobe className="text-[var(--accent)]" />
+            3. Why are prices lower than the In-App Store?
           </h2>
           <p>
-             Indian players often wonder if lower prices mean illegal diamonds. <strong>This is a myth.</strong> Prices on platforms like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> are lower for two 100% legal reasons:
+            Indian players often wonder if lower prices mean illegal diamonds. <strong>This is a myth.</strong> Prices on platforms like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> are lower for two 100% legal reasons:
           </p>
           <ul className="space-y-6 list-none p-0">
             <li className="flex gap-4 items-start">
-               <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center shrink-0 mt-1 font-black italic text-xs">1</div>
-               <p className="text-sm opacity-80 leading-relaxed m-0 text-justify"><strong>No Platform Tax:</strong> Google Play and Apple App Store take a 30% cut of every purchase. By buying through an Indian web platform, you bypass this "tax," and those savings are passed directly to you.</p>
+              <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center shrink-0 mt-1 font-black italic text-xs">1</div>
+              <p className="text-sm opacity-80 leading-relaxed m-0 text-justify"><strong>No Platform Tax:</strong> Google Play and Apple App Store take a 30% cut of every purchase. By buying through an Indian web platform, you bypass this "tax," and those savings are passed directly to you.</p>
             </li>
             <li className="flex gap-4 items-start">
-               <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center shrink-0 mt-1 font-black italic text-xs">2</div>
-               <p className="text-sm opacity-80 leading-relaxed m-0 text-justify"><strong>Currency Aggregation:</strong> Authorized distributors buy millions of diamonds in bulk when exchange rates are favorable. This allows them to offer fixed, cheaper rates compared to the dynamic pricing inside the game app.</p>
+              <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] flex items-center justify-center shrink-0 mt-1 font-black italic text-xs">2</div>
+              <p className="text-sm opacity-80 leading-relaxed m-0 text-justify"><strong>Currency Aggregation:</strong> Authorized distributors buy millions of diamonds in bulk when exchange rates are favorable. This allows them to offer fixed, cheaper rates compared to the dynamic pricing inside the game app.</p>
             </li>
           </ul>
         </section>
@@ -126,7 +126,7 @@ export default function BlogPage() {
             Use verified automated platforms that check your IGN, support secure UPI payments, and never ask for your password.
           </p>
           <p className="mt-12 text-lg">
-            <strong>Ready for a legal and safe recharge?</strong> Don't settle for risky deals. Head over to our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> now for the <strong>most trusted, 100% legal diamonds in India</strong>. Experience instant 24/7 delivery on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>!
+            <strong>Ready for a legal and safe recharge?</strong> Don't settle for risky deals. Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> now for the <strong>most trusted, 100% legal diamonds in India</strong>. Experience instant 24/7 delivery on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>!
           </p>
         </section>
 

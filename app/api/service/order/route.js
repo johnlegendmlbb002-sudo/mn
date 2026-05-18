@@ -30,8 +30,8 @@ export async function POST(req) {
             return NextResponse.json({ success: false, status: "failed", message: "Missing required fields (gameSlug, itemSlug, playerId)" }, { status: 400 });
         }
 
-        // ⚡ REGION RESTRICTION CHECK for mobile-legends988 and mlbb-double332
-        if (gameSlug === "mobile-legends988" || gameSlug === "mlbb-double332" || gameSlug === "weeklymonthly-bundle931") {
+        // ⚡ REGION RESTRICTION CHECK for mobile-legends270 and mlbb-double332
+        if (gameSlug === "mobile-legends270" || gameSlug === "mlbb-double332" || gameSlug === "weeklymonthly-bundle261") {
             try {
                 const regionCheckResp = await fetch("https://game-off-ten.vercel.app/api/v1/check-region", {
                     method: "POST",
@@ -154,7 +154,7 @@ export async function POST(req) {
             // 2. Call external fulfillment service
             const settings = await getAppSettings();
             const useSmileOne = settings.mlbbWeeklyProvider === "smileone";
-            const isWeeklyPass = gameSlug === "mobile-legends988" && (itemSlug.toLowerCase().includes("weekly") || itemSlug.includes("pass"));
+            const isWeeklyPass = gameSlug === "mobile-legends270" && (itemSlug.toLowerCase().includes("weekly") || itemSlug.includes("pass"));
 
             let gameData;
             let isSuccess = false;

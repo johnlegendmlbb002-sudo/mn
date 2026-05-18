@@ -29,14 +29,14 @@ export default function BlogPage() {
           In 2026, the <strong>Weekly Diamond Pass</strong> remains the single best investment you can make. It's the "ROI King" of Mobile Legends. For the price of a small coffee, you receive a massive return that beats any standard recharge.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-           <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
-              <h5 className="text-[var(--accent)] font-bold italic mb-2 flex items-center gap-2"><FiStar /> The Return</h5>
-              <p className="text-xs opacity-60 m-0">210 Diamonds (delivered daily) + 10 Diamonds (instant) = 220 total diamonds per purchase.</p>
-           </div>
-           <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
-              <h5 className="text-[var(--accent)] font-bold italic mb-2 flex items-center gap-2"><FiPercent /> The Value</h5>
-              <p className="text-xs opacity-60 m-0">The WDP offers roughly 5x the value compared to a standard diamond recharge in the store.</p>
-           </div>
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <h5 className="text-[var(--accent)] font-bold italic mb-2 flex items-center gap-2"><FiStar /> The Return</h5>
+            <p className="text-xs opacity-60 m-0">210 Diamonds (delivered daily) + 10 Diamonds (instant) = 220 total diamonds per purchase.</p>
+          </div>
+          <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <h5 className="text-[var(--accent)] font-bold italic mb-2 flex items-center gap-2"><FiPercent /> The Value</h5>
+            <p className="text-xs opacity-60 m-0">The WDP offers roughly 5x the value compared to a standard diamond recharge in the store.</p>
+          </div>
         </div>
         <p>
           <strong>Why it's essential:</strong> Beyond the diamonds, every WDP claim gives you <strong>Starlight Points</strong> and Crystal of Aurora. If you stack these over months, you can unlock premium skins for free.
@@ -65,7 +65,7 @@ export default function BlogPage() {
           <p className="text-sm italic opacity-70 mb-6 leading-relaxed">
             Never buy diamonds at standard rates. Our automated system offers the lowest prices in India, allowing you to get more WDP stacks and skins for less.
           </p>
-          <Link href="/games/mobile-legends988" className="inline-flex items-center gap-2 bg-[var(--accent)] text-black px-6 py-3 rounded-full font-black italic text-xs uppercase tracking-widest hover:scale-105 transition-transform">
+          <Link href="/games/mobile-legends270" className="inline-flex items-center gap-2 bg-[var(--accent)] text-black px-6 py-3 rounded-full font-black italic text-xs uppercase tracking-widest hover:scale-105 transition-transform">
             Shop Diamond Deals <FiArrowRight />
           </Link>
         </div>
@@ -104,7 +104,7 @@ export default function BlogPage() {
       </section>
 
       <p className="text-lg leading-relaxed pt-10">
-        In conclusion, the key to building a premium MLBB account in 2026 isn't just about how much money you spend, but <strong>when</strong> and <strong>how</strong> you spend it. Focus on subscriptions, master the daily discount strategy, and always wait for recharge events. Ready to fuel your account? Visit our <Link href="/games/mobile-legends988" className="text-[var(--accent)] font-black italic underline uppercase">Verified MLBB Store</Link> and get the most value for your money today.
+        In conclusion, the key to building a premium MLBB account in 2026 isn't just about how much money you spend, but <strong>when</strong> and <strong>how</strong> you spend it. Focus on subscriptions, master the daily discount strategy, and always wait for recharge events. Ready to fuel your account? Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] font-black italic underline uppercase">Verified MLBB Store</Link> and get the most value for your money today.
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)] bg-[var(--accent)]/5 p-8 rounded-3xl">

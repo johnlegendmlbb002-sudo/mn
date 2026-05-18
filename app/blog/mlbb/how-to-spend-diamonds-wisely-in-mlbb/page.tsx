@@ -42,21 +42,21 @@ export default function BlogPage() {
         {/* Core Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 border-y border-[var(--border)] py-8">
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-3">
-             <FiPercent className="text-2xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The 50% Daily Rule</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed m-0 text-justify">Do not do 10x draws on day one. Use the daily 50% discount on single draws to cut total event cost over the month.</p>
+            <FiPercent className="text-2xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The 50% Daily Rule</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed m-0 text-justify">Do not do 10x draws on day one. Use the daily 50% discount on single draws to cut total event cost over the month.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-3">
-             <FiTrendingUp className="text-2xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Recharge Phase Stacking</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed m-0 text-justify">Wait for "Phase 1 & Phase 2" recharge events (often on Saturdays) to get extra tokens with your purchase.</p>
+            <FiTrendingUp className="text-2xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Recharge Phase Stacking</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed m-0 text-justify">Wait for "Phase 1 & Phase 2" recharge events (often on Saturdays) to get extra tokens with your purchase.</p>
           </div>
         </div>
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiClock className="text-[var(--accent)]" />
-             1. Mastering the "Daily Discount" Strategy
+            <FiClock className="text-[var(--accent)]" />
+            1. Mastering the "Daily Discount" Strategy
           </h2>
           <p>
             Major events like <strong>Aspirants, Exorcists, and Collector</strong> skins are designed to tempt you into spending 1000+ diamonds instantly. But most of these events offer a <strong>50% discount</strong> on your first single draw of every single day.
@@ -68,11 +68,11 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiStar className="text-[var(--accent)]" />
-             2. Leveraging Crystal of Aurora (COA)
+            <FiStar className="text-[var(--accent)]" />
+            2. Leveraging Crystal of Aurora (COA)
           </h2>
           <p>
-             Crystal of Aurora is often called the "Shadow Currency" of MLBB. It has a 1:1 value with diamonds but can be acquired at a much lower cost via subscriptions. By subscribing to the <strong>Weekly Diamond Pass</strong> or the <strong>Monthly COA Bundle</strong> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>, you accumulate COA daily.
+            Crystal of Aurora is often called the "Shadow Currency" of MLBB. It has a 1:1 value with diamonds but can be acquired at a much lower cost via subscriptions. By subscribing to the <strong>Weekly Diamond Pass</strong> or the <strong>Monthly COA Bundle</strong> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>, you accumulate COA daily.
           </p>
           <p>
             If a Collector skin costs 3,500 diamonds, using COA accumulated over time can bring your actual "cash" cost down to the equivalent of roughly 1,500 diamonds. It's the ultimate long-term investment for high-tier skin hunters.
@@ -80,7 +80,7 @@ export default function BlogPage() {
           <div className="p-8 rounded-[40px] bg-[var(--card)] border border-[var(--border)] relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-2 h-full bg-[var(--accent)]" />
             <h4 className="italic font-black uppercase text-[var(--accent)] mb-3 tracking-tighter flex items-center gap-2">
-               <FiInfo /> Wise Spender Secret: The Lucky Spin Trap 🤫
+              <FiInfo /> Wise Spender Secret: The Lucky Spin Trap 🤫
             </h4>
             <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
               Do not use diamonds for <strong>Lucky Spin</strong> (the one with Tickets). Use your free daily tickets instead and save diamonds for better rewards.
@@ -90,8 +90,8 @@ export default function BlogPage() {
 
         <section className="space-y-8">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiShoppingBag className="text-[var(--accent)]" />
-             Value Comparison: Diamond Purchase Priority
+            <FiShoppingBag className="text-[var(--accent)]" />
+            Value Comparison: Diamond Purchase Priority
           </h2>
           <p>Not all purchases in MLBB are created equal. Use this priority list to ensure you're getting the best value for your Indian rupees.</p>
           <div className="overflow-x-auto border border-[var(--border)] rounded-[32px]">
@@ -130,10 +130,10 @@ export default function BlogPage() {
             Twice a year, Moonton launches its flagship "Mega Sale" involving <strong>Promo Diamonds</strong>. These are earned by finishing simple daily tasks and can be used to pay for 99% of a skin's cost in the shop.
           </p>
           <div className="flex items-start gap-4 p-6 bg-red-500/5 border border-red-500/10 rounded-2xl">
-             <FiShield className="text-red-500 shrink-0 mt-1" />
-             <p className="text-sm m-0 opacity-80 italic leading-relaxed text-justify">
-            <strong>Important:</strong> You need at least <strong>1 real diamond</strong> to use Promo Diamonds. Keep a small balance ready.
-             </p>
+            <FiShield className="text-red-500 shrink-0 mt-1" />
+            <p className="text-sm m-0 opacity-80 italic leading-relaxed text-justify">
+              <strong>Important:</strong> You need at least <strong>1 real diamond</strong> to use Promo Diamonds. Keep a small balance ready.
+            </p>
           </div>
         </section>
 
@@ -146,7 +146,7 @@ export default function BlogPage() {
             Use <strong>daily discounts</strong>, recharge phase events, and trusted platforms like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic">bluebuff.in</a> to build your collection on a smaller budget.
           </p>
           <p className="mt-12 text-lg">
-            <strong>Ready to start spending wisely?</strong> Get the absolute most value for your money! Head over to the <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> now and use these strategies to dominate the Land of Dawn with the rarest skins!
+            <strong>Ready to start spending wisely?</strong> Get the absolute most value for your money! Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> now and use these strategies to dominate the Land of Dawn with the rarest skins!
           </p>
         </section>
 

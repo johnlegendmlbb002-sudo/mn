@@ -141,9 +141,9 @@ export default function BlogPage() {
       <p>
         Fixing your ping is about control. By using Network Boost, managing your background resources, and optimizing your DNS, you remove the environmental factors that keep you from winning.
       </p>
-      
+
       <p>
-        <strong>Ready for a frame-perfect experience?</strong> Once your network is stable, you need hero skins that offer the smoothest animations to maximize your reaction time. Get the <strong>cheapest MLBB diamonds in India</strong> and unlock your pro-tier setup today. Visit our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and join the elite winners with instant, safe delivery!
+        <strong>Ready for a frame-perfect experience?</strong> Once your network is stable, you need hero skins that offer the smoothest animations to maximize your reaction time. Get the <strong>cheapest MLBB diamonds in India</strong> and unlock your pro-tier setup today. Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and join the elite winners with instant, safe delivery!
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

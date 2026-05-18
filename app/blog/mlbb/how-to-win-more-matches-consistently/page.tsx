@@ -67,7 +67,7 @@ export default function BlogPage() {
 
       <h2>3. The "Objective-First" Mantra: Kills vs. Turrets</h2>
       <p>
-        Kill-chasing is the primary reason for "Epic Comebacks" by the enemy team. If you have the gold advantage, don't keep hunting for kills in the enemy jungle. 
+        Kill-chasing is the primary reason for "Epic Comebacks" by the enemy team. If you have the gold advantage, don't keep hunting for kills in the enemy jungle.
       </p>
       <ul>
         <li><strong>Turrets over Hero Kills:</strong> A hero kill only lasts for a 40-60 second respawn timer. A destroyed turret is gone <strong>forever</strong>. Turrets provide permanent map control, visibility, and gold for your entire team. If you wipe the enemy team, your first priority is the closest turret, not the enemy's blue buff.</li>
@@ -96,9 +96,9 @@ export default function BlogPage() {
       <p>
         Consistent winning in <strong>India's MLBB community</strong> comes from reducing the number of mistakes you make, not just increasing the number of kills you get. By mastering your draft, prioritizing objectives, and maintaining an elite mental state, you will find yourself on the path to Mythical Glory.
       </p>
-      
+
       <p>
-        <strong>Ready to build your winning streak?</strong> Don't play at a disadvantage. Get the latest meta-heroes and the smoothest skins to ensure your skills land every time. We offer the <strong>cheapest MLBB diamonds in India</strong> with instant delivery through <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. Head over to the <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and start your journey to the top!
+        <strong>Ready to build your winning streak?</strong> Don't play at a disadvantage. Get the latest meta-heroes and the smoothest skins to ensure your skills land every time. We offer the <strong>cheapest MLBB diamonds in India</strong> with instant delivery through <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and start your journey to the top!
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

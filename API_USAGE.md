@@ -40,7 +40,7 @@ Get items and their **member prices** for one game.
       "success": true,
       "game": {
         "name": "Mobile Legends",
-        "slug": "mobile-legends988",
+        "slug": "mobile-legends270",
         "items": [
           { "name": "Weekly Diamond Pass", "slug": "weekly-pass816", "price": 165 },
           { "name": "5 Diamonds", "slug": "diamonds-5", "price": 8 }

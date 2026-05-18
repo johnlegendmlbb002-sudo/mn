@@ -33,7 +33,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        In Mobile Legends: Bang Bang (MLBB), you have two primary ways to fill your diamond balance. You can either buy a <strong>Direct Recharge</strong> (getting the diamonds instantly) or subscribe to the <strong>Weekly Diamond Pass (WDP)</strong> (getting them over 7 days). While they both result in diamonds, the value they offer is worlds apart. 
+        In Mobile Legends: Bang Bang (MLBB), you have two primary ways to fill your diamond balance. You can either buy a <strong>Direct Recharge</strong> (getting the diamonds instantly) or subscribe to the <strong>Weekly Diamond Pass (WDP)</strong> (getting them over 7 days). While they both result in diamonds, the value they offer is worlds apart.
       </p>
 
       <p>
@@ -72,13 +72,13 @@ export default function BlogPage() {
 
       <h2>3. Top-Up Events: Making the Right Choice in India</h2>
       <p>
-        Every major skin event **in India** features a "Recharge Task" (e.g., "Top up 250 diamonds to get 10 free Draw Tokens"). 
+        Every major skin event **in India** features a "Recharge Task" (e.g., "Top up 250 diamonds to get 10 free Draw Tokens").
       </p>
       <p>
         <strong>Scenario A (The Direct Spender):</strong> You buy 250 diamonds via direct recharge. You get your 10 tokens. You have 250 diamonds in your wallet.
       </p>
       <p>
-        <strong>Scenario B (The Weekly Pass Pro):</strong> You buy **3 Weekly Diamond Passes** at once on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. This instantly gives you 240 diamonds (counting as a 240-diamond top-up). You add a tiny 10-diamond recharge to hit the 250 mark. You get your 10 tokens. But over the next 21 days, you will receive an additional **420 diamonds**. 
+        <strong>Scenario B (The Weekly Pass Pro):</strong> You buy **3 Weekly Diamond Passes** at once on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. This instantly gives you 240 diamonds (counting as a 240-diamond top-up). You add a tiny 10-diamond recharge to hit the 250 mark. You get your 10 tokens. But over the next 21 days, you will receive an additional **420 diamonds**.
       </p>
       <p><em>In Scenario B, you end up with **660+ diamonds** for roughly the same price the direct spender paid for only 250. This is how you win in MLBB.</em></p>
 
@@ -119,7 +119,7 @@ export default function BlogPage() {
 
       <h2>4. The "Starlight Membership" Synergy</h2>
       <p>
-        If you are an Indian player who buys the <strong>Starlight Membership</strong> every month (300 diamonds), the Weekly Pass is your best friend. 
+        If you are an Indian player who buys the <strong>Starlight Membership</strong> every month (300 diamonds), the Weekly Pass is your best friend.
       </p>
       <p>
         Buying two Weekly Passes gives you enough diamonds over 14 days to buy the Starlight membership for effectively half the cost of a direct recharge. Furthermore, the extra Starlight points and fragments you get from the WDP choice bundles will help you level up your Starlight pass faster, unlocking the Painted Skin and extra rewards much earlier in the month.
@@ -133,11 +133,11 @@ export default function BlogPage() {
 
       <h2>Conclusion: The Smart Player's Choice in India</h2>
       <p>
-        The statistics don't lie. For 95% of players <strong>in India</strong>, the <strong>Weekly Diamond Pass is the superior choice</strong>. It provides a consistent flow of currency, triggers all top-up events at a lower cost, and stacks perfectly with Starlight progression. 
+        The statistics don't lie. For 95% of players <strong>in India</strong>, the <strong>Weekly Diamond Pass is the superior choice</strong>. It provides a consistent flow of currency, triggers all top-up events at a lower cost, and stacks perfectly with Starlight progression.
       </p>
-      
+
       <p>
-        <strong>Ready to save more?</strong> Visit the <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] underline font-black">bluebuff.in</a> for Weekly Pass and direct recharge options.
+        <strong>Ready to save more?</strong> Visit the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] underline font-black">bluebuff.in</a> for Weekly Pass and direct recharge options.
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

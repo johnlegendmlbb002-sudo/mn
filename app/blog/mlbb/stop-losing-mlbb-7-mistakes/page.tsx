@@ -41,21 +41,21 @@ export default function BlogPage() {
         {/* Mistakes Quick Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 border-y border-[var(--border)] py-10">
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiMap className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The Map Blindness</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Ignoring the minimap is the #1 cause of deaths in India. If you don't check the map every 3 seconds, you are essentially playing blindfolded.</p>
+            <FiMap className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The Map Blindness</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Ignoring the minimap is the #1 cause of deaths in India. If you don't check the map every 3 seconds, you are essentially playing blindfolded.</p>
           </div>
           <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-             <FiTarget className="text-3xl text-[var(--accent)]" />
-             <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Kill Hunger</h4>
-             <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Chasing a 10% HP enemy across the map instead of pushing a tower. Kills look good on the scoreboard; towers win the game.</p>
+            <FiTarget className="text-3xl text-[var(--accent)]" />
+            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Kill Hunger</h4>
+            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Chasing a 10% HP enemy across the map instead of pushing a tower. Kills look good on the scoreboard; towers win the game.</p>
           </div>
         </div>
 
         <section className="space-y-6">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiAlertCircle className="text-[var(--accent)]" />
-             1. The Early Game "Feeding" Trap
+            <FiAlertCircle className="text-[var(--accent)]" />
+            1. The Early Game "Feeding" Trap
           </h2>
           <p>
             Dying in the first 5 minutes is very costly. Early deaths give the enemy gold and <strong>map control</strong>.
@@ -67,8 +67,8 @@ export default function BlogPage() {
 
         <section className="space-y-8">
           <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-             <FiZap className="text-[var(--accent)]" />
-             2. Objective vs. Kill Priority
+            <FiZap className="text-[var(--accent)]" />
+            2. Objective vs. Kill Priority
           </h2>
           <p>In MLBB, there is a strict "Ladder of Importance" that pro players follow. Most amateur players have this ladder upside down.</p>
           <div className="overflow-x-auto border border-[var(--border)] rounded-[32px]">
@@ -103,11 +103,11 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="italic font-black text-2xl tracking-tighter flex items-center gap-2">
-             <FiShield className="text-[var(--accent)]" />
-             3. Static Item Builds (Autopilot Error)
+            <FiShield className="text-[var(--accent)]" />
+            3. Static Item Builds (Autopilot Error)
           </h2>
           <p className="text-lg leading-relaxed text-justify">
-             Using the "Top Global" build for every match is a recipe for defeat. If the enemy team has an <strong>Estes or Angela</strong>, and you don't buy <strong>Sea Halberd</strong> (Physical) or <strong>Necklace of Durance</strong> (Magic) in the first 6 minutes, you are essentially throwing the match. Anti-heal and Counter-defense (Athena's Shield vs AP) are mandatory requirements in 2026.
+            Using the "Top Global" build for every match is a recipe for defeat. If the enemy team has an <strong>Estes or Angela</strong>, and you don't buy <strong>Sea Halberd</strong> (Physical) or <strong>Necklace of Durance</strong> (Magic) in the first 6 minutes, you are essentially throwing the match. Anti-heal and Counter-defense (Athena's Shield vs AP) are mandatory requirements in 2026.
           </p>
         </section>
 
@@ -115,7 +115,7 @@ export default function BlogPage() {
           <div className="p-8 rounded-[40px] bg-[var(--card)] border border-[var(--border)] relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-2 h-full bg-[var(--accent)]" />
             <h4 className="italic font-black uppercase text-[var(--accent)] mb-3 tracking-tighter flex items-center gap-2">
-               <FiInfo /> Pro Insight: The 1-Minute Reset ⏳
+              <FiInfo /> Pro Insight: The 1-Minute Reset ⏳
             </h4>
             <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
               Win a teamfight near 12 minutes? <strong>Do not recall right away.</strong> Push tower or start Lord first. Use your advantage before enemies respawn.
@@ -125,8 +125,8 @@ export default function BlogPage() {
 
         <section className="space-y-6">
           <h2 className="italic font-black text-2xl tracking-tighter flex items-center gap-2">
-             <FiMap className="text-[var(--accent)]" />
-             4. The "Mid-Lane Wanderer" Syndrome
+            <FiMap className="text-[var(--accent)]" />
+            4. The "Mid-Lane Wanderer" Syndrome
           </h2>
           <p className="text-lg leading-relaxed text-justify">
             Many <strong>Indian MLBB players</strong> spend too much time in mid looking for random fights. This shares EXP and gold and slows your team. Rotate for objectives like Turtle or towers.
@@ -139,7 +139,7 @@ export default function BlogPage() {
             Fixing these mistakes can improve your rank quickly. Play with discipline, watch the map, and prioritize towers over kills.
           </p>
           <p className="mt-12 text-lg">
-            <strong>Ready to dominate?</strong> Don't enter the Land of Dawn at a disadvantage. Unlock the newest meta-heroes and clean skins from our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now. Get the best rates <strong>in India</strong> with instant UPI delivery and start your win-streak on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic">bluebuff.in</a> today!
+            <strong>Ready to dominate?</strong> Don't enter the Land of Dawn at a disadvantage. Unlock the newest meta-heroes and clean skins from our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now. Get the best rates <strong>in India</strong> with instant UPI delivery and start your win-streak on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic">bluebuff.in</a> today!
           </p>
         </section>
 

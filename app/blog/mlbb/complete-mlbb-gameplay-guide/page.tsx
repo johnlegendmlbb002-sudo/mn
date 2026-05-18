@@ -134,9 +134,9 @@ export default function BlogPage() {
       <p>
         Mastering Mobile Legends is a journey of constant strategy and adaptation. By understanding lanes, respecting the jungle rotation, and prioritizing macro-objectives over individual kills, you will already be ahead of 90% of the players on the <strong>Indian servers</strong>.
       </p>
-      
+
       <p>
-        <strong>Ready to start your legendary climb?</strong> Don't play with a disadvantage. Ensure your hero has the visual clarity of premium skins. We provide the <strong>safest and cheapest MLBB diamonds in India</strong> with instant delivery through <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. Visit our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and equip yourself for victory!
+        <strong>Ready to start your legendary climb?</strong> Don't play with a disadvantage. Ensure your hero has the visual clarity of premium skins. We provide the <strong>safest and cheapest MLBB diamonds in India</strong> with instant delivery through <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and equip yourself for victory!
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

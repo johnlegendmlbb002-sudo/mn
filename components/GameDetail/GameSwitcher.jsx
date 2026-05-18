@@ -15,7 +15,7 @@ export default function GameSwitcher() {
 
     const isWeeklyPassQuery = searchParams.get("type") === "weekly-pass";
     const currentSlug = params?.slug;
-    const WEEKLY_PASS_SLUG = "mobile-legends988";
+    const WEEKLY_PASS_SLUG = "mobile-legends270";
 
     useEffect(() => {
         let mounted = true;
@@ -108,7 +108,7 @@ export default function GameSwitcher() {
                 <div className="flex items-center gap-3">
                     <div className="w-8 h-[2px] bg-[var(--accent)]" />
                     <h3 className="text-[10px] md:text-xs font-black text-[var(--foreground)] uppercase tracking-[0.3em] opacity-50">
-                    Switch Game
+                        Switch Game
                     </h3>
                 </div>
             </div>

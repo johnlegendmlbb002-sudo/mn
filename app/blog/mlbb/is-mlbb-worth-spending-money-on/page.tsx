@@ -54,7 +54,7 @@ export default function BlogPage() {
         If you are an <strong>Indian gamer</strong> on a budget, the <strong>Starlight Membership</strong> is the single most "worth it" purchase in the game.
       </p>
       <p>
-        In 2026, the Starlight rewards have been massively buffed. Beyond the exclusive skin, you receive Battle Emotes, Sacred Statues, and—most importantly—<strong>Fragments and Magic Dust</strong>. For a newer player in India, this is the fastest way to max out emblems. Maxed emblems provide the real power in MLBB, and Starlight speeds up that process by 300%. 
+        In 2026, the Starlight rewards have been massively buffed. Beyond the exclusive skin, you receive Battle Emotes, Sacred Statues, and—most importantly—<strong>Fragments and Magic Dust</strong>. For a newer player in India, this is the fastest way to max out emblems. Maxed emblems provide the real power in MLBB, and Starlight speeds up that process by 300%.
       </p>
 
       <div className="bg-[var(--card)] border border-[var(--border)] p-10 rounded-[40px] my-16 shadow-xl relative overflow-hidden group">
@@ -75,7 +75,7 @@ export default function BlogPage() {
 
       <h2>4. Speeding Up the Hero Grind</h2>
       <p>
-        As an F2P player, it can take months of grinding to save 32,000 Battle Points (BP) for a single hero. 
+        As an F2P player, it can take months of grinding to save 32,000 Battle Points (BP) for a single hero.
       </p>
       <p>
         <strong>Is it worth buying heroes with Diamonds?</strong> Generally, <strong>NO</strong>. In 2026, MLBB offers many ways to get heroes for free (Tickets, Fragments, and Events). Your diamonds are a finite resource; you should save them for <strong>Exclusive Cosmetics</strong> that cannot be earned through gameplay. Buying a hero with diamonds is considered one of the least efficient uses of currency.
@@ -127,18 +127,18 @@ export default function BlogPage() {
 
       <h2>Conclusion: The 2026 Verdict</h2>
       <p>
-        Is MLBB worth spending money on? <strong>Yes, but only if you have a strategy.</strong> 
+        Is MLBB worth spending money on? <strong>Yes, but only if you have a strategy.</strong>
       </p>
       <p>
         If MLBB is your main hobby, spending ₹500-₹1000 per month on <strong>Starlight</strong> and <strong>Weekly Pass</strong> can be reasonable. It gives steady rewards and faster progress.
       </p>
-      
+
       <p>
         However, if you are looking to "buy your way to the top," you will be disappointed. Player skill is still the king of the Land of Dawn.
       </p>
 
       <p>
-        <strong>Ready to level up your account?</strong> Don't pay full price! Get the <strong>lowest diamond rates in India</strong> with instant delivery through <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. Visit our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black">Diamond Store</Link> now and build your dream inventory today!
+        <strong>Ready to level up your account?</strong> Don't pay full price! Get the <strong>lowest diamond rates in India</strong> with instant delivery through <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black">Diamond Store</Link> now and build your dream inventory today!
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

@@ -126,7 +126,7 @@ export default function BlogPage() {
       </ul>
 
       <p>
-        <strong>Ready to master your favorite role?</strong> Dominate the Land of Dawn with the smoothest animations and cleanest hero skins. We offer the <strong>fastest and cheapest MLBB diamonds in India</strong> with 24/7 automated delivery. Visit our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and unlock your true potential today!
+        <strong>Ready to master your favorite role?</strong> Dominate the Land of Dawn with the smoothest animations and cleanest hero skins. We offer the <strong>fastest and cheapest MLBB diamonds in India</strong> with 24/7 automated delivery. Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and unlock your true potential today!
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

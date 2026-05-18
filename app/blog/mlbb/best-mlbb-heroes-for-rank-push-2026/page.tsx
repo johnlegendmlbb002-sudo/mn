@@ -143,11 +143,11 @@ export default function BlogPage() {
       </p>
 
       <p>
-        <strong>Want to look as good as you play?</strong> Premium skins don't just change your look—they often provide smoother animations and better visual clarity. Enhance your gaming experience by topping up your diamonds safely and quickly. 
+        <strong>Want to look as good as you play?</strong> Premium skins don't just change your look—they often provide smoother animations and better visual clarity. Enhance your gaming experience by topping up your diamonds safely and quickly.
       </p>
-      
+
       <p>
-        Get the <strong>best rates for MLBB diamonds</strong> and unlock the latest skins for your favorite meta heroes today! Visit our <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>.
+        Get the <strong>best rates for MLBB diamonds</strong> and unlock the latest skins for your favorite meta heroes today! Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>.
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

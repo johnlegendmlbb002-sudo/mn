@@ -170,7 +170,7 @@ export async function POST(req: Request) {
       "1478544003",
       "1703098323",
       "1223693807",
-      "365070273"
+      "365070273",
     ];
 
     if (
@@ -287,7 +287,7 @@ export async function POST(req: Request) {
 
 
         // Check if we should use Smile One for Weekly Pass
-        const isWeeklyPass = finalOrder.gameSlug === "mobile-legends988" && (baseItemSlug.toLowerCase().includes("weekly") || baseItemSlug.includes("pass"));
+        const isWeeklyPass = finalOrder.gameSlug === "mobile-legends270" && (baseItemSlug.toLowerCase().includes("weekly") || baseItemSlug.includes("pass"));
 
         if (useSmileOne && isWeeklyPass) {
           console.log(`[fulfillment] Using SmileOne for Weekly Pass`);
@@ -347,6 +347,11 @@ export async function POST(req: Request) {
 
         } else {
           // Default provider (1game)
+          console.log(`[fulfillment] Order ID: ${orderId}`);
+          console.log(`[fulfillment] Method: POST | URL: ${process.env.NEXT_PUBLIC_API_BASE}/api-service/order`);
+          console.log(`[fulfillment] Body Payload:`, JSON.stringify({ playerId: String(finalOrder.playerId), zoneId: String(finalOrder.zoneId), productId: `${finalOrder.gameSlug}_${baseItemSlug}`, currency: "USD" }, null, 2));
+
+          console.log(`[fulfillment] ===============================`);
           const gameResp = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api-service/order`, {
             method: "POST",
             headers: {
@@ -362,6 +367,7 @@ export async function POST(req: Request) {
           });
 
           gameData = await gameResp.json();
+          console.log(`[fulfillment] 1GAME RESPONSE:`, JSON.stringify(gameData));
           isSuccess = gameResp.ok &&
             (gameData?.success === true || gameData?.status === true || gameData?.result?.status === "SUCCESS");
         }

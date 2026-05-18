@@ -68,7 +68,7 @@ export default function BlogPage() {
 
       <h2>3. Developing "Micro-Map Awareness"</h2>
       <p>
-        Many players in Solo Queue have poor map awareness. If you want to carry, you must be the "eyes" for the entire team. 
+        Many players in Solo Queue have poor map awareness. If you want to carry, you must be the "eyes" for the entire team.
       </p>
       <p>
         Don't just ping "Gather." Be proactive. Use the <strong>"Enemy Missing"</strong> ping and draw lines on the map to show where the enemy jungler might be heading. This simple act of "ping-leadership" can save your Marksman from a gank, keeping them alive for the late game when you need their sustained damage to end the match.
@@ -102,11 +102,11 @@ export default function BlogPage() {
 
       <h2>Conclusion: Lead the Land of Dawn</h2>
       <p>
-        Carrying in Solo Queue is about playing smarter, not just harder. By choosing independent heroes, focusing on objectives, and managing your team's morale through pings, you can turn even the unluckiest random team into a winning squad. 
+        Carrying in Solo Queue is about playing smarter, not just harder. By choosing independent heroes, focusing on objectives, and managing your team's morale through pings, you can turn even the unluckiest random team into a winning squad.
       </p>
-      
+
       <p>
-        <strong>Ready to take control of your rank?</strong> Dominate the match with the best hero skins that provide the smoothest skill animations. Get the <strong>cheapest MLBB top up in India</strong> with instant delivery through <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. Head over to the <Link href="/games/mobile-legends988" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and unlock your full carry potential!
+        <strong>Ready to take control of your rank?</strong> Dominate the match with the best hero skins that provide the smoothest skill animations. Get the <strong>cheapest MLBB top up in India</strong> with instant delivery through <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>. Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> now and unlock your full carry potential!
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)]">

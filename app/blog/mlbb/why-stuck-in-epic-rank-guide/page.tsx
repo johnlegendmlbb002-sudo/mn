@@ -32,8 +32,8 @@ export default function BlogPage() {
           <strong>The 2-2-2 Rule:</strong> By 2026 standards, versatility is your greatest weapon. You should master at least 2 heroes for every role (Tank, Jungler, Mage, Marksman, Fighter). This ensures that no matter what your team needs, you can provide a high-level performance.
         </p>
         <div className="p-4 bg-[var(--accent)]/5 border border-[var(--accent)]/10 rounded-2xl italic text-sm opacity-70 flex items-center gap-3">
-           <FiInfo className="text-[var(--accent)] shrink-0" />
-           <p className="m-0 leading-relaxed"><strong>Pro Tip:</strong> Focus on "Meta" heroes that are currently strong in the 2026 patch. Check the latest tier lists before you start your rank session!</p>
+          <FiInfo className="text-[var(--accent)] shrink-0" />
+          <p className="m-0 leading-relaxed"><strong>Pro Tip:</strong> Focus on "Meta" heroes that are currently strong in the 2026 patch. Check the latest tier lists before you start your rank session!</p>
         </div>
       </section>
 
@@ -61,7 +61,7 @@ export default function BlogPage() {
           <p className="text-sm italic opacity-70 mb-6 leading-relaxed">
             Want the latest heroes and highest-tier skins to boost your confidence and intimidation factor? Having the right emblem levels is like starting the game with an extra item.
           </p>
-          <Link href="/games/mobile-legends988" className="inline-flex items-center gap-2 bg-[var(--accent)] text-black px-6 py-3 rounded-full font-black italic text-xs uppercase tracking-widest hover:scale-105 transition-transform">
+          <Link href="/games/mobile-legends270" className="inline-flex items-center gap-2 bg-[var(--accent)] text-black px-6 py-3 rounded-full font-black italic text-xs uppercase tracking-widest hover:scale-105 transition-transform">
             Get MLBB Diamonds Now <FiArrowRight />
           </Link>
         </div>
@@ -90,7 +90,7 @@ export default function BlogPage() {
       <section className="space-y-6">
         <h2 className="italic font-black text-2xl tracking-tighter">5. Drafting Disasters: Learn to Counter-Pick</h2>
         <p>
-          Most Epic games are lost in the drafting phase. If the enemy picks a <strong>Fanny</strong>, but your team picks zero Crowd Control (CC) heroes, you are going to have a hard time. 
+          Most Epic games are lost in the drafting phase. If the enemy picks a <strong>Fanny</strong>, but your team picks zero Crowd Control (CC) heroes, you are going to have a hard time.
         </p>
         <p>
           Stop following "standard" builds and picks. If the enemy team is full of Magic Damage (like Gusion, Julian, and Nana), you <strong>must</strong> build Athena's Shield or Radiant Armor. Don't just stick to your attack items; survive to deal damage.
@@ -98,7 +98,7 @@ export default function BlogPage() {
       </section>
 
       <p className="text-lg leading-relaxed pt-10 border-t border-[var(--border)]">
-        Don't let "Epic Hell" define your MLBB journey. With the right mindset, objective focus, and a versatile hero pool, you will reach Legend and Mythic in no time. If you're looking for a quick way to upgrade your account, max out your emblems, or unlock those high-priority meta heroes, <Link href="/games/mobile-legends988" className="text-[var(--accent)] font-black italic underline uppercase">top up MLBB diamonds</Link> today and start your win-streak.
+        Don't let "Epic Hell" define your MLBB journey. With the right mindset, objective focus, and a versatile hero pool, you will reach Legend and Mythic in no time. If you're looking for a quick way to upgrade your account, max out your emblems, or unlock those high-priority meta heroes, <Link href="/games/mobile-legends270" className="text-[var(--accent)] font-black italic underline uppercase">top up MLBB diamonds</Link> today and start your win-streak.
       </p>
 
       <div className="mt-20 pt-10 border-t border-[var(--border)] bg-[var(--accent)]/5 p-8 rounded-3xl">
