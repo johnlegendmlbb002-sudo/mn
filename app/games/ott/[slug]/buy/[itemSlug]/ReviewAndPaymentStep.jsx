@@ -54,6 +54,7 @@ export default function ReviewAndPaymentStep({
         itemSlug,
         itemName,
         playerId: reviewData.playerId,
+        playerName: reviewData.userName || "Unknown",
         zoneId: "N/A",
         paymentMethod,
         email: userEmail || null,

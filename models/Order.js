@@ -8,6 +8,7 @@ const OrderSchema = new mongoose.Schema(
     itemSlug: String,
     itemName: String,
     playerId: String,
+    playerName: String,
     zoneId: String,
     paymentMethod: String,
     price: Number,

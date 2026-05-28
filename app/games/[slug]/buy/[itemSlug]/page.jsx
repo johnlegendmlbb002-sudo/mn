@@ -210,6 +210,7 @@ function BuyFlowContent() {
         itemSlug,
         itemName: item?.itemName || fallbackName,
         playerId: verifiedAccount.playerId,
+        playerName: verifiedAccount.userName || "Unknown",
         zoneId: verifiedAccount.zoneId,
         paymentMethod,
         email: userEmail || null,

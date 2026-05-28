@@ -326,7 +326,7 @@ export default function OrdersTab() {
                         </td>
                         <td className="px-6 py-4 max-w-xs">
                           <span className="text-[var(--foreground)]/60 font-medium truncate block">{o.itemName}</span>
-                          <span className="text-[10px] text-[var(--muted)]/40 font-mono uppercase">{o.orderId}</span>
+                          <span className="text-[10px] text-[var(--muted)]/40 font-mono uppercase">{o.playerId} • {o.playerName || "Unknown"}</span>
                         </td>
                         <td className="px-6 py-4">
                           <span className="text-[10px] font-bold text-[var(--muted)] uppercase border border-[var(--border)] px-2 py-1 rounded-md bg-[var(--foreground)]/[0.02]">
@@ -387,10 +387,10 @@ export default function OrdersTab() {
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between gap-3 text-[10px]">
+                      <div className="flex items-center justify-between gap-3 text-[10px]">
                       <div className="flex-1 min-w-0">
                         <p className="font-medium text-[var(--foreground)]/60 line-clamp-1 italic truncate">"{o.itemName}"</p>
-                        <p className="text-[8px] font-mono text-[var(--muted)]/40 mt-0.5 uppercase tracking-tighter truncate">{o.orderId}</p>
+                        <p className="text-[8px] font-mono text-[var(--muted)]/40 mt-0.5 uppercase tracking-tighter truncate">{o.playerId} • {o.playerName || "Unknown"}</p>
                       </div>
 
                       <div className="flex items-center gap-2 shrink-0" onClick={(e) => e.stopPropagation()}>
@@ -513,6 +513,7 @@ export default function OrdersTab() {
                 </DrawerSection>
 
                 <DrawerSection icon={<Smartphone size={16} />} title="Player ID Info">
+                  <DrawerDetail label="Player Name" value={selectedOrder.playerName || "Unknown"} />
                   <DrawerDetail label="Player ID" value={selectedOrder.playerId} emphasize />
                   <DrawerDetail label="Server/Zone" value={selectedOrder.zoneId || "GLOBAL"} />
                 </DrawerSection>

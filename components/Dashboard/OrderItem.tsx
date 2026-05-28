@@ -23,6 +23,7 @@ export type OrderType = {
   gameSlug: string;
   itemName: string;
   playerId: string;
+  playerName?: string;
   zoneId: string;
   paymentMethod: string;
   price: number;
@@ -171,7 +172,7 @@ export default function OrderItem({ order }: { order: OrderType }) {
               <span className="text-[9px] font-bold text-[var(--muted)] uppercase tracking-wider">{order.itemName}</span>
               <div className="flex items-center gap-1.5 opacity-60">
                 <FiUser className="text-[var(--accent)]" size={10} />
-                <span className="text-[9px] font-bold font-mono">{order.playerId}</span>
+                <span className="text-[9px] font-bold font-mono">{order.playerId} {order.playerName ? `• ${order.playerName}` : ""}</span>
               </div>
             </div>
           </div>
@@ -199,7 +200,8 @@ export default function OrderItem({ order }: { order: OrderType }) {
             exit={{ height: 0, opacity: 0 }}
             className="px-5 pb-5 overflow-hidden"
           >
-            <div className="border-t border-[var(--border)] pt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="border-t border-[var(--border)] pt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <InfoNode label="Player Name" value={order.playerName} icon={FiUser} />
               <InfoNode label="Player ID" value={order.playerId} icon={FiUser} mono />
               <InfoNode label="Zone ID" value={order.zoneId} icon={FiGrid} mono />
               <InfoNode label="Payment" value={order.paymentMethod.toUpperCase()} icon={FiCreditCard} />
