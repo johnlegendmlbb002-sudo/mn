@@ -16,6 +16,25 @@ export const metadata: Metadata = {
     "how to reach mythic mlbb 2026"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/best-mlbb-heroes-for-rank-push-2026" },
+  authors: [{ name: 'BlueBuff Team', url: 'https://mlbbtopup.in' }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'article',
+    siteName: 'BlueBuff',
+    locale: 'en_IN',
+    url: 'https://mlbbtopup.in/blog/mlbb/best-mlbb-heroes-for-rank-push-2026',
+    title: 'Best MLBB Heroes for Rank Push in 2026: The Ultimate Meta Guide',
+    description: 'Master the 2026 meta with our comprehensive guide to the best heroes for rank push in Mobile Legends. Discover the top picks for Solo Queue and Team play to reach Mythical Glory fast.',
+    publishedTime: '2026-04-24',
+    images: [{ url: 'https://mlbbtopup.in/blog/best-heroes-2026.png', width: 1200, height: 630, alt: 'Best MLBB Heroes for Rank Push in 2026: The Ultimate Meta Guide' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@bluebuffin',
+    title: 'Best MLBB Heroes for Rank Push in 2026: The Ultimate Meta Guide',
+    description: 'Master the 2026 meta with our comprehensive guide to the best heroes for rank push in Mobile Legends. Discover the top picks for Solo Queue and Team play to reach Mythical Glory fast.',
+    images: ['https://mlbbtopup.in/blog/best-heroes-2026.png'],
+  },
 };
 
 export default function BlogPage() {

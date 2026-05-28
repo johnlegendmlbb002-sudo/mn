@@ -4,8 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import SeasonalToggle from "../Seasonal/SeasonalToggle";
-
 import { FiChevronRight, FiLogOut, FiCheckCircle, FiShield, FiZap, FiMenu, FiX, FiLayers, FiCompass, FiGrid, FiShoppingBag, FiMessageSquare, FiUser, FiUsers, FiKey, FiGift, FiSearch, FiAward } from "react-icons/fi";
 
 /* ================= CONFIG ================= */
@@ -373,7 +371,6 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3" ref={dropdownRef}>
-          {/* <SeasonalToggle /> */}
             <ThemeToggle />
 
 

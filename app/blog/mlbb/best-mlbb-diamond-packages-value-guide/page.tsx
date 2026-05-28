@@ -16,6 +16,25 @@ export const metadata: Metadata = {
     "save money on mlbb diamonds india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/best-mlbb-diamond-packages-value-guide" },
+  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "article",
+    siteName: "BlueBuff",
+    locale: "en_IN",
+    url: "https://mlbbtopup.in/blog/mlbb/best-mlbb-diamond-packages-value-guide",
+    title: "Best MLBB Diamond Packages in India – Real Price & Value Guide (2026)",
+    description: "Actual MLBB diamond prices in India with real cost-per-diamond breakdown. Find out which package gives you maximum value for your rupee in 2026.",
+    publishedTime: "2026-03-31T00:00:00.000Z",
+    images: [{ url: "https://mlbbtopup.in/blog/best-value.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bluebuffin",
+    title: "Best MLBB Diamond Packages in India – Real Price & Value Guide (2026)",
+    description: "Actual MLBB diamond prices in India with real cost-per-diamond breakdown. Find out which package gives you maximum value for your rupee in 2026.",
+    images: ["https://mlbbtopup.in/blog/best-value.png"],
+  },
 };
 
 export default function BlogPage() {
@@ -27,6 +46,7 @@ export default function BlogPage() {
       date="March 31, 2026"
       image="/blog/best-value.png"
       game="MLBB"
+      description="Actual MLBB diamond prices in India with real cost-per-diamond breakdown. Find out which package gives you maximum value for your rupee in 2026."
     >
       <div className="space-y-10">
         {/* Intro Highlight */}

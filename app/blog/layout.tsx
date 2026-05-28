@@ -2,8 +2,57 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "MLBB Insights & Guides – Tips for Safe & Cheap Top Up | Blue Buff",
-  description: "Stay updated with the latest Mobile Legends: Bang Bang news, diamond price guides, and safety tips for recharge in India. Your source for elite MLBB insights.",
+  title: {
+    default: "MLBB Insights & Guides – Tips for Safe & Cheap Top Up | Blue Buff",
+    template: "%s | BlueBuff Blog",
+  },
+  description:
+    "Stay updated with the latest Mobile Legends: Bang Bang guides, diamond price breakdowns, and safety tips for recharge in India. Your source for elite MLBB insights from BlueBuff.",
+  keywords: [
+    "mlbb guides india",
+    "mobile legends tips 2026",
+    "mlbb diamond price india",
+    "mlbb top up guide india",
+    "bluebuff blog",
+    "mobile legends rank up tips",
+    "mlbb weekly pass india",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: "BlueBuff",
+    locale: "en_IN",
+    url: "https://mlbbtopup.in/blog",
+    title: "MLBB Insights & Guides – BlueBuff Blog",
+    description:
+      "Expert Mobile Legends guides, diamond price breakdowns, and India-specific top-up safety tips. Trusted by Indian MLBB players.",
+    images: [
+      {
+        url: "https://mlbbtopup.in/og-blog.png",
+        width: 1200,
+        height: 630,
+        alt: "BlueBuff – MLBB Blog & Insights",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bluebuffin",
+    title: "MLBB Insights & Guides – BlueBuff Blog",
+    description:
+      "Expert Mobile Legends guides, diamond price breakdowns, and India top-up safety tips.",
+    images: ["https://mlbbtopup.in/og-blog.png"],
+  },
 };
 
 export default function BlogLayout({
@@ -14,9 +63,9 @@ export default function BlogLayout({
   return (
     <>
       {/* Adsterra Social Bar */}
-      <Script 
-        src="https://pl29247592.profitablecpmratenetwork.com/a5/bb/66/a5bb66c93c9892d321190ff4ef0081a4.js" 
-        strategy="afterInteractive" 
+      <Script
+        src="https://pl29247592.profitablecpmratenetwork.com/a5/bb/66/a5bb66c93c9892d321190ff4ef0081a4.js"
+        strategy="afterInteractive"
       />
 
       {/* Monetag Onclick (Popunder) */}

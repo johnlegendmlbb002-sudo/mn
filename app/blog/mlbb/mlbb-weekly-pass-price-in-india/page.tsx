@@ -16,6 +16,25 @@ export const metadata: Metadata = {
     "save money on mlbb diamonds india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/mlbb-weekly-pass-price-in-india" },
+  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "article",
+    siteName: "BlueBuff",
+    locale: "en_IN",
+    url: "https://mlbbtopup.in/blog/mlbb/mlbb-weekly-pass-price-in-india",
+    title: "MLBB Weekly Pass Price in India 2026 – Is it Worth Buying?",
+    description: "Discover the current MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, benefits, and find the cheapest way to buy diamonds instantly.",
+    publishedTime: "2026-03-31T00:00:00.000Z",
+    images: [{ url: "https://mlbbtopup.in/blog/weekly-pass-price.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bluebuffin",
+    title: "MLBB Weekly Pass Price in India 2026 – Is it Worth Buying?",
+    description: "Discover the current MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, benefits, and find the cheapest way to buy diamonds instantly.",
+    images: ["https://mlbbtopup.in/blog/weekly-pass-price.png"],
+  },
 };
 
 export default function BlogPage() {
@@ -27,6 +46,7 @@ export default function BlogPage() {
       date="March 31, 2026"
       image="/blog/weekly-pass-price.png"
       game="MLBB"
+      description="Discover the current MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, benefits, and find the cheapest way to buy diamonds instantly."
     >
       <div className="space-y-10">
         {/* Intro Highlight */}

@@ -17,6 +17,25 @@ export const metadata: Metadata = {
     "buy mobile legends diamonds safely india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-buy-mlbb-diamonds-safely-in-india" },
+  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "article",
+    siteName: "BlueBuff",
+    locale: "en_IN",
+    url: "https://mlbbtopup.in/blog/mlbb/how-to-buy-mlbb-diamonds-safely-in-india",
+    title: "How to Buy MLBB Diamonds Safely in India: The 2026 Safety Guide",
+    description: "Learn the safest way to recharge MLBB diamonds in India. Protect your account from scams, avoid 'Negative Diamond' bans, and identify trusted websites like bluebuff.in for 2026.",
+    publishedTime: "2026-03-31T00:00:00.000Z",
+    images: [{ url: "https://mlbbtopup.in/blog/buy-safely.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bluebuffin",
+    title: "How to Buy MLBB Diamonds Safely in India: The 2026 Safety Guide",
+    description: "Learn the safest way to recharge MLBB diamonds in India. Protect your account from scams, avoid 'Negative Diamond' bans, and identify trusted websites like bluebuff.in for 2026.",
+    images: ["https://mlbbtopup.in/blog/buy-safely.png"],
+  },
 };
 
 export default function BlogPage() {

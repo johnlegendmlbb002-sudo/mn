@@ -16,6 +16,25 @@ export const metadata: Metadata = {
     "climb mlbb rank faster india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-rank-up-from-epic-to-mythic-in-2026" },
+  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "article",
+    siteName: "BlueBuff",
+    locale: "en_IN",
+    url: "https://mlbbtopup.in/blog/mlbb/how-to-rank-up-from-epic-to-mythic-in-2026",
+    title: "How to Rank Up From Epic to Mythic in MLBB: The 2026 Survival Guide (India)",
+    description: "Stuck in 'Epic Hell'? Learn the professional strategies to escape Epic and reach Mythic in Mobile Legends fast. Our 2026 guide covers drafting, map awareness, and the mental game for Indian players.",
+    publishedTime: "2026-03-31T00:00:00.000Z",
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb-epic-to-mythic.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bluebuffin",
+    title: "How to Rank Up From Epic to Mythic in MLBB: The 2026 Survival Guide (India)",
+    description: "Stuck in 'Epic Hell'? Learn the professional strategies to escape Epic and reach Mythic in Mobile Legends fast. Our 2026 guide covers drafting, map awareness, and the mental game for Indian players.",
+    images: ["https://mlbbtopup.in/blog/mlbb-epic-to-mythic.png"],
+  },
 };
 
 export default function BlogPage() {

@@ -91,7 +91,7 @@ export default function StorySlider() {
 
   return (
     <section className="relative py-4 px-4">
-      <div className="flex md:justify-center gap-3 md:gap-7 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory relative z-10">
+      <div className="flex gap-3 md:gap-7 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory relative z-10">
         {loading ? (
           [1, 2, 3, 4, 5, 6].map(i => (
             <StorySkeleton key={i} />

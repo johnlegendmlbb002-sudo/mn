@@ -16,6 +16,25 @@ export const metadata: Metadata = {
     "mlbb gift skin without 7 day limit"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-gift-mlbb-diamonds" },
+  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "article",
+    siteName: "BlueBuff",
+    locale: "en_IN",
+    url: "https://mlbbtopup.in/blog/mlbb/how-to-gift-mlbb-diamonds",
+    title: "How to Gift MLBB Diamonds to Friends – The Definitive 2026 Guide (India)",
+    description: "Learn how to gift MLBB diamonds safely in India! A complete 2026 guide on gifting skins, passes, and diamonds using Player ID with no 7-day friend limit.",
+    publishedTime: "2026-03-31T00:00:00.000Z",
+    images: [{ url: "https://mlbbtopup.in/blog/gift-guide.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bluebuffin",
+    title: "How to Gift MLBB Diamonds to Friends – The Definitive 2026 Guide (India)",
+    description: "Learn how to gift MLBB diamonds safely in India! A complete 2026 guide on gifting skins, passes, and diamonds using Player ID with no 7-day friend limit.",
+    images: ["https://mlbbtopup.in/blog/gift-guide.png"],
+  },
 };
 
 export default function BlogPage() {
@@ -27,6 +46,7 @@ export default function BlogPage() {
       date="March 31, 2026"
       image="/blog/gift-guide.png"
       game="MLBB"
+      description="Learn how to gift MLBB diamonds safely in India! A complete 2026 guide on gifting skins, passes, and diamonds using Player ID with no 7-day friend limit."
     >
       <div className="space-y-10">
         {/* Intro Highlight */}

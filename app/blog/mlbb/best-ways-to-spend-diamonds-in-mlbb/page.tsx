@@ -7,6 +7,25 @@ export const metadata: Metadata = {
   title: "The Best Ways to Spend Diamonds in MLBB: Maximize Your Value – 2026",
   description: "Want to get the most out of your MLBB diamonds? Learn the best ways to spend your diamonds, including Starlight Memberships, Weekly Passes, and exclusive event draws.",
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/best-ways-to-spend-diamonds-in-mlbb" },
+  authors: [{ name: 'BlueBuff Team', url: 'https://mlbbtopup.in' }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'article',
+    siteName: 'BlueBuff',
+    locale: 'en_IN',
+    url: 'https://mlbbtopup.in/blog/mlbb/best-ways-to-spend-diamonds-in-mlbb',
+    title: 'The Best Ways to Spend Diamonds in MLBB: Maximize Your Value – 2026',
+    description: 'Want to get the most out of your MLBB diamonds? Learn the best ways to spend your diamonds, including Starlight Memberships, Weekly Passes, and exclusive event draws.',
+    publishedTime: '2026-03-31',
+    images: [{ url: 'https://mlbbtopup.in/blog/mlbb-spend-diamonds.png', width: 1200, height: 630, alt: 'The Best Ways to Spend Diamonds in MLBB: Maximize Your Value – 2026' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@bluebuffin',
+    title: 'The Best Ways to Spend Diamonds in MLBB: Maximize Your Value – 2026',
+    description: 'Want to get the most out of your MLBB diamonds? Learn the best ways to spend your diamonds, including Starlight Memberships, Weekly Passes, and exclusive event draws.',
+    images: ['https://mlbbtopup.in/blog/mlbb-spend-diamonds.png'],
+  },
 };
 
 export default function BlogPage() {

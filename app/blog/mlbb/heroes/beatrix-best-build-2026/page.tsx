@@ -16,6 +16,25 @@ export const metadata: Metadata = {
     "bluebuff mlbb guides"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/heroes/beatrix-best-build-2026" },
+  authors: [{ name: 'BlueBuff Team', url: 'https://mlbbtopup.in' }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'article',
+    siteName: 'BlueBuff',
+    locale: 'en_IN',
+    url: 'https://mlbbtopup.in/blog/mlbb/heroes/beatrix-best-build-2026',
+    title: 'Beatrix Best Build 2026: Master the Land of Dawn with the Versatile Marksman',
+    description: 'Looking for the best Beatrix build in 2026? Our comprehensive guide covers the top item builds, emblems, and weapon strategies to dominate the Gold Lane in Mobile Legends.',
+    publishedTime: '2026-04-29',
+    images: [{ url: 'https://mlbbtopup.in/blog/beatrix-build-2026.png', width: 1200, height: 630, alt: 'Beatrix Best Build 2026: Master the Land of Dawn with the Versatile Marksman' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@bluebuffin',
+    title: 'Beatrix Best Build 2026: Master the Land of Dawn with the Versatile Marksman',
+    description: 'Looking for the best Beatrix build in 2026? Our comprehensive guide covers the top item builds, emblems, and weapon strategies to dominate the Gold Lane in Mobile Legends.',
+    images: ['https://mlbbtopup.in/blog/beatrix-build-2026.png'],
+  },
 };
 
 export default function BlogPage() {

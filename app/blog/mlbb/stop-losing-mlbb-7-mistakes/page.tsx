@@ -16,6 +16,25 @@ export const metadata: Metadata = {
     "bluebuff mlbb gameplay tips"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/stop-losing-mlbb-7-mistakes" },
+  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "article",
+    siteName: "BlueBuff",
+    locale: "en_IN",
+    url: "https://mlbbtopup.in/blog/mlbb/stop-losing-mlbb-7-mistakes",
+    title: "Stop Losing in Mobile Legends – Fix These 7 Fatal Mistakes (2026)",
+    description: "Stuck in a lose streak? Master the 7 common MLBB mistakes that keep Indian players in Epic rank. Learn pro map awareness, positioning, and objective strategies.",
+    publishedTime: "2026-03-31T00:00:00.000Z",
+    images: [{ url: "https://mlbbtopup.in/blog/fix-mistakes.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bluebuffin",
+    title: "Stop Losing in Mobile Legends – Fix These 7 Fatal Mistakes (2026)",
+    description: "Stuck in a lose streak? Master the 7 common MLBB mistakes that keep Indian players in Epic rank. Learn pro map awareness, positioning, and objective strategies.",
+    images: ["https://mlbbtopup.in/blog/fix-mistakes.png"],
+  },
 };
 
 export default function BlogPage() {
@@ -27,6 +46,7 @@ export default function BlogPage() {
       date="March 31, 2026"
       image="/blog/fix-mistakes.png"
       game="MLBB"
+      description="Stuck in a lose streak? Master the 7 common MLBB mistakes that keep Indian players in Epic rank. Learn pro map awareness, positioning, and objective strategies."
     >
       <div className="space-y-10">
         {/* Intro Highlight */}

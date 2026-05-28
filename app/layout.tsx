@@ -21,7 +21,6 @@ import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { getAppSettings } from "@/lib/settings";
 import BottomNav from "@/components/Layout/BottomNav";
 import SeasonalEffectManager from "@/components/Seasonal/SeasonalEffectManager";
-import SeasonalToggle from "@/components/Seasonal/SeasonalToggle";
 
 
 
@@ -349,7 +348,6 @@ export default async function RootLayout({
           <Footer />
           <SocialFloat />
           <ChatbotWrapper />
-          <SeasonalToggle />
           <BottomNav />
 
 

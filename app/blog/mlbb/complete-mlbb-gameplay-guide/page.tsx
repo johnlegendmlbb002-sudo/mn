@@ -16,6 +16,25 @@ export const metadata: Metadata = {
     "mobile legends gameplay tips india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/complete-mlbb-gameplay-guide" },
+  authors: [{ name: 'BlueBuff Team', url: 'https://mlbbtopup.in' }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'article',
+    siteName: 'BlueBuff',
+    locale: 'en_IN',
+    url: 'https://mlbbtopup.in/blog/mlbb/complete-mlbb-gameplay-guide',
+    title: 'The Complete Mobile Legends Gameplay Guide: 2026 Edition (India)',
+    description: 'Master the core mechanics of Mobile Legends: Bang Bang. Learn everything about laning, jungle rotations, map objectives (Turtle & Lord), and winning teamfights in India (2026).',
+    publishedTime: '2026-03-31',
+    images: [{ url: 'https://mlbbtopup.in/blog/mlbb-gameplay-guide.png', width: 1200, height: 630, alt: 'The Complete Mobile Legends Gameplay Guide: 2026 Edition (India)' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@bluebuffin',
+    title: 'The Complete Mobile Legends Gameplay Guide: 2026 Edition (India)',
+    description: 'Master the core mechanics of Mobile Legends: Bang Bang. Learn everything about laning, jungle rotations, map objectives (Turtle & Lord), and winning teamfights in India (2026).',
+    images: ['https://mlbbtopup.in/blog/mlbb-gameplay-guide.png'],
+  },
 };
 
 export default function BlogPage() {
