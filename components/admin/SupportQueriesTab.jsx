@@ -181,15 +181,12 @@ export default function SupportQueriesTab() {
   return (
     <div className="space-y-6 pb-6 px-4 md:px-0 max-w-full overflow-x-hidden">
       {/* ================= HEADER ================= */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold tracking-tight text-[var(--foreground)]">Support Queries</h2>
-          <p className="text-xs text-[var(--muted)] font-medium mt-1">
-            Manage your customer support messages
-          </p>
+          <h2 className="text-xl font-bold tracking-tight text-[var(--foreground)]">Support</h2>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 shrink-0">
           <div className="px-3 py-1.5 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] flex items-center gap-2">
             <span className="text-[10px] font-bold text-[var(--muted)] uppercase">
               {pagination.total} Total
@@ -199,7 +196,7 @@ export default function SupportQueriesTab() {
             onClick={() => { fetchQueriesStats(); fetchQueriesList(); }}
             className="p-2 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)]"
           >
-            <RefreshCcw size={16} className={loading ? "animate-spin" : ""} />
+            <RefreshCcw size={14} className={loading ? "animate-spin" : ""} />
           </button>
         </div>
       </div>

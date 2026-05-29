@@ -230,19 +230,16 @@ export default function UsersTab() {
   return (
     <div className="space-y-4 sm:space-y-6 pb-10">
       {/* ================= HEADER ================= */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex items-center justify-between gap-4">
         <div>
-          <h2 className="text-lg sm:text-xl font-bold tracking-tight text-[var(--foreground)]">User Management</h2>
-          <p className="hidden sm:block text-sm text-[var(--muted)] mt-1">
-            Browse and manage all registered users and their roles.
-          </p>
+          <h2 className="text-lg sm:text-xl font-bold tracking-tight text-[var(--foreground)]">Users</h2>
         </div>
 
         <div className="flex items-center justify-between sm:justify-end gap-3">
           <div className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] flex items-center gap-2">
             <Users size={12} className="text-[var(--accent)]" />
             <span className="text-xs sm:text-sm font-semibold text-[var(--muted)]">
-              {pagination.total} Users Total
+              {pagination.total} Users 
             </span>
           </div>
           <button

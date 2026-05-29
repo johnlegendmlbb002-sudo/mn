@@ -146,19 +146,16 @@ export default function BannersTab({ banners, onRefresh }) {
     <div className="space-y-10 pb-10">
 
       {/* ================= HEADER SECTION ================= */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="flex items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold tracking-tight text-[var(--foreground)]">Banner Management</h2>
-          <p className="text-xs text-[var(--muted)] font-medium mt-1">
-            Manage your website banners and promotional links
-          </p>
+          <h2 className="text-xl font-bold tracking-tight text-[var(--foreground)]">Banners</h2>
         </div>
         <button
           onClick={onRefresh}
-          className="flex items-center gap-2 self-start md:self-auto px-4 py-2 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.08] transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.08] transition-all shrink-0"
         >
           <RefreshCcw size={14} />
-          <span className="text-xs font-semibold">Refresh List</span>
+          <span className="text-xs font-semibold whitespace-nowrap">Refresh List</span>
         </button>
       </div>
 

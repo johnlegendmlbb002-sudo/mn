@@ -260,7 +260,7 @@ export default function CoinsAdminTab() {
       <AnimatePresence>{toast && <Toast {...toast} />}</AnimatePresence>
       
       {/* Stats Overview */}
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+      <div className="grid grid-cols-3 sm:grid-cols-3 gap-2">
         <StatCard label="Total Available" value={coinStats.totalAvailable} icon={<FiList />} color="blue" />
         <StatCard label="Total Earned" value={coinStats.totalEarned} icon={<FiStar />} color="amber" />
         <StatCard label="Total Spent" value={coinStats.totalSpent} icon={<FiX />} color="rose" />
@@ -916,8 +916,8 @@ function StatCard({ label, value, icon, color, pulse }) {
     <div className={`p-2 rounded-xl border ${colors[color]} relative overflow-hidden`}>
       {pulse && <div className="absolute top-1.5 right-1.5 w-1 h-1 rounded-full bg-current animate-pulse" />}
       <div className="flex items-center gap-1.5 mb-0.5">
-        <span className="text-[10px]">{icon}</span>
-        <span className="text-[7px] font-black uppercase tracking-wider opacity-60">{label}</span>
+        <span className="text-[10px] shrink-0">{icon}</span>
+        <span className="text-[7px] font-black uppercase tracking-wider opacity-60 whitespace-nowrap truncate">{label}</span>
       </div>
       <div className="text-sm font-black tracking-tighter tabular-nums">
         {value.toLocaleString()} <span className="text-[7px] opacity-40 ml-0.5 font-bold">BBC</span>

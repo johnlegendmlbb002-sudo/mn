@@ -350,39 +350,36 @@ export default function PromotionalTab() {
     <div className="space-y-6 pb-10">
       {/* ================= PREMIUM DASHBOARD HEADER ================= */}
       <div className="space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-3">
           <div>
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[var(--foreground)] flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-[var(--accent)] flex items-center justify-center text-white shadow-lg shadow-[var(--accent)]/20">
-                <Send size={20} />
+            <h2 className="text-lg sm:text-xl font-black tracking-tight text-[var(--foreground)] flex items-center gap-2 whitespace-nowrap">
+              <div className="w-8 h-8 rounded-xl bg-[var(--accent)] flex items-center justify-center text-white shadow-md shadow-[var(--accent)]/20 shrink-0">
+                <Send size={16} />
               </div>
-              Promotional Hub
+              Promo mail
             </h2>
-            <p className="text-xs sm:text-sm text-[var(--muted)]/60 font-medium mt-1 ml-[52px]">
-              Advanced audience segmentation & automated campaign delivery.
-            </p>
           </div>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 shrink-0">
             <button 
                onClick={syncAllTags}
                disabled={tagUpdateLoading}
-               className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500 text-indigo-500 hover:text-white transition-all group disabled:opacity-40 shadow-xl shadow-indigo-500/5 active:scale-95"
+               className="flex items-center gap-2 px-3 py-2 rounded-xl bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500 text-indigo-500 hover:text-white transition-all group disabled:opacity-40 shadow-md shadow-indigo-500/5 active:scale-95"
                title="Initialize tags for all users in database"
             >
-              <div className={`p-1.5 rounded-lg ${tagUpdateLoading ? '' : 'bg-indigo-500/10 group-hover:bg-white/20'}`}>
-                <RefreshCcw size={16} className={tagUpdateLoading ? "animate-spin" : "group-hover:rotate-180 transition-transform duration-700"} />
+              <div className={`p-1 rounded-md ${tagUpdateLoading ? '' : 'bg-indigo-500/10 group-hover:bg-white/20'}`}>
+                <RefreshCcw size={14} className={tagUpdateLoading ? "animate-spin" : "group-hover:rotate-180 transition-transform duration-700"} />
               </div>
               <div className="flex flex-col items-start leading-tight">
-                 <span className="text-[11px] font-black uppercase tracking-wider">Sync Database</span>
-                 <span className="text-[9px] font-bold opacity-60">Add missing category tags</span>
+                 <span className="text-[10px] font-black uppercase tracking-wider whitespace-nowrap">Sync DB</span>
+                 <span className="text-[8px] font-bold opacity-60 whitespace-nowrap hidden sm:block">Add missing tags</span>
               </div>
             </button>
           </div>
         </div>
 
         {/* STATS TILES */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
           <StatTile 
             icon={<Send size={18} />} 
             label="Mails Today" 
@@ -822,14 +819,14 @@ function StatTile({ icon, label, value, sub, color }) {
   };
 
   return (
-    <div className={`p-4 rounded-3xl border ${colors[color]} bg-[var(--card)] flex items-center gap-4 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-${color}-500/5`}>
-      <div className={`w-10 h-10 rounded-2xl ${colors[color].split(' ')[0]} flex items-center justify-center shrink-0`}>
+    <div className={`p-2 sm:p-3 rounded-2xl border ${colors[color]} bg-[var(--card)] flex items-center gap-2 sm:gap-3 transition-all hover:scale-[1.02] hover:shadow-md hover:shadow-${color}-500/5`}>
+      <div className={`w-8 h-8 rounded-xl ${colors[color].split(' ')[0]} flex items-center justify-center shrink-0`}>
         {icon}
       </div>
       <div className="flex flex-col min-w-0">
-        <span className="text-[10px] font-black uppercase tracking-widest opacity-60 leading-none mb-1">{label}</span>
-        <span className="text-lg font-black text-[var(--foreground)] leading-none truncate">{value}</span>
-        <span className="text-[8px] font-bold opacity-40 uppercase tracking-tighter mt-1">{sub}</span>
+        <span className="text-[9px] font-black uppercase tracking-widest opacity-60 leading-none mb-0.5 truncate">{label}</span>
+        <span className="text-base sm:text-lg font-black text-[var(--foreground)] leading-none truncate">{value}</span>
+        <span className="text-[7px] font-bold opacity-40 uppercase tracking-tighter mt-0.5 truncate">{sub}</span>
       </div>
     </div>
   );

@@ -217,15 +217,15 @@ export default function PricingTab({
   return (
     <div className="space-y-6 pb-20 max-w-full overflow-x-hidden">
       {/* ================= TOP BAR ================= */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 px-4 py-3.5 rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-xl shadow-black/20">
+      <div className="flex flex-wrap items-center justify-between gap-4 px-4 py-3.5 rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-md shadow-black/5">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <h2 className="text-xl font-black uppercase italic tracking-tighter text-white">Pricing <span className="text-[var(--accent)]">Config</span></h2>
+            <h2 className="text-xl font-black uppercase italic tracking-tighter text-[var(--foreground)]">Pricing <span className="text-[var(--accent)]">Config</span></h2>
           </div>
           <p className="text-[10px] text-[var(--muted)] font-bold uppercase tracking-widest opacity-50">Manage profit margins and fixed item prices</p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center justify-end gap-3 ml-auto">
           {/* Mode Switcher */}
           <div className="flex bg-[var(--foreground)]/[0.03] p-1 rounded-xl border border-[var(--border)]">
             {[{ id: "percent", label: "Markup", icon: <Percent size={12} /> }, { id: "fixed", label: "Fixed", icon: <Coins size={12} /> }].map((m) => (
