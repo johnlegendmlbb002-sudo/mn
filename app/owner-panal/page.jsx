@@ -6,6 +6,22 @@ import {
   FiSearch,
   FiChevronLeft,
   FiChevronRight,
+  FiMenu,
+  FiX,
+  FiPocket,
+  FiDatabase,
+  FiGift,
+  FiZap,
+  FiUsers,
+  FiKey,
+  FiStar,
+  FiShoppingCart,
+  FiRepeat,
+  FiMessageSquare,
+  FiTag,
+  FiImage,
+  FiAward,
+  FiSettings,
 } from "react-icons/fi";
 
 import AuthGuard from "@/components/AuthGuard";
@@ -26,9 +42,42 @@ import TournamentsAdminTab from "@/components/admin/TournamentsAdminTab";
 
 
 
+const MENU_CATEGORIES = [
+  {
+    category: "Finance & Orders",
+    items: [
+      { id: "orders", label: "Orders", icon: FiShoppingCart },
+      { id: "transactions", label: "Transactions", icon: FiRepeat },
+      { id: "wallet", label: "Wallet", icon: FiPocket },
+      { id: "usdt", label: "USDT", icon: FiDatabase },
+    ]
+  },
+  {
+    category: "Marketing & Engagement",
+    items: [
+      { id: "redeem", label: "Redeem Codes", icon: FiGift },
+      { id: "coins", label: "Coins", icon: FiZap },
+      { id: "promotional", label: "Promotional", icon: FiStar },
+      { id: "banners", label: "Banners", icon: FiImage },
+      { id: "tournaments", label: "Tournaments", icon: FiAward },
+    ]
+  },
+  {
+    category: "Platform Management",
+    items: [
+      { id: "users", label: "Users", icon: FiUsers },
+      { id: "queries", label: "Support Queries", icon: FiMessageSquare },
+      { id: "pricing", label: "Pricing", icon: FiTag },
+      { id: "api-keys", label: "API Keys", icon: FiKey },
+      { id: "settings", label: "Settings", icon: FiSettings },
+    ]
+  }
+];
+
 export default function AdminPanalPage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("orders");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isOwner, setIsOwner] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -197,106 +246,132 @@ export default function AdminPanalPage() {
 
   return (
     <AuthGuard>
-      <section className="min-h-screen bg-[var(--background)] px-6 py-3">
+      <section className="min-h-screen bg-[var(--background)] px-2 sm:px-6 py-3">
         <div className="max-w-6xl mx-auto">
-          {/* HEADER */}
-          <div className="mb-4">
-            <div className="flex items-center gap-2">
-              <h1 className="text-xl md:text-2xl font-extrabold tracking-tight text-[var(--foreground)]">
-                Admin Panel
-              </h1>
-
-              {/* Accent status dot */}
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-            </div>
-
-            <p className="mt-0.5 text-xs md:text-sm text-[var(--muted)] max-w-lg leading-snug">
-              Manage users, orders, transactions, queries & pricing
-            </p>
-          </div>
-
-
-          {/* BALANCE */}
-          <div className="
-  mb-6
-  relative
-  rounded-xl
-  border border-[var(--border)]
-  bg-[var(--card)]
-  px-5 py-4
-">
-
-            {/* Top accent bar */}
-            <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[var(--accent)] to-purple-500 rounded-t-xl" />
-
-            <p className="text-xs uppercase tracking-wide text-[var(--muted)]">
-              Account Balance
-            </p>
-
-            <div className="mt-1 flex items-end gap-2">
-              <p className="text-2xl font-bold text-[var(--foreground)]">
-                {balance !== null ? balance : "Loading…"}
+          {/* HEADER & BALANCE (COMPACT) */}
+          <div className="mb-5 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 shadow-sm">
+            
+            <div className="min-w-0 flex-1 order-1 sm:order-1">
+              <div className="flex items-center gap-2">
+                <h1 className="text-lg md:text-xl font-extrabold tracking-tight text-[var(--foreground)] truncate">
+                  Admin Panel
+                </h1>
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.8)] shrink-0" />
+              </div>
+              <p className="text-[10px] sm:text-xs text-[var(--muted)] leading-snug truncate">
+                Manage users, orders, transactions, queries & pricing
               </p>
-
-              <span className="text-sm font-medium text-green-500">
-                Available
-              </span>
             </div>
+
+            {/* COMPACT BALANCE */}
+            <div className="order-3 sm:order-2 w-full sm:w-auto shrink-0 bg-[var(--background)] px-4 py-2 rounded-xl border border-[var(--border)] relative overflow-hidden">
+              <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[var(--accent)] to-purple-500" />
+              <div className="flex flex-col">
+                <span className="text-[9px] uppercase tracking-widest text-[var(--muted)] font-bold">Balance</span>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-sm sm:text-base font-black text-[var(--foreground)]">
+                    {balance !== null ? balance : "Loading…"}
+                  </span>
+                  <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest">
+                    Available
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <button 
+              onClick={() => setIsSidebarOpen(true)}
+              className="order-2 sm:order-3 p-2 rounded-xl bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--accent)]/10 hover:border-[var(--accent)]/30 hover:text-[var(--accent)] transition-all shadow-sm group shrink-0"
+            >
+              <FiMenu size={20} className="group-active:scale-90 transition-transform" />
+            </button>
           </div>
 
 
-          <div className="mb-5 flex flex-wrap gap-2">
-            {["wallet", "usdt", "redeem", "coins", "users", "api-keys", "promotional", "orders", "transactions", "queries", "pricing", "banners", "tournaments", "settings"].map(
-              (tab) => {
-                const isActive = activeTab === tab;
+          {/* HAMBURGER SIDEBAR SLIDER MENU */}
+          <div
+            className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[2000] transition-opacity duration-300 ${isSidebarOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+            onClick={() => setIsSidebarOpen(false)}
+          />
+          <div
+            className={`fixed left-0 top-0 h-[100dvh] w-[85%] max-w-[320px] bg-[var(--background)] border-r border-[var(--border)] z-[2001] shadow-[20px_0_50px_rgba(0,0,0,0.5)] flex flex-col transition-transform duration-300 ease-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
+          >
+            <div className="p-4 flex items-center justify-between border-b border-[var(--border)] bg-[var(--card)]/50 backdrop-blur-md">
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
+                <h2 className="text-base font-black tracking-widest uppercase text-[var(--foreground)]">Admin Menu</h2>
+              </div>
+              <button 
+                onClick={() => setIsSidebarOpen(false)}
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--foreground)]/5 hover:bg-red-500/10 hover:text-red-500 transition-colors"
+              >
+                <FiX size={18} />
+              </button>
+            </div>
+            
+            <div className="flex-1 overflow-y-auto custom-scrollbar pb-6">
+              
+              {/* BALANCE WIDGET INSIDE SIDEBAR */}
+              <div className="p-5 border-b border-[var(--border)] bg-[var(--card)]/30">
+                <div className="flex flex-col gap-1">
+                  <span className="text-[10px] uppercase tracking-widest text-[var(--muted)] font-bold">Account Balance</span>
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-xl font-black text-[var(--foreground)]">
+                      {balance !== null ? balance : "Loading…"}
+                    </span>
+                    <span className="text-[10px] font-bold text-green-500 uppercase tracking-widest">
+                      Available
+                    </span>
+                  </div>
+                </div>
+              </div>
 
-                return (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`
-            relative
-            px-3.5 py-1.5
-            rounded-lg
-            text-xs sm:text-sm
-            font-semibold
-            border
-            transition-all duration-200
-            focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40
-            ${isActive
-                        ? `
-                  bg-[var(--accent)]/15
-                  text-[var(--accent)]
-                  border-[var(--accent)]/40
-                `
-                        : `
-                  bg-[var(--card)]
-                  text-[var(--muted)]
-                  border-[var(--border)]
-                  hover:text-[var(--foreground)]
-                  hover:border-[var(--accent)]/30
-                `
-                      }
-          `}
-                  >
-                    {tab.toUpperCase()}
-
-                    {/* Active underline */}
-                    {isActive && (
-                      <span className="
-              absolute left-1/2 -bottom-1
-              h-0.5 w-6
-              -translate-x-1/2
-              rounded-full
-              bg-gradient-to-r
-              from-[var(--accent)]
-              to-purple-500
-            " />
-                    )}
-                  </button>
-                );
-              }
-            )}
+              {/* CATEGORIZED MENU WITH ICONS */}
+              <div className="px-3 py-2 space-y-4 mt-1">
+                {MENU_CATEGORIES.map((category) => (
+                  <div key={category.category} className="space-y-1.5">
+                    <h3 className="px-2 pb-1 text-[9px] font-black uppercase tracking-[0.1em] text-[var(--muted)]/70">
+                      {category.category}
+                    </h3>
+                    <div className="space-y-0.5">
+                      {category.items.map((item) => {
+                        const isActive = activeTab === item.id;
+                        const Icon = item.icon;
+                        return (
+                          <button
+                            key={item.id}
+                            onClick={() => {
+                              setActiveTab(item.id);
+                              setIsSidebarOpen(false);
+                            }}
+                            className={`
+                              w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all tracking-wide group
+                              ${isActive 
+                                ? "bg-[var(--accent)]/10 text-[var(--accent)]" 
+                                : "text-[var(--foreground)]/70 hover:bg-[var(--foreground)]/5 hover:text-[var(--foreground)]"
+                              }
+                            `}
+                          >
+                            <div className={`
+                              flex items-center justify-center w-6 h-6 rounded-md transition-colors
+                              ${isActive ? "bg-[var(--accent)] text-white shadow-sm shadow-[var(--accent)]/30" : "bg-[var(--foreground)]/5 group-hover:bg-[var(--foreground)]/10"}
+                            `}>
+                              <Icon size={12} />
+                            </div>
+                            {item.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+            </div>
+            
+            <div className="p-4 border-t border-[var(--border)] text-center text-[10px] font-bold text-[var(--muted)]/50 uppercase tracking-widest">
+              Blue Buff Admin Console
+            </div>
           </div>
 
 

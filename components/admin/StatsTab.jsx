@@ -1053,16 +1053,16 @@ function PremiumInsightCard({ label, value, color, icon, description }) {
     return (
         <motion.div 
             whileHover={{ y: -2 }}
-            className={`relative p-3.5 sm:p-4.5 rounded-[1.5rem] border bg-gradient-to-b ${colors[color]} bg-[var(--card)]/40 backdrop-blur-xl overflow-hidden group transition-all`}
+            className={`relative p-3 sm:p-3.5 rounded-2xl border bg-gradient-to-b ${colors[color]} bg-[var(--card)]/40 backdrop-blur-xl overflow-hidden group transition-all`}
         >
             <div className="relative z-10 flex items-center justify-between">
-                <div className="flex items-center gap-3.5">
-                    <div className={`p-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 text-white shadow-lg`}>
+                <div className="flex items-center gap-3">
+                    <div className={`p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 text-white shadow-lg`}>
                         {icon}
                     </div>
                     <div>
                         <p className="text-[9px] font-black uppercase tracking-[0.15em] opacity-40 mb-0.5">{label}</p>
-                        <p className="text-xl sm:text-2xl font-black tabular-nums tracking-tighter text-[var(--foreground)] leading-none">{value}</p>
+                        <p className="text-lg sm:text-xl font-black tabular-nums tracking-tighter text-[var(--foreground)] leading-none">{value}</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/5 text-[7px] font-black uppercase tracking-[0.1em] opacity-50 shrink-0">
@@ -1071,7 +1071,7 @@ function PremiumInsightCard({ label, value, color, icon, description }) {
             </div>
             
             {description && (
-                <div className="relative z-10 mt-3 pt-2 text-[9px] font-medium opacity-30 border-t border-white/5 truncate">
+                <div className="relative z-10 mt-2 pt-1.5 text-[9px] font-medium opacity-30 border-t border-white/5 truncate">
                     {description}
                 </div>
             )}

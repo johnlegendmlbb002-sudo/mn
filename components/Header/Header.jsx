@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import CustomWebBanner from "../Home/CustomWebBanner";
 import { FiChevronRight, FiLogOut, FiCheckCircle, FiShield, FiZap, FiMenu, FiX, FiLayers, FiCompass, FiGrid, FiShoppingBag, FiMessageSquare, FiUser, FiUsers, FiKey, FiGift, FiSearch, FiAward } from "react-icons/fi";
 
 /* ================= CONFIG ================= */
@@ -543,6 +544,10 @@ export default function Header() {
                         )}
                       </>
                     )}
+
+                    <div className="pb-2">
+                      <CustomWebBanner />
+                    </div>
                   </div>
 
                   {/* Drawer Footer */}

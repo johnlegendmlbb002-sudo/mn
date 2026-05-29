@@ -15,6 +15,7 @@ import PromoBanner from "./PromoBanner";
 import HomeEarnPromotion from "./HomeEarnPromotion";
 import SEOContent from "./SEOContent";
 import SupportBanner from "./SupportBanner";
+import CustomWebBanner from "./CustomWebBanner";
 
 export default function HeroSection() {
 
@@ -23,9 +24,12 @@ export default function HeroSection() {
     <>
       {/* <TopNoticeBanner /> */}
       {/* <HomeEarnPromotion /> */}
-      <TradeMarketplaceBanner />
+      {/* <TradeMarketplaceBanner /> */}
+      <div className="max-w-7xl mx-auto px-4 mt-4">
+        <CustomWebBanner />
+      </div>
 
-      <GameBannerCarousel />
+      {/* <GameBannerCarousel /> */}
 
       <div className="space-y-1 mt-2">
         <StorySlider />

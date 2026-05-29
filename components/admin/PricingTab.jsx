@@ -217,7 +217,7 @@ export default function PricingTab({
   return (
     <div className="space-y-6 pb-20 max-w-full overflow-x-hidden">
       {/* ================= TOP BAR ================= */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-3xl border border-[var(--border)] bg-[var(--card)] shadow-xl shadow-black/20">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 px-4 py-3.5 rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-xl shadow-black/20">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <h2 className="text-xl font-black uppercase italic tracking-tighter text-white">Pricing <span className="text-[var(--accent)]">Config</span></h2>
@@ -284,7 +284,7 @@ export default function PricingTab({
         {/* ================= LEFT SIDEBAR (GAMES) ================= */}
         {pricingMode === "fixed" && (
           <div className="w-full lg:w-72 flex flex-col gap-4">
-            <div className="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-4">
+            <div className="p-3.5 rounded-xl border border-[var(--border)] bg-[var(--card)] space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="text-xs font-black uppercase tracking-widest text-[var(--muted)]">Games</h3>
                 <Gamepad2 size={14} className="text-[var(--accent)]" />
@@ -363,7 +363,7 @@ export default function PricingTab({
                 exit={{ opacity: 0, y: -10 }}
                 className="space-y-4"
               >
-                <div className="p-6 rounded-3xl border border-[var(--border)] bg-[var(--card)]/40 space-y-6">
+                <div className="p-4 sm:p-5 rounded-2xl border border-[var(--border)] bg-[var(--card)]/40 space-y-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-2xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] shadow-inner">
@@ -473,7 +473,7 @@ export default function PricingTab({
                           initial={{ opacity: 0, scale: 0.98 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: idx * 0.01 }}
-                          className={`p-5 rounded-3xl border transition-all ${
+                          className={`p-4 rounded-2xl border transition-all ${
                             o.isEnabled 
                               ? "border-[var(--accent)]/20 bg-[#1e293b]/40 shadow-xl" 
                               : "border-[var(--border)] bg-[#1e293b]/20 opacity-60"

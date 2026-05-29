@@ -361,7 +361,7 @@ function AuthContent() {
                  <motion.div variants={itemVariants} className={`relative flex justify-center w-full ${loading ? "opacity-50 pointer-events-none" : ""}`}>
                   <div className="w-full max-w-xs transition-transform hover:scale-[1.02] active:scale-[0.98] relative group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[var(--accent)] to-indigo-500 rounded-full blur opacity-20 group-hover:opacity-60 transition duration-500" />
-                    <div className="relative bg-[var(--background)] rounded-full border border-[var(--border)] overflow-hidden shadow-sm">
+                    <div className="relative flex justify-center w-full">
                       <GoogleLogin
                         onSuccess={(res) => res.credential && handleGoogleLogin(res.credential)}
                         onError={() => setError("Connection Failed")}
