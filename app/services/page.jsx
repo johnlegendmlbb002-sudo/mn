@@ -35,6 +35,14 @@ export default function ServicesPage() {
       badge: "API ACCESS",
       active: true,
     },
+    {
+      title: "Build Your Own Web Platform",
+      desc: "Fully customisable • web.bluebuff.in",
+      icon: FiGlobe,
+      badge: "FREE",
+      active: true,
+      href: "https://web.bluebuff.in",
+    },
   ];
 
   return (
@@ -69,7 +77,7 @@ export default function ServicesPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                onClick={() => service.active && window.open(whatsappLink, "_blank")}
+                onClick={() => service.active && window.open(service.href || whatsappLink, "_blank")}
                 className={`group relative p-4 sm:p-5 rounded-2xl bg-[var(--card)]/30 border border-white/5 transition-all duration-300 flex items-center gap-5 ${service.active
                   ? "cursor-pointer hover:border-[var(--accent)]/30 hover:bg-[var(--card)]/50"
                   : "opacity-30 grayscale cursor-not-allowed border-dashed"

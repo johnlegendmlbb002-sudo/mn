@@ -48,13 +48,15 @@ export default function RegionPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8 text-center"
         >
-          <div className="w-12 h-12 bg-[var(--accent)]/5 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-[var(--accent)]/10">
-            <FiSearch className="text-xl text-[var(--accent)]" />
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-[var(--accent)]/5 rounded-2xl flex items-center justify-center border border-[var(--accent)]/10">
+              <FiSearch className="text-xl text-[var(--accent)]" />
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tighter italic text-[var(--foreground)] leading-none">
+              Region <span className="text-[var(--accent)]">Check</span>
+            </h1>
           </div>
-          <h1 className="text-xl sm:text-2xl font-black uppercase tracking-tighter italic text-[var(--foreground)] leading-none">
-            Region <span className="text-[var(--accent)]">Check</span>
-          </h1>
-          <p className="text-[9px] text-[var(--muted)] font-bold uppercase tracking-widest opacity-40 mt-1.5 italic">Check your game region fast.</p>
+          <p className="text-[9px] text-[var(--muted)] font-bold uppercase tracking-widest opacity-40 italic">Check your game region fast.</p>
         </motion.div>
 
         {/* SCANNER CARD */}
@@ -64,7 +66,7 @@ export default function RegionPage() {
           className="bg-[var(--card)]/30 backdrop-blur-xl border border-white/5 rounded-3xl p-4 sm:p-6 shadow-xl relative"
         >
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="space-y-1.5">
                 <label className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)]/50 ml-1">Player ID</label>
                 <input

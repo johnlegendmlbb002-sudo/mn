@@ -13,7 +13,7 @@ import {
   FiExternalLink
 } from "react-icons/fi";
 
-const BRAND = process.env.NEXT_PUBLIC_BRAND_NAME || "Blue Buff";
+const BRAND = process.env.NEXT_PUBLIC_BRAND_NAME || "mlbbtopup.in";
 const TRUSTPILOT_URL = "https://www.trustpilot.com/evaluate/mlbbtopup.in";
 
 const FOOTER_LINKS = [
@@ -61,11 +61,11 @@ export default function Footer() {
           {/* BRAND BLOCK - REFINED SPACE */}
           <div className="md:col-span-4 space-y-6">
             <Link href="/" className="group block">
-              <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter uppercase leading-none bg-gradient-to-r from-[var(--accent)] via-[var(--foreground)] to-[var(--accent)] bg-clip-text text-transparent group-hover:brightness-110 transition-all">
-                {BRAND}
+              <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter lowercase leading-none bg-gradient-to-r from-[var(--accent)] via-[var(--foreground)] to-[var(--accent)] bg-clip-text text-transparent group-hover:brightness-110 transition-all">
+                mlbbtopup.in
               </h2>
-              <p className="mt-3 text-[10px] font-black uppercase tracking-[0.3em] opacity-40 italic leading-relaxed max-w-[260px]">
-                Fast & safe top-ups. Trusted by 10,000+ players.
+              <p className="mt-3 text-[10px] font-black uppercase tracking-[0.2em] opacity-40 italic leading-relaxed max-w-[300px]">
+                India's #1 trusted platform for Mobile Legends top-ups. Instant diamond delivery, secure payments, and 24/7 support.
               </p>
             </Link>
 

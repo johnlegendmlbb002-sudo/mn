@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "mlbb safety tips india",
   ],
   alternates: {
-    canonical: "https://mlbbtopup.in/blog/mlbb",
+    canonical: "/blog/mlbb",
   },
   robots: {
     index: true,

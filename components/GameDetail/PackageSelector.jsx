@@ -86,7 +86,7 @@ export default function PackageSelector({
                     <div className="relative w-6 h-6 transition-all duration-700 group-hover:scale-110 drop-shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
                         <Image
                             src={item?.itemImageId?.image || item?.image || "/logo.png"}
-                            alt=""
+                            alt={`${item.itemName || "Package"} Top Up icon`}
                             fill
                             unoptimized
                             className={`object-contain transition-all duration-500 ${isActive ? "opacity-100 scale-110" : "opacity-40 grayscale-[0.2] group-hover:grayscale-0 group-hover:opacity-100"}`}
@@ -140,7 +140,7 @@ export default function PackageSelector({
                         ${isActive ? "bg-gradient-to-b from-[var(--accent)]/30 to-transparent" : "bg-[var(--accent)]/5"}
                      `}>
                         <div className="relative w-6 h-6">
-                          <Image src={item?.itemImageId?.image || item?.image || "/logo.png"} alt="" fill unoptimized className={`object-contain transition-all duration-500 ${isActive ? "opacity-100 scale-110" : "opacity-30"}`} />
+                          <Image src={item?.itemImageId?.image || item?.image || "/logo.png"} alt={`${item.itemName || "Package"} Top Up icon`} fill unoptimized className={`object-contain transition-all duration-500 ${isActive ? "opacity-100 scale-110" : "opacity-30"}`} />
                         </div>
                      </div>
                     <div className="relative z-10 flex flex-col h-full pr-10 pt-3">

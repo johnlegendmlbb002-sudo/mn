@@ -11,7 +11,7 @@ export default function LeaderboardPage() {
   const [range, setRange] = useState("monthly");
   const [type, setType] = useState("purchase"); // "purchase" | "referral"
 
-  const limit = 15;
+  const limit = 10;
 
   const currentMonthName = new Date().toLocaleString("en-US", { month: "short" });
   const prevMonthDate = new Date();

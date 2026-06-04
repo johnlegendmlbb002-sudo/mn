@@ -36,6 +36,17 @@ html[data-theme="dark"] {
   --card: #000000;
 }
 
+/* ☀️ Light */
+html[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --card: #f8fafc;
+}
+
 /* 💠 Cyber */
 html[data-theme="cyber"] {
   --background: #030712;

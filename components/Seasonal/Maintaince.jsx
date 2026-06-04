@@ -104,7 +104,7 @@ export default function Maintaince() {
                             </div>
 
                             <p className="mt-10 text-[8px] text-white/20 font-medium uppercase tracking-[0.3em]">
-                                © 2026 BLUE BUFF NEXUS
+                                © 2026 MLBBTOPUP.IN
                             </p>
                         </div>
                     </motion.div>

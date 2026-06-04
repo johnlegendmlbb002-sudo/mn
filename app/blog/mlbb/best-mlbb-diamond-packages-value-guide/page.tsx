@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "bluebuff mlbb diamond packages",
     "save money on mlbb diamonds india"
   ],
-  alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/best-mlbb-diamond-packages-value-guide" },
+  alternates: { canonical: "/blog/mlbb/best-mlbb-diamond-packages-value-guide" },
   authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
@@ -47,6 +47,24 @@ export default function BlogPage() {
       image="/blog/best-value.png"
       game="MLBB"
       description="Actual MLBB diamond prices in India with real cost-per-diamond breakdown. Find out which package gives you maximum value for your rupee in 2026."
+      faqItems={[
+        {
+          question: "What is the absolute cheapest pack?",
+          answer: "Technically, the 5-diamond pack is the cheapest, but the Weekly Diamond Pass at roughly ₹140 gives you the most diamonds per rupee spent. It is the 'Best Buy' for 2026."
+        },
+        {
+          question: "Can I buy multiple large bundles?",
+          answer: "Yes. Large bundles are delivered instantly. If you need 10,000 diamonds, we recommend buying two 5,628 packs for the most efficient bulk rate."
+        },
+        {
+          question: "Is the 300 Diamond pack good?",
+          answer: "The 284+ bundle is perfect for activating the Starlight Membership. It's a mid-tier value pack that is very popular during 'First Recharge' of the season events."
+        },
+        {
+          question: "Does bluebuff support Indian Banks?",
+          answer: "Yes. We support all major Indian banks including HDFC, ICICI, SBI, and Axis through our secure UPI and net-banking gateways."
+        }
+      ]}
     >
       <div className="space-y-10">
         {/* Intro Highlight */}

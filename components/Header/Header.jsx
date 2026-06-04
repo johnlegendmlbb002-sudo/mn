@@ -11,7 +11,7 @@ import { FiChevronRight, FiLogOut, FiCheckCircle, FiShield, FiZap, FiMenu, FiX, 
 const HEADER_CONFIG = {
   logo: {
     src: "/logoBB.png",
-    alt: "Blue Buff",
+    alt: "mlbbtopup.in",
     width: 140,
     height: 40,
   },
@@ -362,7 +362,7 @@ export default function Header() {
 
                   <div className="p-3 bg-[var(--foreground)]/[0.02] border-t border-[var(--border)] text-center">
                     <p className="text-[8px] font-black text-[var(--muted)]/40 uppercase tracking-widest italic flex items-center justify-center gap-1.5">
-                      <FiZap size={10} className="text-[var(--accent)]" /> Search Powered by Blue Buff Core
+                      <FiZap size={10} className="text-[var(--accent)]" /> Search Powered by mlbbtopup.in
                     </p>
                   </div>
                 </div>
@@ -383,7 +383,7 @@ export default function Header() {
             >
               <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-[var(--foreground)]/5 group-hover:bg-[var(--foreground)]/10 transition-colors">
                 {user?.avatar ? (
-                  <Image src={user.avatar} alt="Avatar" width={36} height={36} className="object-cover" />
+                  <Image src={user.avatar} alt={`${user.name || "User"} Profile Avatar`} width={36} height={36} className="object-cover" />
                 ) : (
                   <FiUser className="text-[var(--foreground)]/60 text-lg" />
                 )}
@@ -416,7 +416,7 @@ export default function Header() {
                         <>
                           <div className="w-10 h-10 rounded-xl overflow-hidden border border-[var(--border)] shadow-sm shrink-0">
                             {user?.avatar ? (
-                              <Image src={user.avatar} alt="Avatar" width={40} height={40} className="object-cover" />
+                              <Image src={user.avatar} alt={`${user.name || "User"} Profile Avatar`} width={40} height={40} className="object-cover" />
                             ) : (
                               <div className="w-full h-full bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] text-lg font-black">{user.name?.charAt(0)}</div>
                             )}
@@ -510,7 +510,6 @@ export default function Header() {
 
                         {user?.userType === "owner" && (
                           <div className="relative mt-4 group">
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-[var(--accent)] to-purple-600 rounded-[1.5rem] blur opacity-30 group-hover:opacity-60 transition duration-500 group-hover:duration-200"></div>
                             <Link
                               href="/owner-panal"
                               onClick={() => setUserMenuOpen(false)}

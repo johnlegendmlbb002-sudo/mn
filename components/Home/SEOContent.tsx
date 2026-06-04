@@ -22,12 +22,12 @@ export default function SEOContent() {
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--accent)] italic">Market Leader</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter leading-[0.9] text-[var(--foreground)]">
-              Blue Buff – Cheapest <br />
+              mlbbtopup.in – Cheapest <br />
               <span className="text-[var(--accent)] text-shadow-glow">MLBB Recharge</span> <br />
               in India
             </h1>
             <p className="text-sm text-[var(--muted)] leading-relaxed italic max-w-md">
-              Blue Buff stands as the gold standard for <strong className="text-[var(--foreground)]">MLBB top up india instant</strong> services. We specialize in providing the <strong className="text-[var(--foreground)]">cheapest mlbb recharge website</strong> experience, ensuring every diamond is delivered with surgical precision and elite speed.
+              <strong className="text-[var(--foreground)]">mlbbtopup.in</strong> stands as the gold standard for <strong className="text-[var(--foreground)]">MLBB top up india instant</strong> services. We specialize in providing the <strong className="text-[var(--foreground)]">cheapest mlbb recharge website</strong> experience, ensuring every diamond is delivered with surgical precision and elite speed.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
