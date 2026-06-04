@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CheckCircle2, XCircle, Loader2, Clock, ShieldCheck, ArrowRight, HelpCircle } from "lucide-react";
+import confetti from "canvas-confetti";
+import { Check, CheckCircle2, XCircle, Loader2, Clock, ShieldCheck, ArrowRight, HelpCircle } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -67,6 +68,22 @@ export default function PaymentComplete() {
     checkPayment();
   }, []);
 
+  // --- Confetti Effect ---
+  useEffect(() => {
+    if (status === "success") {
+      try {
+        confetti({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.65 },
+          colors: ['#10b981', '#3b82f6', '#ffffff']
+        });
+      } catch (err) {
+        console.error("Confetti error:", err);
+      }
+    }
+  }, [status]);
+
   return (
     <div className="min-h-screen flex items-start justify-center bg-[var(--background)] px-6 pt-16 sm:pt-24 pb-12 relative overflow-hidden">
       {/* Background Gradients */}
@@ -92,15 +109,29 @@ export default function PaymentComplete() {
               {/* ICON AREA */}
               <div className="mb-6">
                 {status === "checking" && (
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-[var(--accent)]/10 rounded-full blur-xl animate-pulse" />
-                    <Loader2 className="w-16 h-16 text-[var(--accent)] animate-spin relative z-10" />
+                  <div className="relative mx-auto mb-4">
+                    <div className="w-20 h-20 rounded-full border-2 border-[var(--accent)]/20 flex items-center justify-center relative">
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-0 rounded-full border-t-2 border-[var(--accent)]"
+                      />
+                      <motion.div
+                        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="w-14 h-14 rounded-full bg-[var(--accent)]/10 flex items-center justify-center"
+                      >
+                        <Loader2 className="w-6 h-6 animate-spin text-[var(--accent)]" />
+                      </motion.div>
+                    </div>
                   </div>
                 )}
 
                 {status === "success" && (
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
-                    <CheckCircle2 className="w-8 h-8 text-emerald-500" />
+                  <div className="w-16 h-16 rounded-[1.25rem] bg-[#10b981] flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.3)] mb-4 mx-auto">
+                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                      <Check className="w-5 h-5 text-[#10b981]" strokeWidth={4} />
+                    </div>
                   </div>
                 )}
 
@@ -134,12 +165,18 @@ export default function PaymentComplete() {
 
               {/* ACTION BUTTONS */}
               <div className="w-full space-y-2 flex flex-col items-center">
-                <Link href="/" className="w-fit">
-                  <button className="w-fit px-10 py-2.5 rounded-xl bg-[var(--accent)] !text-white font-black italic uppercase tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-[var(--accent)]/20 hover:bg-[var(--accent-hover)] transition-all">
-                    <span>Home</span>
-                    <ArrowRight size={14} />
-                  </button>
-                </Link>
+                {status === "checking" ? (
+                  <div className="px-6 py-2.5 rounded-xl border border-amber-500/20 bg-amber-500/10 text-amber-500 font-bold text-[10px] uppercase tracking-wider text-center animate-pulse">
+                    Do not refresh or close screen
+                  </div>
+                ) : (
+                  <Link href="/" className="w-fit">
+                    <button className="px-16 py-2.5 rounded-xl bg-[var(--accent)] !text-white font-black italic uppercase tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-[var(--accent)]/20 hover:bg-[var(--accent-hover)] transition-all">
+                      <span>Home</span>
+                      <ArrowRight size={14} />
+                    </button>
+                  </Link>
+                )}
 
                 {(status === "delayed" || status === "failed") && (
                   <Link href="/support" className="w-fit">
