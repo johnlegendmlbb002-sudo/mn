@@ -37,7 +37,7 @@ const SECTIONS = [
   },
 ];
 
-const WHATSAPP_NUMBER = "919178521537";
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP;
 
 export default function TradeLandingPage() {
   const handleRedirect = (text: string) => {

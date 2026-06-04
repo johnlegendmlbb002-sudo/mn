@@ -22,8 +22,8 @@ import { useUIStore } from "@/store/useUIStore";
 
 /* ================= CONFIG ================= */
 
-const SUPPORT_PHONE = "9178521537";
-const SUPPORT_EMAIL = "tusharkantanayak713@gmail.com";
+const SUPPORT_PHONE = process.env.NEXT_PUBLIC_SUPPORT_PHONE;
+const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL;
 
 const QUICK_REPLIES = [
   { label: "Support", icon: FiLifeBuoy, action: "support" },

@@ -26,7 +26,7 @@ export default function BuyPanel({
 
   const isUnavailable = gameAvailablity === false || activeItem.itemAvailablity === false || activeItem.isOutOfStock === true;
 
-  const supportUrl = `https://wa.me/919178521537?text=Hi, I want to buy ${activeItem.itemName} for ₹${activeItem.sellingPrice}`;
+  const supportUrl = `https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}?text=Hi, I want to buy ${activeItem.itemName} for ₹${activeItem.sellingPrice}`;
 
   return (
     <div

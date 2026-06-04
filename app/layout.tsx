@@ -322,7 +322,7 @@ export default async function RootLayout({
               "logo": "https://mlbbtopup.in/logoBB.png",
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+91-9178521537",
+                "telephone": `+91-${process.env.NEXT_PUBLIC_SUPPORT_PHONE}`,
                 "contactType": "customer service",
                 "areaServed": "IN",
                 "availableLanguage": "en"

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { BLOGS_DATA } from "@/lib/blogData";
+import idsOnSellData from "@/data/idsOnSell";
 
 export const revalidate = 3600; // Revalidate every hour
 

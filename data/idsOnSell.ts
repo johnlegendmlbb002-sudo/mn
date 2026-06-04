@@ -1,4 +1,4 @@
-[
+const idsOnSellData = [
   {
     "id": "MLBB-1001",
     "slug": "mlbb-mega-collector-1001",
@@ -106,7 +106,7 @@
     "dealer": {
       "owner": "TK",
       "contact": {
-        "whatsapp": "https://wa.me/9178521537",
+        "whatsapp": `https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}`,
         "telegram": null,
         "instagram": null
       }
@@ -114,7 +114,7 @@
     "resellers": [
       {
         "name": "ResellerOne",
-        "contact": "https://wa.me/9178521537"
+        "contact": `https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}`
       }
     ],
     "media": {
@@ -151,4 +151,6 @@
     },
     "description": "High value MLBB account with rare collector skins, global hero titles, and premium inventory."
   }
-]
+];
+
+export default idsOnSellData;

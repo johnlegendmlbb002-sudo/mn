@@ -40,13 +40,15 @@ export default function ContactPage() {
                 </div>
                 <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)] opacity-60">Direct Email</h2>
               </div>
-              <a
-                href="mailto:aamonvss@gmail.com"
-                className="inline-flex items-center gap-2 text-xl md:text-2xl font-[900] italic uppercase tracking-tighter text-[var(--foreground)] hover:text-[var(--accent)] transition-colors break-all"
-              >
-                aamonvss@gmail.com
-                <FiArrowRight />
-              </a>
+              <div className="flex items-center gap-3">
+                <FaEnvelope className="text-xl text-[#0ea5e9]" />
+                <a
+                  href={`mailto:${process.env.NEXT_PUBLIC_SUPPORT_EMAIL}`}
+                  className="inline-flex items-center gap-2 text-xl md:text-2xl font-[900] italic uppercase tracking-tighter text-[var(--foreground)] hover:text-[#38bdf8] transition-colors break-all"
+                >
+                  {process.env.NEXT_PUBLIC_SUPPORT_EMAIL}
+                </a>
+              </div>
             </motion.div>
 
             {/* Social Bar */}

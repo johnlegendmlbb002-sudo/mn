@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import ids from "../../../data/idsOnSell.json";
+import ids from "@/data/idsOnSell";
 import ShareButton from "./ShareButton";
 
 type PageProps = {

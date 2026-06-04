@@ -551,9 +551,9 @@ export default function Header() {
 
                   {/* Drawer Footer */}
                   <div className="relative z-10 p-4 border-t border-[var(--border)] bg-[var(--foreground)]/[0.02]">
-                    <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[var(--muted)]/40 text-center italic">
-                      Crafted with love ❤️ by <a href="https://wa.me/919178521537?text=hello big fan big fan" target="_blank" rel="noopener noreferrer" className="text-violet-500 hover:text-violet-400 transition-colors">Tk</a>
-                    </p>
+                    <div className="mt-8 text-center text-[10px] text-[var(--muted)]/40 font-mono tracking-widest">
+                      Crafted with love ❤️ by <a href={`https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}?text=hello big fan big fan`} target="_blank" rel="noopener noreferrer" className="text-violet-500 hover:text-violet-400 transition-colors">Tk</a>
+                    </div>
                   </div>
                 </div>
               </>

@@ -20,7 +20,7 @@ const SUPPORT_CONFIG = {
   contacts: {
     title: "Contact Us",
     items: [
-      { id: "phone", title: "Phone", value: "+91 9178521537", href: "tel:+919178521537", icon: <FaPhoneAlt /> },
+      { id: "phone", title: "Phone", value: `+91 ${process.env.NEXT_PUBLIC_SUPPORT_PHONE}`, href: `tel:+91${process.env.NEXT_PUBLIC_SUPPORT_PHONE}`, icon: <FaPhoneAlt /> },
       { id: "instagram", title: "Instagram", value: "@mlbbtopup.in", href: "https://www.instagram.com/mlbbtopup.in", icon: <FaInstagram /> },
       { id: "youtube", title: "YouTube", value: "Subscribe", href: "https://whatsapp.com/channel/0029Vb87jgR17En1n5PKy129", icon: <FaYoutube /> },
       { id: "whatsapp", title: "WhatsApp", value: "Chat now", href: "https://whatsapp.com/channel/0029Vb87jgR17En1n5PKy129", icon: <FaWhatsapp /> },

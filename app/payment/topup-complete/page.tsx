@@ -371,7 +371,7 @@ export default function TopupComplete() {
                 {/* Actions */}
                 <div className="w-full space-y-2">
                   <a
-                    href={`https://wa.me/919178521537?text=Hi, my order ${orderId} is pending. Please check.`}
+                    href={`https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}?text=Hi, my order ${orderId} is pending. Please check.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-fit px-10 mx-auto rounded-xl bg-[#128C7E] py-2.5 font-black italic uppercase tracking-wide !text-white flex items-center justify-center gap-2 shadow-lg shadow-green-900/20"

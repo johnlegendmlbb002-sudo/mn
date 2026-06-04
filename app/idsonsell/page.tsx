@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ids from "../../data/idsOnSell.json";
+import ids from "@/data/idsOnSell";
 import IdCard from "@/components/IdsOnSell/IdCard";
 import { FiFilter, FiX } from "react-icons/fi";
 import IdsFilterModal from "@/components/IdsOnSell/IdsFilterModal";
