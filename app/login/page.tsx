@@ -360,7 +360,6 @@ function AuthContent() {
                 {/* GOOGLE SECTION (Always Available) */}
                  <motion.div variants={itemVariants} className={`relative flex justify-center w-full ${loading ? "opacity-50 pointer-events-none" : ""}`}>
                   <div className="w-full max-w-xs transition-transform hover:scale-[1.02] active:scale-[0.98] relative group">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-[var(--accent)] to-indigo-500 rounded-full blur opacity-20 group-hover:opacity-60 transition duration-500" />
                     <div className="relative flex justify-center w-full">
                       <GoogleLogin
                         onSuccess={(res) => res.credential && handleGoogleLogin(res.credential)}
@@ -375,33 +374,7 @@ function AuthContent() {
                   </div>
                 </motion.div>
 
-                {/* TRUST FOOTER */}
-                <motion.div variants={itemVariants} className="pt-4 space-y-4">
-                  <div className="grid grid-cols-3 gap-3">
-                    <Feature icon={FiShield} label="Encrypted" />
-                    <Feature icon={FiZap} label="Instant" />
-                    <Feature icon={FiActivity} label="Monitoring" />
-                  </div>
 
-                  <div className="text-center space-y-2">
-                    <p className="text-[9px] font-bold text-[var(--muted)]/50 uppercase tracking-widest leading-relaxed">
-                      By continuing you agree to our <a href="/terms" className="text-[var(--accent)] hover:underline">Terms</a>
-                    </p>
-                    <div className="flex flex-col items-center gap-2">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--foreground)]/[0.02] border border-[var(--border)]/50">
-                        <FiLock size={10} className="text-emerald-500" />
-                        <span className="text-[8px] font-black uppercase tracking-widest text-[var(--muted)]/70">Your data is safe with us</span>
-                      </div>
-                      <a
-                        href="tel:+919178521537"
-                        className="text-[10px] font-black text-[var(--accent)] uppercase tracking-widest hover:brightness-125 transition-all"
-                      >
-                        Support: +91 9178521537
-                      </a>
-                      <p className="text-[7px] text-[var(--muted)]/30 uppercase tracking-[0.2em]">Need help? Call us anytime</p>
-                    </div>
-                  </div>
-                </motion.div>
 
               </motion.div>
             )}
@@ -417,16 +390,5 @@ export default function AuthPage() {
     <Suspense fallback={null}>
       <AuthContent />
     </Suspense>
-  );
-}
-
-function Feature({ icon: Icon, label }: { icon: any, label: string }) {
-  return (
-    <div className="group flex flex-col items-center gap-2 p-3 rounded-2xl bg-[var(--foreground)]/[0.02] border border-[var(--border)] hover:bg-[var(--accent)]/5 hover:border-[var(--accent)]/20 transition-all duration-300">
-      <div className="w-7 h-7 rounded-lg bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--accent)] group-hover:scale-110 transition-all">
-        <Icon size={14} />
-      </div>
-      <span className="text-[7px] font-black uppercase tracking-widest text-[var(--muted)]/80 group-hover:text-[var(--foreground)] transition-colors">{label}</span>
-    </div>
   );
 }

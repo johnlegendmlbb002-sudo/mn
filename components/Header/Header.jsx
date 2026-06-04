@@ -290,7 +290,7 @@ export default function Header() {
               <div className="relative w-full">
                 <input
                   type="text"
-                  placeholder="Search games..."
+                  placeholder="Search available games..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   onFocus={handleSearchFocus}
@@ -314,7 +314,7 @@ export default function Header() {
                   className="absolute top-full left-0 w-full mt-2 bg-[var(--background)] border border-[var(--border)] rounded-2xl shadow-2xl overflow-hidden z-[1100] backdrop-blur-3xl opacity-100 translate-y-0"
                 >
                   <div className="p-2 border-b border-[var(--border)] bg-[var(--foreground)]/[0.02]">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)]/60 px-2 italic">Global Game Library</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)]/60 px-2 italic">Available Game Library</span>
                   </div>
 
                   <div className="max-h-[60vh] overflow-y-auto custom-scrollbar">
@@ -579,7 +579,7 @@ export default function Header() {
             <input
               autoFocus
               type="text"
-              placeholder="Search premium games..."
+              placeholder="Search available games..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onFocus={fetchSearchData}
@@ -619,7 +619,7 @@ export default function Header() {
             ) : searchTerm ? (
               <div className="py-10 text-center text-[var(--muted)]/40 text-[10px] font-black uppercase tracking-widest">No matching games found</div>
             ) : (
-              <div className="py-6 text-center text-[var(--muted)]/30 text-[9px] font-black uppercase tracking-widest italic italic">Type to search global games</div>
+              <div className="py-6 text-center text-[var(--muted)]/30 text-[9px] font-black uppercase tracking-widest italic italic">Type to search available games</div>
             )}
           </div>
         </div>

@@ -2,8 +2,10 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import confetti from "canvas-confetti";
 import {
   FaCheckCircle,
+  FaCheck,
   FaSpinner,
   FaExclamationTriangle,
   FaHome,
@@ -138,6 +140,22 @@ export default function TopupComplete() {
     };
   }, [orderId, pollInterval, fetchOrderDetails]);
 
+  // --- Confetti Effect ---
+  useEffect(() => {
+    if (status === "success") {
+      try {
+        confetti({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.65 },
+          colors: ['#10b981', '#3b82f6', '#ffffff']
+        });
+      } catch (err) {
+        console.error("Confetti effect failed:", err);
+      }
+    }
+  }, [status]);
+
   // --- Variants ---
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -237,12 +255,14 @@ export default function TopupComplete() {
                     initial={{ scale: 0, rotate: -45 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.2 }}
-                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-green-500/20 mb-3"
+                    className="w-16 h-16 rounded-[1.25rem] bg-[#10b981] flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.3)] mb-4"
                   >
-                    <FaCheckCircle className="text-3xl text-white" />
+                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                      <FaCheck className="text-[#10b981] text-lg ml-0.5" />
+                    </div>
                   </motion.div>
                   <h1 className="text-2xl font-black italic uppercase tracking-tighter text-emerald-500 mb-1">
-                    TOP-UP DONE!
+                    RECHARGE SUCCESSFUL
                   </h1>
                   <p className="text-[var(--muted)] text-xs">
                     Your order is complete. Diamonds have been sent!
@@ -373,23 +393,7 @@ export default function TopupComplete() {
           </AnimatePresence>
 
 
-          {/* Bottom Footer Info */}
-          <div
-            className="mt-6 flex justify-center items-center gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--muted)]"
-          >
-            <div className="flex items-center gap-1.5 focus:outline-none cursor-pointer hover:text-[var(--accent)] transition-colors"
-              onClick={() => {
-                if (orderId) navigator.clipboard.writeText(orderId);
-              }}>
-              <FaRegClipboard className="text-xs" />
-              Copy Order ID
-            </div>
-            <div className="w-1.5 h-1.5 rounded-full bg-[var(--border)]" />
-            <div className="flex items-center gap-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              Safe & Secure
-            </div>
-          </div>
+
         </div>
       </motion.div>
     </div>
