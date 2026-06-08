@@ -12,6 +12,7 @@ import {
 } from "react-icons/fi";
 import OrderItem, { OrderType } from "./OrderItem";
 import { OrderSkeleton } from "../Skeleton/Skeleton";
+import api from "@/lib/axios";
 
 export default function OrdersTab() {
   const [orders, setOrders] = useState<OrderType[]>([]);
@@ -33,15 +34,8 @@ export default function OrdersTab() {
     if (!token) return;
 
     setLoading(true);
-    fetch("/api/order/user", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ page, limit, search }),
-    })
-      .then((res) => res.json())
+    api.post("/api/order/user", { page, limit, search })
+      .then((res) => res.data)
       .then((data) => {
         if (!data.success) return;
 

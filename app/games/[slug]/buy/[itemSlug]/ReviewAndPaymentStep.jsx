@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import QRCode from "qrcode";
 import { FiCreditCard, FiSmartphone, FiUser, FiInfo, FiCheck, FiShield, FiArrowRight } from "react-icons/fi";
+import api from "@/lib/axios";
 
 export default function ReviewAndPaymentStep({
   game,
@@ -66,17 +67,7 @@ export default function ReviewAndPaymentStep({
         currency: "INR",
       };
 
-      const token = localStorage.getItem("token");
-
-      const res = await fetch("/api/order/create-gateway-order", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(orderPayload),
-      });
-
-      const data = await res.json();
+      const { data } = await api.post("/api/order/create-gateway-order", orderPayload);
 
       if (!data.success) {
         alert("Order failed: " + data.message);

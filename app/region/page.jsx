@@ -6,6 +6,7 @@ import { Loader2, User, MapPin, CheckCircle, XCircle } from "lucide-react";
 import { saveVerifiedPlayer } from "@/utils/storage/verifiedPlayerStorage";
 import RecentVerifiedPlayers from "./RecentVerifiedPlayers";
 import { FiTarget, FiBox, FiUser, FiCheckCircle, FiSearch } from "react-icons/fi";
+import api from "@/lib/axios";
 import { formatRegion } from "@/utils/regionFormatter";
 
 export default function RegionPage() {
@@ -18,12 +19,7 @@ export default function RegionPage() {
     if (!id || !zone) return;
     setLoading(true);
     try {
-      const res = await fetch("/api/check-region", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, zone }),
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/check-region", { id, zone });
       setResult(data);
       if (data?.success === 200 && data?.data?.valid !== false) {
         saveVerifiedPlayer({

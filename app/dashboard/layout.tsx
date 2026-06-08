@@ -7,6 +7,7 @@ import { FiZap, FiInbox, FiHelpCircle, FiZap as FiZapIcon, FiUser, FiCreditCard,
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import DashboardCard from "../../components/Dashboard/DashboardCard";
+import api from "@/lib/axios";
 
 interface UserContextType {
     userDetails: {
@@ -56,10 +57,8 @@ export default function DashboardLayout({
         if (!token) return;
 
         const refreshData = () => {
-            fetch("/api/auth/me", {
-                headers: { Authorization: `Bearer ${token}` },
-            })
-                .then((res) => res.json())
+            api.get("/api/auth/me")
+                .then((res) => res.data)
                 .then((data) => {
                     if (!data.success) return;
                     setUserDetails({

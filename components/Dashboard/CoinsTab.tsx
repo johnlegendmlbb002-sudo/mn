@@ -20,6 +20,7 @@ import CustomBanner2 from "@/components/Ads/CustomBanner2";
 import { TaskSkeleton, TransactionSkeleton } from "../Skeleton/Skeleton";
 import { ADS_CONFIG } from "@/lib/adsConfig";
 import confetti from "canvas-confetti";
+import api from "@/lib/axios";
 
 
 // ──────────────────────────────────────────── TYPES ──────────────────────────
@@ -115,19 +116,9 @@ function AdsterraCard({ lastAdReward, adId, adLink, title, onReward, showToast, 
   }, [timer]);
 
   const handleClaim = async () => {
-    const token = localStorage.getItem("token");
-    if (!token) return;
     setClaiming(true);
     try {
-      const res = await fetch("/api/coins/ad-reward", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ adId })
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/coins/ad-reward", { adId });
       if (data.success) {
         confetti({
           particleCount: 100,
@@ -376,19 +367,15 @@ export default function CoinsTab() {
   };
 
   const fetchData = useCallback(async () => {
-    const token = localStorage.getItem("token");
-    if (!token) return;
-
     try {
-      const authHeader = { Authorization: `Bearer ${token}` };
-
       // Fire both requests simultaneously
       const [balRes, taskRes] = await Promise.all([
-        fetch(`/api/coins/balance?historyPage=${historyPage}`, { headers: authHeader }),
-        fetch(`/api/coins/tasks?page=${tasksPage}`, { headers: authHeader }),
+        api.get(`/api/coins/balance?historyPage=${historyPage}`),
+        api.get(`/api/coins/tasks?page=${tasksPage}`),
       ]);
 
-      const [bal, tData] = await Promise.all([balRes.json(), taskRes.json()]);
+      const bal = balRes.data;
+      const tData = taskRes.data;
 
       // Balance & History
       if (bal.success) {
@@ -429,12 +416,7 @@ export default function CoinsTab() {
 
     setCheckinLoading(true);
     try {
-      const token = localStorage.getItem("token");
-      const res = await fetch("/api/coins/checkin", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/coins/checkin");
       if (data.success) {
         confetti({
           particleCount: 150,
@@ -459,16 +441,7 @@ export default function CoinsTab() {
 
   const handleClaimTask = async (taskId: string) => {
     try {
-      const token = localStorage.getItem("token");
-      const res = await fetch("/api/coins/claim", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ taskId })
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/coins/claim", { taskId });
       if (data.success) {
         showToast(data.message, "success");
         setPendingClaims(prev => new Set([...prev, taskId]));
@@ -486,16 +459,7 @@ export default function CoinsTab() {
     if (!convertCoins || isNaN(parseInt(convertCoins))) return;
     setConverting(true);
     try {
-      const token = localStorage.getItem("token");
-      const res = await fetch("/api/coins/convert", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ amount: parseInt(convertCoins) })
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/coins/convert", { amount: parseInt(convertCoins) });
       if (data.success) {
         showToast(data.message, "success");
         updateCoins(data.newCoins);

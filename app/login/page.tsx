@@ -15,7 +15,7 @@ import {
   FiShieldOff
 } from "react-icons/fi";
 import { useSearchParams } from "next/navigation";
-
+import api from "@/lib/axios";
 import { Suspense, useRef } from "react";
 
 
@@ -69,12 +69,7 @@ function AuthContent() {
     setError("");
     setSuccess("");
     try {
-      const res = await fetch("/api/auth/google", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token: credential }),
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/auth/google", { token: credential });
       if (!data.success) {
         setError(data.message || "Login failed. Please try again.");
         setLoading(false);
@@ -96,12 +91,7 @@ function AuthContent() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/auth/otp/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/auth/otp/send", { email });
       if (data.success) {
         setSuccess("Check your Gmail for the code");
         setShowOtpField(true);
@@ -119,12 +109,7 @@ function AuthContent() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/auth/otp/verify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, otp: otp.join("") }),
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/auth/otp/verify", { email, otp: otp.join("") });
       if (data.success) {
         saveSession(data);
       } else {

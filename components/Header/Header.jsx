@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import CustomWebBanner from "../Home/CustomWebBanner";
+import api from "@/lib/axios";
 import { FiChevronRight, FiLogOut, FiCheckCircle, FiShield, FiZap, FiMenu, FiX, FiLayers, FiCompass, FiGrid, FiShoppingBag, FiMessageSquare, FiUser, FiUsers, FiKey, FiGift, FiSearch, FiAward } from "react-icons/fi";
 
 /* ================= CONFIG ================= */
@@ -79,10 +80,8 @@ export default function Header() {
     const savedBalance = localStorage.getItem("walletBalance");
     if (savedBalance) setWalletBalance(Number(savedBalance));
 
-    fetch("/api/auth/me", {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((r) => r.json())
+    api.get("/api/auth/me")
+      .then((r) => r.data)
       .then((d) => {
         if (d.success) {
           setUser(d.user);
@@ -126,8 +125,7 @@ export default function Header() {
     if (allGames.length > 0) return; // Already fetched
 
     try {
-      const res = await fetch("/api/games");
-      const data = await res.json();
+      const { data } = await api.get("/api/games");
       if (data.success && data.data?.games) {
         setAllGames(data.data.games);
       }

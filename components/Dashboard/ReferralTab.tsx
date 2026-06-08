@@ -13,6 +13,7 @@ import {
     FiZap
 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import api from "@/lib/axios";
 
 interface ReferralTabProps {
     userReferral?: {
@@ -46,16 +47,7 @@ export default function ReferralTab({
         setReferralSuccess(false);
 
         try {
-            const token = localStorage.getItem("token");
-            const res = await fetch("/api/wallet/redeem-referral", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify({ referralCode: referralCodeInput }),
-            });
-            const data = await res.json();
+            const { data } = await api.post("/api/wallet/redeem-referral", { referralCode: referralCodeInput });
             if (data.success) {
                 setReferralSuccess(true);
                 setReferralMessage(data.message);
@@ -78,11 +70,7 @@ export default function ReferralTab({
     const fetchReferrals = async () => {
         try {
             setLoadingList(true);
-            const token = localStorage.getItem("token");
-            const res = await fetch(`/api/wallet/referrals?page=${page}&limit=5`, {
-                headers: { Authorization: `Bearer ${token}` },
-            });
-            const data = await res.json();
+            const { data } = await api.get(`/api/wallet/referrals?page=${page}&limit=5`);
             if (data.success) {
                 setReferrals(data.data);
                 setTotalPages(data.pagination.totalPages);

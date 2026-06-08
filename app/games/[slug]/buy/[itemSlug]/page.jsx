@@ -13,6 +13,7 @@ import HelpImagePopup from "../../../../../components/HelpImage/HelpImagePopup";
 import RecentVerifiedPlayers from "../../../../region/RecentVerifiedPlayers";
 import { saveVerifiedPlayer } from "@/utils/storage/verifiedPlayerStorage";
 import { BuyFlowSkeleton } from "@/components/Skeleton/BuyFlowSkeleton";
+import api from "@/lib/axios";
 
 function BuyFlowContent() {
   const { slug, itemSlug } = useParams();
@@ -58,14 +59,8 @@ function BuyFlowContent() {
     if (!slug || !itemSlug) return;
 
     setIsFetching(true);
-    const token = localStorage.getItem("token");
-
-    fetch(`/api/games/${slug}`, {
-      headers: {
-        ...(token && { Authorization: `Bearer ${token}` }),
-      },
-    })
-      .then((res) => res.json())
+    api.get(`/api/games/${slug}`)
+      .then((res) => res.data)
       .then((data) => {
         const gameData = data?.data;
         if (!gameData) {
@@ -147,16 +142,11 @@ function BuyFlowContent() {
       const baseGameId = game?.gameId || slug;
       const productId = `${baseGameId}_${item?.itemId || itemSlug}`;
 
-      const nameRes = await fetch("/api/check-region/namecheck", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          productId,
-          playerId,
-          zoneId: zoneId || "NA",
-        }),
+      const { data: nameData } = await api.post("/api/check-region/namecheck", {
+        productId,
+        playerId,
+        zoneId: zoneId || "NA",
       });
-      const nameData = await nameRes.json();
 
       if (
         (nameData?.success === 200 || nameData?.success === true) &&
@@ -204,7 +194,6 @@ function BuyFlowContent() {
     setIsProcessing(true);
 
     try {
-      const token = localStorage.getItem("token");
       const orderPayload = {
         gameSlug: slug,
         itemSlug,
@@ -218,16 +207,7 @@ function BuyFlowContent() {
         currency: "INR",
       };
 
-      const res = await fetch("/api/order/create-gateway-order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(orderPayload),
-      });
-
-      const data = await res.json();
+      const { data } = await api.post("/api/order/create-gateway-order", orderPayload);
 
       if (!data.success) {
         setError(data.message || "Order creation failed.");

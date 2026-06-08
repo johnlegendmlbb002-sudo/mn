@@ -6,6 +6,7 @@ import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Loader from "@/components/Loader/Loader";
 import { GameSlugSkeleton } from "@/components/Skeleton/Skeleton";
 import MLBBPurchaseGuide from "@/components/HelpImage/MLBBPurchaseGuide";
+import api from "@/lib/axios";
 
 import GameSwitcher from "@/components/GameDetail/GameSwitcher";
 
@@ -52,16 +53,11 @@ function GameDetailContent() {
 
   /* ================= FETCH GAME ================= */
   useEffect(() => {
-    const token = localStorage.getItem("token");
     setLoading(true);
     setError(null);
 
-    fetch(`/api/games/${slug}`, {
-      headers: {
-        ...(token && { Authorization: `Bearer ${token}` }),
-      },
-    })
-      .then((res) => res.json())
+    api.get(`/api/games/${slug}`)
+      .then((res) => res.data)
       .then((data) => {
         if (!data.data || !data.data.itemId || data.data.itemId.length === 0) {
           setError("No data found for this game");
