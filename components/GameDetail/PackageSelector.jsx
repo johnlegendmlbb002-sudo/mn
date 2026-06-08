@@ -24,7 +24,7 @@ export default function PackageSelector({
           </h2>
           <p className="text-[8px] font-black uppercase tracking-widest text-[var(--muted)]/40 flex items-center gap-2">
             <span className="w-3 h-[1px] bg-[var(--accent)]/30 rounded-full" />
-            {items.length} Premium Options
+            {items.length} Packs
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function PackageSelector({
                     setActiveItem(item);
                     buyPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
                   }}
-                  className={`relative group rounded-[1.25rem] p-4 cursor-pointer border-2 transition-all duration-500 flex flex-col justify-between min-h-[7rem] bg-[var(--card)]/60 backdrop-blur-sm
+                  className={`relative group rounded-[1.25rem] p-3 cursor-pointer border-2 transition-all duration-500 flex flex-col justify-between min-h-[5.5rem] bg-[var(--card)]/60 backdrop-blur-sm
                   ${isActive
                       ? "border-[var(--accent)] shadow-lg scale-[1.02] z-10"
                       : "border-[var(--border)] hover:border-[var(--accent)]/40 hover:shadow-md"
@@ -77,13 +77,13 @@ export default function PackageSelector({
                   )}
 
                   {/* RIBBON (TOP RIGHT) */}
-                  <div className={`absolute top-0 right-4 w-11 h-16 transition-all duration-700 ribbon-shape flex items-center justify-center pt-1 shadow-sm
+                  <div className={`absolute top-0 right-3 w-9 h-14 transition-all duration-700 ribbon-shape flex items-center justify-center pt-1 shadow-sm
                     ${isActive 
                         ? "bg-gradient-to-b from-[var(--accent)]/30 to-[var(--accent)]/10" 
                         : "bg-gradient-to-b from-[var(--accent)]/[0.08] to-transparent -translate-y-1 group-hover:translate-y-0"
                     }
                   `}>
-                    <div className="relative w-6 h-6 transition-all duration-700 group-hover:scale-110 drop-shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
+                    <div className="relative w-5 h-5 transition-all duration-700 group-hover:scale-110 drop-shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
                         <Image
                             src={item?.itemImageId?.image || item?.image || "/logo.png"}
                             alt={`${item.itemName || "Package"} Top Up icon`}
@@ -95,8 +95,8 @@ export default function PackageSelector({
                   </div>
 
                   {/* CONTENT */}
-                  <div className="relative z-10 flex flex-col h-full pr-12 pt-3">
-                    <p className={`text-[10px] font-[1000] tracking-tighter uppercase italic leading-[1.1] mb-2 ${isActive ? "text-[var(--foreground)]" : "text-[var(--muted)] group-hover:text-[var(--foreground)]"}`}>
+                  <div className="relative z-10 flex flex-col h-full pr-10 pt-1">
+                    <p className={`text-[10px] font-[1000] tracking-tighter uppercase italic leading-[1.1] mb-1.5 ${isActive ? "text-[var(--foreground)]" : "text-[var(--muted)] group-hover:text-[var(--foreground)]"}`}>
                       {item.itemName}
                     </p>
 
