@@ -34,7 +34,6 @@ export default function RedeemTab({ setWalletBalance }: RedeemTabProps) {
                 setStatus({ type: 'success', message: data.message });
                 setCode("");
                 setWalletBalance(data.newBalance);
-                window.dispatchEvent(new Event("walletUpdated"));
             } else {
                 setStatus({ type: 'error', message: data.message });
             }

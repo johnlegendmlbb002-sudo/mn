@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useAuthStore } from '@/store/useAuthStore';
 
 // Create a centralized Axios instance
 const api = axios.create({
@@ -16,7 +17,7 @@ api.interceptors.request.use(
   (config) => {
     // We only have access to localStorage on the client-side
     if (typeof window !== 'undefined') {
-      const token = localStorage.getItem('token');
+      const token = useAuthStore.getState().token || localStorage.getItem('token');
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
@@ -47,10 +48,8 @@ api.interceptors.response.use(
         console.warn('Unauthorized access. Clearing session.');
         if (typeof window !== 'undefined') {
           // Clean up auth state on client side if token expires
+          useAuthStore.getState().logout();
           localStorage.removeItem('token');
-          localStorage.removeItem('userName');
-          localStorage.removeItem('userId');
-          localStorage.removeItem('userType');
           // Optional: redirect to login
           // window.location.href = '/login';
         }

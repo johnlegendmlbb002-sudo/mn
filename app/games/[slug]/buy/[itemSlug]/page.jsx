@@ -14,6 +14,7 @@ import RecentVerifiedPlayers from "../../../../region/RecentVerifiedPlayers";
 import { saveVerifiedPlayer } from "@/utils/storage/verifiedPlayerStorage";
 import { BuyFlowSkeleton } from "@/components/Skeleton/BuyFlowSkeleton";
 import api from "@/lib/axios";
+import { useAuthStore } from "@/store/useAuthStore";
 
 function BuyFlowContent() {
   const { slug, itemSlug } = useParams();
@@ -34,7 +35,7 @@ function BuyFlowContent() {
 
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
-  const [walletBalance, setWalletBalance] = useState(0);
+  const { walletBalance, setWalletBalance } = useAuthStore();
 
   /* ================= GAME & ITEMS STATE ================= */
   const [game, setGame] = useState(null);
@@ -51,7 +52,6 @@ function BuyFlowContent() {
     window.scrollTo(0, 0);
     setUserEmail(localStorage.getItem("email") || "");
     setUserPhone(localStorage.getItem("phone") || "");
-    setWalletBalance(Number(localStorage.getItem("walletBalance") || 0));
   }, []);
 
   /* ================= FETCH GAME & ITEMS ================= */
@@ -216,8 +216,7 @@ function BuyFlowContent() {
       }
 
       if (data.walletPayment) {
-        localStorage.setItem("walletBalance", String(data.newWalletBalance));
-        window.dispatchEvent(new Event("walletUpdated"));
+        setWalletBalance(data.newWalletBalance);
         localStorage.setItem("pending_topup_order", data.orderId);
         window.location.href = `/payment/topup-complete?orderId=${data.orderId}&wallet=true`;
         return;

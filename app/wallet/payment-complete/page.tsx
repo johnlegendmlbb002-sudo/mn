@@ -5,6 +5,7 @@ import confetti from "canvas-confetti";
 import { Check, CheckCircle2, XCircle, Loader2, Clock, ShieldCheck, ArrowRight, HelpCircle } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAuthStore } from "@/store/useAuthStore";
 
 export default function PaymentComplete() {
   const [status, setStatus] = useState("checking"); // checking | success | failed | delayed
@@ -47,11 +48,9 @@ export default function PaymentComplete() {
           setStatus("success");
           setMessage("Payment successful");
 
-          const oldBal = Number(localStorage.getItem("walletBalance") || "0");
+          const oldBal = useAuthStore.getState().walletBalance;
           const newBal = oldBal + Number(data.amount || 0);
-          localStorage.setItem("walletBalance", String(newBal));
-
-          window.dispatchEvent(new Event("walletUpdated"));
+          useAuthStore.getState().setWalletBalance(newBal);
           localStorage.removeItem("pending_order");
         } else {
           // Retry

@@ -9,6 +9,7 @@ import AuthGuard from "@/components/AuthGuard";
 import ValidationStep from "./ValidationStep";
 import ReviewAndPaymentStep from "./ReviewAndPaymentStep";
 import { saveVerifiedPlayer } from "@/utils/storage/verifiedPlayerStorage";
+import { useAuthStore } from "@/store/useAuthStore";
 
 function BuyFlowContent() {
   const { slug, itemSlug } = useParams();
@@ -22,14 +23,13 @@ function BuyFlowContent() {
 
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
-  const [walletBalance, setWalletBalance] = useState(0);
+  const { walletBalance, setWalletBalance } = useAuthStore();
 
   /* ================= LOAD USER DATA ================= */
   useEffect(() => {
     window.scrollTo(0, 0);
     setUserEmail(localStorage.getItem("email") || "");
     setUserPhone(localStorage.getItem("phone") || "");
-    setWalletBalance(Number(localStorage.getItem("walletBalance") || 0));
   }, []);
 
   /* ================= ITEM DATA ================= */

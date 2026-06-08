@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import QRCode from "qrcode";
-import { FiCreditCard, FiSmartphone, FiUser, FiInfo, FiCheck, FiShield } from "react-icons/fi";
+import { FiCreditCard, FiSmartphone, FiUser, FiInfo, FiCheck, FiShield, FiArrowRight } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { useAuthStore } from "@/store/useAuthStore";
+import api from "@/lib/axios";
 
 export default function ReviewAndPaymentStep({
   step,
@@ -83,8 +85,7 @@ export default function ReviewAndPaymentStep({
       // Handle wallet payment
       if (data.walletPayment) {
         // Update local wallet balance
-        localStorage.setItem("walletBalance", String(data.newWalletBalance));
-        window.dispatchEvent(new Event("walletUpdated"));
+        useAuthStore.getState().setWalletBalance(data.newWalletBalance);
 
         // Store order for tracking
         localStorage.setItem("pending_topup_order", data.orderId);

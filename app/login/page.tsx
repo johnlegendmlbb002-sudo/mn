@@ -17,6 +17,7 @@ import {
 import { useSearchParams } from "next/navigation";
 import api from "@/lib/axios";
 import { Suspense, useRef } from "react";
+import { useAuthStore } from "@/store/useAuthStore";
 
 
 
@@ -122,13 +123,7 @@ function AuthContent() {
   };
 
   const saveSession = (data: any) => {
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("userName", data.user.name);
-    localStorage.setItem("email", data.user.email);
-    localStorage.setItem("userId", data.user.userId);
-    localStorage.setItem("userType", data.user.userType);
-    localStorage.setItem("phone", data.user.phone || "");
-    localStorage.setItem("avatar", data.user.avatar || "");
+    useAuthStore.getState().login(data.token, data.user);
     setUserName(data.user.name);
     setSuccess("done");
     setTimeout(() => window.location.replace(redirectPath), 1500);

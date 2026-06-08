@@ -257,7 +257,7 @@ export default function WalletTab({
         if (data.success && data.deposit?.status === "confirmed") {
           clearInterval(pollRef.current!);
           setUsdtStep("confirmed");
-          window.dispatchEvent(new Event("walletUpdated"));
+          setWalletBalance(walletBalance + Number(data.deposit.coinsToCredit));
         }
       } catch { /* silent */ }
     }, 15000); // poll every 15 seconds

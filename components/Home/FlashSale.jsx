@@ -12,7 +12,7 @@ const flashSaleData = [
         name: "Weekly Pass",
         game: "MLBB",
         image: "/game-assets/weeklypass.jpg",
-        price: "₹149",
+        price: "₹145",
         originalPrice: "₹175",
         slug: "mobile-legends270?type=weekly-pass",
         badge: "Hot"
@@ -22,7 +22,7 @@ const flashSaleData = [
         name: "Blessing Welkin",
         game: "Genshin",
         image: "/game-assets/genshin.jpg",
-        price: "₹399",
+        price: "₹385",
         originalPrice: "₹450",
         slug: "genshin-impact742",
         badge: "Sale"

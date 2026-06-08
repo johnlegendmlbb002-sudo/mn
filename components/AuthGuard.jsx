@@ -2,25 +2,25 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useAuthStore } from "@/store/useAuthStore";
 
 export default function AuthGuard({ children }) {
   const router = useRouter();
   const [allowed, setAllowed] = useState(false);
+  const { token, _hasHydrated } = useAuthStore();
 
   useEffect(() => {
-    const email = localStorage.getItem("email");
-    const phone = localStorage.getItem("phone");
+    if (!_hasHydrated) return;
 
-    // If neither email nor phone exist → redirect
-    if (!email && !phone) {
+    if (!token) {
       router.replace("/login");
     } else {
       setAllowed(true);
     }
-  }, []);
+  }, [_hasHydrated, token, router]);
 
   // Avoid flicker while checking
-  if (!allowed) return null;
+  if (!allowed || !_hasHydrated) return null;
 
   return children;
 }

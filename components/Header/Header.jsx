@@ -8,6 +8,8 @@ import CustomWebBanner from "../Home/CustomWebBanner";
 import api from "@/lib/axios";
 import { FiChevronRight, FiLogOut, FiCheckCircle, FiShield, FiZap, FiMenu, FiX, FiLayers, FiCompass, FiGrid, FiShoppingBag, FiMessageSquare, FiUser, FiUsers, FiKey, FiGift, FiSearch, FiAward } from "react-icons/fi";
 
+import { useAuthStore } from "@/store/useAuthStore";
+
 /* ================= CONFIG ================= */
 const HEADER_CONFIG = {
   logo: {
@@ -45,9 +47,11 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  
+  // Zustand state
+  const { user, walletBalance, setWalletBalance, updateUser, logout, token, _hasHydrated } = useAuthStore();
+  
   const [activeNav, setActiveNav] = useState("/");
-  const [walletBalance, setWalletBalance] = useState(0);
   const [balanceLoading, setBalanceLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -58,67 +62,40 @@ export default function Header() {
 
   const dropdownRef = useRef(null);
 
-
-
   /* ================= AUTH ================= */
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    if (!_hasHydrated) return;
     if (!token) {
       setLoading(false);
+      setBalanceLoading(false);
       return;
     }
-
-    const savedUser = {
-      name: localStorage.getItem("userName"),
-      email: localStorage.getItem("email"),
-      userId: localStorage.getItem("userId"),
-      avatar: localStorage.getItem("avatar"),
-      userType: localStorage.getItem("userType") || "user",
-    };
-    if (savedUser.name) setUser(savedUser);
-
-    const savedBalance = localStorage.getItem("walletBalance");
-    if (savedBalance) setWalletBalance(Number(savedBalance));
 
     api.get("/api/auth/me")
       .then((r) => r.data)
       .then((d) => {
         if (d.success) {
-          setUser(d.user);
-          localStorage.setItem("userName", d.user.name);
-          localStorage.setItem("email", d.user.email);
-          localStorage.setItem("userId", d.user.id || d.user.userId);
-          localStorage.setItem("avatar", d.user.avatar || "");
-          localStorage.setItem("userType", d.user.userType || "user");
-          if (d.user.phone) localStorage.setItem("phone", d.user.phone);
-
+          updateUser({
+            name: d.user.name,
+            email: d.user.email,
+            userId: d.user.id || d.user.userId,
+            avatar: d.user.avatar || "",
+            userType: d.user.userType || "user",
+            phone: d.user.phone,
+          });
+          
           if (d.user.wallet !== undefined) {
             setWalletBalance(d.user.wallet);
-            localStorage.setItem("walletBalance", String(d.user.wallet));
           }
         } else {
-          ["token", "userName", "email", "userId", "phone", "avatar", "walletBalance"].forEach(key => localStorage.removeItem(key));
-          setUser(null);
-          setWalletBalance(0);
+          logout();
         }
       })
       .finally(() => {
         setLoading(false);
         setBalanceLoading(false);
       });
-
-    const handleWalletSync = () => {
-      const balance = localStorage.getItem("walletBalance");
-      if (balance !== null) setWalletBalance(Number(balance));
-    };
-
-    window.addEventListener("walletUpdated", handleWalletSync);
-    window.addEventListener("storage", handleWalletSync);
-    return () => {
-      window.removeEventListener("walletUpdated", handleWalletSync);
-      window.removeEventListener("storage", handleWalletSync);
-    };
-  }, []);
+  }, [_hasHydrated, token, updateUser, setWalletBalance, logout]);
 
   /* ================= GAME SEARCH LOGIC ================= */
   const fetchSearchData = async () => {
@@ -155,9 +132,7 @@ export default function Header() {
   const [showLogoutToast, setShowLogoutToast] = useState(false);
 
   const handleLogout = () => {
-    ["token", "userName", "email", "userId", "phone", "userType", "avatar", "walletBalance", "pending_topup_order", "mlbb_verified_players"].forEach(key => localStorage.removeItem(key));
-    setUser(null);
-    setWalletBalance(0);
+    logout();
     setUserMenuOpen(false);
     setShowLogoutToast(true);
     setTimeout(() => {

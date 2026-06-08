@@ -11,6 +11,7 @@ import { GiTrophy } from "react-icons/gi";
 import Image from "next/image";
 import Link from "next/link";
 import { TournamentSkeleton, SkeletonGrid } from "@/components/Skeleton/Skeleton";
+import { useAuthStore } from "@/store/useAuthStore";
 
 // ── Types ──────────────────────────────────────────────────────────────
 interface Tournament {
@@ -118,8 +119,7 @@ export default function MLBBTournamentPage() {
       if (data.success) {
         setMsg({ text: "Joined Successfully!", type: "success" });
         if (data.newCoinBalance !== undefined) {
-          localStorage.setItem("coins", data.newCoinBalance);
-          window.dispatchEvent(new Event("walletUpdated"));
+          useAuthStore.getState().setWalletBalance(data.newCoinBalance);
         }
         setTimeout(() => {
           setRegistering(null);
