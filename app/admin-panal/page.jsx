@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import AuthGuard from "@/components/AuthGuard";
+import api from "@/lib/axios";
 import {
   FaCrown,
   FaStar,
@@ -25,10 +26,8 @@ export default function AdminPanalPage() {
       return;
     }
 
-    fetch("/api/auth/me", {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((res) => res.json())
+    api.get("/api/auth/me")
+      .then((res) => res.data)
       .then((data) => {
         if (data?.userType) setRole(data.userType);
         if (data?.membershipExpiresAt)

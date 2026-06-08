@@ -9,6 +9,7 @@ import GameList from "@/components/Games/GameList";
 import FilterModal from "@/components/Games/FilterModal";
 import ServiceGridSection from "@/components/Games/ServiceGridSection";
 import { ProductCardSkeleton } from "@/components/Skeleton/Skeleton";
+import api from "@/lib/axios";
 
 export default function GamesPage() {
   /* ================= STATE ================= */
@@ -52,8 +53,7 @@ export default function GamesPage() {
 
     const loadGames = async () => {
       try {
-        const res = await fetch("/api/games");
-        const json = await res.json();
+        const { data: json } = await api.get("/api/games");
         if (!mounted) return;
 
         let fetchedGames = json?.data?.games || [];

@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { FiChevronDown, FiChevronLeft, FiChevronRight, FiZap, FiTarget, FiMail, FiRefreshCw, FiClock, FiCheckCircle, FiAlertCircle, FiList } from "react-icons/fi";
 import { QuerySkeleton } from "../Skeleton/Skeleton";
+import api from "@/lib/axios";
 
 const SUPPORT_CONFIG = {
   header: {
@@ -68,10 +69,9 @@ export default function QueryTab() {
     if (!email) return;
     setLoadingQueries(true);
     try {
-      const res = await fetch(
+      const { data } = await api.get(
         `/api/support/query?email=${encodeURIComponent(email)}&page=${page}&limit=${QUERY_LIMIT}`
       );
-      const data = await res.json();
       if (data.success) {
         setMyQueries(data.queries || []);
         setQueryPagination(data.pagination || { total: 0, totalPages: 1 });
@@ -95,18 +95,13 @@ export default function QueryTab() {
     setIsSubmitting(true);
     const storedEmail = localStorage.getItem("email");
     try {
-      const res = await fetch("/api/support/query", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: storedEmail,
-          phoneNo: phoneNo.trim(),
-          orderId: orderId.trim() || null,
-          type: queryType,
-          message: queryMessage,
-        }),
+      const { data } = await api.post("/api/support/query", {
+        email: storedEmail,
+        phoneNo: phoneNo.trim(),
+        orderId: orderId.trim() || null,
+        type: queryType,
+        message: queryMessage,
       });
-      const data = await res.json();
       if (data.success) {
         setQuerySuccess("Message sent.");
         setQueryType(""); setQueryMessage(""); setOrderId("");

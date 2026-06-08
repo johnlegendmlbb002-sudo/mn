@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
+import api from "@/lib/axios";
 import {
   FaCheckCircle,
   FaCheck,
@@ -47,16 +48,7 @@ export default function TopupComplete() {
   // --- Fetch Order Details ---
   const fetchOrderDetails = useCallback(async (id: string) => {
     try {
-      const token = localStorage.getItem("token");
-      const res = await fetch("/api/order/user", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ search: id, limit: 1 }),
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/order/user", { search: id, limit: 1 });
       if (data.success && data.orders?.length > 0) {
         setOrderData(data.orders[0]);
       }
@@ -81,17 +73,7 @@ export default function TopupComplete() {
 
     const verify = async () => {
       try {
-        const token = localStorage.getItem("token");
-        const res = await fetch("/api/order/verify-topup-payment", {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ orderId }),
-        });
-
-        const data = await res.json();
+        const { data } = await api.post("/api/order/verify-topup-payment", { orderId });
 
         // Update message based on internal state
         if (data.topupStatus === "processing") {
