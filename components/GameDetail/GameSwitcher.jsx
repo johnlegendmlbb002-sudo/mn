@@ -95,16 +95,16 @@ export default function GameSwitcher() {
     };
 
     if (loading) return (
-        <div className="w-full flex gap-4 overflow-hidden mb-8">
+        <div className="w-full flex gap-4 overflow-hidden mb-5">
             {[1, 2, 3, 4, 5, 6].map(i => (
-                <div key={i} className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5" />
+                <div key={i} className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5" />
             ))}
         </div>
     );
 
     return (
-        <div className="w-full mb-8 relative z-20">
-            <div className="flex items-center justify-between mb-4 px-1">
+        <div className="w-full mb-3 relative z-20">
+            <div className="flex items-center justify-between mb-2 px-1">
                 <div className="flex items-center gap-3">
                     <div className="w-8 h-[2px] bg-[var(--accent)]" />
                     <h3 className="text-[10px] md:text-xs font-black text-[var(--foreground)] uppercase tracking-[0.3em] opacity-50">
@@ -115,7 +115,7 @@ export default function GameSwitcher() {
 
             <div
                 ref={scrollContainerRef}
-                className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide snap-x no-scrollbar"
+                className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide snap-x no-scrollbar pt-2"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                 {games.map((game, idx) => {
@@ -131,14 +131,14 @@ export default function GameSwitcher() {
                             <button
                                 onClick={() => handleSwitch(game)}
                                 className={`
-                                    relative w-14 h-14 md:w-16 md:h-16 rounded-[1.25rem] group
+                                    relative w-11 h-11 md:w-12 md:h-12 rounded-2xl group
                                     ${isActive
                                         ? "ring-2 ring-[var(--accent)] shadow-[0_8px_20px_-5px_rgba(var(--accent-rgb),0.4)]"
                                         : "opacity-50 hover:opacity-100 grayscale hover:grayscale-0"
                                     }
                                 `}
                             >
-                                <div className="relative w-full h-full rounded-[1.25rem] overflow-hidden bg-[var(--card)] ring-1 ring-white/10 group-hover:ring-white/20">
+                                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-[var(--card)] ring-1 ring-white/10 group-hover:ring-white/20">
                                     <Image
                                         src={game.gameImageId?.image || "/placeholder.jpg"}
                                         alt={game.gameName}
@@ -151,7 +151,7 @@ export default function GameSwitcher() {
 
                                 {/* Active Glow Backdrop */}
                                 {isActive && (
-                                    <div className="absolute inset-0 -z-10 bg-[var(--accent)] blur-xl opacity-20 scale-125 rounded-[1.25rem]" />
+                                    <div className="absolute inset-0 -z-10 bg-[var(--accent)] blur-md opacity-30 scale-110 rounded-2xl" />
                                 )}
                             </button>
 

@@ -126,25 +126,25 @@ export default function PackageSelector({
           </div>
         ) : (
           <div className="pb-8">
-            <div ref={sliderRef} className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-6 px-1 scrollbar-hide no-scrollbar">
+            <div ref={sliderRef} className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-6 pt-3 px-2 scrollbar-hide no-scrollbar -mx-2">
               {items.map((item) => {
                 const isActive = activeItem.itemSlug === item.itemSlug;
                 return (
                   <div
                     key={item.itemSlug}
                     onClick={() => scrollToItem(item)}
-                    className={`relative snap-center min-w-[160px] rounded-[1.25rem] p-4 cursor-pointer border-2 transition-all duration-500 flex flex-col justify-between min-h-[7rem] overflow-hidden bg-[var(--card)]/60
-                    ${isActive ? "border-[var(--accent)] bg-[var(--accent)]/[0.08] shadow-lg scale-[1.03]" : "border-[var(--border)] opacity-80 hover:opacity-100 hover:border-[var(--accent)]/40"}
+                    className={`relative snap-center min-w-[150px] rounded-[1.25rem] p-3 cursor-pointer border-2 transition-all duration-500 flex flex-col justify-between min-h-[5.5rem] overflow-hidden bg-[var(--card)]/60
+                    ${isActive ? "border-[var(--accent)] bg-[var(--accent)]/[0.08] shadow-lg scale-[1.02]" : "border-[var(--border)] opacity-80 hover:opacity-100 hover:border-[var(--accent)]/40"}
                   `}>
-                     <div className={`absolute top-0 right-3 w-10 h-16 transition-all duration-700 ribbon-shape flex items-center justify-center pt-1
+                     <div className={`absolute top-0 right-3 w-9 h-14 transition-all duration-700 ribbon-shape flex items-center justify-center pt-1
                         ${isActive ? "bg-gradient-to-b from-[var(--accent)]/30 to-transparent" : "bg-[var(--accent)]/5"}
                      `}>
-                        <div className="relative w-6 h-6">
+                        <div className="relative w-5 h-5">
                           <Image src={item?.itemImageId?.image || item?.image || "/logo.png"} alt={`${item.itemName || "Package"} Top Up icon`} fill unoptimized className={`object-contain transition-all duration-500 ${isActive ? "opacity-100 scale-110" : "opacity-30"}`} />
                         </div>
                      </div>
-                    <div className="relative z-10 flex flex-col h-full pr-10 pt-3">
-                      <p className={`text-[10px] font-[1000] tracking-tight uppercase italic leading-tight mb-2 ${isActive ? "text-[var(--foreground)]" : "text-[var(--muted)]"}`}>
+                    <div className="relative z-10 flex flex-col h-full pr-10 pt-1">
+                      <p className={`text-[10px] font-[1000] tracking-tight uppercase italic leading-tight mb-1.5 ${isActive ? "text-[var(--foreground)]" : "text-[var(--muted)]"}`}>
                         {item.itemName}
                       </p>
                       <p className={`text-xl font-[1000] tracking-tighter italic leading-none mt-auto ${isActive ? "text-[var(--accent)]" : "text-[var(--foreground)]"}`}>₹{item.sellingPrice}</p>
