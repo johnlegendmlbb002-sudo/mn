@@ -32,18 +32,23 @@ export async function GET(req) {
         const skip = (page - 1) * limit;
 
         /* ================= SORTING ================= */
-        const sortBy = searchParams.get("sortBy") || "lastLogin";
-        const order = searchParams.get("order") === "asc" ? 1 : -1;
+        const sortBy = searchParams.get("sortBy") || "name";
+        const explicitOrder = searchParams.get("order");
+        
+        // Default to Ascending (1) for name, Descending (-1) for dates/stats
+        let order = sortBy === "name" ? 1 : -1;
+        if (explicitOrder === "asc") order = 1;
+        if (explicitOrder === "desc") order = -1;
 
         const sortMap = {
-            name: { name: order },
+            name: { lowerName: order },
             joinDate: { createdAt: order },
             lastLogin: { lastLogin: order },
             totalOrders: { totalOrders: order },
             coins: { coins: order }
         };
 
-        const currentSort = sortMap[sortBy] || { lastLogin: -1 };
+        const currentSort = sortMap[sortBy] || { lowerName: 1 };
 
         /* ================= FILTER ================= */
         let filter = {};
@@ -109,7 +114,8 @@ export async function GET(req) {
             {
                 $addFields: {
                     tags: { $ifNull: ["$tags", ["new"]] },
-                    totalOrders: { $ifNull: [{ $arrayElemAt: ["$orderStats.count", 0] }, 0] }
+                    totalOrders: { $ifNull: [{ $arrayElemAt: ["$orderStats.count", 0] }, 0] },
+                    lowerName: { $toLower: { $ifNull: ["$name", ""] } }
                 }
             },
             // 🔴 Sort first to ensure pagination works across the "all" results
