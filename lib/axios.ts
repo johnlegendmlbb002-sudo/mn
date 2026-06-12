@@ -43,15 +43,17 @@ api.interceptors.response.use(
     if (error.response) {
       const status = error.response.status;
       
+      const isJwtExpired = error.response.data && error.response.data.message === "jwt expired";
+
       // Handle Unauthorized (401) globally
-      if (status === 401) {
-        console.warn('Unauthorized access. Clearing session.');
+      if (status === 401 || isJwtExpired) {
+        console.warn('Unauthorized access or expired token. Clearing session.');
         if (typeof window !== 'undefined') {
           // Clean up auth state on client side if token expires
           useAuthStore.getState().logout();
           localStorage.removeItem('token');
           // Optional: redirect to login
-          // window.location.href = '/login';
+          window.location.href = '/login';
         }
       }
 
