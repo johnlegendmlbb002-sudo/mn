@@ -1,5 +1,6 @@
 import { connectDB } from "@/lib/mongodb";
 import WalletTransaction from "@/models/WalletTransaction";
+import User from "@/models/User";
 import jwt from "jsonwebtoken";
 
 export async function GET(req) {
@@ -31,12 +32,19 @@ export async function GET(req) {
         let filter = {};
 
         if (search) {
+            const matchedUsers = await User.find({ email: { $regex: search, $options: "i" } }).select("_id").lean();
+            const matchedUserIds = matchedUsers.map(u => u._id);
+
             filter.$or = [
                 { transactionId: { $regex: search, $options: "i" } },
                 { userId: { $regex: search, $options: "i" } },
                 { description: { $regex: search, $options: "i" } },
                 { referenceId: { $regex: search, $options: "i" } },
             ];
+
+            if (matchedUserIds.length > 0) {
+                filter.$or.push({ userObjectId: { $in: matchedUserIds } });
+            }
         }
 
         if (type) {
@@ -46,6 +54,7 @@ export async function GET(req) {
         /* ================= QUERY ================= */
         const [transactions, total] = await Promise.all([
             WalletTransaction.find(filter)
+                .populate("userObjectId", "email name")
                 .sort({ createdAt: -1 })
                 .skip(skip)
                 .limit(limit)

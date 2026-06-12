@@ -553,7 +553,12 @@ export default function StatsTab() {
 
                                             <div className="flex justify-between items-center text-xs pt-3 mt-1 border-t border-[var(--border)]/40 relative z-10">
                                                 <div>
-                                                    <div className="font-semibold text-[var(--foreground)] mb-0.5">{txn.userId}</div>
+                                                    <div className="font-semibold text-[var(--foreground)] mb-0.5 flex items-center gap-1.5 flex-wrap">
+                                                        <span>{txn.userId}</span>
+                                                        {txn.userObjectId?.email && (
+                                                            <span className="text-[10px] text-[var(--muted)]/70 font-normal lowercase">({txn.userObjectId.email})</span>
+                                                        )}
+                                                    </div>
                                                     <div className="text-[10px] text-[var(--muted)] font-mono">{new Date(txn.createdAt).toLocaleString()}</div>
                                                 </div>
                                                 <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${txn.status === 'success'
@@ -607,8 +612,15 @@ export default function StatsTab() {
                                                             {txn.transactionId}
                                                         </td>
                                                         <td className="px-6 py-4">
-                                                            <span className="text-xs font-medium text-[var(--foreground)] block">{txn.userId}</span>
-                                                            <span className="text-[10px] text-[var(--muted)]">{txn.description}</span>
+                                                            <div className="flex flex-col">
+                                                                <div className="flex items-center gap-1.5 flex-wrap">
+                                                                    <span className="text-xs font-medium text-[var(--foreground)]">{txn.userId}</span>
+                                                                    {txn.userObjectId?.email && (
+                                                                        <span className="text-[10px] text-[var(--muted)]/70 font-normal lowercase">({txn.userObjectId.email})</span>
+                                                                    )}
+                                                                </div>
+                                                                <span className="text-[10px] text-[var(--muted)] mt-0.5">{txn.description}</span>
+                                                            </div>
                                                         </td>
                                                         <td className="px-6 py-4">
                                                             <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border ${txn.type === 'credit'
