@@ -167,7 +167,6 @@ const SettingsTab = () => {
                         />
                     </button>
                 </div>
-
                 {message.text && (
                     <div className={`p-4 flex items-center gap-2 text-sm ${message.type === "success" ? "text-green-500 bg-green-500/10" : "text-red-500 bg-red-500/10"}`}>
                         {message.type === "success" ? <FiCheckCircle /> : <FiAlertCircle />}
@@ -175,8 +174,6 @@ const SettingsTab = () => {
                     </div>
                 )}
             </div>
-
-
         </div>
     );
 };

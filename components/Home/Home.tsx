@@ -1,9 +1,9 @@
 import HeroSection from "./HeroSection";
 
-export default function HomeSection() {
+export default function HomeSection({ bannerSettings }: { bannerSettings?: any }) {
   return (
     <main>
-      <HeroSection />
+      <HeroSection bannerSettings={bannerSettings} />
     </main>
   );
 

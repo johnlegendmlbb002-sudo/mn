@@ -86,6 +86,19 @@ export async function PATCH(req) {
             settings.ordersDisabled = ordersDisabled;
         }
 
+        if (typeof body.showTopNoticeBanner === "boolean") settings.showTopNoticeBanner = body.showTopNoticeBanner;
+        if (typeof body.showHomeEarnPromotion === "boolean") settings.showHomeEarnPromotion = body.showHomeEarnPromotion;
+        if (typeof body.showTradeMarketplaceBanner === "boolean") settings.showTradeMarketplaceBanner = body.showTradeMarketplaceBanner;
+        if (typeof body.showCustomWebBanner === "boolean") settings.showCustomWebBanner = body.showCustomWebBanner;
+        if (typeof body.showGiveawayBanner === "boolean") settings.showGiveawayBanner = body.showGiveawayBanner;
+        if (typeof body.showTelegramPopup === "boolean") settings.showTelegramPopup = body.showTelegramPopup;
+        if (typeof body.showWhatsappPopup === "boolean") settings.showWhatsappPopup = body.showWhatsappPopup;
+        if (typeof body.showGameBannerCarousel === "boolean") settings.showGameBannerCarousel = body.showGameBannerCarousel;
+        if (typeof body.showStorySlider === "boolean") settings.showStorySlider = body.showStorySlider;
+        if (typeof body.showFlashSale === "boolean") settings.showFlashSale = body.showFlashSale;
+        if (typeof body.showHomeQuickActions === "boolean") settings.showHomeQuickActions = body.showHomeQuickActions;
+        if (typeof body.showBottomNav === "boolean") settings.showBottomNav = body.showBottomNav;
+
         if (mlbbWeeklyProvider && ["1game", "smileone"].includes(mlbbWeeklyProvider)) {
             settings.mlbbWeeklyProvider = mlbbWeeklyProvider;
         }

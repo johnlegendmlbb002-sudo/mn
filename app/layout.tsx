@@ -349,7 +349,7 @@ export default async function RootLayout({
           <Footer />
           <SocialFloat />
           <ChatbotWrapper />
-          <BottomNav />
+          {settings.showBottomNav !== false && <BottomNav />}
 
 
 

@@ -22,6 +22,7 @@ import {
   FiImage,
   FiAward,
   FiSettings,
+  FiLayout,
 } from "react-icons/fi";
 
 import AuthGuard from "@/components/AuthGuard";
@@ -39,6 +40,10 @@ import UsdtTab from "@/components/admin/UsdtTab";
 import PromotionalTab from "@/components/admin/PromotionalTab";
 import CoinsAdminTab from "@/components/admin/CoinsAdminTab";
 import TournamentsAdminTab from "@/components/admin/TournamentsAdminTab";
+
+
+
+import UiSettingsTab from "@/components/admin/UiSettingsTab";
 
 
 
@@ -69,6 +74,7 @@ const MENU_CATEGORIES = [
       { id: "queries", label: "Support Queries", icon: FiMessageSquare },
       { id: "pricing", label: "Pricing", icon: FiTag },
       { id: "api-keys", label: "API Keys", icon: FiKey },
+      { id: "ui-settings", label: "UI Settings", icon: FiLayout },
       { id: "settings", label: "Settings", icon: FiSettings },
     ]
   }
@@ -430,6 +436,9 @@ export default function AdminPanalPage() {
             )}
             {activeTab === "tournaments" && (
               <TournamentsAdminTab />
+            )}
+            {activeTab === "ui-settings" && (
+              <UiSettingsTab />
             )}
             {activeTab === "settings" && (
               <SettingsTab />

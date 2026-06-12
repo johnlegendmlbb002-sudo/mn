@@ -18,25 +18,31 @@ import SupportBanner from "./SupportBanner";
 import CustomWebBanner from "./CustomWebBanner";
 import GiveawayBanner from "./GiveawayBanner";
 
-export default function HeroSection() {
+export default function HeroSection({ bannerSettings }: { bannerSettings?: any }) {
 
+  // If bannerSettings isn't passed (e.g. client navigation before cache warms up), default to showing GiveawayBanner only
+  const bs = bannerSettings || { 
+    showGiveawayBanner: true, 
+    showGameBannerCarousel: true,
+    showStorySlider: true,
+    showFlashSale: true
+  };
 
   return (
     <>
-      {/* <TopNoticeBanner /> */}
-      {/* <HomeEarnPromotion /> */}
-      {/* <TradeMarketplaceBanner /> */}
-      <div className="max-w-7xl mx-auto px-4 mt-4 space-y-2">
-        {/* <CustomWebBanner /> */}
-        <GiveawayBanner />
-      </div>
+      {bs.showTopNoticeBanner && <TopNoticeBanner />}
+      {bs.showHomeEarnPromotion && <HomeEarnPromotion />}
+      {bs.showTradeMarketplaceBanner && <TradeMarketplaceBanner />}
+      {bs.showCustomWebBanner && <CustomWebBanner />}
+      {bs.showGiveawayBanner && <GiveawayBanner />}
+     
 
-      <GameBannerCarousel />
+      {bs.showGameBannerCarousel !== false && <GameBannerCarousel />}
 
       <div className="space-y-1 mt-2">
-        <StorySlider />
+        {bs.showStorySlider !== false && <StorySlider />}
 
-        <FlashSale />
+        {bs.showFlashSale !== false && <FlashSale />}
       </div>
 
 
@@ -44,7 +50,7 @@ export default function HeroSection() {
 
       <div className="space-y-1">
 
-        <HomeQuickActions />
+        {bs.showHomeQuickActions !== false && <HomeQuickActions />}
         {/* <HomeReferralStats /> */}
       </div>
 

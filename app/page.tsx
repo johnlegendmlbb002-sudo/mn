@@ -196,20 +196,30 @@ export const metadata = {
     "mlbb recharge without account login",
     "mlbb diamonds fast delivery india",
     "best mlbb recharge for beginners",
-    "mlbb top up trusted india site",
-    "buy mlbb diamonds safely india",
-    "mlbb recharge no delay india",
-    "mlbb diamonds instant india cheap",
-    "mlbb top up legit website india",
-  ],
+    "mlbb top up trusted india site",  ],
 };
 
-export default function Page() {
+import { getAppSettings } from "@/lib/settings";
+import WhatsAppCommunityPopup from "@/components/WhatsAppQRPopup";
+
+export default async function Page() {
+  const settings = await getAppSettings();
   return (
     <main>
-      <TelegramQRPopup />
+      {settings.showTelegramPopup && <TelegramQRPopup />}
+      {settings.showWhatsappPopup && <WhatsAppCommunityPopup />}
 
-      <HomeSection />
+      <HomeSection bannerSettings={{
+        showTopNoticeBanner: settings.showTopNoticeBanner,
+        showHomeEarnPromotion: settings.showHomeEarnPromotion,
+        showTradeMarketplaceBanner: settings.showTradeMarketplaceBanner,
+        showCustomWebBanner: settings.showCustomWebBanner,
+        showGiveawayBanner: settings.showGiveawayBanner,
+        showGameBannerCarousel: settings.showGameBannerCarousel,
+        showStorySlider: settings.showStorySlider,
+        showFlashSale: settings.showFlashSale,
+        showHomeQuickActions: settings.showHomeQuickActions
+      }} />
     </main>
   );
 }

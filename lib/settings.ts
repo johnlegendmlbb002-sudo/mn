@@ -8,15 +8,57 @@ export const getAppSettings = unstable_cache(
             await connectDB();
             const settings = await AppSettings.findOne({}).lean();
             if (!settings) {
-                return { maintenanceMode: false, mlbbWeeklyProvider: "1game" };
+                return { 
+                    maintenanceMode: false, 
+                    mlbbWeeklyProvider: "1game",
+                    showTopNoticeBanner: false,
+                    showHomeEarnPromotion: false,
+                    showTradeMarketplaceBanner: false,
+                    showCustomWebBanner: false,
+                    showGiveawayBanner: true,
+                    showTelegramPopup: false,
+                    showWhatsappPopup: false,
+                    showGameBannerCarousel: true,
+                    showStorySlider: true,
+                    showFlashSale: true,
+                    showHomeQuickActions: true,
+                    showBottomNav: true,
+                };
             }
             return {
                 maintenanceMode: !!settings.maintenanceMode,
-                mlbbWeeklyProvider: settings.mlbbWeeklyProvider || "1game"
+                mlbbWeeklyProvider: settings.mlbbWeeklyProvider || "1game",
+                showTopNoticeBanner: !!settings.showTopNoticeBanner,
+                showHomeEarnPromotion: !!settings.showHomeEarnPromotion,
+                showTradeMarketplaceBanner: !!settings.showTradeMarketplaceBanner,
+                showCustomWebBanner: !!settings.showCustomWebBanner,
+                showGiveawayBanner: settings.showGiveawayBanner !== false, // default true
+                showTelegramPopup: !!settings.showTelegramPopup,
+                showWhatsappPopup: !!settings.showWhatsappPopup,
+                showGameBannerCarousel: settings.showGameBannerCarousel !== false,
+                showStorySlider: settings.showStorySlider !== false,
+                showFlashSale: settings.showFlashSale !== false,
+                showHomeQuickActions: settings.showHomeQuickActions !== false,
+                showBottomNav: settings.showBottomNav !== false,
             };
         } catch (error) {
             console.error("Error fetching app settings:", error);
-            return { maintenanceMode: false, mlbbWeeklyProvider: "1game" };
+            return { 
+                maintenanceMode: false, 
+                mlbbWeeklyProvider: "1game",
+                showTopNoticeBanner: false,
+                showHomeEarnPromotion: false,
+                showTradeMarketplaceBanner: false,
+                showCustomWebBanner: false,
+                showGiveawayBanner: true,
+                showTelegramPopup: false,
+                showWhatsappPopup: false,
+                showGameBannerCarousel: true,
+                showStorySlider: true,
+                showFlashSale: true,
+                showHomeQuickActions: true,
+                showBottomNav: true,
+            };
         }
     },
     ["app-settings"],
