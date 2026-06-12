@@ -31,7 +31,7 @@ export default function HeroSection() {
         <GiveawayBanner />
       </div>
 
-      {/* <GameBannerCarousel /> */}
+      <GameBannerCarousel />
 
       <div className="space-y-1 mt-2">
         <StorySlider />
