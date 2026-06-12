@@ -36,21 +36,33 @@ export const useAuthStore = create<AuthState>()(
       
       setHasHydrated: (state) => set({ _hasHydrated: state }),
       
-      login: (token, user) => set({ 
-        token, 
-        user: {
-          name: user.name || "",
-          email: user.email || "",
-          phone: user.phone || "",
-          userId: user.userId || "",
-          userType: user.userType || "user",
-          avatar: user.avatar || "",
-          referralUsed: user.referralUsed || false,
-          referralCount: user.referralCount || 0,
+      login: (token, user) => {
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('token', token);
+          localStorage.setItem('userType', user.userType || "user");
         }
-      }),
+        set({ 
+          token, 
+          user: {
+            name: user.name || "",
+            email: user.email || "",
+            phone: user.phone || "",
+            userId: user.userId || "",
+            userType: user.userType || "user",
+            avatar: user.avatar || "",
+            referralUsed: user.referralUsed || false,
+            referralCount: user.referralCount || 0,
+          }
+        });
+      },
       
-      logout: () => set({ token: null, user: null, walletBalance: 0 }),
+      logout: () => {
+        if (typeof window !== 'undefined') {
+          localStorage.removeItem('token');
+          localStorage.removeItem('userType');
+        }
+        set({ token: null, user: null, walletBalance: 0 });
+      },
       
       setWalletBalance: (balance) => set({ walletBalance: balance }),
       
