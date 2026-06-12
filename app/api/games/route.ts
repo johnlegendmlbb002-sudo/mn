@@ -266,9 +266,13 @@ export async function GET() {
     // MLBB family
     const mlbbVariants = filteredGames.filter(
       (g: any) =>
-        g.gameSlug.includes("mlbb") ||
-        g.gameName.toLowerCase().includes("mlbb") ||
-        g.gameSlug.toLowerCase().includes("legends988") ||
+        // g.gameSlug.includes("mlbb") ||
+        // g.gameName.toLowerCase().includes("mlbb") ||
+        g.gameSlug.toLowerCase().includes("legends270") ||
+        g.gameSlug.toLowerCase().includes("sgmy-mlbb893") ||
+        g.gameSlug.toLowerCase().includes("/mlbb-double332") ||
+        g.gameSlug.toLowerCase().includes("/mlbbglobal202") ||
+
         g.gameSlug.toLowerCase().includes("mobile-legends-exclusive") ||
         g.gameSlug.toLowerCase().includes("weeklymonthly-bundle")
 
