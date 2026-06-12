@@ -23,14 +23,16 @@ function BuyFlowContent() {
 
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
-  const { walletBalance, setWalletBalance } = useAuthStore();
+  const { walletBalance, setWalletBalance, user } = useAuthStore();
 
   /* ================= LOAD USER DATA ================= */
   useEffect(() => {
     window.scrollTo(0, 0);
-    setUserEmail(localStorage.getItem("email") || "");
-    setUserPhone(localStorage.getItem("phone") || "");
-  }, []);
+    if (user) {
+      setUserEmail(user.email || "");
+      setUserPhone(user.phone || "");
+    }
+  }, [user]);
 
   /* ================= ITEM DATA ================= */
   const itemName = params.get("name") || "";
