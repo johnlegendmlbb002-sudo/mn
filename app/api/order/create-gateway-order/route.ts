@@ -4,6 +4,7 @@ import { connectDB } from "@/lib/mongodb";
 import Order from "@/models/Order";
 import User from "@/models/User";
 import PricingConfig from "@/models/PricingConfig";
+import AppSettings from "@/models/AppSettings";
 import crypto from "crypto";
 
 /* =====================================================
@@ -186,6 +187,15 @@ async function resolvePrice(
 export async function POST(req: Request) {
   try {
     await connectDB();
+
+    /* ---------- SETTINGS CHECK ---------- */
+    const settings = await AppSettings.findOne({}).lean();
+    if (settings?.ordersDisabled) {
+      return NextResponse.json({
+        success: false,
+        message: "Taking new orders is temporarily paused. Please try again later.",
+      });
+    }
 
     /* ---------- AUTH (JWT) ---------- */
     const authHeader = req.headers.get("authorization");

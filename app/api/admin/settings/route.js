@@ -71,15 +71,19 @@ export async function PATCH(req) {
         }
 
         const body = await req.json();
-        const { maintenanceMode, mlbbWeeklyProvider } = body;
+        const { maintenanceMode, mlbbWeeklyProvider, ordersDisabled } = body;
 
         let settings = await AppSettings.findOne({});
         if (!settings) {
-            settings = new AppSettings({ maintenanceMode: false, mlbbWeeklyProvider: "1game" });
+            settings = new AppSettings({ maintenanceMode: false, mlbbWeeklyProvider: "1game", ordersDisabled: false });
         }
 
         if (typeof maintenanceMode === "boolean") {
             settings.maintenanceMode = maintenanceMode;
+        }
+
+        if (typeof ordersDisabled === "boolean") {
+            settings.ordersDisabled = ordersDisabled;
         }
 
         if (mlbbWeeklyProvider && ["1game", "smileone"].includes(mlbbWeeklyProvider)) {

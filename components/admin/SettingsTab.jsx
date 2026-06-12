@@ -62,6 +62,37 @@ const SettingsTab = () => {
         }
     };
 
+    const toggleOrdersDisabled = async () => {
+        try {
+            setSaving(true);
+            setMessage({ type: "", text: "" });
+            const token = localStorage.getItem("token");
+            const newValue = !settings.ordersDisabled;
+
+            const res = await fetch("/api/admin/settings", {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({ ordersDisabled: newValue }),
+            });
+
+            const data = await res.json();
+            if (data.success) {
+                setSettings(data.data);
+                setMessage({ type: "success", text: `Taking orders is now ${newValue ? "disabled" : "enabled"}.` });
+            } else {
+                setMessage({ type: "error", text: data.message || "Could not update settings" });
+            }
+        } catch (err) {
+            console.error("Failed to update settings", err);
+            setMessage({ type: "error", text: "Something went wrong" });
+        } finally {
+            setSaving(false);
+        }
+    };
+
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center py-20 gap-4">
@@ -83,8 +114,8 @@ const SettingsTab = () => {
                 </p>
             </div>
 
-            <div className="bg-[var(--background)] border border-[var(--border)] rounded-xl overflow-hidden">
-                <div className="p-6 flex items-center justify-between gap-6 border-b border-[var(--border)]">
+            <div className="bg-[var(--background)] border border-[var(--border)] rounded-xl overflow-hidden flex flex-col divide-y divide-[var(--border)]">
+                <div className="p-6 flex items-center justify-between gap-6">
                     <div>
                         <h3 className="font-semibold text-[var(--foreground)]">Maintenance Mode</h3>
                         <p className="text-xs text-[var(--muted)] mt-1">
@@ -106,6 +137,32 @@ const SettingsTab = () => {
                             className={`
                 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out
                 ${settings.maintenanceMode ? "translate-x-5" : "translate-x-0"}
+              `}
+                        />
+                    </button>
+                </div>
+
+                <div className="p-6 flex items-center justify-between gap-6">
+                    <div>
+                        <h3 className="font-semibold text-[var(--foreground)]">Disable Taking Orders</h3>
+                        <p className="text-xs text-[var(--muted)] mt-1">
+                            When enabled, users will see a message saying "Taking new orders is temporarily paused. Please try again later." when they attempt to checkout.
+                        </p>
+                    </div>
+
+                    <button
+                        onClick={toggleOrdersDisabled}
+                        disabled={saving}
+                        className={`
+              relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none 
+              ${settings.ordersDisabled ? "bg-[var(--accent)]" : "bg-gray-700"}
+              ${saving ? "opacity-50 cursor-not-allowed" : ""}
+            `}
+                    >
+                        <span
+                            className={`
+                pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out
+                ${settings.ordersDisabled ? "translate-x-5" : "translate-x-0"}
               `}
                         />
                     </button>

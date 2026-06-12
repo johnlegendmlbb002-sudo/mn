@@ -6,6 +6,10 @@ const AppSettingsSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
+        ordersDisabled: {
+            type: Boolean,
+            default: false,
+        },
         mlbbWeeklyProvider: {
             type: String,
             enum: ["1game", "smileone"],
