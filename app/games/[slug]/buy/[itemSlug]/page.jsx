@@ -35,7 +35,7 @@ function BuyFlowContent() {
 
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
-  const { walletBalance, setWalletBalance } = useAuthStore();
+  const { walletBalance, setWalletBalance, user } = useAuthStore();
 
   /* ================= GAME & ITEMS STATE ================= */
   const [game, setGame] = useState(null);
@@ -50,9 +50,11 @@ function BuyFlowContent() {
   /* ================= LOAD USER DATA ================= */
   useEffect(() => {
     window.scrollTo(0, 0);
-    setUserEmail(localStorage.getItem("email") || "");
-    setUserPhone(localStorage.getItem("phone") || "");
-  }, []);
+    if (user) {
+      setUserEmail(user.email || "");
+      setUserPhone(user.phone || "");
+    }
+  }, [user]);
 
   /* ================= FETCH GAME & ITEMS ================= */
   useEffect(() => {
