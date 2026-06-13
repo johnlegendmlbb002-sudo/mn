@@ -23,6 +23,7 @@ import {
   FiAward,
   FiSettings,
   FiLayout,
+  FiSmartphone,
 } from "react-icons/fi";
 
 import AuthGuard from "@/components/AuthGuard";
@@ -44,6 +45,7 @@ import TournamentsAdminTab from "@/components/admin/TournamentsAdminTab";
 
 
 import UiSettingsTab from "@/components/admin/UiSettingsTab";
+import PwaStatsTab from "@/components/admin/PwaStatsTab";
 
 
 
@@ -65,6 +67,7 @@ const MENU_CATEGORIES = [
       { id: "promotional", label: "Promotional", icon: FiStar },
       { id: "banners", label: "Banners", icon: FiImage },
       { id: "tournaments", label: "Tournaments", icon: FiAward },
+      { id: "pwa-stats", label: "PWA Stats", icon: FiSmartphone },
     ]
   },
   {
@@ -439,6 +442,9 @@ export default function AdminPanalPage() {
             )}
             {activeTab === "ui-settings" && (
               <UiSettingsTab />
+            )}
+            {activeTab === "pwa-stats" && (
+              <PwaStatsTab />
             )}
             {activeTab === "settings" && (
               <SettingsTab />

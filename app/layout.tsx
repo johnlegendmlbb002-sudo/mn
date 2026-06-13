@@ -288,7 +288,14 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={poppins.variable}>
-
+      {/* Capture beforeinstallprompt BEFORE React hydrates */}
+      <script dangerouslySetInnerHTML={{ __html: `
+        window.__pwaPrompt = null;
+        window.addEventListener('beforeinstallprompt', function(e) {
+          e.preventDefault();
+          window.__pwaPrompt = e;
+        });
+      `}} />
 
       <body className="bg-black text-white">
         {/* Structured Data for SEO */}
