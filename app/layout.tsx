@@ -254,7 +254,6 @@ export const metadata: Metadata = {
     images: ["/logoBB.png"],
     creator: "@bluebuff_india",
   },
-  manifest: "/manifest.json",
   alternates: {
     canonical: "/",
   },
