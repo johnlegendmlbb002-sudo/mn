@@ -21,6 +21,7 @@ import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { getAppSettings } from "@/lib/settings";
 import BottomNav from "@/components/Layout/BottomNav";
 import SeasonalEffectManager from "@/components/Seasonal/SeasonalEffectManager";
+import PWAInstallBanner from "@/components/Layout/PWAInstallBanner";
 
 
 
@@ -254,6 +255,7 @@ export const metadata: Metadata = {
     images: ["/logoBB.png"],
     creator: "@bluebuff_india",
   },
+  manifest: "/manifest.json",
   alternates: {
     canonical: "/",
   },
@@ -349,6 +351,7 @@ export default async function RootLayout({
           <SocialFloat />
           <ChatbotWrapper />
           {settings.showBottomNav !== false && <BottomNav />}
+          <PWAInstallBanner />
 
 
 
