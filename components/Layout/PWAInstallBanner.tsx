@@ -77,6 +77,11 @@ export default function PWAInstallBanner() {
   const handleDismiss = () => {
     setVisible(false);
     setDismissed(true);
+    fetch("/api/pwa/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ event: "dismissed" }),
+    }).catch(() => {});
   };
 
   if (!visible || dismissed) return null;
