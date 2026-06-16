@@ -81,7 +81,6 @@ export default function GiveawayBanner() {
         .gw-title {
           font-size:13px; font-weight:700;
           color:var(--foreground);
-          overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
         }
         .gw-btn {
           flex-shrink:0;

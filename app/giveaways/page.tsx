@@ -96,10 +96,10 @@ export default function GiveawaysPage() {
                     </span>
                   </div>
                   
-                  <h3 className="font-bold text-[var(--foreground)] text-[13px] truncate leading-tight">
+                  <h3 className="font-bold text-[var(--foreground)] text-[13px] leading-tight">
                     {g.title}
                   </h3>
-                  <p className="text-[10px] text-[var(--muted)] truncate mt-0.5">
+                  <p className="text-[10px] text-[var(--muted)] mt-0.5">
                     {g.prize}
                   </p>
                 </div>
@@ -151,10 +151,10 @@ export default function GiveawaysPage() {
                   <div className="flex items-center gap-1.5 mb-0.5">
                     <span className="text-[9px] font-black uppercase tracking-widest text-yellow-500">Your rewards have been sent</span>
                   </div>
-                  <h3 className="font-bold text-[var(--foreground)] text-[13px] truncate leading-tight">
+                  <h3 className="font-bold text-[var(--foreground)] text-[13px] leading-tight">
                     {g.title}
                   </h3>
-                  <p className="text-[10px] text-[var(--muted)] truncate mt-0.5">
+                  <p className="text-[10px] text-[var(--muted)] mt-0.5">
                     Prize: {g.prize}
                   </p>
                 </div>
