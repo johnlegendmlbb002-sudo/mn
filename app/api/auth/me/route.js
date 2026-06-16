@@ -40,6 +40,15 @@ export async function GET(req) {
       );
     }
 
+    if (user.forceLogout) {
+      user.forceLogout = false;
+      await user.save();
+      return NextResponse.json(
+        { success: false, message: "Admin forced logout" },
+        { status: 401 }
+      );
+    }
+
     return NextResponse.json({
       success: true,
       user: {

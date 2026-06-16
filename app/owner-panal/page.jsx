@@ -258,7 +258,7 @@ export default function AdminPanalPage() {
   return (
     <AuthGuard>
       <section className="min-h-screen bg-[var(--background)] px-2 sm:px-6 py-3">
-        <div className="max-w-6xl mx-auto">
+        <div className="w-full max-w-[1600px] mx-auto">
           {/* HEADER & BALANCE (COMPACT) */}
           <div className="mb-5 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 shadow-sm">
             

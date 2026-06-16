@@ -171,6 +171,25 @@ export default function UsersTab() {
     }
   };
 
+  const handleForceLogout = async (userId) => {
+    if (!confirm("Are you sure you want to log out this user forcefully? They will be logged out on their next action.")) return;
+    try {
+      const token = localStorage.getItem("token");
+      const res = await fetch(`/api/admin/users/${userId}/logout`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert("User scheduled for forceful logout!");
+      } else {
+        alert(data.message || "Failed to force logout");
+      }
+    } catch (err) {
+      alert("Error occurred");
+    }
+  };
+
   const handleUpdateTags = async (userId, tags) => {
     try {
       setUpdatingUserId(userId);
@@ -607,6 +626,16 @@ export default function UsersTab() {
                     {selectedUser.userType === "owner" && (
                       <p className="text-[11px] text-rose-500 font-medium px-1 italic">Role is restricted and cannot be modified.</p>
                     )}
+
+                    <div className="pt-4 border-t border-[var(--border)]">
+                      <p className="text-xs font-semibold text-[var(--muted)] px-1 mb-2">Session Management</p>
+                      <button
+                        onClick={() => handleForceLogout(selectedUser._id)}
+                        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-rose-500/20 bg-rose-500/10 text-rose-500 hover:bg-rose-500 hover:text-white transition-all text-xs font-bold"
+                      >
+                        Force Log Out User
+                      </button>
+                    </div>
                   </div>
                 </DrawerSection>
 

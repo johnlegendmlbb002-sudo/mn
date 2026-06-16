@@ -5,9 +5,16 @@ import ChatBot from "@/components/SocialFloat/Chatbot";
 
 export default function ChatbotWrapper() {
     const pathname = usePathname();
-    const isGamePage = pathname?.startsWith("/games/");
 
-    if (isGamePage) return null;
+    if (
+        pathname?.startsWith("/games/") ||
+        pathname?.startsWith("/owner-panal") ||
+        pathname?.startsWith("/login") ||
+        pathname?.startsWith("/payment") ||
+        pathname?.startsWith("/admin")
+    ) {
+        return null;
+    }
 
     return <ChatBot />;
 }

@@ -136,6 +136,34 @@ export default function GiveawayAdminTab() {
     } finally { setPicking(false); }
   };
 
+  const manuallyPickWinner = async (userId) => {
+    if (!confirm("Are you sure you want to manually mark this user as a winner?")) return;
+    try {
+      const res = await fetch(`/api/admin/giveaway/${selected._id}/pick-winner`, {
+        method: "POST", headers: authHeaders(), body: JSON.stringify({ count: 1, manualUserId: userId }),
+      });
+      const d = await res.json();
+      if (d.success) { alert("User successfully marked as a winner!"); fetchGiveaways(); fetchEntries(selected._id); }
+      else { alert(d.message || "Error"); }
+    } catch (e) {
+      alert("Error occurred");
+    }
+  };
+
+  const revertWinner = async (userId) => {
+    if (!confirm("Are you sure you want to revert this winner? They will no longer be marked as a winner.")) return;
+    try {
+      const res = await fetch(`/api/admin/giveaway/${selected._id}/pick-winner`, {
+        method: "POST", headers: authHeaders(), body: JSON.stringify({ revertUserId: userId }),
+      });
+      const d = await res.json();
+      if (d.success) { alert("Winner successfully reverted!"); fetchGiveaways(); fetchEntries(selected._id); }
+      else { alert(d.message || "Error"); }
+    } catch (e) {
+      alert("Error occurred");
+    }
+  };
+
   const addTask = () => setForm(f => ({ ...f, tasks: [...f.tasks, { type: "checkbox", label: "", description: "", link: "", inputLabel: "", required: true }] }));
   const removeTask = (i) => setForm(f => ({ ...f, tasks: f.tasks.filter((_, idx) => idx !== i) }));
   const updateTask = (i, field, val) => setForm(f => {
@@ -303,7 +331,18 @@ export default function GiveawayAdminTab() {
                                 {new Date(e.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
                               </td>
                               <td className="px-4 py-2.5">
-                                {e.isWinner && <span className="text-[9px] font-black text-yellow-400 bg-yellow-500/10 border border-yellow-500/20 px-1.5 py-0.5 rounded">WINNER</span>}
+                                {e.isWinner ? (
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-[9px] font-black text-yellow-400 bg-yellow-500/10 border border-yellow-500/20 px-1.5 py-0.5 rounded">WINNER</span>
+                                    <button onClick={() => revertWinner(e.userId)} className="text-[9px] font-black text-red-400 hover:text-red-500 border border-[var(--border)] hover:border-red-500/50 bg-[var(--background)] px-1.5 py-0.5 rounded transition-all">
+                                      REVERT
+                                    </button>
+                                  </div>
+                                ) : (
+                                  <button onClick={() => manuallyPickWinner(e.userId)} className="text-[9px] font-black text-[var(--muted)] hover:text-yellow-400 border border-[var(--border)] hover:border-yellow-500/50 bg-[var(--background)] px-1.5 py-0.5 rounded transition-all">
+                                    MAKE WINNER
+                                  </button>
+                                )}
                               </td>
                             </tr>
                           ))}

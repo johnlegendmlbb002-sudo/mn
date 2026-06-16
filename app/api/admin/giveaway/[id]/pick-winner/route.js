@@ -11,14 +11,34 @@ export async function POST(req, { params }) {
 
   await connectDB();
   const { id } = await params;
-  const { count = 1 } = await req.json();
+  const { count = 1, manualUserId, revertUserId } = await req.json();
 
-  const entries = await GiveawayEntry.find({ giveawayId: id, isWinner: false });
-  if (!entries.length) return NextResponse.json({ success: false, message: "No entries" }, { status: 400 });
+  if (revertUserId) {
+    await GiveawayEntry.findOneAndUpdate(
+      { giveawayId: id, userId: revertUserId },
+      { isWinner: false }
+    );
+    await Giveaway.findByIdAndUpdate(id, {
+      $pull: { winners: revertUserId }
+    });
+    return NextResponse.json({ success: true, message: "Winner reverted" });
+  }
 
-  // Fisher-Yates shuffle and pick N
-  const shuffled = [...entries].sort(() => Math.random() - 0.5);
-  const winners = shuffled.slice(0, Math.min(count, shuffled.length));
+  let winners = [];
+  if (manualUserId) {
+    const entry = await GiveawayEntry.findOne({ giveawayId: id, userId: manualUserId });
+    if (!entry) return NextResponse.json({ success: false, message: "Entry not found" }, { status: 404 });
+    if (entry.isWinner) return NextResponse.json({ success: false, message: "Already a winner" }, { status: 400 });
+    winners = [entry];
+  } else {
+    const entries = await GiveawayEntry.find({ giveawayId: id, isWinner: false });
+    if (!entries.length) return NextResponse.json({ success: false, message: "No entries" }, { status: 400 });
+
+    // Fisher-Yates shuffle and pick N
+    const shuffled = [...entries].sort(() => Math.random() - 0.5);
+    winners = shuffled.slice(0, Math.min(count, shuffled.length));
+  }
+
   const winnerIds = winners.map(w => w.userId);
 
   // Mark winners in entries
@@ -27,10 +47,11 @@ export async function POST(req, { params }) {
     { isWinner: true }
   );
 
-  // Save winners on giveaway and set ended
+  // Save winners on giveaway and set ended (only if random pick, or maybe manual should also end?)
+  // Actually let's just add the winners. The admin can end it manually if they want, or we can leave status unchanged if manual.
   await Giveaway.findByIdAndUpdate(id, {
-    winners: winnerIds,
-    status: "ended",
+    $addToSet: { winners: { $each: winnerIds } },
+    ...(manualUserId ? {} : { status: "ended" }),
   });
 
   return NextResponse.json({ success: true, winners: winners.map(w => ({ userId: w.userId, name: w.name, email: w.email, mlbbId: w.mlbbId })) });

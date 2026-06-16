@@ -149,7 +149,7 @@ export default function GiveawaysPage() {
                 </div>
                 <div className="flex-1 min-w-0 py-0.5">
                   <div className="flex items-center gap-1.5 mb-0.5">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-yellow-500">Winner</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-yellow-500">Your rewards have been sent</span>
                   </div>
                   <h3 className="font-bold text-[var(--foreground)] text-[13px] truncate leading-tight">
                     {g.title}
