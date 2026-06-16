@@ -183,7 +183,7 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
               <FiGift size={16} />
             </div>
             <div style={{ flex:1, minWidth:0 }}>
-              <p className="gm-label" style={{ color:"var(--accent)" }}>🎁 {isEnded ? "Giveaway Ended" : "Giveaway Live"}</p>
+              <p className="gm-label" style={{ color:"#ef4444" }}>🎁 {isEnded ? "Giveaway Ended" : "Giveaway Live"}</p>
               <p style={{ margin:"1px 0 0", fontWeight:700, fontSize:14, color:"var(--foreground)", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{giveaway.title}</p>
             </div>
             <div style={{ display:"flex", alignItems:"center", gap:4 }}>

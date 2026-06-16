@@ -40,7 +40,7 @@ export default function PWAInstallBanner() {
 
     const lateHandler = (e: Event) => { e.preventDefault(); window.__pwaPrompt = e as never; };
     window.addEventListener("beforeinstallprompt", lateHandler);
-    const timer = setTimeout(() => setVisible(true), 3000);
+    const timer = setTimeout(() => setVisible(true), 2000); // 2 second delay
     return () => { window.removeEventListener("beforeinstallprompt", lateHandler); clearTimeout(timer); };
   }, []);
 
@@ -230,7 +230,7 @@ export default function PWAInstallBanner() {
 
                 {/* Buttons */}
                 <div style={{ marginTop:20, display:"flex", gap:10 }}>
-                  <button className="pwa-cancel-btn" onClick={() => setShowModal(false)}>Cancel</button>
+                  <button className="pwa-cancel-btn" onClick={handleDismiss}>Cancel</button>
                   <button className="pwa-ok-btn"     onClick={() => setShowModal(false)}>Got it!</button>
                 </div>
               </div>

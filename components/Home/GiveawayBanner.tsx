@@ -70,12 +70,12 @@ export default function GiveawayBanner() {
           display:flex; align-items:center; gap:5px;
           font-size:9px; font-weight:800;
           text-transform:uppercase; letter-spacing:0.09em;
-          color:var(--accent); opacity:0.85;
+          color:#ef4444; opacity:0.85;
           margin-bottom:1px;
         }
         .gw-live-dot {
           width:5px; height:5px; border-radius:50%;
-          background:var(--accent);
+          background:#ef4444;
           animation: gw-dot 1.4s ease infinite;
         }
         .gw-title {
@@ -122,6 +122,11 @@ export default function GiveawayBanner() {
           <div className="gw-label">
             <span className="gw-live-dot" />
             Giveaway Live
+            {g.maxEntries > 0 ? (
+              <span style={{ color:"var(--muted)", fontWeight:700, marginLeft:4 }}>• {g.entryCount || 0}/{g.maxEntries} Filled</span>
+            ) : (
+              <span style={{ color:"var(--muted)", fontWeight:700, marginLeft:4 }}>• {g.entryCount || 0} Entered</span>
+            )}
           </div>
           <div key={animKey} className="gw-content gw-title">{g.title}</div>
         </div>
