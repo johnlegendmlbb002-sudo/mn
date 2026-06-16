@@ -46,6 +46,7 @@ import TournamentsAdminTab from "@/components/admin/TournamentsAdminTab";
 
 import UiSettingsTab from "@/components/admin/UiSettingsTab";
 import PwaStatsTab from "@/components/admin/PwaStatsTab";
+import GiveawayAdminTab from "@/components/admin/GiveawayAdminTab";
 
 
 
@@ -68,6 +69,7 @@ const MENU_CATEGORIES = [
       { id: "banners", label: "Banners", icon: FiImage },
       { id: "tournaments", label: "Tournaments", icon: FiAward },
       { id: "pwa-stats", label: "PWA Stats", icon: FiSmartphone },
+      { id: "giveaway", label: "Giveaway", icon: FiGift },
     ]
   },
   {
@@ -445,6 +447,9 @@ export default function AdminPanalPage() {
             )}
             {activeTab === "pwa-stats" && (
               <PwaStatsTab />
+            )}
+            {activeTab === "giveaway" && (
+              <GiveawayAdminTab />
             )}
             {activeTab === "settings" && (
               <SettingsTab />

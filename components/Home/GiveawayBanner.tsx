@@ -1,146 +1,157 @@
 "use client";
 
-import { useState } from "react";
-import { FiArrowRight, FiGift, FiX, FiSend, FiShare2 } from "react-icons/fi";
-import Link from "next/link";
+import { useEffect, useState, useRef } from "react";
+import { FiGift, FiChevronRight, FiX } from "react-icons/fi";
+import GiveawayEntryModal from "@/components/Giveaway/GiveawayEntryModal";
+
+const ROTATE_INTERVAL = 4000;
 
 export default function GiveawayBanner() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [giveaways, setGiveaways] = useState<any[]>([]);
+  const [current, setCurrent]     = useState(0);
+  const [visible, setVisible]     = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [animKey, setAnimKey]     = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    fetch("/api/giveaway")
+      .then(r => r.json())
+      .then(d => { if (d.giveaways?.length) { setGiveaways(d.giveaways); setVisible(true); } })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    if (giveaways.length <= 1) return;
+    timerRef.current = setInterval(() => {
+      setAnimKey(k => k + 1);
+      setCurrent(c => (c + 1) % giveaways.length);
+    }, ROTATE_INTERVAL);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [giveaways.length]);
+
+  if (!visible || !giveaways.length) return null;
+  const g = giveaways[current];
 
   return (
     <>
-      <section className="w-full mt-2">
-        <button 
-          onClick={() => setIsPopupOpen(true)}
-          className="w-full text-left group relative flex items-center justify-between p-3 rounded-xl bg-[var(--card)] border border-[var(--border)] hover:border-[var(--accent)]/50 transition-all duration-500 overflow-hidden"
-        >
-          {/* Subtle Ambient Glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[var(--accent)]/[0.05] to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-          
-          <div className="relative z-10 flex items-center gap-3">
-            <div className="hidden sm:flex items-center justify-center w-8 h-8 rounded-lg bg-[var(--accent)]/10 text-[var(--accent)]">
-              <FiGift size={16} className="animate-bounce" />
-            </div>
-            
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5 flex-wrap">
-                <h3 className="text-xs font-bold tracking-tight text-[var(--foreground)]">
-                  Join Mega Giveaway
-                </h3>
-                <span className="px-1.5 py-0.5 rounded-md bg-[var(--accent)] text-white text-[8px] font-black uppercase tracking-widest animate-pulse">
-                  Win Big
-                </span>
-                <span className="px-1.5 py-0.5 rounded-md bg-red-500 text-white text-[8px] font-black uppercase tracking-widest animate-pulse flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white"></span> LIVE
-                </span>
-              </div>
-              <p className="text-[10px] text-[var(--muted)] mt-0.5">
-                Free Rewards <span className="mx-1 opacity-40">•</span> <span className="font-semibold text-[#0088cc]">BlueBuff Esports</span>
-              </p>
-            </div>
-          </div>
-          
-          <div className="relative z-10 flex items-center gap-1 text-[10px] font-bold text-[var(--foreground)] opacity-70 group-hover:opacity-100 transition-opacity">
-            <span className="hidden sm:block">Join Now</span>
-            <FiArrowRight size={12} className="transform group-hover:translate-x-1 transition-transform" />
-          </div>
-        </button>
-      </section>
+      <style>{`
+        @keyframes gw-fade { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes gw-swap { 0%{opacity:0;transform:translateX(8px)} 100%{opacity:1;transform:translateX(0)} }
+        @keyframes gw-dot  { 0%,100%{opacity:1} 50%{opacity:0.3} }
+        .gw-wrap {
+          display:flex; align-items:center; gap:10px;
+          padding: 8px 10px 8px 10px;
+          border-radius:14px;
+          border:1px solid color-mix(in srgb,var(--accent) 20%,var(--border));
+          background: var(--card);
+          box-shadow: 0 2px 12px rgba(0,0,0,0.12),
+                      inset 0 1px 0 rgba(255,255,255,0.05);
+          animation: gw-fade 0.35s cubic-bezier(0.22,1,0.36,1) both;
+          cursor:pointer;
+          position:relative;
+          overflow:hidden;
+        }
+        .gw-wrap::before {
+          content:'';
+          position:absolute; inset-inline:0; top:0; height:1.5px;
+          background:linear-gradient(90deg,transparent,var(--accent),transparent);
+          opacity:0.6;
+        }
+        .gw-icon {
+          flex-shrink:0;
+          width:32px; height:32px; border-radius:9px;
+          background:color-mix(in srgb,var(--accent) 14%,transparent);
+          color:var(--accent);
+          display:flex; align-items:center; justify-content:center;
+        }
+        .gw-text { flex:1; min-width:0; }
+        .gw-label {
+          display:flex; align-items:center; gap:5px;
+          font-size:9px; font-weight:800;
+          text-transform:uppercase; letter-spacing:0.09em;
+          color:var(--accent); opacity:0.85;
+          margin-bottom:1px;
+        }
+        .gw-live-dot {
+          width:5px; height:5px; border-radius:50%;
+          background:var(--accent);
+          animation: gw-dot 1.4s ease infinite;
+        }
+        .gw-title {
+          font-size:13px; font-weight:700;
+          color:var(--foreground);
+          overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+        }
+        .gw-btn {
+          flex-shrink:0;
+          display:flex; align-items:center; gap:3px;
+          padding:6px 12px; border-radius:8px; border:none; cursor:pointer;
+          font-size:11px; font-weight:800; letter-spacing:0.03em;
+          background:var(--accent); color:#fff;
+          box-shadow:0 2px 10px color-mix(in srgb,var(--accent) 40%,transparent);
+          transition:opacity 0.15s, transform 0.15s;
+        }
+        .gw-btn:hover{opacity:0.85;transform:scale(1.04);}
+        .gw-close {
+          flex-shrink:0;
+          width:20px; height:20px; border-radius:50%; border:none; cursor:pointer;
+          background:transparent; color:var(--muted);
+          display:flex; align-items:center; justify-content:center;
+          transition:color 0.15s, background 0.15s;
+          margin-left:-2px;
+        }
+        .gw-close:hover{color:var(--foreground);background:var(--border);}
+        .gw-content { animation: gw-swap 0.28s cubic-bezier(0.22,1,0.36,1) both; }
+        .gw-dots { display:flex; align-items:center; gap:3px; }
+        .gw-dot-item {
+          height:3px; border-radius:99px;
+          background:var(--accent);
+          transition: width 0.3s ease, opacity 0.3s ease;
+        }
+      `}</style>
 
-      {/* Popup Modal */}
-      {isPopupOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-0">
-          <div 
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            onClick={() => setIsPopupOpen(false)}
-          />
-          
-          <div className="relative z-10 w-full max-w-sm bg-[var(--card)] border border-[var(--border)] rounded-3xl overflow-hidden shadow-2xl shadow-[var(--accent)]/20 animate-in fade-in zoom-in-95 duration-300">
-            {/* Close Button */}
-            <button 
-              onClick={() => setIsPopupOpen(false)}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 flex items-center justify-center transition-colors z-20"
-            >
-              <FiX className="text-[var(--foreground)] opacity-70" />
-            </button>
-
-            {/* Header Area */}
-            <div className="relative pt-10 pb-6 px-6 text-center bg-gradient-to-b from-[#0088cc]/10 to-transparent">
-              <div className="mx-auto w-16 h-16 rounded-2xl bg-[#0088cc]/20 flex items-center justify-center mb-4 border border-[#0088cc]/30 shadow-[0_0_20px_rgba(0,136,204,0.3)]">
-                <FiSend size={28} className="text-[#0088cc] -ml-1" />
-              </div>
-              <h2 className="text-xl font-black text-[var(--foreground)] tracking-tight mb-2 flex items-center justify-center gap-2">
-                Telegram Giveaway!
-                <span className="px-1.5 py-0.5 rounded-md bg-red-500 text-white text-[9px] font-black uppercase tracking-widest animate-pulse flex items-center gap-1 mt-0.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white"></span> LIVE
-                </span>
-              </h2>
-              <p className="text-[11px] text-[var(--muted)] font-medium leading-relaxed">Join the channel and add at least 5 friends to enter the giveaway.</p>
-            </div>
-
-            {/* Content Area */}
-            <div className="px-6 pb-6 space-y-4">
-              <div className="p-4 rounded-2xl bg-[var(--background)] border border-[var(--border)] space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-yellow-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <FiGift size={14} className="text-yellow-500" />
-                  </div>
-                  <p className="text-[11px] text-[var(--foreground)] leading-snug"><strong className="text-yellow-500">Guaranteed Rewards:</strong> Everyone who joins will get some rewards!</p>
-                </div>
-                
-                <div className="w-full h-px bg-[var(--border)]/50" />
-                
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[var(--accent)]/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <FiShare2 size={14} className="text-[var(--accent)]" />
-                  </div>
-                  <p className="text-[11px] text-[var(--foreground)] leading-snug"><strong className="text-[var(--accent)]">Criteria:</strong> Join the channel and share to friends (add at least 5 people) to be eligible!</p>
-                </div>
-                
-                <div className="w-full h-px bg-[var(--border)]/50" />
-                
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#0088cc]/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <FiSend size={14} className="text-[#0088cc]" />
-                  </div>
-                  <p className="text-[11px] text-[var(--foreground)] leading-snug"><strong className="text-[#0088cc]">Claiming:</strong> Join and text us to get your reward instantly!</p>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="space-y-2 pt-2">
-                <Link 
-                  href="https://t.me/bluebuffesports" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3.5 rounded-xl bg-[#0088cc] hover:bg-[#0077b5] text-white font-black text-[11px] uppercase tracking-widest flex items-center justify-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(0,136,204,0.4)]"
-                  onClick={() => setIsPopupOpen(false)}
-                >
-                  <FiSend size={14} /> Join Telegram Now
-                </Link>
-                
-                <button 
-                  onClick={() => {
-                    if (navigator.share) {
-                      navigator.share({
-                        title: 'BlueBuff Esports Giveaway',
-                        text: 'Join the Mega Giveaway on BlueBuff Esports Telegram! Everyone gets rewards.',
-                        url: 'https://t.me/bluebuffesports',
-                      }).catch(console.error);
-                    } else {
-                      navigator.clipboard.writeText('https://t.me/bluebuffesports');
-                      alert("Link copied to clipboard!");
-                    }
-                  }}
-                  className="w-full py-3.5 rounded-xl bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 text-[var(--foreground)] font-bold text-[11px] uppercase tracking-widest flex items-center justify-center gap-2 transition-all"
-                >
-                  <FiShare2 size={14} /> Share with Friends
-                </button>
-              </div>
-            </div>
-          </div>
+      <div className="gw-wrap" onClick={() => setShowModal(true)}>
+        {/* Icon */}
+        <div className="gw-icon">
+          <FiGift size={15} />
         </div>
-      )}
+
+        {/* Text — animates on rotate */}
+        <div className="gw-text">
+          <div className="gw-label">
+            <span className="gw-live-dot" />
+            Giveaway Live
+          </div>
+          <div key={animKey} className="gw-content gw-title">{g.title}</div>
+        </div>
+
+        {/* Dots if multiple */}
+        {giveaways.length > 1 && (
+          <div className="gw-dots">
+            {giveaways.map((_, i) => (
+              <div
+                key={i}
+                className="gw-dot-item"
+                style={{ width: i === current ? "12px" : "3px", opacity: i === current ? 1 : 0.25 }}
+                onClick={e => { e.stopPropagation(); setCurrent(i); setAnimKey(k => k+1); }}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* CTA */}
+        <button className="gw-btn" onClick={e => { e.stopPropagation(); setShowModal(true); }}>
+          Enter <FiChevronRight size={11} />
+        </button>
+
+        {/* Dismiss */}
+        <button className="gw-close" onClick={e => { e.stopPropagation(); setVisible(false); }}>
+          <FiX size={11} />
+        </button>
+      </div>
+
+      {showModal && <GiveawayEntryModal giveaway={g} onClose={() => setShowModal(false)} />}
     </>
   );
 }
