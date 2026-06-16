@@ -1,23 +1,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FiGift, FiChevronRight, FiUsers, FiShare2 } from "react-icons/fi";
+import { FiGift, FiChevronRight, FiUsers, FiShare2, FiAward } from "react-icons/fi";
 import GiveawayEntryModal from "@/components/Giveaway/GiveawayEntryModal";
+import { useAuthStore } from "@/store/useAuthStore";
 
 export default function GiveawaysPage() {
+  const { token, _hasHydrated } = useAuthStore();
   const [giveaways, setGiveaways] = useState<any[]>([]);
+  const [wonGiveaways, setWonGiveaways] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedGiveaway, setSelectedGiveaway] = useState<any>(null);
 
   useEffect(() => {
-    fetch("/api/giveaway")
+    if (!_hasHydrated) return;
+    
+    const headers: any = {};
+    if (token) headers["Authorization"] = `Bearer ${token}`;
+
+    fetch("/api/giveaway", { headers })
       .then(r => r.json())
       .then(d => {
         if (d.giveaways) setGiveaways(d.giveaways);
+        if (d.wonGiveaways) setWonGiveaways(d.wonGiveaways);
       })
       .catch(() => {})
       .finally(() => setLoading(false));
-  }, []);
+  }, [_hasHydrated, token]);
 
   const handleShare = async (e: React.MouseEvent, g: any) => {
     e.stopPropagation();
@@ -122,6 +131,36 @@ export default function GiveawaysPage() {
               </div>
             );
           })}
+        </div>
+      )}
+
+      {/* Won Giveaways */}
+      {wonGiveaways.length > 0 && (
+        <div className="mt-8">
+          <div className="mb-4 flex items-center gap-2 px-1">
+            <FiAward className="text-yellow-500" size={18} />
+            <h2 className="text-sm font-black text-[var(--foreground)] tracking-tight">Your Past Wins</h2>
+          </div>
+          <div className="space-y-2.5">
+            {wonGiveaways.map(g => (
+              <div key={g._id} className="relative flex items-center gap-3 p-3 rounded-[1.25rem] bg-[var(--foreground)]/[0.02] border border-yellow-500/20 opacity-80">
+                <div className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center bg-yellow-500/10 text-yellow-500">
+                  <FiAward size={18} />
+                </div>
+                <div className="flex-1 min-w-0 py-0.5">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <span className="text-[9px] font-black uppercase tracking-widest text-yellow-500">Winner</span>
+                  </div>
+                  <h3 className="font-bold text-[var(--foreground)] text-[13px] truncate leading-tight">
+                    {g.title}
+                  </h3>
+                  <p className="text-[10px] text-[var(--muted)] truncate mt-0.5">
+                    Prize: {g.prize}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
 
