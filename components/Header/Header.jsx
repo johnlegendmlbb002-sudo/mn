@@ -23,6 +23,7 @@ const HEADER_CONFIG = {
     { label: "Region", href: "/region", icon: <FiCompass size={14} /> },
     { label: "Services", href: "/services", icon: <FiGrid size={14} /> },
     { label: "Blog", href: "/blog", icon: <FiLayers size={14} /> },
+    { label: "Giveaways", href: "/giveaways", icon: <FiGift size={14} /> },
   ],
 
   userMenu: {
@@ -441,7 +442,7 @@ export default function Header() {
                       </div>
                     ) : (
                       <>
-                        <div className="grid grid-cols-3 gap-1.5 mb-3">
+                        <div className="grid grid-cols-4 gap-1.5 mb-3">
                           {HEADER_CONFIG.nav.map((item) => (
                             <Link key={item.label} href={item.href} onClick={() => setUserMenuOpen(false)} className="flex flex-col items-center justify-center py-1 rounded-xl bg-[var(--foreground)]/[0.02] border border-[var(--border)] hover:bg-[var(--accent)] hover:text-white transition-all group">
                               <span className="text-[var(--accent)] group-hover:text-white mb-0.5 scale-90">{item.icon}</span>

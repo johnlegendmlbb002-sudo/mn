@@ -28,7 +28,7 @@ const BottomNav = () => {
         { label: "Games", icon: FiGrid, path: "/games", action: () => router.push("/games") },
         { label: "Wallet", icon: FiCreditCard, path: "/dashboard/wallet", action: () => router.push("/dashboard/wallet") },
         { label: "Trade", icon: FiShoppingCart, path: "/trade", isProminent: true, action: () => router.push("/trade") },
-        { label: "Blog", icon: FiLayers, path: "/blog", action: () => router.push("/blog") },
+        { label: "Giveaways", icon: FiGift, path: "/giveaways", action: () => router.push("/giveaways") },
         { label: "Orders", icon: FiShoppingBag, path: "/dashboard/orders", action: () => router.push("/dashboard/orders") },
         { label: "Support", icon: FiHeadphones, path: "/dashboard/support", action: () => router.push("/dashboard/support") },
     ];
