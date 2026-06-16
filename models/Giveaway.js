@@ -20,6 +20,7 @@ const GiveawaySchema = new mongoose.Schema({
   startDate: { type: Date },
   endDate: { type: Date },
   entryCount: { type: Number, default: 0 },
+  maxEntries: { type: Number, default: 0 }, // 0 means unlimited
 }, { timestamps: true });
 
 export default mongoose.models.Giveaway || mongoose.model("Giveaway", GiveawaySchema);

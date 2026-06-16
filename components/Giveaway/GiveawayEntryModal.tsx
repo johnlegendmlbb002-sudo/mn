@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FiX, FiCheck, FiExternalLink, FiGift, FiAward } from "react-icons/fi";
+import { FiX, FiCheck, FiExternalLink, FiGift, FiAward, FiShare2 } from "react-icons/fi";
+
 
 
 export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: any; onClose: () => void }) {
@@ -72,6 +73,23 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
 
   const isEnded  = giveaway.status === "ended";
   const isWinner = winners.includes(currentUserId);
+
+  const handleShare = async () => {
+    // If you have a dedicated page, use that. Otherwise share the homepage URL.
+    const url = `${window.location.origin}?giveaway=${giveaway._id}`;
+    const shareData = {
+      title: giveaway.title,
+      text: `Join the ${giveaway.title} on MLBB Top Up India!`,
+      url: url,
+    };
+    if (navigator.share) {
+      try { await navigator.share(shareData); } catch (e) {}
+    } else {
+      navigator.clipboard.writeText(url);
+      alert("Link copied to clipboard!");
+    }
+  };
+
 
   return (
     <>
@@ -168,9 +186,14 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
               <p className="gm-label" style={{ color:"var(--accent)" }}>🎁 {isEnded ? "Giveaway Ended" : "Giveaway Live"}</p>
               <p style={{ margin:"1px 0 0", fontWeight:700, fontSize:14, color:"var(--foreground)", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{giveaway.title}</p>
             </div>
-            <button onClick={onClose} style={{ color:"var(--muted)", background:"none", border:"none", cursor:"pointer", padding:4, display:"flex" }}>
-              <FiX size={18} />
-            </button>
+            <div style={{ display:"flex", alignItems:"center", gap:4 }}>
+              <button onClick={handleShare} style={{ color:"var(--muted)", background:"none", border:"none", cursor:"pointer", padding:6, display:"flex", borderRadius:"50%", transition:"background 0.15s" }} onMouseOver={e => e.currentTarget.style.background="var(--border)"} onMouseOut={e => e.currentTarget.style.background="none"}>
+                <FiShare2 size={16} />
+              </button>
+              <button onClick={onClose} style={{ color:"var(--muted)", background:"none", border:"none", cursor:"pointer", padding:6, display:"flex", borderRadius:"50%", transition:"background 0.15s" }} onMouseOver={e => e.currentTarget.style.background="var(--border)"} onMouseOut={e => e.currentTarget.style.background="none"}>
+                <FiX size={18} />
+              </button>
+            </div>
           </div>
 
           {/* Prize bar */}

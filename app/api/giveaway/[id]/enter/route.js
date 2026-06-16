@@ -30,6 +30,10 @@ export async function POST(req, { params }) {
     if (!giveaway || giveaway.status !== "live")
       return NextResponse.json({ success: false, message: "Giveaway not active" }, { status: 400 });
 
+    if (giveaway.maxEntries > 0 && giveaway.entryCount >= giveaway.maxEntries)
+      return NextResponse.json({ success: false, message: "Giveaway is full" }, { status: 403 });
+
+
     // Check duplicate
     const existing = await GiveawayEntry.findOne({ giveawayId: id, userId });
     if (existing)

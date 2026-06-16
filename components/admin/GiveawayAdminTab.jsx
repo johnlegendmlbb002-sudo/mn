@@ -41,7 +41,7 @@ export default function GiveawayAdminTab() {
   const [form, setForm] = useState({
     title: "", description: "", prize: "", prizeCount: 1,
     status: "draft", startDate: "", endDate: "",
-    tasks: [],
+    tasks: [], maxEntries: 0,
   });
 
   const fetchGiveaways = async () => {
@@ -78,7 +78,7 @@ export default function GiveawayAdminTab() {
       if (d.success) {
         setShowCreate(false);
         setEditTarget(null);
-        setForm({ title: "", description: "", prize: "", prizeCount: 1, status: "draft", startDate: "", endDate: "", tasks: [] });
+        setForm({ title: "", description: "", prize: "", prizeCount: 1, status: "draft", startDate: "", endDate: "", tasks: [], maxEntries: 0 });
         fetchGiveaways();
       }
     } else {
@@ -89,7 +89,7 @@ export default function GiveawayAdminTab() {
       const d = await res.json();
       if (d.success) {
         setShowCreate(false);
-        setForm({ title: "", description: "", prize: "", prizeCount: 1, status: "draft", startDate: "", endDate: "", tasks: [] });
+        setForm({ title: "", description: "", prize: "", prizeCount: 1, status: "draft", startDate: "", endDate: "", tasks: [], maxEntries: 0 });
         fetchGiveaways();
       }
     }
@@ -113,6 +113,7 @@ export default function GiveawayAdminTab() {
       startDate:   g.startDate   ? g.startDate.slice(0, 10) : "",
       endDate:     g.endDate     ? g.endDate.slice(0, 10)   : "",
       tasks:       g.tasks       || [],
+      maxEntries:  g.maxEntries  || 0,
     });
     setShowCreate(true);
   };
@@ -166,7 +167,7 @@ export default function GiveawayAdminTab() {
           <button onClick={fetchGiveaways} className="flex items-center gap-1.5 text-[11px] font-bold text-[var(--muted)] hover:text-[var(--accent)] px-3 py-1.5 rounded-lg border border-[var(--border)] transition-colors">
             <FiRefreshCw size={12} /> Refresh
           </button>
-          <button onClick={() => { setEditTarget(null); setForm({ title: "", description: "", prize: "", prizeCount: 1, status: "draft", startDate: "", endDate: "", tasks: [] }); setShowCreate(true); }} className="flex items-center gap-1.5 text-[11px] font-black bg-[var(--accent)] text-white px-3 py-1.5 rounded-lg transition-opacity hover:opacity-90">
+          <button onClick={() => { setEditTarget(null); setForm({ title: "", description: "", prize: "", prizeCount: 1, status: "draft", startDate: "", endDate: "", tasks: [], maxEntries: 0 }); setShowCreate(true); }} className="flex items-center gap-1.5 text-[11px] font-black bg-[var(--accent)] text-white px-3 py-1.5 rounded-lg transition-opacity hover:opacity-90">
             <FiPlus size={12} /> New Giveaway
           </button>
         </div>
@@ -346,6 +347,11 @@ export default function GiveawayAdminTab() {
                       <option value="draft">Draft</option>
                       <option value="live">Live</option>
                     </select>
+                  </div>
+                  <div className="col-span-2">
+                    <label className="text-[11px] font-bold text-[var(--muted)] uppercase tracking-wider">Max Entries (0 = Unlimited)</label>
+                    <input type="number" min={0} value={form.maxEntries} onChange={e => setForm(f => ({ ...f, maxEntries: Number(e.target.value) }))}
+                      className="mt-1 w-full bg-[var(--background)] border border-[var(--border)] rounded-xl px-3 py-2 text-sm text-[var(--foreground)] outline-none focus:border-[var(--accent)]/50" />
                   </div>
                 </div>
 
