@@ -151,19 +151,19 @@ export default function PWAInstallBanner() {
       {/* ── Floating card ── */}
       <div id="pwa-card" role="dialog" aria-label="Install app">
         <div className="pwa-top-line" />
-        <div style={{ padding:"11px 12px", display:"flex", alignItems:"center", gap:"9px" }}>
+        <div style={{ padding:"8px 10px", display:"flex", alignItems:"center", gap:"7px" }}>
           {/* App icon */}
-          <div style={{ flexShrink:0, width:34, height:34, borderRadius:10, overflow:"hidden", border:"1px solid var(--border)", background:"var(--background)" }}>
-            <Image src="/logoBB.png" alt="BlueBuff" width={34} height={34} style={{ objectFit:"cover", width:"100%", height:"100%" }} />
+          <div style={{ flexShrink:0, width:28, height:28, borderRadius:8, overflow:"hidden", border:"1px solid var(--border)", background:"var(--background)" }}>
+            <Image src="/logoBB.png" alt="BlueBuff" width={28} height={28} style={{ objectFit:"cover", width:"100%", height:"100%" }} />
           </div>
           {/* Text */}
-          <div style={{ flex:1, minWidth:0 }}>
-            <p style={{ margin:0, fontWeight:700, fontSize:"12px", color:"var(--foreground)", lineHeight:1.25 }}>Install BlueBuff</p>
-            <p style={{ margin:"2px 0 0", fontSize:"10px", color:"var(--muted)" }}>Add to home screen</p>
+          <div style={{ flex:1, minWidth:0, paddingRight:2 }}>
+            <p style={{ margin:0, fontWeight:700, fontSize:"11px", color:"var(--foreground)", lineHeight:1.2 }}>Install BlueBuff</p>
+            <p style={{ margin:"1px 0 0", fontSize:"9px", color:"var(--muted)" }}>Add to home screen</p>
           </div>
           {/* Install */}
           <button className="pwa-install-btn" id="pwa-install-btn" onClick={handleInstall}>
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
             Install
