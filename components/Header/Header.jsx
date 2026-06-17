@@ -235,11 +235,11 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex-1 flex items-center justify-end gap-2 sm:gap-3 pr-2">
+          <div className="flex-1 flex items-center justify-end gap-1.5 sm:gap-2 pr-2">
             {user && (
               <Link href="/dashboard/wallet">
                 <button
-                  className="relative w-auto h-9 px-3 rounded-full flex items-center justify-center gap-1.5 transition-all duration-300 group bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 hover:scale-105 active:scale-95"
+                  className="relative w-auto h-8 px-2.5 rounded-full flex items-center justify-center gap-1 transition-all duration-300 group bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 hover:scale-105 active:scale-95"
                 >
                   {balanceLoading ? (
                     <div className="w-12 h-3 bg-[var(--accent)]/10 rounded-full overflow-hidden shimmer-overlay" />
@@ -254,7 +254,7 @@ export default function Header() {
             <div className="lg:hidden">
               <button
                 onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
-                className="w-10 h-10 rounded-full flex items-center justify-center bg-[var(--foreground)]/[0.05] text-[var(--foreground)]/60 active:scale-90 transition-transform"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center bg-[var(--foreground)]/[0.05] text-[var(--foreground)]/60 active:scale-90 transition-transform"
               >
                 {mobileSearchOpen ? <FiX size={18} /> : <FiSearch size={18} />}
               </button>
@@ -345,7 +345,7 @@ export default function Header() {
 
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3" ref={dropdownRef}>
+          <div className="flex items-center gap-1.5 sm:gap-2" ref={dropdownRef}>
             <ThemeToggle />
 
 
@@ -353,27 +353,27 @@ export default function Header() {
 
             <button
               onClick={() => user ? setUserMenuOpen((p) => !p) : window.location.href = "/login"}
-              className="relative w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 group hover:scale-105 active:scale-95"
+              className="relative flex items-center gap-1.5 pl-2 pr-1 py-1 rounded-[2rem] transition-all duration-300 group hover:scale-105 active:scale-95 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 border border-[var(--border)]"
             >
-              <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-[var(--foreground)]/5 group-hover:bg-[var(--foreground)]/10 transition-colors">
+              <FiMenu className="text-[var(--foreground)]/60 text-[10px] sm:text-xs ml-0.5" />
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full overflow-hidden flex items-center justify-center bg-[var(--background)] shadow-sm">
                 {user?.avatar ? (
-                  <Image src={user.avatar} alt={`${user.name || "User"} Profile Avatar`} width={36} height={36} className="object-cover" />
+                  <Image src={user.avatar} alt={`${user.name || "User"} Profile Avatar`} width={28} height={28} className="object-cover" />
                 ) : (
-                  <FiUser className="text-[var(--foreground)]/60 text-lg" />
+                  <FiUser className="text-[var(--foreground)]/60 text-xs" />
                 )}
               </div>
             </button>
 
-            {userMenuOpen && (
               <>
                 <div
                   onClick={() => setUserMenuOpen(false)}
-                  className="fixed inset-0 bg-black/80 backdrop-blur-xl z-[2147483646] cursor-pointer"
+                  className={`fixed inset-0 bg-black/80 backdrop-blur-xl z-[2147483646] cursor-pointer transition-opacity duration-500 ${userMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
                   style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
                 />
 
                 <div
-                  className="fixed right-0 top-0 h-[100dvh] w-[85%] max-w-[380px] bg-[var(--background)] dark:bg-[#050505] border-l border-[var(--border)] z-[2147483647] shadow-[-20px_0_100px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden transition-transform duration-500 translate-x-0"
+                  className={`fixed right-0 top-0 h-[100dvh] w-[85%] max-w-[380px] bg-[var(--background)] dark:bg-[#050505] border-l border-[var(--border)] z-[2147483647] shadow-[-20px_0_100px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${userMenuOpen ? "translate-x-0" : "translate-x-full"}`}
                   style={{ background: 'var(--background)', opacity: 1 }}
                 >
                   <div className="absolute inset-0 bg-[var(--background)] pointer-events-none" style={{ background: 'var(--background)', opacity: 1 }} />
@@ -524,15 +524,14 @@ export default function Header() {
                   </div>
 
                   {/* Drawer Footer */}
-                  <div className="relative z-10 p-4 border-t border-[var(--border)] bg-[var(--foreground)]/[0.02]">
-                    <div className="mt-8 text-center text-[10px] text-[var(--muted)]/40 font-mono tracking-widest">
+                  <div className="relative z-10 py-2 px-4 border-t border-[var(--border)] bg-[var(--foreground)]/[0.02]">
+                    <div className="mt-1 mb-1 text-center text-[10px] text-[var(--muted)]/40 font-mono tracking-widest">
                       Crafted with love ❤️ by <a href={`https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}?text=hello big fan big fan`} target="_blank" rel="noopener noreferrer" className="text-violet-500 hover:text-violet-400 transition-colors">Tk</a>
                     </div>
                   </div>
                 </div>
               </>
-            )}
-          </div>
+            </div>
         </div>
       </div>
 

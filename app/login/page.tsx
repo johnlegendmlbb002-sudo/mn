@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FiShield,
@@ -354,9 +355,15 @@ function AuthContent() {
                   </div>
                 </motion.div>
 
-
-
-              </motion.div>
+                {/* TERMS & CONDITIONS */}
+                <motion.div variants={itemVariants} className="pt-6 text-center">
+                  <p className="text-[10px] text-[var(--muted)]/60 font-medium">
+                    By logging in, you agree to our <br className="sm:hidden" />
+                    <Link href="/terms" className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors font-bold">Terms & Conditions</Link>
+                    {" "}and{" "}
+                    <Link href="/privacy" className="text-[var(--foreground)] hover:text-[var(--accent)] transition-colors font-bold">Privacy Policy</Link>
+                  </p>
+                </motion.div>              </motion.div>
             )}
           </motion.div>
         </div>

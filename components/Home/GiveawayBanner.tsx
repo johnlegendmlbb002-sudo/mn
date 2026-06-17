@@ -79,7 +79,7 @@ export default function GiveawayBanner() {
           animation: gw-dot 1.4s ease infinite;
         }
         .gw-title {
-          font-size:13px; font-weight:700;
+          font-size:11px; font-weight:600;
           color:var(--foreground);
         }
         .gw-btn {
@@ -110,49 +110,51 @@ export default function GiveawayBanner() {
         }
       `}</style>
 
-      <div className="gw-wrap" onClick={() => setShowModal(true)}>
-        {/* Icon */}
-        <div className="gw-icon">
-          <FiGift size={15} />
-        </div>
-
-        {/* Text — animates on rotate */}
-        <div className="gw-text">
-          <div className="gw-label">
-            <span className="gw-live-dot" />
-            Giveaway Live
-            {g.maxEntries > 0 ? (
-              <span style={{ color:"var(--muted)", fontWeight:700, marginLeft:4 }}>• {g.entryCount || 0}/{g.maxEntries} Filled</span>
-            ) : (
-              <span style={{ color:"var(--muted)", fontWeight:700, marginLeft:4 }}>• {g.entryCount || 0} Entered</span>
-            )}
+      <div className="max-w-7xl mx-auto px-4 mt-4 mb-2">
+        <div className="gw-wrap" onClick={() => setShowModal(true)}>
+          {/* Icon */}
+          <div className="gw-icon">
+            <FiGift size={15} />
           </div>
-          <div key={animKey} className="gw-content gw-title">{g.title}</div>
-        </div>
 
-        {/* Dots if multiple */}
-        {giveaways.length > 1 && (
-          <div className="gw-dots">
-            {giveaways.map((_, i) => (
-              <div
-                key={i}
-                className="gw-dot-item"
-                style={{ width: i === current ? "12px" : "3px", opacity: i === current ? 1 : 0.25 }}
-                onClick={e => { e.stopPropagation(); setCurrent(i); setAnimKey(k => k+1); }}
-              />
-            ))}
+          {/* Text — animates on rotate */}
+          <div className="gw-text">
+            <div className="gw-label">
+              <span className="gw-live-dot" />
+              Giveaway Live
+              {g.maxEntries > 0 ? (
+                <span style={{ color:"var(--muted)", fontWeight:700, marginLeft:4 }}>• {g.entryCount || 0}/{g.maxEntries} Filled</span>
+              ) : (
+                <span style={{ color:"var(--muted)", fontWeight:700, marginLeft:4 }}>• {g.entryCount || 0} Entered</span>
+              )}
+            </div>
+            <div key={animKey} className="gw-content gw-title">{g.title}</div>
           </div>
-        )}
 
-        {/* CTA */}
-        <button className="gw-btn" onClick={e => { e.stopPropagation(); setShowModal(true); }}>
-          Enter <FiChevronRight size={11} />
-        </button>
+          {/* Dots if multiple */}
+          {giveaways.length > 1 && (
+            <div className="gw-dots">
+              {giveaways.map((_, i) => (
+                <div
+                  key={i}
+                  className="gw-dot-item"
+                  style={{ width: i === current ? "12px" : "3px", opacity: i === current ? 1 : 0.25 }}
+                  onClick={e => { e.stopPropagation(); setCurrent(i); setAnimKey(k => k+1); }}
+                />
+              ))}
+            </div>
+          )}
 
-        {/* Dismiss */}
-        <button className="gw-close" onClick={e => { e.stopPropagation(); setVisible(false); }}>
-          <FiX size={11} />
-        </button>
+          {/* CTA */}
+          <button className="gw-btn" onClick={e => { e.stopPropagation(); setShowModal(true); }}>
+            Enter <FiChevronRight size={11} />
+          </button>
+
+          {/* Dismiss */}
+          <button className="gw-close" onClick={e => { e.stopPropagation(); setVisible(false); }}>
+            <FiX size={11} />
+          </button>
+        </div>
       </div>
 
       {showModal && <GiveawayEntryModal giveaway={g} onClose={() => setShowModal(false)} />}
