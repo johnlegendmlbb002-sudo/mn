@@ -14,10 +14,11 @@ interface ThemeItem {
 const themes: ThemeItem[] = [
   { id: "light", icon: "☀️", label: "Light" },
   { id: "dark", icon: "🌙", label: "Dark" },
-  { id: "cyber", icon: "💠", label: "Cyber" },
   { id: "sakura", icon: "🌸", label: "Sakura" },
   { id: "ocean", icon: "🌊", label: "Ocean" },
   { id: "forest", icon: "🍃", label: "Forest" },
+    { id: "cyber", icon: "💠", label: "Cyber" },
+
   { id: "tropical", icon: "🌺", label: "Tropical" },
   { id: "ice", icon: "❄️", label: "Ice" },
   { id: "steel", icon: "🔩", label: "Steel" },
