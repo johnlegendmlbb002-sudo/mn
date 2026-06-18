@@ -9,6 +9,7 @@ export default function GiveawaysPage() {
   const { token, _hasHydrated } = useAuthStore();
   const [giveaways, setGiveaways] = useState<any[]>([]);
   const [wonGiveaways, setWonGiveaways] = useState<any[]>([]);
+  const [pastGiveaways, setPastGiveaways] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedGiveaway, setSelectedGiveaway] = useState<any>(null);
 
@@ -23,6 +24,7 @@ export default function GiveawaysPage() {
       .then(d => {
         if (d.giveaways) setGiveaways(d.giveaways);
         if (d.wonGiveaways) setWonGiveaways(d.wonGiveaways);
+        if (d.pastGiveaways) setPastGiveaways(d.pastGiveaways);
       })
       .catch(() => {})
       .finally(() => setLoading(false));
@@ -152,6 +154,36 @@ export default function GiveawaysPage() {
                     <span className="text-[9px] font-black uppercase tracking-widest text-yellow-500">Your rewards have been sent</span>
                   </div>
                   <h3 className="font-bold text-[var(--foreground)] text-[13px] leading-tight">
+                    {g.title}
+                  </h3>
+                  <p className="text-[10px] text-[var(--muted)] mt-0.5">
+                    Prize: {g.prize}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Past Giveaways */}
+      {pastGiveaways.length > 0 && (
+        <div className="mt-8">
+          <div className="mb-4 flex items-center gap-2 px-1">
+            <FiGift className="text-[var(--muted)]" size={18} />
+            <h2 className="text-sm font-black text-[var(--foreground)] tracking-tight">Past Giveaways</h2>
+          </div>
+          <div className="space-y-2.5">
+            {pastGiveaways.map(g => (
+              <div key={g._id} className="relative flex items-center gap-3 p-3 rounded-[1.25rem] bg-[var(--foreground)]/[0.02] border border-[var(--border)] opacity-70">
+                <div className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center bg-[var(--foreground)]/5 text-[var(--muted)]">
+                  <FiGift size={18} />
+                </div>
+                <div className="flex-1 min-w-0 py-0.5">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <span className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)]">Ended</span>
+                  </div>
+                  <h3 className="font-bold text-[var(--foreground)] text-[13px] leading-tight line-through decoration-[var(--muted)]/50">
                     {g.title}
                   </h3>
                   <p className="text-[10px] text-[var(--muted)] mt-0.5">

@@ -45,6 +45,7 @@ export default function StatsTab() {
     // Manage Wallet State
     const [manageEmail, setManageEmail] = useState("");
     const [manageAmount, setManageAmount] = useState("");
+    const [manageDescription, setManageDescription] = useState("");
     const [updating, setUpdating] = useState(false);
 
     // History State
@@ -169,6 +170,7 @@ export default function StatsTab() {
                     email: finalEmail,
                     amount: Number(finalAmount),
                     action,
+                    description: manageDescription,
                 }),
             });
 
@@ -181,6 +183,7 @@ export default function StatsTab() {
                 // alert(json.message); 
                 setManageEmail("");
                 setManageAmount("");
+                setManageDescription("");
                 setQuickAmount("");
                 setSelectedUserForWallet(null);
                 fetchStats();
@@ -362,55 +365,72 @@ export default function StatsTab() {
                             <h3 className="text-base sm:text-lg font-bold text-[var(--foreground)]">Add or Remove Money Manually</h3>
                         </div>
 
-                        <div className="flex flex-col md:flex-row items-stretch md:items-end gap-3 sm:gap-4">
-                            <div className="flex-1 space-y-1.5">
-                                <label className="text-[10px] sm:text-xs font-semibold text-[var(--muted)] ml-1 uppercase tracking-wider">User Email</label>
-                                <div className="relative">
-                                    <FiMail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--muted)]" />
-                                    <input
-                                        type="email"
-                                        value={manageEmail}
-                                        onChange={(e) => setManageEmail(e.target.value)}
-                                        placeholder="user@example.com"
-                                        className="w-full h-10 sm:h-11 pl-9 pr-4 rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.03] text-[var(--foreground)] text-sm focus:border-[var(--accent)]/50 outline-none transition-all placeholder:text-[var(--muted)]/40"
-                                    />
+                        <div className="flex flex-col gap-3 sm:gap-4">
+                            <div className="flex flex-col md:flex-row items-stretch md:items-end gap-3 sm:gap-4">
+                                <div className="flex-1 space-y-1.5">
+                                    <label className="text-[10px] sm:text-xs font-semibold text-[var(--muted)] ml-1 uppercase tracking-wider">User Email</label>
+                                    <div className="relative">
+                                        <FiMail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--muted)]" />
+                                        <input
+                                            type="email"
+                                            value={manageEmail}
+                                            onChange={(e) => setManageEmail(e.target.value)}
+                                            placeholder="user@example.com"
+                                            className="w-full h-10 sm:h-11 pl-9 pr-4 rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.03] text-[var(--foreground)] text-sm focus:border-[var(--accent)]/50 outline-none transition-all placeholder:text-[var(--muted)]/40"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="w-full md:w-48 space-y-1.5">
+                                    <label className="text-[10px] sm:text-xs font-semibold text-[var(--muted)] ml-1 uppercase tracking-wider">Amount</label>
+                                    <div className="relative">
+                                        <FiDollarSign className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--muted)]" />
+                                        <input
+                                            type="number"
+                                            value={manageAmount}
+                                            onChange={(e) => setManageAmount(e.target.value)}
+                                            placeholder="0.00"
+                                            min="0"
+                                            className="w-full h-10 sm:h-11 pl-9 pr-4 rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.03] text-[var(--foreground)] text-sm focus:border-[var(--accent)]/50 outline-none transition-all placeholder:text-[var(--muted)]/40"
+                                        />
+                                    </div>
                                 </div>
                             </div>
-
-                            <div className="w-full md:w-48 space-y-1.5">
-                                <label className="text-[10px] sm:text-xs font-semibold text-[var(--muted)] ml-1 uppercase tracking-wider">Amount</label>
-                                <div className="relative">
-                                    <FiDollarSign className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--muted)]" />
-                                    <input
-                                        type="number"
-                                        value={manageAmount}
-                                        onChange={(e) => setManageAmount(e.target.value)}
-                                        placeholder="0.00"
-                                        min="0"
-                                        className="w-full h-10 sm:h-11 pl-9 pr-4 rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.03] text-[var(--foreground)] text-sm focus:border-[var(--accent)]/50 outline-none transition-all placeholder:text-[var(--muted)]/40"
-                                    />
+                            
+                            <div className="flex flex-col md:flex-row items-stretch md:items-end gap-3 sm:gap-4">
+                                <div className="flex-1 space-y-1.5">
+                                    <label className="text-[10px] sm:text-xs font-semibold text-[var(--muted)] ml-1 uppercase tracking-wider">Description (Optional)</label>
+                                    <div className="relative">
+                                        <input
+                                            type="text"
+                                            value={manageDescription}
+                                            onChange={(e) => setManageDescription(e.target.value)}
+                                            placeholder="Reason for adjustment"
+                                            className="w-full h-10 sm:h-11 px-4 rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.03] text-[var(--foreground)] text-sm focus:border-[var(--accent)]/50 outline-none transition-all placeholder:text-[var(--muted)]/40"
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div className="flex gap-2 w-full md:w-auto pt-1 sm:pt-0">
-                                <button
-                                    onClick={() => handleManageWallet("add")}
-                                    disabled={updating}
-                                    className="flex-1 md:flex-none h-10 sm:h-11 px-4 sm:px-5 rounded-xl bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 font-bold text-[11px] flex items-center justify-center gap-2 hover:bg-emerald-500/20 active:scale-95 transition-all outline-none disabled:opacity-50"
-                                >
-                                    {updating ? <Loader2 className="animate-spin" size={14} /> : <FiPlus size={14} />}
-                                    <span className="hidden xs:inline">Add Money</span>
-                                    <span className="xs:hidden">Add</span>
-                                </button>
-                                <button
-                                    onClick={() => handleManageWallet("remove")}
-                                    disabled={updating}
-                                    className="flex-1 md:flex-none h-10 sm:h-11 px-4 sm:px-5 rounded-xl bg-red-500/10 text-red-500 border border-red-500/20 font-bold text-[11px] flex items-center justify-center gap-2 hover:bg-red-500/20 active:scale-95 transition-all outline-none disabled:opacity-50"
-                                >
-                                    {updating ? <Loader2 className="animate-spin" size={14} /> : <FiMinus size={14} />}
-                                    <span className="hidden xs:inline">Remove Money</span>
-                                    <span className="xs:hidden">Deduct</span>
-                                </button>
+                                
+                                <div className="flex gap-2 w-full md:w-auto pt-1 sm:pt-0">
+                                    <button
+                                        onClick={() => handleManageWallet("add")}
+                                        disabled={updating}
+                                        className="flex-1 md:flex-none h-10 sm:h-11 px-4 sm:px-5 rounded-xl bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 font-bold text-[11px] flex items-center justify-center gap-2 hover:bg-emerald-500/20 active:scale-95 transition-all outline-none disabled:opacity-50"
+                                    >
+                                        {updating ? <Loader2 className="animate-spin" size={14} /> : <FiPlus size={14} />}
+                                        <span className="hidden xs:inline">Add Money</span>
+                                        <span className="xs:hidden">Add</span>
+                                    </button>
+                                    <button
+                                        onClick={() => handleManageWallet("remove")}
+                                        disabled={updating}
+                                        className="flex-1 md:flex-none h-10 sm:h-11 px-4 sm:px-5 rounded-xl bg-red-500/10 text-red-500 border border-red-500/20 font-bold text-[11px] flex items-center justify-center gap-2 hover:bg-red-500/20 active:scale-95 transition-all outline-none disabled:opacity-50"
+                                    >
+                                        {updating ? <Loader2 className="animate-spin" size={14} /> : <FiMinus size={14} />}
+                                        <span className="hidden xs:inline">Remove Money</span>
+                                        <span className="xs:hidden">Deduct</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

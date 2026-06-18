@@ -23,7 +23,11 @@ export async function GET(req) {
       }
     }
 
-    return NextResponse.json({ success: true, giveaways, wonGiveaways });
+    const pastGiveaways = await Giveaway.find({ status: "ended" })
+      .sort({ updatedAt: -1 })
+      .limit(10);
+
+    return NextResponse.json({ success: true, giveaways, wonGiveaways, pastGiveaways });
   } catch (err) {
     return NextResponse.json({ success: false }, { status: 500 });
   }
