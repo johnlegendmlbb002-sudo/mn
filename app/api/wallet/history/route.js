@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import WalletTransaction from "@/models/WalletTransaction";
 import User from "@/models/User";
+import UsdtDeposit from "@/models/UsdtDeposit";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 
@@ -33,12 +34,21 @@ export async function GET(req) {
         const filter = searchParams.get("filter") || "all"; // all, inr, usdt
 
         /* ================= QUERY ================= */
-        // Get user details to filter by various user identifiers
-        let user = await User.findOne({ userId: decoded.userId });
-        if (!user) user = await User.findById(decoded.userId);
+        // Try findById first (since decoded.userId is typically the _id)
+        let user = null;
+        if (mongoose.isValidObjectId(decoded.userId)) {
+            user = await User.findById(decoded.userId);
+        }
+        if (!user) {
+            user = await User.findOne({ userId: decoded.userId });
+        }
 
         if (!user) {
-            return NextResponse.json({ message: "User not found" }, { status: 404 });
+            return NextResponse.json({ 
+                success: false, 
+                message: "User not found or token stale", 
+                debugId: decoded.userId 
+            }, { status: 401 });
         }
 
         const baseQuery = {
@@ -59,7 +69,7 @@ export async function GET(req) {
 
         // Update any waiting USDT deposits that have expired
         const now = new Date();
-        await mongoose.model("UsdtDeposit").updateMany(
+        await UsdtDeposit.updateMany(
             { 
                 ...baseQuery,
                 status: "waiting", 
@@ -76,7 +86,7 @@ export async function GET(req) {
                 .select("-userObjectId -__v")
                 .lean(),
             (filter === "all" || filter === "usdt") 
-                ? mongoose.model("UsdtDeposit").find({ 
+                ? UsdtDeposit.find({ 
                     ...baseQuery, 
                     status: { $in: ["waiting", "submitted", "confirmed", "failed", "expired"] } 
                 }).lean() 
