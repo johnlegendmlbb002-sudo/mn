@@ -17,6 +17,7 @@ import {
   FiClock,
 } from "react-icons/fi";
 import { TransactionSkeleton } from "../Skeleton/Skeleton";
+import api from "@/lib/axios";
 
 interface WalletTabProps {
   walletBalance: number;
@@ -85,11 +86,7 @@ export default function WalletTab({
 
   const fetchStatus = async (id: string) => {
     try {
-      const token = localStorage.getItem("token");
-      const res = await fetch(`/api/wallet/usdt/status?depositId=${id}`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      const data = await res.json();
+      const { data } = await api.get(`/api/wallet/usdt/status?depositId=${id}`);
       if (data.success) {
         setUsdtDeposit(data.deposit);
         if (data.deposit.status === "confirmed") {
@@ -127,13 +124,8 @@ export default function WalletTab({
   // Auto-resume active deposit on mount if user is on USDT tab
   useEffect(() => {
     const checkActive = async () => {
-       const token = localStorage.getItem("token");
-       if (!token) return;
        try {
-         const res = await fetch("/api/wallet/history?filter=usdt&page=1&limit=5", {
-           headers: { Authorization: `Bearer ${token}` }
-         });
-         const data = await res.json();
+         const { data } = await api.get("/api/wallet/history?filter=usdt&page=1&limit=5");
          if (data.success && data.data?.[0]?.status === "waiting") {
             handleResumeUsdt(data.data[0]);
          }
@@ -164,23 +156,17 @@ export default function WalletTab({
     }
 
     setLoading(true);
-    const token = localStorage.getItem("token");
-    if (!token) {
-      alert("Please log in again to continue");
-      setLoading(false);
-      return;
-    }
 
-    const res = await fetch("/api/wallet/create-order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
-      body: JSON.stringify({ amount: Number(amount) }),
-    });
-    const data = await res.json();
-    setLoading(false);
-    if (!data.success) { alert(data.message); return; }
-    localStorage.setItem("pending_order", data.orderId);
-    window.location.href = data.paymentUrl;
+    try {
+      const { data } = await api.post("/api/wallet/create-order", { amount: Number(amount) });
+      setLoading(false);
+      if (!data.success) { alert(data.message); return; }
+      localStorage.setItem("pending_order", data.orderId);
+      window.location.href = data.paymentUrl;
+    } catch (err: any) {
+      setLoading(false);
+      alert(err.response?.data?.message || "Payment initiation failed");
+    }
   };
 
   // ============ USDT FLOW ============
@@ -197,21 +183,15 @@ export default function WalletTab({
     setUsdtLoading(true);
     setUsdtError("");
     try {
-      const token = localStorage.getItem("token");
-      const res = await fetch("/api/wallet/usdt/initiate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ usdtAmount: num, network: usdtNetwork }),
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/wallet/usdt/initiate", { usdtAmount: num, network: usdtNetwork });
       if (!data.success) {
         setUsdtError(data.message || "Could not start deposit. Try again.");
         return;
       }
       setUsdtDeposit(data);
       setUsdtStep("deposit");
-    } catch {
-      setUsdtError("Network error. Please try again.");
+    } catch (err: any) {
+      setUsdtError(err.response?.data?.message || "Network error. Please try again.");
     } finally {
       setUsdtLoading(false);
     }
@@ -225,21 +205,15 @@ export default function WalletTab({
     setUsdtLoading(true);
     setUsdtError("");
     try {
-      const token = localStorage.getItem("token");
-      const res = await fetch("/api/wallet/usdt/submit-hash", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ depositId: usdtDeposit.depositId, txHash: txHash.trim() }),
-      });
-      const data = await res.json();
+      const { data } = await api.post("/api/wallet/usdt/submit-hash", { depositId: usdtDeposit.depositId, txHash: txHash.trim() });
       if (!data.success) {
         setUsdtError(data.message || "Could not submit your hash. Try again.");
         return;
       }
       setUsdtStep("submitted");
       startPolling(usdtDeposit.depositId);
-    } catch {
-      setUsdtError("Network error. Please try again.");
+    } catch (err: any) {
+      setUsdtError(err.response?.data?.message || "Network error. Please try again.");
     } finally {
       setUsdtLoading(false);
     }
@@ -249,11 +223,7 @@ export default function WalletTab({
     if (pollRef.current) clearInterval(pollRef.current);
     pollRef.current = setInterval(async () => {
       try {
-        const token = localStorage.getItem("token");
-        const res = await fetch(`/api/wallet/usdt/status?depositId=${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        const data = await res.json();
+        const { data } = await api.get(`/api/wallet/usdt/status?depositId=${id}`);
         if (data.success && data.deposit?.status === "confirmed") {
           clearInterval(pollRef.current!);
           setUsdtStep("confirmed");
@@ -766,11 +736,7 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
   const fetchHistory = async () => {
     try {
       setLoading(true);
-      const token = localStorage.getItem("token");
-      const res = await fetch(`/api/wallet/history?page=${page}&limit=5&filter=${filter}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const json = await res.json();
+      const { data: json } = await api.get(`/api/wallet/history?page=${page}&limit=5&filter=${filter}`);
       if (json.success) {
         setHistory(json.data);
         if (json.pagination) {
@@ -791,7 +757,6 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
   };
 
   const checkPendingStatuses = async (txns: any[]) => {
-    const token = localStorage.getItem("token");
     let updated = false;
 
     const toCheck = txns.slice(0, 3);
@@ -799,15 +764,7 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
       const txn = toCheck[i];
       if (!txn.referenceId) continue;
       try {
-        const res = await fetch("/api/wallet/check-status", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
-          },
-          body: JSON.stringify({ orderId: txn.referenceId })
-        });
-        const data = await res.json();
+        const { data } = await api.post("/api/wallet/check-status", { orderId: txn.referenceId });
         if (data.success) updated = true;
       } catch (e) {
         console.error("Auto-check failed for", txn._id);
@@ -815,11 +772,12 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
     }
 
     if (updated) {
-      const res = await fetch(`/api/wallet/history?page=${page}&limit=5&filter=${filter}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const json = await res.json();
-      if (json.success) setHistory(json.data);
+      try {
+        const { data: json } = await api.get(`/api/wallet/history?page=${page}&limit=5&filter=${filter}`);
+        if (json.success) setHistory(json.data);
+      } catch (e) {
+        // ignore
+      }
     }
   };
 

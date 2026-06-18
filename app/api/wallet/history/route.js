@@ -117,7 +117,7 @@ export async function GET(req) {
     } catch (err) {
         console.error("User wallet history fetch failed", err);
         return NextResponse.json(
-            { success: false, message: "Server error" },
+            { success: false, message: "Server error", error: err.message },
             { status: 500 }
         );
     }
