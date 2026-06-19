@@ -22,9 +22,19 @@ export async function POST(req, { params }) {
       return NextResponse.json({ success: false, message: "Invalid token" }, { status: 401 });
     }
 
-    const userId = decoded.userId?.toString();
-    const user = await User.findById(userId).select("name email");
-    if (!user) return NextResponse.json({ success: false, message: "User not found" }, { status: 404 });
+    const userIdStr = decoded.userId?.toString();
+    let user = null;
+    if (userIdStr ) { // Basic ObjectId check
+      user = await User.findById(userIdStr).select("name email userId");
+    }
+    if (!user) {
+      user = await User.findOne({ userId: userIdStr }).select("name email userId");
+    }
+
+    if (!user) return NextResponse.json({ success: false, message: "User not found or token stale" }, { status: 401 });
+    
+    // Use the custom userId for the giveaway entry to ensure consistency
+    const entryUserId = user.userId || userIdStr;
 
     const giveaway = await Giveaway.findById(id);
     if (!giveaway || giveaway.status !== "live")
@@ -35,7 +45,7 @@ export async function POST(req, { params }) {
 
 
     // Check duplicate
-    const existing = await GiveawayEntry.findOne({ giveawayId: id, userId });
+    const existing = await GiveawayEntry.findOne({ giveawayId: id, userId: entryUserId });
     if (existing)
       return NextResponse.json({ success: false, message: "Already entered" }, { status: 409 });
 
@@ -47,7 +57,7 @@ export async function POST(req, { params }) {
 
     await GiveawayEntry.create({
       giveawayId: id,
-      userId,
+      userId: entryUserId,
       name: user.name || "",
       email: user.email || "",
       mlbbId,

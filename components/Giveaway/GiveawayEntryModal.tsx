@@ -11,6 +11,7 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
   const [mlbbServer, setMlbbServer] = useState("");
   const [phone, setPhone]         = useState("");
   const [taskData, setTaskData]   = useState<Record<number, string | boolean>>({});
+  const [verifying, setVerifying] = useState<Record<number, number>>({});
   const [loading, setLoading]     = useState(false);
   const [error, setError]         = useState("");
   const [hasEntered, setHasEntered] = useState(false);
@@ -33,9 +34,36 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
       .then(r => r.json()).then(d => { if (d.user?.userId) setCurrentUserId(d.user.userId); }).catch(() => {});
   }, [giveaway._id]);
 
+  useEffect(() => {
+    const active = Object.values(verifying).some(v => v > 0);
+    if (!active) return;
+    const interval = setInterval(() => {
+      setVerifying(prev => {
+        const next = { ...prev };
+        let changed = false;
+        for (const key in next) {
+          if (next[key] > 0) {
+            next[key] -= 1;
+            changed = true;
+            if (next[key] === 0) {
+              setTaskData(p => ({ ...p, [key]: true }));
+            }
+          }
+        }
+        return changed ? next : prev;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [verifying]);
+
+  const handleVerify = (i: number) => {
+    if (taskData[i] || verifying[i] > 0) return;
+    setVerifying(p => ({ ...p, [i]: 10 }));
+  };
+
   const allTasksDone = () => {
-    if (!phone.trim()) return false;
-    for (let i = 0; i < giveaway.tasks.length; i++) {
+    if (!phone || !phone.trim()) return false;
+    for (let i = 0; i < (giveaway.tasks?.length || 0); i++) {
       const t = giveaway.tasks[i];
       if (!t.required) continue;
       if (t.type === "checkbox" && !taskData[i]) return false;
@@ -226,7 +254,16 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
                   <p style={{ margin:0, fontWeight:800, fontSize:16, color:"var(--foreground)" }}>You&apos;re in! 🎉</p>
                   <p style={{ margin:"4px 0 0", fontSize:12, color:"var(--muted)" }}>Your entry has been recorded. Good luck!</p>
                 </div>
-                <button onClick={onClose} className="gm-submit" style={{ maxWidth:180 }}>Close</button>
+                <a 
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}?text=${encodeURIComponent(`Hi, I have just joined the giveaway: ${giveaway.title}`)}`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="gm-submit" 
+                  style={{ maxWidth: 180, display: "inline-block", textAlign: "center", textDecoration: "none" }}
+                  onClick={onClose}
+                >
+                  Notify Admin
+                </a>
               </div>
 
             ) : !loggedIn ? (
@@ -259,7 +296,7 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
                     </div>
                   </div>
                   <div style={{ marginTop: 8 }}>
-                    <p className="gm-label" style={{ marginBottom:4 }}>WhatsApp / Phone Number</p>
+                    <p className="gm-label" style={{ marginBottom:4 }}>WhatsApp / Phone Number <span style={{ color: "#ef4444" }}>*</span></p>
                     <input type="tel" className="gm-input" value={phone} onChange={e => setPhone(e.target.value)} placeholder="e.g. 9876543210" />
                   </div>
                 </div>
@@ -287,7 +324,7 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
                                 {task.link && (
                                   <a href={task.link} target="_blank" rel="noopener noreferrer"
                                     className="gm-task-link"
-                                    onClick={() => { if (task.type === "checkbox") setTaskData(p => ({ ...p, [i]: true })); }}
+                                    onClick={() => { if (task.type === "checkbox") handleVerify(i); }}
                                   >
                                     <FiExternalLink size={10} />
                                     {task.type === "youtube" ? "Open Channel" : task.type === "whatsapp" ? "Join Group" : task.type === "instagram" ? "Follow" : "Open Link"}
@@ -296,10 +333,18 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
                                 {task.type === "checkbox" && (
                                   <button
                                     className={`gm-task-done ${taskData[i] ? "checked" : ""}`}
-                                    onClick={() => setTaskData(p => ({ ...p, [i]: !p[i] }))}
+                                    onClick={() => {
+                                      if (taskData[i]) {
+                                        setTaskData(p => { const n = { ...p }; delete n[i]; return n; });
+                                      } else {
+                                        handleVerify(i);
+                                      }
+                                    }}
+                                    disabled={verifying[i] > 0}
+                                    style={{ opacity: verifying[i] > 0 ? 0.6 : 1, cursor: verifying[i] > 0 ? "wait" : "pointer" }}
                                   >
                                     <FiCheck size={10} />
-                                    {taskData[i] ? "Done!" : "Mark as done"}
+                                    {taskData[i] ? "Done!" : verifying[i] > 0 ? `Wait ${verifying[i]}s...` : "Mark as done"}
                                   </button>
                                 )}
                                 {task.inputLabel && (
