@@ -7,6 +7,7 @@ const GiveawayEntrySchema = new mongoose.Schema({
   email: { type: String, default: "" },
   mlbbId: { type: String, default: "" },
   mlbbServer: { type: String, default: "" },
+  phone: { type: String, default: "" },
   taskData: { type: mongoose.Schema.Types.Mixed, default: {} },
   isWinner: { type: Boolean, default: false },
 }, { timestamps: true });

@@ -40,10 +40,10 @@ export async function POST(req, { params }) {
       return NextResponse.json({ success: false, message: "Already entered" }, { status: 409 });
 
     const body = await req.json();
-    const { mlbbId, mlbbServer, taskData } = body;
+    const { mlbbId, mlbbServer, taskData, phone } = body;
 
-    if (!mlbbId || !mlbbServer)
-      return NextResponse.json({ success: false, message: "MLBB ID and server required" }, { status: 400 });
+    if (!phone)
+      return NextResponse.json({ success: false, message: "Phone number is required" }, { status: 400 });
 
     await GiveawayEntry.create({
       giveawayId: id,
@@ -52,6 +52,7 @@ export async function POST(req, { params }) {
       email: user.email || "",
       mlbbId,
       mlbbServer,
+      phone,
       taskData: taskData || {},
     });
 

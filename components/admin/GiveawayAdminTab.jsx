@@ -174,8 +174,8 @@ export default function GiveawayAdminTab() {
 
   const exportCSV = () => {
     if (!entries.length) return;
-    const headers = ["Name", "Email", "MLBB ID", "Server", "Entered At", "Winner"];
-    const rows = entries.map(e => [e.name, e.email, e.mlbbId, e.mlbbServer, new Date(e.createdAt).toLocaleString(), e.isWinner ? "YES" : ""]);
+    const headers = ["Name", "Email", "Phone", "MLBB ID", "Server", "Entered At", "Winner"];
+    const rows = entries.map(e => [e.name, e.email, e.phone || "", e.mlbbId, e.mlbbServer, new Date(e.createdAt).toLocaleString(), e.isWinner ? "YES" : ""]);
     const csv = [headers, ...rows].map(r => r.map(c => `"${c}"`).join(",")).join("\n");
     const blob = new Blob([csv], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
@@ -309,7 +309,7 @@ export default function GiveawayAdminTab() {
                       <table className="w-full text-[12px]">
                         <thead>
                           <tr className="border-b border-[var(--border)]">
-                            {["#", "Name", "Email", "MLBB ID", "Server", "Tasks", "Date", ""].map(h => (
+                            {["#", "Name", "Email", "Phone", "MLBB ID", "Server", "Tasks", "Date", ""].map(h => (
                               <th key={h} className="px-4 py-2.5 text-left text-[10px] font-black uppercase tracking-widest text-[var(--muted)]">{h}</th>
                             ))}
                           </tr>
@@ -322,6 +322,7 @@ export default function GiveawayAdminTab() {
                                 {e.isWinner && <span className="mr-1">🏆</span>}{e.name || "—"}
                               </td>
                               <td className="px-4 py-2.5 text-[var(--muted)]">{e.email || "—"}</td>
+                              <td className="px-4 py-2.5 text-[var(--muted)]">{e.phone || "—"}</td>
                               <td className="px-4 py-2.5 font-mono text-[var(--foreground)]">{e.mlbbId}</td>
                               <td className="px-4 py-2.5 text-[var(--muted)]">{e.mlbbServer}</td>
                               <td className="px-4 py-2.5 text-[var(--muted)]">

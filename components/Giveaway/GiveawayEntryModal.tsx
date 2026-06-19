@@ -9,6 +9,7 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
   const [step, setStep]           = useState<"tasks" | "success">("tasks");
   const [mlbbId, setMlbbId]       = useState("");
   const [mlbbServer, setMlbbServer] = useState("");
+  const [phone, setPhone]         = useState("");
   const [taskData, setTaskData]   = useState<Record<number, string | boolean>>({});
   const [loading, setLoading]     = useState(false);
   const [error, setError]         = useState("");
@@ -33,7 +34,7 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
   }, [giveaway._id]);
 
   const allTasksDone = () => {
-    if (!mlbbId.trim() || !mlbbServer.trim()) return false;
+    if (!phone.trim()) return false;
     for (let i = 0; i < giveaway.tasks.length; i++) {
       const t = giveaway.tasks[i];
       if (!t.required) continue;
@@ -50,7 +51,7 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
       const res = await fetch(`/api/giveaway/${giveaway._id}/enter`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ mlbbId, mlbbServer, taskData }),
+        body: JSON.stringify({ mlbbId, mlbbServer, phone, taskData }),
       });
       const d = await res.json();
       if (d.success) {
@@ -249,13 +250,17 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
                   <p className="gm-section-title" style={{ marginBottom:8 }}>Your MLBB Details</p>
                   <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8 }}>
                     <div>
-                      <p className="gm-label" style={{ marginBottom:4 }}>Player ID</p>
+                      <p className="gm-label" style={{ marginBottom:4 }}>Player ID (Optional)</p>
                       <input className="gm-input" value={mlbbId} onChange={e => setMlbbId(e.target.value)} placeholder="e.g. 123456789" />
                     </div>
                     <div>
-                      <p className="gm-label" style={{ marginBottom:4 }}>Server ID</p>
+                      <p className="gm-label" style={{ marginBottom:4 }}>Server ID (Optional)</p>
                       <input className="gm-input" value={mlbbServer} onChange={e => setMlbbServer(e.target.value)} placeholder="e.g. 2345" />
                     </div>
+                  </div>
+                  <div style={{ marginTop: 8 }}>
+                    <p className="gm-label" style={{ marginBottom:4 }}>WhatsApp / Phone Number</p>
+                    <input type="tel" className="gm-input" value={phone} onChange={e => setPhone(e.target.value)} placeholder="e.g. 9876543210" />
                   </div>
                 </div>
 
@@ -318,6 +323,13 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
                 {/* Error */}
                 {error && (
                   <p style={{ fontSize:12, fontWeight:600, color:"#ef4444", background:"rgba(239,68,68,0.08)", border:"1px solid rgba(239,68,68,0.2)", borderRadius:8, padding:"8px 12px", margin:0 }}>{error}</p>
+                )}
+
+                {/* Verification Notice */}
+                {giveaway.tasks?.length > 0 && (
+                  <p style={{ fontSize: 11, color: "var(--muted)", textAlign: "center", fontStyle: "italic", margin: "4px 0 -4px" }}>
+                    ⚠️ Note: All completed tasks will be strictly verified before winner announcement.
+                  </p>
                 )}
 
                 {/* Submit */}
