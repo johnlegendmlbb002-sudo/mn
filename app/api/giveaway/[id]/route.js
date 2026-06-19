@@ -3,6 +3,8 @@ import { connectDB } from "@/lib/mongodb";
 import Giveaway from "@/models/Giveaway";
 import GiveawayEntry from "@/models/GiveawayEntry";
 import jwt from "jsonwebtoken";
+import mongoose from "mongoose";
+import User from "@/models/User";
 
 export async function GET(req, { params }) {
   try {
@@ -17,9 +19,24 @@ export async function GET(req, { params }) {
     if (authHeader?.startsWith("Bearer ")) {
       try {
         const decoded = jwt.verify(authHeader.split(" ")[1], process.env.JWT_SECRET);
-        const entry = await GiveawayEntry.findOne({ giveawayId: id, userId: decoded.userId?.toString() });
+        const userIdStr = decoded.userId?.toString();
+        
+        let user = null;
+        if (mongoose.isValidObjectId(userIdStr)) {
+          user = await User.findById(userIdStr).select("userId");
+        }
+        if (!user) {
+          user = await User.findOne({ userId: userIdStr }).select("userId");
+        }
+        
+        const possibleIds = [userIdStr];
+        if (user && user.userId) possibleIds.push(user.userId);
+
+        const entry = await GiveawayEntry.findOne({ giveawayId: id, userId: { $in: possibleIds } });
         hasEntered = !!entry;
-      } catch {}
+      } catch (err) {
+        console.error("hasEntered check error:", err);
+      }
     }
 
     return NextResponse.json({ success: true, giveaway, hasEntered });
