@@ -221,7 +221,7 @@ export default function BlogPostLayout({
           <motion.div
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            className="mb-6 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)]/50"
+            className="mb-3 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)]/50"
           >
             <Link
               href="/blog"
@@ -256,11 +256,15 @@ export default function BlogPostLayout({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-3"
           >
-            <div className="flex flex-wrap items-center gap-3 md:gap-4 text-[9px] md:text-[10px] font-black uppercase tracking-[0.1em]">
-              <span className="text-[var(--accent)] bg-[var(--accent)]/10 px-2.5 py-1 rounded-md italic border border-[var(--accent)]/20">
+            <div className="flex flex-wrap items-center gap-1.5 md:gap-2.5 text-[8px] md:text-[9px] font-black uppercase tracking-[0.1em]">
+              <span className="text-[var(--accent)] bg-[var(--accent)]/10 px-2 py-0.5 rounded-md italic border border-[var(--accent)]/20">
                 # {category}
+              </span>
+              <span className="opacity-20">|</span>
+              <span className="flex items-center gap-1 text-[var(--muted)]">
+                <FiUser size={10} className="text-[var(--accent)]" /> {author}
               </span>
               <span className="opacity-20">|</span>
               <span className="flex items-center gap-1 text-[var(--muted)]">
@@ -275,52 +279,25 @@ export default function BlogPostLayout({
               </time>
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-[1000] italic tracking-tighter uppercase leading-[1.05] text-[var(--foreground)]">
+            <h1 className="text-2xl md:text-4xl font-[1000] italic tracking-tighter uppercase leading-[1.05] text-[var(--foreground)]">
               {title}
             </h1>
 
-            <div className="flex items-center gap-2.5 py-2 border-y border-[var(--border)]/50 mr-auto inline-flex">
-              <div className="w-8 h-8 rounded-full bg-[var(--card)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] shadow-inner">
-                <FiUser size={14} />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[8px] font-black uppercase tracking-widest text-[var(--muted)] opacity-50">
-                  Authored by
-                </span>
-                <span
-                  className="text-xs font-black italic uppercase text-[var(--foreground)] tracking-tight"
-                  itemProp="author"
-                >
-                  {author}
-                </span>
-              </div>
-            </div>
           </motion.div>
 
           {image && (
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="relative mt-6 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-[var(--border)] shadow-2xl aspect-[16/9] group"
+            <div
+              className="relative mt-6 overflow-hidden border border-[var(--border)] aspect-[16/9]"
             >
               <Image
                 src={image}
                 alt={description || title}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                className="object-cover"
                 priority
                 sizes="(max-width: 768px) 100vw, 900px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/80 via-transparent to-transparent opacity-60" />
-              <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between">
-                <div className="p-4 bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl hidden md:block">
-                  <p className="text-xs text-white/70 italic font-medium max-w-xs">
-                    {description || "Professional gaming insights and analysis from the BlueBuff team."}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+            </div>
           )}
         </header>
 
@@ -347,15 +324,15 @@ export default function BlogPostLayout({
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
             {relatedArticles.map((blog) => (
               <Link
                 key={blog.id}
                 href={`/blog/${blog.game}/${blog.slug}`}
-                className="group relative flex flex-col bg-[var(--card)] border border-[var(--border)] rounded-xl overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 shadow hover:-translate-y-0.5"
+                className="group relative flex flex-row h-[100px] sm:h-[120px] bg-[var(--card)] border border-[var(--border)] rounded-xl overflow-hidden hover:border-[var(--accent)]/50 transition-all duration-300 shadow hover:-translate-y-0.5"
                 aria-label={`Read: ${blog.title}`}
               >
-                <div className="aspect-video relative overflow-hidden">
+                <div className="w-[120px] sm:w-[160px] h-full relative overflow-hidden flex-shrink-0">
                   <img
                     src={blog.image}
                     alt={blog.title}
@@ -371,8 +348,8 @@ export default function BlogPostLayout({
                   </div>
                 </div>
 
-                <div className="p-3 flex flex-col flex-1">
-                  <h3 className="text-[11px] font-black uppercase italic tracking-tight leading-tight group-hover:text-[var(--accent)] transition-colors line-clamp-2 mb-2">
+                <div className="p-3 flex flex-col flex-1 min-w-0">
+                  <h3 className="text-[11px] sm:text-xs font-black uppercase italic tracking-tight leading-tight group-hover:text-[var(--accent)] transition-colors line-clamp-2 mb-2">
                     {blog.title}
                   </h3>
 

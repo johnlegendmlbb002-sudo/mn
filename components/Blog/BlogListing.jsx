@@ -292,7 +292,7 @@ function BlogCard({ blog, index }) {
               <h2 className="text-xs sm:text-[15px] font-bold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors mb-0.5 sm:mb-1 line-clamp-2">
                 {blog.title}
               </h2>
-              <p className="text-[var(--muted)] text-[10px] sm:text-xs leading-tight opacity-80 line-clamp-2 hidden sm:line-clamp-2">
+              <p className="text-[var(--muted)] text-[9px] sm:text-[11px] leading-tight opacity-80 line-clamp-1 mt-0.5 sm:mt-1">
                 {blog.excerpt}
               </p>
             </div>
