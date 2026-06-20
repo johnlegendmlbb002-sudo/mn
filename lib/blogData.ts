@@ -15,11 +15,11 @@ export interface BlogPost {
 export const BLOGS_DATA: BlogPost[] = [
   {
     id: "23",
-    title: "Beatrix Best Build 2026: Master the Versatile Marksman",
+    title: "Beatrix Best Build 2026: Ultimate Marksman Guide",
     slug: "heroes/beatrix-best-build-2026",
     type: "Hero Guide",
     excerpt:
-      "Master Beatrix in 2026 with our ultimate MLBB build guide. Learn the best items, emblems, and weapon-switching strategies to dominate the Land of Dawn as the versatile marksman.",
+      "Dominate the Gold Lane in 2026 with our ultimate Beatrix best build guide. Master all four weapons, emblems, and item strategies in Mobile Legends.",
     publishedAt: "2026-04-29",
     readingTime: "12 min read",
     image: "/blog/mlbb/heroes/beatrix-build-2026.png",
@@ -29,11 +29,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "22",
-    title: "Best MLBB Heroes for Rank Push in 2026: The Ultimate Meta Guide",
+    title: "Best MLBB Heroes 2026: Rank Push Meta Guide",
     slug: "best-mlbb-heroes-for-rank-push-2026",
     type: "Meta Guide",
     excerpt:
-      "Dominate the 2026 meta with our top picks for rank push in Mobile Legends. Discover the best heroes across all roles — from Jungler to Roamer — to climb from Epic to Mythic fast in India.",
+      "Discover the best MLBB heroes for rank push in 2026. Master the current meta with our top picks for solo queue and team play to reach Mythic fast.",
     publishedAt: "2026-04-24",
     readingTime: "15 min read",
     image: "/blog/mlbb/guides/best-heroes-2026.png",
@@ -57,11 +57,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "20",
-    title: "The 2026 Diamond Spending Blueprint: How to Spend Like a Pro & Save Money",
+    title: "MLBB Diamond Spending Blueprint 2026 India",
     slug: "how-to-spend-diamonds-wisely-in-mlbb",
     type: "Strategy Guide",
     excerpt:
-      "Most players waste half their diamonds. Learn the expert blueprint to spend wisely in MLBB — use the Daily Discount trick, avoid spend traps, and maximize every rupee you invest in 2026.",
+      "Stop wasting diamonds in MLBB! Master the 2026 spending blueprint to maximize your value in India. Learn the daily discount trick and best investments.",
     publishedAt: "2026-03-31",
     readingTime: "13 min read",
     image: "/blog/mlbb/guides/mlbb-wise-spending.png",
@@ -71,11 +71,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "19",
-    title: "Weekly Diamond Pass vs. Direct Recharge in MLBB: Which is Better?",
+    title: "Weekly Diamond Pass vs Direct Recharge 2026",
     slug: "weekly-diamond-pass-vs-direct-recharge",
     type: "Value Comparison",
     excerpt:
-      "Weekly Pass or direct diamonds — which gives more value in India? Our 2026 comparison breaks down the cost-per-diamond, event ROI, and exactly when to choose each option.",
+      "Weekly Diamond Pass vs direct recharge in MLBB: which is better? Read our 2026 guide to find out the best value, ROI, and how to save money in India.",
     publishedAt: "2026-03-31",
     readingTime: "12 min read",
     image: "/blog/mlbb/insights/mlbb-wdp-vs-diamonds.png",
@@ -85,11 +85,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "18",
-    title: "Is MLBB Worth Spending Money On? The 2026 Honest Review",
+    title: "Is MLBB Worth Spending Money On? 2026 Review",
     slug: "is-mlbb-worth-spending-money-on",
     type: "Opinion",
     excerpt:
-      "Should you buy diamonds in Mobile Legends? Our honest 2026 review explores whether MLBB is worth spending money on — covering Starlight benefits, skin ROI, and the smarter ways to recharge in India.",
+      "Should you buy diamonds in Mobile Legends? Read our honest 2026 review on whether MLBB is worth spending money on, covering Starlight and skin value.",
     publishedAt: "2026-03-31",
     readingTime: "11 min read",
     image: "/blog/mlbb/insights/mlbb-worth-it.png",
@@ -99,11 +99,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "17",
-    title: "How to Avoid Scams While Buying MLBB Diamonds: The 2026 Safety Guide",
+    title: "How to Avoid MLBB Diamond Scams 2026 Guide",
     slug: "how-to-avoid-scams-while-buying-diamonds",
     type: "Safety Guide",
     excerpt:
-      "Don't get scammed! Learn exactly how to buy Mobile Legends diamonds safely in India. Our 2026 guide exposes common top-up scams, fake sites to avoid, and the safety checkpoints every Indian player needs.",
+      "Don't get scammed! Learn how to safely buy Mobile Legends diamonds in India. Our 2026 guide covers top-up scams, fake sites, and account safety tips.",
     publishedAt: "2026-03-31",
     readingTime: "13 min read",
     image: "/blog/mlbb/guides/mlbb-avoid-scams.png",
@@ -113,11 +113,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "16",
-    title: "How to Reduce Lag in Mobile Legends: The Ultimate 2026 FPS & Ping Fix",
+    title: "How to Reduce Lag in MLBB 2026: FPS & Ping Fix",
     slug: "how-to-reduce-lag-in-mobile-legends",
     type: "Tech Guide",
     excerpt:
-      "Experience zero lag in MLBB with our comprehensive 2026 fix guide. Learn how to reduce ping spikes, boost FPS on mid-range phones, and optimize your network settings for silky-smooth Indian server gameplay.",
+      "Experience zero lag in MLBB! Learn how to reduce lag, fix ping spikes, and optimize your FPS for a smooth gaming experience in our 2026 fix guide.",
     publishedAt: "2026-03-31",
     readingTime: "14 min read",
     image: "/blog/mlbb/guides/mlbb-reduce-lag.png",
@@ -265,11 +265,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "2",
-    title: "How to Buy MLBB Diamonds Safely in India (The 2026 Safety Blueprint)",
+    title: "How to Buy MLBB Diamonds Safely in India 2026",
     slug: "how-to-buy-mlbb-diamonds-safely-in-india",
     type: "Safety Guide",
     excerpt:
-      "Protect your MLBB account from scams and negative diamond bans. Our 2026 safety guide for India covers verification checks, choosing trusted platforms, and the exact steps for a 100% safe diamond top-up.",
+      "Learn how to buy MLBB diamonds safely in India. Avoid negative diamond bans and scams with our step-by-step 2026 secure top-up guide.",
     publishedAt: "2026-01-12",
     readingTime: "20 min read",
     image: "/blog/mlbb/guides/buy-safely.png",

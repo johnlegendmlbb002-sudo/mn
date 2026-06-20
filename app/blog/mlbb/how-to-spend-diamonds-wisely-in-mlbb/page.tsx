@@ -4,167 +4,186 @@ import Link from "next/link";
 import { FiTrendingUp, FiShoppingBag, FiStar, FiPercent, FiClock, FiShield, FiInfo, FiCheckCircle } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "The 2026 Diamond Spending Blueprint: How to Spend Wisely in MLBB (India)",
-  description: "Stop wasting your diamonds! Our 2026 guide covers the best ways to spend diamonds in MLBB, how to maximize value in India, and the 'Daily Discount' trick for skins.",
+  title: "MLBB Diamond Spending Blueprint 2026 India",
+  description: "Stop wasting diamonds in MLBB! Master the 2026 spending blueprint to maximize your value in India. Learn the daily discount trick and best investments.",
   keywords: [
     "best ways to spend diamonds mlbb",
-    "how to spend mlbb diamonds wisely india",
     "maximize mlbb diamond value",
-    "save mlbb diamonds india",
-    "collector event guide mlbb",
-    "aspirants event guide mlbb",
-    "promo diamonds mlbb 2026",
-    "bluebuff mlbb diamonds"
+    "mlbb collector event guide",
+    "mlbb promo diamonds 2026",
+    "cheap mlbb diamonds india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-spend-diamonds-wisely-in-mlbb" },
+  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "article",
+    siteName: "BlueBuff",
+    locale: "en_IN",
+    url: "https://mlbbtopup.in/blog/mlbb/how-to-spend-diamonds-wisely-in-mlbb",
+    title: "MLBB Diamond Spending Blueprint 2026 India",
+    description: "Stop wasting diamonds in MLBB! Master the 2026 spending blueprint to maximize your value in India. Learn the daily discount trick and best investments.",
+    publishedTime: "2026-03-31T00:00:00.000Z",
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb/guides/mlbb-wise-spending.png", width: 1200, height: 630, alt: "MLBB Diamond Spending Guide" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bluebuffin",
+    title: "MLBB Diamond Spending Blueprint 2026 India",
+    description: "Stop wasting diamonds in MLBB! Master the 2026 spending blueprint to maximize your value in India. Learn the daily discount trick and best investments.",
+    images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-wise-spending.png"],
+  },
 };
 
 export default function BlogPage() {
+  const faqItems = [
+    {
+      question: "What is the highest value purchase in MLBB?",
+      answer: "The Weekly Diamond Pass gives you a massive 500% return on investment. It is the cheapest and most efficient way to build a diamond stash."
+    },
+    {
+      question: "Should I do 10x draws on the first day of an event?",
+      answer: "Never! Almost every major event has a daily 50% discount on single draws. Doing one draw every day is much cheaper than doing 10x draws at once."
+    },
+    {
+      question: "How do Promo Diamonds work?",
+      answer: "During the 515 and 11.11 events, Promo Diamonds act as real diamonds in the shop. You just need 1 actual diamond in your account to use them!"
+    },
+    {
+      question: "Is Crystal of Aurora (COA) worth buying?",
+      answer: "Yes, especially if you want a Collector skin. A Monthly COA bundle is much cheaper than buying raw diamonds, and COA can be used 1:1 on Collector events."
+    },
+    {
+      question: "Does third-party top-up trigger in-game recharge events?",
+      answer: "Yes! When you buy via Player ID on trusted sites like bluebuff.in, it triggers all 'Recharge Phase' tokens and daily bonuses instantly."
+    }
+  ];
+
   return (
     <BlogPostLayout
       title="THE 2026 DIAMOND SPENDING BLUEPRINT: HOW TO MAXIMIZE YOUR VALUE IN INDIA"
       category="Strategy Guide"
-      readTime="18 min read"
+      readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-wise-spending.png"
       game="MLBB"
+      description="Stop wasting your diamonds! Our 2026 guide covers the best ways to spend diamonds in MLBB, how to maximize value in India, and the 'Daily Discount' trick for skins."
+      faqItems={faqItems}
     >
-      <div className="space-y-10">
-        {/* Intro Highlight */}
-        <p className="text-lg md:text-xl font-medium italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
-          Many <strong>Indian Mobile Legends players</strong> waste diamonds on random draws and quick shop buys. This 2026 guide shows how to spend smarter and get more value from every diamond.
+      <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
+        Are you tired of spending thousands of rupees on a single skin? Most players throw their diamonds away by not understanding the game's hidden discount cycles.
+      </p>
+
+      <p>
+        Mobile Legends is filled with flashy Gacha events, limited-time draws, and shiny Collector skins. It is incredibly easy to get caught up in the hype and drain your wallet. But if you play smart, you can get the exact same skins for a fraction of the cost.
+      </p>
+
+      <p>
+        Whether you are a free-to-play grinder waiting for the 11.11 sale or a heavy spender hunting for an Exorcist skin, this is your definitive <strong>2026 Diamond Spending Blueprint</strong>.
+      </p>
+
+      <h2>1. The "Daily Discount" Strategy</h2>
+      
+      <p>
+        This is the most important rule in MLBB. When a big event like Aspirants, KOF, or Collector drops, <strong>do not do 10x draws on day one</strong>. 
+      </p>
+
+      <ul className="space-y-3">
+        <li>Almost every major event offers a <strong>50% discount</strong> on your first single draw of the day.</li>
+        <li>If an event lasts 30 days, doing one discounted draw per day will save you over 1,500 diamonds compared to doing huge multi-draws on the first day.</li>
+        <li>Patience is literally money in Mobile Legends. Only do 10x draws on the very last day of the event if you are still missing a few tokens!</li>
+      </ul>
+
+      <h2>2. Recharge Phase Stacking (The Premium Supply)</h2>
+      
+      <p>
+        Never buy diamonds randomly on a Tuesday. Wait for the weekend! Moonton usually releases a "Premium Supply" or "Recharge Phase" event on Saturdays during major skin events.
+      </p>
+
+      <ul className="space-y-3">
+        <li>During these phases, topping up 100 or 250 diamonds will reward you with free event tickets.</li>
+        <li>Top up on a trusted platform like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> during Phase 1, claim your free tickets, and then do it again when Phase 2 drops a week later.</li>
+        <li>You get your diamonds AND massive free pulls at the same time.</li>
+      </ul>
+
+      <h2>3. Diamond Purchase Priority List</h2>
+      
+      <p>
+        Not all purchases are created equal. Use this priority list to guarantee you get the most value for your Indian rupees.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Bundle Type</th>
+            <th>Value Multiplier</th>
+            <th>Why You Should Buy It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Weekly Diamond Pass</strong></td>
+            <td>500% Value</td>
+            <td>The absolute best deal in the game. Gives diamonds, COA, and star protection. Buy this constantly.</td>
+          </tr>
+          <tr>
+            <td><strong>Starlight Membership</strong></td>
+            <td>350% Value</td>
+            <td>Unlocks an exclusive skin, painted variations, a border, and tons of fragments for just 300 diamonds.</td>
+          </tr>
+          <tr>
+            <td><strong>Monthly COA Bundle</strong></td>
+            <td>250% Value</td>
+            <td>Crystal of Aurora works as a 1:1 substitute for diamonds in Zodiac and Collector events. It's much cheaper than raw diamonds.</td>
+          </tr>
+          <tr>
+            <td><strong>Direct Top-Up</strong></td>
+            <td>Base Value</td>
+            <td>Only do this during a Premium Supply event to trigger free tickets.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div className="bg-[var(--card)] border border-[var(--border)] p-10 rounded-[40px] my-16 shadow-xl relative overflow-hidden group">
+        <div className="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]" />
+        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4 flex items-center gap-2"><FiInfo /> The Lucky Spin Trap 🤫</h3>
+        <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
+          Never, ever use your precious diamonds on the "Lucky Spin" wheel! This wheel uses tickets. Save your free daily tickets and spin it only when your favorite hero appears. Wasting diamonds here is a massive rookie mistake.
         </p>
-
-        <p className="text-lg leading-relaxed text-justify">
-          Diamonds unlock skins, emotes, and other items in MLBB. Buying diamonds from a trusted platform like <a href="https://bluebuff.in" className="text-[var(--accent)] underline font-black">bluebuff.in</a> is only step one. The bigger win is using discounts at the right time. These tips help both light and heavy spenders get better value.
-        </p>
-
-        {/* Core Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 border-y border-[var(--border)] py-8">
-          <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-3">
-            <FiPercent className="text-2xl text-[var(--accent)]" />
-            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">The 50% Daily Rule</h4>
-            <p className="text-[11px] opacity-60 leading-relaxed m-0 text-justify">Do not do 10x draws on day one. Use the daily 50% discount on single draws to cut total event cost over the month.</p>
-          </div>
-          <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-3">
-            <FiTrendingUp className="text-2xl text-[var(--accent)]" />
-            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Recharge Phase Stacking</h4>
-            <p className="text-[11px] opacity-60 leading-relaxed m-0 text-justify">Wait for "Phase 1 & Phase 2" recharge events (often on Saturdays) to get extra tokens with your purchase.</p>
-          </div>
-        </div>
-
-        <section className="space-y-6">
-          <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-            <FiClock className="text-[var(--accent)]" />
-            1. Mastering the "Daily Discount" Strategy
-          </h2>
-          <p>
-            Major events like <strong>Aspirants, Exorcists, and Collector</strong> skins are designed to tempt you into spending 1000+ diamonds instantly. But most of these events offer a <strong>50% discount</strong> on your first single draw of every single day.
-          </p>
-          <p className="p-6 bg-[var(--accent)]/5 border border-[var(--border)] rounded-2xl italic text-sm opacity-80 leading-relaxed text-justify">
-            <strong>Simple strategy:</strong> If an event lasts 30 days, do one draw each day with the discount. It is much cheaper than doing big draws early.
-          </p>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-            <FiStar className="text-[var(--accent)]" />
-            2. Leveraging Crystal of Aurora (COA)
-          </h2>
-          <p>
-            Crystal of Aurora is often called the "Shadow Currency" of MLBB. It has a 1:1 value with diamonds but can be acquired at a much lower cost via subscriptions. By subscribing to the <strong>Weekly Diamond Pass</strong> or the <strong>Monthly COA Bundle</strong> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a>, you accumulate COA daily.
-          </p>
-          <p>
-            If a Collector skin costs 3,500 diamonds, using COA accumulated over time can bring your actual "cash" cost down to the equivalent of roughly 1,500 diamonds. It's the ultimate long-term investment for high-tier skin hunters.
-          </p>
-          <div className="p-8 rounded-[40px] bg-[var(--card)] border border-[var(--border)] relative overflow-hidden group">
-            <div className="absolute top-0 left-0 w-2 h-full bg-[var(--accent)]" />
-            <h4 className="italic font-black uppercase text-[var(--accent)] mb-3 tracking-tighter flex items-center gap-2">
-              <FiInfo /> Wise Spender Secret: The Lucky Spin Trap 🤫
-            </h4>
-            <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
-              Do not use diamonds for <strong>Lucky Spin</strong> (the one with Tickets). Use your free daily tickets instead and save diamonds for better rewards.
-            </p>
-          </div>
-        </section>
-
-        <section className="space-y-8">
-          <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-            <FiShoppingBag className="text-[var(--accent)]" />
-            Value Comparison: Diamond Purchase Priority
-          </h2>
-          <p>Not all purchases in MLBB are created equal. Use this priority list to ensure you're getting the best value for your Indian rupees.</p>
-          <div className="overflow-x-auto border border-[var(--border)] rounded-[32px]">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-[var(--accent)] text-black uppercase font-black italic">
-                <tr>
-                  <th className="p-5">Bundle Type</th>
-                  <th className="p-5 text-center">Value Multiplier</th>
-                  <th className="p-5">Best Strategy</th>
-                </tr>
-              </thead>
-              <tbody className="opacity-80">
-                <tr className="border-b border-[var(--border)]">
-                  <td className="p-5 font-bold italic tracking-tighter">Weekly Diamond Pass</td>
-                  <td className="p-5 text-center font-black text-[var(--accent)] italic text-lg">500%</td>
-                  <td className="p-5 text-xs">Buy 2-3 per month for peak efficiency.</td>
-                </tr>
-                <tr className="border-b border-[var(--border)]">
-                  <td className="p-5 font-bold italic tracking-tighter">Starlight Membership</td>
-                  <td className="p-5 text-center font-black text-[var(--accent)] italic text-lg">350%</td>
-                  <td className="p-5 text-xs">Unlocks skins, COA, and emote bonuses.</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold italic tracking-tighter">Collector Daily draw</td>
-                  <td className="p-5 text-center font-black text-[var(--accent)] italic text-lg">200%</td>
-                  <td className="p-5 text-xs">Halves the cost of Epic/Collector skins.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="italic font-black text-2xl tracking-tighter">3. The 11.11 & "Promo Diamond" Strategy</h2>
-          <p>
-            Twice a year, Moonton launches its flagship "Mega Sale" involving <strong>Promo Diamonds</strong>. These are earned by finishing simple daily tasks and can be used to pay for 99% of a skin's cost in the shop.
-          </p>
-          <div className="flex items-start gap-4 p-6 bg-red-500/5 border border-red-500/10 rounded-2xl">
-            <FiShield className="text-red-500 shrink-0 mt-1" />
-            <p className="text-sm m-0 opacity-80 italic leading-relaxed text-justify">
-              <strong>Important:</strong> You need at least <strong>1 real diamond</strong> to use Promo Diamonds. Keep a small balance ready.
-            </p>
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="italic font-black text-2xl tracking-tighter">Final Conclusion: Quality Over Quantity</h2>
-          <p className="text-lg leading-relaxed text-justify">
-            Focus your budget on your <strong>top 3 heroes</strong>. A skin you use often gives more value than many skins you never use.
-          </p>
-          <p className="text-lg leading-relaxed text-justify">
-            Use <strong>daily discounts</strong>, recharge phase events, and trusted platforms like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic">bluebuff.in</a> to build your collection on a smaller budget.
-          </p>
-          <p className="mt-12 text-lg">
-            <strong>Ready to start spending wisely?</strong> Get the absolute most value for your money! Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> now and use these strategies to dominate the Land of Dawn with the rarest skins!
-          </p>
-        </section>
-
-        {/* Simplified FAQ */}
-        <div className="mt-20 pt-10 border-t border-[var(--border)] space-y-8">
-          <h4 className="text-xl font-black italic uppercase tracking-widest opacity-40">Spending FAQ</h4>
-          <div className="space-y-8">
-            <div className="group">
-              <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base mb-2 italic">What is the best value purchase?</h5>
-              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">The <strong>Weekly Diamond Pass</strong> is the king. On <a href="https://bluebuff.in" className="text-[var(--accent)] underline">bluebuff.in</a>, you get over 500% value compared to a raw recharge, stacking both diamonds and COA for future events.</p>
-            </div>
-            <div className="group">
-              <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base mb-2 italic">Does bluebuff top-up trigger events?</h5>
-              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">Yes! Recharging on <strong>bluebuff.in</strong> triggers all in-game "Recharge Phase" tokens, daily bonuses, and event tasks exactly like an in-app purchase. It is the most efficient way for <strong>Indian players</strong> to stack rewards.</p>
-            </div>
-          </div>
-        </div>
       </div>
+
+      <h2>4. The Promo Diamond Mega-Sale (515 & 11.11)</h2>
+      
+      <p>
+        Twice a year, Moonton essentially gives skins away for free through Promo Diamonds. By completing simple daily login and play tasks, you can stack up to 1,000 Promo Diamonds.
+      </p>
+
+      <ul className="space-y-3">
+        <li>During the mega-sale, these act exactly like real diamonds in the shop.</li>
+        <li>You can buy an 899 diamond Epic skin using 898 Promo Diamonds and just <strong>1 real diamond</strong>.</li>
+        <li><strong>Warning:</strong> Always keep at least 5 real diamonds in your account before these events start so you don't miss out!</li>
+      </ul>
+
+      <h2>Conclusion: Key Takeaways</h2>
+      
+      <p>
+        Spending wisely in Mobile Legends comes down to three simple habits. By following them, you can build a massive skin collection on a very small budget.
+      </p>
+
+      <ul className="space-y-3">
+        <li>Always use the daily 50% discount on event draws.</li>
+        <li>Only buy raw diamonds during Premium Supply (Recharge) weekends.</li>
+        <li>Keep your Weekly Diamond Pass active; it is the best investment in the game.</li>
+      </ul>
+
+      <p>
+        <strong>Ready to start stacking those diamonds?</strong> Do it safely and get the best prices available in India!
+      </p>
+
+      <p>
+        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We deliver instantly using only your Player ID—no login required!
+      </p>
+
     </BlogPostLayout>
   );
 }
