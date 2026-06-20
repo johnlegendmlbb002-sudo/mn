@@ -1,179 +1,206 @@
 import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
+import { FiTrendingUp, FiCrosshair, FiShield, FiStar, FiZap, FiActivity, FiUsers } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "MLBB Roles Explained: Tank, Fighter, Mage, Assassin, Marksman, Support (2026)",
-  description: "Learn the 6 main roles in Mobile Legends: Bang Bang. Understand how to master Tank, Fighter, Mage, Assassin, Marksman, and Support to dominate in India (2026).",
+  title: "MLBB Roles Explained 2026 Guide",
+  description: "Learn all 6 MLBB roles in our 2026 beginner guide. Master Tank, Fighter, Mage, Assassin, Marksman, and Support to build the perfect team.",
   keywords: [
     "mlbb roles explained 2026",
-    "best mlbb role for beginners india",
+    "best mlbb role for beginners",
     "how to play tank mlbb guide",
-    "mlbb fighter lane strategy india",
-    "mlbb assassin jungle tips 2026",
-    "bluebuff mlbb roles guide",
-    "mlbb marksman gold lane guide",
-    "master mobile legends roles india",
-    "mobile legends roles explained",
-    "mlbb exp lane tips",
-    "how to roam in mlbb",
-    "best heroes for beginners mobile legends",
-    "mlbb meta heroes 2026"
+    "mlbb fighter lane strategy",
+    "master mobile legends roles"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/mlbb-roles-guide" },
+  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "article",
+    siteName: "BlueBuff",
+    locale: "en_IN",
+    url: "https://mlbbtopup.in/blog/mlbb/mlbb-roles-guide",
+    title: "MLBB Roles Explained 2026 Guide",
+    description: "Learn all 6 MLBB roles in our 2026 beginner guide. Master Tank, Fighter, Mage, Assassin, Marksman, and Support to build the perfect team.",
+    publishedTime: "2026-03-30T00:00:00.000Z",
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb/guides/mlbb-roles.png", width: 1200, height: 630, alt: "MLBB Roles Guide" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@bluebuffin",
+    title: "MLBB Roles Explained 2026 Guide",
+    description: "Learn all 6 MLBB roles in our 2026 beginner guide. Master Tank, Fighter, Mage, Assassin, Marksman, and Support to build the perfect team.",
+    images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-roles.png"],
+  },
 };
 
 export default function BlogPage() {
+  const faqItems = [
+    {
+      question: "What is the best MLBB role for beginners?",
+      answer: "Fighter is generally the best for beginners. Fighters have high health, decent damage, and stay in the EXP Lane, allowing you to learn 1v1 mechanics without the pressure of roaming."
+    },
+    {
+      question: "What is the most impactful role in Solo Queue?",
+      answer: "The Jungler (usually an Assassin or Fighter) has the most impact. They control early-game momentum and secure global objectives like the Turtle."
+    },
+    {
+      question: "Can a Mage play as a Roamer/Tank?",
+      answer: "Yes! Heroes like Valir, Kadita, and Nana are often played as Roamers. They use their heavy crowd-control skills to lock down enemies instead of absorbing damage."
+    },
+    {
+      question: "What are Hybrid Roles?",
+      answer: "Hybrid roles are heroes that fit two categories. For example, Edith is a Tank/Marksman who offers high defense but deals massive physical damage during her ultimate."
+    },
+    {
+      question: "Why shouldn't a team pick two Marksmen?",
+      answer: "Marksmen are incredibly weak in the early game. Having two means your team will lack frontline defense, allowing the enemy Assassin to easily snowball and win the game."
+    }
+  ];
+
   return (
     <BlogPostLayout
       title="MLBB ROLES EXPLAINED: TANK, FIGHTER, MAGE, ASSASSIN, MARKSMAN, SUPPORT"
       category="Game Guide"
-      readTime="25 min read"
+      readTime="12 min read"
       date="March 30, 2026"
       image="/blog/mlbb/guides/mlbb-roles.png"
       game="MLBB"
+      description="Understand all 6 roles in Mobile Legends: Bang Bang. Our beginner-friendly 2026 guide explains what each role does, which lane they go in, and how to pick the right hero to win more games."
+      faqItems={faqItems}
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
-        To win consistently in Mobile Legends, understanding your "Job Description" is more important than your mechanical skill. Each hero belongs to a specific <strong>Role</strong>, and mastering that role's unique rotation and lane-priority is the only way to reach Mythical Glory in the <strong>Indian servers</strong>.
+        To win consistently in Mobile Legends, understanding your "Job Description" is more important than your mechanical skill.
       </p>
 
       <p>
-        Mobile Legends: Bang Bang (MLBB) is a game of balance. You cannot simply pick five high-damage assassins and expect to win against a coordinated team. A winning squad requires a mixture of defense, tactical crowd control, magical burst, and sustained physical damage. Understanding these 6 roles will help you choose the right hero from the <strong>bluebuff.in</strong> roster and ensure your team has the highest probability of victory.
+        Mobile Legends: Bang Bang is a game of balance. You cannot simply pick five high-damage assassins and expect to win. A winning squad requires a mixture of defense, crowd control, magical burst, and sustained physical damage. 
       </p>
 
       <p>
-        In the 2026 meta, roles have become more specialized than ever. For the <strong>Indian competitive scene</strong>, where early-game aggression is the standard, knowing exactly when your role needs to "spike" can turn a average player into a legendary carry.
+        In the 2026 meta, knowing exactly when your role needs to "spike" can turn an average player into a legendary carry. Let's break down the 6 classes.
       </p>
 
-      <h2>1. The Tank: The Unbreakable Shield</h2>
+      <h2>1. The Tank (The Playmaker)</h2>
+      
       <p>
-        Tanks are the heavy-hitters of the Land of Dawn. They possess massive health pools and high resistance to damage. In 2026, the Tank role has evolved from being just a "meat shield" to being the primary <strong>Playmaker</strong> of the team.
+        Tanks are the heavy-hitters of the Land of Dawn. In 2026, the Tank role has evolved from being just a "meat shield" to being the primary initiator of the team.
       </p>
+
       <ul className="space-y-3">
-        <li><strong>Primary Job:</strong> Initiate teamfights and protect the "squishy" teammates (Mages and Marksmen). Tanks must provide "Vision" by checking bushes and tracking the enemy Jungler’s position.</li>
-        <li><strong>Rotation (Roam):</strong> Tanks do not stay in a lane. They rotate between the Mid-lane and the side lanes to create "number advantages" (2v1 or 3v2 scenarios).</li>
-        <li><strong>Playstyle:</strong> Selfless and aggressive. A great Tank is willing to sacrifice their life if it means their Marksman survives to take down the enemy base.</li>
-        <li><strong>Key Heroes:</strong> Tigreal, Khufra, Atlas, Franco, Akai.</li>
+        <li><strong>Primary Job:</strong> Initiate teamfights and protect squishy teammates. Tanks must provide "Vision" by checking bushes.</li>
+        <li><strong>Lane Assignment:</strong> Roamer (Moving between all lanes).</li>
+        <li><strong>Key Heroes:</strong> Tigreal, Khufra, Atlas, Franco.</li>
       </ul>
 
-      <h2>2. The Fighter: The Frontline Warrior</h2>
+      <h2>2. The Fighter (The Frontline)</h2>
+      
       <p>
-        Fighters are the balanced warriors of MLBB, usually occupying the <strong>Exp Lane</strong>. They offer a mix of offensive power and defensive sustainability. Fighters are the "second frontline" that bridges the gap between the Tank's CC and the Assassin's burst.
+        Fighters are balanced warriors that offer a mix of offensive power and defensive sustainability. They act as the "second frontline."
       </p>
+
       <ul className="space-y-3">
-        <li><strong>Primary Job:</strong> Hold the side lane alone and dominate the 1v1 matchup. In teamfights, the Fighter’s goal is to dive directly onto the enemy backline (their Mage or Marksman) to disrupt their damage output.</li>
-        <li><strong>Rotation:</strong> Secure the Exp Lane minions to reach Level 4 quickly. Once your Ultimate is available, you must rotate to assist your Jungler in securing the first Turtle.</li>
-        <li><strong>Playstyle:</strong> Sustained brawling. Fighters rely on "Spell Vamp" to heal themselves while dealing damage, allowing them to survive long, drawn-out battles.</li>
+        <li><strong>Primary Job:</strong> Hold the side lane alone and dominate the 1v1 matchup. In teamfights, dive the enemy backline to kill the Mage or Marksman.</li>
+        <li><strong>Lane Assignment:</strong> EXP Lane.</li>
         <li><strong>Key Heroes:</strong> Chou, Martis, Alpha, Terizla, Yu Zhong.</li>
       </ul>
 
       <div className="bg-[var(--card)] border border-[var(--border)] p-10 rounded-[40px] my-16 shadow-xl relative overflow-hidden group">
         <div className="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]" />
-        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4">Pro Team Blueprint 💎</h3>
-        <p className="text-sm italic opacity-70 m-0 leading-relaxed">
-          The <strong>"Ultimate Team Comp"</strong> in India consists of 1 Tank (Roamer), 1 Fighter (Exp Lane), 1 Mage (Mid Lane), 1 Assassin/Fighter (Jungler), and 1 Marksman (Gold Lane). If your team picks two Marksmen (a common mistake in low ranks), you will lack the defense needed to survive the mid-game, leading to a "Snowball Loss."
+        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4 flex items-center gap-2"><FiUsers /> Pro Team Blueprint</h3>
+        <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
+          The ultimate 5-man team composition consists of 1 Tank (Roamer), 1 Fighter (EXP Lane), 1 Mage (Mid Lane), 1 Assassin (Jungler), and 1 Marksman (Gold Lane). This provides the perfect balance of early-game control and late-game damage.
         </p>
       </div>
 
-      <h2>3. The Mage: The Strategic Architect</h2>
+      <h2>3. The Mage (The Architect)</h2>
+      
       <p>
-        Mages deal massive Magical Damage from a safe distance, usually dominating the <strong>Mid Lane</strong>. They provide the area-of-effect (AoE) burst and crowd control needed to turn the tide of a teamfight in seconds.
+        Mages deal massive Magical Damage from a safe distance. They provide the area-of-effect (AoE) burst needed to wipe out teams.
       </p>
+
       <ul className="space-y-3">
-        <li><strong>Primary Job:</strong> Clear the Mid Lane minion waves as fast as possible and then "gank" the side lanes. Mages are the primary source of early-game burst damage <strong>in India</strong>.</li>
-        <li><strong>Rotation:</strong> Focus on the "Mini-Map." If your Gold Lane is being pressured, your presence as a Mage can save your Marksman and secure a counter-kill.</li>
-        <li><strong>Playstyle:</strong> Glass-Cannon. You deal the most damage in a short burst, but you are very easy to kill. Position yourself behind your Tank and never walk through un-checked bushes alone.</li>
+        <li><strong>Primary Job:</strong> Clear the Mid Lane minion waves instantly and rotate to gank the side lanes. They are the primary source of early-game damage.</li>
+        <li><strong>Lane Assignment:</strong> Mid Lane.</li>
         <li><strong>Key Heroes:</strong> Nana, Vexana, Kadita, Lunox, Valir.</li>
       </ul>
 
-      <h2>4. The Assassin: The Precise Executioner</h2>
+      <h2>4. The Assassin (The Executioner)</h2>
+      
       <p>
-        Assassins are high-mobility, high-damage heroes that typically function as the team's <strong>Jungler</strong>. They specialize in "picking off" isolated targets before a teamfight even begins.
+        Assassins are high-mobility heroes specializing in picking off isolated targets before a teamfight even begins.
       </p>
+
       <ul className="space-y-3">
-        <li><strong>Primary Job:</strong> Farm the jungle buffs (Blue/Red) and secure the Turtles and Lord. Assassins are responsible for the team's "kill momentum."</li>
-        <li><strong>Rotation:</strong> Constant movement. You must be invisible on the map as much as possible to keep the enemy in a state of fear. Your goal is to reach your "Core Items" faster than the enemy Jungler.</li>
-        <li><strong>Playstyle:</strong> Perfectionist. You need "fast hands" and incredible timing. Wait for the enemy Tank to waste their CC skills, then strike the backline with lethal precision.</li>
-        <li><strong>Key Heroes:</strong> Gusion, Lancelot, Fanny, Ling, Helcurt.</li>
+        <li><strong>Primary Job:</strong> Farm the jungle buffs, secure Turtles, and dictate the game's kill momentum.</li>
+        <li><strong>Lane Assignment:</strong> Jungle.</li>
+        <li><strong>Key Heroes:</strong> Gusion, Lancelot, Fanny, Ling.</li>
       </ul>
 
-      <h2>5. The Marksman: The Late-Game God</h2>
+      <h2>5. The Marksman (The Late-Game God)</h2>
+      
       <p>
-        Marksmen (MM) are physical damage dealers who start the game weak but become unstoppable monsters in the late game. They occupy the <strong>Gold Lane</strong> to ensure they reach their expensive item builds as fast as possible.
+        Marksmen (MM) are physical damage dealers who start weak but become unstoppable monsters in the late game.
       </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Game Phase</th>
+            <th>Marksman Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Early Game</strong></td>
+            <td>Farm safely under tower. Avoid dying at all costs.</td>
+          </tr>
+          <tr>
+            <td><strong>Mid Game</strong></td>
+            <td>Only join fights if near the Gold Lane. Prioritize items.</td>
+          </tr>
+          <tr>
+            <td><strong>Late Game</strong></td>
+            <td>Stay behind the Tank and destroy enemy bases & heroes.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>6. The Support (The Guardian Angel)</h2>
+      
+      <p>
+        Supports provide utility through healing, shields, and buffs. A great Support can make their teammates unkillable.
+      </p>
+
       <ul className="space-y-3">
-        <li><strong>Primary Job:</strong> Sustain damage and turret destruction. Marksmen are the only heroes capable of melting high-HP Tanks and destroying the enemy Nexus in seconds during the late game.</li>
-        <li><strong>Rotation:</strong> Farming is your only priority for the first 8 minutes. Do not rotate to pointless fights in the jungle. Every minion wave you miss is a delay to your victory.</li>
-        <li><strong>Playstyle:</strong> Defensive Positioning. A dead Marksman deals zero damage. Stay behind your frontline and focus on attacking the safest target available. Utilize the high-fidelity skins from <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> to ensure your basic attack animations are as smooth as possible.</li>
-        <li><strong>Key Heroes:</strong> Brody, Karrie, Claude, Ixia, Lesley.</li>
+        <li><strong>Primary Job:</strong> Sustain the team's HP. Support heroes use Roam Equipment to help their carries earn more gold.</li>
+        <li><strong>Lane Assignment:</strong> Roamer.</li>
+        <li><strong>Key Heroes:</strong> Estes, Angela, Mathilda, Floryn.</li>
       </ul>
 
-      <h2>6. The Support: The Guardian Angel</h2>
+      <h2>Conclusion: Key Takeaways</h2>
+      
       <p>
-        Supports provide utility in the form of healing, shields, buffs, and vision. While they don't deal much damage, a great Support can make their teammates literally unkillable.
+        Understanding your role allows you to play with intention rather than just randomly clicking buttons.
       </p>
-      <ul className="space-y-3">
-        <li><strong>Primary Job:</strong> Sustain the team's HP and provide buffs. Support heroes often use "Roam Equipment" to hide their presence and help their carries earn more gold.</li>
-        <li><strong>Rotation:</strong> Stick to the Jungler in the early game to help with clear speed, then transition to protecting the Marksman once the laning phase ends.</li>
-        <li><strong>Playstyle:</strong> Altruistic. Your goal is to maximize the performance of others. Correct timing of your heals or shields can save a game that looks completely lost.</li>
-        <li><strong>Key Heroes:</strong> Estes, Angela, Diggie, Mathilda, Floryn.</li>
-      </ul>
 
-      <section className="space-y-6 mt-12 mb-8">
-        <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-          <span className="text-[var(--accent)]">7.</span> How to Draft the Perfect Team Comp
-        </h2>
-        <p>
-          If you want to understand <strong>Mobile Legends roles explained</strong> perfectly, you must know how to draft. Even the <strong>best heroes for beginners in Mobile Legends</strong> will fail if the team composition is unbalanced.
-        </p>
-        <ul className="space-y-4 list-none pl-0">
-          <li className="flex items-start gap-4">
-            <div className="w-2 h-2 rounded-full bg-[var(--accent)] mt-2 shrink-0"></div>
-            <p className="text-sm opacity-80 leading-relaxed m-0 text-justify">
-              <strong>Balance Physical and Magic:</strong> If your Jungler is a physical Assassin and your Gold Laner is a physical Marksman, you must have a high-damage Mage. If you don't, the enemy Tank will just stack Physical Defense items and become unkillable.
-            </p>
-          </li>
-          <li className="flex items-start gap-4">
-            <div className="w-2 h-2 rounded-full bg-[var(--accent)] mt-2 shrink-0"></div>
-            <p className="text-sm opacity-80 leading-relaxed m-0 text-justify">
-              <strong>Check the Frontline:</strong> A team with no Tank or tanky Fighter will instantly melt in late-game 5v5 teamfights. Learning <strong>how to roam in MLBB</strong> properly as a Tank or Support is often the deciding factor in Mythic rank.
-            </p>
-          </li>
-        </ul>
-      </section>
-
-      <h2>Which Role Should You Choose?</h2>
-      <p>
-        Selecting a role in <strong>India</strong> depends on your tactical personality:
-      </p>
       <ul className="space-y-3">
-        <li><strong>Aggressive & Brave?</strong> Pick <strong>Tank</strong> or <strong>Fighter</strong>. You lead the charge.</li>
-        <li><strong>Technical & Fast?</strong> Pick <strong>Assassin</strong>. You decide who lives and dies.</li>
-        <li><strong>Patient & Powerful?</strong> Pick <strong>Marksman</strong>. You win the game in the end.</li>
-        <li><strong>Helpful & Observant?</strong> Pick <strong>Support</strong>. You determine the team's survival.</li>
+        <li>Tanks and Supports control the map (Roam).</li>
+        <li>Mages provide magical burst damage from the Mid Lane.</li>
+        <li>Assassins secure jungle objectives and hunt weak targets.</li>
+        <li>Fighters hold the frontline (EXP Lane).</li>
+        <li>Marksmen farm the Gold Lane to secure late-game victory.</li>
       </ul>
 
       <p>
-        <strong>Ready to master your favorite role?</strong> Dominate the Land of Dawn with the smoothest animations and cleanest hero skins. We offer the <strong>fastest and cheapest MLBB diamonds in India</strong> with 24/7 automated delivery. Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and unlock your true potential today!
+        <strong>Ready to master your favorite role?</strong> Ensure your gameplay is perfectly smooth with high-fidelity hero skins.
       </p>
 
-      <div className="mt-20 pt-10 border-t border-[var(--border)]">
-        <h4 className="text-xl font-black italic uppercase tracking-widest mb-8 opacity-40 transition-colors">Role Strategy FAQ</h4>
-        <div className="space-y-8">
-          <div className="group">
-            <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base mb-2 group-hover:translate-x-1 transition-transform italic">What is the most 'impactful' role in Solo Queue?</h5>
-            <p className="text-sm opacity-60">The <strong>Jungler (Assassin/Fighter)</strong> usually has the most impact in Solo Queue because they decide the early-game momentum and can secure global objectives like the Turtle even without great team coordination.</p>
-          </div>
-          <div className="group">
-            <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base mb-2 group-hover:translate-x-1 transition-transform italic">Can a Mage be a Roamer?</h5>
-            <p className="text-sm opacity-60">Yes! In high ranks <strong>in India</strong>, heroes like Kadita or Valir are often played as Roamers because they possess enough crowd control and mobility to function without a dedicated farming lane.</p>
-          </div>
-          <div className="group">
-            <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base mb-2 group-hover:translate-x-1 transition-transform italic">What is 'Hybrid Role' in 2026?</h5>
-            <p className="text-sm opacity-60">Hybrid roles refer to heroes who fit two categories. For example, <strong>Edith</strong> is a Tank/Marksman who offers high defense but can deal massive physical damage during her ultimate. These heroes are excellent for confusing the enemy during the draft phase.</p>
-          </div>
-        </div>
-      </div>
+      <p>
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. Grab some cheap diamonds via UPI and unlock the skins you need to carry your team in style!
+      </p>
+
     </BlogPostLayout>
   );
 }

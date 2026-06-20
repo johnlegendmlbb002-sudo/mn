@@ -183,11 +183,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "11",
-    title: "How to Win More Matches Consistently in MLBB (Ultimate Ranking Strategy)",
+    title: "How to Win More MLBB Matches 2026",
     slug: "how-to-win-more-matches-consistently",
     type: "Pro Tips",
     excerpt:
-      "Win-streaks aren't luck. Learn the system that consistently winning Mobile Legends players use — covering macro discipline, hero mastery, tilt prevention, and the winning mindset for Indian rank players in 2026.",
+      "Improve your Mobile Legends win rate with our 2026 strategy guide. Master the mental game, drafting secrets, and elite-tier map management.",
     publishedAt: "2026-03-31",
     readingTime: "12 min read",
     image: "/blog/mlbb/guides/mlbb-win-consistently.png",
@@ -211,11 +211,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "9",
-    title: "How to Farm Gold Fast in MLBB (Mobile Legends Farming Guide)",
+    title: "How to Farm Gold Fast in MLBB 2026",
     slug: "how-to-farm-gold-fast-in-mlbb",
     type: "Strategy",
     excerpt:
-      "Outpace the enemy economy with our MLBB gold farming guide. Learn the best minion wave patterns, jungle rotation tricks, and CS management tips to get your core items faster than your opponents in 2026.",
+      "Want to get your core items before everyone else? Learn professional strategies for farming gold fast in Mobile Legends with our 2026 guide.",
     publishedAt: "2026-03-31",
     readingTime: "7 min read",
     image: "/blog/mlbb/guides/mlbb-gold-farm.png",
@@ -225,11 +225,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "8",
-    title: "MLBB Roles Explained: Tank, Fighter, Mage, Assassin, Marksman, Support",
+    title: "MLBB Roles Explained 2026 Guide",
     slug: "mlbb-roles-guide",
     type: "Game Guide",
     excerpt:
-      "Understand all 6 roles in Mobile Legends: Bang Bang. Our beginner-friendly 2026 guide explains what each role does, which lane they go in, and how to pick the right hero to win more games as an Indian player.",
+      "Learn all 6 MLBB roles in our 2026 beginner guide. Master Tank, Fighter, Mage, Assassin, Marksman, and Support to build the perfect team.",
     publishedAt: "2026-03-30",
     readingTime: "5 min read",
     image: "/blog/mlbb/guides/mlbb-roles.png",
@@ -239,11 +239,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "6",
-    title: "99% Players Don't Know These MLBB Tricks (Rank Up Instantly)",
+    title: "MLBB Tricks to Rank Up Instantly 2026",
     slug: "mlbb-tricks-to-rank-up",
     type: "Pro Tips",
     excerpt:
-      "Unlock the hidden mechanics and advanced tricks that pro MLBB players use to dominate every match. These 2026 tips will transform how you play and give you the edge needed to rank up fast in India.",
+      "Master the hidden mechanics of Mobile Legends that pro players use to dominate. Learn advanced minimap tricks and camera movement to rank up fast.",
     publishedAt: "2026-03-29",
     readingTime: "6 min read",
     image: "/blog/mlbb/guides/mlbb-tricks.png",
@@ -316,11 +316,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "7",
-    title: "Stop Losing in Mobile Legends – Fix These 7 Fatal Mistakes Now",
+    title: "Stop Losing in MLBB: 7 Fatal Mistakes",
     slug: "stop-losing-mlbb-7-mistakes",
     type: "Gameplay Guide",
     excerpt:
-      "Stuck in a loss streak? Our 2026 MLBB guide identifies the 7 most common mistakes Indian Epic-rank players make — from map blindness to static item builds — and gives you the exact fixes to start winning consistently.",
+      "Stuck in a lose streak? Master the 7 common MLBB mistakes that keep players in Epic rank. Learn pro map awareness and objective strategies.",
     publishedAt: "2026-03-29",
     readingTime: "15 min read",
     image: "/blog/mlbb/guides/fix-mistakes.png",
