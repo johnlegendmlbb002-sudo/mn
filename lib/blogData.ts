@@ -197,11 +197,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "10",
-    title: "The Complete Mobile Legends Gameplay Guide: Lanes, Jungle & Objectives",
+    title: "Complete MLBB Gameplay Guide 2026",
     slug: "complete-mlbb-gameplay-guide",
     type: "Game Guide",
     excerpt:
-      "New to MLBB or stuck in low ranks? Our complete 2026 gameplay guide covers laning fundamentals, jungle rotation timing, Turtle/Lord priority, and the core mechanics that every Indian MLBB player needs to master.",
+      "Master the core mechanics of Mobile Legends. Learn everything about laning, jungle rotations, map objectives, and winning teamfights in 2026.",
     publishedAt: "2026-03-31",
     readingTime: "15 min read",
     image: "/blog/mlbb/guides/mlbb-gameplay-guide.png",

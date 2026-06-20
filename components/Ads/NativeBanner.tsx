@@ -26,14 +26,33 @@ export default function NativeBanner({
 
   const { id, src } = ADSTERRA_CONFIG.nativeBanner;
 
+  const srcDoc = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+          body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; background: transparent; }
+        </style>
+      </head>
+      <body>
+        <div id="container-${id}"></div>
+        <script type="text/javascript" src="${src}"></script>
+      </body>
+    </html>
+  `;
+
   return (
     <div className={`flex justify-center overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.03] min-h-[50px] ${className}`}>
-      <div id={`container-${id}`} ref={containerRef}></div>
-      <Script 
-        async 
-        data-cfasync="false" 
-        src={src} 
-        strategy="afterInteractive"
+      <iframe
+        title="Advertisement"
+        width="100%"
+        height="60"
+        srcDoc={srcDoc}
+        sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-same-origin"
+        style={{ border: 'none', overflow: 'hidden', backgroundColor: 'transparent' }}
+        scrolling="no"
       />
     </div>
   );
