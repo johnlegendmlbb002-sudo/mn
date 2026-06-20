@@ -169,11 +169,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "12",
-    title: "How to Rank Up From Epic to Mythic in MLBB: The 2026 Survival Guide",
+    title: "How to Reach Mythic MLBB 2026",
     slug: "how-to-rank-up-from-epic-to-mythic-in-2026",
     type: "Ranking Guide",
     excerpt:
-      "Stuck in Epic Hell? Break free with our definitive 2026 MLBB guide covering drafting secrets, objective control, wave management, and the mental discipline needed to reach Mythic on Indian servers.",
+      "Stuck in Epic Hell? Learn the professional strategies to escape Epic and reach Mythic fast. Our 2026 MLBB guide covers drafting and map awareness.",
     publishedAt: "2026-03-31",
     readingTime: "18 min read",
     image: "/blog/mlbb/guides/mlbb-epic-to-mythic.png",
