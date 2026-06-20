@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     title: 'The Best Ways to Spend Diamonds in MLBB: Maximize Your Value – 2026',
     description: 'Want to get the most out of your MLBB diamonds? Learn the best ways to spend your diamonds, including Starlight Memberships, Weekly Passes, and exclusive event draws.',
     publishedTime: '2026-03-31',
-    images: [{ url: 'https://mlbbtopup.in/blog/mlbb/best-ways-to-spend-diamonds-in-mlbb/mlbb-spend-diamonds.png', width: 1200, height: 630, alt: 'The Best Ways to Spend Diamonds in MLBB: Maximize Your Value – 2026' }],
+    images: [{ url: 'https://mlbbtopup.in/blog/mlbb/guides/mlbb-spend-diamonds.png', width: 1200, height: 630, alt: 'The Best Ways to Spend Diamonds in MLBB: Maximize Your Value – 2026' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@bluebuffin',
     title: 'The Best Ways to Spend Diamonds in MLBB: Maximize Your Value – 2026',
     description: 'Want to get the most out of your MLBB diamonds? Learn the best ways to spend your diamonds, including Starlight Memberships, Weekly Passes, and exclusive event draws.',
-    images: ['https://mlbbtopup.in/blog/mlbb/best-ways-to-spend-diamonds-in-mlbb/mlbb-spend-diamonds.png'],
+    images: ['https://mlbbtopup.in/blog/mlbb/guides/mlbb-spend-diamonds.png'],
   },
 };
 
@@ -35,7 +35,7 @@ export default function BlogPage() {
       category="Value Guide"
       readTime="15 min read"
       date="March 31, 2026"
-      image="/blog/mlbb/best-ways-to-spend-diamonds-in-mlbb/mlbb-spend-diamonds.png"
+      image="/blog/mlbb/guides/mlbb-spend-diamonds.png"
       game="MLBB"
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">

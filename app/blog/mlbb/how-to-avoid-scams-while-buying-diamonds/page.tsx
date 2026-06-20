@@ -25,7 +25,7 @@ export default function BlogPage() {
       category="Safety Guide"
       readTime="18 min read"
       date="March 31, 2026"
-      image="/blog/mlbb/how-to-avoid-scams-while-buying-diamonds/mlbb-avoid-scams.png"
+      image="/blog/mlbb/guides/mlbb-avoid-scams.png"
       game="MLBB"
     >
       <div className="space-y-10">

@@ -24,7 +24,7 @@ export default function BlogPage() {
       category="Opinion"
       readTime="18 min read"
       date="March 31, 2026"
-      image="/blog/mlbb/is-mlbb-worth-spending-money-on/mlbb-worth-it.png"
+      image="/blog/mlbb/insights/mlbb-worth-it.png"
       game="MLBB"
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">

@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     title: "Best MLBB Diamond Packages in India – Real Price & Value Guide (2026)",
     description: "Actual MLBB diamond prices in India with real cost-per-diamond breakdown. Find out which package gives you maximum value for your rupee in 2026.",
     publishedTime: "2026-03-31T00:00:00.000Z",
-    images: [{ url: "https://mlbbtopup.in/blog/mlbb/best-mlbb-diamond-packages-value-guide/best-value.png" }],
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb/guides/best-value.png" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@bluebuffin",
     title: "Best MLBB Diamond Packages in India – Real Price & Value Guide (2026)",
     description: "Actual MLBB diamond prices in India with real cost-per-diamond breakdown. Find out which package gives you maximum value for your rupee in 2026.",
-    images: ["https://mlbbtopup.in/blog/mlbb/best-mlbb-diamond-packages-value-guide/best-value.png"],
+    images: ["https://mlbbtopup.in/blog/mlbb/guides/best-value.png"],
   },
 };
 
@@ -44,7 +44,7 @@ export default function BlogPage() {
       category="Value Guide"
       readTime="12 min read"
       date="March 31, 2026"
-      image="/blog/mlbb/best-mlbb-diamond-packages-value-guide/best-value.png"
+      image="/blog/mlbb/guides/best-value.png"
       game="MLBB"
       description="Actual MLBB diamond prices in India with real cost-per-diamond breakdown. Find out which package gives you maximum value for your rupee in 2026."
       faqItems={[

@@ -25,7 +25,7 @@ export default function BlogPage() {
       category="Game Guide"
       readTime="25 min read"
       date="March 30, 2026"
-      image="/blog/mlbb/mlbb-roles-guide/mlbb-roles.png"
+      image="/blog/mlbb/guides/mlbb-roles.png"
       game="MLBB"
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">

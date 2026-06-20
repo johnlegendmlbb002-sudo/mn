@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     title: "Is MLBB Top Up Legal in India? – The 2026 Comprehensive Guide",
     description: "Answering the common question: Is Mobile Legends recharge legal in India? Understand the regulations, safety checks, and the most trusted platforms for 2026.",
     publishedTime: "2026-03-31T00:00:00.000Z",
-    images: [{ url: "https://mlbbtopup.in/blog/mlbb/is-mlbb-top-up-legal-in-india/legal-india.png" }],
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb/guides/legal-india.png" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@bluebuffin",
     title: "Is MLBB Top Up Legal in India? – The 2026 Comprehensive Guide",
     description: "Answering the common question: Is Mobile Legends recharge legal in India? Understand the regulations, safety checks, and the most trusted platforms for 2026.",
-    images: ["https://mlbbtopup.in/blog/mlbb/is-mlbb-top-up-legal-in-india/legal-india.png"],
+    images: ["https://mlbbtopup.in/blog/mlbb/guides/legal-india.png"],
   },
 };
 
@@ -45,7 +45,7 @@ export default function BlogPage() {
       category="Legal Guide"
       readTime="18 min read"
       date="March 31, 2026"
-      image="/blog/mlbb/is-mlbb-top-up-legal-in-india/legal-india.png"
+      image="/blog/mlbb/guides/legal-india.png"
       game="MLBB"
       description="Answering the common question: Is Mobile Legends recharge legal in India? Understand the regulations, safety checks, and the most trusted platforms for 2026."
     >

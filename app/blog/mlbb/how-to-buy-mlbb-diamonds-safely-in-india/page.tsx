@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     title: "How to Buy MLBB Diamonds Safely in India: The 2026 Safety Guide",
     description: "Learn the safest way to recharge MLBB diamonds in India. Protect your account from scams, avoid 'Negative Diamond' bans, and identify trusted websites like bluebuff.in for 2026.",
     publishedTime: "2026-03-31T00:00:00.000Z",
-    images: [{ url: "https://mlbbtopup.in/blog/mlbb/how-to-buy-mlbb-diamonds-safely-in-india/buy-safely.png" }],
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb/guides/buy-safely.png" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@bluebuffin",
     title: "How to Buy MLBB Diamonds Safely in India: The 2026 Safety Guide",
     description: "Learn the safest way to recharge MLBB diamonds in India. Protect your account from scams, avoid 'Negative Diamond' bans, and identify trusted websites like bluebuff.in for 2026.",
-    images: ["https://mlbbtopup.in/blog/mlbb/how-to-buy-mlbb-diamonds-safely-in-india/buy-safely.png"],
+    images: ["https://mlbbtopup.in/blog/mlbb/guides/buy-safely.png"],
   },
 };
 
@@ -45,7 +45,7 @@ export default function BlogPage() {
       category="Safety Guide"
       readTime="20 min read"
       date="March 31, 2026"
-      image="/blog/mlbb/how-to-buy-mlbb-diamonds-safely-in-india/buy-safely.png"
+      image="/blog/mlbb/guides/buy-safely.png"
       game="MLBB"
       description="Learn the safest way to recharge MLBB diamonds in India. Protect your account from scams, avoid 'Negative Diamond' bans, and identify trusted websites like bluebuff.in for 2026."
     >

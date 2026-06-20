@@ -22,7 +22,7 @@ export default function BlogPage() {
       category="Tutorial"
       readTime="18 min read"
       date="March 31, 2026"
-      image="/blog/mlbb/step-by-step-guide-to-buy-diamonds-safely/mlbb-buy-safely-guide.png"
+      image="/blog/mlbb/guides/mlbb-buy-safely-guide.png"
       game="MLBB"
     >
       <div className="space-y-10">

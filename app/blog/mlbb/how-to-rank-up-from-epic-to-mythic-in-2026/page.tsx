@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     title: "How to Rank Up From Epic to Mythic in MLBB: The 2026 Survival Guide (India)",
     description: "Stuck in 'Epic Hell'? Learn the professional strategies to escape Epic and reach Mythic in Mobile Legends fast. Our 2026 guide covers drafting, map awareness, and the mental game for Indian players.",
     publishedTime: "2026-03-31T00:00:00.000Z",
-    images: [{ url: "https://mlbbtopup.in/blog/mlbb/how-to-rank-up-from-epic-to-mythic-in-2026/mlbb-epic-to-mythic.png" }],
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb/guides/mlbb-epic-to-mythic.png" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@bluebuffin",
     title: "How to Rank Up From Epic to Mythic in MLBB: The 2026 Survival Guide (India)",
     description: "Stuck in 'Epic Hell'? Learn the professional strategies to escape Epic and reach Mythic in Mobile Legends fast. Our 2026 guide covers drafting, map awareness, and the mental game for Indian players.",
-    images: ["https://mlbbtopup.in/blog/mlbb/how-to-rank-up-from-epic-to-mythic-in-2026/mlbb-epic-to-mythic.png"],
+    images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-epic-to-mythic.png"],
   },
 };
 
@@ -44,7 +44,7 @@ export default function BlogPage() {
       category="Ranking Guide"
       readTime="18 min read"
       date="March 31, 2026"
-      image="/blog/mlbb/how-to-rank-up-from-epic-to-mythic-in-2026/mlbb-epic-to-mythic.png"
+      image="/blog/mlbb/guides/mlbb-epic-to-mythic.png"
       game="MLBB"
       description="Stuck in 'Epic Hell'? Learn the professional strategies to escape Epic and reach Mythic in Mobile Legends fast. Our 2026 guide covers drafting, map awareness, and the mental game for Indian players."
     >

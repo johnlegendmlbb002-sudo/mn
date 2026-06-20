@@ -26,7 +26,7 @@ export default function BlogPage() {
       category="Tech Guide"
       readTime="18 min read"
       date="March 31, 2026"
-      image="/blog/mlbb/how-to-reduce-lag-in-mobile-legends/mlbb-reduce-lag.png"
+      image="/blog/mlbb/guides/mlbb-reduce-lag.png"
       game="MLBB"
     >
       <div className="space-y-10">

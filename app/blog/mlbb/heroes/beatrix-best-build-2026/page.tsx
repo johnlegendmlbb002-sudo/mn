@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     title: 'Beatrix Best Build 2026: Master the Land of Dawn with the Versatile Marksman',
     description: 'Looking for the best Beatrix build in 2026? Our comprehensive guide covers the top item builds, emblems, and weapon strategies to dominate the Gold Lane in Mobile Legends.',
     publishedTime: '2026-04-29',
-    images: [{ url: 'https://mlbbtopup.in/blog/mlbb/heroes/beatrix-best-build-2026/beatrix-build-2026.png', width: 1200, height: 630, alt: 'Beatrix Best Build 2026: Master the Land of Dawn with the Versatile Marksman' }],
+    images: [{ url: 'https://mlbbtopup.in/blog/mlbb/heroes/beatrix-build-2026.png', width: 1200, height: 630, alt: 'Beatrix Best Build 2026: Master the Land of Dawn with the Versatile Marksman' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@bluebuffin',
     title: 'Beatrix Best Build 2026: Master the Land of Dawn with the Versatile Marksman',
     description: 'Looking for the best Beatrix build in 2026? Our comprehensive guide covers the top item builds, emblems, and weapon strategies to dominate the Gold Lane in Mobile Legends.',
-    images: ['https://mlbbtopup.in/blog/mlbb/heroes/beatrix-best-build-2026/beatrix-build-2026.png'],
+    images: ['https://mlbbtopup.in/blog/mlbb/heroes/beatrix-build-2026.png'],
   },
 };
 
@@ -44,7 +44,7 @@ export default function BlogPage() {
       category="Hero Guide"
       readTime="12 min read"
       date="April 29, 2026"
-      image="/blog/mlbb/heroes/beatrix-best-build-2026/beatrix-build-2026.png"
+      image="/blog/mlbb/heroes/beatrix-build-2026.png"
       game="MLBB"
       description="Beatrix remains one of the most versatile marksmen in Mobile Legends. In 2026, her ability to swap between four different weapons makes her a high-skill, high-reward pick. Master her latest meta build here."
     >
