@@ -127,11 +127,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "15",
-    title: "The Best Ways to Spend Diamonds in MLBB: Maximize Your Value",
+    title: "Best Ways to Spend MLBB Diamonds in 2026",
     slug: "best-ways-to-spend-diamonds-in-mlbb",
     type: "Value Guide",
     excerpt:
-      "Get the most out of every diamond you buy in Mobile Legends. Our 2026 guide covers Starlight Membership, Weekly Passes, Gacha events, and the exact spending order that gives Indian players maximum skin value.",
+      "Want to maximize your MLBB diamonds? Learn the best ways to spend diamonds in 2026, including Starlight Memberships, Weekly Passes, and event draws.",
     publishedAt: "2026-03-31",
     readingTime: "15 min read",
     image: "/blog/mlbb/guides/mlbb-spend-diamonds.png",
@@ -141,11 +141,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "14",
-    title: "How to Fix Ping Issues in MLBB: The 2026 Lag Fix Guide",
+    title: "How to Fix Ping Issues in MLBB 2026 Guide",
     slug: "how-to-fix-ping-issues-in-mlbb",
     type: "Tech Guide",
     excerpt:
-      "Tired of high ping ruining your MLBB games? Our 2026 guide reveals step-by-step fixes for ping spikes, connection drops, and high latency — specifically optimized for Indian mobile network conditions.",
+      "Tired of 999ms lag and ping spikes in Mobile Legends? Learn how to fix ping issues, reduce latency, and optimize your network in our 2026 lag guide.",
     publishedAt: "2026-03-31",
     readingTime: "14 min read",
     image: "/blog/mlbb/guides/mlbb-fix-ping.png",
@@ -155,11 +155,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "13",
-    title: "How to Carry in Solo Queue MLBB: The Ultimate Carry Guide",
+    title: "How to Carry in Solo Queue MLBB 2026 Guide",
     slug: "how-to-carry-in-solo-queue",
     type: "Pro Strategy",
     excerpt:
-      "Stop relying on random teammates. Master the art of carrying Solo Queue in MLBB with our 2026 guide — covering hero picks, ganking patterns, and the psychological edge that separates Mythic players in India.",
+      "Tired of losing with random teammates in Mobile Legends? Learn the professional secrets to carrying in solo queue with our 2026 MLBB strategy guide.",
     publishedAt: "2026-03-31",
     readingTime: "16 min read",
     image: "/blog/mlbb/guides/mlbb-solo-carry.png",
@@ -252,11 +252,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "1",
-    title: "MLBB Weekly Pass Price in India 2026 – Is it Worth Buying?",
+    title: "MLBB Weekly Pass Price in India 2026",
     slug: "mlbb-weekly-pass-price-in-india",
     type: "Price Guide",
     excerpt:
-      "Discover the exact MLBB Weekly Diamond Pass price in India for 2026. We break down the total value (220+ diamonds + rewards), compare it against raw recharge, and reveal where to buy it cheapest via UPI.",
+      "Discover the MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, stack benefits, and find the cheapest way to buy MLBB diamonds.",
     publishedAt: "2026-01-10",
     readingTime: "12 min read",
     image: "/blog/mlbb/guides/weekly-pass-price.png",
@@ -278,11 +278,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "3",
-    title: "Is MLBB Top-Up Legal in India? The 2026 Comprehensive Guide",
+    title: "Is MLBB Top Up Legal in India? 2026 Guide",
     slug: "is-mlbb-top-up-legal-in-india",
     type: "Legal Guide",
     excerpt:
-      "Confused about whether MLBB diamond top-ups are legal in India? We answer definitively — yes, when using authorized platforms. Learn the legal distinction, why prices are lower, and what makes a top-up safe.",
+      "Is Mobile Legends top-up legal in India? Read our 2026 comprehensive guide to understand the regulations, safety checks, and trusted platforms.",
     publishedAt: "2026-01-05",
     readingTime: "18 min read",
     image: "/blog/mlbb/guides/legal-india.png",
@@ -290,11 +290,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "4",
-    title: "How to Gift MLBB Diamonds to Friends – The Definitive 2026 Guide (India)",
+    title: "How to Gift MLBB Diamonds in 2026 Guide",
     slug: "how-to-gift-mlbb-diamonds",
     type: "Guide",
     excerpt:
-      "Send MLBB diamonds or Weekly Passes to your friends instantly using just their Player ID — no 7-day friendship timer required. Our 2026 gifting guide covers every method for Indian players with secure UPI payment.",
+      "Learn how to gift MLBB diamonds instantly in 2026. Bypass the 7-day friend limit and safely send diamonds, skins, or passes using Player ID.",
     publishedAt: "2026-02-07",
     readingTime: "15 min read",
     image: "/blog/mlbb/guides/gift-guide.png",
@@ -303,11 +303,11 @@ export const BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "5",
-    title: "Best MLBB Diamond Packages in India – Real Price & Value Guide (2026)",
+    title: "Best MLBB Diamond Packages India 2026",
     slug: "best-mlbb-diamond-packages-value-guide",
     type: "Value Guide",
     excerpt:
-      "Find out which MLBB diamond bundle gives you the most diamonds per rupee in India. We break down the real cost-per-diamond for every package and reveal the ultimate value strategy for 2026.",
+      "Find the best MLBB diamond packages in India with our 2026 real price and value guide. Compare packages to get maximum value for your rupees.",
     publishedAt: "2026-02-26",
     readingTime: "12 min read",
     image: "/blog/mlbb/guides/best-value.png",

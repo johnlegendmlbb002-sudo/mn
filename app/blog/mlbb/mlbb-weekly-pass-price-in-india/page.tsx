@@ -4,20 +4,13 @@ import Link from "next/link";
 import { FiTrendingUp, FiShoppingBag, FiStar, FiPercent, FiClock, FiShield, FiInfo, FiCheckCircle } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "MLBB Weekly Pass Price in India 2026 – Is it Worth Buying?",
-  description: "Discover the current MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, benefits, and find the cheapest way to buy diamonds instantly.",
+  title: "MLBB Weekly Pass Price in India 2026",
+  description: "Discover the MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, stack benefits, and find the cheapest way to buy MLBB diamonds.",
   keywords: [
     "mlbb weekly pass price in india 2026",
     "cheapest mlbb weekly pass india",
     "weekly diamond pass mlbb worth it",
-    "mlbb 139 weekly pass india",
-    "mlbb diamond price list india 2026",
-    "bluebuff mlbb weekly pass",
-    "save money on mlbb diamonds india",
-    "mlbb weekly diamond pass benefits",
-    "how to buy weekly pass mobile legends",
     "mlbb diamond top up upi",
-    "cheap weekly pass mlbb",
     "mobile legends weekly pass vs twilight pass"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/mlbb-weekly-pass-price-in-india" },
@@ -28,170 +21,149 @@ export const metadata: Metadata = {
     siteName: "BlueBuff",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/mlbb-weekly-pass-price-in-india",
-    title: "MLBB Weekly Pass Price in India 2026 – Is it Worth Buying?",
-    description: "Discover the current MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, benefits, and find the cheapest way to buy diamonds instantly.",
+    title: "MLBB Weekly Pass Price in India 2026",
+    description: "Discover the MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, stack benefits, and find the cheapest way to buy MLBB diamonds.",
     publishedTime: "2026-03-31T00:00:00.000Z",
-    images: [{ url: "https://mlbbtopup.in/blog/mlbb/guides/weekly-pass-price.png" }],
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb/guides/weekly-pass-price.png", width: 1200, height: 630, alt: "MLBB Weekly Pass Price" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@bluebuffin",
-    title: "MLBB Weekly Pass Price in India 2026 – Is it Worth Buying?",
-    description: "Discover the current MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, benefits, and find the cheapest way to buy diamonds instantly.",
+    title: "MLBB Weekly Pass Price in India 2026",
+    description: "Discover the MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, stack benefits, and find the cheapest way to buy MLBB diamonds.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/weekly-pass-price.png"],
   },
 };
 
 export default function BlogPage() {
+  const faqItems = [
+    {
+      question: "Can I buy a Pass and raw Diamonds at the same time?",
+      answer: "Yes! Both will stack in your account safely. The Weekly Pass will give you daily rewards while the raw diamonds will provide an instant balance boost."
+    },
+    {
+      question: "What if I forget to log in and miss a daily claim?",
+      answer: "Don't panic! If you miss a day, Moonton saves the missed diamonds. You can claim them the next day by clicking the Weekly Pass icon in your game lobby."
+    },
+    {
+      question: "Is the Twilight Pass the same as the Weekly Pass?",
+      answer: "No. The Twilight Pass is a one-time purchase that unlocks ticket rewards as your account levels up. The Weekly Pass is a recurring subscription for diamonds and crystals."
+    },
+    {
+      question: "How many Weekly Passes can I buy at once?",
+      answer: "You can legally stack up to 10 Weekly Passes at the same time on your account. This gives you 70 days of continuous diamond delivery."
+    },
+    {
+      question: "Can I send a Weekly Pass to my friend?",
+      answer: "Yes! On bluebuff.in, simply enter your friend's Player ID at checkout. The Weekly Pass will be delivered instantly to their account as a surprise gift."
+    }
+  ];
+
   return (
     <BlogPostLayout
       title="MLBB WEEKLY PASS PRICE IN INDIA: THE 2026 VALUE BREAKDOWN"
       category="Price Guide"
-      readTime="12 min read"
+      readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/weekly-pass-price.png"
       game="MLBB"
       description="Discover the current MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, benefits, and find the cheapest way to buy diamonds instantly."
+      faqItems={faqItems}
     >
-      <div className="space-y-10">
-        {/* Intro Highlight */}
-        <p className="text-lg md:text-xl font-medium italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
-          If you want a <strong>cheap way to buy MLBB diamonds in India</strong>, Weekly Diamond Pass is one of the best options.
-        </p>        <p className="text-lg leading-relaxed text-justify">
-          In MLBB, the <strong>Weekly Diamond Pass</strong> gives better long-term value than small direct recharges. It is heavily popular in the <strong>Indian scene</strong> for players who want to save money on events. On trusted platforms like <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black font">bluebuff.in</Link>, you can securely <strong>buy the Weekly Pass for Mobile Legends</strong> using UPI and get lightning-fast delivery.
+      <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
+        If you are tired of overpaying for in-game currency, the Weekly Diamond Pass is the ultimate budget-friendly hack for Indian MLBB players in 2026.
+      </p>
+
+      <p>
+        Buying raw diamonds directly from the in-game store is notoriously expensive due to App Store taxes. Smart players avoid this entirely by utilizing the <strong>Weekly Diamond Pass</strong>.
+      </p>
+
+      <p>
+        For players in India, using trusted API platforms like bluebuff.in allows you to buy the Weekly Pass using UPI, giving you insane diamond value at a massive discount. Let's break down exactly why it is worth your money.
+      </p>
+
+      <h2>1. The Raw Value Breakdown</h2>
+      
+      <p>
+        The Weekly Diamond Pass is essentially an investment. You pay a small amount upfront, and the game rewards your patience with a 500% return on investment.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Reward Type</th>
+            <th>What You Get</th>
+            <th>Total Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Instant Drop</strong></td>
+            <td>80 Diamonds immediately upon purchase.</td>
+            <td>80 Diamonds</td>
+          </tr>
+          <tr>
+            <td><strong>Daily Drop</strong></td>
+            <td>20 Diamonds every day for 7 days.</td>
+            <td>140 Diamonds</td>
+          </tr>
+          <tr>
+            <td><strong>Bonus Box</strong></td>
+            <td>Choice of Crystals of Aurora (COA), Star Protection, or Starlight Points.</td>
+            <td>Huge Account Value</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div className="bg-[var(--card)] border border-[var(--border)] p-10 rounded-[40px] my-16 shadow-xl relative overflow-hidden group">
+        <div className="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]" />
+        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4 flex items-center gap-2"><FiClock /> The "Stacking" Trick</h3>
+        <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
+          Did you know you can buy up to <strong>10 Weekly Passes</strong> at once? Moonton allows this stacking mechanic. If you buy 10 passes, you get 800 diamonds instantly, plus 70 days of daily rewards. This is the absolute best way to trigger "Recharge 500 Diamonds" tasks during premium Gacha events!
         </p>
-
-        {/* Value Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 border-y border-[var(--border)] py-10">
-          <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-            <FiStar className="text-3xl text-[var(--accent)]" />
-            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">High Value</h4>
-            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">Around ₹140 can give much better total value than a small raw recharge.</p>
-          </div>
-          <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-            <FiClock className="text-3xl text-[var(--accent)]" />
-            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Stacking Trick</h4>
-            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">You can stack up to 10 Weekly Passes (70 days). This helps for recharge events and daily diamonds.</p>
-          </div>
-          <div className="p-6 rounded-3xl bg-[var(--card)] border border-[var(--border)] space-y-4">
-            <FiShield className="text-3xl text-[var(--accent)]" />
-            <h4 className="text-sm font-black uppercase italic tracking-tighter m-0">Zero Risk API</h4>
-            <p className="text-[11px] opacity-60 leading-relaxed text-justify m-0">No login required. We use your Player ID to activate the pass instantly. Your account remains 100% safe from Moonton policy violations.</p>
-          </div>
-        </div>
-
-        <section className="space-y-6">
-          <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-            <FiShoppingBag className="text-[var(--accent)]" />
-            1. What Exactly is the Weekly Pass?
-          </h2>
-          <p>
-            When you purchase the Weekly Diamond Pass, you don't just get diamonds; you get an entire bundle of account-boosting rewards delivered to your in-game mail over 7 days:
-          </p>
-          <ul className="space-y-4 list-none p-0">
-            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>80 Diamonds Instant:</strong> Credit to your balance immediately.</li>
-            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>20 Diamonds Daily:</strong> Totaling another 140 diamonds over the week.</li>
-            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>Daily Rewards Box:</strong> Includes Crystal of Aurora (COA), Star Protection, and Starlight Points.</li>
-            <li className="flex items-center gap-3 text-sm opacity-70"><FiCheckCircle className="text-[var(--accent)]" /> <strong>Event Tier Activator:</strong> Counts as a "Recharge" for Aspirants/Collector bonus tasks.</li>
-          </ul>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="flex items-center gap-3 italic font-black text-xl tracking-tighter">
-            <FiTrendingUp className="text-[var(--accent)]" />
-            Weekly Pass vs. Raw Recharge
-          </h2>
-          <div className="grid grid-cols-1 gap-4">
-            <div className="flex items-center justify-between p-6 bg-[var(--accent)]/10 border border-[var(--accent)]/20 rounded-[32px] group">
-              <div>
-                <h4 className="font-black italic uppercase text-[var(--accent)] m-0 text-sm">Weekly Diamond Pass</h4>
-                <p className="text-[10px] opacity-60 m-0">Includes 220 Diamonds + COA + Items</p>
-              </div>
-              <div className="text-right">
-                <div className="font-black text-xl italic">₹130-145</div>
-                <div className="text-[10px] font-bold text-green-500 uppercase tracking-widest">500% Value</div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px] opacity-60">
-              <div>
-                <h4 className="font-black italic uppercase m-0 text-sm opacity-80">Direct Raw Recharge</h4>
-                <p className="text-[10px] opacity-60 m-0">88 Diamonds Only</p>
-              </div>
-              <div className="text-right">
-                <div className="font-black text-xl italic opacity-80">₹150+</div>
-                <div className="text-[10px] font-bold text-red-500 uppercase tracking-widest">Base Value</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="italic font-black text-2xl tracking-tighter flex items-center gap-2">
-            <FiInfo className="text-[var(--accent)]" />
-            2. The Stacking Masterstroke (Mythic Move)
-          </h2>
-          <p className="text-lg leading-relaxed text-justify">
-            Moonton allows players to stack up to <strong>10 Weekly Passes</strong> (70 days) at once. When you stack 10 passes via <strong>bluebuff.in</strong>, you instantly receive 800 diamonds upfront. This is the single most efficient way to complete expensive "Recharge 500 Diamonds" tasks during Gacha events like <strong>Aspirants or Sanrio</strong>. You get the event tokens instantly plus 70 days of guaranteed daily diamonds.
-          </p>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
-            <FiTrendingUp className="text-[var(--accent)]" />
-            3. Weekly Pass vs. Twilight Pass vs. Starlight
-          </h2>
-          <p className="text-lg leading-relaxed text-justify">
-            Many new players wonder about the differences between the <strong>Mobile Legends Weekly Pass vs Twilight Pass</strong>. Here is the ultimate <strong>MLBB weekly diamond pass benefits</strong> breakdown so you can pick the right one for your needs:
-          </p>
-          <ul className="space-y-6 list-none p-0">
-            <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
-              <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">Weekly Diamond Pass (Best for Events)</h5>
-              <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">Provides the absolute highest diamond-to-rupee ratio. You must log in daily to claim. Perfect for stacking and triggering "Recharge Tasks" in premium Gacha events.</p>
-            </li>
-            <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
-              <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">Twilight Pass (Best for Beginners)</h5>
-              <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">A one-time purchase. As you level up your account, you get massive bursts of tickets and a few diamonds. Great for new accounts trying to buy heroes, but not good for late-game skins.</p>
-            </li>
-            <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
-              <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">Starlight Member (Best for Exclusives)</h5>
-              <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">A monthly subscription that grants an exclusive skin, painted skins, and a shiny name border. While it gives fewer raw diamonds than stacking Weekly Passes, the cosmetics are highly valuable.</p>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Conclusion: The Smart Player's Choice</h2>
-          <p className="text-lg leading-relaxed text-justify">
-            In 2026, the <strong>Weekly Diamond Pass</strong> remains the undisputed king of value in the Indian MLBB market. For any player looking to reach Mythic or collect the latest skins, it is the most logical starting point.
-          </p>
-          <p className="mt-12 text-lg leading-relaxed text-justify">
-            <strong>Ready to maximize your savings?</strong> Stop overpaying for your diamonds. Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Weekly Pass Store</Link> on <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> and get your 500% value boost now with instant UPI delivery!
-          </p>
-        </section>
-
-        {/* Simplified FAQ */}
-        <div className="mt-20 pt-10 border-t border-[var(--border)] space-y-8">
-          <h4 className="text-xl font-black italic uppercase tracking-widest opacity-40">Weekly Pass FAQ</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="group space-y-3">
-              <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base italic m-0">Can I buy a Pass and Diamonds?</h5>
-              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">Yes. Both will stack in your account. The Pass will give you daily rewards while the raw diamonds will provide an instant balance boost for shop purchases.</p>
-            </div>
-            <div className="group space-y-3">
-              <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base italic m-0">What if I miss a daily claim?</h5>
-              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">If you miss a day, you can claim the missed diamonds on the next day by checking your in-game 'Weekly Pass' icon. Always try to log in daily for at least a minute to be safe.</p>
-            </div>
-            <div className="group space-y-3">
-              <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base italic m-0">Is the Twilight Pass the same?</h5>
-              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">No. The <strong>Twilight Pass</strong> is a one-time purchase triggered by account level milestones, whereas the <strong>Weekly Pass</strong> is a recurring subscription-style value pack.</p>
-            </div>
-            <div className="group space-y-3">
-              <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base italic m-0">Can I gift a Weekly Pass?</h5>
-              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">Yes! On <a href="https://bluebuff.in" className="text-[var(--accent)] underline">bluebuff.in</a>, you can enter your friend's Player ID and buy the Weekly Pass for them. It will deliver to their account instantly as a surprise gift.</p>
-            </div>
-          </div>
-        </div>
       </div>
+
+      <h2>2. Weekly Pass vs. Twilight Pass</h2>
+      
+      <p>
+        Many beginners confuse the Weekly Diamond Pass with the Twilight Pass. They serve entirely different purposes:
+      </p>
+
+      <ul className="space-y-3">
+        <li><strong>Weekly Diamond Pass:</strong> Best for players who want raw diamonds and Crystals of Aurora to spin on premium skin events (like Aspirants or KOF).</li>
+        <li><strong>Twilight Pass:</strong> A one-time level progression pass. Best for brand new accounts that need massive amounts of Tickets to buy heroes and max out their emblems.</li>
+      </ul>
+
+      <h2>3. The Price Advantage in India</h2>
+      
+      <p>
+        When you buy the Weekly Pass inside the Mobile Legends app, Google Play takes a 30% cut. This drives the price up for you. 
+      </p>
+
+      <p>
+        By using an authorized API webstore in India, you completely bypass the Google Play tax. You can pay directly via secure UPI (PhonePe, Paytm, GPay) and get the exact same Weekly Pass for significantly cheaper.
+      </p>
+
+      <h2>Conclusion: Key Takeaways</h2>
+      
+      <p>
+        The Weekly Diamond Pass is mathematically the best purchase you can make in Mobile Legends. Period.
+      </p>
+
+      <ul className="space-y-3">
+        <li>It provides over 5x the value of a standard raw diamond recharge.</li>
+        <li>Stacking passes is the smartest way to complete expensive event recharge tasks.</li>
+        <li>Crystals of Aurora from the daily boxes can save you thousands of diamonds on Collector skins.</li>
+      </ul>
+
+      <p>
+        <strong>Ready to maximize your diamonds?</strong> Stop paying the Google Play tax!
+      </p>
+
+      <p>
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We offer the cheapest, 100% legal Weekly Diamond Passes in India with instant UPI delivery straight to your Player ID!
+      </p>
+
     </BlogPostLayout>
   );
 }
