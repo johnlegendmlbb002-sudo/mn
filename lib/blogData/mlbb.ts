@@ -1,40 +1,7 @@
 import { BlogPost } from "./types";
 
 export const MLBB_BLOGS_DATA: BlogPost[] = [
-  {
-    id: "9",
-    title: "Why You’re Stuck in Epic Rank (And How to Escape Fast)",
-    slug: "why-stuck-in-epic-rank-guide",
-    game: "mlbb",
-    type: "Guide",
-    excerpt:
-      "Epic rank is notorious for being the most difficult rank to escape solo. We analyze the common mistakes players make and provide a step-by-step escape plan for 2026.",
-    publishedAt: "2026-03-29",
-    author: "Admin",
-    authorRole: "Rank Specialist",
-    readingTime: "6 min read",
-    image: "/blog/mlbb-epic.png",
-    featured: false,
-    keywords: ["stuck in epic mlbb", "escape epic rank fast", "epic hell mlbb guide", "how to rank up mlbb"],
-    tags: ["Ranking", "Beginner", "Tips"],
-  },
-  {
-    id: "8",
-    title: "Secret Tricks to Reach Mythic Faster in MLBB (2026 Guide)",
-    slug: "reach-mythic-faster-mlbb-guide",
-    game: "mlbb",
-    type: "Pro Guide",
-    excerpt:
-      "Tired of Being stuck in Epic or Legend? Master these secret tricks used by professional players to climb to Mythic Glory in record time. Learn the late-game rotation and micro-management.",
-    publishedAt: "2026-03-29",
-    author: "Admin",
-    authorRole: "Mythical Immortal Specialist",
-    readingTime: "8 min read",
-    image: "/blog/mlbb-mythic.png",
-    featured: true,
-    keywords: ["mlbb reach mythic fast", "mythical glory guide 2026", "secret mlbb tricks", "climb rank mlbb"],
-    tags: ["Ranking", "Advanced", "Strategy"],
-  },
+
   {
     id: "6",
     title: "99% Players Don’t Know These MLBB Tricks (Rank Up Instantly)",
