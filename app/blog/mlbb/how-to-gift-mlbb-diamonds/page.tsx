@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     title: "How to Gift MLBB Diamonds to Friends – The Definitive 2026 Guide (India)",
     description: "Learn how to gift MLBB diamonds safely in India! A complete 2026 guide on gifting skins, passes, and diamonds using Player ID with no 7-day friend limit.",
     publishedTime: "2026-03-31T00:00:00.000Z",
-    images: [{ url: "https://mlbbtopup.in/blog/gift-guide.png" }],
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb/how-to-gift-mlbb-diamonds/gift-guide.png" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@bluebuffin",
     title: "How to Gift MLBB Diamonds to Friends – The Definitive 2026 Guide (India)",
     description: "Learn how to gift MLBB diamonds safely in India! A complete 2026 guide on gifting skins, passes, and diamonds using Player ID with no 7-day friend limit.",
-    images: ["https://mlbbtopup.in/blog/gift-guide.png"],
+    images: ["https://mlbbtopup.in/blog/mlbb/how-to-gift-mlbb-diamonds/gift-guide.png"],
   },
 };
 
@@ -44,7 +44,7 @@ export default function BlogPage() {
       category="Guide"
       readTime="15 min read"
       date="March 31, 2026"
-      image="/blog/gift-guide.png"
+      image="/blog/mlbb/how-to-gift-mlbb-diamonds/gift-guide.png"
       game="MLBB"
       description="Learn how to gift MLBB diamonds safely in India! A complete 2026 guide on gifting skins, passes, and diamonds using Player ID with no 7-day friend limit."
     >

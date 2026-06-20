@@ -26,7 +26,7 @@ export default function BlogPage() {
       category="Strategy Guide"
       readTime="18 min read"
       date="March 31, 2026"
-      image="/blog/mlbb-wise-spending.png"
+      image="/blog/mlbb/how-to-spend-diamonds-wisely-in-mlbb/mlbb-wise-spending.png"
       game="MLBB"
     >
       <div className="space-y-10">

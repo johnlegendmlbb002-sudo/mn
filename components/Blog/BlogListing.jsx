@@ -11,6 +11,9 @@ import {
   FiArrowRight,
   FiList,
   FiPlay,
+  FiShare2,
+  FiMoreHorizontal,
+  FiFilter
 } from "react-icons/fi";
 
 import { BLOGS_DATA } from "@/lib/blogData";
@@ -23,6 +26,7 @@ export default function BlogListing({ initialGame = "all" }) {
   const [selectedType, setSelectedType] = useState("all");
   const [selectedGame, setSelectedGame] = useState(initialGame);
   const [currentPage, setCurrentPage] = useState(1);
+  const [showFilters, setShowFilters] = useState(false);
 
   const categories = useMemo(() => {
     return ["all", ...new Set(BLOGS_DATA.map((b) => b.type))];
@@ -86,80 +90,98 @@ export default function BlogListing({ initialGame = "all" }) {
                 )}
             </div>
           </div>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 relative">
             <h2 className="text-2xl md:text-5xl font-[1000] italic tracking-tighter uppercase leading-none">
               {initialGame === "all" ? "Latest" : initialGame} <span className="text-[var(--accent)]">News</span>
             </h2>
             
-            {/* 🔍 SEARCH - COMPACT */}
-            <div className="relative w-full md:w-64">
-              <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                <FiSearch className="text-[var(--muted)] opacity-50" size={14} />
+            {/* 🔍 SEARCH & FILTER */}
+            <div className="flex items-center gap-2 w-full md:w-auto relative z-20">
+              <div className="relative flex-1 md:w-64">
+                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                  <FiSearch className="text-[var(--muted)] opacity-50" size={14} />
+                </div>
+                <input
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="SEARCH..."
+                  className="w-full h-11 pl-10 pr-6 rounded-xl bg-[var(--card)] border border-[var(--border)] outline-none text-[10px] font-bold tracking-widest uppercase focus:border-[var(--accent)]/40 transition-all font-sans"
+                />
               </div>
-              <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="SEARCH..."
-                className="w-full h-11 pl-10 pr-6 rounded-xl bg-[var(--card)] border border-[var(--border)] outline-none text-[10px] font-bold tracking-widest uppercase focus:border-[var(--accent)]/40 transition-all font-sans"
-              />
+              
+              <button
+                onClick={() => setShowFilters(!showFilters)}
+                className={`h-11 w-11 flex items-center justify-center rounded-xl border transition-all ${showFilters ? 'bg-[var(--accent)] border-[var(--accent)] text-white' : 'bg-[var(--card)] border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)]'}`}
+              >
+                <FiFilter size={16} />
+              </button>
+
+              {/* 🔖 FILTER DROPDOWN */}
+              <AnimatePresence>
+                {showFilters && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute right-0 top-[calc(100%+12px)] w-full md:w-80 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-2xl shadow-black/50 z-30"
+                  >
+                    <div className="space-y-6">
+                        {/* 🎮 GAME FILTER */}
+                        {initialGame === "all" && (
+                            <div className="space-y-3">
+                                <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)] opacity-60 italic">
+                                    SELECT SOURCE
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {games.map((game) => (
+                                        <Link
+                                            key={game}
+                                            href={game === "all" ? "/blog" : `/blog/${game}`}
+                                            className={`text-[10px] font-bold uppercase tracking-wider transition-all px-3 py-1.5 rounded-lg border ${
+                                                selectedGame === game
+                                                    ? "bg-[var(--accent)] border-[var(--accent)] text-white"
+                                                    : "bg-[var(--background)] border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--muted)]"
+                                            }`}
+                                        >
+                                            {game === "all" ? "ALL ARTICLES" : game}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* 🏷️ CATEGORY FILTER */}
+                        <div className="space-y-3">
+                            <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)] opacity-60 italic">
+                                TOPICS
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                                {categories.map((type) => (
+                                    <button
+                                        key={type}
+                                        onClick={() => {
+                                          setSelectedType(type);
+                                          setShowFilters(false);
+                                        }}
+                                        className={`text-[10px] font-bold uppercase tracking-wider transition-all px-3 py-1.5 rounded-lg border ${
+                                            selectedType === type
+                                                ? "bg-[var(--accent)] border-[var(--accent)] text-white"
+                                                : "bg-[var(--background)] border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--muted)]"
+                                        }`}
+                                    >
+                                        {type}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>
-
-        {/* 🔖 FILTERS SECTION */}
-        <div className="space-y-6 mb-12">
-            {/* 🎮 GAME FILTER - SIMPLE TEXT TABS */}
-            {initialGame === "all" && (
-                <div className="space-y-4">
-                    <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)] opacity-60 italic">
-                        SELECT SOURCE
-                    </div>
-                    <div className="flex flex-wrap items-center gap-x-8 gap-y-4 border-b border-[var(--border)]/20 pb-4">
-                        {games.map((game) => (
-                            <Link
-                                key={game}
-                                href={game === "all" ? "/blog" : `/blog/${game}`}
-                                className={`text-xs font-black uppercase tracking-tighter transition-all relative ${
-                                    selectedGame === game
-                                        ? "text-[var(--accent)] italic"
-                                        : "text-[var(--muted)] hover:text-[var(--foreground)]"
-                                }`}
-                            >
-                                {game === "all" ? "ALL ARTICLES" : game}
-                                {selectedGame === game && (
-                                    <motion.div 
-                                        layoutId="gameUnderline"
-                                        className="absolute -bottom-[17px] left-0 right-0 h-[2px] bg-[var(--accent)]" 
-                                    />
-                                )}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            )}
-
-            {/* 🏷️ CATEGORY FILTER - SIMPLE TEXT CHIPS */}
-            <div className="space-y-4">
-                <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)] opacity-60 italic">
-                    TOPICS
-                </div>
-                <div className="flex flex-nowrap gap-6 overflow-x-auto pb-4 no-scrollbar">
-                    {categories.map((type) => (
-                        <button
-                            key={type}
-                            onClick={() => setSelectedType(type)}
-                            className={`text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap px-0 py-1 border-b-2 ${
-                                selectedType === type
-                                    ? "text-[var(--foreground)] border-[var(--foreground)] italic"
-                                    : "text-[var(--muted)] border-transparent hover:text-[var(--accent)]"
-                            }`}
-                        >
-                            {type}
-                        </button>
-                    ))}
-                </div>
-            </div>
-        </div>
 
         {/* 📄 BLOG GRID */}
         <div className="space-y-3">
@@ -246,54 +268,58 @@ function BlogCard({ blog, index }) {
     >
       <Link
         href={`/blog/${blog.game}/${blog.slug}`}
-        className="group block relative rounded-xl bg-[var(--card)] border border-[var(--border)] p-3 hover:border-[var(--accent)]/30 transition-all duration-300"
+        className="group block relative rounded-2xl bg-[var(--card)] border border-[var(--border)] p-1.5 hover:border-[var(--accent)]/40 hover:shadow-lg hover:shadow-[var(--accent)]/5 transition-all duration-300"
       >
-        <div className="flex items-center gap-4">
-          {/* 🖼️ THUMBNAIL - SMALLER */}
-          <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden flex-shrink-0 border border-[var(--border)] bg-[var(--card)] group-hover:border-[var(--accent)]/40 transition-colors">
+        <div className="flex flex-row h-[120px] sm:h-[140px]">
+          {/* Image Section */}
+          <div className="relative w-[110px] sm:w-[150px] h-full rounded-xl overflow-hidden flex-shrink-0 bg-[var(--background)]">
             <img 
               src={blog.image} 
               alt={blog.title} 
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-          </div>
-
-          {/* 📝 CONTENT - TIGHTER */}
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-0.5">
-              <span className="text-[9px] font-[1000] text-[var(--accent)] uppercase tracking-[0.05em] italic">
-                {blog.type}
-              </span>
-              <span className="w-0.5 h-0.5 rounded-full bg-[var(--border)] opacity-30" />
-              <span className="text-[9px] font-bold text-[var(--muted)] opacity-60 uppercase tracking-tight">
-                {new Date(blog.publishedAt).toLocaleDateString()}
+            {/* Tag Overlay */}
+            <div className="absolute top-2 left-2">
+              <span className="text-white text-[8px] sm:text-[9px] font-bold bg-black/50 backdrop-blur-md px-1.5 py-0.5 rounded tracking-wider">
+                #{blog.tags?.[0] || blog.type.toLowerCase().replace(/\s+/g, '')}
               </span>
             </div>
+          </div>
 
-            <h2 className="text-base md:text-lg font-[900] uppercase tracking-tighter italic text-[var(--foreground)] leading-tight group-hover:text-[var(--accent)] transition-colors mb-0.5 line-clamp-1">
-              {blog.title}
-            </h2>
-
-            <div className="flex items-center gap-2">
-              <p className="text-[var(--muted)] text-[10px] leading-none opacity-50 line-clamp-1 flex-1">
+          {/* Content Section */}
+          <div className="flex-1 p-2.5 sm:p-4 flex flex-col min-w-0">
+            <div className="flex-1">
+              <h2 className="text-xs sm:text-[15px] font-bold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors mb-0.5 sm:mb-1 line-clamp-2">
+                {blog.title}
+              </h2>
+              <p className="text-[var(--muted)] text-[10px] sm:text-xs leading-tight opacity-80 line-clamp-2 hidden sm:line-clamp-2">
                 {blog.excerpt}
               </p>
-              
-              {/* 🏷️ TAGS - INLINE */}
-              <div className="flex items-center gap-1">
-                {blog.tags?.slice(0, 1).map(tag => (
-                  <span key={tag} className="text-[7px] font-bold text-[var(--muted)] opacity-20 border border-[var(--border)] px-1.5 py-0 rounded-md uppercase tracking-tighter">
-                    #{tag}
-                  </span>
-                ))}
-              </div>
             </div>
-          </div>
+            
+            {/* Author Footer */}
+            <div className="flex items-center justify-between mt-auto pt-1.5 border-t border-[var(--border)]/30">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[var(--accent)]/20 flex items-center justify-center overflow-hidden border border-[var(--accent)]/30 relative">
+                  <span className="text-[var(--accent)] font-bold text-[8px] sm:text-[9px]">BB</span>
+                </div>
+                <div className="flex flex-col justify-center">
+                  <span className="text-[9px] sm:text-[10px] font-bold text-[var(--foreground)] leading-none">by BlueBuff</span>
+                  <span className="text-[7px] sm:text-[8px] text-[var(--muted)] opacity-70 mt-0.5">
+                    {new Date(blog.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                  </span>
+                </div>
+              </div>
 
-          {/* ➡️ ACTION - MICRO */}
-          <div className="hidden sm:flex items-center gap-3 text-right">
-            <div className="w-8 h-8 rounded-lg bg-[var(--background)] border border-[var(--border)] flex items-center justify-center text-[var(--muted)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)]/40 transition-all group-hover:scale-105">
-              <FiArrowRight size={14} />
+              {/* Action Icons */}
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[var(--accent)] flex items-center justify-center text-white shadow-sm group-hover:scale-110 transition-transform">
+                  <FiShare2 size={10} className="sm:w-3 sm:h-3" />
+                </div>
+                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--muted)] hover:border-[var(--foreground)] hover:text-[var(--foreground)] transition-colors">
+                  <FiMoreHorizontal size={10} className="sm:w-3 sm:h-3" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

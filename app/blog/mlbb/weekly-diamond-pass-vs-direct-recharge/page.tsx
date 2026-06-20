@@ -24,7 +24,7 @@ export default function BlogPage() {
       category="Value Comparison"
       readTime="18 min read"
       date="March 31, 2026"
-      image="/blog/mlbb-wdp-vs-diamonds.png"
+      image="/blog/mlbb/weekly-diamond-pass-vs-direct-recharge/mlbb-wdp-vs-diamonds.png"
       game="MLBB"
       description="Should you buy the Weekly Diamond Pass or direct diamonds in Mobile Legends? Our 2026 guide breaks down the value, ROI, and best ways to spend in India."
     >

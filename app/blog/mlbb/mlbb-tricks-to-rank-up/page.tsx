@@ -26,7 +26,7 @@ export default function BlogPage() {
       category="Pro Tips"
       readTime="25 min read"
       date="March 31, 2026"
-      image="/blog/mlbb-tricks.png"
+      image="/blog/mlbb/mlbb-tricks-to-rank-up/mlbb-tricks.png"
       game="MLBB"
     >
       <div className="space-y-10">

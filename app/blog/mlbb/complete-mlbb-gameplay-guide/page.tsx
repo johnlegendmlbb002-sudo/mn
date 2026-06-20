@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     title: 'The Complete Mobile Legends Gameplay Guide: 2026 Edition (India)',
     description: 'Master the core mechanics of Mobile Legends: Bang Bang. Learn everything about laning, jungle rotations, map objectives (Turtle & Lord), and winning teamfights in India (2026).',
     publishedTime: '2026-03-31',
-    images: [{ url: 'https://mlbbtopup.in/blog/mlbb-gameplay-guide.png', width: 1200, height: 630, alt: 'The Complete Mobile Legends Gameplay Guide: 2026 Edition (India)' }],
+    images: [{ url: 'https://mlbbtopup.in/blog/mlbb/complete-mlbb-gameplay-guide/mlbb-gameplay-guide.png', width: 1200, height: 630, alt: 'The Complete Mobile Legends Gameplay Guide: 2026 Edition (India)' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@bluebuffin',
     title: 'The Complete Mobile Legends Gameplay Guide: 2026 Edition (India)',
     description: 'Master the core mechanics of Mobile Legends: Bang Bang. Learn everything about laning, jungle rotations, map objectives (Turtle & Lord), and winning teamfights in India (2026).',
-    images: ['https://mlbbtopup.in/blog/mlbb-gameplay-guide.png'],
+    images: ['https://mlbbtopup.in/blog/mlbb/complete-mlbb-gameplay-guide/mlbb-gameplay-guide.png'],
   },
 };
 
@@ -44,7 +44,7 @@ export default function BlogPage() {
       category="Game Guide"
       readTime="25 min read"
       date="March 31, 2026"
-      image="/blog/mlbb-gameplay-guide.png"
+      image="/blog/mlbb/complete-mlbb-gameplay-guide/mlbb-gameplay-guide.png"
       game="MLBB"
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">

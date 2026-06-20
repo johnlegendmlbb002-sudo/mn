@@ -25,7 +25,7 @@ export default function BlogPage() {
       category="Tech Guide"
       readTime="18 min read"
       date="March 31, 2026"
-      image="/blog/mlbb-fix-ping.png"
+      image="/blog/mlbb/how-to-fix-ping-issues-in-mlbb/mlbb-fix-ping.png"
       game="MLBB"
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">

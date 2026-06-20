@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     title: "Stop Losing in Mobile Legends – Fix These 7 Fatal Mistakes (2026)",
     description: "Stuck in a lose streak? Master the 7 common MLBB mistakes that keep Indian players in Epic rank. Learn pro map awareness, positioning, and objective strategies.",
     publishedTime: "2026-03-31T00:00:00.000Z",
-    images: [{ url: "https://mlbbtopup.in/blog/fix-mistakes.png" }],
+    images: [{ url: "https://mlbbtopup.in/blog/mlbb/stop-losing-mlbb-7-mistakes/fix-mistakes.png" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@bluebuffin",
     title: "Stop Losing in Mobile Legends – Fix These 7 Fatal Mistakes (2026)",
     description: "Stuck in a lose streak? Master the 7 common MLBB mistakes that keep Indian players in Epic rank. Learn pro map awareness, positioning, and objective strategies.",
-    images: ["https://mlbbtopup.in/blog/fix-mistakes.png"],
+    images: ["https://mlbbtopup.in/blog/mlbb/stop-losing-mlbb-7-mistakes/fix-mistakes.png"],
   },
 };
 
@@ -44,7 +44,7 @@ export default function BlogPage() {
       category="Gameplay Guide"
       readTime="15 min read"
       date="March 31, 2026"
-      image="/blog/fix-mistakes.png"
+      image="/blog/mlbb/stop-losing-mlbb-7-mistakes/fix-mistakes.png"
       game="MLBB"
       description="Stuck in a lose streak? Master the 7 common MLBB mistakes that keep Indian players in Epic rank. Learn pro map awareness, positioning, and objective strategies."
     >

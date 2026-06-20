@@ -221,7 +221,7 @@ export default function BlogPostLayout({
           <motion.div
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            className="mb-12 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)]/50"
+            className="mb-6 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)]/50"
           >
             <Link
               href="/blog"
@@ -251,48 +251,44 @@ export default function BlogPostLayout({
           </motion.div>
         </nav>
 
-        <header className="mb-8 md:mb-12">
+        <header className="mb-6 md:mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            <div className="flex flex-wrap items-center gap-4 text-[10px] md:text-[11px] font-black uppercase tracking-[0.1em]">
-              <span className="text-[var(--accent)] bg-[var(--accent)]/10 px-3 py-1 rounded-full italic border border-[var(--accent)]/20 shadow-[0_0_15px_-5px_var(--accent)]">
+            <div className="flex flex-wrap items-center gap-3 md:gap-4 text-[9px] md:text-[10px] font-black uppercase tracking-[0.1em]">
+              <span className="text-[var(--accent)] bg-[var(--accent)]/10 px-2.5 py-1 rounded-md italic border border-[var(--accent)]/20">
                 # {category}
               </span>
               <span className="opacity-20">|</span>
-              <span className="flex items-center gap-1.5 text-[var(--muted)]">
-                <FiClock size={12} className="text-[var(--accent)]" /> {readTime}
+              <span className="flex items-center gap-1 text-[var(--muted)]">
+                <FiClock size={10} className="text-[var(--accent)]" /> {readTime}
               </span>
               <span className="opacity-20">|</span>
               <time
                 dateTime={isoPubDate}
-                className="flex items-center gap-1.5 text-[var(--muted)]"
+                className="flex items-center gap-1 text-[var(--muted)]"
               >
-                <FiCalendar size={12} className="text-[var(--accent)]" /> {date}
+                <FiCalendar size={10} className="text-[var(--accent)]" /> {date}
               </time>
             </div>
 
-            <h1 className="text-4xl md:text-7xl font-[1000] italic tracking-tighter uppercase leading-[0.9] text-[var(--foreground)] mb-8 drop-shadow-2xl">
-              {title.split(" ").map((word, i) => (
-                <span key={i} className={i % 3 === 0 ? "text-[var(--accent)]" : ""}>
-                  {word}{" "}
-                </span>
-              ))}
+            <h1 className="text-3xl md:text-5xl font-[1000] italic tracking-tighter uppercase leading-[1.05] text-[var(--foreground)]">
+              {title}
             </h1>
 
-            <div className="flex items-center gap-3 py-3 border-y border-[var(--border)]/50 mr-auto">
-              <div className="w-10 h-10 rounded-full bg-[var(--card)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] shadow-inner">
-                <FiUser size={20} />
+            <div className="flex items-center gap-2.5 py-2 border-y border-[var(--border)]/50 mr-auto inline-flex">
+              <div className="w-8 h-8 rounded-full bg-[var(--card)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] shadow-inner">
+                <FiUser size={14} />
               </div>
               <div className="flex flex-col">
-                <span className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)] opacity-50">
+                <span className="text-[8px] font-black uppercase tracking-widest text-[var(--muted)] opacity-50">
                   Authored by
                 </span>
                 <span
-                  className="text-sm font-black italic uppercase text-[var(--foreground)] tracking-tight"
+                  className="text-xs font-black italic uppercase text-[var(--foreground)] tracking-tight"
                   itemProp="author"
                 >
                   {author}
@@ -306,7 +302,7 @@ export default function BlogPostLayout({
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="relative mt-12 rounded-[2rem] md:rounded-[4rem] overflow-hidden border border-[var(--border)] shadow-2xl aspect-[16/9] group"
+              className="relative mt-6 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-[var(--border)] shadow-2xl aspect-[16/9] group"
             >
               <Image
                 src={image}
