@@ -359,9 +359,6 @@ export default async function RootLayout({
           <ChatbotWrapper />
           {settings.showBottomNav !== false && <BottomNav />}
           <PWAInstallBanner />
-
-
-
           <div />
         </GoogleOAuthProvider>
 

@@ -13,7 +13,11 @@ export const metadata: Metadata = {
     "send mlbb diamonds to friend player id",
     "gift weekly diamond pass mlbb india",
     "bluebuff mlbb gift guide",
-    "mlbb gift skin without 7 day limit"
+    "mlbb gift skin without 7 day limit",
+    "how to gift diamonds in mobile legends without 7 days",
+    "send diamonds mobile legends via ID",
+    "mlbb gifting rules india",
+    "gift starlight member mlbb"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-gift-mlbb-diamonds" },
   authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
@@ -55,7 +59,7 @@ export default function BlogPage() {
         </p>
 
         <p className="text-lg leading-relaxed text-justify">
-          In MLBB, gifting used to be slow because of level rules and friend timers. In 2026, gifting is easier. In-game gifting still works for skins, but <strong>API gifting</strong> via <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-bold">bluebuff.in</Link> is faster and safer. This guide shows how to send gifts quickly and save money.
+          In MLBB, gifting used to be slow because of level rules and friend timers. In 2026, gifting is easier. While in-game gifting still works for skins, learning <strong>how to gift diamonds in Mobile Legends without 7 days</strong> waiting is the real trick. By using <strong>API gifting</strong> via <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-bold">bluebuff.in</Link>, it is significantly faster and safer. This guide shows how to <strong>send diamonds Mobile Legends via ID</strong> quickly while saving money.
         </p>
 
         {/* Gifting Methods Comparison Grid */}
@@ -97,25 +101,25 @@ export default function BlogPage() {
             <FiGift className="text-[var(--accent)]" />
             2. How to Gift via Player ID (Step-by-Step)
           </h2>
-          <p>The fastest way to send gifts <strong>in India</strong> is skipping the friend-timer entirely. Here is the 2026 blueprint:</p>
+          <p>The fastest way to send gifts <strong>in India</strong> is skipping the friend-timer entirely. Here is the 2026 blueprint to <strong>gift MLBB diamonds</strong> instantly:</p>
 
-          <div className="space-y-8 ml-4 border-l border-[var(--border)] pl-8 pt-2">
-            <div className="relative">
+          <ul className="space-y-8 ml-4 border-l border-[var(--border)] pl-8 pt-2 list-none">
+            <li className="relative">
               <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--accent)] shadow-[0_0_15px_rgba(var(--accent-rgb),0.5)]" />
               <h4 className="text-sm font-black uppercase italic m-0 mb-2">Step 01: The Secret ID</h4>
-              <p className="text-xs opacity-60 leading-relaxed text-justify">Ask your friend for their <strong>Player ID and Zone ID</strong> (e.g., 123456789 (1234)). They can find this by tapping their avatar in the game's main menu.</p>
-            </div>
-            <div className="relative">
+              <p className="text-xs opacity-60 leading-relaxed text-justify">Ask your friend for their <strong>Player ID and Zone ID</strong> (e.g., 123456789 (1234)). They can find this easily by tapping their avatar in the top-left corner of the main menu.</p>
+            </li>
+            <li className="relative">
               <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
               <h4 className="text-sm font-black uppercase italic m-0 mb-2">Step 02: Verification</h4>
-              <p className="text-xs opacity-60 leading-relaxed text-justify">Enter their ID on <Link href="/games/mobile-legends270" className="text-[var(--accent)] font-bold">bluebuff.in</Link>. Our system will fetch their <strong>IGN (In-Game Name)</strong>. Double-check it before you pay.</p>
-            </div>
-            <div className="relative">
+              <p className="text-xs opacity-60 leading-relaxed text-justify">Enter their ID on our official site, <Link href="/games/mobile-legends270" className="text-[var(--accent)] font-bold">bluebuff.in</Link>. Our system will fetch and display their <strong>IGN (In-Game Name)</strong> to ensure you are gifting the right person.</p>
+            </li>
+            <li className="relative">
               <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--accent)]" />
               <h4 className="text-sm font-black uppercase italic m-0 mb-2">Step 03: Delivery</h4>
-              <p className="text-xs opacity-60 leading-relaxed text-justify">Choose a bundle and pay with your <strong>UPI app (PhonePe, GPay, Paytm)</strong>. Diamonds usually arrive in under 60 seconds.</p>
-            </div>
-          </div>
+              <p className="text-xs opacity-60 leading-relaxed text-justify">Choose a diamond bundle or Weekly Pass and securely pay using your <strong>UPI app (PhonePe, GPay, Paytm)</strong>. The diamonds usually arrive in their inbox in under 60 seconds.</p>
+            </li>
+          </ul>
         </section>
 
         <section className="space-y-6">

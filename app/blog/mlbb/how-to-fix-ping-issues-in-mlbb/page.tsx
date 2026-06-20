@@ -49,19 +49,16 @@ export default function BlogPage() {
       <p>
         In many urban areas of <strong>India</strong>, a 5G mobile connection is often more stable for gaming than a cheap, local fiber-optic Wi-Fi router being shared by multiple devices.
       </p>
-      <h4>Trialing Your Connection</h4>
-      <p>
-        If your Wi-Fi is consistently spiking, switch to your 5G data for one match. If the lag disappears, your router is the bottleneck. Wi-Fi signals can be interrupted by something as simple as a microwave or a thick wall between you and the router.
-      </p>
+      <ul className="space-y-3">
+        <li><strong>Trial Your Connection:</strong> If your Wi-Fi is consistently spiking, switch to your 5G data for one match. If the lag disappears, your router is the bottleneck.</li>
+        <li><strong>Physical Barriers:</strong> Wi-Fi signals can be interrupted by something as simple as a microwave or a thick wall between you and the router.</li>
+      </ul>
 
       <h3>Environmental Interference</h3>
-      <p>
-        Gaming in a room with only "one bar" of signal is a recipe for disaster. Even a 0.1-second signal drop causes a disconnect in the MLBB server synchronization.
-      </p>
-      <h4>Finding Your "Green Spot"</h4>
-      <p>
-        Identify the area in your home with the strongest, most consistent signal and make it your dedicated <strong>Ranked Match</strong> zone.
-      </p>
+      <ul className="space-y-3">
+        <li><strong>Signal Drops:</strong> Gaming in a room with only "one bar" of signal is a recipe for disaster. Even a 0.1-second signal drop causes a disconnect in the MLBB server synchronization.</li>
+        <li><strong>Find Your "Green Spot":</strong> Identify the area in your home with the strongest, most consistent signal and make it your dedicated <strong>Ranked Match</strong> zone.</li>
+      </ul>
 
       <h2>2. Utilizing Built-in Network Optimization Tools</h2>
       <p>
@@ -69,22 +66,16 @@ export default function BlogPage() {
       </p>
 
       <h3>Speed Mode: Reducing Packet Loss</h3>
-      <p>
-        Go to <strong>Settings &rarr; Network</strong> and ensure <strong>Speed Mode</strong> is toggled <strong>ON</strong>.
-      </p>
-      <h4>How Speed Mode Works</h4>
-      <p>
-        This setting forces the game to send data packets more frequently. It uses slightly more of your data plan but significantly reduces the "teleportation" effect known as Packet Loss.
-      </p>
+      <ul className="space-y-3">
+        <li><strong>How to Enable:</strong> Go to <strong>Settings &rarr; Network</strong> and ensure <strong>Speed Mode</strong> is toggled <strong>ON</strong>.</li>
+        <li><strong>How it Works:</strong> This setting forces the game to send data packets more frequently. It uses slightly more of your data plan but significantly reduces the "teleportation" effect known as Packet Loss.</li>
+      </ul>
 
       <h3>Network Boost: The Dual-Connection Secret</h3>
-      <p>
-        For flagship and high-end mid-range phones, <strong>Network Boost</strong> is mandatory.
-      </p>
-      <h4>Simultaneous Data Usage</h4>
-      <p>
-        When active, this allows MLBB to use <strong>both</strong> your Wi-Fi and your Mobile Data simultaneously. If your Wi-Fi fluctuates for a millisecond, your mobile data instantly fills the gap, ensuring your ping stays green and your character never stops moving.
-      </p>
+      <ul className="space-y-3">
+        <li><strong>Mandatory for Modern Phones:</strong> For flagship and high-end mid-range phones, enabling <strong>Network Boost</strong> is highly recommended.</li>
+        <li><strong>Simultaneous Data Usage:</strong> When active, this allows MLBB to use <strong>both</strong> your Wi-Fi and your Mobile Data simultaneously. If your Wi-Fi fluctuates for a millisecond, your mobile data instantly fills the gap, ensuring your ping stays green.</li>
+      </ul>
 
       <div className="bg-[var(--card)] border border-[var(--border)] p-10 rounded-[40px] my-16 shadow-xl relative overflow-hidden group">
         <div className="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]" />
@@ -98,44 +89,28 @@ export default function BlogPage() {
       <p>
         Your smartphone is constantly multitasking. Apps like Instagram, YouTube, and WhatsApp send "heartbeat" pings to their servers even when you are not using them.
       </p>
-
-      <h3>Closing Background Cycles</h3>
-      <p>
-        Before entering the Land of Dawn, force-close every other application. These apps compete for your bandwidth, causing tiny "stutters" whenever they refresh their notifications.
-      </p>
-
-      <h3>Game Turbo / Gaming Mode</h3>
-      <p>
-        If you use a Xiaomi, Realme, or OnePlus device <strong>in India</strong>, utilize the "Game Turbo" or "Pro Gaming Mode." These built-in utilities prioritize your CPU, RAM, and Network Bandwidth specifically for Mobile Legends, essentially muting every other app on your phone while you play.
-      </p>
+      <ul className="space-y-3">
+        <li><strong>Close Background Cycles:</strong> Before entering the Land of Dawn, force-close every other application. These apps compete for your bandwidth, causing tiny "stutters" whenever they refresh.</li>
+        <li><strong>Use Game Turbo:</strong> If you use a Xiaomi, Realme, or OnePlus device <strong>in India</strong>, utilize the "Game Turbo" or "Pro Gaming Mode." These built-in utilities prioritize your CPU, RAM, and Network Bandwidth specifically for Mobile Legends.</li>
+      </ul>
 
       <h2>4. Graphics Optimization for Real-Time Response</h2>
       <p>
         Sometimes, "Ping Lag" is actually <strong>"Frame Lag."</strong> If your phone is struggling to render the graphics, the game will feel sluggish and unresponsive.
       </p>
-
-      <h3>Refresh Rate over Visual Quality</h3>
-      <p>
-        Always prioritize <strong>Refresh Rate</strong> (High or Ultra) over "Graphics Quality." A higher refresh rate reduces "Input Latency"—the time it takes for your screen to register your touch.
-      </p>
-      <h4>Finding the Sweet Spot</h4>
-      <p>
-        For non-flagship phones, set <strong>Graphics to Medium</strong> and <strong>Refresh Rate to High</strong>. This ensures a stable experience even during chaotic 10-man teamfights in the mid-lane.
-      </p>
+      <ul className="space-y-3">
+        <li><strong>Refresh Rate over Visual Quality:</strong> Always prioritize <strong>Refresh Rate</strong> (High or Ultra) over "Graphics Quality." A higher refresh rate reduces "Input Latency" (the time it takes for your screen to register your touch).</li>
+        <li><strong>Finding the Sweet Spot:</strong> For non-flagship phones, set <strong>Graphics to Medium</strong> and <strong>Refresh Rate to High</strong>. This ensures a stable experience even during chaotic teamfights.</li>
+      </ul>
 
       <h2>5. Advanced DNS Routing (The Pro Secret)</h2>
       <p>
         If your local Internet Service Provider (ISP) has poor routing, your data takes a "long path" to reach the MLBB servers.
       </p>
-
-      <h3>Why Custom DNS Matters</h3>
-      <p>
-        By switching to a global DNS like <strong>Google DNS (8.8.8.8)</strong> or <strong>Cloudflare (1.1.1.1)</strong>, you can often find a more direct route to the game servers.
-      </p>
-      <h4>How to Change DNS in India</h4>
-      <p>
-        Go to your WiFi settings, select "Static IP," and manually enter these DNS addresses. Many <strong>Indian players</strong> report a permanent reduction of 15ms-20ms just by making this simple change.
-      </p>
+      <ul className="space-y-3">
+        <li><strong>Why Custom DNS Matters:</strong> By switching to a global DNS like <strong>Google DNS (8.8.8.8)</strong> or <strong>Cloudflare (1.1.1.1)</strong>, you can often find a more direct route to the game servers.</li>
+        <li><strong>How to Change DNS in India:</strong> Go to your phone's WiFi settings, select "Static IP," and manually enter these DNS addresses. Many players report a permanent reduction of 15ms-20ms just by making this simple change.</li>
+      </ul>
 
       <h2>Conclusion: Eliminate the Lag, Dominate the Rank</h2>
       <p>

@@ -13,7 +13,12 @@ export const metadata: Metadata = {
     "reach mythic solo queue mlbb",
     "mlbb win more matches solo",
     "bluebuff mlbb solo carry guide",
-    "solo queue carrying tips india"
+    "solo queue carrying tips india",
+    "how to win solo queue mobile legends",
+    "best hero to rank up fast mlbb",
+    "carry noob teammates mlbb",
+    "mobile legends solo queue guide",
+    "mlbb solo rank meta"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-carry-in-solo-queue" },
 };
@@ -78,9 +83,10 @@ export default function BlogPage() {
       <p>
         A 20-0 kill score means nothing if your throne is being pushed by minions. In Solo Queue, it’s easy for your team to get distracted by useless jungle skirmishes.
       </p>
-      <p>
-        <strong>Split pressure:</strong> If your team starts a bad 4v5, do not run in and die. Push the opposite lane instead. This pulls enemies back and can open space for Lord or towers.
-      </p>
+      <ul className="space-y-3">
+        <li><strong>Split Pressure:</strong> If your team starts a bad 4v5, do not run in and die. Push the opposite lane instead. This pulls enemies back and can open space for Lord or towers.</li>
+        <li><strong>Turtle Control:</strong> Secure the first two Turtles. The team-wide gold and XP shield can passively buff your struggling teammates without you having to be in their lane.</li>
+      </ul>
 
       <h2>5. Specialized Solo Queue Builds</h2>
       <p>
@@ -96,9 +102,33 @@ export default function BlogPage() {
       <p>
         As the match stretches to 15+ minutes, the game becomes a high-stakes "Deathmatch." To carry here, you need to find a <strong>Game-Changing Pick-Off</strong>.
       </p>
-      <p>
-        Hide near buffs or Lord and look for isolated targets. Killing one key hero late game creates a 5v4 and can lead to Lord or game end.
-      </p>
+      <ul className="space-y-3">
+        <li><strong>Ambush Tactics:</strong> Hide near buffs or Lord and look for isolated targets. Killing one key hero late game creates a 5v4.</li>
+        <li><strong>End Game Priority:</strong> A late-game wipeout guarantees a win. Secure the kill, immediately ping Lord or push mid, and end the game.</li>
+      </ul>
+
+      <section className="space-y-6 mt-8">
+        <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
+          <span className="text-[var(--accent)]">7.</span> Managing Minion Waves & Lane Pressure
+        </h2>
+        <p>
+          If you want to learn <strong>how to win solo queue Mobile Legends</strong> games easily, you must master wave management. In the <strong>MLBB solo rank meta</strong>, minions do half the carrying for you.
+        </p>
+        <ul className="space-y-4 list-none pl-0">
+          <li className="flex items-start gap-4">
+            <div className="w-2 h-2 rounded-full bg-[var(--accent)] mt-2 shrink-0"></div>
+            <p className="text-sm opacity-80 leading-relaxed m-0 text-justify">
+              <strong>Slow Pushing to Victory:</strong> Before taking Lord, clear the enemy minion wave and leave your wave intact. By the time the Lord reaches their base, a massive minion wave will be pushing the opposite side, forcing the enemy team to split up.
+            </p>
+          </li>
+          <li className="flex items-start gap-4">
+            <div className="w-2 h-2 rounded-full bg-[var(--accent)] mt-2 shrink-0"></div>
+            <p className="text-sm opacity-80 leading-relaxed m-0 text-justify">
+              <strong>Never Miss Waves:</strong> To <strong>carry noob teammates in MLBB</strong>, you need gold. Never roam if it means letting two waves crash into your tower. That is lost gold and lost tower health. Catch waves to maintain a massive gold lead.
+            </p>
+          </li>
+        </ul>
+      </section>
 
       <h2>Conclusion: Lead the Land of Dawn</h2>
       <p>

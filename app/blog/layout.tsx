@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AdsterraSocialBar from "@/components/Ads/AdsterraSocialBar";
 import AdsterraPopunder from "@/components/Ads/AdsterraPopunder";
+import FooterBanner from "@/components/Ads/FooterBanner";
 
 export const metadata: Metadata = {
   title: {
@@ -67,9 +68,12 @@ export default function BlogLayout({
       <AdsterraSocialBar />
 
       {/* Adsterra Popunder */}
-      <AdsterraPopunder />
+      {/* <AdsterraPopunder /> */}
       
       {children}
+      
+      {/* Blog specific Footer Banner */}
+      <FooterBanner />
     </>
   );
 }

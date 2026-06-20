@@ -13,7 +13,12 @@ export const metadata: Metadata = {
     "mlbb 139 weekly pass india",
     "mlbb diamond price list india 2026",
     "bluebuff mlbb weekly pass",
-    "save money on mlbb diamonds india"
+    "save money on mlbb diamonds india",
+    "mlbb weekly diamond pass benefits",
+    "how to buy weekly pass mobile legends",
+    "mlbb diamond top up upi",
+    "cheap weekly pass mlbb",
+    "mobile legends weekly pass vs twilight pass"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/mlbb-weekly-pass-price-in-india" },
   authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
@@ -53,7 +58,7 @@ export default function BlogPage() {
         <p className="text-lg md:text-xl font-medium italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
           If you want a <strong>cheap way to buy MLBB diamonds in India</strong>, Weekly Diamond Pass is one of the best options.
         </p>        <p className="text-lg leading-relaxed text-justify">
-          In MLBB, the <strong>Weekly Diamond Pass</strong> gives better long-term value than small direct recharges. It is popular in the <strong>Indian scene</strong> for players who want to save. On trusted platforms like <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black font">bluebuff.in</Link>, you can buy it with UPI and get fast delivery.
+          In MLBB, the <strong>Weekly Diamond Pass</strong> gives better long-term value than small direct recharges. It is heavily popular in the <strong>Indian scene</strong> for players who want to save money on events. On trusted platforms like <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black font">bluebuff.in</Link>, you can securely <strong>buy the Weekly Pass for Mobile Legends</strong> using UPI and get lightning-fast delivery.
         </p>
 
         {/* Value Grid */}
@@ -131,15 +136,27 @@ export default function BlogPage() {
         </section>
 
         <section className="space-y-6">
-          <div className="p-8 rounded-[40px] bg-[var(--card)] border border-[var(--border)] relative overflow-hidden group">
-            <div className="absolute top-0 left-0 w-2 h-full bg-[var(--accent)]" />
-            <h4 className="italic font-black uppercase text-[var(--accent)] mb-3 tracking-tighter flex items-center gap-2">
-              <FiShield /> Safety First 🛡️
-            </h4>
-            <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
-              Legit Weekly Pass purchases on <Link href="/games/mobile-legends270" className="text-[var(--accent)] font-bold italic">bluebuff.in</Link> only need your <strong>Player ID and Zone ID</strong>. If a site asks for login or OTP, it is likely a scam.
-            </p>
-          </div>
+          <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
+            <FiTrendingUp className="text-[var(--accent)]" />
+            3. Weekly Pass vs. Twilight Pass vs. Starlight
+          </h2>
+          <p className="text-lg leading-relaxed text-justify">
+            Many new players wonder about the differences between the <strong>Mobile Legends Weekly Pass vs Twilight Pass</strong>. Here is the ultimate <strong>MLBB weekly diamond pass benefits</strong> breakdown so you can pick the right one for your needs:
+          </p>
+          <ul className="space-y-6 list-none p-0">
+            <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
+              <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">Weekly Diamond Pass (Best for Events)</h5>
+              <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">Provides the absolute highest diamond-to-rupee ratio. You must log in daily to claim. Perfect for stacking and triggering "Recharge Tasks" in premium Gacha events.</p>
+            </li>
+            <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
+              <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">Twilight Pass (Best for Beginners)</h5>
+              <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">A one-time purchase. As you level up your account, you get massive bursts of tickets and a few diamonds. Great for new accounts trying to buy heroes, but not good for late-game skins.</p>
+            </li>
+            <li className="p-6 bg-[var(--card)] border border-[var(--border)] rounded-[32px]">
+              <h5 className="text-[var(--accent)] font-black uppercase italic m-0 mb-3 text-sm">Starlight Member (Best for Exclusives)</h5>
+              <p className="text-xs opacity-70 leading-relaxed m-0 text-justify">A monthly subscription that grants an exclusive skin, painted skins, and a shiny name border. While it gives fewer raw diamonds than stacking Weekly Passes, the cosmetics are highly valuable.</p>
+            </li>
+          </ul>
         </section>
 
         <section>

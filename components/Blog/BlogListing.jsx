@@ -69,11 +69,11 @@ export default function BlogListing({ initialGame = "all" }) {
   }, [search, selectedType, selectedGame]);
 
   return (
-    <section className="min-h-screen bg-[var(--background)] relative pb-32 transition-colors duration-300 px-6">
+    <main className="min-h-screen bg-[var(--background)] relative pb-32 transition-colors duration-300 px-6">
 
       <div className="max-w-4xl mx-auto pt-8 md:pt-12 relative z-10">
 
-        <motion.div
+        <motion.header
           className="mb-10"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -181,7 +181,7 @@ export default function BlogListing({ initialGame = "all" }) {
               </AnimatePresence>
             </div>
           </div>
-        </motion.div>
+        </motion.header>
 
         {/* 📄 BLOG GRID */}
         <div className="space-y-3">
@@ -205,7 +205,7 @@ export default function BlogListing({ initialGame = "all" }) {
 
         {/* 🔢 PAGINATION - NUMBERED */}
         {totalPages > 1 && (
-          <div className="flex justify-center items-center gap-2 mt-12 mb-20">
+          <nav aria-label="Pagination" className="flex justify-center items-center gap-2 mt-12 mb-20">
             <button
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((p) => p - 1)}
@@ -237,11 +237,11 @@ export default function BlogListing({ initialGame = "all" }) {
             >
               <FiChevronRight size={16} />
             </button>
-          </div>
+          </nav>
         )}
 
         {/* 🏔️ SEO FOOTER */}
-        <motion.div 
+        <motion.footer 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="mt-32 pt-16 border-t border-[var(--border)]/30"
@@ -252,16 +252,16 @@ export default function BlogListing({ initialGame = "all" }) {
             <p className="text-sm md:text-base text-[var(--muted)] leading-relaxed italic max-w-2xl opacity-40">
                 Your definitive collection of <strong className="text-[var(--foreground)]">{initialGame === "all" ? "game" : initialGame} top up guides</strong>, pricing analysis, and safety protocols. Stay updated with the latest <strong className="text-[var(--foreground)]">mobile legends recharge india fast</strong> tips and diamond bundle value comparisons. We provide the most accurate information for <strong>Mobile Legends players in India</strong> to ensure safe and cheap diamond top-ups.
             </p>
-        </motion.div>
+        </motion.footer>
       </div>
-    </section>
+    </main>
   );
 }
 
 /* ================= BLOG CARD ================= */
 function BlogCard({ blog, index }) {
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
@@ -324,6 +324,6 @@ function BlogCard({ blog, index }) {
           </div>
         </div>
       </Link>
-    </motion.div>
+    </motion.article>
   );
 }

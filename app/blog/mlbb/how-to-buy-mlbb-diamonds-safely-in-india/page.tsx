@@ -14,7 +14,12 @@ export const metadata: Metadata = {
     "mlbb upi top up guide",
     "recharge mlbb diamonds safely india",
     "bluebuff mlbb safety guide",
-    "buy mobile legends diamonds safely india"
+    "buy mobile legends diamonds safely india",
+    "buy mobile legends diamonds via paytm",
+    "how to avoid mlbb top up scams",
+    "mlbb official recharge site india",
+    "secure mlbb diamond purchase",
+    "buy cheap mlbb diamonds safely"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-buy-mlbb-diamonds-safely-in-india" },
   authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
@@ -142,8 +147,32 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <section className="space-y-6">
+        <h2 className="flex items-center gap-3 italic font-black text-2xl tracking-tighter">
+          <FiShield className="text-[var(--accent)]" />
+          4. The Ultimate Guide to Avoiding MLBB Top-Up Scams in India
+        </h2>
+        <p className="text-lg leading-relaxed text-justify">
+          To <strong>buy cheap MLBB diamonds safely</strong>, you need to be aware of the red flags. Scammers are getting smarter, but avoiding them is simple if you stick to an <strong>MLBB official recharge site in India</strong>. 
+        </p>
+        <ul className="space-y-4 not-prose pl-0 list-none">
+          <li className="flex items-start gap-4">
+            <FiAlertTriangle className="text-yellow-500 shrink-0 mt-1" />
+            <p className="text-sm opacity-80 leading-relaxed m-0 text-justify">
+              <strong>Fake Giveaways & Phishing:</strong> Many "free diamond generators" or fake tournament links are designed to steal your credentials. Never log into third-party sites using your Moonton account. A <strong>secure MLBB diamond purchase</strong> only requires your public Player ID.
+            </p>
+          </li>
+          <li className="flex items-start gap-4">
+            <FiAlertTriangle className="text-yellow-500 shrink-0 mt-1" />
+            <p className="text-sm opacity-80 leading-relaxed m-0 text-justify">
+              <strong>Unverified Sellers on Telegram:</strong> Avoid sending money directly to unknown individuals offering massive discounts. Instead, choose automated, trusted platforms where you can <strong>buy Mobile Legends diamonds via Paytm</strong> or UPI, ensuring a traceable and secure transaction.
+            </p>
+          </li>
+        </ul>
+      </section>
+
       <section>
-        <h2>Conclusion: Invest in Peace of Mind</h2>
+        <h2 className="italic font-black text-2xl tracking-tighter">Conclusion: Invest in Peace of Mind</h2>
         <p className="text-lg leading-relaxed text-justify">
           Do not risk your account for a "too cheap" deal. Safe top-ups protect your progress in Mobile Legends.
         </p>
