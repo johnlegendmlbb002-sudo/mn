@@ -1,24 +1,30 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Script from "next/script";
+import { ADSTERRA_CONFIG } from "./AdConfig";
 
-interface AdsterraBannerProps {
-  id?: string;
-  src?: string;
+interface NativeBannerProps {
   className?: string;
 }
 
 /**
  * Reusable Adsterra Banner component.
- * Defaults to the tasks page banner if no props are provided.
  */
 export default function NativeBanner({
-  id = "c755433b5487dae7313fbaa97a482b40",
-  src = "https://pl29207483.profitablecpmratenetwork.com/c755433b5487dae7313fbaa97a482b40/invoke.js",
   className = ""
-}: AdsterraBannerProps) {
+}: NativeBannerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  if (!ADSTERRA_CONFIG.enableAds) {
+    return (
+      <div className={`flex justify-center items-center overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.03] min-h-[50px] ${className}`}>
+        <span className="text-xs text-[var(--muted)] opacity-50">Ad Space</span>
+      </div>
+    );
+  }
+
+  const { id, src } = ADSTERRA_CONFIG.nativeBanner;
 
   return (
     <div className={`flex justify-center overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.03] min-h-[50px] ${className}`}>
