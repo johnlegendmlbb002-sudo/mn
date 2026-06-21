@@ -41,6 +41,11 @@ api.interceptors.request.use(
       
       config.headers['X-App-Timestamp'] = timestamp;
       config.headers['X-App-Signature'] = signature;
+      
+      const adminPin = sessionStorage.getItem('adminPin');
+      if (adminPin) {
+        config.headers['x-admin-pin'] = adminPin;
+      }
     }
     return config;
   },

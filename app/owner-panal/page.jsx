@@ -92,6 +92,44 @@ export default function AdminPanalPage() {
   const [isOwner, setIsOwner] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const [pinPrompt, setPinPrompt] = useState(true);
+  const [pinInput, setPinInput] = useState("");
+
+  useEffect(() => {
+    const savedPin = sessionStorage.getItem("adminPin");
+    if (savedPin) {
+      setPinPrompt(false);
+    }
+    
+    const originalFetch = window.fetch;
+    window.fetch = async (...args) => {
+      let [resource, config] = args;
+      const currentPin = sessionStorage.getItem("adminPin") || "";
+      
+      if (typeof resource === 'string' && resource.includes('/api/admin')) {
+        config = config || {};
+        config.headers = {
+          ...config.headers,
+          "x-admin-pin": currentPin
+        };
+      }
+      return originalFetch(resource, config);
+    };
+    
+    return () => {
+      window.fetch = originalFetch;
+    };
+  }, []);
+
+  const handlePinSubmit = (e) => {
+    e.preventDefault();
+    if (pinInput) {
+      sessionStorage.setItem("adminPin", pinInput);
+      setPinPrompt(false);
+      window.location.reload();
+    }
+  };
+
   useEffect(() => {
     const role = localStorage.getItem("userType");
     if (role === "owner") {
@@ -244,6 +282,26 @@ export default function AdminPanalPage() {
   useEffect(() => {
     if (activeTab === "pricing") fetchPricing(pricingType);
   }, [activeTab, pricingType, page, search]);
+
+  if (pinPrompt) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black">
+        <form onSubmit={handlePinSubmit} className="bg-neutral-900 p-8 rounded-2xl flex flex-col items-center gap-4 border border-white/10">
+          <FiKey size={32} className="text-[var(--accent)]" />
+          <h2 className="text-xl font-bold text-white">Admin Security PIN</h2>
+          <input 
+            type="password" 
+            value={pinInput} 
+            onChange={(e) => setPinInput(e.target.value)}
+            className="bg-black border border-white/20 rounded-lg px-4 py-2 text-center text-white font-mono tracking-[0.5em] outline-none focus:border-[var(--accent)]"
+            placeholder="******"
+            autoFocus
+          />
+          <button type="submit" className="bg-[var(--accent)] text-black px-6 py-2 rounded-lg font-bold w-full">Unlock</button>
+        </form>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
