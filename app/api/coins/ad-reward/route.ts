@@ -4,12 +4,20 @@ import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
 import CoinTransaction from "@/models/CoinTransaction";
 import { ADS_CONFIG } from "@/lib/adsConfig";
+import { verifyHmac } from "@/lib/hmac";
 
 export async function POST(req: Request) {
   try {
     await connectDB();
 
     const authHeader = req.headers.get("authorization");
+    
+    // HMAC Verification
+    const rawBody = await req.text();
+    if (!verifyHmac(req, rawBody, authHeader)) {
+      return NextResponse.json({ success: false, message: "Forbidden: Invalid Signature" }, { status: 403 });
+    }
+
     if (!authHeader?.startsWith("Bearer ")) {
       return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
     }
@@ -21,7 +29,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, message: "Invalid token" }, { status: 401 });
     }
 
-    const { adId } = await req.json().catch(() => ({ adId: "watch_1" }));
+    let bodyData = { adId: "watch_1" };
+    try {
+      if (rawBody) bodyData = JSON.parse(rawBody);
+    } catch {}
+    
+    const { adId } = bodyData;
     if (!adId) return NextResponse.json({ success: false, message: "Ad ID required" }, { status: 400 });
 
     const userId = decoded.userId;
@@ -34,32 +47,42 @@ export async function POST(req: Request) {
     const cooldownMs = (channel as any)?.cooldownMs || ADS_CONFIG.COOLDOWN_MS;
     const channelName = channel ? channel.title : adId;
 
-    // Check cooldown specifically for this adId
-    const lastAdReward = await CoinTransaction.findOne({
-      userObjectId: user._id,
-      source: "ad_reward",
-      referenceId: adId
-    }).sort({ createdAt: -1 });
+    const now = new Date();
+    const cutoffTime = new Date(now.getTime() - cooldownMs);
 
-    if (lastAdReward) {
-      const timeSinceLast = Date.now() - new Date(lastAdReward.createdAt).getTime();
-      if (timeSinceLast < cooldownMs) {
-        const remainingMinutes = Math.ceil((cooldownMs - timeSinceLast) / 60000);
-        return NextResponse.json({ 
-          success: false, 
-          message: `Please wait ${remainingMinutes}m before claiming again.` 
-        }, { status: 429 });
+    // Atomic update: Check cooldown AND increment coins simultaneously
+    const updatedUser = await User.findOneAndUpdate(
+      {
+        _id: userId,
+        $or: [
+          { [`lastAdTimes.${adId}`]: { $exists: false } },
+          { [`lastAdTimes.${adId}`]: null },
+          { [`lastAdTimes.${adId}`]: { $lte: cutoffTime } },
+        ],
+      },
+      {
+        $set: { [`lastAdTimes.${adId}`]: now },
+        $inc: { coins: rewardCoins },
+      },
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      // Cooldown hasn't passed (or user deleted)
+      const currentUser = await User.findOne({ _id: userId });
+      const lastClaim = currentUser?.lastAdTimes?.get(adId);
+      
+      let message = "Please wait before claiming again.";
+      if (lastClaim) {
+        const timeSinceLast = Date.now() - new Date(lastClaim).getTime();
+        const remainingMinutes = Math.max(1, Math.ceil((cooldownMs - timeSinceLast) / 60000));
+        message = `Please wait ${remainingMinutes}m before claiming again.`;
       }
+      return NextResponse.json({ success: false, message }, { status: 429 });
     }
 
-    const balanceBefore = user.coins || 0;
-    const balanceAfter = balanceBefore + rewardCoins;
-
-    // Award coins
-    await User.updateOne(
-      { _id: userId },
-      { $inc: { coins: rewardCoins } }
-    );
+    const balanceAfter = updatedUser.coins;
+    const balanceBefore = balanceAfter - rewardCoins;
 
     // Log transaction
     const transactionId = `AD${Date.now()}${Math.random().toString(36).substring(2, 5).toUpperCase()}`;

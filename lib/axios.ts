@@ -10,6 +10,10 @@ const api = axios.create({
   // timeout: 10000, // Optional: add a timeout for requests
 });
 
+import CryptoJS from 'crypto-js';
+
+const APP_SECRET = process.env.NEXT_PUBLIC_APP_SECRET || 'bluebuff-secure-key-2024';
+
 // ==========================================
 // REQUEST INTERCEPTOR
 // ==========================================
@@ -21,6 +25,22 @@ api.interceptors.request.use(
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
+
+      // Generate HMAC Payload Signature
+      const timestamp = Date.now().toString();
+      
+      let payloadStr = '';
+      if (config.data) {
+        payloadStr = typeof config.data === 'string' ? config.data : JSON.stringify(config.data);
+      }
+      
+      const dataToSign = `${payloadStr}:${timestamp}`;
+      const secret = token ? `${APP_SECRET}_${token.substring(0, 20)}` : APP_SECRET;
+      
+      const signature = CryptoJS.HmacSHA256(dataToSign, secret).toString(CryptoJS.enc.Hex);
+      
+      config.headers['X-App-Timestamp'] = timestamp;
+      config.headers['X-App-Signature'] = signature;
     }
     return config;
   },

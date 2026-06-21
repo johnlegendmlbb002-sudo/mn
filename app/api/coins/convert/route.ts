@@ -4,6 +4,7 @@ import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
 import CoinTransaction from "@/models/CoinTransaction";
 import WalletTransaction from "@/models/WalletTransaction";
+import { verifyHmac } from "@/lib/hmac";
 
 // Configuration: how many coins = ₹1
 const COINS_PER_RUPEE = 100;
@@ -14,6 +15,12 @@ export async function POST(req: Request) {
     await connectDB();
 
     const authHeader = req.headers.get("authorization");
+    const rawBody = await req.text();
+    
+    if (!verifyHmac(req, rawBody, authHeader)) {
+      return NextResponse.json({ success: false, message: "Forbidden: Invalid Signature" }, { status: 403 });
+    }
+
     if (!authHeader?.startsWith("Bearer ")) {
       return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
     }
@@ -26,7 +33,13 @@ export async function POST(req: Request) {
     }
 
     const userId = decoded.userId; // MongoDB _id from JWT
-    const { coins } = await req.json();
+    
+    let bodyData: any = {};
+    try {
+      if (rawBody) bodyData = JSON.parse(rawBody);
+    } catch {}
+    
+    const { coins } = bodyData;
 
     const coinsToConvert = Number(coins);
 

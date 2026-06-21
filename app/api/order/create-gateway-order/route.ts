@@ -258,6 +258,13 @@ export async function POST(req: Request) {
       });
     }
 
+    if (!email.toLowerCase().endsWith("@gmail.com")) {
+      return NextResponse.json({
+        success: false,
+        message: "Only @gmail.com addresses are allowed.",
+      }, { status: 403 });
+    }
+
     /* ---------- SERVER PRICE ---------- */
     const price = await resolvePrice(gameSlug, itemSlug, userType);
 

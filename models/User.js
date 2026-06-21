@@ -68,6 +68,12 @@ const UserSchema = new mongoose.Schema(
       default: 0,
     },
 
+    lastAdTimes: {
+      type: Map,
+      of: Date,
+      default: {},
+    },
+
     lastCheckin: {
       type: Date,
       default: null,

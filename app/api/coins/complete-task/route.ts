@@ -3,12 +3,19 @@ import jwt from "jsonwebtoken";
 import { connectDB } from "@/lib/mongodb";
 import CoinTask from "@/models/CoinTask";
 import CoinTaskClaim from "@/models/CoinTaskClaim";
+import { verifyHmac } from "@/lib/hmac";
 
 export async function POST(req: Request) {
   try {
     await connectDB();
 
     const authHeader = req.headers.get("authorization");
+    const rawBody = await req.text();
+    
+    if (!verifyHmac(req, rawBody, authHeader)) {
+      return NextResponse.json({ success: false, message: "Forbidden: Invalid Signature" }, { status: 403 });
+    }
+
     if (!authHeader?.startsWith("Bearer ")) {
       return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
     }
@@ -21,7 +28,13 @@ export async function POST(req: Request) {
     }
 
     const objectId = decoded.userId; // MongoDB _id from JWT
-    const { taskId, code, proofUrl } = await req.json();
+    
+    let bodyData: any = {};
+    try {
+      if (rawBody) bodyData = JSON.parse(rawBody);
+    } catch {}
+    
+    const { taskId, code, proofUrl } = bodyData;
 
     if (!taskId) {
       return NextResponse.json({ success: false, message: "taskId is required" }, { status: 400 });

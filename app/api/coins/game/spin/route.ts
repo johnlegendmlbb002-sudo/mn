@@ -3,13 +3,26 @@ import jwt from "jsonwebtoken";
 import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
 import CoinTransaction from "@/models/CoinTransaction";
+import { verifyHmac } from "@/lib/hmac";
 
 export async function POST(req: Request) {
   try {
     await connectDB();
-    const { game, side } = await req.json();
-
+    
     const authHeader = req.headers.get("authorization");
+    const rawBody = await req.text();
+    
+    if (!verifyHmac(req, rawBody, authHeader)) {
+      return NextResponse.json({ success: false, message: "Forbidden: Invalid Signature" }, { status: 403 });
+    }
+    
+    let bodyData: any = {};
+    try {
+      if (rawBody) bodyData = JSON.parse(rawBody);
+    } catch {}
+    
+    const { game, side } = bodyData;
+
     if (!authHeader?.startsWith("Bearer ")) {
       return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
     }
@@ -87,13 +100,21 @@ export async function POST(req: Request) {
 
     // ── Atomic DB update ─────────────────────────────────────────────────
     try {
-      await User.findOneAndUpdate(
-        { _id: userId },
+      const updatedUser = await User.findOneAndUpdate(
+        { 
+          _id: userId,
+          lastGameSpin: user.lastGameSpin // Fails if another concurrent request updated it
+        },
         {
           $inc: { coins: actualOutcome },
           $set: { lastGameSpin: now },
-        }
+        },
+        { new: true }
       );
+      
+      if (!updatedUser) {
+         return NextResponse.json({ success: false, message: "Concurrent request detected. Please wait before spinning again." }, { status: 429 });
+      }
     } catch (dbErr) {
       console.error("[api/coins/game/spin] DB Update Error:", dbErr);
       throw dbErr;

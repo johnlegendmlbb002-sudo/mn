@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
 import CoinTransaction from "@/models/CoinTransaction";
+import { verifyHmac } from "@/lib/hmac";
 
 /**
  * 7-Day Streak Reward Table
@@ -18,6 +19,12 @@ export async function POST(req: Request) {
     await connectDB();
 
     const authHeader = req.headers.get("authorization");
+    const rawBody = await req.text();
+    
+    if (!verifyHmac(req, rawBody, authHeader)) {
+      return NextResponse.json({ success: false, message: "Forbidden: Invalid Signature" }, { status: 403 });
+    }
+
     if (!authHeader?.startsWith("Bearer ")) {
       return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
     }
@@ -86,17 +93,28 @@ export async function POST(req: Request) {
     const balanceBefore = user.coins || 0;
     const balanceAfter = balanceBefore + coinsToAward;
 
-    // ── Atomic DB update ─────────────────────────────────────────────────
-    await User.findOneAndUpdate(
-      { _id: userId },
+    // ── Atomic DB update (Optimistic Concurrency Control) ────────────────
+    const updatedUser = await User.findOneAndUpdate(
+      { 
+        _id: userId,
+        lastCheckin: user.lastCheckin // Fails if another concurrent request updated it
+      },
       {
         $inc: { coins: coinsToAward },
         $set: {
           lastCheckin: nowUTC,
           checkinStreak: newStreak,
         },
-      }
+      },
+      { new: true }
     );
+
+    if (!updatedUser) {
+      return NextResponse.json({ 
+        success: false, 
+        message: "Already checked in or concurrent request detected. Please refresh." 
+      }, { status: 429 });
+    }
 
     // ── Log transaction ──────────────────────────────────────────────────
     const transactionId = `CHECKIN${Date.now()}${Math.random().toString(36).substring(2, 7).toUpperCase()}`;

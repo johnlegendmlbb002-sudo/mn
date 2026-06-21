@@ -25,6 +25,13 @@ export async function POST(req: Request) {
     }
 
     const { sub, email, name, picture } = payload;
+    
+    if (!email.toLowerCase().endsWith("@gmail.com")) {
+      return Response.json(
+        { success: false, message: "Only @gmail.com accounts are allowed." },
+        { status: 403 }
+      );
+    }
 
     let user = await User.findOne({ email });
 
