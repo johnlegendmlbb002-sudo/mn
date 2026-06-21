@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 
-const APP_SECRET = process.env.NEXT_PUBLIC_APP_SECRET || '';
+const APP_SECRET = process.env.NEXT_PUBLIC_APP_SECRET || 'bluebuff-secure-key-2024';
 
 /**
  * Validates the HMAC signature of an incoming API request.
