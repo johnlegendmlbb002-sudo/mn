@@ -25,6 +25,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
     }
 
+    // Temporarily disabled per user request
+    return NextResponse.json({ success: false, message: "Coin conversion is temporarily disabled." }, { status: 403 });
+
     let decoded: any;
     try {
       decoded = jwt.verify(authHeader.split(" ")[1], process.env.JWT_SECRET!);
