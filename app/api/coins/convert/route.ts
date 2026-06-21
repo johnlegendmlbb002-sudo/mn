@@ -30,7 +30,7 @@ export async function POST(req: Request) {
 
     let decoded: any;
     try {
-      decoded = jwt.verify(authHeader.split(" ")[1], process.env.JWT_SECRET!);
+      decoded = jwt.verify((authHeader as string).split(" ")[1], process.env.JWT_SECRET!);
     } catch {
       return NextResponse.json({ success: false, message: "Invalid token" }, { status: 401 });
     }
