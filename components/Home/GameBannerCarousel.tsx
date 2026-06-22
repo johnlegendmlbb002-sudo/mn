@@ -63,6 +63,8 @@ export default function GameBannerCarousel() {
                 alt={currentBanner.bannerTitle}
                 fill
                 priority
+                fetchPriority="high"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1280px"
                 className="object-cover"
               />
             </div>

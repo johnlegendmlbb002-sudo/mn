@@ -30,7 +30,9 @@ export default function GiveawayBanner() {
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [giveaways.length]);
 
-  if (!visible || !giveaways.length) return null;
+  if (!visible || !giveaways.length) return (
+    <div className="max-w-7xl mx-auto px-4 mt-4 mb-2 h-[52px]" aria-hidden="true" />
+  );
   const g = giveaways[current];
 
   return (

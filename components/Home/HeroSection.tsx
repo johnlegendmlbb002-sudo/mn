@@ -1,22 +1,23 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import GamesPage from "@/app/games/page";
 import GameBannerCarousel from "./GameBannerCarousel";
 import HomeServices from "./HomeServices";
 import TrustHighlights from "./TrustHighlights";
 import TopNoticeBanner from "./TopNoticeBanner";
-import FlashSale from "./FlashSale";
-import ScrollingNoticeBand from "./ScrollingNoticeBand";
 import StorySlider from "./StorySlider";
-import HomeQuickActions from "./HomeQuickActions";
 import TradeMarketplaceBanner from "./TradeMarketplaceBanner";
-import HomeReferralStats from "./HomeReferralStats";
-import PromoBanner from "./PromoBanner";
 import HomeEarnPromotion from "./HomeEarnPromotion";
 import SEOContent from "./SEOContent";
 import SupportBanner from "./SupportBanner";
 import CustomWebBanner from "./CustomWebBanner";
 import GiveawayBanner from "./GiveawayBanner";
+
+// Lazy-load below-fold & heavy components to reduce initial bundle
+const FlashSale = dynamic(() => import("./FlashSale"), { ssr: false });
+const HomeQuickActions = dynamic(() => import("./HomeQuickActions"), { ssr: false });
+const HomeReferralStats = dynamic(() => import("./HomeReferralStats"), { ssr: false });
 
 export default function HeroSection({ bannerSettings }: { bannerSettings?: any }) {
 

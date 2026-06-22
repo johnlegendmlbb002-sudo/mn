@@ -229,6 +229,16 @@ export default async function RootLayout({
       `}} />
 
       <body className="bg-black text-white">
+        {/* Preconnect to image CDNs — injected early for LCP gains */}
+        <Script id="preconnect-cdns" strategy="beforeInteractive">{`
+          (function(){
+            var h=document.head;
+            ['https://res.cloudinary.com','https://busan-public.s3.ap-south-1.amazonaws.com'].forEach(function(u){
+              var l=document.createElement('link'); l.rel='preconnect'; l.href=u; h.appendChild(l);
+              var d=document.createElement('link'); d.rel='dns-prefetch'; d.href=u; h.appendChild(d);
+            });
+          })();
+        `}</Script>
         {/* Structured Data for SEO */}
         <Script
           id="structured-data"

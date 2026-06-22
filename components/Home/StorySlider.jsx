@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { StorySkeleton } from "../Skeleton/Skeleton";
+
 
 const storyData = [
   // {
@@ -81,24 +80,11 @@ const storyData = [
 ];
 
 export default function StorySlider() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Mock loading for premium feel
-    const timer = setTimeout(() => setLoading(false), 600);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section className="relative py-4 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex gap-3 md:gap-7 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory relative z-10">
-        {loading ? (
-          [1, 2, 3, 4, 5, 6].map(i => (
-            <StorySkeleton key={i} />
-          ))
-        ) : (
-          storyData.map((item, index) => (
+          {storyData.map((item) => (
             <div
               key={item.id}
               className="opacity-100 translate-y-0"
@@ -122,7 +108,7 @@ export default function StorySlider() {
                           alt={item.title}
                           fill
                           sizes="(max-width: 768px) 58px, 70px"
-                          priority={item.id <= 4}
+                          priority={item.id <= 2}
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                       </div>
@@ -151,8 +137,7 @@ export default function StorySlider() {
                 </span>
               </Link>
             </div>
-          ))
-        )}
+          ))}
         </div>
       </div>
     </section>
