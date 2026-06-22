@@ -1,4 +1,4 @@
-﻿// app/page.tsx
+// app/page.tsx
 import HomeSection from "@/components/Home/Home";
 import TelegramQRPopup from "@/components/TelegramQRPopup";
 
@@ -17,10 +17,79 @@ import { getAppSettings } from "@/lib/settings";
 import WhatsAppCommunityPopup from "@/components/WhatsAppQRPopup";
 import Script from "next/script";
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MLBB Topup India",
+    "url": "https://mlbbtopup.in",
+    "logo": "https://mlbbtopup.in/logoBB.png",
+    "sameAs": [
+      "https://instagram.com/mlbbtopup.in",
+      "https://x.com/mlbbtopupin"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MLBB Top Up India",
+    "url": "https://mlbbtopup.in",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://mlbbtopup.in/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Mobile Legends Diamonds",
+    "image": "https://mlbbtopup.in/logoBB.png",
+    "description": "Buy Mobile Legends diamonds instantly in India. Cheapest rates for Weekly Pass, Starlight, and diamond packages.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Moonton"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "url": "https://mlbbtopup.in",
+      "priceCurrency": "INR",
+      "lowPrice": "14",
+      "highPrice": "8000",
+      "offerCount": "20",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "12450",
+      "reviewCount": "8430"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://mlbbtopup.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MLBB Top Up",
+        "item": "https://mlbbtopup.in/games"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
     {
       "@type": "Question",
       name: "How do I buy MLBB diamonds in India?",
@@ -70,17 +139,18 @@ const faqJsonLd = {
       },
     },
   ],
-};
+  }
+];
 
 export default async function Page() {
   const settings = await getAppSettings();
   return (
     <main>
       <Script
-        id="faq-jsonld"
+        id="structured-data"
         type="application/ld+json"
         strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
       {settings.showTelegramPopup && <TelegramQRPopup />}
