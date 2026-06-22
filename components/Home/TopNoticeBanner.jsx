@@ -150,7 +150,7 @@ export default function TopNoticeBanner() {
               <span className="xs:hidden">{banner.badge.split(' ')[0]}</span>
             </span>
 
-            <button aria-label="button"
+            <button
               onClick={(e) => {
                 e.stopPropagation();
                 localStorage.setItem(STORAGE_KEY, "true");
