@@ -135,7 +135,9 @@ keywords: [
 
 ],
 
-
+  alternates: {
+    canonical: "https://mlbbtopup.in",
+  },
 
 };
 

@@ -184,15 +184,12 @@ keywords: [
   },
   twitter: {
     card: "summary_large_image",
-    title: "MLBB Top Up India – Buy Cheapest Diamonds Instantly | mlbbtopup.in",
+    title: "MLBB Top Up India - Cheap & Fast Diamonds",
     description: "Safe & instant MLBB diamond top up in India. Cheapest rates for Weekly Pass, Starlight & skins. Secure UPI/Paytm payments with 5-minute delivery. Trusted by thousands.",
     images: ["/logoBB.png"],
-    creator: "@MLBB Topup_india",
+    creator: "@mlbbtopup",
   },
   manifest: "/manifest.json",
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,
