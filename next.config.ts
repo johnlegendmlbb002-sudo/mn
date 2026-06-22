@@ -9,6 +9,7 @@ const nextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+    imageSizes: [16, 32, 48, 64, 96, 128, 140, 256, 280, 384],
     minimumCacheTTL: 86400, // cache optimized images for 24 hours to reduce CPU load
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
