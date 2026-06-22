@@ -255,6 +255,7 @@ export default function Header() {
               <button
                 onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center bg-[var(--foreground)]/[0.05] text-[var(--foreground)]/60 active:scale-90 transition-transform"
+                aria-label="Toggle Mobile Search"
               >
                 {mobileSearchOpen ? <FiX size={18} /> : <FiSearch size={18} />}
               </button>
@@ -354,6 +355,7 @@ export default function Header() {
             <button
               onClick={() => user ? setUserMenuOpen((p) => !p) : window.location.href = "/login"}
               className="relative flex items-center gap-1.5 pl-2 pr-1 py-1 rounded-[2rem] transition-all duration-300 group hover:scale-105 active:scale-95 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 border border-[var(--border)]"
+              aria-label="User Menu"
             >
               <FiMenu className="text-[var(--foreground)]/60 text-[10px] sm:text-xs ml-0.5" />
               <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full overflow-hidden flex items-center justify-center bg-[var(--background)] shadow-sm">
@@ -425,7 +427,7 @@ export default function Header() {
                       {user && (
                         <button onClick={handleLogout} className="w-9 h-9 rounded-full hover:bg-red-500/10 flex items-center justify-center text-red-500 transition-colors" title="Logout"><FiLogOut size={18} /></button>
                       )}
-                      <button onClick={() => setUserMenuOpen(false)} className="w-9 h-9 rounded-full hover:bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] transition-colors"><FiX size={22} /></button>
+                      <button onClick={() => setUserMenuOpen(false)} className="w-9 h-9 rounded-full hover:bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] transition-colors" aria-label="Close User Menu"><FiX size={22} /></button>
                     </div>
                   </div>
 

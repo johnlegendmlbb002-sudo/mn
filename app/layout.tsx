@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Script from "next/script";
 
 export const dynamic = "force-dynamic";
@@ -100,17 +100,13 @@ export default async function RootLayout({
         });
       `}} />
 
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://busan-public.s3.ap-south-1.amazonaws.com" />
+        <link rel="dns-prefetch" href="https://busan-public.s3.ap-south-1.amazonaws.com" />
+      </head>
       <body className="bg-black text-white">
-        {/* Preconnect to image CDNs â€” injected early for LCP gains */}
-        <Script id="preconnect-cdns" strategy="beforeInteractive">{`
-          (function(){
-            var h=document.head;
-            ['https://res.cloudinary.com','https://busan-public.s3.ap-south-1.amazonaws.com'].forEach(function(u){
-              var l=document.createElement('link'); l.rel='preconnect'; l.href=u; h.appendChild(l);
-              var d=document.createElement('link'); d.rel='dns-prefetch'; d.href=u; h.appendChild(d);
-            });
-          })();
-        `}</Script>
         {/* Structured Data for SEO */}
         <Script
           id="structured-data"
@@ -176,32 +172,6 @@ export default async function RootLayout({
         </GoogleOAuthProvider>
 
 
-        {/* OneSignal SDK */}
-        <Script
-          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-          strategy="afterInteractive"
-        />
-
-        <Script id="onesignal-init" strategy="afterInteractive">
-          {`
-            window.OneSignalDeferred = window.OneSignalDeferred || [];
-            OneSignalDeferred.push(async function(OneSignal) {
-              await OneSignal.init({
-                appId: "b7844eac-b557-40e4-ad01-11546347a279",
-                safari_web_id: "web.onesignal.auto.5ccade99-0f35-4775-9ae0-5e2c3bfd110b",
-                allowLocalhostAsSecureOrigin: true,
-                notifyButton: {
-                  enable: false, // Turned off the persistent bell icon
-                },
-              });
-
-              // Automatically show the slidedown prompt if not subscribed
-              if (!OneSignal.Notifications.permission) {
-                 OneSignal.Slidedown.promptPush();
-              }
-            });
-          `}
-        </Script>
 
       </body>
     </html>

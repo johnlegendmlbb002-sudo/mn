@@ -153,7 +153,7 @@ export default function GiveawayBanner() {
           </button>
 
           {/* Dismiss */}
-          <button className="gw-close" onClick={e => { e.stopPropagation(); setVisible(false); }}>
+          <button className="gw-close" aria-label="Close Giveaway Banner" onClick={e => { e.stopPropagation(); setVisible(false); }}>
             <FiX size={11} />
           </button>
         </div>

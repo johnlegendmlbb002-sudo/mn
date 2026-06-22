@@ -30,6 +30,7 @@ const nextConfig = {
   },
   serverExternalPackages: ["nodemailer"],
   experimental: {
+    optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'react-icons', 'framer-motion'],
     serverActions: {
       bodySizeLimit: '10mb',
