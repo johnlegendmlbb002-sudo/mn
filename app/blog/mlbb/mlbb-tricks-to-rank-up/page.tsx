@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-tricks.png"
+      imageAlt="99 PLAYERS DON illustration"
       game="MLBB"
       description="Master the hidden mechanics of Mobile Legends that pro players use to dominate. Learn advanced minimap tricks and camera movement to rank up fast."
       faqItems={faqItems}

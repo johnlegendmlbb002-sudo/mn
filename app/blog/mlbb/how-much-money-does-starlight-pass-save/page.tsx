@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="8 min read"
       date="May 21, 2026"
       image="/blog/mlbb-starlight-pass-savings.png"
+      imageAlt="How Much Money Does the illustration"
       game="MLBB"
       description="Break down the math behind the MLBB Starlight Pass. Discover the actual diamond value of the rewards and see how much money you save."
       faqItems={faqItems}

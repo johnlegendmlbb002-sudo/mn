@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/legal-india.png"
+      imageAlt="IS MLBB TOPUP LEGAL IN illustration"
       game="MLBB"
       description="Answering the common question: Is Mobile Legends recharge legal in India? Understand the regulations, safety checks, and the most trusted platforms for 2026."
       faqItems={faqItems}

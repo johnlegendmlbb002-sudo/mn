@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="8 min read"
       date="May 28, 2026"
       image="/blog/improve-decision-making-ranked.png"
+      imageAlt="Improve Decision Making During Ranked illustration"
       game="Multiple Games"
       description="Learn the professional secrets to mastering macro play, improving map awareness, and making flawless decisions under pressure in ranked games."
       faqItems={faqItems}

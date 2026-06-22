@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="6 min read"
       date="April 30, 2026"
       image="/blog/mobile-esports-earnings.png"
+      imageAlt="How Much Money Mobile Esports illustration"
       game="Multiple Games"
       description="Discover how much mobile esports players earn, including salaries, prize pools, and other income streams in our comprehensive 2026 guide."
       faqItems={faqItems}

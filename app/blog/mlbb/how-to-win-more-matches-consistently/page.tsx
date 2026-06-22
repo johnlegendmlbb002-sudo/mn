@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="12 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-win-consistently.png"
+      imageAlt="WIN MORE MATCHES CONSISTENTLY IN illustration"
       game="MLBB"
       description="Improve your Mobile Legends win rate with our 2026 strategy guide. Master the mental game, drafting secrets, and elite-tier map management."
       faqItems={faqItems}

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiCheckCircle, FiShield, FiAlertTriangle, FiInfo } from "react-icons/fi";
@@ -23,6 +23,7 @@ export default function BlogPage() {
       readTime="18 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-buy-safely-guide.png"
+      imageAlt="A secure padlock icon overlaying the Mobile Legends diamonds interface, representing safe top-ups in India."
       game="MLBB"
     >
       <div className="space-y-10">

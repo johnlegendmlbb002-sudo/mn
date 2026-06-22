@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-wise-spending.png"
+      imageAlt="THE DIAMOND SPENDING BLUEPRINT MAXIMIZE illustration"
       game="MLBB"
       description="Stop wasting your diamonds! Our 2026 guide covers the best ways to spend diamonds in MLBB, how to maximize value in India, and the 'Daily Discount' trick for skins."
       faqItems={faqItems}

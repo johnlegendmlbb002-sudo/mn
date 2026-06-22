@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="15 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-epic-to-mythic.png"
+      imageAlt="RANK UP FROM EPIC TO illustration"
       game="MLBB"
       description="Stuck in Epic Hell? Learn the professional strategies to escape Epic and reach Mythic fast. Our 2026 MLBB guide covers drafting and map awareness."
       faqItems={faqItems}

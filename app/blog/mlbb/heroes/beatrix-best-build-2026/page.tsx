@@ -65,6 +65,7 @@ export default function BlogPage() {
       readTime="12 min read"
       date="April 29, 2026"
       image="/blog/mlbb/heroes/beatrix-build-2026.png"
+      imageAlt="BEATRIX BEST BUILD THE ULTIMATE illustration"
       game="MLBB"
       description="Beatrix remains one of the most versatile marksmen in Mobile Legends. In 2026, her ability to swap between four different weapons makes her a high-skill, high-reward pick."
       faqItems={faqItems}

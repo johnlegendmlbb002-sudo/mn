@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="12 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-reduce-lag.png"
+      imageAlt="REDUCE LAG IN MOBILE LEGENDS illustration"
       game="MLBB"
       description="Experience zero lag in MLBB! Learn how to reduce lag, fix ping spikes, and optimize your phone's FPS for a smooth, pro-tier gaming experience."
       faqItems={faqItems}

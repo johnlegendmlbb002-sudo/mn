@@ -23,6 +23,7 @@ interface BlogPostLayoutProps {
   readTime: string;
   date: string;
   image: string;
+  imageAlt?: string;
   author?: string;
   game?: string;
   description?: string;
@@ -38,6 +39,7 @@ export default function BlogPostLayout({
   readTime,
   date,
   image,
+  imageAlt,
   author = "BlueBuff Team",
   game,
   description,
@@ -291,7 +293,7 @@ export default function BlogPostLayout({
             >
               <Image
                 src={image}
-                alt={description || title}
+                alt={imageAlt || `Cover graphic for ${title}`}
                 fill
                 className="object-cover"
                 priority

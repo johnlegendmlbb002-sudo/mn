@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-gold-farm.png"
+      imageAlt="FARM GOLD FAST IN MLBB illustration"
       game="MLBB"
       description="Want to get your core items before everyone else? Learn professional strategies for farming gold fast in Mobile Legends with our 2026 guide."
       faqItems={faqItems}

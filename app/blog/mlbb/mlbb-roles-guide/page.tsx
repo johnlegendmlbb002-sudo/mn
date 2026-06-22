@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="12 min read"
       date="March 30, 2026"
       image="/blog/mlbb/guides/mlbb-roles.png"
+      imageAlt="MLBB ROLES EXPLAINED TANK FIGHTER illustration"
       game="MLBB"
       description="Understand all 6 roles in Mobile Legends: Bang Bang. Our beginner-friendly 2026 guide explains what each role does, which lane they go in, and how to pick the right hero to win more games."
       faqItems={faqItems}

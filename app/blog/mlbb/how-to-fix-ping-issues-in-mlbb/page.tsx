@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-fix-ping.png"
+      imageAlt="FIX PING ISSUES IN MLBB illustration"
       game="MLBB"
       description="Tired of 999ms lag and ping spikes in Mobile Legends? Learn the best ways to fix ping issues, reduce latency, and optimize your network for 2026."
       faqItems={faqItems}

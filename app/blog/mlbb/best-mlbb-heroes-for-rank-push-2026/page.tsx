@@ -65,6 +65,7 @@ export default function BlogPage() {
       readTime="15 min read"
       date="April 24, 2026"
       image="/blog/mlbb/guides/best-heroes-2026.png"
+      imageAlt="BEST MLBB HEROES FOR RANK illustration"
       game="MLBB"
       description="Master the 2026 meta with our comprehensive guide to the best heroes for rank push in Mobile Legends."
       faqItems={faqItems}

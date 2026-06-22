@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="8 min read"
       date="March 31, 2026"
       image="/blog/mlbb/insights/mlbb-wdp-vs-diamonds.png"
+      imageAlt="WEEKLY DIAMOND PASS VS DIRECT illustration"
       game="MLBB"
       description="Should you buy the Weekly Diamond Pass or direct diamonds in Mobile Legends? Our 2026 guide breaks down the value, ROI, and best ways to spend in India."
       faqItems={faqItems}

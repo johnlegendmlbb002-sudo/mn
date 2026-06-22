@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="12 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-solo-carry.png"
+      imageAlt="CARRY IN SOLO QUEUE MLBB illustration"
       game="MLBB"
       description="Tired of losing with random teammates in India? Learn the professional secrets to carrying in Solo Queue Mobile Legends with high-impact heroes and strategies."
       faqItems={faqItems}

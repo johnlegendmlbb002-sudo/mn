@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="7 min read"
       date="May 14, 2026"
       image="/blog/best-mobile-esports-games.png"
+      imageAlt="Best Mobile Esports Games With illustration"
       game="Multiple Games"
       description="Discover the best mobile esports games to play in 2026, featuring active tournaments, massive global prize pools, and thriving competitive communities."
       faqItems={faqItems}

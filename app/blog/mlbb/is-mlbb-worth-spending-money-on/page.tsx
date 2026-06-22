@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="8 min read"
       date="March 31, 2026"
       image="/blog/mlbb/insights/mlbb-worth-it.png"
+      imageAlt="IS MLBB WORTH SPENDING MONEY illustration"
       game="MLBB"
       description="Should you buy diamonds in Mobile Legends? Our 2026 guide explores if MLBB is worth spending money on, covering Starlight value, skin perks, and more in India."
       faqItems={faqItems}

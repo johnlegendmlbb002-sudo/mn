@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/gift-guide.png"
+      imageAlt="GIFT MLBB DIAMONDS THE ELITE illustration"
       game="MLBB"
       description="Learn how to gift MLBB diamonds safely in India! A complete 2026 guide on gifting skins, passes, and diamonds using Player ID with no 7-day friend limit."
       faqItems={faqItems}

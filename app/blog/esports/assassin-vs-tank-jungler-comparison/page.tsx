@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="8 min read"
       date="June 15, 2026"
       image="/blog/assassin-vs-tank-jungler.png"
+      imageAlt="Assassin Junglers vs Tank Junglers illustration"
       game="Multiple Games"
       description="The jungle meta has completely shifted. We break down the massive difference between the classic Assassin Jungler and the modern professional Tank Jungler."
       faqItems={faqItems}

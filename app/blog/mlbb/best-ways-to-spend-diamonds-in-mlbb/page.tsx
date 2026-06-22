@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-spend-diamonds.png"
+      imageAlt="THE BEST WAYS TO SPEND illustration"
       game="MLBB"
       description="Want to get the most out of your MLBB diamonds? Learn the best ways to spend your diamonds, including Starlight Memberships, Weekly Passes, and exclusive event draws."
       faqItems={faqItems}

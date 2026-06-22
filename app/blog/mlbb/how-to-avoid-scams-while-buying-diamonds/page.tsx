@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-avoid-scams.png"
+      imageAlt="AVOID SCAMS WHILE BUYING MLBB illustration"
       game="MLBB"
       description="Don't get scammed! Learn how to safely buy Mobile Legends diamonds in India. Our 2026 guide covers common top-up scams, identifying fake sites, and safety tips."
       faqItems={faqItems}

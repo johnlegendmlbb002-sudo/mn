@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="15 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/mlbb-gameplay-guide.png"
+      imageAlt="THE COMPLETE MOBILE LEGENDS GAMEPLAY illustration"
       game="MLBB"
       description="Master the core mechanics of Mobile Legends. Learn everything about laning, jungle rotations, map objectives, and winning teamfights in 2026."
       faqItems={faqItems}

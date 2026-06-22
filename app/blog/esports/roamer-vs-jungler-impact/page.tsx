@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="8 min read"
       date="June 08, 2026"
       image="/blog/roamer-vs-jungler.png"
+      imageAlt="Roamer vs Jungler Which Role illustration"
       game="Multiple Games"
       description="The oldest debate in mobile esports. We break down the macro strategy of MOBAs to finally determine whether the Jungler or the Roamer carries the hardest."
       faqItems={faqItems}

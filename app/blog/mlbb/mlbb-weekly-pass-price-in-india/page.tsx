@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/weekly-pass-price.png"
+      imageAlt="MLBB WEEKLY PASS PRICE IN illustration"
       game="MLBB"
       description="Discover the current MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, benefits, and find the cheapest way to buy diamonds instantly."
       faqItems={faqItems}

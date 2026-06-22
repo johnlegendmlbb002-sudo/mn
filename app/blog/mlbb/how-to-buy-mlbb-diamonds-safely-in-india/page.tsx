@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiAlertTriangle, FiCheckCircle, FiShield, FiLock } from "react-icons/fi";
@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/buy-safely.png"
+      imageAlt="A secure padlock icon overlaying the Mobile Legends diamonds interface, representing safe top-ups in India."
       game="MLBB"
       description="Protect your account from scams, avoid 'Negative Diamond' bans, and identify trusted websites like mlbbtopup.in for 2026."
       faqItems={faqItems}

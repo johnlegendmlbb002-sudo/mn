@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="7 min read"
       date="May 07, 2026"
       image="/blog/join-esports-tournaments.png"
+      imageAlt="Join Mobile Esports Tournaments The illustration"
       game="Multiple Games"
       description="Ready to take your gaming to the next level? Learn how to join mobile esports tournaments, build a team, and start your competitive journey in 2026."
       faqItems={faqItems}

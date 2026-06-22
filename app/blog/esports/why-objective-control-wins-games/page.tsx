@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="8 min read"
       date="June 18, 2026"
       image="/blog/objective-control-wins.png"
+      imageAlt="Why Objective Control Wins More illustration"
       game="Multiple Games"
       description="Stop chasing kills and start destroying towers. We break down why elite objective control is the only statistically guaranteed way to climb the ranked ladder."
       faqItems={faqItems}

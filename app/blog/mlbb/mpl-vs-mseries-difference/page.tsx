@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="7 min read"
       date="June 04, 2026"
       image="/blog/mpl-vs-mseries.png"
+      imageAlt="MPL vs MSeries Understanding the illustration"
       game="MLBB"
       description="Break down the confusing acronyms of Mobile Legends esports. Learn the distinct differences between the regional MPL circuits and the global M-Series World Championship."
       faqItems={faqItems}

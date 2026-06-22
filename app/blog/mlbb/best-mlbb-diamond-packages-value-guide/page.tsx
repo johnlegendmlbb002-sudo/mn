@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/best-value.png"
+      imageAlt="BEST MLBB DIAMOND PACKAGES IN illustration"
       game="MLBB"
       description="Actual MLBB diamond prices in India with real cost-per-diamond breakdown. Find out which package gives you maximum value for your rupee in 2026."
       faqItems={faqItems}

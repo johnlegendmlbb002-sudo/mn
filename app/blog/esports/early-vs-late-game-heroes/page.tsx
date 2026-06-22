@@ -64,6 +64,7 @@ export default function BlogPage() {
       readTime="8 min read"
       date="June 12, 2026"
       image="/blog/early-vs-late-game-heroes.png"
+      imageAlt="Early Game vs Late Game illustration"
       game="Multiple Games"
       description="Understand the fundamental concept of power spikes in mobile esports. Learn how to draft a balanced team and master the ticking clock of early vs late game heroes."
       faqItems={faqItems}

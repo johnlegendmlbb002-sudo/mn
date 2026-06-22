@@ -66,6 +66,7 @@ export default function BlogPage() {
       readTime="10 min read"
       date="March 31, 2026"
       image="/blog/mlbb/guides/fix-mistakes.png"
+      imageAlt="STOP LOSING IN MLBB FIX illustration"
       game="MLBB"
       description="Stuck in a lose streak? Master the 7 common MLBB mistakes that keep players in Epic rank. Learn pro map awareness and objective strategies."
       faqItems={faqItems}
