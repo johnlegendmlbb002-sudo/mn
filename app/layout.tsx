@@ -98,10 +98,6 @@ export default async function RootLayout({
       `}} />
 
       <head>
-        <link rel="preconnect" href="https://res.cloudinary.com" />
-        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-        <link rel="preconnect" href="https://busan-public.s3.ap-south-1.amazonaws.com" />
-        <link rel="dns-prefetch" href="https://busan-public.s3.ap-south-1.amazonaws.com" />
       </head>
       <body className="bg-black text-white">
         {/* Structured Data for SEO */}

@@ -54,23 +54,14 @@ export default function ScrollingNoticeBand() {
       <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none" />
 
-      <motion.div
-        animate={{ x: [0, "-50%"] }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 15,
-            ease: "linear",
-          },
-        }}
-        className="flex w-fit"
+      <div
+        className="flex w-fit animate-marquee"
       >
         {content}
         {content}
         {content}
         {content}
-      </motion.div>
+      </div>
     </div>
   );
 }
