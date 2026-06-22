@@ -42,7 +42,7 @@ export default function Templates() {
             </div>
 
             <div className="flex gap-2">
-              <button
+              <button aria-label="button"
                 onClick={() => {
                   loadTemplate(t.data);
                 }}
@@ -58,7 +58,7 @@ export default function Templates() {
                 Edit
               </button>
 
-              <button
+              <button aria-label="button"
                 onClick={() => {
                   deleteTemplate(t.id);
                   refresh();

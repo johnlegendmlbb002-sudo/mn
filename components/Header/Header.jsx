@@ -238,7 +238,7 @@ export default function Header() {
           <div className="flex-1 flex items-center justify-end gap-1.5 sm:gap-2 pr-2">
             {user && (
               <Link href="/dashboard/wallet">
-                <button
+                <button aria-label="button"
                   className="relative w-auto h-8 px-2.5 rounded-full flex items-center justify-center gap-1 transition-all duration-300 group bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 hover:scale-105 active:scale-95"
                 >
                   {balanceLoading ? (
@@ -252,7 +252,7 @@ export default function Header() {
             )}
 
             <div className="lg:hidden">
-              <button
+              <button aria-label="button"
                 onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center bg-[var(--foreground)]/[0.05] text-[var(--foreground)]/60 active:scale-90 transition-transform"
                 aria-label="Toggle Mobile Search"
@@ -274,7 +274,7 @@ export default function Header() {
                 <FiSearch className={`absolute left-4 top-1/2 -translate-y-1/2 transition-colors duration-300 ${isSearchFocused ? 'text-[var(--accent)]' : 'text-[var(--muted)]/40'}`} size={14} />
 
                 {searchTerm && isSearchFocused && (
-                  <button
+                  <button aria-label="button"
                     onClick={() => setSearchTerm("")}
                     className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full flex items-center justify-center bg-[var(--foreground)]/[0.05] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
                   >
@@ -352,7 +352,7 @@ export default function Header() {
 
 
 
-            <button
+            <button aria-label="button"
               onClick={() => user ? setUserMenuOpen((p) => !p) : window.location.href = "/login"}
               className="relative flex items-center gap-1.5 pl-2 pr-1 py-1 rounded-[2rem] transition-all duration-300 group hover:scale-105 active:scale-95 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 border border-[var(--border)]"
               aria-label="User Menu"
@@ -405,7 +405,7 @@ export default function Header() {
                               </span>
                             </div>
                             <span className="text-[10px] text-[var(--muted)] truncate italic leading-tight">{user.email}</span>
-                            <button
+                            <button aria-label="button"
                               onClick={() => copyId(user.userId)}
                               className="w-fit flex items-center gap-1.5 mt-1 px-1.5 py-0.5 rounded-md bg-[var(--foreground)]/[0.03] border border-[var(--border)] hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/5 transition-all group"
                             >
@@ -427,7 +427,7 @@ export default function Header() {
                       {user && (
                         <button onClick={handleLogout} className="w-9 h-9 rounded-full hover:bg-red-500/10 flex items-center justify-center text-red-500 transition-colors" title="Logout"><FiLogOut size={18} /></button>
                       )}
-                      <button onClick={() => setUserMenuOpen(false)} className="w-9 h-9 rounded-full hover:bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] transition-colors" aria-label="Close User Menu"><FiX size={22} /></button>
+                      <button aria-label="button" onClick={() => setUserMenuOpen(false)} className="w-9 h-9 rounded-full hover:bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] transition-colors" aria-label="Close User Menu"><FiX size={22} /></button>
                     </div>
                   </div>
 
@@ -562,7 +562,7 @@ export default function Header() {
             />
             <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--accent)]" size={18} />
             {searchTerm && (
-              <button onClick={() => setSearchTerm("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--muted)]">
+              <button aria-label="button" onClick={() => setSearchTerm("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--muted)]">
                 <FiX size={16} />
               </button>
             )}

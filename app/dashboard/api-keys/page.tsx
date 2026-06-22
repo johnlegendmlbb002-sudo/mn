@@ -181,7 +181,7 @@ export default function ApiKeysPage() {
                                     className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 focus:border-[var(--accent)] outline-none transition-all text-sm w-full md:w-64"
                                     disabled={isCreating}
                                 />
-                                <button
+                                <button aria-label="button"
                                     type="submit"
                                     disabled={isCreating || !newKeyName.trim()}
                                     className="px-4 py-2 rounded-xl bg-[var(--accent)] text-black font-black italic uppercase text-xs flex items-center gap-2 hover:scale-105 transition-all disabled:opacity-50"
@@ -224,7 +224,7 @@ export default function ApiKeysPage() {
                             <h3 className="text-[var(--accent)] font-black italic uppercase text-sm">Secret Key Generated</h3>
                             <p className="text-[var(--muted)] text-[10px] font-bold uppercase tracking-widest">Copy this key safely. You cannot view it again.</p>
                         </div>
-                        <button
+                        <button aria-label="button"
                             onClick={() => setNewlyCreatedKey(null)}
                             className="text-[var(--muted)] hover:text-white transition-colors"
                         >
@@ -233,7 +233,7 @@ export default function ApiKeysPage() {
                     </div>
                     <div className="flex items-center gap-2 p-4 rounded-xl bg-black/40 border border-white/10 font-mono text-sm leading-none">
                         <span className="flex-1 truncate text-[var(--accent)]">{newlyCreatedKey}</span>
-                        <button
+                        <button aria-label="button"
                             onClick={() => copyToClipboard(newlyCreatedKey)}
                             className="p-2 rounded-lg bg-[var(--accent)]/20 text-[var(--accent)] hover:bg-[var(--accent)]/30 transition-all"
                         >
@@ -277,7 +277,7 @@ export default function ApiKeysPage() {
                                                         <h3 className="font-black italic uppercase text-base leading-none mb-1">{key.name}</h3>
                                                         <div className="flex items-center gap-2">
                                                             <span className="text-[10px] bg-black/40 px-2 py-0.5 rounded font-mono text-white/40">TK_****{key.lastFour}</span>
-                                                            <button
+                                                            <button aria-label="button"
                                                                 onClick={() => alert("For security, full API keys are only shown once during creation. If you've lost your key, please use the 'Regenerate' option to get a new one.")}
                                                                 className="text-[8px] font-black uppercase text-[var(--accent)] hover:underline"
                                                             >
@@ -291,7 +291,7 @@ export default function ApiKeysPage() {
                                                 </div>
 
                                                 <div className="flex items-center gap-2">
-                                                    <button
+                                                    <button aria-label="button"
                                                         onClick={() => editingId === key._id ? setEditingId(null) : startEditing(key)}
                                                         className={`p-2 rounded-xl transition-all ${editingId === key._id ? 'bg-white/10 text-white' : 'bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20'}`}
                                                     >
@@ -351,7 +351,7 @@ export default function ApiKeysPage() {
                                                         />
                                                     </div>
                                                     <div className="flex gap-2">
-                                                        <button
+                                                        <button aria-label="button"
                                                             onClick={() => handleUpdateKey(key._id)}
                                                             disabled={isUpdating}
                                                             className="flex-1 bg-[var(--accent)] text-black font-black uppercase italic text-[10px] py-2 rounded-xl flex items-center justify-center gap-2"
@@ -362,13 +362,13 @@ export default function ApiKeysPage() {
                                                 </div>
                                             ) : (
                                                 <div className="space-y-3">
-                                                    <button
+                                                    <button aria-label="button"
                                                         onClick={() => handleRegenerateKey(key._id)}
                                                         className="w-full p-3 rounded-2xl bg-amber-500/10 text-amber-500 hover:bg-amber-500/20 transition-all flex items-center justify-center gap-2 text-xs font-black uppercase italic"
                                                     >
                                                         <FiRefreshCw size={14} /> Regenerate
                                                     </button>
-                                                    <button
+                                                    <button aria-label="button"
                                                         onClick={() => handleRevokeKey(key._id)}
                                                         className="w-full p-3 rounded-2xl bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-all flex items-center justify-center gap-2 text-xs font-black uppercase italic"
                                                     >

@@ -261,7 +261,7 @@ export default function UsersTab() {
               {pagination.total} Users 
             </span>
           </div>
-          <button
+          <button aria-label="button"
             onClick={() => { fetchUsersStats(); fetchUsersList(); }}
             className="p-2 sm:p-2.5 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] active:scale-95 transition-all outline-none"
           >
@@ -314,7 +314,7 @@ export default function UsersTab() {
           />
         </div>
         <div className="flex gap-2">
-          <button
+          <button aria-label="button"
             onClick={() => setShowFilters(true)}
             className="h-11 px-5 rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.02] text-[var(--foreground)] flex items-center justify-center gap-2.5 hover:bg-[var(--foreground)]/[0.05] transition-all outline-none"
           >
@@ -539,14 +539,14 @@ export default function UsersTab() {
                   Page {pagination.page} of {pagination.totalPages}
                 </p>
                 <div className="flex gap-2">
-                  <button
+                  <button aria-label="button"
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={page === 1}
                     className="px-4 py-2 rounded-xl border border-[var(--border)] text-xs font-semibold text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.04] disabled:opacity-20 transition-all outline-none"
                   >
                     Previous
                   </button>
-                  <button
+                  <button aria-label="button"
                     onClick={() => setPage((p) => Math.min(pagination.totalPages, p + 1))}
                     disabled={page === pagination.totalPages}
                     className="px-4 py-2 rounded-xl border border-[var(--border)] text-xs font-semibold text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.04] disabled:opacity-20 transition-all outline-none"
@@ -581,7 +581,7 @@ export default function UsersTab() {
               <div className="p-6 border-b border-[var(--border)]">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-lg font-bold text-[var(--foreground)]">User Details</h3>
-                  <button
+                  <button aria-label="button"
                     onClick={() => setSelectedUser(null)}
                     className="w-8 h-8 rounded-full bg-[var(--foreground)]/[0.05] flex items-center justify-center text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-red-500/10 transition-all outline-none"
                   >
@@ -629,7 +629,7 @@ export default function UsersTab() {
 
                     <div className="pt-4 border-t border-[var(--border)]">
                       <p className="text-xs font-semibold text-[var(--muted)] px-1 mb-2">Session Management</p>
-                      <button
+                      <button aria-label="button"
                         onClick={() => handleForceLogout(selectedUser._id)}
                         className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-rose-500/20 bg-rose-500/10 text-rose-500 hover:bg-rose-500 hover:text-white transition-all text-xs font-bold"
                       >
@@ -649,7 +649,7 @@ export default function UsersTab() {
                       {ALLOWED_TAGS.map(tag => {
                         const isActive = selectedUser.tags?.includes(tag);
                         return (
-                          <button
+                          <button aria-label="button"
                             key={tag}
                             onClick={() => isActive ? removeTagFromUser(selectedUser, tag) : addTagToUser(selectedUser, tag)}
                             className={`px-3 py-1.5 rounded-xl border text-[10px] font-black lowercase transition-all hover:scale-105 active:scale-95 shadow-sm ${
@@ -715,7 +715,7 @@ export default function UsersTab() {
             >
               <div className="flex justify-between items-center">
                 <h3 className="text-xl font-bold text-[var(--foreground)]">Filters</h3>
-                <button
+                <button aria-label="button"
                   onClick={() => setShowFilters(false)}
                   className="w-10 h-10 rounded-full bg-[var(--foreground)]/[0.05] flex items-center justify-center text-[var(--muted)] hover:text-[var(--foreground)] transition-all outline-none"
                 >
@@ -741,7 +741,7 @@ export default function UsersTab() {
                       <option value="joinDate">Join Date</option>
                       <option value="name">Name</option>
                     </select>
-                    <button
+                    <button aria-label="button"
                       onClick={() => {
                         setOrder(order === "asc" ? "desc" : "asc");
                         setPage(1);
@@ -759,7 +759,7 @@ export default function UsersTab() {
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)] ml-1">Role Type</label>
                   <div className="grid grid-cols-2 gap-2">
                     {["user", "member", "admin", "owner"].map((type) => (
-                      <button
+                      <button aria-label="button"
                         key={type}
                         onClick={() => setFilters({ ...filters, userType: filters.userType === type ? "" : type })}
                         className={`
@@ -799,7 +799,7 @@ export default function UsersTab() {
               </div>
 
               <div className="flex gap-4 pt-4">
-                <button
+                <button aria-label="button"
                   onClick={() => {
                     setFilters({ userType: "", from: "", to: "" });
                     setPage(1);
@@ -809,7 +809,7 @@ export default function UsersTab() {
                   Clear All
                 </button>
 
-                <button
+                <button aria-label="button"
                   onClick={() => setShowFilters(false)}
                   className="flex-1 h-11 rounded-xl bg-[var(--accent)] text-white text-xs font-semibold shadow-lg shadow-[var(--accent)]/20 hover:brightness-110 active:scale-95 transition-all outline-none"
                 >
@@ -853,7 +853,7 @@ function RoleDropdown({ value, onChange, disabled, compact }) {
 
   return (
     <div className="relative" ref={containerRef}>
-      <button
+      <button aria-label="button"
         onClick={() => !disabled && setIsOpen(!isOpen)}
         disabled={disabled}
         className={`
@@ -881,7 +881,7 @@ function RoleDropdown({ value, onChange, disabled, compact }) {
             className="absolute z-[1200] right-0 mt-1 w-full min-w-[150px] rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-2xl p-1.5 overflow-hidden backdrop-blur-xl"
           >
             {roles.map((role) => (
-              <button
+              <button aria-label="button"
                 key={role.value}
                 onClick={() => {
                   onChange(role.value);

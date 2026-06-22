@@ -100,7 +100,7 @@ const UiSettingsTab = () => {
                             <div>
                                 <h3 className="font-semibold text-[var(--foreground)]">{formatTitle(bannerKey)}</h3>
                             </div>
-                            <button
+                            <button aria-label="button"
                                 onClick={toggleBanner}
                                 disabled={saving}
                                 className={`
@@ -173,7 +173,7 @@ const UiSettingsTab = () => {
                             <div>
                                 <h3 className="font-semibold text-[var(--foreground)]">{formatTitle(bannerKey)}</h3>
                             </div>
-                            <button
+                            <button aria-label="button"
                                 onClick={toggleBanner}
                                 disabled={saving}
                                 className={`
@@ -246,7 +246,7 @@ const UiSettingsTab = () => {
                             <div>
                                 <h3 className="font-semibold text-[var(--foreground)]">{formatTitle(bannerKey)}</h3>
                             </div>
-                            <button
+                            <button aria-label="button"
                                 onClick={toggleBanner}
                                 disabled={saving}
                                 className={`
@@ -319,7 +319,7 @@ const UiSettingsTab = () => {
                             <div>
                                 <h3 className="font-semibold text-[var(--foreground)]">{formatTitle(bannerKey)}</h3>
                             </div>
-                            <button
+                            <button aria-label="button"
                                 onClick={toggleBanner}
                                 disabled={saving}
                                 className={`

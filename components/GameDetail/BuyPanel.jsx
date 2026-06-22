@@ -107,7 +107,7 @@ export default function BuyPanel({
                   </div>
                 </a>
               ) : (
-                <button
+                <button aria-label="button"
                   onClick={() => goBuy(activeItem)}
                   disabled={redirecting}
                   className={`

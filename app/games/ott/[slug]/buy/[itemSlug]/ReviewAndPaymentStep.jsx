@@ -168,7 +168,7 @@ export default function ReviewAndPaymentStep({
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {/* Wallet Option */}
-              <button
+              <button aria-label="button"
                 onClick={() => {
                   if (walletBalance >= totalPrice) setPaymentMethod("wallet");
                 }}
@@ -194,7 +194,7 @@ export default function ReviewAndPaymentStep({
               </button>
 
               {/* UPI Option */}
-              <button
+              <button aria-label="button"
                 onClick={handleUPI}
                 className={`relative p-4 rounded-xl border transition-all text-left group overflow-hidden
                              ${paymentMethod === "upi"
@@ -234,7 +234,7 @@ export default function ReviewAndPaymentStep({
               </div>
             </div>
 
-            <button
+            <button aria-label="button"
               onClick={handleProceed}
               disabled={isRedirecting || !paymentMethod || (paymentMethod === "wallet" && walletBalance < totalPrice)}
               className="w-full py-4 rounded-xl bg-[var(--accent)] text-black font-[900] uppercase tracking-widest hover:shadow-[0_0_20px_var(--accent)] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
@@ -273,7 +273,7 @@ export default function ReviewAndPaymentStep({
             )}
           </div>
 
-          <button
+          <button aria-label="button"
             onClick={onPaymentComplete}
             className="w-full py-4 rounded-xl bg-[var(--accent)] text-black font-[900] uppercase tracking-widest hover:shadow-[0_0_20px_var(--accent)] transition-all"
           >

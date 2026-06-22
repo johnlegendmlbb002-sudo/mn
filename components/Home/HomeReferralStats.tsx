@@ -75,7 +75,7 @@ export default function HomeReferralStats() {
                                     </div>
 
                                     {/* Code */}
-                                    <button
+                                    <button aria-label="button"
                                         onClick={copyToClipboard}
                                         className="flex items-center gap-1.5 group/code hover:opacity-100 transition-opacity"
                                     >

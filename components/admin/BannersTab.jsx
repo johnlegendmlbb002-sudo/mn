@@ -150,7 +150,7 @@ export default function BannersTab({ banners, onRefresh }) {
         <div>
           <h2 className="text-xl font-bold tracking-tight text-[var(--foreground)]">Banners</h2>
         </div>
-        <button
+        <button aria-label="button"
           onClick={onRefresh}
           className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.08] transition-all shrink-0"
         >
@@ -264,14 +264,14 @@ export default function BannersTab({ banners, onRefresh }) {
                     width: "calc(50% - 7px)"
                   }}
                 />
-                <button
+                <button aria-label="button"
                   onClick={() => setForm({ ...form, isShow: true })}
                   className={`relative z-10 px-6 py-2 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-500 ${form.isShow ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"
                     }`}
                 >
                   Visible
                 </button>
-                <button
+                <button aria-label="button"
                   onClick={() => setForm({ ...form, isShow: false })}
                   className={`relative z-10 px-6 py-2 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-500 ${!form.isShow ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"
                     }`}
@@ -282,14 +282,14 @@ export default function BannersTab({ banners, onRefresh }) {
 
               <div className="flex gap-3 w-full sm:w-auto">
                 {editingId && (
-                  <button
+                  <button aria-label="button"
                     onClick={resetForm}
                     className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl border border-[var(--border)] text-[10px] font-bold transition-all text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.05]"
                   >
                     Cancel
                   </button>
                 )}
-                <button
+                <button aria-label="button"
                   onClick={editingId ? updateBanner : addBanner}
                   disabled={isSubmitting}
                   className="flex-1 sm:flex-none px-8 py-2.5 rounded-xl bg-[var(--accent)] text-white text-[10px] font-bold hover:brightness-110 active:scale-95 transition-all disabled:opacity-50 shadow-lg shadow-[var(--accent)]/20"
@@ -369,14 +369,14 @@ export default function BannersTab({ banners, onRefresh }) {
                   <p className="text-[10px] font-black text-[var(--accent)] truncate uppercase italic">/{b.bannerSlug}</p>
 
                   <div className="flex items-center gap-2">
-                    <button
+                    <button aria-label="button"
                       onClick={() => toggleShow(b.bannerSlug, b.isShow)}
                       disabled={isSubmitting}
                       className="p-2 rounded-lg bg-[var(--foreground)]/[0.05] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors disabled:opacity-50"
                     >
                       {b.isShow ? <Eye size={14} /> : <EyeOff size={14} />}
                     </button>
-                    <button
+                    <button aria-label="button"
                       onClick={() => startEdit(b)}
                       className="p-2 rounded-lg bg-[var(--foreground)]/[0.05] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
                     >

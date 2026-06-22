@@ -57,7 +57,7 @@ export default function SkinPicker() {
       {/* HERO FILTER BAR */}
       {availableHeroes.length > 0 && (
         <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1 custom-scrollbar no-scrollbar">
-          <button
+          <button aria-label="button"
             onClick={() => setSelectedHero("all")}
             className={`
               px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider whitespace-nowrap border transition-all
@@ -70,7 +70,7 @@ export default function SkinPicker() {
             All Heroes
           </button>
           {availableHeroes.map((hero) => (
-            <button
+            <button aria-label="button"
               key={hero}
               onClick={() => setSelectedHero(hero)}
               className={`
@@ -93,7 +93,7 @@ export default function SkinPicker() {
           Showing {visibleSkins.length} items
         </span>
 
-        <button
+        <button aria-label="button"
           onClick={() => {
             const visibleIds = visibleSkins.map((s) => s.id);
             const allSelected = visibleIds.every((id) => selectedSkins.includes(id));
@@ -139,7 +139,7 @@ export default function SkinPicker() {
                     {subCategory}
                   </h3>
 
-                  <button
+                  <button aria-label="button"
                     onClick={() => {
                       const itemIds = items.map((s) => s.id);
                       batchSelect(itemIds, !allInSubSelected);
@@ -168,7 +168,7 @@ export default function SkinPicker() {
                     const active = selectedSkins.includes(skin.id);
 
                     return (
-                      <button
+                      <button aria-label="button"
                         key={skin.id}
                         onClick={() => toggleSkin(skin.id)}
                         className={`

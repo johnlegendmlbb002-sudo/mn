@@ -144,7 +144,7 @@ export default function CoinFlipGame({ coins, onWin, showToast }: CoinFlipGamePr
 
       {/* CHOICES */}
       <div className="grid grid-cols-2 gap-4 w-full max-w-[280px]">
-        <button
+        <button aria-label="button"
           onClick={() => setSide("heads")}
           disabled={flipping || timeLeft > 0}
           className={`group flex flex-col items-center gap-2 p-4 rounded-2xl border transition-all ${
@@ -157,7 +157,7 @@ export default function CoinFlipGame({ coins, onWin, showToast }: CoinFlipGamePr
           <span className="text-[10px] font-black uppercase tracking-widest text-amber-400">Heads</span>
         </button>
 
-        <button
+        <button aria-label="button"
           onClick={() => setSide("tails")}
           disabled={flipping || timeLeft > 0}
           className={`group flex flex-col items-center gap-2 p-4 rounded-2xl border transition-all ${
@@ -207,7 +207,7 @@ export default function CoinFlipGame({ coins, onWin, showToast }: CoinFlipGamePr
                 <span className="text-[8px] opacity-60">Please wait {verifyTimer}s</span>
               </div>
             ) : !hasWatched ? (
-              <button
+              <button aria-label="button"
                 onClick={handleAdClick}
                 disabled={!side}
                 className={`w-full py-3.5 rounded-xl text-[11px] font-black uppercase tracking-widest transition-all flex items-center justify-center gap-2 ${
@@ -220,7 +220,7 @@ export default function CoinFlipGame({ coins, onWin, showToast }: CoinFlipGamePr
                 Watch Ad to Flip
               </button>
             ) : (
-              <button
+              <button aria-label="button"
                 onClick={handleStartFlip}
                 disabled={flipping}
                 className={`w-full py-3.5 rounded-xl text-[11px] font-black uppercase tracking-widest transition-all flex items-center justify-center gap-2 bg-emerald-500 text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-400`}
@@ -286,7 +286,7 @@ export default function CoinFlipGame({ coins, onWin, showToast }: CoinFlipGamePr
                   {lastOutcome > 0 ? `You won +${lastOutcome} BBC` : `You lost ${Math.abs(lastOutcome)} BBC`}
                 </p>
               </div>
-              <button 
+              <button aria-label="button" 
                 onClick={() => setLastOutcome(null)}
                 className="w-full py-2 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all"
               >

@@ -176,7 +176,7 @@ export default function GamesPage() {
   );
 
   const TabButton = ({ id, label, icon: Icon }) => (
-    <button
+    <button aria-label="button"
       onClick={() => setActiveTab(id)}
       className={`flex-1 flex items-center justify-center gap-1.5 px-1.5 py-2 rounded-lg font-black uppercase tracking-tight text-[8px] sm:text-[9px] italic border
         ${activeTab === id
@@ -209,7 +209,7 @@ export default function GamesPage() {
                 className="w-full pl-11 pr-10 py-3 rounded-[1.2rem] bg-[var(--background)] border border-[var(--border)] focus:bg-[var(--card)] focus:border-[var(--accent)]/30 outline-none text-[10px] sm:text-xs font-black tracking-widest placeholder:text-[var(--muted)]/50 uppercase italic text-[var(--foreground)]"
               />
               {searchQuery && (
-                <button
+                <button aria-label="button"
                   onClick={() => setSearchQuery("")}
                   className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-lg hover:bg-red-500/10 text-red-500/60 hover:text-red-500"
                 >
@@ -226,7 +226,7 @@ export default function GamesPage() {
                   { id: "grid", icon: FiGrid },
                   { id: "list", icon: FiList },
                 ].map((mode) => (
-                  <button
+                  <button aria-label="button"
                     key={mode.id}
                     onClick={() => setViewMode(mode.id)}
                     className={`p-2 rounded-lg ${viewMode === mode.id
@@ -240,7 +240,7 @@ export default function GamesPage() {
               </div>
 
               {/* FILTER BUTTON */}
-              <button
+              <button aria-label="button"
                 onClick={() => setShowFilter(true)}
                 className={`relative flex items-center gap-2 px-3 py-3 rounded-xl font-black uppercase tracking-tight text-[9px] italic border ${activeFilterCount > 0
                   ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--accent)]"
@@ -282,7 +282,7 @@ export default function GamesPage() {
               </div>
               <h3 className="text-2xl font-black italic uppercase tracking-tighter mb-2">No Games Found</h3>
               <p className="text-[var(--muted)] text-sm mb-8">Try adjusting your search or filters to find what you're looking for.</p>
-              <button
+              <button aria-label="button"
                 onClick={clearFilters}
                 className="px-8 py-4 rounded-2xl bg-[var(--accent)] text-black font-black uppercase tracking-widest text-xs italic"
               >

@@ -35,7 +35,7 @@ export default function FooterBanner() {
     <div className="fixed bottom-0 left-0 w-full z-50 flex justify-center bg-[var(--background)]/90 backdrop-blur-md border-t border-[var(--border)] py-2 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
       <div className="relative">
         {/* Close Button */}
-        <button 
+        <button aria-label="button" 
           onClick={() => setIsVisible(false)}
           className="absolute -top-3 -right-3 w-6 h-6 bg-[var(--card)] border border-[var(--border)] rounded-full flex items-center justify-center text-[var(--muted)] hover:text-white hover:border-[var(--accent)] transition-colors z-10 shadow-lg"
           aria-label="Close Ad"

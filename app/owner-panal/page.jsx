@@ -297,7 +297,7 @@ export default function AdminPanalPage() {
             placeholder="******"
             autoFocus
           />
-          <button type="submit" className="bg-[var(--accent)] text-black px-6 py-2 rounded-lg font-bold w-full">Unlock</button>
+          <button aria-label="button" type="submit" className="bg-[var(--accent)] text-black px-6 py-2 rounded-lg font-bold w-full">Unlock</button>
         </form>
       </div>
     );
@@ -348,7 +348,7 @@ export default function AdminPanalPage() {
               </div>
             </div>
 
-            <button 
+            <button aria-label="button" 
               onClick={() => setIsSidebarOpen(true)}
               className="order-2 sm:order-3 p-2 rounded-xl bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--accent)]/10 hover:border-[var(--accent)]/30 hover:text-[var(--accent)] transition-all shadow-sm group shrink-0"
             >
@@ -370,7 +370,7 @@ export default function AdminPanalPage() {
                 <span className="h-2 w-2 rounded-full bg-[var(--accent)]" />
                 <h2 className="text-base font-black tracking-widest uppercase text-[var(--foreground)]">Admin Menu</h2>
               </div>
-              <button 
+              <button aria-label="button" 
                 onClick={() => setIsSidebarOpen(false)}
                 className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--foreground)]/5 hover:bg-red-500/10 hover:text-red-500 transition-colors"
               >
@@ -407,7 +407,7 @@ export default function AdminPanalPage() {
                         const isActive = activeTab === item.id;
                         const Icon = item.icon;
                         return (
-                          <button
+                          <button aria-label="button"
                             key={item.id}
                             onClick={() => {
                               setActiveTab(item.id);

@@ -37,8 +37,8 @@ export default function PackageSelector({
               left: viewMode === "grid" ? "4px" : "calc(50% + 2px)",
             }}
           />
-          <button onClick={() => setViewMode("grid")} className={`relative z-10 w-7 h-7 flex items-center justify-center transition-colors duration-300 ${viewMode === "grid" ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}><FiGrid size={13} /></button>
-          <button onClick={() => setViewMode("slider")} className={`relative z-10 w-7 h-7 flex items-center justify-center transition-colors duration-300 ${viewMode === "slider" ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}><FiList size={13} /></button>
+          <button aria-label="button" onClick={() => setViewMode("grid")} className={`relative z-10 w-7 h-7 flex items-center justify-center transition-colors duration-300 ${viewMode === "grid" ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}><FiGrid size={13} /></button>
+          <button aria-label="button" onClick={() => setViewMode("slider")} className={`relative z-10 w-7 h-7 flex items-center justify-center transition-colors duration-300 ${viewMode === "slider" ? "text-white" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}><FiList size={13} /></button>
         </div>
       </div>
 

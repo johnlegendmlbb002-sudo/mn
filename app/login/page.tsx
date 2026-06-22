@@ -259,7 +259,7 @@ function AuthContent() {
                         className={`w-full bg-[var(--foreground)]/[0.03] border border-[var(--border)] rounded-2xl pl-12 pr-5 py-3 text-sm font-bold focus:outline-none focus:ring-4 focus:ring-[var(--accent)]/10 focus:border-[var(--accent)] transition-all placeholder:text-[var(--muted)]/50 ${showOtpField ? "opacity-50" : ""}`}
                       />
                       {showOtpField && (
-                        <button
+                        <button aria-label="button"
                           type="button"
                           onClick={() => { setShowOtpField(false); setOtp(["", "", "", "", "", ""]); setSuccess(""); }}
                           className="absolute right-4 top-1/2 -translate-y-1/2 text-[9px] font-black uppercase text-[var(--accent)] hover:underline"
@@ -303,14 +303,14 @@ function AuthContent() {
                           </div>
                           <div className="flex justify-between items-center px-1">
                             <p className="text-[10px] text-[var(--muted)]/60 font-medium italic">Didn't get it?</p>
-                            <button type="button" onClick={() => handleSendOtp()} className="text-[10px] font-black uppercase text-[var(--accent)] hover:text-[var(--foreground)] transition-colors">Resend Code</button>
+                            <button aria-label="button" type="button" onClick={() => handleSendOtp()} className="text-[10px] font-black uppercase text-[var(--accent)] hover:text-[var(--foreground)] transition-colors">Resend Code</button>
                           </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
 
-                    <button
+                    <button aria-label="button"
                       type="submit"
                       disabled={loading}
                       className="w-full relative overflow-hidden group/btn bg-[var(--accent)] text-white font-black uppercase tracking-widest py-3 rounded-2xl hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_10px_20px_-5px_rgba(var(--accent-rgb),0.3)]"

@@ -84,7 +84,7 @@ export default function RedeemTab({ setWalletBalance }: RedeemTabProps) {
                                 />
                             </div>
 
-                            <button
+                            <button aria-label="button"
                                 type="submit"
                                 disabled={loading || !code.trim()}
                                 className="w-full h-14 rounded-xl bg-blue-600 text-white font-black uppercase tracking-widest italic text-[11px] shadow-lg shadow-blue-500/10 hover:bg-blue-500 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-20"

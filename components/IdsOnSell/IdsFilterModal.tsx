@@ -27,7 +27,7 @@ export default function IdsFilterModal({
         {/* HEADER */}
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold">Filters</h2>
-          <button onClick={onClose} className="hover:text-red-500">
+          <button aria-label="button" onClick={onClose} className="hover:text-red-500">
             <FiX />
           </button>
         </div>
@@ -55,7 +55,7 @@ export default function IdsFilterModal({
 
         {/* ACTIONS */}
         <div className="flex justify-end gap-2 pt-2">
-          <button
+          <button aria-label="button"
             onClick={() => {
               setRentOnly(false);
               setGlobalOnly(false);
@@ -66,7 +66,7 @@ export default function IdsFilterModal({
             Clear
           </button>
 
-          <button
+          <button aria-label="button"
             onClick={onClose}
             className="px-4 py-2 text-sm rounded-lg
               bg-[var(--accent)] text-black font-semibold"

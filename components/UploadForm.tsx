@@ -66,7 +66,7 @@ export default function UploadForm() {
             { type: "image", label: "Image", icon: <FaFileImage /> },
             { type: "video", label: "Video", icon: <FaVideo /> },
           ].map(({ type, label, icon }) => (
-            <button
+            <button aria-label="button"
               key={type}
               type="button"
               onClick={() => {
@@ -100,7 +100,7 @@ export default function UploadForm() {
         </label>
 
         {/* Upload Button */}
-        <button
+        <button aria-label="button"
           type="submit"
           disabled={loading || !file}
           className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold shadow-lg hover:brightness-110 active:scale-95 transition disabled:opacity-60 disabled:cursor-not-allowed"

@@ -216,10 +216,10 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
               <p style={{ margin:"1px 0 0", fontWeight:700, fontSize:14, color:"var(--foreground)", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{giveaway.title}</p>
             </div>
             <div style={{ display:"flex", alignItems:"center", gap:4 }}>
-              <button onClick={handleShare} style={{ color:"var(--muted)", background:"none", border:"none", cursor:"pointer", padding:6, display:"flex", borderRadius:"50%", transition:"background 0.15s" }} onMouseOver={e => e.currentTarget.style.background="var(--border)"} onMouseOut={e => e.currentTarget.style.background="none"}>
+              <button aria-label="button" onClick={handleShare} style={{ color:"var(--muted)", background:"none", border:"none", cursor:"pointer", padding:6, display:"flex", borderRadius:"50%", transition:"background 0.15s" }} onMouseOver={e => e.currentTarget.style.background="var(--border)"} onMouseOut={e => e.currentTarget.style.background="none"}>
                 <FiShare2 size={16} />
               </button>
-              <button onClick={onClose} style={{ color:"var(--muted)", background:"none", border:"none", cursor:"pointer", padding:6, display:"flex", borderRadius:"50%", transition:"background 0.15s" }} onMouseOver={e => e.currentTarget.style.background="var(--border)"} onMouseOut={e => e.currentTarget.style.background="none"}>
+              <button aria-label="button" onClick={onClose} style={{ color:"var(--muted)", background:"none", border:"none", cursor:"pointer", padding:6, display:"flex", borderRadius:"50%", transition:"background 0.15s" }} onMouseOver={e => e.currentTarget.style.background="var(--border)"} onMouseOut={e => e.currentTarget.style.background="none"}>
                 <FiX size={18} />
               </button>
             </div>
@@ -331,7 +331,7 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
                                   </a>
                                 )}
                                 {task.type === "checkbox" && (
-                                  <button
+                                  <button aria-label="button"
                                     className={`gm-task-done ${taskData[i] ? "checked" : ""}`}
                                     onClick={() => {
                                       if (taskData[i]) {
@@ -378,7 +378,7 @@ export default function GiveawayEntryModal({ giveaway, onClose }: { giveaway: an
                 )}
 
                 {/* Submit */}
-                <button className="gm-submit" disabled={!allTasksDone() || loading} onClick={handleSubmit}>
+                <button aria-label="button" className="gm-submit" disabled={!allTasksDone() || loading} onClick={handleSubmit}>
                   {loading ? "Entering..." : "🎁 Enter Giveaway"}
                 </button>
               </div>

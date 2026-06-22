@@ -33,7 +33,7 @@ export default function ChristmasPopup() {
           Wishing you joy, peace, and epic wins this holiday season ✨
         </p>
 
-        <button
+        <button aria-label="button"
           onClick={closePopup}
           className="px-6 py-2 rounded-full bg-[var(--accent)] text-white font-medium hover:bg-[var(--accent-hover)] transition"
         >

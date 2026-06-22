@@ -183,7 +183,7 @@ function AdsterraCard({ lastAdReward, adId, adLink, title, onReward, showToast, 
             {cooldownText ? <><FiClock size={10} /> {cooldownText}</> : <><FiPlay size={10} /> Watch</>}
           </motion.button>
         ) : timer !== null && timer > 0 ? (
-          <button
+          <button aria-label="button"
             disabled
             className="flex items-center gap-1.5 bg-emerald-500/20 text-emerald-400/50 border border-emerald-500/20 px-3 py-1.5 rounded-lg text-[9px] font-black uppercase cursor-not-allowed shadow-none min-w-[75px] justify-center"
           >
@@ -581,7 +581,7 @@ export default function CoinsTab() {
 
           {/* Navigation moved up */}
           <div className="grid grid-cols-2 gap-2">
-            <button
+            <button aria-label="button"
               onClick={() => {
                 setActiveTab(activeTab === "convert" ? "checkin" : "convert");
                 setActiveGame(null);
@@ -594,7 +594,7 @@ export default function CoinsTab() {
               <FiTrendingUp size={14} />
               Convert
             </button>
-            <button
+            <button aria-label="button"
               onClick={() => {
                 setActiveTab(activeTab === "history" ? "checkin" : "history");
                 setActiveGame(null);
@@ -611,7 +611,7 @@ export default function CoinsTab() {
 
           <div className="grid grid-cols-4 gap-1.5 bg-[var(--card)]/40 p-1 rounded-2xl border border-[var(--border)]">
             {TABS.map((tab) => (
-              <button
+              <button aria-label="button"
                 key={tab.key}
                 onClick={() => {
                   setActiveTab(tab.key);
@@ -705,7 +705,7 @@ export default function CoinsTab() {
                 <div className="flex items-center gap-2 mb-4">
                   <FiList className="text-[var(--muted)] text-sm" />
                   <p className="text-[11px] font-black uppercase tracking-wide">Coin History</p>
-                  <button onClick={fetchData} className="ml-auto text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
+                  <button aria-label="button" onClick={fetchData} className="ml-auto text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
                     <FiRefreshCw className="text-xs" />
                   </button>
                 </div>
@@ -740,14 +740,14 @@ export default function CoinsTab() {
 
                     {historyPages > 1 && (
                       <div className="flex items-center justify-center gap-3 pt-4">
-                        <button onClick={() => setHistoryPage(p => Math.max(1, p - 1))} disabled={historyPage === 1}
+                        <button aria-label="button" onClick={() => setHistoryPage(p => Math.max(1, p - 1))} disabled={historyPage === 1}
                           className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                           <FiChevronLeft className="text-xs" />
                         </button>
                         <span className="text-[10px] font-black uppercase tracking-wide text-[var(--muted)]">
                           {historyPage} / {historyPages}
                         </span>
-                        <button onClick={() => setHistoryPage(p => Math.min(historyPages, p + 1))} disabled={historyPage === historyPages}
+                        <button aria-label="button" onClick={() => setHistoryPage(p => Math.min(historyPages, p + 1))} disabled={historyPage === historyPages}
                           className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                           <FiChevronRight className="text-xs" />
                         </button>
@@ -764,7 +764,7 @@ export default function CoinsTab() {
                 {activeGame === null ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {/* Lucky Spin */}
-                    <button 
+                    <button aria-label="button" 
                       onClick={() => setActiveGame("roulette")}
                       className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)]/40 p-5 transition-all hover:border-amber-500/40 hover:shadow-2xl hover:shadow-amber-500/10 text-left hover:-translate-y-1"
                     >
@@ -788,7 +788,7 @@ export default function CoinsTab() {
                     </button>
 
                     {/* Treasure Pick */}
-                    <button 
+                    <button aria-label="button" 
                       onClick={() => setActiveGame("treasure")}
                       className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)]/40 p-5 transition-all hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10 text-left hover:-translate-y-1"
                     >
@@ -812,7 +812,7 @@ export default function CoinsTab() {
                     </button>
 
                     {/* Coin Flip - High Stakes */}
-                    <button 
+                    <button aria-label="button" 
                       onClick={() => setActiveGame("coinflip")}
                       className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)]/40 p-5 transition-all hover:border-rose-500/40 hover:shadow-2xl hover:shadow-rose-500/10 text-left hover:-translate-y-1"
                     >
@@ -840,7 +840,7 @@ export default function CoinsTab() {
 
 
                     {/* Mega Slots */}
-                    <button 
+                    <button aria-label="button" 
                       onClick={() => setActiveGame("slot")}
                       className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)]/40 p-5 transition-all hover:border-purple-500/40 hover:shadow-2xl hover:shadow-purple-500/10 text-left hover:-translate-y-1"
                     >
@@ -875,7 +875,7 @@ export default function CoinsTab() {
                 ) : (
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <button 
+                      <button aria-label="button" 
                         onClick={() => setActiveGame(null)}
                         className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[9px] font-black uppercase tracking-widest text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
                       >
@@ -1006,7 +1006,7 @@ export default function CoinsTab() {
                         {pendingClaims.size} pending
                       </span>
                     )}
-                    <button onClick={fetchData} className="text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
+                    <button aria-label="button" onClick={fetchData} className="text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
                       <FiRefreshCw className="text-xs" />
                     </button>
                   </div>
@@ -1058,14 +1058,14 @@ export default function CoinsTab() {
 
                     {tasksPages > 1 && (
                       <div className="flex items-center justify-center gap-3 pt-4">
-                        <button onClick={() => setTasksPage(p => Math.max(1, p - 1))} disabled={tasksPage === 1}
+                        <button aria-label="button" onClick={() => setTasksPage(p => Math.max(1, p - 1))} disabled={tasksPage === 1}
                           className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                           <FiChevronLeft className="text-xs" />
                         </button>
                         <span className="text-[10px] font-black uppercase tracking-wide text-[var(--muted)]">
                           {tasksPage} / {tasksPages}
                         </span>
-                        <button onClick={() => setTasksPage(p => Math.min(tasksPages, p + 1))} disabled={tasksPage === tasksPages}
+                        <button aria-label="button" onClick={() => setTasksPage(p => Math.min(tasksPages, p + 1))} disabled={tasksPage === tasksPages}
                           className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                           <FiChevronRight className="text-xs" />
                         </button>

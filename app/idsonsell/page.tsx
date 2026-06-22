@@ -45,7 +45,7 @@ export default function IdsOnSellPage() {
           />
 
           {search && (
-            <button
+            <button aria-label="button"
               onClick={() => setSearch("")}
               className="absolute right-3 top-1/2 -translate-y-1/2
                 text-[var(--muted)] hover:text-red-500"
@@ -56,7 +56,7 @@ export default function IdsOnSellPage() {
         </div>
 
         {/* FILTER BUTTON */}
-        <button
+        <button aria-label="button"
           onClick={() => setShowFilter(true)}
           className="shrink-0 flex items-center gap-2
             px-4 py-2 rounded-xl border bg-[var(--card)]

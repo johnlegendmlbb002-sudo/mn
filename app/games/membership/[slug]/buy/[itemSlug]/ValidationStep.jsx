@@ -42,7 +42,7 @@ export default function ValidationStep({
       {/* Action Button */}
       <div className="relative group pt-1">
         <div className="absolute inset-0 bg-[var(--accent)] opacity-10 blur-xl group-hover:opacity-20 transition-opacity rounded-xl" />
-        <button
+        <button aria-label="button"
           onClick={onValidate}
           disabled={loading || !playerId}
           className={`relative w-full py-3 rounded-xl font-black uppercase tracking-[0.15em] text-[13px] transition-all duration-500 flex items-center justify-center gap-2 overflow-hidden

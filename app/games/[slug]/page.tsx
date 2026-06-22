@@ -139,7 +139,7 @@ function GameDetailContent() {
           </p>
 
           {/* Action Button */}
-          <button
+          <button aria-label="button"
             onClick={() => router.push("/")}
             className="px-8 py-4 bg-gradient-to-r from-[var(--accent)] to-purple-600 hover:from-[var(--accent)] hover:to-purple-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-[var(--accent)]/25 hover:shadow-[var(--accent)]/40"
           >

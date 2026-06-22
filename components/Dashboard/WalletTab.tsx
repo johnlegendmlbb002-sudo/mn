@@ -334,7 +334,7 @@ export default function WalletTab({
 
                 <div className="flex gap-2 mt-4 flex-wrap">
                   {presetAmounts.map((v) => (
-                    <button
+                    <button aria-label="button"
                       key={v}
                       onClick={() => { setAmount(String(v)); setAmountError(""); }}
                       className="px-4 py-2 rounded-xl text-[9px] font-black uppercase tracking-widest border border-[var(--border)] bg-[var(--card)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-black hover:border-[var(--accent)] transition-all"
@@ -345,7 +345,7 @@ export default function WalletTab({
                 </div>
 
                 {/* Add Funds button */}
-                <button
+                <button aria-label="button"
                   onClick={handleProceed}
                   disabled={loading}
                   className="w-full mt-2 p-4 rounded-2xl bg-[var(--accent)] text-black font-black uppercase tracking-[0.2em] italic text-xs shadow-[0_20px_40px_-10px_rgba(var(--accent-rgb),0.3)] hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:grayscale transition-all flex items-center justify-center gap-3"
@@ -406,14 +406,14 @@ export default function WalletTab({
 
                 <div className="flex gap-2 flex-wrap">
                   {usdtPresets.map((v) => (
-                    <button key={v} onClick={() => { setUsdtAmount(String(v)); setUsdtError(""); }}
+                    <button aria-label="button" key={v} onClick={() => { setUsdtAmount(String(v)); setUsdtError(""); }}
                       className="px-4 py-2 rounded-xl text-[9px] font-black uppercase tracking-widest border border-green-500/20 bg-[var(--card)] text-green-400 hover:bg-green-500/20 hover:border-green-500 transition-all">
                       {v} USDT
                     </button>
                   ))}
                 </div>
 
-                <button
+                <button aria-label="button"
                   onClick={handleUsdtInitiate}
                   disabled={usdtLoading}
                   className="w-full p-4 rounded-2xl bg-green-500 text-black font-black uppercase tracking-[0.2em] italic text-xs hover:scale-[1.02] active:scale-95 disabled:opacity-50 transition-all flex items-center justify-center gap-3"
@@ -434,7 +434,7 @@ export default function WalletTab({
             <div className="grid gap-3">
               {/* UPI (Hidden for 'member' type, visible for everyone else) */}
               {!isMemberOnly && (
-                <button
+                <button aria-label="button"
                   onClick={() => { setMethod("upi"); resetUsdtFlow(); setUsdtStep("idle"); }}
                   className={`flex items-center justify-between p-4 rounded-2xl border transition-all duration-300
                     ${method === "upi"
@@ -457,7 +457,7 @@ export default function WalletTab({
               )}
 
               {/* USDT (Available to Everyone) */}
-              <button
+              <button aria-label="button"
                 onClick={() => { setMethod("usdt"); setUsdtStep("amount"); }}
                 className={`flex items-center justify-between p-4 rounded-2xl border transition-all duration-300
                   ${method === "usdt"
@@ -513,7 +513,7 @@ export default function WalletTab({
               {usdtStep === "deposit" && usdtDeposit && (
                 <div className="space-y-4">
                   <div className="flex items-center gap-2">
-                    <button onClick={() => setUsdtStep("amount")} className="p-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+                    <button aria-label="button" onClick={() => setUsdtStep("amount")} className="p-1.5 rounded-lg bg-[var(--card)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
                       <FiArrowLeft size={14} />
                     </button>
                     <span className="text-[11px] font-black uppercase tracking-widest text-green-400">Send USDT to this address</span>
@@ -545,7 +545,7 @@ export default function WalletTab({
                     <p className="text-[9px] font-bold text-[var(--muted)] uppercase tracking-widest mb-2">Deposit Address ({usdtDeposit.network})</p>
                     <div className="flex items-center gap-2 p-3 rounded-2xl bg-[var(--card)] border border-green-500/20">
                       <span className="font-mono text-[10px] text-green-400 break-all flex-1">{usdtDeposit.depositAddress}</span>
-                      <button
+                      <button aria-label="button"
                         onClick={() => copyToClipboard(usdtDeposit.depositAddress, "address")}
                         className="p-2 rounded-lg bg-green-500/10 text-green-400 hover:bg-green-500/30 transition-colors flex-shrink-0"
                       >
@@ -580,7 +580,7 @@ export default function WalletTab({
                     </motion.p>
                   )}
 
-                  <button
+                  <button aria-label="button"
                     onClick={handleUsdtSubmitHash}
                     disabled={usdtLoading || !txHash.trim()}
                     className="w-full p-4 rounded-2xl bg-green-500 text-black font-black uppercase tracking-[0.2em] italic text-xs hover:scale-[1.02] active:scale-95 disabled:opacity-50 transition-all flex items-center justify-center gap-3"
@@ -608,7 +608,7 @@ export default function WalletTab({
                     <p className="text-[9px] font-bold text-[var(--muted)] uppercase tracking-widest mb-1">Deposit ID</p>
                     <p className="font-mono text-[10px] text-[var(--foreground)] break-all">{usdtDeposit?.depositId}</p>
                   </div>
-                  <button onClick={resetUsdtFlow} className="text-[9px] font-bold text-[var(--muted)] uppercase tracking-widest hover:text-[var(--foreground)] transition-colors underline underline-offset-2">
+                  <button aria-label="button" onClick={resetUsdtFlow} className="text-[9px] font-bold text-[var(--muted)] uppercase tracking-widest hover:text-[var(--foreground)] transition-colors underline underline-offset-2">
                     New Deposit
                   </button>
                 </div>
@@ -624,7 +624,7 @@ export default function WalletTab({
                     <p className="font-black text-green-400 text-sm">Deposit Confirmed! 🎉</p>
                     <p className="text-[10px] text-[var(--muted)] mt-1"><strong className="text-green-400">{usdtDeposit?.coinsToCredit} coins</strong> have been credited to your wallet.</p>
                   </div>
-                  <button
+                  <button aria-label="button"
                     onClick={resetUsdtFlow}
                     className="w-full p-4 rounded-2xl bg-green-500 text-black font-black uppercase tracking-[0.2em] italic text-xs hover:scale-[1.02] active:scale-95 transition-all"
                   >
@@ -660,7 +660,7 @@ function TransactionHistorySection({ onResumeUsdt }: { onResumeUsdt: (txn: any) 
           {showHistory && (
             <div className="flex items-center gap-1 bg-[var(--card)] border border-[var(--border)] p-1 rounded-xl mr-2">
               {["all", "inr", "usdt"].map(f => (
-                <button
+                <button aria-label="button"
                   key={f}
                   onClick={() => setFilter(f)}
                   className={`px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all ${
@@ -676,7 +676,7 @@ function TransactionHistorySection({ onResumeUsdt }: { onResumeUsdt: (txn: any) 
           )}
           <div className="flex items-center gap-2">
             {showHistory && <TransactionHistoryRefresh />}
-            <button
+            <button aria-label="button"
               onClick={() => setShowHistory((v) => !v)}
               className={`px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-widest border transition-all ${
                 showHistory
@@ -705,7 +705,7 @@ function TransactionHistorySection({ onResumeUsdt }: { onResumeUsdt: (txn: any) 
 
 function TransactionHistoryRefresh() {
   return (
-    <button
+    <button aria-label="button"
       onClick={() => window.dispatchEvent(new Event("refreshTransactionHistory"))}
       className="p-2 rounded-lg bg-[var(--card)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.05] transition-all"
       title="Refresh History"
@@ -859,7 +859,7 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
                       {txn.status}
                     </span>
                     {txn.status === 'waiting' && onResumeUsdt && (
-                      <button 
+                      <button aria-label="button" 
                         onClick={() => onResumeUsdt(txn)}
                         className="block mt-2 ml-auto text-[8px] font-black uppercase tracking-[0.2em] bg-green-500 text-black px-2 py-1 rounded-lg hover:scale-105 active:scale-95 transition-all"
                       >
@@ -905,7 +905,7 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
               }`}>
                 {txn.status}
                 {txn.status === 'waiting' && onResumeUsdt && (
-                  <button 
+                  <button aria-label="button" 
                     onClick={() => onResumeUsdt(txn)}
                     className="block mt-1 text-[8px] font-black uppercase tracking-[0.2em] bg-green-500 text-black px-2 py-1 rounded-lg"
                   >
@@ -932,7 +932,7 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
       {/* Simple Pagination */}
       {totalPages > 1 && (
         <div className="flex justify-center gap-2">
-          <button
+          <button aria-label="button"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
             className="px-3 py-1 rounded-lg bg-[var(--card)] border border-[var(--border)] hover:bg-[var(--foreground)]/[0.05] text-[10px] font-bold text-[var(--muted)] hover:text-[var(--foreground)] uppercase disabled:opacity-30 disabled:cursor-not-allowed transition-all"
@@ -942,7 +942,7 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
           <span className="text-xs font-mono self-center text-[var(--muted)]">
             {page} / {totalPages}
           </span>
-          <button
+          <button aria-label="button"
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
             className="px-3 py-1 rounded-lg bg-[var(--card)] border border-[var(--border)] hover:bg-[var(--foreground)]/[0.05] text-[10px] font-bold text-[var(--muted)] hover:text-[var(--foreground)] uppercase disabled:opacity-30 disabled:cursor-not-allowed transition-all"

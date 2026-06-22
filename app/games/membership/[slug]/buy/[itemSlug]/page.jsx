@@ -216,7 +216,7 @@ function BuyFlowContent() {
                     <p className="text-[var(--muted)] max-w-sm mx-auto mb-8 font-medium">
                       Verification complete. Your order has been placed.
                     </p>
-                    <button
+                    <button aria-label="button"
                       onClick={() => window.location.href = "/"}
                       className="px-8 py-3 bg-[var(--card)] hover:bg-[var(--accent)] hover:text-white border border-[var(--border)] hover:border-[var(--accent)] rounded-xl font-bold uppercase tracking-widest transition-all shadow-lg"
                     >

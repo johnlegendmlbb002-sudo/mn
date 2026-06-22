@@ -192,7 +192,7 @@ const Header = ({ onClose }: any) => (
     <h2 className="font-semibold text-lg flex items-center gap-2">
       <ImagePlus size={18} /> Upload Assets
     </h2>
-    <button onClick={onClose}><X size={18} /></button>
+    <button aria-label="button" onClick={onClose}><X size={18} /></button>
   </div>
 );
 
@@ -216,7 +216,7 @@ const UploadInput = ({ onSelect, preview, placeholder, disabled }: any) => (
 const ShapeToggle = ({ value, onChange }: any) => (
   <div className="flex gap-2">
     {["rect", "square"].map((s) => (
-      <button key={s} onClick={() => onChange(s)} className={`flex-1 py-1 text-xs rounded ${value === s ? "bg-[var(--accent)] text-black" : "bg-black/40"}`}>
+      <button aria-label="button" key={s} onClick={() => onChange(s)} className={`flex-1 py-1 text-xs rounded ${value === s ? "bg-[var(--accent)] text-black" : "bg-black/40"}`}>
         {s.toUpperCase()}
       </button>
     ))}
@@ -244,7 +244,7 @@ const ColumnPreview = ({ items, onRemove }: any) => (
 const Preview = ({ src, onRemove, tall }: any) => (
   <div className="relative inline-block">
     <img src={src} className={`${tall ? "h-20 w-12" : "h-12 w-12"} object-cover rounded-md`} />
-    <button onClick={onRemove} className="absolute -top-2 -right-2 bg-red-500 rounded-full p-1">
+    <button aria-label="button" onClick={onRemove} className="absolute -top-2 -right-2 bg-red-500 rounded-full p-1">
       <X size={12} />
     </button>
   </div>
@@ -259,7 +259,7 @@ const TagUpload = ({ label, icon, value, onSelect }: any) => (
 );
 
 const DoneButton = ({ onClose }: any) => (
-  <button onClick={onClose} className="w-full bg-[var(--accent)] text-black font-semibold py-2 rounded-xl">
+  <button aria-label="button" onClick={onClose} className="w-full bg-[var(--accent)] text-black font-semibold py-2 rounded-xl">
     <Check size={16} className="inline mr-1" /> Done
   </button>
 );

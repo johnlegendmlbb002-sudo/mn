@@ -139,13 +139,13 @@ export default function RedeemCodesTab() {
                     </div>
 
                     <div className="flex bg-[var(--foreground)]/[0.05] p-1 rounded-lg border border-[var(--border)]">
-                        <button
+                        <button aria-label="button"
                             onClick={() => setIsSeries(false)}
                             className={`px-4 py-1.5 rounded-md text-[9px] font-black uppercase tracking-widest transition-all ${!isSeries ? 'bg-[var(--accent)] text-white shadow-lg' : 'text-[var(--muted)] hover:text-[var(--foreground)]'}`}
                         >
                             Unique
                         </button>
-                        <button
+                        <button aria-label="button"
                             onClick={() => setIsSeries(true)}
                             className={`px-4 py-1.5 rounded-md text-[9px] font-black uppercase tracking-widest transition-all ${isSeries ? 'bg-[var(--accent)] text-white shadow-lg' : 'text-[var(--muted)] hover:text-[var(--foreground)]'}`}
                         >
@@ -207,7 +207,7 @@ export default function RedeemCodesTab() {
                     )}
 
                     <div className="flex items-end">
-                        <button
+                        <button aria-label="button"
                             type="submit"
                             disabled={isGenerating}
                             className="w-full h-11 bg-[var(--accent)] text-white font-black uppercase text-[11px] rounded-xl flex items-center justify-center gap-2 hover:bg-[var(--accent-hover)] transition-all shadow-lg active:scale-95 disabled:opacity-50"
@@ -250,7 +250,7 @@ export default function RedeemCodesTab() {
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-2">
                                             <span className="font-mono font-black text-[var(--accent)] tracking-tighter uppercase">{code.code}</span>
-                                            <button onClick={() => copyToClipboard(code.code)} className="opacity-0 group-hover:opacity-40 hover:!opacity-100 transition-all text-[var(--muted)]">
+                                            <button aria-label="button" onClick={() => copyToClipboard(code.code)} className="opacity-0 group-hover:opacity-40 hover:!opacity-100 transition-all text-[var(--muted)]">
                                                 {copiedCode === code.code ? <FiCheck size={12} /> : <FiCopy size={12} />}
                                             </button>
                                         </div>
@@ -308,7 +308,7 @@ export default function RedeemCodesTab() {
                                     <td className="px-6 py-4 text-right">
                                         <div className="flex items-center justify-end gap-1.5">
                                             {(code.status === "active" || code.isSeries) && (
-                                                <button
+                                                <button aria-label="button"
                                                     onClick={() => handleExpire(code._id)}
                                                     className="w-8 h-8 rounded-lg bg-rose-500/5 hover:bg-rose-500/10 text-rose-500/30 hover:text-rose-500 transition-all flex items-center justify-center group/btn"
                                                 >
@@ -332,7 +332,7 @@ export default function RedeemCodesTab() {
                                     <span className="text-[8px] font-black uppercase tracking-widest text-[var(--muted)]/40">Redeem Code</span>
                                     <div className="flex items-center gap-2">
                                         <span className="text-sm font-black text-[var(--accent)] uppercase tracking-tighter">{code.code}</span>
-                                        <button onClick={() => copyToClipboard(code.code)} className="text-[var(--muted)]">
+                                        <button aria-label="button" onClick={() => copyToClipboard(code.code)} className="text-[var(--muted)]">
                                             {copiedCode === code.code ? <FiCheck size={14} /> : <FiCopy size={14} />}
                                         </button>
                                     </div>
@@ -359,7 +359,7 @@ export default function RedeemCodesTab() {
                                         </span>
                                     )}
                                     {(code.status === 'active' || code.isSeries) && (
-                                        <button onClick={() => handleExpire(code._id)} className="text-rose-500/40 hover:text-rose-500 transition-colors">
+                                        <button aria-label="button" onClick={() => handleExpire(code._id)} className="text-rose-500/40 hover:text-rose-500 transition-colors">
                                             <FiTrash2 size={14} />
                                         </button>
                                     )}
@@ -389,14 +389,14 @@ export default function RedeemCodesTab() {
                         Page {pagination.currentPage} of {pagination.pages}
                     </p>
                     <div className="flex gap-2">
-                        <button
+                        <button aria-label="button"
                             onClick={() => setPage(prev => Math.max(1, prev - 1))}
                             disabled={page === 1 || loading}
                             className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
                         >
                             Previous
                         </button>
-                        <button
+                        <button aria-label="button"
                             onClick={() => setPage(prev => Math.min(pagination.pages, prev + 1))}
                             disabled={page === pagination.pages || loading}
                             className="px-4 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-widest hover:bg-blue-500/20 disabled:opacity-30 disabled:cursor-not-allowed transition-all"

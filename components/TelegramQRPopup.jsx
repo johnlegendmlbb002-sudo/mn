@@ -50,7 +50,7 @@ export default function TelegramQRPopup() {
               <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-blue-50/80 to-transparent pointer-events-none" />
 
               {/* Close Button */}
-              <button
+              <button aria-label="button"
                 onClick={() => setOpen(false)}
                 className="absolute top-3 right-3 w-7 h-7 flex items-center justify-center rounded-full bg-gray-50 hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-colors z-20"
               >

@@ -46,7 +46,7 @@ export default function WalletPayUI({ title, qrText, onConfirm }: WalletPayUIPro
       </div>
 
       {/* Confirm Button */}
-      <button
+      <button aria-label="button"
         onClick={onConfirm}
         className="mt-5 w-full p-3 bg-[var(--accent)] text-black font-semibold rounded-xl"
       >

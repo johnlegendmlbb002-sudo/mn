@@ -124,7 +124,7 @@ const SettingsTab = () => {
                         </p>
                     </div>
 
-                    <button
+                    <button aria-label="button"
                         onClick={toggleMaintenance}
                         disabled={saving}
                         className={`
@@ -150,7 +150,7 @@ const SettingsTab = () => {
                         </p>
                     </div>
 
-                    <button
+                    <button aria-label="button"
                         onClick={toggleOrdersDisabled}
                         disabled={saving}
                         className={`

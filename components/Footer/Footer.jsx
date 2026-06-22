@@ -148,7 +148,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <button
+            <button aria-label="button"
               onClick={scrollToTop}
               className="mt-auto group flex items-center gap-3 text-[9px] font-black uppercase tracking-widest text-[var(--muted)] hover:text-[var(--accent)] transition-all italic"
             >

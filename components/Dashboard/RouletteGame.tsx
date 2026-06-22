@@ -262,7 +262,7 @@ export default function RouletteGame({ coins, onWin, showToast }: RouletteGamePr
                   {result > 0 ? `You got +${result} BBC` : result < 0 ? `You lost ${Math.abs(result)} BBC` : "No luck this time"}
                 </p>
               </div>
-              <button 
+              <button aria-label="button" 
                 onClick={() => setResult(null)}
                 className="w-full py-2 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all"
               >

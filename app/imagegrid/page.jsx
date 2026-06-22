@@ -49,7 +49,7 @@ export default function Page() {
         </div>
 
         <div className="flex items-center gap-3">
-          <button
+          <button aria-label="button"
             onClick={() => setReorderOpen(true)}
             className="
               flex items-center gap-2.5 px-6 py-3
@@ -62,7 +62,7 @@ export default function Page() {
             <span className="font-semibold text-sm">Sort & Reorder ({selectedSkins.length})</span>
           </button>
 
-          <button
+          <button aria-label="button"
             onClick={() => setOpen(true)}
             className="
               flex items-center gap-2.5 px-6 py-3
@@ -118,7 +118,7 @@ export default function Page() {
 
           {/* MAIN ACTIONS */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <button
+            <button aria-label="button"
               onClick={() => {
                 try {
                   saveTemplate();
@@ -139,7 +139,7 @@ export default function Page() {
               Save As Template
             </button>
 
-            <button
+            <button aria-label="button"
               onClick={() =>
                 exportRef.current &&
                 downloadGrid(exportRef.current)

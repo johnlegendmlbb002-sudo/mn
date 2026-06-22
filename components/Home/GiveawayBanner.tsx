@@ -148,7 +148,7 @@ export default function GiveawayBanner() {
           )}
 
           {/* CTA */}
-          <button className="gw-btn" onClick={e => { e.stopPropagation(); setShowModal(true); }}>
+          <button aria-label="button" className="gw-btn" onClick={e => { e.stopPropagation(); setShowModal(true); }}>
             Enter <FiChevronRight size={11} />
           </button>
 

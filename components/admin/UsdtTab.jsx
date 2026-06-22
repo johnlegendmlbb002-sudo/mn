@@ -78,7 +78,7 @@ export default function UsdtTab() {
             { id: "failed", label: "Failed" },
             { id: "expired", label: "Expired" }
           ].map(s => (
-            <button
+            <button aria-label="button"
               key={s.id}
               onClick={() => { setStatus(s.id); setPage(1); }}
               className={`flex-1 sm:flex-none px-2 sm:px-4 py-1.5 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
@@ -149,7 +149,7 @@ export default function UsdtTab() {
                   <td className="px-4 py-4 text-right">
                     {d.status === "submitted" && (
                       <div className="flex justify-end gap-2">
-                        <button 
+                        <button aria-label="button" 
                           onClick={() => handleAction(d.depositId, "confirm")}
                           disabled={actionLoading === d.depositId}
                           className="p-2 rounded-lg bg-green-500/20 text-green-500 hover:bg-green-500 hover:text-black transition-all"
@@ -157,7 +157,7 @@ export default function UsdtTab() {
                         >
                           <FiCheckCircle size={14} />
                         </button>
-                        <button 
+                        <button aria-label="button" 
                           onClick={() => handleAction(d.depositId, "reject")}
                           disabled={actionLoading === d.depositId}
                           className="p-2 rounded-lg bg-red-500/20 text-red-500 hover:bg-red-500 hover:text-black transition-all"
@@ -187,7 +187,7 @@ export default function UsdtTab() {
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex justify-center gap-4 pt-4 border-t border-[var(--border)]/10">
-          <button 
+          <button aria-label="button" 
             disabled={page === 1}
             onClick={() => setPage(p => p - 1)}
             className="px-4 py-2 rounded-xl bg-[var(--card)] border border-[var(--border)] text-xs font-bold disabled:opacity-30"
@@ -195,7 +195,7 @@ export default function UsdtTab() {
             Previous
           </button>
           <span className="flex items-center text-xs font-black text-[var(--muted)]">PAGE {page} OF {totalPages}</span>
-          <button 
+          <button aria-label="button" 
             disabled={page === totalPages}
             onClick={() => setPage(p => p + 1)}
             className="px-4 py-2 rounded-xl bg-[var(--card)] border border-[var(--border)] text-xs font-bold disabled:opacity-30"

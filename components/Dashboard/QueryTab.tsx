@@ -227,7 +227,7 @@ export default function QueryTab() {
               onChange={(e) => setOrderId(e.target.value)}
             />
 
-            <button
+            <button aria-label="button"
               disabled={!queryType || !queryMessage || !phoneNo.trim() || isSubmitting}
               onClick={handleSubmit}
               className="w-full p-3.5 rounded-2xl bg-[var(--accent)] text-black font-black uppercase tracking-widest italic text-[10px] shadow-lg hover:shadow-[0_8px_16px_-4px_rgba(var(--accent-rgb),0.3)] hover:scale-[1.01] active:scale-95 disabled:opacity-30 transition-all flex items-center justify-center gap-2"
@@ -240,7 +240,7 @@ export default function QueryTab() {
 
       {/* MY QUERIES SECTION */}
       <div className="rounded-3xl bg-[var(--card)]/30 border border-white/5 overflow-hidden">
-        <button
+        <button aria-label="button"
           onClick={() => setShowMyQueries((v) => !v)}
           className="w-full flex items-center justify-between px-5 py-4 hover:bg-white/[0.02] transition-colors"
         >
@@ -254,7 +254,7 @@ export default function QueryTab() {
             )}
           </div>
           <div className="flex items-center gap-3">
-            <button
+            <button aria-label="button"
               onClick={(e) => { e.stopPropagation(); fetchMyQueries(); }}
               className="p-1 rounded-lg hover:bg-white/10 transition-colors text-[var(--muted)] hover:text-[var(--accent)]"
             >
@@ -341,14 +341,14 @@ export default function QueryTab() {
                       {queryPagination.total} total &middot; page {queryPage}/{queryPagination.totalPages}
                     </p>
                     <div className="flex items-center gap-1.5">
-                      <button
+                      <button aria-label="button"
                         onClick={() => setQueryPage((p) => Math.max(1, p - 1))}
                         disabled={queryPage === 1 || loadingQueries}
                         className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[var(--background)]/50 border border-white/5 text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 disabled:opacity-25 disabled:cursor-not-allowed transition-all text-[9px] font-black uppercase"
                       >
                         <FiChevronLeft size={12} /> Prev
                       </button>
-                      <button
+                      <button aria-label="button"
                         onClick={() => setQueryPage((p) => Math.min(queryPagination.totalPages, p + 1))}
                         disabled={queryPage === queryPagination.totalPages || loadingQueries}
                         className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[var(--background)]/50 border border-white/5 text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 disabled:opacity-25 disabled:cursor-not-allowed transition-all text-[9px] font-black uppercase"

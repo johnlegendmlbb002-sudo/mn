@@ -58,7 +58,7 @@ export default function PwaStatsTab() {
           {/* Day toggle */}
           <div className="flex p-0.5 bg-[var(--border)] rounded-lg gap-0.5">
             {[7, 30].map((d) => (
-              <button
+              <button aria-label="button"
                 key={d}
                 onClick={() => setDays(d)}
                 className={`px-3 py-1 rounded-md text-[10px] font-black uppercase tracking-widest transition-all ${
@@ -69,7 +69,7 @@ export default function PwaStatsTab() {
               >{d}D</button>
             ))}
           </div>
-          <button
+          <button aria-label="button"
             onClick={() => fetchStats(days)}
             className="flex items-center gap-1.5 text-[11px] font-bold text-[var(--muted)] hover:text-[var(--accent)] transition-colors px-3 py-1.5 rounded-lg border border-[var(--border)]"
           >

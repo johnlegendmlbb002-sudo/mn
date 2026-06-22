@@ -250,7 +250,7 @@ function BuyFlowContent() {
           </div>
           <h2 className="text-3xl font-[900] text-[var(--foreground)] mb-2 uppercase tracking-tight">Order Placed!</h2>
           <p className="text-[var(--muted)] mb-8 font-medium">Your request is being processed. We'll top up your account soon.</p>
-          <button onClick={() => router.push("/")} className="w-full py-4 bg-[var(--accent)] text-black font-[900] uppercase tracking-widest rounded-xl hover:shadow-[0_0_20px_var(--accent)] transition-all">Go Home</button>
+          <button aria-label="button" onClick={() => router.push("/")} className="w-full py-4 bg-[var(--accent)] text-black font-[900] uppercase tracking-widest rounded-xl hover:shadow-[0_0_20px_var(--accent)] transition-all">Go Home</button>
         </div>
       </div>
     );
@@ -262,7 +262,7 @@ function BuyFlowContent() {
         <div className="max-w-5xl mx-auto">
 
           {/* BACK BUTTON */}
-          <button
+          <button aria-label="button"
             onClick={() => router.back()}
             className="flex items-center gap-1.5 text-[var(--accent)] font-black uppercase tracking-widest text-[9px] mb-4 hover:opacity-70 transition-opacity"
           >
@@ -328,7 +328,7 @@ function BuyFlowContent() {
                     {otherItems.map((oi) => {
                       const isActive = oi.itemSlug === itemSlug;
                       return (
-                        <button
+                        <button aria-label="button"
                           key={oi._id}
                           onClick={() => router.push(`/games/${slug}/buy/${oi.itemSlug}`)}
                           className={`
@@ -415,7 +415,7 @@ function BuyFlowContent() {
 
                   {/* CHECK ACCOUNT BUTTON */}
                   <div className="space-y-3">
-                    <button
+                    <button aria-label="button"
                       onClick={handleValidate}
                       disabled={loading || !playerId}
                       className="w-full py-3.5 bg-[var(--accent)] text-white font-[1000] uppercase tracking-[0.2em] italic text-[11px] rounded-xl hover:shadow-[0_10px_20px_rgba(var(--accent-rgb),0.3)] disabled:opacity-50 disabled:grayscale transition-all flex items-center justify-center gap-2"
@@ -453,7 +453,7 @@ function BuyFlowContent() {
                         <FiUserCheck className="text-[var(--accent)] text-lg" />
                         <h3 className="text-[10px] font-black text-[var(--muted)] uppercase tracking-widest">Recent Players</h3>
                       </div>
-                      <button
+                      <button aria-label="button"
                         onClick={() => setShowSuggestions(!showSuggestions)}
                         className="text-[9px] font-black text-[var(--accent)] uppercase tracking-widest hover:opacity-70 transition-opacity"
                       >
@@ -563,7 +563,7 @@ function BuyFlowContent() {
                       <span className="text-3xl font-[1000] text-[var(--foreground)] tracking-tighter italic">₹{item?.sellingPrice || 0}</span>
                     </div>
 
-                    <button
+                    <button aria-label="button"
                       onClick={handleProceed}
                       disabled={isProcessing || !verifiedAccount}
                       className={`w-full py-5 rounded-[1.5rem] font-[1000] uppercase tracking-[0.2em] italic text-sm transition-all flex items-center justify-center gap-3

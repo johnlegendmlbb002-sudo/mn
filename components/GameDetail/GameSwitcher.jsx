@@ -128,7 +128,7 @@ export default function GameSwitcher() {
                             key={`${game.gameSlug}-${idx}-${isVariant ? 'wp' : 'reg'}`}
                             className="flex-shrink-0 flex flex-col items-center gap-1.5 snap-center"
                         >
-                            <button
+                            <button aria-label="button"
                                 onClick={() => handleSwitch(game)}
                                 className={`
                                     relative w-11 h-11 md:w-12 md:h-12 rounded-2xl group

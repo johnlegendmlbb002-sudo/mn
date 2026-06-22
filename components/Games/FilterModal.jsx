@@ -40,7 +40,7 @@ export default function FilterModal({
                 </p>
               </div>
             </div>
-            <button
+            <button aria-label="button"
               onClick={onClose}
               className="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 flex items-center justify-center text-[var(--muted)] hover:text-white shadow-xl"
             >
@@ -62,7 +62,7 @@ export default function FilterModal({
                 { id: "az", label: "Name: A to Z" },
                 { id: "za", label: "Name: Z to A" },
               ].map((option) => (
-                <button
+                <button aria-label="button"
                   key={option.id}
                   onClick={() => setSort(option.id)}
                   className={`relative group flex items-center justify-between px-6 py-4 rounded-2xl border-2
@@ -122,7 +122,7 @@ export default function FilterModal({
         </div>
 
         <div className="p-8 pt-4 bg-white/5 border-t border-white/5">
-          <button
+          <button aria-label="button"
             onClick={onClose}
             className="group w-full py-5 rounded-[2rem] bg-[var(--accent)] text-black font-black uppercase tracking-[0.2em] italic text-xs shadow-xl flex items-center justify-center gap-3"
           >

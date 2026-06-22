@@ -242,7 +242,7 @@ export default function MLBBTournamentPage() {
               </div>
             </div>
 
-            <button
+            <button aria-label="button"
               onClick={() => openRegister(fmt)}
               disabled={displayStatus !== "open" && displayStatus !== "upcoming" && displayStatus !== "ongoing"}
               className={`flex items-center justify-center gap-2 w-full py-3 rounded-xl border text-[10px] font-black uppercase tracking-widest transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed ${
@@ -325,7 +325,7 @@ export default function MLBBTournamentPage() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               className="relative w-full max-w-md bg-[var(--background)] border border-[var(--border)] rounded-[2.5rem] overflow-hidden shadow-2xl p-6 md:p-8"
             >
-              <button onClick={() => setRegistering(null)} className="absolute top-6 right-6 w-8 h-8 rounded-full bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+              <button aria-label="button" onClick={() => setRegistering(null)} className="absolute top-6 right-6 w-8 h-8 rounded-full bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
                 <FiX size={18} />
               </button>
 
@@ -400,7 +400,7 @@ export default function MLBBTournamentPage() {
                   </div>
                 </div>
 
-                <button
+                <button aria-label="button"
                   onClick={handleRegister}
                   disabled={formLoading || msg.type === "success"}
                   className="w-full py-4 rounded-2xl bg-[var(--accent)] text-white text-[11px] font-[900] italic uppercase tracking-[0.2em] shadow-lg shadow-[var(--accent)]/20 hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-2"

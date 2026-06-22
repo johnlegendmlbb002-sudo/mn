@@ -138,7 +138,7 @@ export default function OrderItem({ order }: { order: OrderType }) {
           </div>
 
           {config.label === 'PENDING' && order.paymentMethod?.toLowerCase() === 'upi' && (
-            <button
+            <button aria-label="button"
               onClick={handleVerify}
               disabled={verifyLoading}
               className="px-1.5 py-0.5 rounded-sm bg-[var(--accent)]/5 border border-[var(--accent)]/20 text-[var(--accent)] text-[7px] font-black uppercase tracking-wider hover:bg-[var(--accent)] hover:text-black transition-all flex items-center gap-1"
@@ -152,7 +152,7 @@ export default function OrderItem({ order }: { order: OrderType }) {
           <span className="text-[7.5px] font-bold text-[var(--foreground)] font-mono break-all leading-none max-w-[140px]">
             {order.orderId.toUpperCase()}
           </span>
-          <button
+          <button aria-label="button"
             onClick={handleCopy}
             className="p-1 hover:text-[var(--accent)] transition-colors flex-shrink-0"
           >

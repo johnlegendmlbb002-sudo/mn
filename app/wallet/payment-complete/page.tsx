@@ -170,7 +170,7 @@ export default function PaymentComplete() {
                   </div>
                 ) : (
                   <Link href="/" className="w-fit">
-                    <button className="px-16 py-2.5 rounded-xl bg-[var(--accent)] !text-white font-black italic uppercase tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-[var(--accent)]/20 hover:bg-[var(--accent-hover)] transition-all">
+                    <button aria-label="button" className="px-16 py-2.5 rounded-xl bg-[var(--accent)] !text-white font-black italic uppercase tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-[var(--accent)]/20 hover:bg-[var(--accent-hover)] transition-all">
                       <span>Home</span>
                       <ArrowRight size={14} />
                     </button>
@@ -179,7 +179,7 @@ export default function PaymentComplete() {
 
                 {(status === "delayed" || status === "failed") && (
                   <Link href="/support" className="w-fit">
-                    <button className="w-fit px-10 py-2.5 rounded-xl border border-[var(--border)] text-[var(--foreground)] font-bold text-sm uppercase tracking-wider hover:bg-[var(--muted)]/5 transition-all flex items-center justify-center gap-2">
+                    <button aria-label="button" className="w-fit px-10 py-2.5 rounded-xl border border-[var(--border)] text-[var(--foreground)] font-bold text-sm uppercase tracking-wider hover:bg-[var(--muted)]/5 transition-all flex items-center justify-center gap-2">
                       <HelpCircle size={14} />
                       <span>Support</span>
                     </button>

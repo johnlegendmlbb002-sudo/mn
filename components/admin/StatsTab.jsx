@@ -263,13 +263,13 @@ export default function StatsTab() {
                 <div className="flex items-center justify-between sm:justify-end gap-3">
                     {/* TABS */}
                     <div className="flex bg-[var(--foreground)]/[0.03] p-1 rounded-xl border border-[var(--border)] flex-1 sm:flex-none">
-                        <button
+                        <button aria-label="button"
                             onClick={() => setActiveTab("history")}
                             className={`flex-1 sm:px-4 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all ${activeTab === 'history' ? 'bg-[var(--card)] text-[var(--foreground)] shadow-sm' : 'text-[var(--muted)] hover:text-[var(--foreground)]'}`}
                         >
                             History
                         </button>
-                        <button
+                        <button aria-label="button"
                             onClick={() => setActiveTab("wallets")}
                             className={`flex-1 sm:px-4 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all ${activeTab === 'wallets' ? 'bg-[var(--card)] text-[var(--foreground)] shadow-sm' : 'text-[var(--muted)] hover:text-[var(--foreground)]'}`}
                         >
@@ -277,7 +277,7 @@ export default function StatsTab() {
                         </button>
                     </div>
 
-                    <button
+                    <button aria-label="button"
                         onClick={() => {
                             fetchStats();
                             if (activeTab === "history") fetchHistory();
@@ -412,7 +412,7 @@ export default function StatsTab() {
                                 </div>
                                 
                                 <div className="flex gap-2 w-full md:w-auto pt-1 sm:pt-0">
-                                    <button
+                                    <button aria-label="button"
                                         onClick={() => handleManageWallet("add")}
                                         disabled={updating}
                                         className="flex-1 md:flex-none h-10 sm:h-11 px-4 sm:px-5 rounded-xl bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 font-bold text-[11px] flex items-center justify-center gap-2 hover:bg-emerald-500/20 active:scale-95 transition-all outline-none disabled:opacity-50"
@@ -421,7 +421,7 @@ export default function StatsTab() {
                                         <span className="hidden xs:inline">Add Money</span>
                                         <span className="xs:hidden">Add</span>
                                     </button>
-                                    <button
+                                    <button aria-label="button"
                                         onClick={() => handleManageWallet("remove")}
                                         disabled={updating}
                                         className="flex-1 md:flex-none h-10 sm:h-11 px-4 sm:px-5 rounded-xl bg-red-500/10 text-red-500 border border-red-500/20 font-bold text-[11px] flex items-center justify-center gap-2 hover:bg-red-500/20 active:scale-95 transition-all outline-none disabled:opacity-50"
@@ -525,7 +525,7 @@ export default function StatsTab() {
                                                     <div className="mt-2 flex justify-end gap-2">
                                                         <div className="mt-2 flex justify-end gap-2">
                                                             {txn.status === 'pending' && (
-                                                                <button
+                                                                <button aria-label="button"
                                                                     onClick={async () => {
                                                                         if (!confirm("Verify with Gateway?")) return;
                                                                         try {
@@ -549,7 +549,7 @@ export default function StatsTab() {
                                                                 </button>
                                                             )}
                                                             {txn.status !== 'success' && (
-                                                                <button
+                                                                <button aria-label="button"
                                                                     onClick={() => handleStatusUpdate(txn._id, 'success')}
                                                                     className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20 transition-colors"
                                                                     title="Manually Mark Success"
@@ -558,7 +558,7 @@ export default function StatsTab() {
                                                                 </button>
                                                             )}
                                                             {txn.status !== 'failed' && (
-                                                                <button
+                                                                <button aria-label="button"
                                                                     onClick={() => handleStatusUpdate(txn._id, 'failed')}
                                                                     className="p-1.5 rounded-lg bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors"
                                                                     title="Mark Failed & Deduct"
@@ -669,7 +669,7 @@ export default function StatsTab() {
                                                         <td className="px-6 py-4 text-right">
                                                             <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                                                 {txn.status === 'pending' && (
-                                                                    <button
+                                                                    <button aria-label="button"
                                                                         onClick={async () => {
                                                                             if (!confirm("Verify this Pending Transaction with Gateway?")) return;
                                                                             try {
@@ -694,7 +694,7 @@ export default function StatsTab() {
                                                                     </button>
                                                                 )}
                                                                 {txn.status !== 'success' && (
-                                                                    <button
+                                                                    <button aria-label="button"
                                                                         onClick={() => handleStatusUpdate(txn._id, 'success')}
                                                                         className="p-1.5 rounded-lg hover:bg-emerald-500/10 text-emerald-500 transition-colors"
                                                                         title="Manually Mark as Success"
@@ -703,7 +703,7 @@ export default function StatsTab() {
                                                                     </button>
                                                                 )}
                                                                 {txn.status !== 'failed' && (
-                                                                    <button
+                                                                    <button aria-label="button"
                                                                         onClick={() => handleStatusUpdate(txn._id, 'failed')}
                                                                         className="p-1.5 rounded-lg hover:bg-red-500/10 text-red-500 transition-colors"
                                                                         title="Mark as Failed & Deduct Funds"
@@ -730,14 +730,14 @@ export default function StatsTab() {
                                     Page {historyPage} of {historyTotalPages}
                                 </span>
                                 <div className="flex gap-2">
-                                    <button
+                                    <button aria-label="button"
                                         disabled={historyPage === 1}
                                         onClick={() => setHistoryPage(p => Math.max(1, p - 1))}
                                         className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
                                     >
                                         <FiChevronLeft size={14} />
                                     </button>
-                                    <button
+                                    <button aria-label="button"
                                         disabled={historyPage === historyTotalPages}
                                         onClick={() => setHistoryPage(p => Math.min(historyTotalPages, p + 1))}
                                         className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
@@ -819,7 +819,7 @@ export default function StatsTab() {
                                                         </p>
                                                     </div>
                                                     
-                                                    <button
+                                                    <button aria-label="button"
                                                         onClick={() => {
                                                             setSelectedUserForWallet(user);
                                                             setQuickAmount("");
@@ -902,7 +902,7 @@ export default function StatsTab() {
                                                                     </span>
                                                                     <span className="text-[9px] text-[var(--muted)] uppercase font-bold tracking-tighter opacity-50">Current Balance</span>
                                                                 </div>
-                                                                <button
+                                                                <button aria-label="button"
                                                                     onClick={() => {
                                                                         setSelectedUserForWallet(user);
                                                                         setQuickAmount("");
@@ -931,7 +931,7 @@ export default function StatsTab() {
                                         Page {data.pagination?.page || 1} / {data.pagination?.totalPages || 1}
                                     </span>
                                     <div className="flex gap-2">
-                                        <button
+                                        <button aria-label="button"
                                             disabled={!data.pagination || data.pagination.page === 1}
                                             onClick={() => setWalletPage(p => Math.max(1, p - 1))}
                                             className="h-9 px-4 rounded-xl border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.03] disabled:opacity-20 disabled:cursor-not-allowed transition-all flex items-center gap-2 text-xs font-bold"
@@ -939,7 +939,7 @@ export default function StatsTab() {
                                             <FiChevronLeft size={16} />
                                             Prev
                                         </button>
-                                        <button
+                                        <button aria-label="button"
                                             disabled={!data.pagination || data.pagination.page === data.pagination.totalPages}
                                             onClick={() => setWalletPage(p => Math.min(data.pagination?.totalPages || 1, p + 1))}
                                             className="h-9 px-4 rounded-xl border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.03] disabled:opacity-20 disabled:cursor-not-allowed transition-all flex items-center gap-2 text-xs font-bold"
@@ -983,7 +983,7 @@ export default function StatsTab() {
                                             <p className="text-xs text-[var(--muted)]">Manage user balance</p>
                                         </div>
                                     </div>
-                                    <button
+                                    <button aria-label="button"
                                         onClick={() => setSelectedUserForWallet(null)}
                                         className="w-10 h-10 rounded-full bg-[var(--foreground)]/[0.05] text-[var(--muted)] flex items-center justify-center hover:text-[var(--foreground)] transition-all"
                                     >
@@ -1022,7 +1022,7 @@ export default function StatsTab() {
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-3 pt-4">
-                                        <button
+                                        <button aria-label="button"
                                             onClick={() => handleManageWallet("remove", selectedUserForWallet.email, quickAmount)}
                                             disabled={updating || !quickAmount}
                                             className="h-12 rounded-2xl bg-rose-500/10 hover:bg-rose-500 text-rose-500 hover:text-white border border-rose-500/20 font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30 shadow-lg shadow-transparent hover:shadow-rose-500/20"
@@ -1030,7 +1030,7 @@ export default function StatsTab() {
                                             {updating ? <Loader2 className="animate-spin" size={16} /> : <FiMinus size={16} />}
                                             Deduct
                                         </button>
-                                        <button
+                                        <button aria-label="button"
                                             onClick={() => handleManageWallet("add", selectedUserForWallet.email, quickAmount)}
                                             disabled={updating || !quickAmount}
                                             className="h-12 rounded-2xl bg-emerald-500/10 hover:bg-emerald-500 text-emerald-500 hover:text-white border border-emerald-500/20 font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-30 shadow-lg shadow-transparent hover:shadow-emerald-500/20"

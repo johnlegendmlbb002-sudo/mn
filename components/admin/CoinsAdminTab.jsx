@@ -288,7 +288,7 @@ export default function CoinsAdminTab() {
         </div>
 
         <div className="flex gap-2">
-          <button
+          <button aria-label="button"
             onClick={() => { setView("users"); setPage(1); }}
             className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wide border transition-all ${
               view === "users" ? "bg-[var(--accent)]/15 border-[var(--accent)]/40 text-[var(--accent)]"
@@ -297,7 +297,7 @@ export default function CoinsAdminTab() {
           >
             Users
           </button>
-          <button
+          <button aria-label="button"
             onClick={() => { setView("claims"); setPage(1); }}
             className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wide border transition-all ${
               view === "claims" ? "bg-[var(--accent)]/15 border-[var(--accent)]/40 text-[var(--accent)]"
@@ -306,7 +306,7 @@ export default function CoinsAdminTab() {
           >
             Claims {pendingCount > 0 && `(${pendingCount})`}
           </button>
-          <button
+          <button aria-label="button"
             onClick={() => { setView("history"); setPage(1); }}
             className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wide border transition-all ${
               view === "history" ? "bg-[var(--accent)]/15 border-[var(--accent)]/40 text-[var(--accent)]"
@@ -315,7 +315,7 @@ export default function CoinsAdminTab() {
           >
             History
           </button>
-          <button
+          <button aria-label="button"
             onClick={() => { setView("tasks"); setPage(1); }}
             className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wide border transition-all ${
               view === "tasks" ? "bg-[var(--accent)]/15 border-[var(--accent)]/40 text-[var(--accent)]"
@@ -341,7 +341,7 @@ export default function CoinsAdminTab() {
                 className="w-full bg-[var(--card)] border border-[var(--border)] rounded-xl pl-9 pr-3 py-2 text-[10px] font-bold outline-none focus:border-[var(--accent)]/40"
               />
             </div>
-            <button onClick={fetchUsers} className="text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
+            <button aria-label="button" onClick={fetchUsers} className="text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
               <FiRefreshCw className={`text-xs ${loading ? "animate-spin" : ""}`} />
             </button>
           </div>
@@ -401,7 +401,7 @@ export default function CoinsAdminTab() {
                             <span className="text-xs font-black text-amber-400">{u.coins || 0} BBC</span>
                             <span className="text-[7px] text-[var(--muted)] font-bold uppercase tracking-tighter">Points</span>
                           </div>
-                          <button
+                          <button aria-label="button"
                             onClick={() => setAdjModal(u)}
                             className="p-1.5 rounded-lg bg-[var(--foreground)]/[0.05] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--accent)] transition-all"
                             title="Adjust Balance"
@@ -419,14 +419,14 @@ export default function CoinsAdminTab() {
 
           {pages > 1 && (
             <div className="flex items-center justify-center gap-3 pt-2">
-              <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
+              <button aria-label="button" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
                 className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                 <FiChevronLeft className="text-xs" />
               </button>
               <span className="text-[10px] font-black uppercase tracking-wide text-[var(--muted)]">
                 {page} / {pages}
               </span>
-              <button onClick={() => setPage(p => Math.min(pages, p + 1))} disabled={page === pages}
+              <button aria-label="button" onClick={() => setPage(p => Math.min(pages, p + 1))} disabled={page === pages}
                 className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                 <FiChevronRight className="text-xs" />
               </button>
@@ -462,7 +462,7 @@ export default function CoinsAdminTab() {
                 <option value="convert_to_wallet">Spend</option>
                 <option value="admin">Admin</option>
               </select>
-              <button onClick={fetchHistory} className="text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
+              <button aria-label="button" onClick={fetchHistory} className="text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
                 <FiRefreshCw className={`text-xs ${loading ? "animate-spin" : ""}`} />
               </button>
             </div>
@@ -535,14 +535,14 @@ export default function CoinsAdminTab() {
 
           {pages > 1 && (
             <div className="flex items-center justify-center gap-3 pt-2">
-              <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
+              <button aria-label="button" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
                 className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                 <FiChevronLeft className="text-xs" />
               </button>
               <span className="text-[10px] font-black uppercase tracking-wide text-[var(--muted)]">
                 {page} / {pages}
               </span>
-              <button onClick={() => setPage(p => Math.min(pages, p + 1))} disabled={page === pages}
+              <button aria-label="button" onClick={() => setPage(p => Math.min(pages, p + 1))} disabled={page === pages}
                 className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                 <FiChevronRight className="text-xs" />
               </button>
@@ -556,7 +556,7 @@ export default function CoinsAdminTab() {
         <div className="space-y-4">
           <div className="flex gap-2 flex-wrap">
             {["pending", "approved", "rejected", "all"].map((s) => (
-              <button
+              <button aria-label="button"
                 key={s}
                 onClick={() => { setClaimStatus(s); setPage(1); }}
                 className={`px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-wide border transition-all ${
@@ -568,7 +568,7 @@ export default function CoinsAdminTab() {
                 {s}
               </button>
             ))}
-            <button onClick={fetchClaims} className="ml-auto text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
+            <button aria-label="button" onClick={fetchClaims} className="ml-auto text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
               <FiRefreshCw className={`text-xs ${loading ? "animate-spin" : ""}`} />
             </button>
           </div>
@@ -644,14 +644,14 @@ export default function CoinsAdminTab() {
 
           {pages > 1 && (
             <div className="flex items-center justify-center gap-3 pt-2">
-              <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
+              <button aria-label="button" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
                 className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                 <FiChevronLeft className="text-xs" />
               </button>
               <span className="text-[10px] font-black uppercase tracking-wide text-[var(--muted)]">
                 {page} / {pages}
               </span>
-              <button onClick={() => setPage(p => Math.min(pages, p + 1))} disabled={page === pages}
+              <button aria-label="button" onClick={() => setPage(p => Math.min(pages, p + 1))} disabled={page === pages}
                 className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                 <FiChevronRight className="text-xs" />
               </button>
@@ -668,7 +668,7 @@ export default function CoinsAdminTab() {
               Tasks Management
             </p>
             <div className="flex gap-2">
-              <button onClick={fetchTasks} className="text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
+              <button aria-label="button" onClick={fetchTasks} className="text-[var(--muted)]/40 hover:text-[var(--muted)] transition-colors">
                 <FiRefreshCw className={`text-xs ${loading ? "animate-spin" : ""}`} />
               </button>
               <motion.button
@@ -725,15 +725,15 @@ export default function CoinsAdminTab() {
                   </div>
 
                   <div className="flex items-center gap-2 shrink-0">
-                    <button onClick={() => toggleTask(task)} title={task.active ? "Deactivate" : "Activate"}
+                    <button aria-label="button" onClick={() => toggleTask(task)} title={task.active ? "Deactivate" : "Activate"}
                       className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors">
                       {task.active ? <FiToggleRight className="text-xl text-emerald-400" /> : <FiToggleLeft className="text-xl" />}
                     </button>
-                    <button onClick={() => { setEditTask(task); setShowForm(true); }}
+                    <button aria-label="button" onClick={() => { setEditTask(task); setShowForm(true); }}
                       className="text-[var(--muted)]/40 hover:text-[var(--accent)] transition-colors">
                       <FiEdit3 className="text-sm" />
                     </button>
-                    <button onClick={() => deleteTask(task.taskId)}
+                    <button aria-label="button" onClick={() => deleteTask(task.taskId)}
                       className="text-[var(--muted)]/40 hover:text-rose-400 transition-colors">
                       <FiTrash2 className="text-sm" />
                     </button>
@@ -745,14 +745,14 @@ export default function CoinsAdminTab() {
 
           {pages > 1 && (
             <div className="flex items-center justify-center gap-3 pt-2">
-              <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
+              <button aria-label="button" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
                 className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                 <FiChevronLeft className="text-xs" />
               </button>
               <span className="text-[10px] font-black uppercase tracking-wide text-[var(--muted)]">
                 {page} / {pages}
               </span>
-              <button onClick={() => setPage(p => Math.min(pages, p + 1))} disabled={page === pages}
+              <button aria-label="button" onClick={() => setPage(p => Math.min(pages, p + 1))} disabled={page === pages}
                 className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)]/30 disabled:opacity-30">
                 <FiChevronRight className="text-xs" />
               </button>
@@ -803,11 +803,11 @@ export default function CoinsAdminTab() {
                 className="w-full bg-[var(--background)]/60 border border-[var(--border)] rounded-xl p-3 text-xs font-bold outline-none focus:border-rose-500/40 resize-none"
               />
               <div className="flex flex-col sm:flex-row gap-2">
-                <button onClick={() => setRejModal(null)}
+                <button aria-label="button" onClick={() => setRejModal(null)}
                   className="flex-1 py-3 rounded-xl border border-[var(--border)] text-[var(--muted)] text-[10px] font-black uppercase">
                   Cancel
                 </button>
-                <button onClick={rejectClaim} disabled={!!actionLoading}
+                <button aria-label="button" onClick={rejectClaim} disabled={!!actionLoading}
                   className="flex-1 py-3 rounded-xl bg-rose-500 text-white text-[10px] font-black uppercase disabled:opacity-50">
                   {actionLoading ? <FiRefreshCw className="animate-spin mx-auto" /> : "Reject Claim"}
                 </button>
@@ -844,20 +844,20 @@ export default function CoinsAdminTab() {
                     <p className="text-[8px] text-[var(--muted)]/50 font-bold uppercase">{adjModal.userId}</p>
                   </div>
                 </div>
-                <button onClick={() => setAdjModal(null)} className="text-[var(--muted)]/40 hover:text-[var(--muted)]">
+                <button aria-label="button" onClick={() => setAdjModal(null)} className="text-[var(--muted)]/40 hover:text-[var(--muted)]">
                   <FiX />
                 </button>
               </div>
 
               <div className="space-y-4">
                 <div className="flex bg-[var(--background)]/60 rounded-xl p-1 border border-[var(--border)]">
-                  <button
+                  <button aria-label="button"
                     onClick={() => setAdjAction("add")}
                     className={`flex-1 py-2 text-[9px] font-black uppercase rounded-lg transition-all ${adjAction === "add" ? "bg-emerald-500 text-white" : "text-[var(--muted)]"}`}
                   >
                     Add
                   </button>
-                  <button
+                  <button aria-label="button"
                     onClick={() => setAdjAction("remove")}
                     className={`flex-1 py-2 text-[9px] font-black uppercase rounded-lg transition-all ${adjAction === "remove" ? "bg-rose-500 text-white" : "text-[var(--muted)]"}`}
                   >
@@ -889,7 +889,7 @@ export default function CoinsAdminTab() {
                   </div>
                 </div>
 
-                <button
+                <button aria-label="button"
                   onClick={adjustCoins}
                   disabled={!!actionLoading || !adjAmount || Number(adjAmount) <= 0}
                   className={`w-full py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all disabled:opacity-50 ${adjAction === "add" ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/20" : "bg-rose-500 text-white shadow-lg shadow-rose-500/20"}`}
@@ -1018,7 +1018,7 @@ function TaskFormModal({ task, token, onClose, onSaved, onError }) {
           <h3 className="text-sm font-black uppercase tracking-wide">
             {task ? "Edit Task" : "Create New Task"}
           </h3>
-          <button onClick={onClose} className="text-[var(--muted)]/40 hover:text-[var(--muted)]">
+          <button aria-label="button" onClick={onClose} className="text-[var(--muted)]/40 hover:text-[var(--muted)]">
             <FiX />
           </button>
         </div>
@@ -1087,7 +1087,7 @@ function TaskFormModal({ task, token, onClose, onSaved, onError }) {
                 </p>
               </div>
               {/* Toggle switch */}
-              <button
+              <button aria-label="button"
                 type="button"
                 onClick={() => handleToggleCode(!requireCode)}
                 className={`relative w-11 h-6 rounded-full border-2 transition-all duration-300 shrink-0 ${
@@ -1123,10 +1123,10 @@ function TaskFormModal({ task, token, onClose, onSaved, onError }) {
         </div>
 
         <div className="flex gap-3 pt-2">
-          <button onClick={onClose} className="flex-1 py-3 rounded-xl border border-[var(--border)] text-[var(--muted)] text-[10px] font-black uppercase">
+          <button aria-label="button" onClick={onClose} className="flex-1 py-3 rounded-xl border border-[var(--border)] text-[var(--muted)] text-[10px] font-black uppercase">
             Cancel
           </button>
-          <button onClick={save} disabled={saving}
+          <button aria-label="button" onClick={save} disabled={saving}
             className="flex-1 py-3 rounded-xl bg-[var(--accent)] text-white text-[10px] font-black uppercase disabled:opacity-50 flex items-center justify-center gap-2">
             {saving ? <FiRefreshCw className="animate-spin" /> : <FiCheck />}
             {task ? "Save Changes" : "Create Task"}

@@ -68,7 +68,7 @@ export default function TradeLandingPage() {
         {/* 2x2 GRID FOR ALL SCREENS */}
         <div className="grid grid-cols-2 gap-3 md:gap-5">
           {SECTIONS.map((section, idx) => (
-            <button
+            <button aria-label="button"
               key={idx}
               onClick={() => handleRedirect(section.helpText)}
               className={`group relative flex flex-col items-start p-4 md:p-7 rounded-xl md:rounded-3xl border border-[var(--foreground)]/5 bg-gradient-to-br ${section.color} hover:border-[var(--accent)]/30 transition-all duration-500 text-left overflow-hidden hover:scale-[1.01] active:scale-[0.98] shadow-lg md:shadow-xl`}

@@ -108,14 +108,14 @@ export default function GiveawaysPage() {
 
                 {/* Action */}
                 <div className="shrink-0 flex items-center gap-1.5">
-                  <button
+                  <button aria-label="button"
                     className="flex items-center justify-center w-7 h-7 text-[var(--muted)] hover:text-[var(--foreground)] bg-[var(--foreground)]/[0.03] hover:bg-[var(--foreground)]/[0.08] rounded-lg transition-colors border border-[var(--border)]"
                     onClick={(e) => handleShare(e, g)}
                     aria-label="Share"
                   >
                     <FiShare2 size={12} />
                   </button>
-                  <button
+                  <button aria-label="button"
                     disabled={isFull}
                     className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg text-[10px] font-black transition-all ${
                       isFull 

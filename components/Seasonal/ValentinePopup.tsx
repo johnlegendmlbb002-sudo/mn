@@ -89,7 +89,7 @@ export default function ValentinePopup() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-b from-rose-500/20 to-transparent rounded-full blur-[50px] pointer-events-none" />
 
             {/* Close Button */}
-            <button
+            <button aria-label="button"
               onClick={handleClose}
               className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 text-white/40 hover:text-white transition-all flex items-center justify-center z-20"
             >

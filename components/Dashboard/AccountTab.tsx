@@ -144,7 +144,7 @@ export default function AccountTab({ userDetails }: AccountTabProps) {
                 />
               </div>
 
-              <button
+              <button aria-label="button"
                 disabled={true}
                 onClick={handlePasswordUpdate}
                 className="w-full p-5 rounded-[2rem] bg-[var(--accent)] text-black font-black uppercase tracking-[0.2em] italic text-xs shadow-[0_20px_40px_-10px_rgba(var(--accent-rgb),0.3)] hover:scale-[1.01] active:scale-95 disabled:opacity-50 transition-all flex items-center justify-center gap-3"

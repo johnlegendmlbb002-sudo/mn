@@ -122,7 +122,7 @@ export default function ServicesPage() {
             <h4 className="text-base font-black italic uppercase tracking-tighter mb-1">Need more?</h4>
             <p className="text-[var(--muted)] text-[8px] font-black uppercase tracking-widest opacity-30 italic">Contact us for custom deals.</p>
           </div>
-          <button
+          <button aria-label="button"
             onClick={() => window.open(whatsappLink, "_blank")}
             className="px-6 py-2.5 rounded-xl bg-[var(--accent)] text-black font-black uppercase tracking-widest text-[9px] italic shadow-lg hover:scale-[1.03] active:scale-95 transition-all flex items-center gap-2 mx-auto"
           >

@@ -71,7 +71,7 @@ function FilterChip({
   onClick: () => void;
 }) {
   return (
-    <button
+    <button aria-label="button"
       onClick={onClick}
       className={`
         flex items-center gap-2

@@ -128,7 +128,7 @@ export default function ReferralTab({
                             >
                                 {copied ? <FiCheckCircle size={14} /> : <FiCopy size={14} />}
                             </button>
-                            <button
+                            <button aria-label="button"
                                 onClick={() => {
                                     const shareText = `Join mlbbtopup.in\nCode: ${userReferral?.userId}`;
                                     if (navigator.share) {
@@ -177,7 +177,7 @@ export default function ReferralTab({
                                     {referralMessage}
                                 </p>
                             )}
-                            <button
+                            <button aria-label="button"
                                 onClick={handleRedeemReferral}
                                 disabled={referralLoading || !referralCodeInput}
                                 className="w-full p-3 rounded-xl bg-[var(--accent)] text-black font-black uppercase tracking-widest italic text-[10px] shadow-lg hover:scale-[1.01] active:scale-95 disabled:opacity-30 transition-all flex items-center justify-center gap-2"
@@ -203,7 +203,7 @@ export default function ReferralTab({
                     <h3 className="text-sm font-black italic tracking-tighter text-[var(--foreground)] uppercase">
                         Friends Who Joined
                     </h3>
-                    <button onClick={fetchReferrals} className="p-1.5 text-[var(--muted)] hover:text-[var(--accent)] transition-all">
+                    <button aria-label="button" onClick={fetchReferrals} className="p-1.5 text-[var(--muted)] hover:text-[var(--accent)] transition-all">
                         <FiLoader size={12} className={loadingList ? "animate-spin" : ""} />
                     </button>
                 </div>
@@ -246,9 +246,9 @@ export default function ReferralTab({
                         </div>
                         {totalPages > 1 && (
                             <div className="flex justify-center gap-4 pt-2">
-                                <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1} className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)] disabled:opacity-20">Prev</button>
+                                <button aria-label="button" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1} className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)] disabled:opacity-20">Prev</button>
                                 <span className="text-[9px] font-black text-[var(--muted)]/40 italic">Page {page} of {totalPages}</span>
-                                <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages} className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)] disabled:opacity-20">Next</button>
+                                <button aria-label="button" onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages} className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)] disabled:opacity-20">Next</button>
                             </div>
                         )}
                     </div>

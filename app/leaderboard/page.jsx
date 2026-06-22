@@ -76,7 +76,7 @@ export default function LeaderboardPage() {
                 { id: "purchase", label: "Top Spenders", icon: FiDollarSign },
                 { id: "referral", label: "Top Referrers", icon: FiUsers }
               ].map((t) => (
-                <button
+                <button aria-label="button"
                   key={t.id}
                   onClick={() => setType(t.id)}
                   className={`flex-1 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 ${type === t.id
@@ -96,7 +96,7 @@ export default function LeaderboardPage() {
                 { id: "monthly", label: currentMonthName },
                 { id: "prev-month", label: prevMonthName }
               ].map((r) => (
-                <button
+                <button aria-label="button"
                   key={r.id}
                   onClick={() => setRange(r.id)}
                   className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${range === r.id

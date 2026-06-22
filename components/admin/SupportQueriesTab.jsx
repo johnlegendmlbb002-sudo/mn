@@ -192,7 +192,7 @@ export default function SupportQueriesTab() {
               {pagination.total} Total
             </span>
           </div>
-          <button
+          <button aria-label="button"
             onClick={() => { fetchQueriesStats(); fetchQueriesList(); }}
             className="p-2 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)]"
           >
@@ -315,14 +315,14 @@ export default function SupportQueriesTab() {
                     Page {pagination.page} / {pagination.totalPages}
                   </p>
                   <div className="flex gap-2">
-                    <button
+                    <button aria-label="button"
                       onClick={() => setPage((p) => Math.max(1, p - 1))}
                       disabled={page === 1}
                       className="px-4 py-2 rounded-xl border border-[var(--border)] text-[10px] font-bold uppercase text-[var(--muted)] hover:text-[var(--foreground)] disabled:opacity-20 transition-all"
                     >
                       Prev
                     </button>
-                    <button
+                    <button aria-label="button"
                       onClick={() => setPage((p) => Math.min(pagination.totalPages, p + 1))}
                       disabled={page === pagination.totalPages}
                       className="px-4 py-2 rounded-xl border border-[var(--border)] text-[10px] font-bold uppercase text-[var(--muted)] hover:text-[var(--foreground)] disabled:opacity-20 transition-all"
@@ -357,7 +357,7 @@ export default function SupportQueriesTab() {
             >
               <div className="px-6 py-4 border-b border-[var(--border)] flex items-center justify-between">
                 <h3 className="text-base font-bold text-[var(--foreground)]">Query Details</h3>
-                <button
+                <button aria-label="button"
                   onClick={() => setActiveQuery(null)}
                   className="w-8 h-8 rounded-full bg-[var(--foreground)]/[0.05] flex items-center justify-center text-[var(--muted)]/40 hover:text-[var(--foreground)] hover:bg-red-500/20 transition-all"
                 >
@@ -426,7 +426,7 @@ export default function SupportQueriesTab() {
                     </p>
                   )}
 
-                  <button
+                  <button aria-label="button"
                     disabled={!replyText.trim() || sendingReply}
                     onClick={() => sendAdminReply(activeQuery._id, getStatus(activeQuery.status))}
                     className="w-full h-10 rounded-xl bg-[var(--accent)] text-black text-[10px] font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] disabled:opacity-30 transition-all"
@@ -462,7 +462,7 @@ function CustomDropdown({ value, onChange, options, disabled }) {
 
   return (
     <div className="relative w-full" ref={containerRef}>
-      <button
+      <button aria-label="button"
         onClick={() => !disabled && setIsOpen(!isOpen)}
         disabled={disabled}
         className={`
@@ -488,7 +488,7 @@ function CustomDropdown({ value, onChange, options, disabled }) {
             className="absolute z-[1110] w-full rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-2xl p-1 overflow-hidden backdrop-blur-xl"
           >
             {options.map((option) => (
-              <button
+              <button aria-label="button"
                 key={option.value}
                 onClick={() => {
                   onChange(option.value);

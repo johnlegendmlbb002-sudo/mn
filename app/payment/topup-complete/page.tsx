@@ -282,7 +282,7 @@ export default function TopupComplete() {
 
                 {/* Actions */}
                 <div className="w-full space-y-2">
-                  <button
+                  <button aria-label="button"
                     onClick={() => (window.location.href = "/dashboard")}
                     className="w-fit px-10 mx-auto group rounded-xl bg-[var(--accent)] py-2.5 font-black italic uppercase tracking-wide !text-white hover:bg-[var(--accent-hover)] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[var(--accent)]/20"
                   >
@@ -291,7 +291,7 @@ export default function TopupComplete() {
                     <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
                   </button>
 
-                  <button
+                  <button aria-label="button"
                     onClick={() => (window.location.href = "/")}
                     className="w-fit px-10 mx-auto rounded-xl border border-[var(--border)] py-2.5 font-bold text-[var(--foreground)] text-sm hover:bg-[var(--muted)]/5 transition flex items-center justify-center gap-2"
                   >
@@ -362,7 +362,7 @@ export default function TopupComplete() {
                     Chat on WhatsApp
                   </a>
 
-                  <button
+                  <button aria-label="button"
                     onClick={() => (window.location.href = "/")}
                     className="w-fit px-10 mx-auto rounded-xl border border-[var(--border)] py-2.5 font-bold text-[var(--foreground)] text-sm hover:bg-[var(--muted)]/5 transition flex items-center justify-center gap-2"
                   >

@@ -83,7 +83,7 @@ export default function HomeServices() {
           <p className="text-[9px] font-black uppercase tracking-widest text-[var(--muted)]/40 italic">
             Need custom deals?
           </p>
-          <button
+          <button aria-label="button"
             onClick={() => window.open(whatsappLink, "_blank")}
             className="flex items-center gap-2 text-[var(--accent)] text-[9px] font-black uppercase tracking-widest italic"
           >

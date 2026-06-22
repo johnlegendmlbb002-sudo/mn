@@ -187,7 +187,7 @@ export default function TournamentsAdminTab() {
           <h2 className="text-base font-bold text-[var(--foreground)]">Tournaments</h2>
           <p className="text-xs text-[var(--muted)] mt-0.5">Create, edit and end tournaments</p>
         </div>
-        <button
+        <button aria-label="button"
           onClick={() => { setForm(emptyForm); setEditId(null); setShowForm(true); }}
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] text-xs font-bold hover:bg-[var(--accent)]/20 transition-colors"
         >
@@ -206,7 +206,7 @@ export default function TournamentsAdminTab() {
         <div className="rounded-xl border border-[var(--border)] bg-[var(--background)]/50 p-5 space-y-4">
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold text-[var(--foreground)]">{editId ? "Edit Tournament" : "New Tournament"}</p>
-            <button onClick={() => { setShowForm(false); setEditId(null); setForm(emptyForm); }} className="text-[var(--muted)] hover:text-[var(--foreground)]"><FiX size={16} /></button>
+            <button aria-label="button" onClick={() => { setShowForm(false); setEditId(null); setForm(emptyForm); }} className="text-[var(--muted)] hover:text-[var(--foreground)]"><FiX size={16} /></button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -304,7 +304,7 @@ export default function TournamentsAdminTab() {
           </div>
 
           <div className="flex gap-2 pt-1">
-            <button
+            <button aria-label="button"
               onClick={handleSubmit}
               disabled={saving}
               className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[var(--accent)] text-white text-xs font-bold hover:opacity-90 disabled:opacity-60 transition-opacity"
@@ -312,7 +312,7 @@ export default function TournamentsAdminTab() {
               {saving ? <FiLoader size={13} className="animate-spin" /> : <FiCheck size={13} />}
               {editId ? "Save Changes" : "Create Tournament"}
             </button>
-            <button
+            <button aria-label="button"
               onClick={() => { setShowForm(false); setEditId(null); setForm(emptyForm); }}
               className="px-4 py-2 rounded-lg border border-[var(--border)] text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
             >
@@ -356,13 +356,13 @@ export default function TournamentsAdminTab() {
 
                   {/* Actions */}
                   <div className="flex items-center gap-2 shrink-0">
-                    <button
+                    <button aria-label="button"
                       onClick={() => openEntries(t)}
                       className="px-3 py-1.5 rounded-lg border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-[10px] font-bold text-[var(--accent)] hover:bg-[var(--accent)]/10 transition-colors"
                     >
                       View Entries
                     </button>
-                    <button
+                    <button aria-label="button"
                       onClick={() => openEdit(t)}
                       className="w-8 h-8 rounded-lg border border-[var(--border)] flex items-center justify-center text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors"
                       title="Edit"
@@ -370,7 +370,7 @@ export default function TournamentsAdminTab() {
                       <FiEdit2 size={13} />
                     </button>
                     {t.status !== "ended" && (
-                      <button
+                      <button aria-label="button"
                         onClick={() => endTournament(t._id)}
                         disabled={isPending}
                         className="px-3 py-1.5 rounded-lg border border-[var(--border)] text-[10px] font-bold text-[var(--muted)] hover:text-orange-400 hover:border-orange-400/30 transition-colors disabled:opacity-40"
@@ -379,7 +379,7 @@ export default function TournamentsAdminTab() {
                         End
                       </button>
                     )}
-                    <button
+                    <button aria-label="button"
                       onClick={() => deleteTournament(t._id)}
                       disabled={isPending}
                       className="w-8 h-8 rounded-lg border border-[var(--border)] flex items-center justify-center text-[var(--muted)] hover:text-red-400 hover:border-red-400/30 transition-colors disabled:opacity-40"
@@ -403,7 +403,7 @@ export default function TournamentsAdminTab() {
                         : "Mark this tournament as ENDED?"}
                     </span>
                     <div className="flex items-center gap-2 shrink-0">
-                      <button
+                      <button aria-label="button"
                         onClick={executeConfirm}
                         className={`px-3 py-1 rounded-lg text-white text-[10px] font-black uppercase tracking-widest ${
                           confirmAction.type === "delete" ? "bg-red-500 hover:bg-red-400" : "bg-orange-500 hover:bg-orange-400"
@@ -411,7 +411,7 @@ export default function TournamentsAdminTab() {
                       >
                         Yes, {confirmAction.type === "delete" ? "Delete" : "End"}
                       </button>
-                      <button
+                      <button aria-label="button"
                         onClick={() => setConfirmAction(null)}
                         className="px-3 py-1 rounded-lg border border-[var(--border)] text-[10px] font-black uppercase tracking-widest text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
                       >
@@ -435,7 +435,7 @@ export default function TournamentsAdminTab() {
                 <h3 className="text-lg font-bold">Entries: {viewEntries.title}</h3>
                 <p className="text-xs text-[var(--muted)]">{viewEntries.format} · {viewEntries.slotsFilled} Joined</p>
               </div>
-              <button onClick={() => setViewEntries(null)} className="w-8 h-8 rounded-full bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] hover:text-[var(--foreground)]"><FiX size={18} /></button>
+              <button aria-label="button" onClick={() => setViewEntries(null)} className="w-8 h-8 rounded-full bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] hover:text-[var(--foreground)]"><FiX size={18} /></button>
             </div>
 
             <div className="flex-1 overflow-auto p-4">
@@ -514,15 +514,15 @@ export default function TournamentsAdminTab() {
                               {confirmEntry?.entryId === e._id ? (
                                 <div className="flex items-center gap-1 bg-[var(--accent)]/5 border border-[var(--accent)]/20 p-1 rounded-lg">
                                   <span className="text-[7px] font-black uppercase text-[var(--accent)] px-1">Sure?</span>
-                                  <button onClick={() => updateEntryProgress(e._id, confirmEntry.action)} className="px-2 py-1 rounded bg-[var(--accent)] text-white text-[8px] font-black uppercase">Yes</button>
-                                  <button onClick={() => setConfirmEntry(null)} className="px-2 py-1 rounded bg-[var(--border)] text-[var(--muted)] text-[8px] font-black uppercase">No</button>
+                                  <button aria-label="button" onClick={() => updateEntryProgress(e._id, confirmEntry.action)} className="px-2 py-1 rounded bg-[var(--accent)] text-white text-[8px] font-black uppercase">Yes</button>
+                                  <button aria-label="button" onClick={() => setConfirmEntry(null)} className="px-2 py-1 rounded bg-[var(--border)] text-[var(--muted)] text-[8px] font-black uppercase">No</button>
                                 </div>
                               ) : (
                                 <>
                                   {!e.isEliminated && (
                                     <>
                                       <div className="flex flex-col items-center gap-1">
-                                        <button
+                                        <button aria-label="button"
                                           onClick={() => setConfirmEntry({ entryId: e._id, action: "promote" })}
                                           className="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center hover:bg-emerald-500/20 transition-all"
                                         >
@@ -533,7 +533,7 @@ export default function TournamentsAdminTab() {
 
                                       {e.currentRound > 1 && (
                                         <div className="flex flex-col items-center gap-1">
-                                          <button
+                                          <button aria-label="button"
                                             onClick={() => setConfirmEntry({ entryId: e._id, action: "demote" })}
                                             className="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center hover:bg-blue-500/20 transition-all"
                                           >
@@ -544,7 +544,7 @@ export default function TournamentsAdminTab() {
                                       )}
 
                                       <div className="flex flex-col items-center gap-1">
-                                        <button
+                                        <button aria-label="button"
                                           onClick={() => setConfirmEntry({ entryId: e._id, action: "eliminate" })}
                                           className="w-7 h-7 rounded-lg bg-red-500/10 text-red-400 border border-red-500/20 flex items-center justify-center hover:bg-red-500/20 transition-all"
                                         >
@@ -554,7 +554,7 @@ export default function TournamentsAdminTab() {
                                       </div>
 
                                       <div className="flex flex-col items-center gap-1">
-                                        <button
+                                        <button aria-label="button"
                                           onClick={() => setConfirmEntry({ entryId: e._id, action: "winner" })}
                                           className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all ${
                                             e.isWinner 
@@ -569,7 +569,7 @@ export default function TournamentsAdminTab() {
                                     </>
                                   )}
                                   {e.isEliminated && (
-                                    <button
+                                    <button aria-label="button"
                                       onClick={() => setConfirmEntry({ entryId: e._id, action: "reset" })}
                                       className="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-500 border border-blue-500/20 text-[8px] font-black uppercase tracking-widest hover:bg-blue-500/20 transition-all"
                                     >

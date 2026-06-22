@@ -93,13 +93,13 @@ export default function GameBannerCarousel() {
 
         {/* Cinematic Controls */}
         <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 sm:px-6 z-30 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-500">
-          <button
+          <button aria-label="button"
             onClick={() => paginate(-1)}
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white pointer-events-auto hover:bg-white hover:text-black transition-all duration-300 shadow-xl"
           >
             <ChevronLeft size={20} strokeWidth={1.5} className="sm:w-6 sm:h-6" />
           </button>
-          <button
+          <button aria-label="button"
             onClick={() => paginate(1)}
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center text-white pointer-events-auto hover:bg-white hover:text-black transition-all duration-500 shadow-xl"
           >

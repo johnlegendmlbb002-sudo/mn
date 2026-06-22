@@ -83,7 +83,7 @@ export default function RegionPage() {
               </div>
             </div>
 
-            <button
+            <button aria-label="button"
               onClick={handleCheck}
               disabled={loading || !id || !zone}
               className="w-full py-3.5 rounded-xl bg-[var(--accent)] text-black font-black uppercase tracking-widest italic text-[11px] hover:scale-[1.01] active:scale-95 disabled:opacity-20 transition-all flex items-center justify-center gap-2"

@@ -120,13 +120,13 @@ export default function AdminPanalPage() {
             <div className="space-y-4">
               {/* TABS */}
               <div className="flex p-0.5 bg-white/5 rounded-xl gap-0.5">
-                <button
+                <button aria-label="button"
                   onClick={() => setActiveTab("silver")}
                   className={`flex-1 py-2 rounded-lg text-[9px] font-black uppercase tracking-widest italic transition-all ${activeTab === "silver" ? "bg-[var(--accent)] text-black" : "text-neutral-500 hover:text-[var(--accent)]"}`}
                 >
                   Silver
                 </button>
-                <button
+                <button aria-label="button"
                   onClick={() => setActiveTab("reseller")}
                   className={`flex-1 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-widest italic transition-all ${activeTab === "reseller" ? "bg-[var(--accent)] text-black" : "text-neutral-500 hover:text-[var(--accent)]"}`}
                 >

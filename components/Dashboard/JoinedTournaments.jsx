@@ -183,14 +183,14 @@ export default function JoinedTournaments() {
         <div className="flex items-center justify-between px-2 pt-2">
           <p className="text-[8px] text-[var(--muted)] uppercase tracking-widest">Page {currentPage} of {totalPages}</p>
           <div className="flex items-center gap-1">
-            <button
+            <button aria-label="button"
               onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
               disabled={currentPage === 1}
               className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:text-[var(--accent)] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
               <FiChevronLeft size={14} />
             </button>
-            <button
+            <button aria-label="button"
               onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
               className="p-1.5 rounded-lg border border-[var(--border)] text-[var(--muted)] hover:text-[var(--accent)] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
@@ -234,7 +234,7 @@ export default function JoinedTournaments() {
                     </p>
                   )}
                 </div>
-                <button onClick={() => setSelectedEntry(null)} className="p-1.5 rounded-lg bg-[var(--foreground)]/5 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+                <button aria-label="button" onClick={() => setSelectedEntry(null)} className="p-1.5 rounded-lg bg-[var(--foreground)]/5 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
                   <FiX size={14} />
                 </button>
               </div>
@@ -295,7 +295,7 @@ export default function JoinedTournaments() {
                           <span className="text-xs font-mono font-bold text-[var(--accent)]">
                             {selectedEntry.assignedRoomId || selectedEntry.tournamentId.roomId}
                           </span>
-                          <button
+                          <button aria-label="button"
                             onClick={() => copyToClipboard(selectedEntry.assignedRoomId || selectedEntry.tournamentId.roomId, "roomId")}
                             className="flex items-center gap-1 text-[7px] font-black uppercase transition-colors"
                           >
@@ -312,7 +312,7 @@ export default function JoinedTournaments() {
                             {selectedEntry.assignedRoomPassword || selectedEntry.tournamentId.roomPassword || "None"}
                           </span>
                           {(selectedEntry.assignedRoomPassword || selectedEntry.tournamentId.roomPassword) && (
-                            <button
+                            <button aria-label="button"
                               onClick={() => copyToClipboard(selectedEntry.assignedRoomPassword || selectedEntry.tournamentId.roomPassword, "roomPass")}
                               className="flex items-center gap-1 text-[7px] font-black uppercase transition-colors"
                             >

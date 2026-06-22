@@ -192,10 +192,10 @@ export default function GiveawayAdminTab() {
           <p className="text-[11px] text-[var(--muted)] mt-0.5">Create and manage giveaways, view entries, pick winners</p>
         </div>
         <div className="flex gap-2">
-          <button onClick={fetchGiveaways} className="flex items-center gap-1.5 text-[11px] font-bold text-[var(--muted)] hover:text-[var(--accent)] px-3 py-1.5 rounded-lg border border-[var(--border)] transition-colors">
+          <button aria-label="button" onClick={fetchGiveaways} className="flex items-center gap-1.5 text-[11px] font-bold text-[var(--muted)] hover:text-[var(--accent)] px-3 py-1.5 rounded-lg border border-[var(--border)] transition-colors">
             <FiRefreshCw size={12} /> Refresh
           </button>
-          <button onClick={() => { setEditTarget(null); setForm({ title: "", description: "", prize: "", prizeCount: 1, status: "draft", startDate: "", endDate: "", tasks: [], maxEntries: 0 }); setShowCreate(true); }} className="flex items-center gap-1.5 text-[11px] font-black bg-[var(--accent)] text-white px-3 py-1.5 rounded-lg transition-opacity hover:opacity-90">
+          <button aria-label="button" onClick={() => { setEditTarget(null); setForm({ title: "", description: "", prize: "", prizeCount: 1, status: "draft", startDate: "", endDate: "", tasks: [], maxEntries: 0 }); setShowCreate(true); }} className="flex items-center gap-1.5 text-[11px] font-black bg-[var(--accent)] text-white px-3 py-1.5 rounded-lg transition-opacity hover:opacity-90">
             <FiPlus size={12} /> New Giveaway
           </button>
         </div>
@@ -228,28 +228,28 @@ export default function GiveawayAdminTab() {
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   {g.status === "draft" && (
-                    <button onClick={() => updateStatus(g._id, "live")} className="flex items-center gap-1 text-[11px] font-bold text-green-400 bg-green-400/10 border border-green-400/20 px-2.5 py-1.5 rounded-lg hover:bg-green-400/20 transition-colors">
+                    <button aria-label="button" onClick={() => updateStatus(g._id, "live")} className="flex items-center gap-1 text-[11px] font-bold text-green-400 bg-green-400/10 border border-green-400/20 px-2.5 py-1.5 rounded-lg hover:bg-green-400/20 transition-colors">
                       <FiPlay size={11} /> Go Live
                     </button>
                   )}
                   {g.status === "live" && (
-                    <button onClick={() => updateStatus(g._id, "ended")} className="flex items-center gap-1 text-[11px] font-bold text-red-400 bg-red-400/10 border border-red-400/20 px-2.5 py-1.5 rounded-lg hover:bg-red-400/20 transition-colors">
+                    <button aria-label="button" onClick={() => updateStatus(g._id, "ended")} className="flex items-center gap-1 text-[11px] font-bold text-red-400 bg-red-400/10 border border-red-400/20 px-2.5 py-1.5 rounded-lg hover:bg-red-400/20 transition-colors">
                       <FiSquare size={11} /> End
                     </button>
                   )}
-                  <button
+                  <button aria-label="button"
                     onClick={() => openEdit(g)}
                     className="flex items-center gap-1 text-[11px] font-bold text-blue-400 bg-blue-400/10 border border-blue-400/20 px-2.5 py-1.5 rounded-lg hover:bg-blue-400/20 transition-colors"
                   >
                     <FiEdit2 size={11} /> Edit
                   </button>
-                  <button
+                  <button aria-label="button"
                     onClick={() => deleteGiveaway(g._id, g.title)}
                     className="flex items-center gap-1 text-[11px] font-bold text-red-400 bg-red-400/10 border border-red-400/20 px-2.5 py-1.5 rounded-lg hover:bg-red-400/20 transition-colors"
                   >
                     <FiTrash2 size={11} /> Delete
                   </button>
-                  <button
+                  <button aria-label="button"
                     onClick={() => setSelected(selected?._id === g._id ? null : g)}
                     className="flex items-center gap-1 text-[11px] font-bold text-[var(--muted)] bg-[var(--border)]/40 px-2.5 py-1.5 rounded-lg hover:text-[var(--foreground)] transition-colors"
                   >
@@ -284,14 +284,14 @@ export default function GiveawayAdminTab() {
                           className="w-16 bg-[var(--background)] border border-[var(--border)] rounded-lg px-2 py-1 text-xs text-[var(--foreground)] outline-none focus:border-yellow-500/50"
                         />
                       </div>
-                      <button
+                      <button aria-label="button"
                         onClick={pickWinner}
                         disabled={picking || !entries.length}
                         className="flex items-center gap-1.5 text-[11px] font-black bg-yellow-500 text-black px-3 py-1.5 rounded-lg disabled:opacity-40 transition-opacity hover:opacity-90"
                       >
                         <FiAward size={12} /> {picking ? "Picking..." : "Pick Winner"}
                       </button>
-                      <button onClick={exportCSV} className="ml-auto flex items-center gap-1.5 text-[11px] font-bold text-[var(--muted)] hover:text-[var(--accent)] transition-colors">
+                      <button aria-label="button" onClick={exportCSV} className="ml-auto flex items-center gap-1.5 text-[11px] font-bold text-[var(--muted)] hover:text-[var(--accent)] transition-colors">
                         <FiDownload size={12} /> Export CSV
                       </button>
                     </div>
@@ -335,12 +335,12 @@ export default function GiveawayAdminTab() {
                                 {e.isWinner ? (
                                   <div className="flex items-center gap-2">
                                     <span className="text-[9px] font-black text-yellow-400 bg-yellow-500/10 border border-yellow-500/20 px-1.5 py-0.5 rounded">WINNER</span>
-                                    <button onClick={() => revertWinner(e.userId)} className="text-[9px] font-black text-red-400 hover:text-red-500 border border-[var(--border)] hover:border-red-500/50 bg-[var(--background)] px-1.5 py-0.5 rounded transition-all">
+                                    <button aria-label="button" onClick={() => revertWinner(e.userId)} className="text-[9px] font-black text-red-400 hover:text-red-500 border border-[var(--border)] hover:border-red-500/50 bg-[var(--background)] px-1.5 py-0.5 rounded transition-all">
                                       REVERT
                                     </button>
                                   </div>
                                 ) : (
-                                  <button onClick={() => manuallyPickWinner(e.userId)} className="text-[9px] font-black text-[var(--muted)] hover:text-yellow-400 border border-[var(--border)] hover:border-yellow-500/50 bg-[var(--background)] px-1.5 py-0.5 rounded transition-all">
+                                  <button aria-label="button" onClick={() => manuallyPickWinner(e.userId)} className="text-[9px] font-black text-[var(--muted)] hover:text-yellow-400 border border-[var(--border)] hover:border-yellow-500/50 bg-[var(--background)] px-1.5 py-0.5 rounded transition-all">
                                     MAKE WINNER
                                   </button>
                                 )}
@@ -366,7 +366,7 @@ export default function GiveawayAdminTab() {
             <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl">
               <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--border)] sticky top-0 bg-[var(--card)]">
                 <h3 className="text-sm font-extrabold text-[var(--foreground)]">{editTarget ? "Edit Giveaway" : "Create Giveaway"}</h3>
-                <button onClick={() => { setShowCreate(false); setEditTarget(null); }} className="text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"><FiX size={18} /></button>
+                <button aria-label="button" onClick={() => { setShowCreate(false); setEditTarget(null); }} className="text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"><FiX size={18} /></button>
               </div>
 
               <div className="p-5 space-y-4">
@@ -399,7 +399,7 @@ export default function GiveawayAdminTab() {
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <label className="text-[11px] font-black text-[var(--muted)] uppercase tracking-wider">Tasks</label>
-                    <button onClick={addTask} className="text-[11px] font-bold text-[var(--accent)] flex items-center gap-1 hover:opacity-80 transition-opacity">
+                    <button aria-label="button" onClick={addTask} className="text-[11px] font-bold text-[var(--accent)] flex items-center gap-1 hover:opacity-80 transition-opacity">
                       <FiPlus size={11} /> Add Task
                     </button>
                   </div>
@@ -420,7 +420,7 @@ export default function GiveawayAdminTab() {
                           <input type="checkbox" checked={task.required} onChange={e => updateTask(i, "required", e.target.checked)} className="accent-[var(--accent)]" />
                           Required
                         </label>
-                        <button onClick={() => removeTask(i)} className="text-[var(--muted)] hover:text-red-400 transition-colors">
+                        <button aria-label="button" onClick={() => removeTask(i)} className="text-[var(--muted)] hover:text-red-400 transition-colors">
                           <FiTrash2 size={13} />
                         </button>
                       </div>
@@ -438,8 +438,8 @@ export default function GiveawayAdminTab() {
                 </div>
 
                 <div className="flex gap-3 pt-2">
-                  <button onClick={() => { setShowCreate(false); setEditTarget(null); }} className="flex-1 py-2.5 rounded-xl border border-[var(--border)] text-sm font-bold text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">Cancel</button>
-                  <button onClick={createGiveaway} disabled={!form.title || !form.prize}
+                  <button aria-label="button" onClick={() => { setShowCreate(false); setEditTarget(null); }} className="flex-1 py-2.5 rounded-xl border border-[var(--border)] text-sm font-bold text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">Cancel</button>
+                  <button aria-label="button" onClick={createGiveaway} disabled={!form.title || !form.prize}
                     className="flex-1 py-2.5 rounded-xl bg-[var(--accent)] text-white text-sm font-black disabled:opacity-40 hover:opacity-90 transition-opacity">
                     {editTarget ? "Save Changes" : "Create Giveaway"}
                   </button>

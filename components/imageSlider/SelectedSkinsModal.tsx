@@ -58,7 +58,7 @@ export default function SelectedSkinsModal({
                     <h2 className="text-2xl font-bold text-[#e5e5e5] tracking-tight">
                         Selected Skins ({selectedSkins.length})
                     </h2>
-                    <button
+                    <button aria-label="button"
                         onClick={onClose}
                         className="px-6 py-2 bg-[#6366f1] hover:bg-[#5850ec] text-white font-bold rounded-lg transition-colors shadow-lg shadow-indigo-500/20"
                     >
@@ -74,7 +74,7 @@ export default function SelectedSkinsModal({
 
                 {/* CONTROLS (Auto Sequence) */}
                 <div className="px-6 pb-4">
-                    <button
+                    <button aria-label="button"
                         onClick={autoSequence}
                         className="
               flex items-center gap-2.5 px-6 py-3
@@ -128,7 +128,7 @@ export default function SelectedSkinsModal({
                                             </div>
 
                                             {/* QUICK REMOVE BUTTON */}
-                                            <button
+                                            <button aria-label="button"
                                                 onClick={(e) => {
                                                     e.stopPropagation();
                                                     toggleSkin(id);

@@ -109,7 +109,7 @@ export default function BlogListing({ initialGame = "all" }) {
                 />
               </div>
               
-              <button
+              <button aria-label="button"
                 onClick={() => setShowFilters(!showFilters)}
                 className={`h-11 w-11 flex items-center justify-center rounded-xl border transition-all ${showFilters ? 'bg-[var(--accent)] border-[var(--accent)] text-white' : 'bg-[var(--card)] border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)]'}`}
               >
@@ -158,7 +158,7 @@ export default function BlogListing({ initialGame = "all" }) {
                             </div>
                             <div className="flex flex-wrap gap-2">
                                 {categories.map((type) => (
-                                    <button
+                                    <button aria-label="button"
                                         key={type}
                                         onClick={() => {
                                           setSelectedType(type);
@@ -206,7 +206,7 @@ export default function BlogListing({ initialGame = "all" }) {
         {/* 🔢 PAGINATION - NUMBERED */}
         {totalPages > 1 && (
           <nav aria-label="Pagination" className="flex justify-center items-center gap-2 mt-12 mb-20">
-            <button
+            <button aria-label="button"
               disabled={currentPage === 1}
               onClick={() => setCurrentPage((p) => p - 1)}
               className="w-10 h-10 rounded-xl bg-[var(--card)] border border-[var(--border)] flex items-center justify-center text-[var(--muted)] disabled:opacity-20 transition-all hover:border-[var(--accent)]/30 hover:text-[var(--accent)]"
@@ -216,7 +216,7 @@ export default function BlogListing({ initialGame = "all" }) {
             
             <div className="flex items-center gap-1 mx-2">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(num => (
-                <button
+                <button aria-label="button"
                   key={num}
                   onClick={() => setCurrentPage(num)}
                   className={`w-10 h-10 rounded-xl text-[10px] font-black transition-all border ${
@@ -230,7 +230,7 @@ export default function BlogListing({ initialGame = "all" }) {
               ))}
             </div>
 
-            <button
+            <button aria-label="button"
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage((p) => p + 1)}
               className="w-10 h-10 rounded-xl bg-[var(--card)] border border-[var(--border)] flex items-center justify-center text-[var(--muted)] disabled:opacity-20 transition-all hover:border-[var(--accent)]/30 hover:text-[var(--accent)]"

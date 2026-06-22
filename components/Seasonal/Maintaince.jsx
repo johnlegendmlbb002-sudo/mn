@@ -83,14 +83,14 @@ export default function Maintaince() {
 
                             <div className="w-full space-y-3">
                                 {!isLoggedIn ? (
-                                    <button
+                                    <button aria-label="button"
                                         onClick={handleLogin}
                                         className="w-full py-3.5 rounded-xl bg-[var(--accent)] text-black font-bold uppercase tracking-widest text-[10px] hover:opacity-90 transition-all"
                                     >
                                         Login
                                     </button>
                                 ) : !isLoggingOut ? (
-                                    <button
+                                    <button aria-label="button"
                                         onClick={handleLoggingOff}
                                         className="w-full py-3.5 rounded-xl border border-white/10 text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white/5 transition-all"
                                     >

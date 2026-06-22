@@ -303,7 +303,7 @@ export default function ChatBot() {
                 </div>
               </div>
 
-              <button
+              <button aria-label="button"
                 onClick={() => setIsOpen(false)}
                 className="w-8 h-8 rounded-lg bg-[var(--muted)]/10 hover:bg-[var(--muted)]/20 flex items-center justify-center text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-all border border-[var(--border)]"
               >
@@ -368,7 +368,7 @@ export default function ChatBot() {
             {/* Quick Replies */}
             <div className="px-4 py-2 flex gap-2 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden border-t border-[var(--border)]">
               {QUICK_REPLIES.map((reply) => (
-                <button
+                <button aria-label="button"
                   key={reply.action}
                   onClick={() => handleSendMessage(reply.action)}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--muted)]/5 border border-[var(--border)] text-[var(--foreground)]/70 text-[11px] whitespace-nowrap hover:bg-[var(--accent)]/20 hover:border-[var(--accent)]/40 hover:text-[var(--foreground)] transition-all"
@@ -392,7 +392,7 @@ export default function ChatBot() {
                   placeholder="Type your message..."
                   className="w-full pl-4 pr-12 py-3.5 rounded-xl bg-[var(--muted)]/5 border border-[var(--border)] outline-none text-[13px] text-[var(--foreground)] placeholder:text-[var(--muted)] focus:border-[var(--accent)]/50 focus:ring-1 focus:ring-[var(--accent)]/20 transition-all"
                 />
-                <button
+                <button aria-label="button"
                   type="submit"
                   disabled={!message.trim()}
                   className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-lg bg-[var(--accent)] text-white flex items-center justify-center shadow-lg shadow-[var(--accent)]/40 disabled:opacity-30 disabled:grayscale transition-all hover:scale-105 active:scale-95"

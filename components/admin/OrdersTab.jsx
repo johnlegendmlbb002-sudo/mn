@@ -191,7 +191,7 @@ export default function OrdersTab() {
               {pagination.total} TOTAL ORDERS
             </span>
           </div>
-          <button
+          <button aria-label="button"
             onClick={() => { fetchOrdersStats(); fetchOrdersList(); }}
             className="p-2 sm:p-2.5 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] active:scale-95 transition-all"
           >
@@ -242,7 +242,7 @@ export default function OrdersTab() {
           />
         </div>
         <div className="flex gap-2">
-          <button
+          <button aria-label="button"
             onClick={() => setShowFilters(true)}
             className="h-11 px-5 rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.02] text-[var(--foreground)] flex items-center justify-center gap-2.5 hover:bg-[var(--foreground)]/[0.05] transition-all outline-none"
           >
@@ -251,7 +251,7 @@ export default function OrdersTab() {
           </button>
           
           {(search || filters.status || filters.gameSlug || filters.from || filters.to) && (
-            <button
+            <button aria-label="button"
               onClick={() => {
                 setSearch("");
                 setFilters({ status: "", gameSlug: "", from: "", to: "" });
@@ -431,14 +431,14 @@ export default function OrdersTab() {
                   Batch <b className="text-[var(--foreground)]">{pagination.page}</b> / {pagination.totalPages}
                 </p>
                 <div className="flex gap-2">
-                  <button
+                  <button aria-label="button"
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={page === 1}
                     className="px-5 py-2.5 rounded-xl border border-[var(--border)] text-[10px] font-bold uppercase text-[var(--muted)]/60 hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.05] disabled:opacity-20 transition-all font-mono"
                   >
                     PREVIOUS
                   </button>
-                  <button
+                  <button aria-label="button"
                     onClick={() => setPage((p) => Math.min(pagination.totalPages, p + 1))}
                     disabled={page === pagination.totalPages}
                     className="px-5 py-2.5 rounded-xl border border-[var(--border)] text-[10px] font-bold uppercase text-[var(--muted)]/60 hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.05] disabled:opacity-20 transition-all font-mono"
@@ -475,7 +475,7 @@ export default function OrdersTab() {
                     <p className="text-[9px] font-mono font-black text-[var(--accent)] uppercase tracking-[0.2em] opacity-80 mb-1">#{selectedOrder.orderId.toUpperCase()}</p>
                     <h3 className="text-xl font-black uppercase tracking-tight text-[var(--foreground)]">Order Details</h3>
                   </div>
-                  <button
+                  <button aria-label="button"
                     onClick={() => setSelectedOrder(null)}
                     className="w-9 h-9 rounded-full bg-[var(--foreground)]/[0.05] flex items-center justify-center text-[var(--muted)]/40 hover:text-[var(--foreground)] hover:bg-red-500/20 transition-all"
                   >
@@ -557,7 +557,7 @@ export default function OrdersTab() {
             >
               <div className="p-6 border-b border-[var(--border)] flex justify-between items-center">
                 <h3 className="text-xl font-black uppercase tracking-tight text-[var(--foreground)]">Find Orders</h3>
-                <button
+                <button aria-label="button"
                   onClick={() => setShowFilters(false)}
                   className="w-10 h-10 rounded-full bg-[var(--foreground)]/[0.05] flex items-center justify-center text-[var(--muted)] hover:text-[var(--foreground)] transition-all"
                 >
@@ -588,7 +588,7 @@ export default function OrdersTab() {
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted)] ml-1">Process Status</label>
                   <div className="grid grid-cols-2 gap-2">
                     {["pending", "success", "failed", "refund"].map((st) => (
-                      <button
+                      <button aria-label="button"
                         key={st}
                         onClick={() => {
                           setPage(1);
@@ -639,7 +639,7 @@ export default function OrdersTab() {
               </div>
 
               <div className="p-6 bg-[var(--foreground)]/[0.02] border-t border-[var(--border)]">
-                <button
+                <button aria-label="button"
                   onClick={() => setShowFilters(false)}
                   className="w-full py-4 rounded-2xl bg-[var(--foreground)] text-[var(--background)] font-black uppercase tracking-[0.2em] text-xs hover:scale-[0.98] transition-all"
                 >
@@ -680,7 +680,7 @@ function StatusDropdown({ value, onChange, options, disabled, compact }) {
 
   return (
     <div className="relative" ref={containerRef}>
-      <button
+      <button aria-label="button"
         onClick={() => !disabled && setIsOpen(!isOpen)}
         disabled={disabled}
         className={`
@@ -708,7 +708,7 @@ function StatusDropdown({ value, onChange, options, disabled, compact }) {
             className="absolute z-[1200] right-0 w-full min-w-[140px] rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-2xl p-1 overflow-hidden backdrop-blur-xl"
           >
             {options.map((option) => (
-              <button
+              <button aria-label="button"
                 key={option.value}
                 onClick={() => {
                   onChange(option.value);

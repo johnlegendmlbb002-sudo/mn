@@ -229,7 +229,7 @@ export default function PricingTab({
           {/* Mode Switcher */}
           <div className="flex bg-[var(--foreground)]/[0.03] p-1 rounded-xl border border-[var(--border)]">
             {[{ id: "percent", label: "Markup", icon: <Percent size={12} /> }, { id: "fixed", label: "Fixed", icon: <Coins size={12} /> }].map((m) => (
-              <button
+              <button aria-label="button"
                 key={m.id}
                 onClick={() => setPricingMode(m.id)}
                 className={`flex items-center gap-2 px-4 py-1.5 rounded-lg text-[10px] font-black uppercase transition-all ${pricingMode === m.id
@@ -248,7 +248,7 @@ export default function PricingTab({
           {/* Role Switcher */}
           <div className="flex bg-[var(--foreground)]/[0.03] p-1 rounded-xl border border-[var(--border)]">
             {["user", "member", "admin"].map((type) => (
-              <button
+              <button aria-label="button"
                 key={type}
                 onClick={() => setPricingType(type)}
                 className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase transition-all ${pricingType === type
@@ -261,7 +261,7 @@ export default function PricingTab({
             ))}
           </div>
 
-          <button
+          <button aria-label="button"
             onClick={onSave}
             disabled={!canSave || savingPricing}
             className={`px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${
@@ -303,7 +303,7 @@ export default function PricingTab({
 
             <div className="flex-1 overflow-y-auto max-h-[500px] lg:max-h-none space-y-1 p-1 rounded-2xl border border-[var(--border)] bg-[var(--card)]/40 custom-scrollbar">
               {filteredGames.map((g) => (
-                <button
+                <button aria-label="button"
                   key={g.gameSlug}
                   onClick={() => setFixedGameFilter(g.gameSlug)}
                   className={`w-full group relative flex items-center justify-between p-3 rounded-xl transition-all ${
@@ -321,7 +321,7 @@ export default function PricingTab({
 
                   {/* GAME STOCK TOGGLE */}
                   <div className="flex flex-col items-center gap-1 ml-2">
-                    <button
+                    <button aria-label="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         toggleGameStock(g.gameSlug);
@@ -374,7 +374,7 @@ export default function PricingTab({
                         <p className="text-[9px] text-[var(--muted)] font-bold uppercase tracking-widest opacity-50">Set percentage profit based on price ranges</p>
                       </div>
                     </div>
-                    <button
+                    <button aria-label="button"
                       onClick={addSlab}
                       className="px-4 py-2 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] text-[10px] font-black uppercase tracking-widest hover:bg-[var(--accent)]/20 transition-all"
                     >
@@ -430,7 +430,7 @@ export default function PricingTab({
                         </div>
                       </div>
                       <div className="col-span-1 flex justify-end sm:justify-center">
-                        <button
+                        <button aria-label="button"
                           onClick={() => deleteSlab(i)}
                           className="p-2 sm:p-0 text-[var(--muted)] hover:text-rose-500 transition-colors"
                         >
@@ -487,7 +487,7 @@ export default function PricingTab({
                             
                             {/* STOCK TOGGLE */}
                             <div className="flex flex-col items-end gap-1.5 pr-2 border-r border-white/5">
-                              <button
+                              <button aria-label="button"
                                 onClick={() => toggleItemStock(o.itemSlug)}
                                 className={`relative w-11 h-6 rounded-full transition-colors outline-none ${
                                   o.isOutOfStock ? "bg-rose-500 shadow-lg shadow-rose-500/20" : "bg-emerald-500/20 border border-emerald-500/30"
@@ -504,7 +504,7 @@ export default function PricingTab({
 
                             {/* TOGGLE SWITCH */}
                             <div className="flex flex-col items-end gap-1.5 pl-2">
-                              <button
+                              <button aria-label="button"
                                 onClick={() => toggleOverrideStatus(o.itemSlug)}
                                 className={`relative w-11 h-6 rounded-full transition-colors outline-none ${
                                   o.isEnabled ? "bg-[var(--accent)] shadow-lg shadow-[var(--accent)]/20" : "bg-[#334155]"

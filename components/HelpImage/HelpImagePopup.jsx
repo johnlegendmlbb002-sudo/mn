@@ -10,7 +10,7 @@ export default function HelpImagePopup() {
   return (
     <>
       {/* Question Mark Button (INLINE, not fixed) */}
-      <button
+      <button aria-label="button"
         onClick={() => setOpen(true)}
         className="w-9 h-9 rounded-full bg-[var(--accent)]
                    text-white flex items-center justify-center
@@ -28,7 +28,7 @@ export default function HelpImagePopup() {
           <div className="relative bg-[var(--card)] rounded-xl max-w-md w-full p-4 shadow-xl">
             
             {/* Close Button */}
-            <button
+            <button aria-label="button"
               onClick={() => setOpen(false)}
               className="absolute top-3 right-3
                          w-7 h-7 rounded-full

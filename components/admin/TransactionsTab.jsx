@@ -146,7 +146,7 @@ export default function TransactionsTab() {
               {pagination.total} TOTAL TXNS
             </span>
           </div>
-          <button
+          <button aria-label="button"
             onClick={() => { fetchTransactionsStats(); fetchTransactionsList(); }}
             className="p-2 sm:p-2.5 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] active:scale-95 transition-all"
           >
@@ -351,14 +351,14 @@ export default function TransactionsTab() {
                   Listing <b className="text-[var(--foreground)]">{pagination.page}</b> / {pagination.totalPages}
                 </p>
                 <div className="flex gap-2">
-                  <button
+                  <button aria-label="button"
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={page === 1}
                     className="px-5 py-2.5 rounded-xl border border-[var(--border)] text-[10px] font-bold uppercase text-[var(--muted)]/60 hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.05] disabled:opacity-20 transition-all font-mono"
                   >
                     PREV
                   </button>
-                  <button
+                  <button aria-label="button"
                     onClick={() => setPage((p) => Math.min(pagination.totalPages, p + 1))}
                     disabled={page === pagination.totalPages}
                     className="px-5 py-2.5 rounded-xl border border-[var(--border)] text-[10px] font-bold uppercase text-[var(--muted)]/60 hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.05] disabled:opacity-20 transition-all font-mono"
@@ -396,7 +396,7 @@ export default function TransactionsTab() {
                     <p className="text-[9px] font-mono font-black text-[var(--accent)] uppercase tracking-[0.2em] opacity-80 mb-1">#{selectedTx.orderId.toUpperCase()}</p>
                     <h3 className="text-xl font-black uppercase tracking-tight text-[var(--foreground)]">Transaction Summary</h3>
                   </div>
-                  <button
+                  <button aria-label="button"
                     onClick={() => setSelectedTx(null)}
                     className="w-9 h-9 rounded-full bg-[var(--foreground)]/[0.05] flex items-center justify-center text-[var(--muted)]/40 hover:text-[var(--foreground)] hover:bg-red-500/20 transition-all"
                   >

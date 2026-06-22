@@ -128,7 +128,7 @@ export default function OrdersTab() {
       {/* TACTICAL PAGINATION */}
       {totalPages > 1 && (
         <div className="pt-8 border-t border-[var(--border)] flex justify-center items-center gap-3">
-          <button
+          <button aria-label="button"
             disabled={page === 1}
             onClick={() => setPage((p) => p - 1)}
             className="p-3 rounded-xl bg-[var(--background)] border border-[var(--border)] disabled:opacity-50 text-[var(--foreground)] hover:bg-[var(--accent)]/10 hover:border-[var(--accent)] transition-all group"
@@ -138,7 +138,7 @@ export default function OrdersTab() {
 
           <div className="flex items-center gap-2">
             {getPageNumbers().map((p) => (
-              <button
+              <button aria-label="button"
                 key={p}
                 onClick={() => setPage(p)}
                 className={`min-w-[40px] px-3 py-2 rounded-xl text-[11px] font-bold transition-all
@@ -152,7 +152,7 @@ export default function OrdersTab() {
             ))}
           </div>
 
-          <button
+          <button aria-label="button"
             disabled={page >= totalPages}
             onClick={() => setPage((p) => p + 1)}
             className="p-3 rounded-xl bg-[var(--background)] border border-[var(--border)] disabled:opacity-50 text-[var(--foreground)] hover:bg-[var(--accent)]/10 hover:border-[var(--accent)] transition-all group"

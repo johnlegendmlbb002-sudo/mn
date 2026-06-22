@@ -57,7 +57,7 @@ export default function ApiKeysTab() {
                             {keys.length} <span className="text-[8px] sm:text-[9px] text-[var(--muted)] uppercase tracking-tighter opacity-40 ml-0.5 sm:ml-1">Active</span>
                         </span>
                     </div>
-                    <button
+                    <button aria-label="button"
                         onClick={fetchKeys}
                         className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--accent)]/30 active:scale-95 transition-all outline-none flex items-center justify-center"
                     >

@@ -422,7 +422,7 @@ export default function PromotionalTab() {
             <h3 className="text-xs font-black uppercase tracking-widest text-[var(--muted)] flex items-center gap-2">
               <Users size={14} className="text-[var(--accent)]" /> Recipients ({selectedEmails.length})
             </h3>
-            <button
+            <button aria-label="button"
               onClick={toggleSelectAll}
               className="text-[10px] font-black uppercase tracking-wider text-[var(--accent)] hover:brightness-110 active:scale-95 transition-all"
             >
@@ -432,7 +432,7 @@ export default function PromotionalTab() {
 
           <div className="flex flex-wrap gap-2 px-1 items-center">
             {["all", "user", "member", "admin", "owner", "external"].map((role) => (
-              <button
+              <button aria-label="button"
                 key={role}
                 onClick={() => { setSelectedRole(role); setPage(1); }} // Reset page on role change
                 className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${selectedRole === role
@@ -480,7 +480,7 @@ export default function PromotionalTab() {
                 className="w-full h-10 pl-11 pr-4 rounded-xl border border-[var(--border)] bg-[var(--foreground)]/[0.03] text-sm focus:border-[var(--accent)]/50 focus:ring-4 focus:ring-[var(--accent)]/5 outline-none transition-all placeholder:text-[var(--muted)]/40 text-[var(--foreground)]"
               />
             </div>
-            <button
+            <button aria-label="button"
               onClick={addManualEmail}
               className="px-4 h-10 rounded-xl bg-[var(--accent)] text-white font-bold text-xs flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-[var(--accent)]/10"
             >
@@ -505,7 +505,7 @@ export default function PromotionalTab() {
               Showing {users.length} of {totalRecords} Records
             </h3>
             <div className="flex items-center gap-2">
-              <button 
+              <button aria-label="button" 
                 onClick={() => setPage(p => Math.max(1, p - 1))}
                 disabled={page === 1}
                 className="p-2 rounded-xl bg-[var(--foreground)]/[0.05] hover:bg-[var(--foreground)]/[0.1] disabled:opacity-20 transition-all"
@@ -513,7 +513,7 @@ export default function PromotionalTab() {
                  <RefreshCcw size={14} className="-rotate-90" />
               </button>
               <span className="text-[10px] font-black text-[var(--foreground)]">Page {page} / {totalPages}</span>
-              <button 
+              <button aria-label="button" 
                 onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                 disabled={page === totalPages}
                 className="p-2 rounded-xl bg-[var(--foreground)]/[0.05] hover:bg-[var(--foreground)]/[0.1] disabled:opacity-20 transition-all"
@@ -561,14 +561,14 @@ export default function PromotionalTab() {
                             <span key={tag} className={`px-2 py-0.5 rounded-md border text-[9px] font-black lowercase tracking-tight flex items-center gap-1.5 transition-all shadow-sm ${getTagColor(tag)}`}>
                               {tag}
                               {!u.isManual && (
-                                <button onClick={(e) => { e.stopPropagation(); removeTagFromUser(u, tag); }} className="hover:scale-125 transition-transform opacity-60 hover:opacity-100">
+                                <button aria-label="button" onClick={(e) => { e.stopPropagation(); removeTagFromUser(u, tag); }} className="hover:scale-125 transition-transform opacity-60 hover:opacity-100">
                                   <X size={10} />
                                 </button>
                               )}
                             </span>
                           ))}
                           {!u.isManual && editingTagsUserId !== u._id && (
-                            <button
+                            <button aria-label="button"
                               onClick={(e) => { e.stopPropagation(); setEditingTagsUserId(u._id); }}
                               className="text-[8px] font-black uppercase text-[var(--accent)] hover:underline flex items-center gap-1"
                             >
@@ -584,7 +584,7 @@ export default function PromotionalTab() {
                               <p className="text-[10px] font-black lowercase tracking-tight text-[var(--accent)] flex items-center gap-1.5">
                                 <Plus size={10} /> Select Category (1 Max)
                               </p>
-                              <button onClick={() => setEditingTagsUserId(null)} className="p-1 px-2 text-[10px] font-black lowercase text-rose-500 hover:bg-rose-500/10 rounded-lg">
+                              <button aria-label="button" onClick={() => setEditingTagsUserId(null)} className="p-1 px-2 text-[10px] font-black lowercase text-rose-500 hover:bg-rose-500/10 rounded-lg">
                                 Close
                               </button>
                             </div>
@@ -593,7 +593,7 @@ export default function PromotionalTab() {
                               {ALLOWED_TAGS.map(tag => {
                                 const isActive = u.tags?.includes(tag);
                                 return (
-                                  <button
+                                  <button aria-label="button"
                                     key={tag}
                                     onClick={() => isActive ? removeTagFromUser(u, tag) : addTagToUser(u, tag)}
                                     className={`px-3 py-1 rounded-lg text-[10px] font-black lowercase border transition-all hover:scale-105 active:scale-95 shadow-sm ${isActive
@@ -613,7 +613,7 @@ export default function PromotionalTab() {
 
                     <div className="flex items-center shrink-0 ml-2">
                       {u.isManual && (
-                        <button
+                        <button aria-label="button"
                           onClick={(e) => removeManualEmail(e, u.email)}
                           className="w-8 h-8 rounded-lg flex items-center justify-center text-rose-500 hover:bg-rose-500/10 transition-colors mr-2 group/remove"
                           title="Remove permanently"
@@ -731,7 +731,7 @@ export default function PromotionalTab() {
               )}
             </AnimatePresence>
 
-            <button
+            <button aria-label="button"
               onClick={handleSend}
               disabled={sending || selectedEmails.length === 0}
               className="w-full h-14 rounded-2xl bg-[var(--accent)] text-white font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 hover:brightness-110 active:scale-95 disabled:opacity-40 disabled:active:scale-100 transition-all shadow-xl shadow-[var(--accent)]/20 group relative overflow-hidden"
@@ -775,7 +775,7 @@ export default function PromotionalTab() {
                     <p className="text-xs font-black text-[var(--foreground)] truncate uppercase tracking-tighter">{log.subject}</p>
                     <p className="text-[10px] text-[var(--muted)] font-bold">{new Date(log.createdAt).toLocaleString()}</p>
                   </div>
-                  <button
+                  <button aria-label="button"
                     onClick={() => useTemplate(log)}
                     className="shrink-0 px-4 py-2 rounded-xl bg-[var(--accent)]/5 hover:bg-[var(--accent)] text-[var(--accent)] hover:text-white text-[10px] font-black uppercase tracking-widest transition-all"
                   >

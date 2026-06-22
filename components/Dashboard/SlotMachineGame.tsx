@@ -278,7 +278,7 @@ export default function SlotMachineGame({ coins, onWin, showToast }: SlotMachine
                     {lastResult > 0 ? `You got +${lastResult} BBC` : `You lost ${Math.abs(lastResult)} BBC`}
                   </p>
                 </div>
-                <button 
+                <button aria-label="button" 
                   onClick={() => setLastResult(null)}
                   className="w-full py-2 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all"
                 >
