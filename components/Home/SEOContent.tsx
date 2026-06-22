@@ -87,13 +87,13 @@ export default function SEOContent() {
               { step: "3", title: "Pay via UPI", desc: "Pay instantly via PhonePe, Google Pay, Paytm, or any UPI app." },
               { step: "4", title: "Receive Diamonds", desc: "Diamonds appear in your MLBB account within 1–5 minutes." },
             ].map((item) => (
-              <div key={item.step} className="p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] space-y-2">
+              <li key={item.step} className="p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] space-y-2">
                 <div className="w-8 h-8 rounded-xl bg-[var(--accent)]/15 flex items-center justify-center">
                   <span className="text-sm font-black text-[var(--accent)]">{item.step}</span>
                 </div>
                 <h3 className="text-sm font-bold text-[var(--foreground)]">{item.title}</h3>
                 <p className="text-[11px] text-[var(--muted)] leading-relaxed">{item.desc}</p>
-              </div>
+              </li>
             ))}
           </ol>
         </div>
