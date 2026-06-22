@@ -108,7 +108,7 @@ export default function GiveawaysPage() {
 
                 {/* Action */}
                 <div className="shrink-0 flex items-center gap-1.5">
-                  <button aria-label="button"
+                  <button 
                     className="flex items-center justify-center w-7 h-7 text-[var(--muted)] hover:text-[var(--foreground)] bg-[var(--foreground)]/[0.03] hover:bg-[var(--foreground)]/[0.08] rounded-lg transition-colors border border-[var(--border)]"
                     onClick={(e) => handleShare(e, g)}
                     aria-label="Share"
