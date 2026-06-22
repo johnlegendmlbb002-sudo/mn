@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import GamesPage from "@/app/games/page";
 import GameBannerCarousel from "./GameBannerCarousel";
 import HomeServices from "./HomeServices";
 import TrustHighlights from "./TrustHighlights";
@@ -18,6 +17,7 @@ import GiveawayBanner from "./GiveawayBanner";
 const FlashSale = dynamic(() => import("./FlashSale"), { ssr: false });
 const HomeQuickActions = dynamic(() => import("./HomeQuickActions"), { ssr: false });
 const HomeReferralStats = dynamic(() => import("./HomeReferralStats"), { ssr: false });
+const GamesPage = dynamic(() => import("@/app/games/page"), { ssr: false });
 
 export default function HeroSection({ bannerSettings }: { bannerSettings?: any }) {
 
