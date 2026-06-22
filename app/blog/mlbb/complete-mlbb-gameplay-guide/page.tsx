@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiTarget, FiMap, FiShield, FiUsers, FiStar, FiInfo } from "react-icons/fi";
@@ -71,7 +71,7 @@ export default function BlogPage() {
       faqItems={faqItems}
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
-        Are you new to Mobile Legends or stuck in Epic rank? Understanding the foundational pillars—Lanes, Jungle, and Objectives—is the only path to Mythical Glory.
+        Are you new to Mobile Legends or stuck in Epic rank? Understanding the foundational pillarsâ€”Lanes, Jungle, and Objectivesâ€”is the only path to Mythical Glory.
       </p>
 
       <p>
@@ -79,7 +79,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        To do that, you have to master map economy. Every decision—from which lane you choose to when you attack the Turtle—impacts your global standing. Here is your definitive 2026 blueprint.
+        To do that, you have to master map economy. Every decisionâ€”from which lane you choose to when you attack the Turtleâ€”impacts your global standing. Here is your definitive 2026 blueprint.
       </p>
 
       <h2>1. The Three Lanes</h2>
@@ -158,7 +158,7 @@ export default function BlogPage() {
       <ol>
         <li><strong>Early Game (0-5 mins):</strong> Focus on farming and the first Turtle. Don't engage in risky, low-reward fights. Let the Jungler dictate the pace.</li>
         <li><strong>Mid Game (5-12 mins):</strong> Teamfights center around the Turtle and Lord pits. Mages and Assassins are at their most lethal. Start dismantling outer turrets.</li>
-        <li><strong>Late Game (12+ mins):</strong> One single death can cost your team the match. Stay grouped. The Marksman is now your "King"—protect them at all costs.</li>
+        <li><strong>Late Game (12+ mins):</strong> One single death can cost your team the match. Stay grouped. The Marksman is now your "King"â€”protect them at all costs.</li>
       </ol>
 
       <h2>Conclusion: Your Path to Mythical Glory</h2>

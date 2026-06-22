@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "mlbb esports explained",
     "mobile legends professional league",
     "m-series world championship",
-    "mlbb tournaments 2024"
+    "mlbb tournaments 2026"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/mpl-vs-mseries-difference" },
   authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/mlbb/mpl-vs-mseries-difference",
     title: "MPL vs M-Series: What's the Difference? (MLBB Esports Guide)",
     description: "Confused about MLBB esports? Learn the complete difference between MPL (Mobile Legends Professional League) and the M-Series World Championship in this guide.",
-    publishedTime: "2024-10-30T00:00:00.000Z",
+    publishedTime: "2026-10-30T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/mpl-vs-mseries.png", width: 1200, height: 630, alt: "MPL vs M-Series MLBB Esports Comparison" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="MPL vs M-Series: Understanding the Difference in MLBB Esports"
       category="Esports Guide"
       readTime="7 min read"
-      date="October 30, 2024"
+      date="October 30, 2026"
       image="/blog/mpl-vs-mseries.png"
       game="MLBB"
       description="Break down the confusing acronyms of Mobile Legends esports. Learn the distinct differences between the regional MPL circuits and the global M-Series World Championship."
@@ -191,7 +191,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        If a team wins the Spring MPL season, they go to the MSC in the summer. If a team wins the Fall MPL season, they go to the M-Series in the winter. While the MSC is an incredibly prestigious global tournament (with a massive $3,000,000 prize pool in 2024 at the Esports World Cup in Riyadh), the M-Series is still considered the most historically important title a player can win.
+        If a team wins the Spring MPL season, they go to the MSC in the summer. If a team wins the Fall MPL season, they go to the M-Series in the winter. While the MSC is an incredibly prestigious global tournament (with a massive $3,000,000 prize pool in 2026 at the Esports World Cup in Riyadh), the M-Series is still considered the most historically important title a player can win.
       </p>
 
       <h2>Why the Difference Matters for the Players</h2>

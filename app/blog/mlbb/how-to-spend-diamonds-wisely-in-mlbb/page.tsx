@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiTrendingUp, FiShoppingBag, FiStar, FiPercent, FiClock, FiShield, FiInfo, FiCheckCircle } from "react-icons/fi";
@@ -146,7 +146,7 @@ export default function BlogPage() {
 
       <div className="bg-[var(--card)] border border-[var(--border)] p-10 rounded-[40px] my-16 shadow-xl relative overflow-hidden group">
         <div className="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]" />
-        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4 flex items-center gap-2"><FiInfo /> The Lucky Spin Trap 🤫</h3>
+        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4 flex items-center gap-2"><FiInfo /> The Lucky Spin Trap ðŸ¤«</h3>
         <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
           Never, ever use your precious diamonds on the "Lucky Spin" wheel! This wheel uses tickets. Save your free daily tickets and spin it only when your favorite hero appears. Wasting diamonds here is a massive rookie mistake.
         </p>
@@ -181,7 +181,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We deliver instantly using only your Player ID—no login required!
+        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We deliver instantly using only your Player IDâ€”no login required!
       </p>
 
     </BlogPostLayout>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiCheckCircle, FiShield, FiAlertTriangle, FiInfo } from "react-icons/fi";

@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 
 export const metadata: Metadata = {
-  title: "Best Mobile Esports Games With Active Tournaments 2024",
-  description: "Looking for the best mobile esports games to play in 2024? Discover the top games with active tournaments, massive prize pools, and thriving competitive scenes.",
+  title: "Best Mobile Esports Games With Active Tournaments 2026",
+  description: "Looking for the best mobile esports games to play in 2026? Discover the top games with active tournaments, massive prize pools, and thriving competitive scenes.",
   keywords: [
     "mobile esports games",
     "active esports tournaments",
@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/best-mobile-esports-games-active-tournaments",
-    title: "Best Mobile Esports Games With Active Tournaments 2024",
-    description: "Looking for the best mobile esports games to play in 2024? Discover the top games with active tournaments, massive prize pools, and thriving competitive scenes.",
-    publishedTime: "2024-10-27T00:00:00.000Z",
+    title: "Best Mobile Esports Games With Active Tournaments 2026",
+    description: "Looking for the best mobile esports games to play in 2026? Discover the top games with active tournaments, massive prize pools, and thriving competitive scenes.",
+    publishedTime: "2026-10-27T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/best-mobile-esports-games.png", width: 1200, height: 630, alt: "Best Mobile Esports Games with Active Tournaments" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@mlbbtopupin",
-    title: "Best Mobile Esports Games With Active Tournaments 2024",
-    description: "Looking for the best mobile esports games to play in 2024? Discover the top games with active tournaments, massive prize pools, and thriving competitive scenes.",
+    title: "Best Mobile Esports Games With Active Tournaments 2026",
+    description: "Looking for the best mobile esports games to play in 2026? Discover the top games with active tournaments, massive prize pools, and thriving competitive scenes.",
     images: ["https://mlbbtopup.in/blog/best-mobile-esports-games.png"],
   },
 };
@@ -59,13 +59,13 @@ export default function BlogPage() {
 
   return (
     <BlogPostLayout
-      title="Best Mobile Esports Games With Active Tournaments in 2024"
+      title="Best Mobile Esports Games With Active Tournaments in 2026"
       category="Esports Guide"
       readTime="7 min read"
-      date="October 27, 2024"
+      date="October 27, 2026"
       image="/blog/best-mobile-esports-games.png"
       game="Multiple Games"
-      description="Discover the best mobile esports games to play in 2024, featuring active tournaments, massive global prize pools, and thriving competitive communities."
+      description="Discover the best mobile esports games to play in 2026, featuring active tournaments, massive global prize pools, and thriving competitive communities."
       faqItems={faqItems}
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
@@ -73,11 +73,11 @@ export default function BlogPage() {
       </p>
 
       <p>
-        If you are looking to transition from a casual player to a competitive esports athlete in 2024, your first step is choosing the right battlefield. You cannot invest thousands of hours mastering a game if its competitive scene is dead. You need a game with a massive player base, developer support, and a calendar packed with active tournaments.
+        If you are looking to transition from a casual player to a competitive esports athlete in 2026, your first step is choosing the right battlefield. You cannot invest thousands of hours mastering a game if its competitive scene is dead. You need a game with a massive player base, developer support, and a calendar packed with active tournaments.
       </p>
 
       <p>
-        In this comprehensive guide, we will break down the <strong>best mobile esports games with active tournaments in 2024</strong>. Whether you prefer fast-paced shooters or highly strategic MOBAs, there is a thriving competitive ecosystem waiting for you.
+        In this comprehensive guide, we will break down the <strong>best mobile esports games with active tournaments in 2026</strong>. Whether you prefer fast-paced shooters or highly strategic MOBAs, there is a thriving competitive ecosystem waiting for you.
       </p>
 
       <h2>What Makes a Great Mobile Esports Game?</h2>
@@ -121,7 +121,7 @@ export default function BlogPage() {
 
       <h3>3. Honor of Kings</h3>
       <p>
-        For years, <em>Honor of Kings</em> was exclusive to China, where it reigns as the biggest game in the country. However, in 2024, Tencent announced a massive $15 million investment to expand the game globally.
+        For years, <em>Honor of Kings</em> was exclusive to China, where it reigns as the biggest game in the country. However, in 2026, Tencent announced a massive $15 million investment to expand the game globally.
       </p>
       <ul className="space-y-3">
         <li><strong>The Scene:</strong> The Chinese ecosystem is massive, and the new global ecosystem is aggressively funding tournaments in the Middle East, Europe, and the Americas.</li>
@@ -155,7 +155,7 @@ export default function BlogPage() {
         Supercell's 3v3 hero brawler is deceivingly simple. Beneath its colorful, cartoonish exterior lies an incredibly deep, highly competitive game. The <em>Brawl Stars Championship</em> circuit is massive, featuring millions of dollars in prizes and a brilliant in-game integration that allows players to watch and interact with the esports scene directly from the app.
       </p>
 
-      <h2>Summary Table: Top Mobile Esports Games (2024)</h2>
+      <h2>Summary Table: Top Mobile Esports Games (2026)</h2>
 
       <table>
         <thead>
@@ -216,7 +216,7 @@ export default function BlogPage() {
       <h2>Conclusion: Key Takeaways</h2>
 
       <p>
-        The era of mobile gaming being a casual pastime is over. In 2024, mobile esports offers legitimate, highly lucrative career paths for dedicated players.
+        The era of mobile gaming being a casual pastime is over. In 2026, mobile esports offers legitimate, highly lucrative career paths for dedicated players.
       </p>
 
       <ul className="space-y-3">

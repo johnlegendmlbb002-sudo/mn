@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiZap, FiWifi, FiCpu, FiThermometer, FiSettings } from "react-icons/fi";
@@ -162,7 +162,7 @@ export default function BlogPage() {
       </ul>
 
       <p>
-        <strong>Now that your game is running flawlessly, it is time to look good while winning!</strong> You can't blame the lag anymore—equip an Epic skin and carry your team.
+        <strong>Now that your game is running flawlessly, it is time to look good while winning!</strong> You can't blame the lag anymoreâ€”equip an Epic skin and carry your team.
       </p>
 
       <p>

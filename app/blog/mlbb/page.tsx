@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogListing from "@/components/Blog/BlogListing";
 
 export const metadata: Metadata = {
-  title: "MLBB Guides & Insights – Tips, Price Guides & Top-Up Safety | MLBB Topup",
+  title: "MLBB Guides & Insights â€“ Tips, Price Guides & Top-Up Safety | MLBB Topup",
   description:
-    "Browse all Mobile Legends: Bang Bang guides from MLBB Topup — diamond price breakdowns, rank-up strategies, safety tips, and weekly pass guides for Indian players in 2026.",
+    "Browse all Mobile Legends: Bang Bang guides from MLBB Topup â€” diamond price breakdowns, rank-up strategies, safety tips, and weekly pass guides for Indian players in 2026.",
   keywords: [
     "mlbb guide blog india",
     "mobile legends tips 2026",
@@ -34,24 +34,24 @@ export const metadata: Metadata = {
     siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb",
-    title: "MLBB Guides & Insights – MLBB Topup Blog",
+    title: "MLBB Guides & Insights â€“ MLBB Topup Blog",
     description:
-      "All Mobile Legends guides from MLBB Topup — diamond price breakdowns, rank-up tips, safety guides, and weekly pass analysis for India.",
+      "All Mobile Legends guides from MLBB Topup â€” diamond price breakdowns, rank-up tips, safety guides, and weekly pass analysis for India.",
     images: [
       {
         url: "https://mlbbtopup.in/og-blog.png",
         width: 1200,
         height: 630,
-        alt: "MLBB Topup – MLBB Blog",
+        alt: "MLBB Topup â€“ MLBB Blog",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@mlbbtopupin",
-    title: "MLBB Guides & Insights – MLBB Topup Blog",
+    title: "MLBB Guides & Insights â€“ MLBB Topup Blog",
     description:
-      "All MLBB guides — diamond prices, rank-up tips, safety guides for Indian players.",
+      "All MLBB guides â€” diamond prices, rank-up tips, safety guides for Indian players.",
     images: ["https://mlbbtopup.in/og-blog.png"],
   },
 };

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 
@@ -70,7 +70,7 @@ export default function BlogPage() {
       faqItems={faqItems}
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
-        Want to carry your team in the Gold Lane? You need to master Beatrix. In 2026, she is a top-tier marksman who can literally do it all—snipe, burst, and spray.
+        Want to carry your team in the Gold Lane? You need to master Beatrix. In 2026, she is a top-tier marksman who can literally do it allâ€”snipe, burst, and spray.
       </p>
 
       <p>
@@ -150,7 +150,7 @@ export default function BlogPage() {
 
       <div className="bg-[var(--card)] border border-[var(--border)] p-10 rounded-[40px] my-16 shadow-xl relative overflow-hidden group">
         <div className="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]" />
-        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4">Deadly Combo Example 🔫</h3>
+        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4">Deadly Combo Example ðŸ”«</h3>
         <p className="text-sm italic opacity-70 m-0 leading-relaxed">
           The best players use the <strong>Sniper-Shotgun Swap</strong>. First, hit the enemy with your Sniper to drop their health. Instantly use your dash skill to close the gap, swap to your Shotgun, and fire. They will die before they can even react!
         </p>

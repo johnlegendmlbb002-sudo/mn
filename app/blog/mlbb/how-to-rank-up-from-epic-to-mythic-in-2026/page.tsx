@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiTrendingUp, FiTarget, FiShield, FiUsers, FiMap, FiCheckCircle, FiInfo } from "react-icons/fi";
@@ -75,7 +75,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        The journey from Epic to Mythic is the most challenging phase of the game. You will encounter a volatile mix of players—some gifted mechanically but lacking map sense, and others who troll for fun. 
+        The journey from Epic to Mythic is the most challenging phase of the game. You will encounter a volatile mix of playersâ€”some gifted mechanically but lacking map sense, and others who troll for fun. 
       </p>
 
       <p>

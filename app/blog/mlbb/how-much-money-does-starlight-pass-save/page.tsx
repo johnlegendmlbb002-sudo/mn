@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 
 export const metadata: Metadata = {
-  title: "How Much Money Does the MLBB Starlight Pass Save? (2024)",
-  description: "Wondering if the MLBB Starlight Pass is worth it? Discover exactly how much money and diamonds you save with our complete 2024 Starlight value breakdown.",
+  title: "How Much Money Does the MLBB Starlight Pass Save? (2026)",
+  description: "Wondering if the MLBB Starlight Pass is worth it? Discover exactly how much money and diamonds you save with our complete 2026 Starlight value breakdown.",
   keywords: [
     "mlbb starlight pass",
     "mobile legends starlight",
     "starlight pass value",
     "mlbb diamond savings",
-    "starlight rewards 2024"
+    "starlight rewards 2026"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-much-money-does-starlight-pass-save" },
   authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-much-money-does-starlight-pass-save",
-    title: "How Much Money Does the MLBB Starlight Pass Save? (2024)",
-    description: "Wondering if the MLBB Starlight Pass is worth it? Discover exactly how much money and diamonds you save with our complete 2024 Starlight value breakdown.",
-    publishedTime: "2024-10-28T00:00:00.000Z",
+    title: "How Much Money Does the MLBB Starlight Pass Save? (2026)",
+    description: "Wondering if the MLBB Starlight Pass is worth it? Discover exactly how much money and diamonds you save with our complete 2026 Starlight value breakdown.",
+    publishedTime: "2026-10-28T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/mlbb-starlight-pass-savings.png", width: 1200, height: 630, alt: "MLBB Starlight Pass Value and Savings" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@mlbbtopupin",
-    title: "How Much Money Does the MLBB Starlight Pass Save? (2024)",
-    description: "Wondering if the MLBB Starlight Pass is worth it? Discover exactly how much money and diamonds you save with our complete 2024 Starlight value breakdown.",
+    title: "How Much Money Does the MLBB Starlight Pass Save? (2026)",
+    description: "Wondering if the MLBB Starlight Pass is worth it? Discover exactly how much money and diamonds you save with our complete 2026 Starlight value breakdown.",
     images: ["https://mlbbtopup.in/blog/mlbb-starlight-pass-savings.png"],
   },
 };
@@ -49,7 +49,7 @@ export default function BlogPage() {
     },
     {
       question: "How many diamonds does it cost to buy the Starlight Pass?",
-      answer: "The Standard Starlight Pass costs exactly 300 Diamonds. If you buy the Weekly Diamond Pass twice (for about ₹160 to ₹180 total), you can easily accumulate enough diamonds to buy it."
+      answer: "The Standard Starlight Pass costs exactly 300 Diamonds. If you buy the Weekly Diamond Pass twice (for about â‚¹160 to â‚¹180 total), you can easily accumulate enough diamonds to buy it."
     },
     {
       question: "Can I gift a Starlight Pass to a friend?",
@@ -59,10 +59,10 @@ export default function BlogPage() {
 
   return (
     <BlogPostLayout
-      title="How Much Money Does the MLBB Starlight Pass Save in 2024?"
+      title="How Much Money Does the MLBB Starlight Pass Save in 2026?"
       category="Value Guide"
       readTime="8 min read"
-      date="October 28, 2024"
+      date="October 28, 2026"
       image="/blog/mlbb-starlight-pass-savings.png"
       game="MLBB"
       description="Break down the math behind the MLBB Starlight Pass. Discover the actual diamond value of the rewards and see how much money you save."
@@ -77,7 +77,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        In this detailed 2024 value breakdown, we are going to look past the flashy marketing. We will calculate the exact diamond value of the rewards, compare it to direct shop purchases, and show you exactly <strong>how much money the MLBB Starlight Pass saves you.</strong>
+        In this detailed 2026 value breakdown, we are going to look past the flashy marketing. We will calculate the exact diamond value of the rewards, compare it to direct shop purchases, and show you exactly <strong>how much money the MLBB Starlight Pass saves you.</strong>
       </p>
 
       <h2>The Raw Cost: Buying Starlight vs. Direct Diamonds</h2>
@@ -92,7 +92,7 @@ export default function BlogPage() {
       </ul>
 
       <p>
-        To put this in real-world currency, 300 diamonds cost roughly ₹250 to ₹300 if you buy them directly through the game. However, if you use the Weekly Diamond Pass strategy, you can accumulate those 300 diamonds for less than ₹180. 
+        To put this in real-world currency, 300 diamonds cost roughly â‚¹250 to â‚¹300 if you buy them directly through the game. However, if you use the Weekly Diamond Pass strategy, you can accumulate those 300 diamonds for less than â‚¹180. 
       </p>
 
       <p>
@@ -227,7 +227,7 @@ export default function BlogPage() {
       </ul>
 
       <p>
-        If you plan to spend any money at all on Mobile Legends in 2024, the Starlight Pass should be your absolute first purchase. It builds your account faster, gives you gorgeous skins, and provides the best mathematical return on investment in the entire Land of Dawn.
+        If you plan to spend any money at all on Mobile Legends in 2026, the Starlight Pass should be your absolute first purchase. It builds your account faster, gives you gorgeous skins, and provides the best mathematical return on investment in the entire Land of Dawn.
       </p>
 
     </BlogPostLayout>

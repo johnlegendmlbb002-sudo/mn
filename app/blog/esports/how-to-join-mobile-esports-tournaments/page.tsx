@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 
 export const metadata: Metadata = {
-  title: "How to Join Mobile Esports Tournaments (2024 Guide)",
-  description: "Want to go pro? Learn exactly how to join mobile esports tournaments in 2024. Discover platforms, requirements, squad building tips, and start competing today.",
+  title: "How to Join Mobile Esports Tournaments (2026 Guide)",
+  description: "Want to go pro? Learn exactly how to join mobile esports tournaments in 2026. Discover platforms, requirements, squad building tips, and start competing today.",
   keywords: [
     "join mobile esports",
-    "esports tournaments 2024",
+    "esports tournaments 2026",
     "competitive mobile gaming",
     "esports registration",
     "gaming tournaments"
@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/how-to-join-mobile-esports-tournaments",
-    title: "How to Join Mobile Esports Tournaments (2024 Guide)",
-    description: "Want to go pro? Learn exactly how to join mobile esports tournaments in 2024. Discover platforms, requirements, squad building tips, and start competing today.",
-    publishedTime: "2024-10-26T00:00:00.000Z",
+    title: "How to Join Mobile Esports Tournaments (2026 Guide)",
+    description: "Want to go pro? Learn exactly how to join mobile esports tournaments in 2026. Discover platforms, requirements, squad building tips, and start competing today.",
+    publishedTime: "2026-10-26T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/join-esports-tournaments.png", width: 1200, height: 630, alt: "Mobile Gamer Competing in Esports Tournament" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@mlbbtopupin",
-    title: "How to Join Mobile Esports Tournaments (2024 Guide)",
-    description: "Want to go pro? Learn exactly how to join mobile esports tournaments in 2024. Discover platforms, requirements, squad building tips, and start competing today.",
+    title: "How to Join Mobile Esports Tournaments (2026 Guide)",
+    description: "Want to go pro? Learn exactly how to join mobile esports tournaments in 2026. Discover platforms, requirements, squad building tips, and start competing today.",
     images: ["https://mlbbtopup.in/blog/join-esports-tournaments.png"],
   },
 };
@@ -59,13 +59,13 @@ export default function BlogPage() {
 
   return (
     <BlogPostLayout
-      title="How to Join Mobile Esports Tournaments: The Complete 2024 Guide"
+      title="How to Join Mobile Esports Tournaments: The Complete 2026 Guide"
       category="Esports Guide"
       readTime="7 min read"
-      date="October 26, 2024"
+      date="October 26, 2026"
       image="/blog/join-esports-tournaments.png"
       game="Multiple Games"
-      description="Ready to take your gaming to the next level? Learn how to join mobile esports tournaments, build a team, and start your competitive journey in 2024."
+      description="Ready to take your gaming to the next level? Learn how to join mobile esports tournaments, build a team, and start your competitive journey in 2026."
       faqItems={faqItems}
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
@@ -77,7 +77,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        But how do you actually get started? The transition from being a top-ranked public match player to a verified tournament competitor can feel overwhelming. There are registrations, rulebooks, Discord servers, and technical requirements that you need to navigate. In this comprehensive, step-by-step guide, we will show you exactly <strong>how to join mobile esports tournaments in 2024</strong>.
+        But how do you actually get started? The transition from being a top-ranked public match player to a verified tournament competitor can feel overwhelming. There are registrations, rulebooks, Discord servers, and technical requirements that you need to navigate. In this comprehensive, step-by-step guide, we will show you exactly <strong>how to join mobile esports tournaments in 2026</strong>.
       </p>
 
       <h2>Step 1: Pick Your Game and Master the Meta</h2>
@@ -92,7 +92,7 @@ export default function BlogPage() {
 
       <ul className="space-y-3">
         <li><strong>Rank Up:</strong> You should consistently be in the highest tier of the ranked mode (e.g., Mythic Glory in MLBB or Conqueror in PUBG Mobile). Tournaments are unforgiving; you need top-tier mechanical skills.</li>
-        <li><strong>Watch Pro Matches:</strong> Do not just play the game—study it. Watch how professional teams rotate, draft, and communicate.</li>
+        <li><strong>Watch Pro Matches:</strong> Do not just play the gameâ€”study it. Watch how professional teams rotate, draft, and communicate.</li>
         <li><strong>Learn Multiple Roles:</strong> While you will eventually specialize, understanding how every role functions gives you a massive tactical advantage.</li>
       </ul>
 

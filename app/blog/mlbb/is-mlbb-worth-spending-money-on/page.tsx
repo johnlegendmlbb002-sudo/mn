@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiStar, FiShield, FiTrendingUp, FiAlertTriangle } from "react-icons/fi";
@@ -43,7 +43,7 @@ export default function BlogPage() {
     },
     {
       question: "What is the single best purchase in MLBB?",
-      answer: "The Starlight Membership. For around ₹300-₹500, you get a premium skin, emotes, fragments, and massive progression boosts. It has the highest ROI in the game."
+      answer: "The Starlight Membership. For around â‚¹300-â‚¹500, you get a premium skin, emotes, fragments, and massive progression boosts. It has the highest ROI in the game."
     },
     {
       question: "Should I buy heroes with Diamonds?",
@@ -54,7 +54,7 @@ export default function BlogPage() {
       answer: "Yes! During the Promo Diamond events (like 11.11), you can use free tokens to pay for 99% of an Epic skin. You only need to spend 1 real diamond to complete the purchase."
     },
     {
-      question: "Are Legend skins worth ₹10,000?",
+      question: "Are Legend skins worth â‚¹10,000?",
       answer: "Only if you have extra income and main that specific hero. They offer incredible animations and prestige, but they will not make you play any better."
     }
   ];
@@ -91,7 +91,7 @@ export default function BlogPage() {
       <ul className="space-y-3">
         <li>Does this matter? <strong>Only in the first 2 minutes.</strong></li>
         <li>By the time you reach level 4, that +8 damage is completely invisible compared to your items and emblems.</li>
-        <li>A pro player using a default skin will absolutely destroy a casual player using a ₹10,000 Legend skin. <strong>MLBB is 100% pay-for-style, not pay-to-win.</strong></li>
+        <li>A pro player using a default skin will absolutely destroy a casual player using a â‚¹10,000 Legend skin. <strong>MLBB is 100% pay-for-style, not pay-to-win.</strong></li>
       </ul>
 
       <h2>2. Why Do Pro Players Buy Skins Then?</h2>
@@ -109,7 +109,7 @@ export default function BlogPage() {
         <div className="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]" />
         <h3 className="italic font-black uppercase text-[var(--accent)] mb-4 flex items-center gap-2"><FiStar /> The Hobby Perspective</h3>
         <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
-          Think about it like this: Many people spend ₹500 on a two-hour movie ticket. Spending ₹500 on a Starlight pass gives you a permanent skin and 30 days of entertainment. When viewed as a hobby, MLBB is incredibly cheap!
+          Think about it like this: Many people spend â‚¹500 on a two-hour movie ticket. Spending â‚¹500 on a Starlight pass gives you a permanent skin and 30 days of entertainment. When viewed as a hobby, MLBB is incredibly cheap!
         </p>
       </div>
 
@@ -130,27 +130,27 @@ export default function BlogPage() {
         <tbody>
           <tr>
             <td><strong>Starlight Membership</strong></td>
-            <td>₹300 - ₹500</td>
+            <td>â‚¹300 - â‚¹500</td>
             <td><strong>100% Yes.</strong> You get a skin, emotes, fragments to upgrade emblems, and massive daily bonuses.</td>
           </tr>
           <tr>
             <td><strong>Weekly Diamond Pass</strong></td>
-            <td>~₹160</td>
+            <td>~â‚¹160</td>
             <td><strong>100% Yes.</strong> The cheapest way to slowly save up diamonds for big events. Gives 500% value.</td>
           </tr>
           <tr>
             <td><strong>Epic / Special Skins</strong></td>
-            <td>₹600 - ₹900</td>
+            <td>â‚¹600 - â‚¹900</td>
             <td><strong>Yes, if you main the hero.</strong> Great new animations for a fair price.</td>
           </tr>
           <tr>
             <td><strong>Collector / Legend Skins</strong></td>
-            <td>₹3,000 - ₹10,000+</td>
+            <td>â‚¹3,000 - â‚¹10,000+</td>
             <td><strong>Only for whales.</strong> These are luxury items. Only buy if you have disposable income.</td>
           </tr>
           <tr>
             <td><strong>New Heroes</strong></td>
-            <td>~₹500</td>
+            <td>~â‚¹500</td>
             <td><strong>NO.</strong> Never buy heroes with real money. Grind Battle Points for free instead!</td>
           </tr>
         </tbody>

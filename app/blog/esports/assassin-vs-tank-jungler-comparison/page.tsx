@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/esports/assassin-vs-tank-jungler-comparison",
     title: "Assassin Junglers vs Tank Junglers: Which Meta is Better?",
     description: "Confused about which jungle style to play? Read our ultimate Assassin Jungler vs Tank Jungler comparison guide to understand the mobile esports meta.",
-    publishedTime: "2024-11-02T00:00:00.000Z",
+    publishedTime: "2026-11-02T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/assassin-vs-tank-jungler.png", width: 1200, height: 630, alt: "Assassin vs Tank Jungler Comparison" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="Assassin Junglers vs Tank Junglers: The Ultimate MOBA Comparison"
       category="Esports Strategy"
       readTime="8 min read"
-      date="November 02, 2024"
+      date="November 02, 2026"
       image="/blog/assassin-vs-tank-jungler.png"
       game="Multiple Games"
       description="The jungle meta has completely shifted. We break down the massive difference between the classic Assassin Jungler and the modern professional Tank Jungler."

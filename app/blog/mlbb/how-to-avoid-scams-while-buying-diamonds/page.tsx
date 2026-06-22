@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiAlertTriangle, FiShield, FiLock, FiInfo, FiCheckCircle } from "react-icons/fi";
@@ -85,7 +85,7 @@ export default function BlogPage() {
       <h2>1. The "Too Good To Be True" Trap</h2>
       
       <p>
-        This is the oldest trick in the book. You see a WhatsApp message offering 10,000 diamonds for just ₹500. 
+        This is the oldest trick in the book. You see a WhatsApp message offering 10,000 diamonds for just â‚¹500. 
       </p>
 
       <ul className="space-y-3">

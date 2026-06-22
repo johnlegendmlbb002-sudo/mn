@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 
 export const metadata: Metadata = {
-  title: "How Much Money Do Mobile Esports Players Earn? (2024 Guide)",
-  description: "Wondering how much money mobile esports players earn? Discover pro player salaries, prize pools, and top income streams in this complete 2024 guide.",
+  title: "How Much Money Do Mobile Esports Players Earn? (2026 Guide)",
+  description: "Wondering how much money mobile esports players earn? Discover pro player salaries, prize pools, and top income streams in this complete 2026 guide.",
   keywords: [
     "mobile esports",
     "esports player salary",
@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/how-much-mobile-esports-players-earn",
-    title: "How Much Money Do Mobile Esports Players Earn? (2024 Guide)",
-    description: "Wondering how much money mobile esports players earn? Discover pro player salaries, prize pools, and top income streams in this complete 2024 guide.",
-    publishedTime: "2024-10-25T00:00:00.000Z",
+    title: "How Much Money Do Mobile Esports Players Earn? (2026 Guide)",
+    description: "Wondering how much money mobile esports players earn? Discover pro player salaries, prize pools, and top income streams in this complete 2026 guide.",
+    publishedTime: "2026-10-25T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/mobile-esports-earnings.png", width: 1200, height: 630, alt: "Mobile Esports Tournament" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@mlbbtopupin",
-    title: "How Much Money Do Mobile Esports Players Earn? (2024 Guide)",
-    description: "Wondering how much money mobile esports players earn? Discover pro player salaries, prize pools, and top income streams in this complete 2024 guide.",
+    title: "How Much Money Do Mobile Esports Players Earn? (2026 Guide)",
+    description: "Wondering how much money mobile esports players earn? Discover pro player salaries, prize pools, and top income streams in this complete 2026 guide.",
     images: ["https://mlbbtopup.in/blog/mobile-esports-earnings.png"],
   },
 };
@@ -59,17 +59,17 @@ export default function BlogPage() {
 
   return (
     <BlogPostLayout
-      title="How Much Money Mobile Esports Players Earn: The Ultimate 2024 Guide"
+      title="How Much Money Mobile Esports Players Earn: The Ultimate 2026 Guide"
       category="Esports Guide"
       readTime="6 min read"
-      date="October 25, 2024"
+      date="October 25, 2026"
       image="/blog/mobile-esports-earnings.png"
       game="Multiple Games"
-      description="Discover how much mobile esports players earn, including salaries, prize pools, and other income streams in our comprehensive 2024 guide."
+      description="Discover how much mobile esports players earn, including salaries, prize pools, and other income streams in our comprehensive 2026 guide."
       faqItems={faqItems}
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
-        Remember when playing games on your phone was just a fun way to kill time on the bus? Those days are long gone. Today, mobile gaming isn't just a hobby—it's a multi-million-dollar industry.
+        Remember when playing games on your phone was just a fun way to kill time on the bus? Those days are long gone. Today, mobile gaming isn't just a hobbyâ€”it's a multi-million-dollar industry.
       </p>
 
       <p>
@@ -77,7 +77,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        The short answer is that the top players are making life-changing money. The long answer is a bit more complicated, as earnings depend on the game, the region, and the player's personal brand. In this detailed guide, we are going to break down exactly how much mobile pro gamers make in 2024, where their money comes from, and what it really takes to turn a mobile gaming passion into a profitable career.
+        The short answer is that the top players are making life-changing money. The long answer is a bit more complicated, as earnings depend on the game, the region, and the player's personal brand. In this detailed guide, we are going to break down exactly how much mobile pro gamers make in 2026, where their money comes from, and what it really takes to turn a mobile gaming passion into a profitable career.
       </p>
 
       <h2>The Boom of Mobile Esports</h2>
@@ -123,7 +123,7 @@ export default function BlogPage() {
       <h2>Average Earnings: Breaking Down the Numbers</h2>
 
       <p>
-        Because earnings vary wildly, it helps to look at the different tiers of professional players. Here is a breakdown of what mobile esports players can generally expect to earn in 2024:
+        Because earnings vary wildly, it helps to look at the different tiers of professional players. Here is a breakdown of what mobile esports players can generally expect to earn in 2026:
       </p>
 
       <table>
@@ -154,7 +154,7 @@ export default function BlogPage() {
       </table>
 
       <p className="italic opacity-80 text-sm mt-4">
-        *Note: These are estimated global averages. Earnings can be significantly higher in massive markets like China, or structured differently in emerging markets like India (where top pros can make ₹5 lakh to ₹15 lakh per month).
+        *Note: These are estimated global averages. Earnings can be significantly higher in massive markets like China, or structured differently in emerging markets like India (where top pros can make â‚¹5 lakh to â‚¹15 lakh per month).
       </p>
 
       <h2>The Highest Paying Mobile Esports Games</h2>
@@ -166,7 +166,7 @@ export default function BlogPage() {
 
       <h3>Honor of Kings</h3>
       <p>
-        Developed by Tencent, <em>Honor of Kings</em> is an absolute juggernaut in China. With Tencent's recent push to expand the game globally in 2024, the earning potential for international players is rapidly catching up.
+        Developed by Tencent, <em>Honor of Kings</em> is an absolute juggernaut in China. With Tencent's recent push to expand the game globally in 2026, the earning potential for international players is rapidly catching up.
       </p>
 
       <h3>Mobile Legends: Bang Bang (MLBB)</h3>
@@ -199,7 +199,7 @@ export default function BlogPage() {
       <h2>Conclusion: Key Takeaways</h2>
 
       <p>
-        Mobile esports is no longer playing second fiddle to PC gaming. It is a massive, highly lucrative industry with a thriving ecosystem in 2024.
+        Mobile esports is no longer playing second fiddle to PC gaming. It is a massive, highly lucrative industry with a thriving ecosystem in 2026.
       </p>
 
       <ul className="space-y-3">

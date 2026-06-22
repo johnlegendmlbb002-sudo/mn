@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogListing from "@/components/Blog/BlogListing";
 
 export const metadata: Metadata = {
-  title: "MLBB Insights & Guides – Safe Top-Up, Diamond Prices & Tips | mlbbtopup.in",
+  title: "MLBB Insights & Guides â€“ Safe Top-Up, Diamond Prices & Tips | mlbbtopup.in",
   description:
-    "mlbbtopup.in's blog covers everything for Mobile Legends players in India — from safe diamond top-up guides and price comparisons to rank-up strategies and gameplay tips. Updated for 2026.",
+    "mlbbtopup.in's blog covers everything for Mobile Legends players in India â€” from safe diamond top-up guides and price comparisons to rank-up strategies and gameplay tips. Updated for 2026.",
   keywords: [
     "mlbb blog india",
     "mobile legends guides 2026",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog",
-    title: "MLBB Insights & Guides – mlbbtopup.in Blog",
+    title: "MLBB Insights & Guides â€“ mlbbtopup.in Blog",
     description:
       "Safe top-up guides, diamond price breakdowns, rank-up tips, and gameplay strategies for Mobile Legends players in India.",
     images: [
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
         url: "https://mlbbtopup.in/og-blog.png",
         width: 1200,
         height: 630,
-        alt: "mlbbtopup.in – MLBB Blog & Insights",
+        alt: "mlbbtopup.in â€“ MLBB Blog & Insights",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@mlbbtopupin",
-    title: "MLBB Insights & Guides – mlbbtopup.in Blog",
+    title: "MLBB Insights & Guides â€“ mlbbtopup.in Blog",
     description:
       "Safe MLBB top-up tips, diamond guides, and rank-up strategies for Indian players.",
     images: ["https://mlbbtopup.in/og-blog.png"],

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/esports/early-vs-late-game-heroes",
     title: "Early Game vs Late Game Heroes: MOBA Strategy Guide",
     description: "Don't know why you are losing after 15 minutes? Learn the critical difference between early game and late game heroes in mobile MOBAs, and how to draft a winning team.",
-    publishedTime: "2024-11-01T00:00:00.000Z",
+    publishedTime: "2026-11-01T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/early-vs-late-game-heroes.png", width: 1200, height: 630, alt: "Early Game vs Late Game MOBA Heroes" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="Early Game vs Late Game Heroes: The Ultimate MOBA Strategy Guide"
       category="Esports Strategy"
       readTime="8 min read"
-      date="November 01, 2024"
+      date="November 01, 2026"
       image="/blog/early-vs-late-game-heroes.png"
       game="Multiple Games"
       description="Understand the fundamental concept of power spikes in mobile esports. Learn how to draft a balanced team and master the ticking clock of early vs late game heroes."
@@ -189,7 +189,7 @@ export default function BlogPage() {
 
       <h3>How to Beat a Late Game Team</h3>
       <p>
-        If the enemy drafts scaling monsters, you must be relentless. You cannot let them farm peacefully. You must invade their jungle constantly, steal their buffs, and freeze the minion waves to completely starve them of gold. Do not play with your food—end the game as quickly as humanly possible before they reach their item spikes.
+        If the enemy drafts scaling monsters, you must be relentless. You cannot let them farm peacefully. You must invade their jungle constantly, steal their buffs, and freeze the minion waves to completely starve them of gold. Do not play with your foodâ€”end the game as quickly as humanly possible before they reach their item spikes.
       </p>
 
       <h2>Conclusion: Key Takeaways</h2>

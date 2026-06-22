@@ -1,10 +1,10 @@
-import { BlogPost } from "./types";
+﻿import { BlogPost } from "./types";
 
 export const MLBB_BLOGS_DATA: BlogPost[] = [
 
   {
     id: "6",
-    title: "99% Players Don’t Know These MLBB Tricks (Rank Up Instantly)",
+    title: "99% Players Donâ€™t Know These MLBB Tricks (Rank Up Instantly)",
     slug: "mlbb-tricks-to-rank-up",
     game: "mlbb",
     type: "Pro Tips",
@@ -21,7 +21,7 @@ export const MLBB_BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "7",
-    title: "Stop Losing in Mobile Legends – Fix These 7 Mistakes Now",
+    title: "Stop Losing in Mobile Legends â€“ Fix These 7 Mistakes Now",
     slug: "stop-losing-mlbb-7-mistakes",
     game: "mlbb",
     type: "Guide",
@@ -59,7 +59,7 @@ export const MLBB_BLOGS_DATA: BlogPost[] = [
     type: "Safety",
     excerpt:
       "Step-by-step guide to buying MLBB diamonds safely in India.",
-    publishedAt: "2025-01-12",
+    publishedAt: "2026-01-12",
     author: "Admin",
     readingTime: "5 min read",
     image: "/blog/buy-safely.png",
@@ -75,7 +75,7 @@ export const MLBB_BLOGS_DATA: BlogPost[] = [
     type: "Info",
     excerpt:
       "Understand whether MLBB top-ups are legal in India.",
-    publishedAt: "2025-01-05",
+    publishedAt: "2026-01-05",
     author: "Admin",
     readingTime: "3 min read",
     image: "/blog/legal-india.png",
@@ -84,13 +84,13 @@ export const MLBB_BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "4",
-    title: "How to Gift MLBB Diamonds to Friends (2025)",
+    title: "How to Gift MLBB Diamonds to Friends (2026)",
     slug: "how-to-gift-mlbb-diamonds",
     game: "mlbb",
     type: "Guide",
     excerpt:
       "A complete guide on how to safely gift Mobile Legends diamonds to your friends using their Player ID.",
-    publishedAt: "2025-02-07",
+    publishedAt: "2026-02-07",
     author: "Admin",
     readingTime: "3 min read",
     image: "/blog/gift-guide.png",
@@ -100,13 +100,13 @@ export const MLBB_BLOGS_DATA: BlogPost[] = [
   },
   {
     id: "5",
-    title: "Best MLBB Diamond Packages – Which Gives the Most Value? (2025)",
+    title: "Best MLBB Diamond Packages â€“ Which Gives the Most Value? (2026)",
     slug: "best-mlbb-diamond-packages-value-guide",
     game: "mlbb",
     type: "Value Guide",
     excerpt:
       "Not all MLBB diamond packages are equal. Find out which bundle gives you the most diamonds per rupee and how to save more with bonus events.",
-    publishedAt: "2025-02-26",
+    publishedAt: "2026-02-26",
     author: "Admin",
     readingTime: "5 min read",
     image: "/blog/best-value.png",

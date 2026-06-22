@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiTrendingUp, FiMap, FiTarget, FiAlertCircle, FiShield, FiCheckCircle, FiInfo, FiZap } from "react-icons/fi";
@@ -71,7 +71,7 @@ export default function BlogPage() {
       faqItems={faqItems}
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-[var(--accent)] pl-6 py-2 bg-[var(--accent)]/5 rounded-r-2xl">
-        Are you tired of being the MVP of a losing team? If you are stuck in Epic or Legend rank, the problem might not be your mechanics—it is your macro decisions.
+        Are you tired of being the MVP of a losing team? If you are stuck in Epic or Legend rank, the problem might not be your mechanicsâ€”it is your macro decisions.
       </p>
 
       <p>

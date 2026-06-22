@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 
 export const metadata: Metadata = {
-  title: "How to Improve Decision Making in Ranked Games (2024)",
+  title: "How to Improve Decision Making in Ranked Games (2026)",
   description: "Stuck in your rank? Learn how to improve decision making during ranked games with our professional esports guide. Master macro play, map awareness, and mental clarity.",
   keywords: [
     "improve decision making gaming",
@@ -19,15 +19,15 @@ export const metadata: Metadata = {
     siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/how-to-improve-decision-making-ranked-games",
-    title: "How to Improve Decision Making in Ranked Games (2024)",
+    title: "How to Improve Decision Making in Ranked Games (2026)",
     description: "Stuck in your rank? Learn how to improve decision making during ranked games with our professional esports guide. Master macro play, map awareness, and mental clarity.",
-    publishedTime: "2024-10-29T00:00:00.000Z",
+    publishedTime: "2026-10-29T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/improve-decision-making-ranked.png", width: 1200, height: 630, alt: "Gamer focusing on decision making" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@mlbbtopupin",
-    title: "How to Improve Decision Making in Ranked Games (2024)",
+    title: "How to Improve Decision Making in Ranked Games (2026)",
     description: "Stuck in your rank? Learn how to improve decision making during ranked games with our professional esports guide. Master macro play, map awareness, and mental clarity.",
     images: ["https://mlbbtopup.in/blog/improve-decision-making-ranked.png"],
   },
@@ -59,10 +59,10 @@ export default function BlogPage() {
 
   return (
     <BlogPostLayout
-      title="How to Improve Decision Making During Ranked Games: The 2024 Pro Guide"
+      title="How to Improve Decision Making During Ranked Games: The 2026 Pro Guide"
       category="Esports Strategy"
       readTime="8 min read"
-      date="October 29, 2024"
+      date="October 29, 2026"
       image="/blog/improve-decision-making-ranked.png"
       game="Multiple Games"
       description="Learn the professional secrets to mastering macro play, improving map awareness, and making flawless decisions under pressure in ranked games."
@@ -114,7 +114,7 @@ export default function BlogPage() {
         <li>Are my teammates in a position to follow up if I initiate a fight?</li>
       </ul>
       <p>
-        If you do not have the answers to these questions, taking a fight is not a strategy—it is a blind gamble.
+        If you do not have the answers to these questions, taking a fight is not a strategyâ€”it is a blind gamble.
       </p>
 
       <h3>2. Risk vs. Reward Assessment</h3>

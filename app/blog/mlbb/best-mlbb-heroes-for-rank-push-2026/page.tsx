@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 
@@ -150,7 +150,7 @@ export default function BlogPage() {
 
       <div className="bg-[var(--card)] border border-[var(--border)] p-10 rounded-[40px] my-16 shadow-xl relative overflow-hidden group">
         <div className="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]" />
-        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4">Solo Queue Secret 🤫</h3>
+        <h3 className="italic font-black uppercase text-[var(--accent)] mb-4">Solo Queue Secret ðŸ¤«</h3>
         <p className="text-sm italic opacity-70 m-0 leading-relaxed">
           If you are playing completely solo, always try to lock in a hero with <strong>Crowd Control (CC)</strong>. Heroes like Terizla or Vexana force your random teammates to attack the same target!
         </p>

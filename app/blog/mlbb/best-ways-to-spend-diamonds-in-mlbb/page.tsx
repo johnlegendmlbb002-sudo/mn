@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import Link from "next/link";
 import { FiTrendingUp, FiArrowRight, FiInfo, FiPercent, FiStar, FiShield } from "react-icons/fi";
@@ -161,7 +161,7 @@ export default function BlogPage() {
       <h2>Conclusion: Key Takeaways</h2>
       
       <p>
-        The key to building a premium MLBB account in 2026 isn't about spending the most money—it's about spending it intelligently.
+        The key to building a premium MLBB account in 2026 isn't about spending the most moneyâ€”it's about spending it intelligently.
       </p>
 
       <ul className="space-y-3">
