@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/esports/how-to-improve-decision-making-ranked-games",
     title: "How to Improve Decision Making in Ranked Games (2026)",
     description: "Stuck in your rank? Learn how to improve decision making during ranked games with our professional esports guide. Master macro play, map awareness, and mental clarity.",
-    publishedTime: "2026-10-29T00:00:00.000Z",
+    publishedTime: "2026-05-28T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/improve-decision-making-ranked.png", width: 1200, height: 630, alt: "Gamer focusing on decision making" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="How to Improve Decision Making During Ranked Games: The 2026 Pro Guide"
       category="Esports Strategy"
       readTime="8 min read"
-      date="October 29, 2026"
+      date="May 28, 2026"
       image="/blog/improve-decision-making-ranked.png"
       game="Multiple Games"
       description="Learn the professional secrets to mastering macro play, improving map awareness, and making flawless decisions under pressure in ranked games."
@@ -212,3 +212,4 @@ export default function BlogPage() {
     </BlogPostLayout>
   );
 }
+

@@ -143,11 +143,74 @@ keywords: [
 
 import { getAppSettings } from "@/lib/settings";
 import WhatsAppCommunityPopup from "@/components/WhatsAppQRPopup";
+import Script from "next/script";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do I buy MLBB diamonds in India?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Visit mlbbtopup.in, select your diamond pack, enter your MLBB Player ID and Zone ID, choose UPI/PhonePe/Google Pay/Paytm, and confirm. Diamonds are delivered within 5 minutes — no Moonton login required.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is mlbbtopup.in safe and legit?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. mlbbtopup.in is a trusted MLBB diamond top-up site used by thousands of Indian players. We use secure UPI payment gateways and top up via Moonton's official API. Your account credentials are never required.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the cheapest way to buy MLBB diamonds in India?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "mlbbtopup.in offers the lowest diamond prices in India — often 10–20% cheaper than Codashop or the in-game store. The Weekly Diamond Pass starting at ₹89 is the best value for regular players.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How fast is MLBB diamond delivery?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Diamond delivery is instant — typically within 1 to 5 minutes of successful payment. Our automated delivery system runs 24×7.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which payment methods are supported for MLBB top up?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We support all major Indian payment methods: UPI (any VPA/QR), PhonePe, Google Pay, Paytm, and bank transfers. No credit card needed.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is the MLBB Weekly Diamond Pass worth it?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. The Weekly Diamond Pass gives 100 diamonds immediately plus 20 diamonds/day for 7 days — 240 diamonds total. At ₹89 on mlbbtopup.in, that's under ₹0.37 per diamond — the highest-value MLBB purchase for regular players.",
+      },
+    },
+  ],
+};
 
 export default async function Page() {
   const settings = await getAppSettings();
   return (
     <main>
+      <Script
+        id="faq-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {settings.showTelegramPopup && <TelegramQRPopup />}
       {settings.showWhatsappPopup && <WhatsAppCommunityPopup />}
 

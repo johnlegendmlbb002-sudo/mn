@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/esports/early-vs-late-game-heroes",
     title: "Early Game vs Late Game Heroes: MOBA Strategy Guide",
     description: "Don't know why you are losing after 15 minutes? Learn the critical difference between early game and late game heroes in mobile MOBAs, and how to draft a winning team.",
-    publishedTime: "2026-11-01T00:00:00.000Z",
+    publishedTime: "2026-06-12T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/early-vs-late-game-heroes.png", width: 1200, height: 630, alt: "Early Game vs Late Game MOBA Heroes" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="Early Game vs Late Game Heroes: The Ultimate MOBA Strategy Guide"
       category="Esports Strategy"
       readTime="8 min read"
-      date="November 01, 2026"
+      date="June 12, 2026"
       image="/blog/early-vs-late-game-heroes.png"
       game="Multiple Games"
       description="Understand the fundamental concept of power spikes in mobile esports. Learn how to draft a balanced team and master the ticking clock of early vs late game heroes."
@@ -211,3 +211,4 @@ export default function BlogPage() {
     </BlogPostLayout>
   );
 }
+

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/esports/why-objective-control-wins-games",
     title: "Why Objective Control Wins More Games Than Kills",
     description: "Having high kills doesn't guarantee a win. Learn why objective control is the true secret to climbing ranks in mobile MOBAs like MLBB and Honor of Kings.",
-    publishedTime: "2026-11-03T00:00:00.000Z",
+    publishedTime: "2026-06-18T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/objective-control-wins.png", width: 1200, height: 630, alt: "Objective Control MOBA Strategy" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="Why Objective Control Wins More Games Than Kills: A Macro Strategy Guide"
       category="Esports Strategy"
       readTime="8 min read"
-      date="November 03, 2026"
+      date="June 18, 2026"
       image="/blog/objective-control-wins.png"
       game="Multiple Games"
       description="Stop chasing kills and start destroying towers. We break down why elite objective control is the only statistically guaranteed way to climb the ranked ladder."
@@ -209,3 +209,4 @@ export default function BlogPage() {
     </BlogPostLayout>
   );
 }
+

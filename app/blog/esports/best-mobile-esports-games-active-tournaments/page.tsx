@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/esports/best-mobile-esports-games-active-tournaments",
     title: "Best Mobile Esports Games With Active Tournaments 2026",
     description: "Looking for the best mobile esports games to play in 2026? Discover the top games with active tournaments, massive prize pools, and thriving competitive scenes.",
-    publishedTime: "2026-10-27T00:00:00.000Z",
+    publishedTime: "2026-05-14T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/best-mobile-esports-games.png", width: 1200, height: 630, alt: "Best Mobile Esports Games with Active Tournaments" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="Best Mobile Esports Games With Active Tournaments in 2026"
       category="Esports Guide"
       readTime="7 min read"
-      date="October 27, 2026"
+      date="May 14, 2026"
       image="/blog/best-mobile-esports-games.png"
       game="Multiple Games"
       description="Discover the best mobile esports games to play in 2026, featuring active tournaments, massive global prize pools, and thriving competitive communities."
@@ -232,3 +232,4 @@ export default function BlogPage() {
     </BlogPostLayout>
   );
 }
+

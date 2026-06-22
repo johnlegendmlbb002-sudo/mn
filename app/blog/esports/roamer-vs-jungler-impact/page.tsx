@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/esports/roamer-vs-jungler-impact",
     title: "Roamer vs Jungler: Which Role Has More Impact in MOBAs?",
     description: "Having a debate with your team? Discover whether the Roamer or the Jungler has the most impact in mobile MOBAs like MLBB and Honor of Kings in this pro guide.",
-    publishedTime: "2026-10-31T00:00:00.000Z",
+    publishedTime: "2026-06-08T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/roamer-vs-jungler.png", width: 1200, height: 630, alt: "Roamer vs Jungler Role Comparison" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="Roamer vs Jungler: Which Role Actually Has More Impact?"
       category="Esports Strategy"
       readTime="8 min read"
-      date="October 31, 2026"
+      date="June 08, 2026"
       image="/blog/roamer-vs-jungler.png"
       game="Multiple Games"
       description="The oldest debate in mobile esports. We break down the macro strategy of MOBAs to finally determine whether the Jungler or the Roamer carries the hardest."
@@ -201,3 +201,4 @@ export default function BlogPage() {
     </BlogPostLayout>
   );
 }
+

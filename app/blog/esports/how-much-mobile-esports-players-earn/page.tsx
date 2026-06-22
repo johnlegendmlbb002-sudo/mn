@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/esports/how-much-mobile-esports-players-earn",
     title: "How Much Money Do Mobile Esports Players Earn? (2026 Guide)",
     description: "Wondering how much money mobile esports players earn? Discover pro player salaries, prize pools, and top income streams in this complete 2026 guide.",
-    publishedTime: "2026-10-25T00:00:00.000Z",
+    publishedTime: "2026-04-30T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/mobile-esports-earnings.png", width: 1200, height: 630, alt: "Mobile Esports Tournament" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="How Much Money Mobile Esports Players Earn: The Ultimate 2026 Guide"
       category="Esports Guide"
       readTime="6 min read"
-      date="October 25, 2026"
+      date="April 30, 2026"
       image="/blog/mobile-esports-earnings.png"
       game="Multiple Games"
       description="Discover how much mobile esports players earn, including salaries, prize pools, and other income streams in our comprehensive 2026 guide."
@@ -214,3 +214,4 @@ export default function BlogPage() {
     </BlogPostLayout>
   );
 }
+

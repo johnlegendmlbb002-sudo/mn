@@ -1,8 +1,10 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import BlogListing from "@/components/Blog/BlogListing";
 
 export const metadata: Metadata = {
-  title: "MLBB Insights & Guides â€“ Safe Top-Up, Diamond Prices & Tips | mlbbtopup.in",
+  title: {
+    absolute: "MLBB Guides & Top-Up Tips for India | mlbbtopup.in",
+  },
   description:
     "mlbbtopup.in's blog covers everything for Mobile Legends players in India â€” from safe diamond top-up guides and price comparisons to rank-up strategies and gameplay tips. Updated for 2026.",
   keywords: [

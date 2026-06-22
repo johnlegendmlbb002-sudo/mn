@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/mlbb/mpl-vs-mseries-difference",
     title: "MPL vs M-Series: What's the Difference? (MLBB Esports Guide)",
     description: "Confused about MLBB esports? Learn the complete difference between MPL (Mobile Legends Professional League) and the M-Series World Championship in this guide.",
-    publishedTime: "2026-10-30T00:00:00.000Z",
+    publishedTime: "2026-06-04T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/mpl-vs-mseries.png", width: 1200, height: 630, alt: "MPL vs M-Series MLBB Esports Comparison" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="MPL vs M-Series: Understanding the Difference in MLBB Esports"
       category="Esports Guide"
       readTime="7 min read"
-      date="October 30, 2026"
+      date="June 04, 2026"
       image="/blog/mpl-vs-mseries.png"
       game="MLBB"
       description="Break down the confusing acronyms of Mobile Legends esports. Learn the distinct differences between the regional MPL circuits and the global M-Series World Championship."
@@ -227,3 +227,4 @@ export default function BlogPage() {
     </BlogPostLayout>
   );
 }
+

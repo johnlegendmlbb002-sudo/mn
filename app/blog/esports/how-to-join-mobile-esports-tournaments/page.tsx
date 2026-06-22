@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/esports/how-to-join-mobile-esports-tournaments",
     title: "How to Join Mobile Esports Tournaments (2026 Guide)",
     description: "Want to go pro? Learn exactly how to join mobile esports tournaments in 2026. Discover platforms, requirements, squad building tips, and start competing today.",
-    publishedTime: "2026-10-26T00:00:00.000Z",
+    publishedTime: "2026-05-07T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/join-esports-tournaments.png", width: 1200, height: 630, alt: "Mobile Gamer Competing in Esports Tournament" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="How to Join Mobile Esports Tournaments: The Complete 2026 Guide"
       category="Esports Guide"
       readTime="7 min read"
-      date="October 26, 2026"
+      date="May 07, 2026"
       image="/blog/join-esports-tournaments.png"
       game="Multiple Games"
       description="Ready to take your gaming to the next level? Learn how to join mobile esports tournaments, build a team, and start your competitive journey in 2026."
@@ -234,3 +234,4 @@ export default function BlogPage() {
     </BlogPostLayout>
   );
 }
+

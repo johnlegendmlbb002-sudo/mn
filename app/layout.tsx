@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Script from "next/script";
 
 export const dynamic = "force-dynamic";
@@ -29,15 +29,15 @@ import PWAInstallBanner from "@/components/Layout/PWAInstallBanner";
 
 export const metadata: Metadata = {
   title: {
-    default: "MLBB Top Up India – Buy Cheapest Diamonds Instantly | mlbbtopup.in",
-    template: "%s | MLBB Top Up India – Buy Cheapest Diamonds Instantly",
+    default: "MLBB Top Up India â€“ Buy Cheapest Diamonds Instantly | mlbbtopup.in",
+    template: "%s | MLBB Top Up India â€“ Buy Cheapest Diamonds Instantly",
   },
   description:
     "Safe & instant MLBB diamond top up in India. Cheapest rates for Weekly Pass, Starlight & skins. Secure UPI/Paytm payments with 5-minute delivery. Trusted by thousands.",
 
 keywords: [
 
-  // ── CORE / PRIMARY (15) ──────────────────────────────────────────
+  // â”€â”€ CORE / PRIMARY (15) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Use these on: homepage title, H1, meta description
   "mlbb topup",
   "mlbb diamond topup",
@@ -55,7 +55,7 @@ keywords: [
   "mobile legends recharge india",
   "mobile legends diamonds india",
 
-  // ── PRICE & VALUE (25) ───────────────────────────────────────────
+  // â”€â”€ PRICE & VALUE (25) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Use these on: homepage sections, product pages, blog posts about pricing
   "mlbb recharge india cheap",
   "cheapest mlbb top up",
@@ -83,7 +83,7 @@ keywords: [
   "mlbb topup discount india",
   "mlbb discount diamonds india",
 
-  // ── SPEED & DELIVERY (10) ────────────────────────────────────────
+  // â”€â”€ SPEED & DELIVERY (10) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Use these on: homepage USP section, product pages
   "mlbb top up india instant",
   "instant mlbb recharge",
@@ -96,7 +96,7 @@ keywords: [
   "mlbb recharge fast delivery india",
   "buy mobile legends diamonds instantly",
 
-  // ── TRUST & SAFETY (8) ───────────────────────────────────────────
+  // â”€â”€ TRUST & SAFETY (8) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Use these on: about page, homepage trust section, FAQ page
   "mlbb recharge trusted site india",
   "trusted mlbb recharge website",
@@ -108,7 +108,7 @@ keywords: [
   "legit mlbb recharge india",
   "mlbb recharge trusted or not",
 
-  // ── PAYMENT METHODS (11) ─────────────────────────────────────────
+  // â”€â”€ PAYMENT METHODS (11) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Use these on: payment/checkout page, homepage payment section
   "mlbb recharge with upi",
   "mlbb top up with upi",
@@ -122,7 +122,7 @@ keywords: [
   "mlbb topup without moonton login",
   "secure mlbb recharge with upi",
 
-  // ── PRODUCT TYPES (9) ────────────────────────────────────────────
+  // â”€â”€ PRODUCT TYPES (9) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Use these on: individual product/category pages
   "mlbb weekly pass recharge india",
   "mlbb weekly pass cheapest india",
@@ -135,7 +135,7 @@ keywords: [
   "mlbb event recharge india",
   "mlbb skins purchase india",
 
-  // ── COMPARISON / COMPETITOR (11) ─────────────────────────────────
+  // â”€â”€ COMPARISON / COMPETITOR (11) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Use these on: a dedicated comparison blog post or landing page
   "codashop vs mlbbtopup india",
   "codashop alternative india mlbb",
@@ -149,8 +149,8 @@ keywords: [
   "best site to buy mlbb diamonds india",
   "best site for mlbb top up cheap",
 
-  // ── HOW-TO / INFORMATIONAL (7) ───────────────────────────────────
-  // Use these on: blog posts, FAQ page — do NOT put on homepage
+  // â”€â”€ HOW-TO / INFORMATIONAL (7) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // Use these on: blog posts, FAQ page â€” do NOT put on homepage
   "how to buy mlbb diamonds in india",
   "how to top up mlbb diamonds india",
   "how to top up mlbb instantly",
@@ -166,7 +166,7 @@ keywords: [
 
   metadataBase: new URL("https://mlbbtopup.in"),
   openGraph: {
-    title: "MLBB Top Up India – Buy Cheapest Diamonds Instantly | mlbbtopup.in",
+    title: "MLBB Top Up India â€“ Buy Cheapest Diamonds Instantly | mlbbtopup.in",
     description:
       "Safe & instant MLBB diamond top up in India. Cheapest rates for Weekly Pass, Starlight & skins. Secure UPI/Paytm payments with 5-minute delivery. Trusted by thousands.",
     url: "https://mlbbtopup.in",
@@ -187,7 +187,7 @@ keywords: [
     title: "MLBB Top Up India - Cheap & Fast Diamonds",
     description: "Safe & instant MLBB diamond top up in India. Cheapest rates for Weekly Pass, Starlight & skins. Secure UPI/Paytm payments with 5-minute delivery. Trusted by thousands.",
     images: ["/logoBB.png"],
-    creator: "@mlbbtopup",
+    creator: "@mlbbtopupin",
   },
   manifest: "/manifest.json",
   robots: {
@@ -229,7 +229,7 @@ export default async function RootLayout({
       `}} />
 
       <body className="bg-black text-white">
-        {/* Preconnect to image CDNs — injected early for LCP gains */}
+        {/* Preconnect to image CDNs â€” injected early for LCP gains */}
         <Script id="preconnect-cdns" strategy="beforeInteractive">{`
           (function(){
             var h=document.head;
@@ -335,3 +335,4 @@ export default async function RootLayout({
     </html>
   );
 }
+

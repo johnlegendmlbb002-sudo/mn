@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "https://mlbbtopup.in/blog/mlbb/how-much-money-does-starlight-pass-save",
     title: "How Much Money Does the MLBB Starlight Pass Save? (2026)",
     description: "Wondering if the MLBB Starlight Pass is worth it? Discover exactly how much money and diamonds you save with our complete 2026 Starlight value breakdown.",
-    publishedTime: "2026-10-28T00:00:00.000Z",
+    publishedTime: "2026-05-21T00:00:00.000Z",
     images: [{ url: "https://mlbbtopup.in/blog/mlbb-starlight-pass-savings.png", width: 1200, height: 630, alt: "MLBB Starlight Pass Value and Savings" }],
   },
   twitter: {
@@ -62,7 +62,7 @@ export default function BlogPage() {
       title="How Much Money Does the MLBB Starlight Pass Save in 2026?"
       category="Value Guide"
       readTime="8 min read"
-      date="October 28, 2026"
+      date="May 21, 2026"
       image="/blog/mlbb-starlight-pass-savings.png"
       game="MLBB"
       description="Break down the math behind the MLBB Starlight Pass. Discover the actual diamond value of the rewards and see how much money you save."
@@ -233,3 +233,4 @@ export default function BlogPage() {
     </BlogPostLayout>
   );
 }
+

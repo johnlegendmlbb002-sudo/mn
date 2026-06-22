@@ -58,10 +58,10 @@ export default function HeroSection({ bannerSettings }: { bannerSettings?: any }
       <GamesPage />
       <SupportBanner />
 
-      <div className="mt-1 space-y-12 pb-10">
+      {/* <div className="mt-1 space-y-12 pb-10">
         <HomeServices />
         <TrustHighlights />
-      </div>
+      </div> */}
 
       <SEOContent />
 

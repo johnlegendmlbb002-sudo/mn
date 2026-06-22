@@ -1,90 +1,119 @@
-"use client";
+import Link from "next/link";
 
-import { FiInfo, FiCheckCircle, FiShield, FiTrendingUp } from "react-icons/fi";
+const FAQS = [
+  {
+    q: "How do I buy MLBB diamonds in India?",
+    a: "Visit mlbbtopup.in, select your diamond pack, enter your MLBB Player ID and Zone ID, choose UPI, PhonePe, Google Pay, or Paytm as your payment method, and confirm. Diamonds are delivered to your account within 5 minutes — no login to Moonton required.",
+  },
+  {
+    q: "Is mlbbtopup.in safe and legit?",
+    a: "Yes. mlbbtopup.in is a trusted MLBB diamond top-up site used by thousands of Indian players. We use secure UPI payment gateways and top up directly via Moonton's official API. Your account credentials are never required — only your Player ID and Zone ID.",
+  },
+  {
+    q: "What is the cheapest way to buy MLBB diamonds in India?",
+    a: "mlbbtopup.in consistently offers the lowest diamond prices in India — often 10–20% cheaper than Codashop or the in-game store. Our Weekly Diamond Pass (WDP) starting at ₹89 is the best value for casual players.",
+  },
+  {
+    q: "How fast is the diamond delivery?",
+    a: "Diamond delivery is instant — typically within 1 to 5 minutes of successful payment. Our automated delivery system runs 24×7, so you can top up at midnight before a big ranked session without any delay.",
+  },
+  {
+    q: "Which payment methods are supported?",
+    a: "We support all major Indian payment methods: UPI (any VPA/QR), PhonePe, Google Pay, Paytm, and bank transfers. No credit card or international payment needed.",
+  },
+  {
+    q: "Is the MLBB Weekly Diamond Pass worth it?",
+    a: "Absolutely. The Weekly Diamond Pass gives you 100 diamonds immediately plus 20 diamonds/day for 7 days — totalling 240 diamonds. At ₹89 on mlbbtopup.in, that's less than ₹0.37 per diamond, making it the highest-value MLBB purchase for regular players.",
+  },
+];
 
 export default function SEOContent() {
   return (
-    <section className="py-20 bg-gradient-to-b from-transparent via-[var(--card)]/20 to-transparent relative overflow-hidden">
-      {/* Dynamic Background Elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--accent)]/30 to-transparent" />
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-[var(--accent)]/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-[var(--accent)]/5 rounded-full blur-[150px] pointer-events-none" />
+    <section className="py-16 relative overflow-hidden">
+      {/* Subtle top divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--accent)]/20 to-transparent" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-16 relative z-10">
 
-          {/* Main Title Section */}
-          <div
-            className="lg:col-span-5 space-y-6 opacity-100 translate-x-0"
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-[1px] bg-[var(--accent)]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--accent)] italic">Market Leader</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter leading-[0.9] text-[var(--foreground)]">
-              mlbbtopup.in – Cheapest <br />
-              <span className="text-[var(--accent)] text-shadow-glow">MLBB Recharge</span> <br />
-              in India
-            </h1>
-            <p className="text-sm text-[var(--muted)] leading-relaxed italic max-w-md">
-              <strong className="text-[var(--foreground)]">mlbbtopup.in</strong> stands as the gold standard for <strong className="text-[var(--foreground)]">MLBB top up india instant</strong> services. We specialize in providing the <strong className="text-[var(--foreground)]">cheapest mlbb recharge website</strong> experience, ensuring every diamond is delivered with surgical precision and elite speed.
+        {/* ── Section 1: About + Why Us ────────────────── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-black uppercase tracking-tight text-[var(--foreground)]">
+              Cheapest MLBB Diamond Top Up in India
+            </h2>
+            <p className="text-sm text-[var(--muted)] leading-relaxed">
+              <strong className="text-[var(--foreground)]">mlbbtopup.in</strong> is India's most affordable Mobile Legends: Bang Bang diamond top-up platform. We offer instant MLBB recharge with UPI, PhonePe, Google Pay, and Paytm — no Moonton login required. Just enter your <strong className="text-[var(--foreground)]">Player ID and Zone ID</strong>, pick a diamond pack, pay, and receive your diamonds within minutes.
             </p>
-
-            <div className="flex flex-wrap gap-4 pt-4">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--card)]/40 border border-[var(--border)] backdrop-blur-sm">
-                <FiShield className="text-[var(--accent)]" />
-                <span className="text-[9px] font-black uppercase tracking-widest italic">Secure</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--card)]/40 border border-[var(--border)] backdrop-blur-sm">
-                <FiTrendingUp className="text-[var(--accent)]" />
-                <span className="text-[9px] font-black uppercase tracking-widest italic">Fast</span>
-              </div>
-            </div>
+            <p className="text-sm text-[var(--muted)] leading-relaxed">
+              Whether you're buying the <strong className="text-[var(--foreground)]">MLBB Weekly Diamond Pass</strong>, loading up for a new skin, or stocking up for a ranked push, our pricing is consistently <strong className="text-[var(--foreground)]">10–20% cheaper than Codashop</strong> and the in-game store. Trusted by thousands of Indian MLBB players across Delhi, Mumbai, Bangalore, Hyderabad, Chennai, and beyond.
+            </p>
           </div>
 
-          {/* Details Grid */}
-          <div
-            className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 opacity-100 translate-y-0"
-          >
-            {/* Box 1 */}
-            <div className="p-8 rounded-[32px] glass-card premium-gradient hover:border-[var(--accent)]/30 transition-all duration-500 group">
-              <div className="w-10 h-10 rounded-2xl bg-black/40 border border-white/5 flex items-center justify-center text-[var(--accent)] mb-6 group-hover:scale-110 transition-transform">
-                <FiInfo size={18} />
-              </div>
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--accent)] mb-4 italic">Our Strategic MLBB Advantage</h2>
-              <ul className="space-y-4">
-                {[
-                  { label: "MLBB Recharge with UPI", desc: "Native integration with all major Indian UPI apps." },
-                  { label: "No Login Required", desc: "Safe top-up via Player ID & Zone ID only." },
-                ].map((item, idx) => (
-                  <li key={idx} className="space-y-1">
-                    <span className="text-xs font-bold text-[var(--foreground)] uppercase italic tracking-wide">• {item.label}</span>
-                    <p className="text-[10px] text-[var(--muted)] italic leading-relaxed">{item.desc}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Box 2 */}
-            <div className="p-8 rounded-[32px] glass-card premium-gradient hover:border-[var(--accent)]/30 transition-all duration-500 group">
-              <div className="w-10 h-10 rounded-2xl bg-black/40 border border-white/5 flex items-center justify-center text-[var(--accent)] mb-6 group-hover:scale-110 transition-transform">
-                <FiCheckCircle size={18} />
-              </div>
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-[var(--accent)] mb-4 italic">Unmatched Trust & Reliability</h2>
-              <p className="text-[11px] text-[var(--muted)] leading-relaxed italic mb-4">
-                As a <strong className="text-[var(--foreground)]">mlbb recharge trusted site india</strong>, we prioritize your account safety above all else.
-              </p>
-              <p className="text-[11px] text-[var(--muted)] leading-relaxed italic">
-                Our <strong className="text-[var(--foreground)]">mobile legends recharge india fast</strong> protocols ensure that <strong className="text-[var(--foreground)]">mlbb diamonds instant delivery india</strong> is not just a promise, but a consistent reality for our elite community.
-              </p>
-            </div>
+          <div className="space-y-3">
+            <h3 className="text-sm font-black uppercase tracking-widest text-[var(--accent)]">Why Indian players choose us</h3>
+            <ul className="space-y-2">
+              {[
+                ["Lowest diamond prices in India", "Consistently below Codashop & in-game store rates"],
+                ["Instant delivery 24×7", "Diamonds credited in 1–5 minutes, any time of day"],
+                ["No login needed", "Top up safely using only your Player ID + Zone ID"],
+                ["All UPI methods supported", "PhonePe, Google Pay, Paytm, any UPI VPA accepted"],
+                ["100% safe & verified", "Thousands of successful orders, zero account bans"],
+                ["Weekly Diamond Pass specialists", "Best WDP prices in India — starting at ₹89"],
+              ].map(([title, desc]) => (
+                <li key={title} className="flex gap-3 items-start text-sm">
+                  <span className="mt-0.5 w-4 h-4 shrink-0 rounded-full bg-[var(--accent)]/15 flex items-center justify-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
+                  </span>
+                  <span>
+                    <strong className="text-[var(--foreground)] font-semibold">{title}</strong>
+                    <span className="text-[var(--muted)]"> — {desc}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Bottom Banner */}
+
+        {/* ── Section 3: How to Top Up ──────────────────── */}
+        <div className="space-y-5">
+          <h2 className="text-xl font-black uppercase tracking-tight text-[var(--foreground)]">
+            How to Buy MLBB Diamonds in India — Step by Step
+          </h2>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { step: "1", title: "Choose a Package", desc: "Pick any diamond pack or Weekly Pass from our game page." },
+              { step: "2", title: "Enter Player ID", desc: "Provide your MLBB Player ID and Zone ID. No password needed." },
+              { step: "3", title: "Pay via UPI", desc: "Pay instantly via PhonePe, Google Pay, Paytm, or any UPI app." },
+              { step: "4", title: "Receive Diamonds", desc: "Diamonds appear in your MLBB account within 1–5 minutes." },
+            ].map((item) => (
+              <div key={item.step} className="p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] space-y-2">
+                <div className="w-8 h-8 rounded-xl bg-[var(--accent)]/15 flex items-center justify-center">
+                  <span className="text-sm font-black text-[var(--accent)]">{item.step}</span>
+                </div>
+                <h3 className="text-sm font-bold text-[var(--foreground)]">{item.title}</h3>
+                <p className="text-[11px] text-[var(--muted)] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </ol>
+        </div>
+
+        {/* ── Section 4: FAQ ────────────────────────────── */}
+        <div className="space-y-5">
+          <h2 className="text-xl font-black uppercase tracking-tight text-[var(--foreground)]">
+            Frequently Asked Questions — MLBB Top Up India
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {FAQS.map((faq) => (
+              <div key={faq.q} className="p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] space-y-2">
+                <h3 className="text-sm font-bold text-[var(--foreground)]">{faq.q}</h3>
+                <p className="text-[11px] text-[var(--muted)] leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
       </div>
     </section>
   );
 }
-
