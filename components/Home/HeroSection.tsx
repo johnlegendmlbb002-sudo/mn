@@ -17,7 +17,10 @@ import GiveawayBanner from "./GiveawayBanner";
 const FlashSale = dynamic(() => import("./FlashSale"), { ssr: false });
 const HomeQuickActions = dynamic(() => import("./HomeQuickActions"), { ssr: false });
 const HomeReferralStats = dynamic(() => import("./HomeReferralStats"), { ssr: false });
-const GamesPage = dynamic(() => import("@/app/games/page"), { ssr: false });
+const GamesPage = dynamic(() => import("@/app/games/page"), { 
+  ssr: false,
+  loading: () => <div className="min-h-screen w-full animate-pulse bg-[var(--background)]"></div>
+});
 
 export default function HeroSection({ bannerSettings }: { bannerSettings?: any }) {
 
