@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { GoogleLogin } from "@react-oauth/google";
+import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -374,8 +374,10 @@ function AuthContent() {
 
 export default function AuthPage() {
   return (
-    <Suspense fallback={null}>
-      <AuthContent />
-    </Suspense>
+    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}>
+      <Suspense fallback={null}>
+        <AuthContent />
+      </Suspense>
+    </GoogleOAuthProvider>
   );
 }

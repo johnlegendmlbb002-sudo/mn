@@ -1,27 +1,24 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import nextDynamic from "next/dynamic";
 
 export const dynamic = "force-dynamic";
 
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import SocialFloat from "@/components/SocialFloat/SocialFloat";
 import { GoogleAnalytics } from '@next/third-parties/google';
-import ChristmasPopup from "@/components/Seasonal/ChristmasPopup";
 import { Poppins } from "next/font/google";
-import { GoogleOAuthProvider } from "@react-oauth/google";
-// import ChatBot from "@/components/SocialFloat/Chatbot"; // Removed as we use wrapper
-import ChatbotWrapper from "@/components/Layout/ChatbotWrapper";
-import ValentinePopup from "@/components/Seasonal/ValentinePopup";
-import ValentineEffect from "@/components/Seasonal/ValentineEffect";
-import Maintaince from "@/components/Seasonal/Maintaince";
+
 import MaintenanceWrapper from "@/components/Layout/MaintenanceWrapper";
 import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { getAppSettings } from "@/lib/settings";
-import BottomNav from "@/components/Layout/BottomNav";
-import SeasonalEffectManager from "@/components/Seasonal/SeasonalEffectManager";
-import PWAInstallBanner from "@/components/Layout/PWAInstallBanner";
+
+const SocialFloat = nextDynamic(() => import("@/components/SocialFloat/SocialFloat"));
+const ChatbotWrapper = nextDynamic(() => import("@/components/Layout/ChatbotWrapper"));
+const SeasonalEffectManager = nextDynamic(() => import("@/components/Seasonal/SeasonalEffectManager"));
+const PWAInstallBanner = nextDynamic(() => import("@/components/Layout/PWAInstallBanner"));
+const BottomNav = nextDynamic(() => import("@/components/Layout/BottomNav"));
 
 
 
@@ -152,7 +149,7 @@ export default async function RootLayout({
           }}
         />
         <GoogleAnalytics gaId="G-CKCKWLGJ9N" />
-        <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}>
+
           <Header />
 
           <SeasonalEffectManager />
@@ -169,7 +166,7 @@ export default async function RootLayout({
           {settings.showBottomNav !== false && <BottomNav />}
           <PWAInstallBanner />
           <div />
-        </GoogleOAuthProvider>
+
 
 
 
