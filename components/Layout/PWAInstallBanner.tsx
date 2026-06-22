@@ -18,6 +18,12 @@ export default function PWAInstallBanner() {
   const [browserType, setBrowserType] = useState<"chrome"|"samsung"|"firefox"|"other">("other");
 
   useEffect(() => {
+    // 1. Check if user dismissed it in the last 24 hours
+    const dismissedUntil = localStorage.getItem("pwa_dismissed_until");
+    if (dismissedUntil && Date.now() < parseInt(dismissedUntil, 10)) {
+      return;
+    }
+
     const isStandalone =
       window.matchMedia("(display-mode: standalone)").matches ||
       (navigator as { standalone?: boolean }).standalone === true;
@@ -61,6 +67,8 @@ export default function PWAInstallBanner() {
 
   const handleDismiss = () => {
     setVisible(false); setDismissed(true);
+    // Hide for 24 hours (1 day = 86400000 ms)
+    localStorage.setItem("pwa_dismissed_until", (Date.now() + 86400000).toString());
     fetch("/api/pwa/track", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ event: "dismissed" }) }).catch(() => {});
   };
 
