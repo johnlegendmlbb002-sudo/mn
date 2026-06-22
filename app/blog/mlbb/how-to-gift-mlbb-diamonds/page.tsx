@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "gift weekly diamond pass mlbb"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-gift-mlbb-diamonds" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-gift-mlbb-diamonds",
     title: "How to Gift MLBB Diamonds in 2026 Guide",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Gift MLBB Diamonds in 2026 Guide",
     description: "Learn how to gift MLBB diamonds instantly in 2026. Bypass the 7-day friend limit and safely send diamonds, skins, or passes using Player ID.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/gift-guide.png"],
@@ -39,7 +39,7 @@ export default function BlogPage() {
   const faqItems = [
     {
       question: "How do I bypass the 7-day friend limit?",
-      answer: "You cannot bypass it for in-game skin gifting. However, you can use bluebuff.in to send raw diamonds or passes instantly via Player ID, skipping the friend requirement entirely."
+      answer: "You cannot bypass it for in-game skin gifting. However, you can use mlbbtopup.in to send raw diamonds or passes instantly via Player ID, skipping the friend requirement entirely."
     },
     {
       question: "Can I gift the Weekly Diamond Pass?",
@@ -93,7 +93,7 @@ export default function BlogPage() {
           <tr>
             <th>Feature</th>
             <th>In-Game Gifting</th>
-            <th>Web Gifting (bluebuff.in)</th>
+            <th>Web Gifting (mlbbtopup.in)</th>
           </tr>
         </thead>
         <tbody>
@@ -137,12 +137,12 @@ export default function BlogPage() {
       <h2>3. How to Gift via Player ID (Step-by-Step)</h2>
       
       <p>
-        Here is the exact process to send an instant gift using bluebuff.in. It takes less than 60 seconds.
+        Here is the exact process to send an instant gift using mlbbtopup.in. It takes less than 60 seconds.
       </p>
 
       <ul className="space-y-3">
         <li><strong>Step 1: Get the ID.</strong> Ask your friend for their Player ID and Zone ID (found on their in-game profile page).</li>
-        <li><strong>Step 2: Enter the ID.</strong> Paste the IDs into the top-up box on bluebuff.in. The system will automatically fetch their <strong>In-Game Name (IGN)</strong> so you can verify you are sending the gift to the right person.</li>
+        <li><strong>Step 2: Enter the ID.</strong> Paste the IDs into the top-up box on mlbbtopup.in. The system will automatically fetch their <strong>In-Game Name (IGN)</strong> so you can verify you are sending the gift to the right person.</li>
         <li><strong>Step 3: Pay and Send.</strong> Select a diamond package or Weekly Pass, and pay securely using UPI. The diamonds will instantly credit to their account.</li>
       </ul>
 
@@ -163,7 +163,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. Enter your friend's Player ID, grab a diamond package, and send an elite surprise they won't forget!
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. Enter your friend's Player ID, grab a diamond package, and send an elite surprise they won't forget!
       </p>
 
     </BlogPostLayout>

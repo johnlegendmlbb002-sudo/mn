@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "reduce game lag mobile"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-reduce-lag-in-mobile-legends" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-reduce-lag-in-mobile-legends",
     title: "How to Reduce Lag in MLBB 2026: FPS & Ping Fix",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Reduce Lag in MLBB 2026: FPS & Ping Fix",
     description: "Experience zero lag in MLBB! Learn how to reduce lag, fix ping spikes, and optimize your FPS for a smooth gaming experience in our 2026 fix guide.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-reduce-lag.png"],
@@ -166,7 +166,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Get your diamonds instantly at the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We offer safe, automated delivery so you can get back to the game!
+        Get your diamonds instantly at the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We offer safe, automated delivery so you can get back to the game!
       </p>
 
     </BlogPostLayout>

@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     "mythic rank guide mlbb"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/best-mlbb-heroes-for-rank-push-2026" },
-  authors: [{ name: 'BlueBuff Team', url: 'https://mlbbtopup.in' }],
+  authors: [{ name: 'MLBB Topup Team', url: 'https://mlbbtopup.in' }],
   robots: { index: true, follow: true },
   openGraph: {
     type: 'article',
-    siteName: 'BlueBuff',
+    siteName: 'MLBB Topup',
     locale: 'en_IN',
     url: 'https://mlbbtopup.in/blog/mlbb/best-mlbb-heroes-for-rank-push-2026',
     title: 'Best MLBB Heroes 2026: Rank Push Meta Guide',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@bluebuffin',
+    site: '@MLBB Topupin',
     title: 'Best MLBB Heroes 2026: Rank Push Meta Guide',
     description: 'Discover the best MLBB heroes for rank push in 2026. Master the current meta with our top picks for solo queue and team play to reach Mythic fast.',
     images: ['https://mlbbtopup.in/blog/mlbb/guides/best-heroes-2026.png'],

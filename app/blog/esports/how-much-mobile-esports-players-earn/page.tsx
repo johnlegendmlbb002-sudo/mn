@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "mobile gaming careers"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/esports/how-much-mobile-esports-players-earn" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/how-much-mobile-esports-players-earn",
     title: "How Much Money Do Mobile Esports Players Earn? (2024 Guide)",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How Much Money Do Mobile Esports Players Earn? (2024 Guide)",
     description: "Wondering how much money mobile esports players earn? Discover pro player salaries, prize pools, and top income streams in this complete 2024 guide.",
     images: ["https://mlbbtopup.in/blog/mobile-esports-earnings.png"],

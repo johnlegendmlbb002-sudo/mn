@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "starlight rewards 2024"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-much-money-does-starlight-pass-save" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-much-money-does-starlight-pass-save",
     title: "How Much Money Does the MLBB Starlight Pass Save? (2024)",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How Much Money Does the MLBB Starlight Pass Save? (2024)",
     description: "Wondering if the MLBB Starlight Pass is worth it? Discover exactly how much money and diamonds you save with our complete 2024 Starlight value breakdown.",
     images: ["https://mlbbtopup.in/blog/mlbb-starlight-pass-savings.png"],

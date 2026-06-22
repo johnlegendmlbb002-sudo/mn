@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "gaming tournaments"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/esports/how-to-join-mobile-esports-tournaments" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/how-to-join-mobile-esports-tournaments",
     title: "How to Join Mobile Esports Tournaments (2024 Guide)",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Join Mobile Esports Tournaments (2024 Guide)",
     description: "Want to go pro? Learn exactly how to join mobile esports tournaments in 2024. Discover platforms, requirements, squad building tips, and start competing today.",
     images: ["https://mlbbtopup.in/blog/join-esports-tournaments.png"],

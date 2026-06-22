@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "climb mythic fast gold"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-farm-gold-fast-in-mlbb" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-farm-gold-fast-in-mlbb",
     title: "How to Farm Gold Fast in MLBB 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Farm Gold Fast in MLBB 2026",
     description: "Want to get your core items before everyone else? Learn professional strategies for farming gold fast in Mobile Legends with our 2026 guide.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-gold-farm.png"],
@@ -172,7 +172,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. Upgrade your hero with high-fidelity skins to ensure your basic attack animations are perfectly smooth, and secure your wins today!
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. Upgrade your hero with high-fidelity skins to ensure your basic attack animations are perfectly smooth, and secure your wins today!
       </p>
 
     </BlogPostLayout>

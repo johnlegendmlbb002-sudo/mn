@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "mobile gaming prize pools"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/esports/best-mobile-esports-games-active-tournaments" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/best-mobile-esports-games-active-tournaments",
     title: "Best Mobile Esports Games With Active Tournaments 2024",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Best Mobile Esports Games With Active Tournaments 2024",
     description: "Looking for the best mobile esports games to play in 2024? Discover the top games with active tournaments, massive prize pools, and thriving competitive scenes.",
     images: ["https://mlbbtopup.in/blog/best-mobile-esports-games.png"],

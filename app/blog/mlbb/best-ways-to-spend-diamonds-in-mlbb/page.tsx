@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "cheap mlbb diamonds india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/best-ways-to-spend-diamonds-in-mlbb" },
-  authors: [{ name: 'BlueBuff Team', url: 'https://mlbbtopup.in' }],
+  authors: [{ name: 'MLBB Topup Team', url: 'https://mlbbtopup.in' }],
   robots: { index: true, follow: true },
   openGraph: {
     type: 'article',
-    siteName: 'BlueBuff',
+    siteName: 'MLBB Topup',
     locale: 'en_IN',
     url: 'https://mlbbtopup.in/blog/mlbb/best-ways-to-spend-diamonds-in-mlbb',
     title: 'Best Ways to Spend MLBB Diamonds in 2026',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@bluebuffin',
+    site: '@MLBB Topupin',
     title: 'Best Ways to Spend MLBB Diamonds in 2026',
     description: 'Want to maximize your MLBB diamonds? Learn the best ways to spend diamonds in 2026, including Starlight Memberships, Weekly Passes, and event draws.',
     images: ['https://mlbbtopup.in/blog/mlbb/guides/mlbb-spend-diamonds.png'],
@@ -175,7 +175,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We offer the fastest, safest, and cheapest top-ups in India!
+        Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We offer the fastest, safest, and cheapest top-ups in India!
       </p>
 
     </BlogPostLayout>

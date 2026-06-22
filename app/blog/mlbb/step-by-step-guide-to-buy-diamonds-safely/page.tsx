@@ -5,7 +5,7 @@ import { FiCheckCircle, FiShield, FiAlertTriangle, FiInfo } from "react-icons/fi
 
 export const metadata: Metadata = {
   title: "Step-by-Step Guide: How to Buy MLBB Diamonds Safely in India (2026)",
-  description: "Stop getting scammed! Learn how to buy Mobile Legends diamonds safely in India. A complete 2026 guide for Bluebuff.in users.",
+  description: "Stop getting scammed! Learn how to buy Mobile Legends diamonds safely in India. A complete 2026 guide for mlbbtopup.in users.",
   keywords: [
     "how to buy mlbb diamonds safely india",
     "step by step mlbb top up guide",
@@ -77,7 +77,7 @@ export default function BlogPage() {
         <section className="space-y-6">
           <h2 className="italic font-black text-2xl tracking-tighter">Step 02. Selecting a Trusted Provider</h2>
           <p>
-            The internet is flooded with "cheap" diamond offers, but in 2026, <strong>safety is the only true value</strong>. <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic underline">bluebuff.in</a> has built a reputation as the most reliable platform for the Indian community, offering direct API connections to Moonton servers.
+            The internet is flooded with "cheap" diamond offers, but in 2026, <strong>safety is the only true value</strong>. <a href="https://mlbbtopup.in" className="text-[var(--accent)] font-bold italic underline">mlbbtopup.in</a> has built a reputation as the most reliable platform for the Indian community, offering direct API connections to Moonton servers.
           </p>
           <p>
             Why does provider choice matter? Unauthorized sellers may use stolen cards. That can cause <strong>Negative Diamonds</strong>, lock your heroes, and suspend your account. Use secure platforms with Indian UPI support.
@@ -87,7 +87,7 @@ export default function BlogPage() {
               <FiAlertTriangle /> Warning: The Social Media Scam
             </h4>
             <p className="text-sm opacity-80 leading-relaxed m-0 italic text-justify">
-              Scammers on WhatsApp, Instagram, and Telegram often offer 50-70% discounts. <strong>These are never legitimate.</strong> They either steal your money directly or use carded funds that put your account at risk. Real providers like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold underline">bluebuff.in</a> offer sustainable, Moonton-approved bulk discounts.
+              Scammers on WhatsApp, Instagram, and Telegram often offer 50-70% discounts. <strong>These are never legitimate.</strong> They either steal your money directly or use carded funds that put your account at risk. Real providers like <a href="https://mlbbtopup.in" className="text-[var(--accent)] font-bold underline">mlbbtopup.in</a> offer sustainable, Moonton-approved bulk discounts.
             </p>
           </div>
         </section>
@@ -95,7 +95,7 @@ export default function BlogPage() {
         <section className="space-y-8">
           <h2 className="italic font-black text-2xl tracking-tighter">Step 03. Completing the Order</h2>
           <p>
-            Once you have your ID and you are on the <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic underline">Verified MLBB Store</a>, the process is streamlined for speed and security. Follow these three sub-steps to finish your top-up.
+            Once you have your ID and you are on the <a href="https://mlbbtopup.in" className="text-[var(--accent)] font-bold italic underline">Verified MLBB Store</a>, the process is streamlined for speed and security. Follow these three sub-steps to finish your top-up.
           </p>
           <div className="space-y-6 border-l border-[var(--border)] ml-4 pl-8">
             <div className="relative">
@@ -119,7 +119,7 @@ export default function BlogPage() {
         <section className="pt-10 border-t border-[var(--border)] space-y-6">
           <h2 className="italic font-black text-2xl tracking-tighter m-0">Final Conclusion: Play Smarter, Not Harder</h2>
           <p className="text-lg leading-relaxed text-justify">
-            Your journey in Mobile Legends should be about mastering heroes and dominating your lane, not stressing over the safety of your account. By following these steps and sticking to verified platforms <strong>in India</strong> like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold italic underline">bluebuff.in</a>, you can recharge with total confidence.
+            Your journey in Mobile Legends should be about mastering heroes and dominating your lane, not stressing over the safety of your account. By following these steps and sticking to verified platforms <strong>in India</strong> like <a href="https://mlbbtopup.in" className="text-[var(--accent)] font-bold italic underline">mlbbtopup.in</a>, you can recharge with total confidence.
           </p>
           <p className="text-lg leading-relaxed text-justify">
             <strong>Ready to Top Up?</strong> Stop taking risks. Save more, play safer, and get back to the Land of Dawn. Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> now and get your diamonds in 60 seconds!
@@ -132,11 +132,11 @@ export default function BlogPage() {
           <div className="space-y-8">
             <div className="group">
               <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base mb-2 italic">Can my ID be hacked if I share it?</h5>
-              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">No. Your Player ID is public info shown in every match. Scammers need your <strong>Password</strong> to access your account. Sharing your ID on <a href="https://bluebuff.in" className="text-[var(--accent)] underline">bluebuff.in</a> is 100% safe.</p>
+              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">No. Your Player ID is public info shown in every match. Scammers need your <strong>Password</strong> to access your account. Sharing your ID on <a href="https://mlbbtopup.in" className="text-[var(--accent)] underline">mlbbtopup.in</a> is 100% safe.</p>
             </div>
             <div className="group">
               <h5 className="text-[var(--accent)] font-black uppercase tracking-tight text-base mb-2 italic">What if my payment fails?</h5>
-              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">This is rare but can happen. Contact support on <a href="https://bluebuff.in" className="text-[var(--accent)] underline">bluebuff.in</a> with your transaction ID for help or a refund.</p>
+              <p className="text-sm opacity-60 leading-relaxed m-0 text-justify">This is rare but can happen. Contact support on <a href="https://mlbbtopup.in" className="text-[var(--accent)] underline">mlbbtopup.in</a> with your transaction ID for help or a refund.</p>
             </div>
           </div>
         </div>

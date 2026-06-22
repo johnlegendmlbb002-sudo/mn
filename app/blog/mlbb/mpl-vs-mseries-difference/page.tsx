@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "mlbb tournaments 2024"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/mpl-vs-mseries-difference" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/mpl-vs-mseries-difference",
     title: "MPL vs M-Series: What's the Difference? (MLBB Esports Guide)",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "MPL vs M-Series: What's the Difference? (MLBB Esports Guide)",
     description: "Confused about MLBB esports? Learn the complete difference between MPL (Mobile Legends Professional League) and the M-Series World Championship in this guide.",
     images: ["https://mlbbtopup.in/blog/mpl-vs-mseries.png"],

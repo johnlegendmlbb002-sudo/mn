@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "esports tactics"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/esports/why-objective-control-wins-games" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/why-objective-control-wins-games",
     title: "Why Objective Control Wins More Games Than Kills",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Why Objective Control Wins More Games Than Kills",
     description: "Having high kills doesn't guarantee a win. Learn why objective control is the true secret to climbing ranks in mobile MOBAs like MLBB and Honor of Kings.",
     images: ["https://mlbbtopup.in/blog/objective-control-wins.png"],

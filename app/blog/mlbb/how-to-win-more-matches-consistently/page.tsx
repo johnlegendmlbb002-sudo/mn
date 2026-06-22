@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "win streak secrets mlbb"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-win-more-matches-consistently" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-win-more-matches-consistently",
     title: "How to Win More MLBB Matches 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Win More MLBB Matches 2026",
     description: "Improve your Mobile Legends win rate with our 2026 strategy guide. Master the mental game, drafting secrets, and elite-tier map management.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-win-consistently.png"],
@@ -174,7 +174,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. Unlock the cleanest Epic and Collector skins to ensure your gameplay is buttery smooth, and start your massive win streak today!
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. Unlock the cleanest Epic and Collector skins to ensure your gameplay is buttery smooth, and start your massive win streak today!
       </p>
 
     </BlogPostLayout>

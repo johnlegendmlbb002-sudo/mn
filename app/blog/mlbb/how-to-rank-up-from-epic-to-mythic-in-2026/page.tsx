@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "climb rank faster mlbb"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-rank-up-from-epic-to-mythic-in-2026" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-rank-up-from-epic-to-mythic-in-2026",
     title: "How to Reach Mythic MLBB 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Reach Mythic MLBB 2026",
     description: "Stuck in Epic Hell? Learn the professional strategies to escape Epic and reach Mythic fast. Our 2026 MLBB guide covers drafting and map awareness.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-epic-to-mythic.png"],
@@ -169,7 +169,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Get the <strong>cheapest MLBB diamonds in India</strong> and treat yourself to the Epic skins that define your playstyle. Visit the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on bluebuff.in and start your climb today!
+        Get the <strong>cheapest MLBB diamonds in India</strong> and treat yourself to the Epic skins that define your playstyle. Visit the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on mlbbtopup.in and start your climb today!
       </p>
 
     </BlogPostLayout>

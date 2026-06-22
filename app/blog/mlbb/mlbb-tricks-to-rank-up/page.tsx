@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "climb rank faster mlbb"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/mlbb-tricks-to-rank-up" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/mlbb-tricks-to-rank-up",
     title: "MLBB Tricks to Rank Up Instantly 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "MLBB Tricks to Rank Up Instantly 2026",
     description: "Master the hidden mechanics of Mobile Legends that pro players use to dominate. Learn advanced minimap tricks and camera movement to rank up fast.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-tricks.png"],
@@ -168,7 +168,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> on bluebuff.in. Upgrade your main hero with an Epic or Collector skin via our secure, instant UPI delivery and dominate the Mythic ladder today!
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> on mlbbtopup.in. Upgrade your main hero with an Epic or Collector skin via our secure, instant UPI delivery and dominate the Mythic ladder today!
       </p>
 
     </BlogPostLayout>

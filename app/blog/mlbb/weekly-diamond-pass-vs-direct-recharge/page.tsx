@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "save diamonds mlbb 2026"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/weekly-diamond-pass-vs-direct-recharge" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/weekly-diamond-pass-vs-direct-recharge",
     title: "Weekly Diamond Pass vs Direct Recharge 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Weekly Diamond Pass vs Direct Recharge 2026",
     description: "Weekly Diamond Pass vs direct recharge in MLBB: which is better? Read our 2026 guide to find out the best value, ROI, and how to save money in India.",
     images: ["https://mlbbtopup.in/blog/mlbb/insights/mlbb-wdp-vs-diamonds.png"],
@@ -185,7 +185,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We deliver 100% safe, legal diamonds instantly to your Player ID!
+        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We deliver 100% safe, legal diamonds instantly to your Player ID!
       </p>
 
     </BlogPostLayout>

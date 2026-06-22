@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "mobile legends gameplay tips"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/complete-mlbb-gameplay-guide" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/complete-mlbb-gameplay-guide",
     title: "Complete MLBB Gameplay Guide 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Complete MLBB Gameplay Guide 2026",
     description: "Master the core mechanics of Mobile Legends. Learn everything about laning, jungle rotations, map objectives, and winning teamfights in 2026.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-gameplay-guide.png"],
@@ -179,7 +179,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. Unlock the cleanest Epic skins to ensure your gameplay animations are buttery smooth, and start your massive win streak today!
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. Unlock the cleanest Epic skins to ensure your gameplay animations are buttery smooth, and start your massive win streak today!
       </p>
 
     </BlogPostLayout>

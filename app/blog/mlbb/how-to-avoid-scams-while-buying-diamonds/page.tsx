@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "trusted mlbb recharge india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-avoid-scams-while-buying-diamonds" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-avoid-scams-while-buying-diamonds",
     title: "How to Avoid MLBB Diamond Scams 2026 Guide",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Avoid MLBB Diamond Scams 2026 Guide",
     description: "Don't get scammed! Learn how to safely buy Mobile Legends diamonds in India. Our 2026 guide covers top-up scams, fake sites, and account safety tips.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-avoid-scams.png"],
@@ -47,7 +47,7 @@ export default function BlogPage() {
     },
     {
       question: "Can 3rd party sites get my account banned?",
-      answer: "No. Official platforms like bluebuff.in use direct Moonton API routes. You only get banned for using illegal refund tricks or stolen cards."
+      answer: "No. Official platforms like mlbbtopup.in use direct Moonton API routes. You only get banned for using illegal refund tricks or stolen cards."
     },
     {
       question: "Are Instagram diamond sellers legit?",
@@ -89,7 +89,7 @@ export default function BlogPage() {
       </p>
 
       <ul className="space-y-3">
-        <li><strong>Why it's a scam:</strong> Diamonds have a base cost set by Moonton. While authorized platforms like bluebuff.in can offer discounts by cutting out the middleman, massive 90% discounts are mathematically impossible.</li>
+        <li><strong>Why it's a scam:</strong> Diamonds have a base cost set by Moonton. While authorized platforms like mlbbtopup.in can offer discounts by cutting out the middleman, massive 90% discounts are mathematically impossible.</li>
         <li><strong>The Result:</strong> You send the money via UPI, and the seller immediately blocks your number. Your money is gone forever.</li>
       </ul>
 
@@ -174,7 +174,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> on bluebuff.in. We provide the fastest, safest, and most secure top-ups in India using official direct API integration!
+        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Diamond Store</Link> on mlbbtopup.in. We provide the fastest, safest, and most secure top-ups in India using official direct API integration!
       </p>
 
     </BlogPostLayout>

@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "moonton authorized seller india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/is-mlbb-top-up-legal-in-india" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/is-mlbb-top-up-legal-in-india",
     title: "Is MLBB Top Up Legal in India? 2026 Guide",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Is MLBB Top Up Legal in India? 2026 Guide",
     description: "Is Mobile Legends top-up legal in India? Read our 2026 comprehensive guide to understand the regulations, safety checks, and trusted platforms.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/legal-india.png"],
@@ -39,7 +39,7 @@ export default function BlogPage() {
   const faqItems = [
     {
       question: "Can I get banned for using a third-party site?",
-      answer: "Not if you use an authorized platform. Sites like bluebuff.in use Moonton's direct API. You will only get banned if you use underground sellers who abuse bugs or use stolen credit cards."
+      answer: "Not if you use an authorized platform. Sites like mlbbtopup.in use Moonton's direct API. You will only get banned if you use underground sellers who abuse bugs or use stolen credit cards."
     },
     {
       question: "Are UPI payments legal for gaming?",
@@ -55,7 +55,7 @@ export default function BlogPage() {
     },
     {
       question: "What happens if my diamonds don't arrive?",
-      answer: "If you buy from a legal platform like bluebuff.in, you have full consumer protection and customer support. If there is a server delay, your money is safe and the delivery will be completed."
+      answer: "If you buy from a legal platform like mlbbtopup.in, you have full consumer protection and customer support. If there is a server delay, your money is safe and the delivery will be completed."
     }
   ];
 
@@ -98,7 +98,7 @@ export default function BlogPage() {
         </thead>
         <tbody>
           <tr>
-            <td><strong>Verified API Sites (bluebuff.in)</strong></td>
+            <td><strong>Verified API Sites (mlbbtopup.in)</strong></td>
             <td>Uses direct integration with Moonton. Requires only Player ID. Generates tax-compliant receipts.</td>
             <td><strong>100% Legal & Safe</strong></td>
           </tr>
@@ -158,7 +158,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We offer the safest, fastest, and most legally compliant diamond delivery system in India!
+        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We offer the safest, fastest, and most legally compliant diamond delivery system in India!
       </p>
 
     </BlogPostLayout>

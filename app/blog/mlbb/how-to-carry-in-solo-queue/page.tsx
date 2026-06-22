@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "win more matches solo mlbb"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-carry-in-solo-queue" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-carry-in-solo-queue",
     title: "How to Carry in Solo Queue MLBB 2026 Guide",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Carry in Solo Queue MLBB 2026 Guide",
     description: "Tired of losing with random teammates in Mobile Legends? Learn the professional secrets to carrying in solo queue with our 2026 MLBB strategy guide.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-solo-carry.png"],
@@ -174,7 +174,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Gear up with the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Cheapest MLBB Diamonds</Link> on bluebuff.in. We offer safe, instant delivery so you can equip your main hero and dominate the Solo Queue ladder today!
+        Gear up with the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Cheapest MLBB Diamonds</Link> on mlbbtopup.in. We offer safe, instant delivery so you can equip your main hero and dominate the Solo Queue ladder today!
       </p>
 
     </BlogPostLayout>

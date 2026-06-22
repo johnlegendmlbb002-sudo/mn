@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "best dns for mlbb"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-fix-ping-issues-in-mlbb" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-fix-ping-issues-in-mlbb",
     title: "How to Fix Ping Issues in MLBB 2026 Guide",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Fix Ping Issues in MLBB 2026 Guide",
     description: "Tired of 999ms lag and ping spikes in Mobile Legends? Learn how to fix ping issues, reduce latency, and optimize your network in our 2026 lag guide.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-fix-ping.png"],
@@ -166,7 +166,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We offer the cheapest, fastest, and most secure diamond deliveries to supercharge your account!
+        Head to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We offer the cheapest, fastest, and most secure diamond deliveries to supercharge your account!
       </p>
 
     </BlogPostLayout>

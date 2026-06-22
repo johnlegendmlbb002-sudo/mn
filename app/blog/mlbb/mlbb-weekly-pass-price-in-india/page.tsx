@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "mobile legends weekly pass vs twilight pass"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/mlbb-weekly-pass-price-in-india" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/mlbb-weekly-pass-price-in-india",
     title: "MLBB Weekly Pass Price in India 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "MLBB Weekly Pass Price in India 2026",
     description: "Discover the MLBB Weekly Diamond Pass price in India for 2026. Compare rewards, stack benefits, and find the cheapest way to buy MLBB diamonds.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/weekly-pass-price.png"],
@@ -55,7 +55,7 @@ export default function BlogPage() {
     },
     {
       question: "Can I send a Weekly Pass to my friend?",
-      answer: "Yes! On bluebuff.in, simply enter your friend's Player ID at checkout. The Weekly Pass will be delivered instantly to their account as a surprise gift."
+      answer: "Yes! On mlbbtopup.in, simply enter your friend's Player ID at checkout. The Weekly Pass will be delivered instantly to their account as a surprise gift."
     }
   ];
 
@@ -79,7 +79,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        For players in India, using trusted API platforms like bluebuff.in allows you to buy the Weekly Pass using UPI, giving you insane diamond value at a massive discount. Let's break down exactly why it is worth your money.
+        For players in India, using trusted API platforms like mlbbtopup.in allows you to buy the Weekly Pass using UPI, giving you insane diamond value at a massive discount. Let's break down exactly why it is worth your money.
       </p>
 
       <h2>1. The Raw Value Breakdown</h2>
@@ -161,7 +161,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We offer the cheapest, 100% legal Weekly Diamond Passes in India with instant UPI delivery straight to your Player ID!
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We offer the cheapest, 100% legal Weekly Diamond Passes in India with instant UPI delivery straight to your Player ID!
       </p>
 
     </BlogPostLayout>

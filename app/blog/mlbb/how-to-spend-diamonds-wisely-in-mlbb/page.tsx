@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "cheap mlbb diamonds india"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-spend-diamonds-wisely-in-mlbb" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-spend-diamonds-wisely-in-mlbb",
     title: "MLBB Diamond Spending Blueprint 2026 India",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "MLBB Diamond Spending Blueprint 2026 India",
     description: "Stop wasting diamonds in MLBB! Master the 2026 spending blueprint to maximize your value in India. Learn the daily discount trick and best investments.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-wise-spending.png"],
@@ -55,7 +55,7 @@ export default function BlogPage() {
     },
     {
       question: "Does third-party top-up trigger in-game recharge events?",
-      answer: "Yes! When you buy via Player ID on trusted sites like bluebuff.in, it triggers all 'Recharge Phase' tokens and daily bonuses instantly."
+      answer: "Yes! When you buy via Player ID on trusted sites like mlbbtopup.in, it triggers all 'Recharge Phase' tokens and daily bonuses instantly."
     }
   ];
 
@@ -102,7 +102,7 @@ export default function BlogPage() {
 
       <ul className="space-y-3">
         <li>During these phases, topping up 100 or 250 diamonds will reward you with free event tickets.</li>
-        <li>Top up on a trusted platform like <a href="https://bluebuff.in" className="text-[var(--accent)] font-bold">bluebuff.in</a> during Phase 1, claim your free tickets, and then do it again when Phase 2 drops a week later.</li>
+        <li>Top up on a trusted platform like <a href="https://mlbbtopup.in" className="text-[var(--accent)] font-bold">mlbbtopup.in</a> during Phase 1, claim your free tickets, and then do it again when Phase 2 drops a week later.</li>
         <li>You get your diamonds AND massive free pulls at the same time.</li>
       </ul>
 
@@ -181,7 +181,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We deliver instantly using only your Player ID—no login required!
+        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We deliver instantly using only your Player ID—no login required!
       </p>
 
     </BlogPostLayout>

@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "best way to spend money in mlbb"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/is-mlbb-worth-spending-money-on" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/is-mlbb-worth-spending-money-on",
     title: "Is MLBB Worth Spending Money On? 2026 Review",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Is MLBB Worth Spending Money On? 2026 Review",
     description: "Should you buy diamonds in Mobile Legends? Read our honest 2026 review on whether MLBB is worth spending money on, covering Starlight and skin value.",
     images: ["https://mlbbtopup.in/blog/mlbb/insights/mlbb-worth-it.png"],
@@ -184,7 +184,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We offer the safest, fastest, and cheapest diamonds in India!
+        Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We offer the safest, fastest, and cheapest diamonds in India!
       </p>
 
     </BlogPostLayout>

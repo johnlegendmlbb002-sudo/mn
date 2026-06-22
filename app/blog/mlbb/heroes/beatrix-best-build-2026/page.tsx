@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     "beatrix renner build"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/heroes/beatrix-best-build-2026" },
-  authors: [{ name: 'BlueBuff Team', url: 'https://mlbbtopup.in' }],
+  authors: [{ name: 'MLBB Topup Team', url: 'https://mlbbtopup.in' }],
   robots: { index: true, follow: true },
   openGraph: {
     type: 'article',
-    siteName: 'BlueBuff',
+    siteName: 'MLBB Topup',
     locale: 'en_IN',
     url: 'https://mlbbtopup.in/blog/mlbb/heroes/beatrix-best-build-2026',
     title: 'Beatrix Best Build 2026: Ultimate Marksman Guide',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@bluebuffin',
+    site: '@MLBB Topupin',
     title: 'Beatrix Best Build 2026: Ultimate Marksman Guide',
     description: 'Dominate the Gold Lane in 2026 with our ultimate Beatrix best build guide. Master all four weapons, emblems, and item strategies in Mobile Legends.',
     images: ['https://mlbbtopup.in/blog/mlbb/heroes/beatrix-build-2026.png'],
@@ -185,7 +185,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. We offer fast, safe, and cheap diamond delivery directly via your Player ID!
+        Visit our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. We offer fast, safe, and cheap diamond delivery directly via your Player ID!
       </p>
 
     </BlogPostLayout>

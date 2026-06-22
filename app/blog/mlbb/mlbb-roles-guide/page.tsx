@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "master mobile legends roles"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/mlbb-roles-guide" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/mlbb-roles-guide",
     title: "MLBB Roles Explained 2026 Guide",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "MLBB Roles Explained 2026 Guide",
     description: "Learn all 6 MLBB roles in our 2026 beginner guide. Master Tank, Fighter, Mage, Assassin, Marksman, and Support to build the perfect team.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/mlbb-roles.png"],
@@ -198,7 +198,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. Grab some cheap diamonds via UPI and unlock the skins you need to carry your team in style!
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. Grab some cheap diamonds via UPI and unlock the skins you need to carry your team in style!
       </p>
 
     </BlogPostLayout>

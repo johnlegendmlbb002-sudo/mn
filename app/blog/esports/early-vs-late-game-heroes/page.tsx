@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "esports macro"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/esports/early-vs-late-game-heroes" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/early-vs-late-game-heroes",
     title: "Early Game vs Late Game Heroes: MOBA Strategy Guide",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Early Game vs Late Game Heroes: MOBA Strategy Guide",
     description: "Don't know why you are losing after 15 minutes? Learn the critical difference between early game and late game heroes in mobile MOBAs, and how to draft a winning team.",
     images: ["https://mlbbtopup.in/blog/early-vs-late-game-heroes.png"],

@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "rank up mlbb fast"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/stop-losing-mlbb-7-mistakes" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/stop-losing-mlbb-7-mistakes",
     title: "Stop Losing in MLBB: 7 Fatal Mistakes",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Stop Losing in MLBB: 7 Fatal Mistakes",
     description: "Stuck in a lose streak? Master the 7 common MLBB mistakes that keep players in Epic rank. Learn pro map awareness and objective strategies.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/fix-mistakes.png"],
@@ -173,7 +173,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on bluebuff.in. Unlock the smoothest Epic and Collector skins to improve your mechanical reaction times, and dominate the Ranked ladder today!
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Store</Link> on mlbbtopup.in. Unlock the smoothest Epic and Collector skins to improve your mechanical reaction times, and dominate the Ranked ladder today!
       </p>
 
     </BlogPostLayout>

@@ -43,7 +43,7 @@ export default function PartnershipPage() {
             className="text-4xl md:text-6xl lg:text-7xl font-black uppercase italic tracking-tighter mb-6 leading-[0.9]"
           >
             GROW YOUR <span className="text-[var(--accent)]">AUDIENCE</span> <br />
-            WITH BLUEBUFF COINS
+            WITH MLBB Topup COINS
           </motion.h1>
           
           <motion.p
@@ -98,7 +98,7 @@ export default function PartnershipPage() {
         >
           <h2 className="text-3xl md:text-4xl font-black uppercase italic mb-6 tracking-tighter">READY TO SCALE?</h2>
           <p className="text-[var(--muted)] mb-10 max-w-xl mx-auto text-sm opacity-80">
-            Join 50+ partners already promoting on BlueBuff. Contact our support team to get your customized advertising plan.
+            Join 50+ partners already promoting on MLBB Topup. Contact our support team to get your customized advertising plan.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -119,7 +119,7 @@ export default function PartnershipPage() {
         </motion.div>
 
         <footer className="mt-20 pt-10 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-6 text-[var(--muted)]/40 text-[10px] uppercase font-black tracking-widest">
-           <p>© 2026 BlueBuff. All rights reserved.</p>
+           <p>© 2026 MLBB Topup. All rights reserved.</p>
            <div className="flex gap-10">
               <Link href="/terms" className="hover:text-[var(--accent)] transition-colors">Terms</Link>
               <Link href="/privacy" className="hover:text-[var(--accent)] transition-colors">Privacy</Link>

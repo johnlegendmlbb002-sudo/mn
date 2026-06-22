@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "esports strategy"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/esports/roamer-vs-jungler-impact" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/roamer-vs-jungler-impact",
     title: "Roamer vs Jungler: Which Role Has More Impact in MOBAs?",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Roamer vs Jungler: Which Role Has More Impact in MOBAs?",
     description: "Having a debate with your team? Discover whether the Roamer or the Jungler has the most impact in mobile MOBAs like MLBB and Honor of Kings in this pro guide.",
     images: ["https://mlbbtopup.in/blog/roamer-vs-jungler.png"],

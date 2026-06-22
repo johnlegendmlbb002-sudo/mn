@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "secure mlbb recharge 2026"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/how-to-buy-mlbb-diamonds-safely-in-india" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/how-to-buy-mlbb-diamonds-safely-in-india",
     title: "How to Buy MLBB Diamonds Safely in India 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Buy MLBB Diamonds Safely in India 2026",
     description: "Learn how to buy MLBB diamonds safely in India. Avoid negative diamond bans and scams with our step-by-step 2026 secure top-up guide.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/buy-safely.png"],
@@ -67,7 +67,7 @@ export default function BlogPage() {
       date="March 31, 2026"
       image="/blog/mlbb/guides/buy-safely.png"
       game="MLBB"
-      description="Protect your account from scams, avoid 'Negative Diamond' bans, and identify trusted websites like bluebuff.in for 2026."
+      description="Protect your account from scams, avoid 'Negative Diamond' bans, and identify trusted websites like mlbbtopup.in for 2026."
       faqItems={faqItems}
     >
       <p className="text-lg md:text-xl font-medium !opacity-100 italic border-l-4 border-red-500 pl-6 py-2 bg-red-500/5 rounded-r-2xl">
@@ -174,7 +174,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Page</Link>. Experience instant delivery and 100% account safety with BlueBuff!
+        Head over to our <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">MLBB Top Up Page</Link>. Experience instant delivery and 100% account safety with MLBB Topup!
       </p>
 
     </BlogPostLayout>

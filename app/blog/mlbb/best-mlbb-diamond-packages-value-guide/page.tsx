@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "save money on mlbb diamonds"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/mlbb/best-mlbb-diamond-packages-value-guide" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/mlbb/best-mlbb-diamond-packages-value-guide",
     title: "Best MLBB Diamond Packages India 2026",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "Best MLBB Diamond Packages India 2026",
     description: "Find the best MLBB diamond packages in India with our 2026 real price and value guide. Compare packages to get maximum value for your rupees.",
     images: ["https://mlbbtopup.in/blog/mlbb/guides/best-value.png"],
@@ -54,7 +54,7 @@ export default function BlogPage() {
       answer: "Small packs have a terrible cost-per-diamond ratio. You pay a premium for convenience. Only buy small packs if you need a few tokens for a specific event."
     },
     {
-      question: "Does bluebuff support Indian Banks?",
+      question: "Does MLBB Topup support Indian Banks?",
       answer: "Yes. We support all major Indian banks including HDFC, ICICI, SBI, and Axis through our secure UPI and net-banking gateways."
     }
   ];
@@ -130,7 +130,7 @@ export default function BlogPage() {
         <div className="absolute top-0 left-0 w-1 h-full bg-[var(--accent)]" />
         <h3 className="italic font-black uppercase text-[var(--accent)] mb-4 flex items-center gap-2"><FiClock /> The 10-Stack Method</h3>
         <p className="text-sm italic opacity-70 m-0 leading-relaxed text-justify">
-          Moonton allows you to buy up to 10 Weekly Passes at once. If you use a webstore like bluebuff.in to buy 10 passes during an Aspirants "Recharge Phase," you instantly receive 800 diamonds upfront, completing the expensive recharge tasks immediately, while still locking in 70 days of insane daily diamond value.
+          Moonton allows you to buy up to 10 Weekly Passes at once. If you use a webstore like mlbbtopup.in to buy 10 passes during an Aspirants "Recharge Phase," you instantly receive 800 diamonds upfront, completing the expensive recharge tasks immediately, while still locking in 70 days of insane daily diamond value.
         </p>
       </div>
 
@@ -152,7 +152,7 @@ export default function BlogPage() {
       </p>
 
       <ul className="space-y-3">
-        <li>Using an authorized Indian distributor like <strong>bluebuff.in</strong> completely bypasses this tax.</li>
+        <li>Using an authorized Indian distributor like <strong>mlbbtopup.in</strong> completely bypasses this tax.</li>
         <li>You can use secure Indian payment methods like <strong>UPI (PhonePe, GPay, Paytm)</strong> without worrying about international credit card fees.</li>
         <li>The diamonds are injected directly into your account via the official API within 60 seconds.</li>
       </ul>
@@ -174,7 +174,7 @@ export default function BlogPage() {
       </p>
 
       <p>
-        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on bluebuff.in. We offer the absolute best MLBB diamond packages in India, with instant UPI delivery and 100% legal API integration!
+        Head over to the <Link href="/games/mobile-legends270" className="text-[var(--accent)] underline font-black italic">Diamond Store</Link> on mlbbtopup.in. We offer the absolute best MLBB diamond packages in India, with instant UPI delivery and 100% legal API integration!
       </p>
 
     </BlogPostLayout>

@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "mobile legends jungler"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/esports/assassin-vs-tank-jungler-comparison" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "mlbbtopup.in Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/assassin-vs-tank-jungler-comparison",
     title: "Assassin Junglers vs Tank Junglers: Which Meta is Better?",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopup.in",
     title: "Assassin Junglers vs Tank Junglers: Which Meta is Better?",
     description: "Confused about which jungle style to play? Read our ultimate Assassin Jungler vs Tank Jungler comparison guide to understand the mobile esports meta.",
     images: ["https://mlbbtopup.in/blog/assassin-vs-tank-jungler.png"],

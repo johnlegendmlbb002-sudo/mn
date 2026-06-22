@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     "gaming mindset"
   ],
   alternates: { canonical: "https://mlbbtopup.in/blog/esports/how-to-improve-decision-making-ranked-games" },
-  authors: [{ name: "BlueBuff Team", url: "https://mlbbtopup.in" }],
+  authors: [{ name: "MLBB Topup Team", url: "https://mlbbtopup.in" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "article",
-    siteName: "BlueBuff",
+    siteName: "mlbbtopup.in",
     locale: "en_IN",
     url: "https://mlbbtopup.in/blog/esports/how-to-improve-decision-making-ranked-games",
     title: "How to Improve Decision Making in Ranked Games (2024)",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@bluebuffin",
+    site: "@mlbbtopupin",
     title: "How to Improve Decision Making in Ranked Games (2024)",
     description: "Stuck in your rank? Learn how to improve decision making during ranked games with our professional esports guide. Master macro play, map awareness, and mental clarity.",
     images: ["https://mlbbtopup.in/blog/improve-decision-making-ranked.png"],
