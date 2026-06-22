@@ -101,7 +101,7 @@ export default function PWAInstallBanner() {
           display:flex; align-items:center; gap:5px;
           padding:7px 13px; border-radius:9px; border:none; cursor:pointer;
           font-size:11px; font-weight:800; letter-spacing:0.03em; white-space:nowrap;
-          background:var(--accent); color:#fff;
+          background:var(--accent); color:#000;
           box-shadow:0 3px 12px color-mix(in srgb,var(--accent) 40%,transparent);
           transition:opacity 0.15s,transform 0.15s;
           flex-shrink:0;

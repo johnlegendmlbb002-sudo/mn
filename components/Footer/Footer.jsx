@@ -64,7 +64,7 @@ export default function Footer() {
               <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter lowercase leading-none bg-gradient-to-r from-[var(--accent)] via-[var(--foreground)] to-[var(--accent)] bg-clip-text text-transparent group-hover:brightness-110 transition-all">
                 mlbbtopup.in
               </h2>
-              <p className="mt-3 text-[10px] font-black uppercase tracking-[0.2em] opacity-40 italic leading-relaxed max-w-[300px]">
+              <p className="mt-3 text-[10px] font-black uppercase tracking-[0.2em] opacity-70 italic leading-relaxed max-w-[300px]">
                 India's #1 trusted platform for Mobile Legends top-ups. Instant diamond delivery, secure payments, and 24/7 support.
               </p>
             </Link>
@@ -170,7 +170,7 @@ export default function Footer() {
               <div className="w-1 h-3 bg-[#138808] rounded-full shadow-[0_0_8px_#138808]" />
             </div>
             <span className="text-[9px] font-black uppercase tracking-[0.15em] italic text-[var(--foreground)]">
-              MADE IN <span className="text-[#FF9933]">IND</span><span className="text-white">I</span><span className="text-[#138808]">A</span> 🇮🇳
+              MADE IN <span className="text-[#b45309] dark:text-[#FF9933]">IND</span><span className="text-[var(--foreground)]">I</span><span className="text-[#15803d] dark:text-[#138808]">A</span> 🇮🇳
             </span>
           </div>
 
