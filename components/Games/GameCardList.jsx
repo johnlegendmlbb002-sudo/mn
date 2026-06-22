@@ -34,6 +34,7 @@ export default function GameCardList({ game, isOutOfStock, index = 0 }) {
               alt={game.gameName}
               fill
               sizes="120px"
+              quality={60}
               className={`object-cover
                 ${disabled ? "" : ""}
               `}

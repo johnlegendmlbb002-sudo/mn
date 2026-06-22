@@ -60,6 +60,7 @@ export default function ServiceGridSection({
                   alt={item.gameName || item.name}
                   fill
                   sizes="(max-width: 768px) 33vw, 25vw"
+                  quality={60}
                   className="object-cover"
                 />
 

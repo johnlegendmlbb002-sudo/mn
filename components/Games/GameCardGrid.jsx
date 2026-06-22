@@ -25,6 +25,7 @@ export default function GameCardGrid({ game, isOutOfStock, index = 0 }) {
             alt={game.gameName}
             fill
             sizes="(max-width: 768px) 33vw, 25vw"
+            quality={60}
             className={`object-cover
               ${disabled
                 ? "grayscale blur-[2px]"
