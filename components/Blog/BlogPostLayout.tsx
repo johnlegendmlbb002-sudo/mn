@@ -93,7 +93,7 @@ export default function BlogPostLayout({
     description: description || title,
     publisher: {
       "@type": "Organization",
-      name: "BlueBuff",
+      name: "MLBB Topup",
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",

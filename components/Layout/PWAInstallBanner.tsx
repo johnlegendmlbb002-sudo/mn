@@ -154,11 +154,11 @@ export default function PWAInstallBanner() {
         <div style={{ padding:"8px 10px", display:"flex", alignItems:"center", gap:"7px" }}>
           {/* App icon */}
           <div style={{ flexShrink:0, width:28, height:28, borderRadius:8, overflow:"hidden", border:"1px solid var(--border)", background:"var(--background)" }}>
-            <Image src="/logoBB.png" alt="BlueBuff" width={28} height={28} style={{ objectFit:"cover", width:"100%", height:"100%" }} />
+            <Image src="/logoBB.png" alt="MLBB Topup" width={28} height={28} style={{ objectFit:"cover", width:"100%", height:"100%" }} />
           </div>
           {/* Text */}
           <div style={{ flex:1, minWidth:0, paddingRight:2 }}>
-            <p style={{ margin:0, fontWeight:700, fontSize:"11px", color:"var(--foreground)", lineHeight:1.2 }}>Install BlueBuff</p>
+            <p style={{ margin:0, fontWeight:700, fontSize:"11px", color:"var(--foreground)", lineHeight:1.2 }}>Install MLBB Topup</p>
             <p style={{ margin:"1px 0 0", fontSize:"9px", color:"var(--muted)" }}>Add to home screen</p>
           </div>
           {/* Install */}
@@ -188,7 +188,7 @@ export default function PWAInstallBanner() {
                 {/* App row */}
                 <div style={{ display:"flex", alignItems:"center", gap:14, marginBottom:16 }}>
                   <div style={{ width:52, height:52, borderRadius:13, overflow:"hidden", border:"1px solid var(--border)", background:"var(--background)", flexShrink:0 }}>
-                    <Image src="/logoBB.png" alt="BlueBuff" width={52} height={52} style={{ objectFit:"cover", width:"100%", height:"100%" }} />
+                    <Image src="/logoBB.png" alt="MLBB Topup" width={52} height={52} style={{ objectFit:"cover", width:"100%", height:"100%" }} />
                   </div>
                   <div>
                     <p style={{ margin:0, fontWeight:800, fontSize:15, color:"var(--foreground)" }}>Install app</p>

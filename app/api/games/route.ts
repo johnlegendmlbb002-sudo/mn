@@ -63,7 +63,7 @@ const MEMBERSHIPS = [
     gameName: "Silver Membership",
     slug: "silver-membership",
     image: "/membership/silver-m.png",
-    gameFrom: "BlueBuff",
+    gameFrom: "MLBB Topup",
     type: "silver",
     category: "Membership",
     available: true,
