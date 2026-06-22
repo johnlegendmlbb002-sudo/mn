@@ -109,12 +109,12 @@ export default function Footer() {
                     {section.title}
                   </h3>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-1">
                   {section.links.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-[10px] sm:text-[11px] font-bold uppercase italic tracking-wider text-[var(--muted)] hover:text-[var(--accent)] transition-all leading-none block hover:translate-x-1"
+                        className="py-2 text-[10px] sm:text-[11px] font-bold uppercase italic tracking-wider text-[var(--muted)] hover:text-[var(--accent)] transition-all leading-none block hover:translate-x-1"
                       >
                         {link.label}
                       </Link>
@@ -126,7 +126,7 @@ export default function Footer() {
           </div>
 
           {/* CONNECT & ACTION BLOCK */}
-          <div className="md:col-span-3 flex flex-col md:items-end gap-8">
+          <div className="md:col-span-3 flex flex-row md:flex-col justify-between items-end md:justify-start md:items-end gap-4 md:gap-8">
             <div className="space-y-4 md:text-right">
               <h3 className="text-[9px] font-black uppercase tracking-[0.3em] text-[var(--accent)]/80 italic">
                 Connect
@@ -151,7 +151,7 @@ export default function Footer() {
 
             <button aria-label="button"
               onClick={scrollToTop}
-              className="mt-auto group flex items-center gap-3 text-[9px] font-black uppercase tracking-widest text-[var(--muted)] hover:text-[var(--accent)] transition-all italic"
+              className="mt-auto md:mt-auto group flex items-center gap-3 text-[9px] font-black uppercase tracking-widest text-[var(--muted)] hover:text-[var(--accent)] transition-all italic"
             >
               Back to Top
               <div className="w-8 h-8 rounded-xl bg-[var(--card)]/40 border border-[var(--border)] flex items-center justify-center shadow-md group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-black transition-all">
@@ -162,7 +162,7 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM STRIP - HIGH-END DENSITY */}
-        <div className="pt-6 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-5 opacity-60">
+        <div className="pt-5 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-4 opacity-60">
           <div className="flex items-center gap-3 group/india cursor-default">
             <div className="flex gap-1">
               <div className="w-1 h-3 bg-[#FF9933] rounded-full shadow-[0_0_8px_#FF9933]" />
@@ -174,16 +174,11 @@ export default function Footer() {
             </span>
           </div>
 
-          <div className="flex items-center gap-8 text-[8px] font-black uppercase tracking-[0.1em] italic">
-            <span className="tracking-[0.3em]">24/7 AUTOMATED</span>
+          <div className="text-center md:text-right opacity-50">
+            <span className="text-[8px] font-black uppercase tracking-[0.2em] italic">
+              © {new Date().getFullYear()} {BRAND.toUpperCase()} • ALL RIGHTS RESERVED
+            </span>
           </div>
-        </div>
-
-        {/* COPYRIGHT SUB-STRIP */}
-        <div className="mt-6 text-center opacity-20">
-          <span className="text-[8px] font-black uppercase tracking-[0.2em] italic">
-            © {new Date().getFullYear()} {BRAND.toUpperCase()} • ALL RIGHTS RESERVED
-          </span>
         </div>
       </div>
     </footer>
