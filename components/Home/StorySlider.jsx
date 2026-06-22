@@ -17,7 +17,7 @@ const storyData = [
     id: 0,
     title: "Weekly Pass",
     badge: "Best",
-    color: "#22c55e", // Green
+    color: "#15803d", // Green
     image: "/game-assets/weeklypass.jpg",
     link: "/games/mobile-legends270?type=weekly-pass",
   },
@@ -25,7 +25,7 @@ const storyData = [
     id: 1,
     title: "Weekly Bundle",
     badge: "Hot",
-    color: "#ff4d4d", // Red
+    color: "#b91c1c", // Red
     image: "/game-assets/weekly-monthly-bundle.jpg",
     link: "/games/weeklymonthly-bundle261",
   },
@@ -33,7 +33,7 @@ const storyData = [
     id: 2,
     title: "MLBB India",
     badge: "Live",
-    color: "#22c55e", // Green
+    color: "#15803d", // Green
     image: "/game-assets/mlbbindia.jpg",
     link: "/games/mobile-legends270",
   },
@@ -41,14 +41,14 @@ const storyData = [
     id: 3,
     title: "MLBB Double",
     badge: "New",
-    color: "#3b82f6", // Blue
+    color: "#1d4ed8", // Blue
     image: "/game-assets/double-dias.jpg",
     link: "/games/mlbb-double332",
   },
   {
     id: 4,
     title: "MLBB Small",
-    color: "#a855f7", // Purple
+    color: "#7e22ce", // Purple
     image: "/game-assets/mlbb-ph-small.jpg",
     link: "/games/mobile-legends-exclusive952",
   },
@@ -57,7 +57,7 @@ const storyData = [
     id: 5,
     title: "Starlight",
     badge: "Hot",
-    color: "#06b6d4", // Cyan
+    color: "#0e7490", // Cyan
     image: "/game-assets/starkight.webp",
     link: "/games/starlight-card-manual",
   },
@@ -65,7 +65,7 @@ const storyData = [
     id: 6,
     title: "Honour of Kings",
     badge: "New",
-    color: "#22c55e", // Green
+    color: "#15803d", // Green
     image: "/game-assets/hok.jpg",
     link: "/games/honor-of-kings57",
   },
@@ -73,7 +73,7 @@ const storyData = [
     id: 7,
     title: "Membership",
     badge: "VIP",
-    color: "#ec4899", // Pink
+    color: "#db2777", // Pink
     image: "/membership/silver-m.png",
     link: "/games/membership/silver-membership",
   },
