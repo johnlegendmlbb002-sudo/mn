@@ -455,14 +455,25 @@ export default function Header() {
 
                         <div className="space-y-1">
                           {/* Main Row: Orders & Wallet side-by-side */}
-                          <div className="grid grid-cols-2 gap-1.5 mb-1.5">
+                          <div className="grid grid-cols-1 gap-1.5 mb-1.5">
                             {HEADER_CONFIG.userMenu.common.slice(0, 2).map((item) => (
-                              <Link key={item.label} href={item.href} onClick={() => setUserMenuOpen(false)} className="flex items-center gap-2 p-2 rounded-xl bg-[var(--foreground)]/[0.02] border border-[var(--border)] hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/5 transition-all group">
-                                <div className="w-7 h-7 rounded-lg bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] group-hover:scale-105 transition-transform shrink-0 scale-90">{item.icon}</div>
-                                <div className="min-w-0">
-                                  <p className="text-[9px] font-black uppercase tracking-tight text-[var(--foreground)] truncate">{item.label.replace("My ", "")}</p>
-                                  <p className="text-[7px] text-[var(--muted)] uppercase tracking-widest truncate opacity-60">{item.desc.split(",")[0].split("&")[0]}</p>
+                              <Link key={item.label} href={item.href} onClick={() => setUserMenuOpen(false)} className="flex items-center justify-between p-2 rounded-xl bg-[var(--foreground)]/[0.02] border border-[var(--border)] hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/5 transition-all group">
+                                <div className="flex items-center gap-2 min-w-0 flex-1">
+                                  <div className="w-7 h-7 rounded-lg bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] group-hover:scale-105 transition-transform shrink-0 scale-90">{item.icon}</div>
+                                  <div className="min-w-0">
+                                    <p className="text-[9px] font-black uppercase tracking-tight text-[var(--foreground)] truncate">{item.label.replace("My ", "")}</p>
+                                    <p className="text-[7px] text-[var(--muted)] uppercase tracking-widest opacity-60 line-clamp-2 leading-[1.2] whitespace-normal break-words">{item.desc.split(",")[0].split("&")[0]}</p>
+                                  </div>
                                 </div>
+                                {item.label === "My Wallet" && (
+                                  <div className="shrink-0 ml-1">
+                                    {balanceLoading ? (
+                                      <div className="h-3 w-8 bg-[var(--foreground)]/10 animate-pulse rounded"></div>
+                                    ) : (
+                                      <span className="text-[10px] font-black text-[var(--accent)]">₹{walletBalance}</span>
+                                    )}
+                                  </div>
+                                )}
                               </Link>
                             ))}
                           </div>
