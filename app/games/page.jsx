@@ -26,7 +26,7 @@ export default function GamesPage() {
   const [showFilter, setShowFilter] = useState(false);
   const [sort, setSort] = useState("az");
   const [hideOOS, setHideOOS] = useState(false);
-  const [viewMode, setViewMode] = useState("grid");
+  const [viewMode, setViewMode] = useState("list");
   const [searchQuery, setSearchQuery] = useState("");
   const searchParams = useSearchParams();
   const initialTab = searchParams.get("tab") || "all";

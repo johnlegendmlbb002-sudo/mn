@@ -51,43 +51,71 @@ export default function ServiceGridSection({
           <div key={item.slug}>
             <Link
               href={`${hrefPrefix}/${item.slug}`}
-              className="group relative block rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--card)]/40 backdrop-blur-xl hover:border-[var(--accent)]/50 shadow-sm"
+              className="group relative block rounded-none overflow-hidden border border-[var(--border)] bg-[var(--card)]/40 backdrop-blur-xl hover:border-[var(--accent)]/50 shadow-sm"
             >
               {/* IMAGE CONTAINER */}
-              <div className="relative w-full aspect-square sm:aspect-video overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.gameName || item.name}
-                  fill
-                  sizes="(max-width: 768px) 33vw, 25vw"
-                  quality={60}
-                  className="object-cover"
-                />
-
-                {/* OVERLAYS */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-80" />
-
-                {/* HOVER GLOW REMOVED */}
-
-                {/* CATEGORY & MANUAL BADGES */}
-                <div className="absolute top-3 left-3 right-3 z-20 flex justify-between items-start gap-2">
-                  {showCategory && item.category && (
-                    <span className="text-[7px] sm:text-[8px] font-black uppercase tracking-[0.15em] px-2 py-0.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 text-white">
-                      {item.category}
-                    </span>
-                  )}
-                  {item.isManual && (
-                    <span className="text-[7px] sm:text-[8px] font-black uppercase tracking-[0.15em] px-2 py-0.5 rounded-lg bg-amber-500/80 backdrop-blur-md border border-amber-400/30 text-white shadow-[0_0_10px_rgba(245,158,11,0.3)] flex items-center gap-1">
-                      <FiZap size={8} fill="currentColor" />
-                      Manual
-                    </span>
-                  )}
+              <div className="relative w-full aspect-square p-2 sm:p-3 flex items-center justify-center shrink-0 bg-black/10 overflow-hidden">
+                
+                {/* Left card */}
+                <div className="absolute w-[75%] h-[85%] z-0 transform -rotate-[10deg] -translate-x-4 sm:-translate-x-6 scale-95 opacity-40 shadow-xl transition-all duration-300 group-hover:-rotate-[12deg] group-hover:-translate-x-6 sm:group-hover:-translate-x-8 group-hover:opacity-60">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 33vw, 25vw"
+                    quality={60}
+                    aria-hidden="true"
+                    className="object-cover rounded-none border border-white/10"
+                  />
                 </div>
 
-                {/* VIEW BUTTON (MATCHING GAMECARD) */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-2xl">
-                    <FiEye size={18} />
+                {/* Right card */}
+                <div className="absolute w-[75%] h-[85%] z-0 transform rotate-[10deg] translate-x-4 sm:translate-x-6 scale-95 opacity-40 shadow-xl transition-all duration-300 group-hover:rotate-[12deg] group-hover:translate-x-6 sm:group-hover:translate-x-8 group-hover:opacity-60">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 33vw, 25vw"
+                    quality={60}
+                    aria-hidden="true"
+                    className="object-cover rounded-none border border-white/10"
+                  />
+                </div>
+
+                {/* Main card */}
+                <div className="relative w-[85%] h-[95%] z-10 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02] border border-white/10 bg-[var(--background)]">
+                  <Image
+                    src={item.image}
+                    alt={item.gameName || item.name}
+                    fill
+                    sizes="(max-width: 768px) 33vw, 25vw"
+                    quality={60}
+                    className="object-cover rounded-none"
+                  />
+
+                  {/* OVERLAYS */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-80" />
+
+                  {/* CATEGORY & MANUAL BADGES */}
+                  <div className="absolute top-3 left-3 right-3 z-20 flex justify-between items-start gap-2">
+                    {showCategory && item.category && (
+                      <span className="text-[7px] sm:text-[8px] font-black uppercase tracking-[0.15em] px-2 py-0.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/10 text-white">
+                        {item.category}
+                      </span>
+                    )}
+                    {item.isManual && (
+                      <span className="text-[7px] sm:text-[8px] font-black uppercase tracking-[0.15em] px-2 py-0.5 rounded-lg bg-amber-500/80 backdrop-blur-md border border-amber-400/30 text-white shadow-[0_0_10px_rgba(245,158,11,0.3)] flex items-center gap-1">
+                        <FiZap size={8} fill="currentColor" />
+                        Manual
+                      </span>
+                    )}
+                  </div>
+
+                  {/* VIEW BUTTON (MATCHING GAMECARD) */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-2xl">
+                      <FiEye size={18} />
+                    </div>
                   </div>
                 </div>
               </div>

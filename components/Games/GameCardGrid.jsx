@@ -12,26 +12,57 @@ export default function GameCardGrid({ game, isOutOfStock, index = 0 }) {
     <div className="h-full">
       <Link
         href={disabled ? "#" : `/games/${game.gameSlug}`}
-        className={`group relative flex flex-col h-full rounded-2xl overflow-hidden border
+        className={`group relative flex flex-col h-full rounded-none overflow-hidden border
         ${disabled
             ? "opacity-60 cursor-not-allowed border-[var(--border)] bg-[var(--background)]"
             : "border-[var(--border)] bg-[var(--card)]/40 hover:border-[var(--accent)]/50 shadow-sm transition-all duration-300"
           }`}
       >
         {/* IMAGE CONTAINER */}
-        <div className="relative w-full aspect-square overflow-hidden shrink-0">
-          <Image
-            src={game.gameImageId?.image || logo}
-            alt={game.gameName}
-            fill
-            sizes="(max-width: 768px) 33vw, 25vw"
-            quality={60}
-            className={`object-cover
-              ${disabled
-                ? "grayscale blur-[2px]"
-                : ""
-              }`}
-          />
+        <div className="relative w-full aspect-square p-2 sm:p-3 flex items-center justify-center shrink-0 bg-black/10 overflow-hidden">
+          
+          {/* Left card */}
+          <div className="absolute w-[75%] h-[85%] z-0 transform -rotate-[10deg] -translate-x-4 sm:-translate-x-6 scale-95 opacity-40 shadow-xl transition-all duration-300 group-hover:-rotate-[12deg] group-hover:-translate-x-6 sm:group-hover:-translate-x-8 group-hover:opacity-60">
+            <Image
+              src={game.gameImageId?.image || logo}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 33vw, 25vw"
+              quality={60}
+              aria-hidden="true"
+              className={`object-cover rounded-none border border-white/10
+                ${disabled ? "grayscale blur-[2px]" : ""}`}
+            />
+          </div>
+
+          {/* Right card */}
+          <div className="absolute w-[75%] h-[85%] z-0 transform rotate-[10deg] translate-x-4 sm:translate-x-6 scale-95 opacity-40 shadow-xl transition-all duration-300 group-hover:rotate-[12deg] group-hover:translate-x-6 sm:group-hover:translate-x-8 group-hover:opacity-60">
+            <Image
+              src={game.gameImageId?.image || logo}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 33vw, 25vw"
+              quality={60}
+              aria-hidden="true"
+              className={`object-cover rounded-none border border-white/10
+                ${disabled ? "grayscale blur-[2px]" : ""}`}
+            />
+          </div>
+
+          {/* Main card */}
+          <div className="relative w-[85%] h-[95%] z-10 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02] border border-white/10 bg-[var(--background)]">
+            <Image
+              src={game.gameImageId?.image || logo}
+              alt={game.gameName}
+              fill
+              sizes="(max-width: 768px) 33vw, 25vw"
+              quality={60}
+              className={`object-cover rounded-none
+                ${disabled
+                  ? "grayscale blur-[2px]"
+                  : ""
+                }`}
+            />
 
           {/* OVERLAYS */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-80" />
@@ -69,6 +100,7 @@ export default function GameCardGrid({ game, isOutOfStock, index = 0 }) {
               </span>
             </div>
           )}
+          </div>
         </div>
 
         {/* CONTENT */}

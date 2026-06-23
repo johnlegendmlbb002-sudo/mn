@@ -12,7 +12,7 @@ export default function GameCardList({ game, isOutOfStock, index = 0 }) {
     <div>
       <Link
         href={disabled ? "#" : `/games/${game.gameSlug}`}
-        className={`group relative flex items-center gap-4.5 p-3 rounded-[2.5rem] border overflow-hidden
+        className={`group relative flex items-center gap-6 p-4 rounded-none border overflow-hidden
         ${disabled
             ? "opacity-40 grayscale cursor-not-allowed border-[var(--border)] bg-[var(--card)]/50"
             : "border-[var(--border)] bg-[var(--card)]/40 backdrop-blur-2xl hover:border-[var(--accent)]/40 hover:bg-[var(--card)]/80 shadow-sm"
@@ -20,10 +20,38 @@ export default function GameCardList({ game, isOutOfStock, index = 0 }) {
       >
         {/* LIGHT SWEEP EFFECT REMOVED */}
 
-        {/* AVATAR SYSTEM */}
-        <div className="relative flex-shrink-0">
+        {/* AVATAR SYSTEM with 3-stacked effect */}
+        <div className="relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 ml-2 mr-2">
+          
+          {/* Left background image */}
+          <div className="absolute inset-0 z-0 transform -rotate-[15deg] -translate-x-4 sm:-translate-x-5 scale-90 opacity-50 transition-transform duration-300 group-hover:-rotate-[20deg] group-hover:-translate-x-6">
+            <Image
+              src={game.gameImageId?.image || logo}
+              alt=""
+              fill
+              sizes="120px"
+              quality={60}
+              aria-hidden="true"
+              className="object-cover rounded-none border border-white/5"
+            />
+          </div>
+
+          {/* Right background image */}
+          <div className="absolute inset-0 z-0 transform rotate-[15deg] translate-x-4 sm:translate-x-5 scale-90 opacity-50 transition-transform duration-300 group-hover:rotate-[20deg] group-hover:translate-x-6">
+            <Image
+              src={game.gameImageId?.image || logo}
+              alt=""
+              fill
+              sizes="120px"
+              quality={60}
+              aria-hidden="true"
+              className="object-cover rounded-none border border-white/5"
+            />
+          </div>
+
+          {/* Center main image */}
           <div className={`
-            relative w-20 h-20 sm:w-24 sm:h-24 rounded-[1.8rem] overflow-hidden border z-10
+            relative w-full h-full rounded-none border z-10 transition-transform duration-300 group-hover:scale-105 shadow-lg bg-[var(--background)]
             ${disabled
               ? "border-white/10"
               : "border-white/10 group-hover:border-[var(--accent)]/30"
@@ -35,16 +63,15 @@ export default function GameCardList({ game, isOutOfStock, index = 0 }) {
               fill
               sizes="120px"
               quality={60}
-              className={`object-cover
+              className={`object-cover rounded-none
                 ${disabled ? "" : ""}
               `}
             />
             {/* INNER GLOW */}
             {!disabled && (
-              <div className="absolute inset-0 rounded-[1.8rem] shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] pointer-events-none" />
+              <div className="absolute inset-0 rounded-none shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] pointer-events-none" />
             )}
           </div>
-          {/* Ambient Glow REMOVED */}
         </div>
 
         {/* INFO SYSTEM */}
