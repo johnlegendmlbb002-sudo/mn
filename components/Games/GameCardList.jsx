@@ -88,12 +88,11 @@ export default function GameCardList({ game, isOutOfStock, index = 0 }) {
           <div className="flex flex-wrap items-center gap-2">
             {!disabled && game.tagId && (
               <span
-                className="text-[7.5px] sm:text-[8px] font-black uppercase tracking-[0.12em] px-3 py-1 rounded-lg backdrop-blur-md border shadow-sm flex items-center gap-1.5"
+                className="text-[7.5px] sm:text-[8px] font-black uppercase tracking-[0.12em] px-3 py-1 rounded-lg border shadow-sm flex items-center gap-1.5"
                 style={{
-                  background: `${game.tagId.tagBackground}55`,
+                  background: game.tagId.tagBackground,
                   color: game.tagId.tagColor,
-                  borderColor: `${game.tagId.tagBackground}77`,
-                  textShadow: '0 1px 2px rgba(0,0,0,0.15)'
+                  borderColor: game.tagId.tagBackground,
                 }}
               >
                 {game.tagId.tagName === "Manual" && <FiZap size={12} fill="currentColor" />}

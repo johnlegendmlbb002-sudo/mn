@@ -96,7 +96,7 @@ export default function BuyPanel({
                   href={supportUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative group/btn h-11 md:h-12 px-6 rounded-xl overflow-hidden flex items-center justify-center gap-2 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 hover:bg-emerald-500 hover:text-white transition-all duration-300 font-[1000] uppercase tracking-tighter text-[10px] md:text-xs text-center"
+                  className="relative group/btn h-11 md:h-12 px-6 rounded-xl overflow-hidden flex items-center justify-center gap-2 bg-[#25D366] text-black hover:brightness-110 transition-all duration-300 font-[1000] uppercase tracking-tighter text-[10px] md:text-xs text-center shadow-lg shadow-[#25D366]/20"
                 >
                   <div className="flex flex-col items-center">
                     <div className="flex items-center gap-2">

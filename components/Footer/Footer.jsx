@@ -170,7 +170,7 @@ export default function Footer() {
               <div className="w-1 h-3 bg-[#138808] rounded-full shadow-[0_0_8px_#138808]" />
             </div>
             <span className="text-[9px] font-black uppercase tracking-[0.15em] italic text-[var(--foreground)]">
-              MADE IN <span className="text-[#b45309] dark:text-[#FF9933]">IND</span><span className="text-[var(--foreground)]">I</span><span className="text-[#15803d] dark:text-[#138808]">A</span> 🇮🇳
+              MADE IN <span className="text-[#92400e] dark:text-[#fdba74]">IND</span><span className="text-[var(--foreground)]">I</span><span className="text-[#166534] dark:text-[#86efac]">A</span> 🇮🇳
             </span>
           </div>
 
