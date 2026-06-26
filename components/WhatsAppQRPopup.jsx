@@ -80,7 +80,7 @@ export default function WhatsAppCommunityPopup() {
                   
                   <div className="relative bg-white p-2.5 rounded-[1rem] shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-50">
                     <QRCodeCanvas
-                      value="https://whatsapp.com/channel/0029Vb87jgR17En1n5PKy129"
+                      value="https://chat.whatsapp.com/L9d2jdWf5wBHTfv9CI17ip"
                       size={110}
                       level="H"
                       includeMargin={false}
