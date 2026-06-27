@@ -60,9 +60,30 @@ export default function BlogPostLayout({
   const relatedArticles = useMemo(() => {
     const parts = pathname.split("/");
     const currentSlug = parts[parts.length - 1];
-    const filtered = BLOGS_DATA.filter((b) => b.slug !== currentSlug);
-    return filtered.sort(() => 0.5 - Math.random()).slice(0, 3);
-  }, [pathname]);
+    
+    // Find current article to get its tags
+    const currentArticle = BLOGS_DATA.find(b => b.slug === currentSlug || b.slug.endsWith(`/${currentSlug}`));
+    const currentTags = currentArticle?.tags || [];
+    const currentGame = currentArticle?.game || game;
+
+    const filtered = BLOGS_DATA.filter((b) => b.id !== currentArticle?.id && b.slug !== currentSlug);
+    
+    // Score each article based on relevance
+    const scored = filtered.map(article => {
+      let score = 0;
+      if (article.game === currentGame) score += 5;
+      if (article.tags) {
+        const commonTags = article.tags.filter(t => currentTags.includes(t));
+        score += commonTags.length * 2;
+      }
+      // Add random factor for variety
+      score += Math.random();
+      return { article, score };
+    });
+
+    // Sort by score descending and take top 6
+    return scored.sort((a, b) => b.score - a.score).slice(0, 6).map(s => s.article);
+  }, [pathname, game]);
 
   const canonicalUrl = `${SITE_URL}${pathname}`;
   const absoluteImage = image.startsWith("http") ? image : `${SITE_URL}${image}`;
@@ -326,7 +347,7 @@ export default function BlogPostLayout({
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
             {relatedArticles.map((blog) => (
               <Link
                 key={blog.id}

@@ -20,26 +20,25 @@ const HEADER_CONFIG = {
   },
 
   nav: [
-    { label: "Region", href: "/region", icon: <FiCompass size={14} /> },
-    { label: "Services", href: "/services", icon: <FiGrid size={14} /> },
-    { label: "Blog", href: "/blog", icon: <FiLayers size={14} /> },
-    { label: "Giveaways", href: "/giveaways", icon: <FiGift size={14} /> },
+    { label: "Services", href: "/services", icon: <FiGrid size={14} />, colorClass: "text-purple-400 bg-purple-500/10 border-purple-500/20" },
+    { label: "News", href: "/blog", icon: <FiLayers size={14} />, colorClass: "text-amber-400 bg-amber-500/10 border-amber-500/20" },
+    { label: "Giveaways", href: "/giveaways", icon: <FiGift size={14} />, colorClass: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20" },
   ],
 
   userMenu: {
     common: [
-      { label: "My Orders", href: "/dashboard/orders", icon: <FiShoppingBag size={14} />, desc: "Track your top-ups" },
-      { label: "My Wallet", href: "/dashboard/wallet", icon: <FiLayers size={14} />, desc: "Balance & Recharge" },
-      { label: "Earn BBC", href: "/dashboard/coins", icon: <FiZap size={14} />, desc: "FREE Tasks, Check-in & Games" },
-      { label: "Redeem Code", href: "/dashboard/redeem", icon: <FiGift size={14} />, desc: "Claim gift credits" },
-      { label: "Refer & Earn", href: "/dashboard/referral", icon: <FiUsers size={14} />, desc: "Earn rewards" },
-      { label: "My Tournaments", href: "/dashboard/tournaments", icon: <FiAward size={14} />, desc: "View your joined scrims" },
+      { label: "My Orders", href: "/dashboard/orders", icon: <FiShoppingBag size={14} />, desc: "Track your top-ups", colorClass: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20 text-cyan-400 border-cyan-500/20" },
+      { label: "My Wallet", href: "/dashboard/wallet", icon: <FiLayers size={14} />, desc: "Balance & Recharge", colorClass: "bg-gradient-to-br from-purple-500/20 to-pink-500/20 text-pink-400 border-pink-500/20" },
+      { label: "Earn BBC", href: "/dashboard/coins", icon: <FiZap size={14} />, desc: "FREE Tasks, Check-in & Games", colorClass: "bg-gradient-to-br from-amber-500/20 to-yellow-500/20 text-yellow-400 border-yellow-500/20" },
+      { label: "Redeem Code", href: "/dashboard/redeem", icon: <FiGift size={14} />, desc: "Claim gift credits", colorClass: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20 text-emerald-400 border-emerald-500/20" },
+      { label: "Refer & Earn", href: "/dashboard/referral", icon: <FiUsers size={14} />, desc: "Earn rewards", colorClass: "bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-indigo-400 border-indigo-500/20" },
+      { label: "My Tournaments", href: "/dashboard/tournaments", icon: <FiAward size={14} />, desc: "View your joined scrims", colorClass: "bg-gradient-to-br from-rose-500/20 to-orange-500/20 text-rose-400 border-rose-500/20" },
 
-      { label: "API Setup", href: "/dashboard/api-keys", icon: <FiKey size={14} />, desc: "Developer API Access" },
-      { label: "Support", href: "/dashboard/support", icon: <FiMessageSquare size={14} />, desc: "Get help 24/7" },
+      { label: "API Setup", href: "/dashboard/api-keys", icon: <FiKey size={14} />, desc: "Developer API Access", colorClass: "bg-gradient-to-br from-slate-500/20 to-gray-500/20 text-slate-300 border-slate-500/20" },
+      { label: "Support", href: "/dashboard/support", icon: <FiMessageSquare size={14} />, desc: "Get help 24/7", colorClass: "bg-gradient-to-br from-sky-500/20 to-blue-500/20 text-sky-400 border-sky-500/20" },
     ],
     roles: {
-      owner: { label: "Admin Console", href: "/owner-panal", icon: <FiZap size={14} /> },
+      owner: { label: "Admin Console", href: "/owner-panal", icon: <FiZap size={14} />, colorClass: "bg-gradient-to-br from-[var(--accent)] to-purple-600 text-white" },
     },
   },
 };
@@ -237,7 +236,7 @@ export default function Header() {
 
           <div className="flex-1 flex items-center justify-end gap-1.5 sm:gap-2 pr-2">
             {user && (
-              <Link href="/dashboard/wallet">
+              <Link href="/dashboard/wallet" className="hidden sm:flex">
                 <button aria-label="button"
                   className="relative w-auto h-8 px-2.5 rounded-full flex items-center justify-center gap-1 transition-all duration-300 group bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 hover:scale-105 active:scale-95"
                 >
@@ -386,30 +385,30 @@ export default function Header() {
                   <div className="absolute inset-0 bg-[var(--foreground)]/[0.02] pointer-events-none" />
 
                   {/* Compact Profile Header */}
-                  <div className="relative z-10 p-5 flex items-center justify-between border-b border-[var(--border)] gap-4">
+                  <div className="relative z-10 p-3 px-4 flex items-center justify-between border-b border-[var(--border)] gap-3">
                     <div className="flex items-center gap-3 min-w-0 flex-1">
                       {user ? (
                         <>
-                          <div className="w-10 h-10 rounded-xl overflow-hidden border border-[var(--border)] shadow-sm shrink-0">
+                          <div className="w-8 h-8 rounded-lg overflow-hidden border border-[var(--border)] shadow-sm shrink-0">
                             {user?.avatar ? (
-                              <Image src={user.avatar} alt={`${user.name || "User"} Profile Avatar`} width={40} height={40} className="object-cover" />
+                              <Image src={user.avatar} alt={`${user.name || "User"} Profile Avatar`} width={32} height={32} className="object-cover" />
                             ) : (
-                              <div className="w-full h-full bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] text-lg font-black">{user.name?.charAt(0)}</div>
+                              <div className="w-full h-full bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] text-sm font-black">{user.name?.charAt(0)}</div>
                             )}
                           </div>
                           <div className="flex flex-col min-w-0 flex-1">
-                            <div className="flex items-center gap-2 mb-0.5">
-                              <span className="text-sm font-bold text-[var(--foreground)] truncate leading-tight">{user.name}</span>
-                              <span className="text-[7px] font-black uppercase px-1.5 py-0.5 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/10 italic tracking-widest shrink-0">
+                            <div className="flex items-center gap-1.5 mb-0.5">
+                              <span className="text-xs font-bold text-[var(--foreground)] truncate leading-tight">{user.name}</span>
+                              <span className="text-[6px] font-black uppercase px-1 py-0.5 rounded bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/10 italic tracking-widest shrink-0">
                                 {user.userType === "owner" ? "owner" : user.userType === "admin" ? "reseller" : user.userType === "member" ? "member" : "user"}
                               </span>
                             </div>
-                            <span className="text-[10px] text-[var(--muted)] truncate italic leading-tight">{user.email}</span>
+                            <span className="text-[9px] text-[var(--muted)] truncate italic leading-tight">{user.email}</span>
                             <button aria-label="button"
                               onClick={() => copyId(user.userId)}
-                              className="w-fit flex items-center gap-1.5 mt-1 px-1.5 py-0.5 rounded-md bg-[var(--foreground)]/[0.03] border border-[var(--border)] hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/5 transition-all group"
+                              className="w-fit flex items-center gap-1 mt-0.5 px-1 py-0.5 rounded bg-[var(--foreground)]/[0.03] border border-[var(--border)] hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/5 transition-all group"
                             >
-                              <span className="text-[8px] font-bold text-[var(--muted)] group-hover:text-[var(--accent)] tracking-tighter truncate max-w-[100px]">ID: {user.userId}</span>
+                              <span className="text-[7px] font-bold text-[var(--muted)] group-hover:text-[var(--accent)] tracking-tighter truncate max-w-[80px]">ID: {user.userId}</span>
                               <div className="w-3 h-3 rounded-sm flex items-center justify-center text-[var(--muted)] group-hover:text-[var(--accent)] shrink-0">
                                 {idCopied ? <FiCheckCircle size={9} /> : <FiLayers size={9} />}
                               </div>
@@ -423,11 +422,11 @@ export default function Header() {
                         </div>
                       )}
                     </div>
-                    <div className="flex items-center gap-1.5 shrink-0">
+                    <div className="flex items-center gap-1 shrink-0">
                       {user && (
-                        <button onClick={handleLogout} className="w-9 h-9 rounded-full hover:bg-red-500/10 flex items-center justify-center text-red-500 transition-colors" title="Logout"><FiLogOut size={18} /></button>
+                        <button onClick={handleLogout} className="w-7 h-7 rounded-full hover:bg-red-500/10 flex items-center justify-center text-red-500 transition-colors" title="Logout"><FiLogOut size={14} /></button>
                       )}
-                      <button onClick={() => setUserMenuOpen(false)} className="w-9 h-9 rounded-full hover:bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] transition-colors" aria-label="Close User Menu"><FiX size={22} /></button>
+                      <button onClick={() => setUserMenuOpen(false)} className="w-7 h-7 rounded-full hover:bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] transition-colors" aria-label="Close User Menu"><FiX size={18} /></button>
                     </div>
                   </div>
 
@@ -444,11 +443,11 @@ export default function Header() {
                       </div>
                     ) : (
                       <>
-                        <div className="grid grid-cols-4 gap-1.5 mb-3">
+                        <div className="grid grid-cols-3 gap-1 mb-3">
                           {HEADER_CONFIG.nav.map((item) => (
-                            <Link key={item.label} href={item.href} onClick={() => setUserMenuOpen(false)} className="flex flex-col items-center justify-center py-1 rounded-xl bg-[var(--foreground)]/[0.02] border border-[var(--border)] hover:bg-[var(--accent)] hover:text-white transition-all group">
-                              <span className="text-[var(--accent)] group-hover:text-white mb-0.5 scale-90">{item.icon}</span>
-                              <span className="text-[8px] font-black uppercase tracking-widest">{item.label}</span>
+                            <Link key={item.label} href={item.href} onClick={() => setUserMenuOpen(false)} className={`flex flex-col items-center justify-center py-1.5 px-0.5 rounded-xl border transition-all group hover:brightness-125 ${item.colorClass || 'bg-[var(--foreground)]/[0.02] border-[var(--border)] text-[var(--accent)]'}`}>
+                              <span className="mb-0.5 scale-90 drop-shadow-md">{item.icon}</span>
+                              <span className="text-[7px] font-black uppercase tracking-widest text-center">{item.label}</span>
                             </Link>
                           ))}
                         </div>
@@ -459,7 +458,7 @@ export default function Header() {
                             {HEADER_CONFIG.userMenu.common.slice(0, 2).map((item) => (
                               <Link key={item.label} href={item.href} onClick={() => setUserMenuOpen(false)} className="flex items-center justify-between p-2 rounded-xl bg-[var(--foreground)]/[0.02] border border-[var(--border)] hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/5 transition-all group">
                                 <div className="flex items-center gap-2 min-w-0 flex-1">
-                                  <div className="w-7 h-7 rounded-lg bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] group-hover:scale-105 transition-transform shrink-0 scale-90">{item.icon}</div>
+                                  <div className={`w-7 h-7 rounded-lg flex items-center justify-center border group-hover:scale-105 transition-transform shrink-0 scale-90 ${item.colorClass || "bg-[var(--accent)]/10 text-[var(--accent)] border-[var(--accent)]/20"}`}>{item.icon}</div>
                                   <div className="min-w-0">
                                     <p className="text-[9px] font-black uppercase tracking-tight text-[var(--foreground)] truncate">{item.label.replace("My ", "")}</p>
                                     <p className="text-[7px] text-[var(--muted)] uppercase tracking-widest opacity-60 line-clamp-2 leading-[1.2] whitespace-normal break-words">{item.desc.split(",")[0].split("&")[0]}</p>
@@ -483,7 +482,7 @@ export default function Header() {
                             {HEADER_CONFIG.userMenu.common.slice(2).map((item) => (
                               <Link key={item.label} href={item.href} onClick={() => setUserMenuOpen(false)} className="flex items-center justify-between py-1.5 px-2 rounded-xl bg-[var(--foreground)]/[0.01] border border-transparent hover:border-[var(--accent)]/10 hover:bg-[var(--accent)]/5 transition-all group">
                                 <div className="flex items-center gap-2">
-                                  <div className="w-6 h-6 rounded-lg bg-[var(--foreground)]/5 flex items-center justify-center text-[var(--muted)] group-hover:text-[var(--accent)] transition-all scale-90">{item.icon}</div>
+                                  <div className={`w-6 h-6 rounded-lg flex items-center justify-center border transition-all scale-90 ${item.colorClass || "bg-[var(--foreground)]/5 text-[var(--muted)] border-transparent group-hover:text-[var(--accent)]"}`}>{item.icon}</div>
                                   <div className="flex flex-col">
                                     <p className="text-[10px] font-bold text-[var(--foreground)] leading-tight">{item.label}</p>
                                     <p className="text-[7px] text-[var(--muted)] opacity-60">{item.desc}</p>
