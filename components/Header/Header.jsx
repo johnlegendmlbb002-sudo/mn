@@ -530,9 +530,6 @@ export default function Header() {
                       </>
                     )}
 
-                    <div className="pb-2">
-                      <CustomWebBanner />
-                    </div>
                   </div>
 
                   {/* Drawer Footer */}
