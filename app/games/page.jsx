@@ -8,7 +8,7 @@ import GameGrid from "@/components/Games/GameGrid";
 import GameList from "@/components/Games/GameList";
 import FilterModal from "@/components/Games/FilterModal";
 import ServiceGridSection from "@/components/Games/ServiceGridSection";
-import { ProductCardSkeleton } from "@/components/Skeleton/Skeleton";
+import { ProductCardSkeleton, ProductListSkeleton } from "@/components/Skeleton/Skeleton";
 import api from "@/lib/axios";
 
 export default function GamesPage() {
@@ -270,9 +270,9 @@ export default function GamesPage() {
         {/* ================= GAME CONTENT ================= */}
         <div className="space-y-20">
           {loading ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className={viewMode === "grid" ? "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" : "flex flex-col gap-3"}>
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
-                <ProductCardSkeleton key={i} />
+                viewMode === "grid" ? <ProductCardSkeleton key={i} /> : <ProductListSkeleton key={i} />
               ))}
             </div>
           ) : isEmpty ? (

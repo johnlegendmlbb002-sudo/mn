@@ -216,6 +216,18 @@ export const ProductCardSkeleton = () => (
   </div>
 );
 
+// 11b. PRODUCT LIST SKELETON (for Game List view)
+export const ProductListSkeleton = () => (
+  <div className="flex items-center gap-4 p-3 rounded-[1.2rem] bg-[var(--card)]/40 border border-[var(--border)]">
+    <div className="w-24 h-20 shrink-0 rounded-[0.8rem] bg-[var(--border)] opacity-20" />
+    <div className="flex-1 space-y-3">
+      <SkeletonText width="w-3/4 max-w-[200px]" height="h-5" />
+      <div className="w-20 h-6 rounded-full bg-[var(--border)] opacity-30" />
+    </div>
+    <SkeletonCircle size="w-10 h-10 shrink-0" className="opacity-20" />
+  </div>
+);
+
 // 12. STORY SKELETON (for Story Slider)
 export const StorySkeleton = () => (
   <div className="flex flex-col items-center gap-4 min-w-[72px] md:min-w-[82px]">
