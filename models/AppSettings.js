@@ -22,6 +22,7 @@ const AppSettingsSchema = new mongoose.Schema(
         showGiveawayBanner: { type: Boolean, default: true },
         showTelegramPopup: { type: Boolean, default: false },
         showWhatsappPopup: { type: Boolean, default: false },
+        showGamesPopup: { type: Boolean, default: false },
         showGameBannerCarousel: { type: Boolean, default: true },
         showStorySlider: { type: Boolean, default: true },
         showFlashSale: { type: Boolean, default: true },

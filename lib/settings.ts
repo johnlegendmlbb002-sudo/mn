@@ -18,6 +18,7 @@ export const getAppSettings = unstable_cache(
                     showGiveawayBanner: true,
                     showTelegramPopup: false,
                     showWhatsappPopup: false,
+                    showGamesPopup: false,
                     showGameBannerCarousel: true,
                     showStorySlider: true,
                     showFlashSale: true,
@@ -35,6 +36,7 @@ export const getAppSettings = unstable_cache(
                 showGiveawayBanner: settings.showGiveawayBanner !== false, // default true
                 showTelegramPopup: !!settings.showTelegramPopup,
                 showWhatsappPopup: !!settings.showWhatsappPopup,
+                showGamesPopup: !!settings.showGamesPopup,
                 showGameBannerCarousel: settings.showGameBannerCarousel !== false,
                 showStorySlider: settings.showStorySlider !== false,
                 showFlashSale: settings.showFlashSale !== false,
@@ -53,6 +55,7 @@ export const getAppSettings = unstable_cache(
                 showGiveawayBanner: true,
                 showTelegramPopup: false,
                 showWhatsappPopup: false,
+                showGamesPopup: false,
                 showGameBannerCarousel: true,
                 showStorySlider: true,
                 showFlashSale: true,
