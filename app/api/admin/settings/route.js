@@ -93,6 +93,7 @@ export async function PATCH(req) {
         if (typeof body.showGiveawayBanner === "boolean") settings.showGiveawayBanner = body.showGiveawayBanner;
         if (typeof body.showTelegramPopup === "boolean") settings.showTelegramPopup = body.showTelegramPopup;
         if (typeof body.showWhatsappPopup === "boolean") settings.showWhatsappPopup = body.showWhatsappPopup;
+        if (typeof body.showGamesPopup === "boolean") settings.showGamesPopup = body.showGamesPopup;
         if (typeof body.showGameBannerCarousel === "boolean") settings.showGameBannerCarousel = body.showGameBannerCarousel;
         if (typeof body.showStorySlider === "boolean") settings.showStorySlider = body.showStorySlider;
         if (typeof body.showFlashSale === "boolean") settings.showFlashSale = body.showFlashSale;
