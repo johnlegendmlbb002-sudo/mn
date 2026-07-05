@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import nextDynamic from "next/dynamic";
 
-export const dynamic = "force-dynamic";
-
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";

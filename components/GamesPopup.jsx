@@ -61,10 +61,11 @@ export default function GamesPopup() {
                 {/* Image Container */}
                 <div className="relative mb-5 mt-2 rounded-xl overflow-hidden shadow-sm">
                   <Image 
-                    src="https://res.cloudinary.com/dwt0xaang/image/upload/v1783062675/games-blue_pdkxu3.png" 
+                    src="https://res.cloudinary.com/dwt0xaang/image/upload/f_auto,q_auto/v1783062675/games-blue_pdkxu3.png" 
                     alt="Games" 
                     width={250} 
-                    height={250} 
+                    height={250}
+                    quality={75}
                     className="object-contain"
                   />
                 </div>
