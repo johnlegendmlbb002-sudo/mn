@@ -2,10 +2,18 @@ import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
 import { generateUserId } from "@/lib/generateUserId";
 import { sendOtpMail } from "@/lib/sendOtpMail";
+import { checkRateLimit } from "@/lib/rateLimit";
 
 export async function POST(request: Request) {
     try {
         await connectDB();
+        
+        const ip = request.headers.get("x-forwarded-for") || "unknown_ip";
+        const isAllowed = await checkRateLimit(`otp_${ip}`, 3, 10); // 3 requests per 10 mins
+        if (!isAllowed) {
+            return Response.json({ success: false, message: "Too many requests. Please try again later." }, { status: 429 });
+        }
+
         const { email } = await request.json();
 
         if (!email) {

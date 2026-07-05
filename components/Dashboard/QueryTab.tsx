@@ -113,8 +113,9 @@ export default function QueryTab() {
       } else {
         setQuerySuccess(data.message || "Could not send message. Try again.");
       }
-    } catch {
-      setQuerySuccess("Connection error. Please try again.");
+    } catch (error: any) {
+      const errorMessage = error.response?.data?.message || "Connection error. Please try again.";
+      setQuerySuccess(errorMessage);
     } finally {
       setIsSubmitting(false);
       setTimeout(() => setQuerySuccess(""), 4000);

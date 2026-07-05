@@ -32,6 +32,7 @@ export default function SupportQueriesTab() {
   const [page, setPage] = useState(1);
   const [limit] = useState(20);
   const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
 
   const [pagination, setPagination] = useState({
     total: 0,
@@ -50,8 +51,15 @@ export default function SupportQueriesTab() {
   }, []);
 
   useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 300);
+    return () => clearTimeout(handler);
+  }, [search]);
+
+  useEffect(() => {
     fetchQueriesList();
-  }, [page, limit, search]);
+  }, [page, limit, debouncedSearch]);
 
   /* ================= FETCH QUERIES STATS ================= */
   const fetchQueriesStats = async () => {

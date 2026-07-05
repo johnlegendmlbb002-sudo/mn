@@ -100,8 +100,9 @@ function AuthContent() {
       } else {
         setError(data.message);
       }
-    } catch {
-      setError("Could not send code. Try again.");
+    } catch (error: any) {
+      const errorMessage = error.response?.data?.message || "Could not send code. Try again.";
+      setError(errorMessage);
     }
     setLoading(false);
   };

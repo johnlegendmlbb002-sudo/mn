@@ -1,5 +1,6 @@
 import { connectDB } from "@/lib/mongodb";
 import SupportQuery from "@/models/SupportQuery";
+import { checkRateLimit } from "@/lib/rateLimit";
 
 export async function GET(request) {
   try {
@@ -36,6 +37,13 @@ export async function GET(request) {
 export async function POST(request) {
   try {
     await connectDB();
+    
+    const ip = request.headers.get("x-forwarded-for") || "unknown_ip";
+    const isAllowed = await checkRateLimit(`query_${ip}`, 5, 30); // 5 requests per 30 mins
+    if (!isAllowed) {
+        return Response.json({ success: false, message: "Too many queries submitted. Please try again later." }, { status: 429 });
+    }
+
     const body = await request.json();
 
     const { name, email, phoneNo, orderId, type, message } = body;
