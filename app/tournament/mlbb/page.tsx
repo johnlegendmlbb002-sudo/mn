@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -39,6 +39,14 @@ const STATUS_STYLE: Record<string, string> = {
 
 // ── Page ────────────────────────────────────────────────────────────────
 export default function MLBBTournamentPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[var(--background)]" />}>
+      <MLBBTournamentContent />
+    </Suspense>
+  );
+}
+
+function MLBBTournamentContent() {
   const [formats, setFormats] = useState<Tournament[]>([]);
   const [loading, setLoading] = useState(true);
   const [registering, setRegistering] = useState<Tournament | null>(null);
