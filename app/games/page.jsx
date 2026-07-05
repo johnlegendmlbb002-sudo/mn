@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useCallback } from "react";
+import { useEffect, useMemo, useState, useCallback, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { FiFilter, FiX, FiSearch, FiGrid, FiList, FiTrendingUp, FiZap, FiPackage, FiTv } from "react-icons/fi";
 
@@ -12,6 +12,14 @@ import { ProductCardSkeleton, ProductListSkeleton } from "@/components/Skeleton/
 import api from "@/lib/axios";
 
 export default function GamesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[var(--background)]" />}>
+      <GamesContent />
+    </Suspense>
+  );
+}
+
+function GamesContent() {
   /* ================= STATE ================= */
   const [category, setCategory] = useState([]);
   const [games, setGames] = useState([]);
