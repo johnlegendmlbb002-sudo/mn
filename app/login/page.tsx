@@ -147,7 +147,7 @@ function AuthContent() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center pt-4 sm:pt-12 px-4 overflow-hidden bg-[var(--background)]">
+    <section className="relative min-h-screen flex flex-col items-center pt-24 sm:pt-32 px-4 overflow-hidden bg-[var(--background)]">
       {/* AMBIENT BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(var(--accent-rgb),0.15),transparent_70%)] opacity-40" />
@@ -174,16 +174,14 @@ function AuthContent() {
                 className="relative mb-4"
               >
                 <div className="absolute inset-0 bg-[var(--accent)] blur-2xl opacity-10" />
-                <div className="relative p-1 rounded-full overflow-hidden">
-                  <div className="relative bg-[var(--background)] p-2 rounded-full border border-[var(--border)] shadow-xl">
-                    <Image
-                      src="/logoBB.png"
-                      alt="Logo"
-                      width={56}
-                      height={56}
-                      className="relative z-10"
-                    />
-                  </div>
+                <div className="relative flex justify-center">
+                  <Image
+                    src="/logo.png"
+                    alt="Logo"
+                    width={86}
+                    height={86}
+                    className="relative z-10"
+                  />
                 </div>
               </motion.div>
 

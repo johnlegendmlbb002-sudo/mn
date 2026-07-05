@@ -286,7 +286,7 @@ export default function SupportQueriesTab() {
                       </div>
 
                       <h4 className="text-sm font-bold text-[var(--foreground)] truncate group-hover:text-[var(--accent)]">
-                        {q.email || "Unknown User"}
+                        {q.name || q.email || "Unknown User"}
                       </h4>
 
                       <p className="text-[11px] text-[var(--muted)]/60 truncate mt-0.5">
@@ -367,6 +367,7 @@ export default function SupportQueriesTab() {
 
               <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <DetailBlock label="Name" value={activeQuery.name || "N/A"} icon={<Mail size={12} />} />
                   <DetailBlock label="Email" value={activeQuery.email || "N/A"} icon={<Mail size={12} />} />
                   <DetailBlock label="Phone" value={activeQuery.phoneNo || activeQuery.phone || "N/A"} icon={<Phone size={12} />} />
                   <DetailBlock label="Order ID" value={activeQuery.orderId || "N/A"} icon={<MessageSquare size={12} />} />

@@ -11,6 +11,7 @@ import {
 import { FiChevronDown, FiChevronLeft, FiChevronRight, FiZap, FiTarget, FiMail, FiRefreshCw, FiClock, FiCheckCircle, FiAlertCircle, FiList } from "react-icons/fi";
 import { QuerySkeleton } from "../Skeleton/Skeleton";
 import api from "@/lib/axios";
+import { useAuthStore } from "@/store/useAuthStore";
 
 const SUPPORT_CONFIG = {
   header: {
@@ -65,7 +66,7 @@ export default function QueryTab() {
   const hasNewReply = myQueries.some((q) => q.adminReply);
 
   const fetchMyQueries = useCallback(async (page = 1) => {
-    const email = localStorage.getItem("email");
+    const email = useAuthStore.getState().user?.email;
     if (!email) return;
     setLoadingQueries(true);
     try {
@@ -93,10 +94,11 @@ export default function QueryTab() {
   const handleSubmit = async () => {
     if (!queryType || !queryMessage.trim() || !phoneNo.trim()) return;
     setIsSubmitting(true);
-    const storedEmail = localStorage.getItem("email");
+    const user = useAuthStore.getState().user;
     try {
       const { data } = await api.post("/api/support/query", {
-        email: storedEmail,
+        name: user?.name || null,
+        email: user?.email || null,
         phoneNo: phoneNo.trim(),
         orderId: orderId.trim() || null,
         type: queryType,
