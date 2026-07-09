@@ -209,20 +209,7 @@ export default function Header() {
           </nav>
 
           <div className="flex-1 flex items-center justify-end gap-1.5 sm:gap-2 pr-2">
-            {user && (
-              <Link href="/dashboard/wallet" className="hidden sm:flex">
-                <button aria-label="button"
-                  className="relative w-auto h-8 px-2.5 rounded-full flex items-center justify-center gap-1 transition-all duration-300 group bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 hover:scale-105 active:scale-95"
-                >
-                  {balanceLoading ? (
-                    <div className="w-12 h-3 bg-[var(--accent)]/10 rounded-full overflow-hidden shimmer-overlay" />
-                  ) : (
-                    <span className="text-xs font-black text-[var(--accent)]">₹{walletBalance}</span>
-                  )}
-                  <span className="text-lg text-[var(--accent)] group-hover:scale-110 transition-transform">+</span>
-                </button>
-              </Link>
-            )}
+
 
             <div className="flex-1 flex justify-end mr-1">
               <div className="relative">
