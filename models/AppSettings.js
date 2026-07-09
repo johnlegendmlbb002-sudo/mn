@@ -19,6 +19,7 @@ const AppSettingsSchema = new mongoose.Schema(
         showHomeEarnPromotion: { type: Boolean, default: false },
         showTradeMarketplaceBanner: { type: Boolean, default: false },
         showCustomWebBanner: { type: Boolean, default: false },
+        showGamesWebBanner: { type: Boolean, default: false },
         showGiveawayBanner: { type: Boolean, default: true },
         showTelegramPopup: { type: Boolean, default: false },
         showWhatsappPopup: { type: Boolean, default: false },

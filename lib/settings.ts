@@ -15,6 +15,7 @@ export const getAppSettings = unstable_cache(
                     showHomeEarnPromotion: false,
                     showTradeMarketplaceBanner: false,
                     showCustomWebBanner: false,
+                    showGamesWebBanner: false,
                     showGiveawayBanner: true,
                     showTelegramPopup: false,
                     showWhatsappPopup: false,
@@ -33,6 +34,7 @@ export const getAppSettings = unstable_cache(
                 showHomeEarnPromotion: !!settings.showHomeEarnPromotion,
                 showTradeMarketplaceBanner: !!settings.showTradeMarketplaceBanner,
                 showCustomWebBanner: !!settings.showCustomWebBanner,
+                showGamesWebBanner: !!settings.showGamesWebBanner,
                 showGiveawayBanner: settings.showGiveawayBanner !== false, // default true
                 showTelegramPopup: !!settings.showTelegramPopup,
                 showWhatsappPopup: !!settings.showWhatsappPopup,
@@ -52,6 +54,7 @@ export const getAppSettings = unstable_cache(
                 showHomeEarnPromotion: false,
                 showTradeMarketplaceBanner: false,
                 showCustomWebBanner: false,
+                showGamesWebBanner: false,
                 showGiveawayBanner: true,
                 showTelegramPopup: false,
                 showWhatsappPopup: false,

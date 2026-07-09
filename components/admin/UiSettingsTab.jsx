@@ -9,6 +9,7 @@ const UiSettingsTab = () => {
         showHomeEarnPromotion: false,
         showTradeMarketplaceBanner: false,
         showCustomWebBanner: false,
+        showGamesWebBanner: false,
         showGiveawayBanner: true,
     });
     const [loading, setLoading] = useState(true);
@@ -59,7 +60,7 @@ const UiSettingsTab = () => {
             </div>
 
             <div className="bg-[var(--background)] border border-[var(--border)] rounded-xl overflow-hidden flex flex-col divide-y divide-[var(--border)]">
-                {['showTopNoticeBanner', 'showHomeEarnPromotion', 'showTradeMarketplaceBanner', 'showCustomWebBanner', 'showGiveawayBanner'].map((bannerKey) => {
+                {['showTopNoticeBanner', 'showHomeEarnPromotion', 'showTradeMarketplaceBanner', 'showCustomWebBanner', 'showGamesWebBanner', 'showGiveawayBanner'].map((bannerKey) => {
                     const toggleBanner = async () => {
                         try {
                             setSaving(true);

@@ -41,13 +41,13 @@ export default function TelegramQRPopup() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            className="relative w-full max-w-[280px] z-10"
+            className="relative w-full max-w-[220px] z-10"
           >
             {/* Ultra Premium Compact Card */}
-            <div className="relative bg-white rounded-3xl p-5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100 overflow-hidden text-center">
+            <div className="relative bg-white rounded-3xl p-3.5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100 overflow-hidden text-center">
               
               {/* Elegant Top Gradient */}
-              <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-blue-50/80 to-transparent pointer-events-none" />
+              <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-blue-50/80 to-transparent pointer-events-none" />
 
               {/* Close Button */}
               <button aria-label="button"
@@ -60,31 +60,31 @@ export default function TelegramQRPopup() {
               <div className="relative z-10 flex flex-col items-center">
                 
                 {/* Compact Header (Horizontal) */}
-                <div className="flex items-center gap-3 mb-4 w-full justify-center">
-                  <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-[#0088cc] shadow-sm border border-blue-100/50 shrink-0">
-                    <FiSend size={18} strokeWidth={2.5} className="-ml-0.5" />
+                <div className="flex items-center gap-1.5 mb-2 w-full justify-center">
+                  <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center text-[#0088cc] shadow-sm border border-blue-100/50 shrink-0">
+                    <FiSend size={16} strokeWidth={2.5} className="-ml-0.5" />
                   </div>
                   <div className="text-left">
-                    <h2 className="text-base font-[800] tracking-tight text-gray-900 leading-tight flex items-center gap-2">
+                    <h2 className="text-xs font-[800] tracking-tight text-gray-900 leading-tight flex items-center gap-1">
                       Join Giveaway
-                      <span className="px-1.5 py-0.5 rounded-md bg-red-500 text-white text-[8px] font-black uppercase tracking-widest animate-pulse flex items-center gap-1 mt-0.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-white"></span> LIVE
+                      <span className="px-1.5 py-[1px] rounded-md bg-red-500 text-white text-[6px] font-black uppercase tracking-widest animate-pulse flex items-center gap-0.5 mt-0.5">
+                        <span className="w-1 h-1 rounded-full bg-white"></span> LIVE
                       </span>
                     </h2>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.1em] text-[#0088cc]">
+                    <p className="text-[7px] font-bold uppercase tracking-[0.05em] text-[#0088cc]">
                       Criteria: Join & Add 5+ Friends
                     </p>
                   </div>
                 </div>
 
                 {/* Compact QR Code Container */}
-                <div className="relative mb-4 mt-2">
+                <div className="relative mb-3 mt-1">
                   <div className="absolute -inset-3 bg-gray-50 rounded-[1.25rem] border border-gray-100 pointer-events-none" />
                   
-                  <div className="relative bg-white p-3 rounded-[1rem] shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-50">
+                  <div className="relative bg-white p-2.5 rounded-[1rem] shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-50">
                     <QRCodeCanvas
                       value="https://t.me/bluebuffesports"
-                      size={130}
+                      size={90}
                       level="H"
                       includeMargin={false}
                       fgColor="#0f172a"
@@ -93,15 +93,15 @@ export default function TelegramQRPopup() {
                     
                     {/* Small inner logo overlay */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <div className="w-9 h-9 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center p-1">
-                        <Image src="/logoBB.png" alt="Logo" width={22} height={22} className="object-contain" />
+                      <div className="w-7 h-7 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center p-0.5">
+                        <Image src="/logoBB.png" alt="Logo" width={18} height={18} className="object-contain" />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="mb-5 text-center px-2">
-                  <p className="text-[12px] font-bold text-gray-800 leading-snug">
+                <div className="mb-3 text-center px-1">
+                  <p className="text-[10px] font-bold text-gray-800 leading-snug">
                     Join and text us to get your reward instantly!
                   </p>
                 </div>
@@ -111,7 +111,7 @@ export default function TelegramQRPopup() {
                   href="https://t.me/bluebuffesports"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full h-11 flex items-center justify-center gap-2 rounded-xl bg-[#0088cc] !text-white font-bold text-xs tracking-wide shadow-[0_8px_20px_-6px_rgba(0,136,204,0.4)] hover:shadow-[0_12px_25px_-6px_rgba(0,136,204,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                  className="w-full h-9 flex items-center justify-center gap-2 rounded-xl bg-[#0088cc] !text-white font-bold text-xs tracking-wide shadow-[0_8px_20px_-6px_rgba(0,136,204,0.4)] hover:shadow-[0_12px_25px_-6px_rgba(0,136,204,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
                 >
                   Join Telegram
                   <FiArrowRight size={14} />

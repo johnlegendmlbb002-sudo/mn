@@ -46,8 +46,16 @@ export default function PWAInstallBanner() {
 
     const lateHandler = (e: Event) => { e.preventDefault(); window.__pwaPrompt = e as never; };
     window.addEventListener("beforeinstallprompt", lateHandler);
+    
+    const handleShowModal = () => setShowModal(true);
+    window.addEventListener("show-pwa-modal", handleShowModal);
+
     const timer = setTimeout(() => setVisible(true), 2000); // 2 second delay
-    return () => { window.removeEventListener("beforeinstallprompt", lateHandler); clearTimeout(timer); };
+    return () => { 
+      window.removeEventListener("beforeinstallprompt", lateHandler); 
+      window.removeEventListener("show-pwa-modal", handleShowModal);
+      clearTimeout(timer); 
+    };
   }, []);
 
   const handleInstall = async () => {

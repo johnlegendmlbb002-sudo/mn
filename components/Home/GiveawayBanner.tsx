@@ -38,128 +38,88 @@ export default function GiveawayBanner() {
   return (
     <>
       <style>{`
-        @keyframes gw-fade { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
         @keyframes gw-swap { 0%{opacity:0;transform:translateX(8px)} 100%{opacity:1;transform:translateX(0)} }
-        @keyframes gw-dot  { 0%,100%{opacity:1} 50%{opacity:0.3} }
-        .gw-wrap {
-          display:flex; align-items:center; gap:10px;
-          padding: 8px 10px 8px 10px;
-          border-radius:14px;
-          border:1px solid color-mix(in srgb,var(--accent) 20%,var(--border));
-          background: var(--card);
-          box-shadow: 0 2px 12px rgba(0,0,0,0.12),
-                      inset 0 1px 0 rgba(255,255,255,0.05);
-          animation: gw-fade 0.35s cubic-bezier(0.22,1,0.36,1) both;
-          cursor:pointer;
-          position:relative;
-          overflow:hidden;
-        }
-        .gw-wrap::before {
-          content:'';
-          position:absolute; inset-inline:0; top:0; height:1.5px;
-          background:linear-gradient(90deg,transparent,var(--accent),transparent);
-          opacity:0.6;
-        }
-        .gw-icon {
-          flex-shrink:0;
-          width:32px; height:32px; border-radius:9px;
-          background:color-mix(in srgb,var(--accent) 14%,transparent);
-          color:var(--accent);
-          display:flex; align-items:center; justify-content:center;
-        }
-        .gw-text { flex:1; min-width:0; }
-        .gw-label {
-          display:flex; align-items:center; gap:5px;
-          font-size:9px; font-weight:800;
-          text-transform:uppercase; letter-spacing:0.09em;
-          color:#ef4444; opacity:0.85;
-          margin-bottom:1px;
-        }
-        .gw-live-dot {
-          width:5px; height:5px; border-radius:50%;
-          background:#ef4444;
-          animation: gw-dot 1.4s ease infinite;
-        }
-        .gw-title {
-          font-size:11px; font-weight:600;
-          color:var(--foreground);
-        }
-        .gw-btn {
-          flex-shrink:0;
-          display:flex; align-items:center; gap:3px;
-          padding:6px 12px; border-radius:8px; border:none; cursor:pointer;
-          font-size:11px; font-weight:800; letter-spacing:0.03em;
-          background:var(--accent); color:#fff;
-          box-shadow:0 2px 10px color-mix(in srgb,var(--accent) 40%,transparent);
-          transition:opacity 0.15s, transform 0.15s;
-        }
-        .gw-btn:hover{opacity:0.85;transform:scale(1.04);}
-        .gw-close {
-          flex-shrink:0;
-          width:20px; height:20px; border-radius:50%; border:none; cursor:pointer;
-          background:transparent; color:var(--muted);
-          display:flex; align-items:center; justify-content:center;
-          transition:color 0.15s, background 0.15s;
-          margin-left:-2px;
-        }
-        .gw-close:hover{color:var(--foreground);background:var(--border);}
         .gw-content { animation: gw-swap 0.28s cubic-bezier(0.22,1,0.36,1) both; }
-        .gw-dots { display:flex; align-items:center; gap:3px; }
-        .gw-dot-item {
-          height:3px; border-radius:99px;
-          background:var(--accent);
-          transition: width 0.3s ease, opacity 0.3s ease;
-        }
       `}</style>
-
-      <div className="max-w-7xl mx-auto px-4 mt-4 mb-2">
-        <div className="gw-wrap" onClick={() => setShowModal(true)}>
-          {/* Icon */}
-          <div className="gw-icon">
-            <FiGift size={15} />
-          </div>
-
-          {/* Text — animates on rotate */}
-          <div className="gw-text">
-            <div className="gw-label">
-              <span className="gw-live-dot" />
-              Giveaway Live
-              {g.maxEntries > 0 ? (
-                <span style={{ color:"var(--muted)", fontWeight:700, marginLeft:4 }}>• {g.entryCount || 0}/{g.maxEntries} Filled</span>
-              ) : (
-                <span style={{ color:"var(--muted)", fontWeight:700, marginLeft:4 }}>• {g.entryCount || 0} Entered</span>
-              )}
+      <section className="w-full max-w-7xl mx-auto px-4 mt-2 mb-1 relative z-30">
+        <div 
+          onClick={() => setShowModal(true)}
+          className="group cursor-pointer relative flex items-center justify-between px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-[2rem] bg-[#eef8fe] dark:bg-[var(--accent)]/10 border border-[#b8e2f8] dark:border-[var(--accent)]/20 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md hover:border-[#0ea5e9]/50 dark:hover:border-[var(--accent)]/50"
+        >
+          {/* Subtle Ambient Glow */}
+          <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-[#0ea5e9]/10 dark:via-[var(--accent)]/10 to-transparent" />
+          
+          <div className="relative z-10 flex items-center gap-3 sm:gap-4 min-w-0">
+            {/* Icon */}
+            <div className="flex items-center ml-1 shrink-0">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-[0.8rem] sm:rounded-[1rem] flex items-center justify-center border-[2px] border-[#eef8fe] dark:border-[var(--card)] z-30 shadow-sm transition-transform group-hover:scale-105 bg-[#d2efff] dark:bg-[var(--accent)]/20 text-[#0ea5e9] dark:text-[var(--accent)]">
+                <FiGift size={16} className="sm:w-4 sm:h-4 drop-shadow-sm" />
+              </div>
             </div>
-            <div key={animKey} className="gw-content gw-title">{g.title}</div>
-          </div>
-
-          {/* Dots if multiple */}
-          {giveaways.length > 1 && (
-            <div className="gw-dots">
-              {giveaways.map((_, i) => (
-                <div
-                  key={i}
-                  className="gw-dot-item"
-                  style={{ width: i === current ? "12px" : "3px", opacity: i === current ? 1 : 0.25 }}
-                  onClick={e => { e.stopPropagation(); setCurrent(i); setAnimKey(k => k+1); }}
-                />
-              ))}
+            
+            {/* Text Content */}
+            <div className="flex flex-col justify-center min-w-0">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse shrink-0" />
+                <h3 className="text-[9px] sm:text-[10px] font-black tracking-widest text-red-500 leading-tight uppercase truncate">
+                  GIVEAWAY LIVE
+                </h3>
+                {g.maxEntries > 0 ? (
+                  <span className="text-[8px] sm:text-[9px] font-bold text-gray-500 dark:text-[var(--muted)] uppercase truncate">
+                    • {g.entryCount || 0}/{g.maxEntries} Filled
+                  </span>
+                ) : (
+                  <span className="text-[8px] sm:text-[9px] font-bold text-gray-500 dark:text-[var(--muted)] uppercase truncate">
+                    • {g.entryCount || 0} Entered
+                  </span>
+                )}
+              </div>
+              <p key={animKey} className="gw-content text-[12px] sm:text-[14px] font-black tracking-wide text-[#115b9c] dark:text-[var(--foreground)] mt-0.5 truncate">
+                {g.title}
+              </p>
             </div>
-          )}
+          </div>
+          
+          {/* Right Side Actions */}
+          <div className="relative z-10 flex items-center gap-2 shrink-0 ml-1 sm:ml-2">
+            
+            {/* Dots if multiple */}
+            {giveaways.length > 1 && (
+              <div className="hidden sm:flex items-center gap-1 mr-2">
+                {giveaways.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`h-1 rounded-full transition-all duration-300 ${i === current ? "w-3 bg-[#0ea5e9] dark:bg-[var(--accent)]" : "w-1 bg-[#0ea5e9]/30 dark:bg-[var(--accent)]/30"}`}
+                    onClick={e => { e.stopPropagation(); setCurrent(i); setAnimKey(k => k+1); }}
+                  />
+                ))}
+              </div>
+            )}
 
-          {/* CTA */}
-          <button aria-label="button" className="gw-btn" onClick={e => { e.stopPropagation(); setShowModal(true); }}>
-            Enter <FiChevronRight size={11} />
-          </button>
-
-          {/* Dismiss */}
-          <button className="gw-close" aria-label="Close Giveaway Banner" onClick={e => { e.stopPropagation(); setVisible(false); }}>
-            <FiX size={11} />
-          </button>
+            {/* Action Button */}
+            <button 
+              className="h-7 sm:h-8 px-3 sm:px-4 rounded-full sm:rounded-[0.5rem] bg-[#0ea5e9] dark:bg-[var(--accent)] text-white flex items-center justify-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] font-black uppercase tracking-wider shadow-md shadow-[#0ea5e9]/20 transition-transform hover:scale-105"
+              onClick={e => { e.stopPropagation(); setShowModal(true); }}
+            >
+              Enter <FiChevronRight size={12} />
+            </button>
+            
+            {/* Close Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setVisible(false);
+              }}
+              className="w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-500/10 transition-all duration-300"
+              aria-label="Close"
+            >
+              <FiX size={14} />
+            </button>
+          </div>
         </div>
-      </div>
 
-      {showModal && <GiveawayEntryModal giveaway={g} onClose={() => setShowModal(false)} />}
+        {showModal && <GiveawayEntryModal giveaway={g} onClose={() => setShowModal(false)} />}
+      </section>
     </>
   );
 }

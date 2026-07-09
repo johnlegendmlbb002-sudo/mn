@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect, useMemo } from "react";
 import dynamic from "next/dynamic";
 import GameBannerCarousel from "./GameBannerCarousel";
 import HomeServices from "./HomeServices";
@@ -11,6 +12,7 @@ import HomeEarnPromotion from "./HomeEarnPromotion";
 import SEOContent from "./SEOContent";
 import SupportBanner from "./SupportBanner";
 import CustomWebBanner from "./CustomWebBanner";
+import GamesWebBanner from "./GamesWebBanner";
 import GiveawayBanner from "./GiveawayBanner";
 
 // Lazy-load below-fold & heavy components to reduce initial bundle
@@ -32,13 +34,48 @@ export default function HeroSection({ bannerSettings }: { bannerSettings?: any }
     showFlashSale: true
   };
 
+  const activeBanners = useMemo(() => {
+    return [
+      bs.showTopNoticeBanner && <TopNoticeBanner key="topnotice" />,
+      bs.showHomeEarnPromotion && <HomeEarnPromotion key="earn" />,
+      bs.showTradeMarketplaceBanner && <TradeMarketplaceBanner key="trade" />,
+      bs.showCustomWebBanner && <CustomWebBanner key="custom" />,
+      bs.showGamesWebBanner && <GamesWebBanner key="games" />,
+      bs.showGiveawayBanner && <GiveawayBanner key="giveaway" />
+    ].filter(Boolean);
+  }, [bs]);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (activeBanners.length <= 1 || isPaused) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % activeBanners.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [activeBanners.length, isPaused]);
+
   return (
     <>
-      {bs.showTopNoticeBanner && <TopNoticeBanner />}
-      {bs.showHomeEarnPromotion && <HomeEarnPromotion />}
-      {bs.showTradeMarketplaceBanner && <TradeMarketplaceBanner />}
-      {bs.showCustomWebBanner && <CustomWebBanner />}
-      {bs.showGiveawayBanner && <GiveawayBanner />}
+      {activeBanners.length > 0 && (
+        <div 
+          className="w-full max-w-7xl mx-auto overflow-hidden relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div 
+            className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] w-full"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {activeBanners.map((BannerNode, idx) => (
+              <div key={idx} className="w-full shrink-0">
+                {BannerNode}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
      
 
       {bs.showGameBannerCarousel !== false && <GameBannerCarousel />}

@@ -163,6 +163,7 @@ export default async function Page() {
         showHomeEarnPromotion: settings.showHomeEarnPromotion,
         showTradeMarketplaceBanner: settings.showTradeMarketplaceBanner,
         showCustomWebBanner: settings.showCustomWebBanner,
+        showGamesWebBanner: settings.showGamesWebBanner,
         showGiveawayBanner: settings.showGiveawayBanner,
         showGameBannerCarousel: settings.showGameBannerCarousel,
         showStorySlider: settings.showStorySlider,

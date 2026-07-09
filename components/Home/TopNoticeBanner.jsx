@@ -18,24 +18,8 @@ const BANNERS = [
     color: "#eab308",
     link: `https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}?text=hii%20i%20want%20to%20prchase%20dias`,
   },
-  {
-    id: "bgmi",
-    title: "BGMI TACTICAL DROP 🔥",
-    subtitle: "60 UC @ ₹70 — Instantly",
-    badge: "HOT DEAL",
-    icon: <FiActivity />,
-    color: "#f97316",
-    link: `https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}?text=hii%20i%20want%20to%20prchase%20dias`,
-  },
-  {
-    id: "support",
-    title: "DIRECT COMMAND CENTER",
-    subtitle: "Instant support & help",
-    badge: "24/7 LIVE",
-    icon: <FiZap />,
-    color: "#3b82f6",
-    link: `https://wa.me/${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP}?text=hii%20i%20want%20to%20prchase%20dias`,
-  },
+
+
 ];
 
 export default function TopNoticeBanner() {
@@ -64,111 +48,90 @@ export default function TopNoticeBanner() {
   const banner = BANNERS[index];
 
   return (
-    <div className="relative z-30 overflow-hidden h-auto opacity-100">
+    <section className="w-full max-w-7xl mx-auto px-4 mt-2 mb-1 relative z-30">
       <div
         onClick={() => window.open(banner.link, "_blank")}
-        className="
-          group relative w-full cursor-pointer
-          bg-[var(--background)] border-b border-[var(--border)]
-          transition-all duration-300 overflow-hidden
-        "
+        className="group cursor-pointer relative flex items-center justify-between px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-[2rem] bg-[var(--card)] border border-[var(--border)] transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md"
+        style={{ borderColor: `color-mix(in srgb, ${banner.color} 30%, var(--border))` }}
       >
-        {/* ENHANCED OVERALL GRADIENT - FIXED FOR WHITE THEME */}
-        <div
-          className="absolute inset-0 opacity-15 transition-all duration-1000"
-          style={{
-            background: `linear-gradient(90deg, ${banner.color}44 0%, transparent 50%, ${banner.color}44 100%)`
-          }}
+        {/* Subtle Ambient Glow */}
+        <div 
+          className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" 
+          style={{ background: `linear-gradient(90deg, transparent, ${banner.color}15, transparent)` }}
         />
-
-        {/* TOP GLOW LINE */}
-        <div
-          className="absolute top-0 left-0 w-full h-[1px] opacity-40"
-          style={{
-            background: `linear-gradient(90deg, transparent, ${banner.color}, transparent)`
-          }}
-        />
-
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3 relative z-10">
-
-          <div className="flex items-center gap-3 min-w-0">
-            {/* WHATSAPP ICON ORB */}
-            <div className="relative shrink-0 flex items-center justify-center">
-              <div
-                className="absolute inset-0 blur-lg rounded-full opacity-20"
-                style={{ backgroundColor: banner.color }}
-              />
-
-              <div className="
-                relative z-10 w-9 h-9 rounded-full 
-                bg-[#25D366] flex items-center justify-center text-white
-                shadow-[0_4px_12px_rgba(37,211,102,0.4)]
-                group-hover:scale-110 transition-transform duration-500
-              ">
-                <FaWhatsapp size={20} className="drop-shadow-sm" />
-              </div>
-            </div>
-
-            <div className="min-w-0">
-              <div key={banner.id}>
-                <div className="flex items-center gap-1.5">
-                  {/* TITLE - NOW USING THEME COLOR (Visible in all themes) */}
-                  <p className="font-black text-[9px] sm:text-xs uppercase italic tracking-tight truncate text-[var(--foreground)]">
-                    {banner.title}
-                  </p>
-                  <FiArrowRight
-                    className="size-2.5 shrink-0 group-hover:translate-x-1"
-                    style={{ color: banner.color }}
-                  />
-                </div>
-                <p className="text-[8px] sm:text-[10px] font-bold text-[var(--muted)] uppercase tracking-wider truncate">
-                  {banner.subtitle}
-                </p>
-              </div>
+        
+        <div className="relative z-10 flex items-center gap-3 sm:gap-4 min-w-0">
+          {/* Icon */}
+          <div className="flex items-center ml-1 shrink-0">
+            <div 
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center border-[2px] border-[var(--card)] z-30 shadow-sm transition-transform group-hover:scale-105"
+              style={{ backgroundColor: banner.color, color: "#fff" }}
+            >
+              {banner.id === "support" || banner.id === "discount" ? (
+                <FaWhatsapp size={14} className="sm:w-4 sm:h-4 drop-shadow-sm" />
+              ) : (
+                <FiActivity size={14} className="sm:w-4 sm:h-4 drop-shadow-sm" />
+              )}
             </div>
           </div>
-
-          <div className="flex items-center gap-2 shrink-0">
-            {/* GRADIENT BADGE */}
-            <span
-              key={banner.id + "-badge"}
-              className="
-                flex items-center gap-1
-                text-[8px] sm:text-[9px] font-black uppercase tracking-widest
-                px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg border
-                shadow-[0_2px_10px_rgba(0,0,0,0.05)]
-                transition-all duration-500
-              "
-              style={{
-                background: `linear-gradient(135deg, ${banner.color}15, ${banner.color}05)`,
-                color: banner.color,
-                borderColor: `${banner.color}35`
-              }}
-            >
-              <span>{banner.icon}</span>
-              <span className="hidden xs:inline-block">{banner.badge}</span>
-              <span className="xs:hidden">{banner.badge.split(' ')[0]}</span>
-            </span>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                localStorage.setItem(STORAGE_KEY, "true");
-                setVisible(false);
-              }}
-              className="
-                relative w-7 h-7 sm:w-8 sm:h-8 rounded-lg
-                flex items-center justify-center
-                text-[var(--muted)] hover:text-red-500
-                hover:bg-red-500/10 transition-all duration-300
-              "
-              aria-label="Close"
-            >
-              <FiX size={14} />
-            </button>
+          
+          {/* Text Content */}
+          <div className="flex flex-col justify-center min-w-0">
+            <div className="flex items-center gap-1.5">
+              <h3 className="text-[12px] sm:text-[14px] font-black italic tracking-wide text-[var(--foreground)] leading-tight uppercase drop-shadow-md truncate">
+                {banner.title}
+              </h3>
+              <FiArrowRight
+                className="size-3 shrink-0 group-hover:translate-x-1 transition-transform"
+                style={{ color: banner.color }}
+              />
+            </div>
+            <p className="text-[8px] sm:text-[9px] font-bold text-[var(--muted)] mt-0.5 tracking-[0.1em] uppercase truncate">
+              {banner.subtitle}
+            </p>
           </div>
         </div>
+        
+        {/* Right Side Actions */}
+        <div className="relative z-10 flex items-center gap-2 shrink-0 ml-1 sm:ml-2">
+          {/* Badge */}
+          <div 
+            className="hidden sm:flex items-center gap-1 px-3 py-1.5 rounded-full border text-[9px] sm:text-[10px] font-bold uppercase tracking-wider transition-colors"
+            style={{ 
+              backgroundColor: `${banner.color}10`, 
+              borderColor: `${banner.color}20`, 
+              color: banner.color 
+            }}
+          >
+            <span className="shrink-0">{banner.icon}</span>
+            <span className="truncate">{banner.badge}</span>
+          </div>
+
+          <div 
+            className="sm:hidden flex items-center gap-1 px-2 py-1 rounded-full border text-[8px] font-bold uppercase tracking-wider transition-colors"
+            style={{ 
+              backgroundColor: `${banner.color}10`, 
+              borderColor: `${banner.color}20`, 
+              color: banner.color 
+            }}
+          >
+            <span className="shrink-0">{banner.icon}</span>
+          </div>
+          
+          {/* Close Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              localStorage.setItem(STORAGE_KEY, "true");
+              setVisible(false);
+            }}
+            className="w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[var(--muted)] hover:text-red-500 hover:bg-red-500/10 transition-all duration-300"
+            aria-label="Close"
+          >
+            <FiX size={14} />
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
