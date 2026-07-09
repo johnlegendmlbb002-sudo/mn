@@ -16,6 +16,7 @@ export const metadata = {
 import { getAppSettings } from "@/lib/settings";
 import WhatsAppCommunityPopup from "@/components/WhatsAppQRPopup";
 import GamesPopup from "@/components/GamesPopup";
+import JoinUsPopup from "@/components/JoinUsPopup";
 import Script from "next/script";
 
 const structuredData = [
@@ -157,6 +158,7 @@ export default async function Page() {
       {settings.showTelegramPopup && <TelegramQRPopup />}
       {settings.showWhatsappPopup && <WhatsAppCommunityPopup />}
       {settings.showGamesPopup && <GamesPopup />}
+      {settings.showJoinUsPopup && <JoinUsPopup />}
 
       <HomeSection bannerSettings={{
         showTopNoticeBanner: settings.showTopNoticeBanner,

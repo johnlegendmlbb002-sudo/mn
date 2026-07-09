@@ -133,7 +133,7 @@ const UiSettingsTab = () => {
                     </p>
                 </div>
 
-                {['showTelegramPopup', 'showWhatsappPopup', 'showGamesPopup'].map((bannerKey) => {
+                {['showTelegramPopup', 'showWhatsappPopup', 'showGamesPopup', 'showJoinUsPopup'].map((bannerKey) => {
                     const toggleBanner = async () => {
                         try {
                             setSaving(true);
