@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import api from "@/lib/axios";
 import {
   FiSearch,
   FiClock,
@@ -16,12 +17,12 @@ import {
   FiFilter
 } from "react-icons/fi";
 
-import { BLOGS_DATA } from "@/lib/blogData";
-
 /* ================= SETTINGS ================= */
 const POSTS_PER_PAGE = 20;
 
 export default function BlogListing({ initialGame = "all" }) {
+  const [blogsData, setBlogsData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [selectedType, setSelectedType] = useState("all");
   const [selectedGame, setSelectedGame] = useState(initialGame);
@@ -29,15 +30,15 @@ export default function BlogListing({ initialGame = "all" }) {
   const [showFilters, setShowFilters] = useState(false);
 
   const categories = useMemo(() => {
-    return ["all", ...new Set(BLOGS_DATA.map((b) => b.type))];
-  }, []);
+    return ["all", ...new Set(blogsData.map((b) => b.type))];
+  }, [blogsData]);
 
   const games = useMemo(() => {
-    return ["all", ...new Set(BLOGS_DATA.map((b) => b.game))];
-  }, []);
+    return ["all", ...new Set(blogsData.map((b) => b.game))];
+  }, [blogsData]);
 
   const filteredBlogs = useMemo(() => {
-    let blogs = [...BLOGS_DATA];
+    let blogs = [...blogsData];
     if (search) {
       blogs = blogs.filter((b) =>
         b.title.toLowerCase().includes(search.toLowerCase())
@@ -51,7 +52,7 @@ export default function BlogListing({ initialGame = "all" }) {
     }
     blogs.sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt));
     return blogs;
-  }, [search, selectedType, selectedGame]);
+  }, [search, selectedType, selectedGame, blogsData]);
 
   const totalPages = Math.ceil(filteredBlogs.length / POSTS_PER_PAGE);
 
@@ -59,6 +60,22 @@ export default function BlogListing({ initialGame = "all" }) {
     (currentPage - 1) * POSTS_PER_PAGE,
     currentPage * POSTS_PER_PAGE
   );
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await api.get("/api/blogs");
+        if (res.data?.success) {
+          setBlogsData(res.data.blogs);
+        }
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBlogs();
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -185,22 +202,28 @@ export default function BlogListing({ initialGame = "all" }) {
 
         {/* 📄 BLOG GRID */}
         <div className="space-y-3">
-          <AnimatePresence mode="wait">
-            {paginatedBlogs.length > 0 ? (
-              paginatedBlogs.map((blog, index) => (
-                <BlogCard key={blog.id} blog={blog} index={index} />
-              ))
-            ) : (
-              <motion.div
-                key="empty"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-20 text-[var(--muted)] text-[10px] font-black uppercase tracking-[0.3em] italic opacity-20"
-              >
-                No Articles Discovered
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {loading ? (
+            <div className="flex justify-center py-20">
+              <div className="w-6 h-6 border-2 border-[var(--accent)] border-t-transparent rounded-full animate-spin" />
+            </div>
+          ) : (
+            <AnimatePresence mode="wait">
+              {paginatedBlogs.length > 0 ? (
+                paginatedBlogs.map((blog, index) => (
+                  <BlogCard key={blog._id || blog.slug} blog={blog} index={index} />
+                ))
+              ) : (
+                <motion.div
+                  key="empty"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-center py-20 text-[var(--muted)] text-[10px] font-black uppercase tracking-[0.3em] italic opacity-20"
+                >
+                  No Articles Discovered
+                </motion.div>
+              )}
+            </AnimatePresence>
+          )}
         </div>
 
         {/* 🔢 PAGINATION - NUMBERED */}

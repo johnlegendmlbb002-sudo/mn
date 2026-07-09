@@ -161,6 +161,7 @@ export default function AdminPanalPage() {
               </div>
             </div>
           )}
+
         </div>
       </section>
     </AuthGuard>

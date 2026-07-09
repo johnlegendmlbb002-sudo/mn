@@ -24,6 +24,7 @@ import {
   FiSettings,
   FiLayout,
   FiSmartphone,
+  FiFileText,
 } from "react-icons/fi";
 
 import AuthGuard from "@/components/AuthGuard";
@@ -63,6 +64,7 @@ const MENU_CATEGORIES = [
   {
     category: "Marketing & Engagement",
     items: [
+      { id: "blogs", label: "Blogs", icon: FiFileText, href: "/owner-panal/blogs" },
       { id: "redeem", label: "Redeem Codes", icon: FiGift },
       { id: "coins", label: "Coins", icon: FiZap },
       { id: "promotional", label: "Promotional", icon: FiStar },
@@ -410,8 +412,12 @@ export default function AdminPanalPage() {
                           <button aria-label="button"
                             key={item.id}
                             onClick={() => {
-                              setActiveTab(item.id);
-                              setIsSidebarOpen(false);
+                              if (item.href) {
+                                router.push(item.href);
+                              } else {
+                                setActiveTab(item.id);
+                                setIsSidebarOpen(false);
+                              }
                             }}
                             className={`
                               w-full flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all tracking-wide group
