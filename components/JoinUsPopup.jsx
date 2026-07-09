@@ -10,13 +10,13 @@ const socials = [
   {
     name: "WhatsApp 1",
     icon: FaWhatsapp,
-    url: "https://whatsapp.com/channel/0029VaA7u33Fsn0aP17pA30u",
+    url: "https://whatsapp.com/channel/0029Vb87jgR17En1n5PKy129",
     color: "bg-[#25D366] hover:bg-[#128C7E]",
   },
   {
     name: "WhatsApp 2",
     icon: FaWhatsapp,
-    url: "https://whatsapp.com/channel/0029VaA7u33Fsn0aP17pA30u",
+    url: "https://whatsapp.com/channel/0029Vb7zuwD0VycLqwDcE53y",
     color: "bg-[#25D366] hover:bg-[#128C7E]",
   },
   {
@@ -28,14 +28,8 @@ const socials = [
   {
     name: "Telegram",
     icon: FaTelegramPlane,
-    url: "https://instagram.com/mlbbtopup.in",
+    url: "https://t.me/bluebuffesports",
     color: "bg-[#0088cc] hover:bg-[#0077b5]",
-  },
-  {
-    name: "Discord",
-    icon: FaDiscord,
-    url: "https://instagram.com/mlbbtopup.in",
-    color: "bg-[#5865F2] hover:bg-[#4752C4]",
   }
 ];
 
