@@ -4,21 +4,41 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import AuthGuard from "@/components/AuthGuard";
 import api from "@/lib/axios";
-import { FaPlus, FaEdit, FaTrash, FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
+import { FaPlus, FaEdit, FaTrash, FaArrowLeft, FaExternalLinkAlt, FaSearch, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function AdminBlogsPage() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const limit = 20;
 
   useEffect(() => {
     fetchBlogs();
-  }, []);
+  }, [currentPage, debouncedSearch]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [debouncedSearch]);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(searchQuery);
+    }, 300);
+    return () => clearTimeout(handler);
+  }, [searchQuery]);
 
   const fetchBlogs = async () => {
     try {
-      const res = await api.get("/api/blogs");
+      setLoading(true);
+      const res = await api.get(`/api/blogs?page=${currentPage}&limit=${limit}&search=${encodeURIComponent(debouncedSearch)}`);
       if (res.data?.success) {
         setBlogs(res.data.blogs);
+        if (res.data.pagination) {
+          setTotalPages(res.data.pagination.totalPages);
+        }
       }
     } catch (error) {
       console.error("Error fetching blogs", error);
@@ -47,6 +67,8 @@ export default function AdminBlogsPage() {
     );
   }
 
+  // filteredBlogs logic removed since search is server-side
+
   return (
     <AuthGuard>
       <section className="min-h-screen bg-[var(--background)] p-4 flex flex-col items-center pt-6">
@@ -66,19 +88,32 @@ export default function AdminBlogsPage() {
             </Link>
           </div>
 
+          <div className="relative w-full max-w-md mb-6">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <FaSearch className="text-[var(--muted)]" />
+            </div>
+            <input
+              type="text"
+              placeholder="Search by title or game..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-[var(--accent)] transition-colors"
+            />
+          </div>
+
           <div className="space-y-1">
             {blogs.length === 0 ? (
               <p className="text-[var(--muted)] text-center text-sm italic py-10">No blogs found.</p>
             ) : (
               blogs.map((blog) => (
-                <div key={blog._id} className="flex items-center justify-between p-4 border-b border-[var(--border)] hover:bg-[var(--foreground)]/5 transition-all rounded-lg">
+                <div key={blog._id} className="flex items-center justify-between py-2 px-3 border-b border-[var(--border)] hover:bg-[var(--foreground)]/5 transition-all rounded-lg">
                   <div className="flex-1 min-w-0 pr-4">
                     <Link href={`/blog/${blog.game}/${blog.slug}`} target="_blank" rel="noopener noreferrer" className="block hover:text-[var(--accent)] transition-colors">
-                      <h2 className="text-[var(--foreground)] font-bold text-lg leading-tight line-clamp-1 group-hover:text-[var(--accent)]">
+                      <h2 className="text-[var(--foreground)] font-bold text-sm md:text-base leading-tight line-clamp-1 group-hover:text-[var(--accent)]">
                         {blog.title}
                       </h2>
                     </Link>
-                    <p className="text-[var(--muted)] text-xs mt-1 truncate">
+                    <p className="text-[var(--muted)] text-[11px] mt-0.5 truncate">
                       <span className="uppercase text-[10px] font-bold text-[var(--accent)]/80 tracking-widest mr-2">{blog.game}</span>
                       {blog.type} • {new Date(blog.publishedAt).toLocaleDateString()}
                     </p>
@@ -88,21 +123,21 @@ export default function AdminBlogsPage() {
                       href={`/blog/${blog.game}/${blog.slug}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 bg-green-500/10 text-green-400 rounded-lg hover:bg-green-500/20 transition-all"
+                      className="p-1.5 bg-green-500/10 text-green-400 rounded-md hover:bg-green-500/20 transition-all"
                       title="View live blog"
                     >
                       <FaExternalLinkAlt />
                     </Link>
                     <Link
                       href={`/owner-panal/blogs/${blog.slug}`}
-                      className="p-2 bg-blue-500/10 text-blue-400 rounded-lg hover:bg-blue-500/20 transition-all"
+                      className="p-1.5 bg-blue-500/10 text-blue-400 rounded-md hover:bg-blue-500/20 transition-all"
                       title="Edit blog"
                     >
                       <FaEdit />
                     </Link>
                     <button
                       onClick={() => deleteBlog(blog.slug)}
-                      className="p-2 bg-red-500/10 text-red-400 rounded-lg hover:bg-red-500/20 transition-all"
+                      className="p-1.5 bg-red-500/10 text-red-400 rounded-md hover:bg-red-500/20 transition-all"
                       title="Delete blog"
                     >
                       <FaTrash />
@@ -112,6 +147,29 @@ export default function AdminBlogsPage() {
               ))
             )}
           </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-4 pt-6">
+              <button
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                className="p-2 bg-[var(--card)] border border-[var(--border)] rounded-lg text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] disabled:opacity-50 transition-all"
+              >
+                <FaChevronLeft />
+              </button>
+              <span className="text-sm font-bold text-[var(--foreground)]">
+                Page {currentPage} of {totalPages}
+              </span>
+              <button
+                disabled={currentPage === totalPages}
+                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                className="p-2 bg-[var(--card)] border border-[var(--border)] rounded-lg text-[var(--muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] disabled:opacity-50 transition-all"
+              >
+                <FaChevronRight />
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </AuthGuard>

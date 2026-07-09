@@ -11,13 +11,50 @@ export async function GET(req) {
     const { searchParams } = new URL(req.url);
     const game = searchParams.get("game");
     const type = searchParams.get("type");
+    const page = searchParams.get("page");
+    const limit = searchParams.get("limit");
+    const search = searchParams.get("search");
 
     let query = {};
     if (game && game !== "all") query.game = game;
     if (type && type !== "all") query.type = type;
+    
+    if (search) {
+      const searchRegex = new RegExp(search, 'i');
+      query.$or = [
+        { title: searchRegex },
+        { game: searchRegex },
+      ];
+    }
 
-    const blogs = await Blog.find(query).sort({ publishedAt: -1 });
+    let blogsPromise = Blog.find(query).sort({ publishedAt: -1 });
+    
+    // If pagination params exist, use them
+    if (page && limit) {
+      const pageNum = parseInt(page) || 1;
+      const limitNum = parseInt(limit) || 20;
+      const skip = (pageNum - 1) * limitNum;
+      
+      blogsPromise = blogsPromise.skip(skip).limit(limitNum);
+      
+      const [blogs, total] = await Promise.all([
+        blogsPromise,
+        Blog.countDocuments(query)
+      ]);
+      
+      return NextResponse.json({ 
+        success: true, 
+        blogs,
+        pagination: {
+          total,
+          page: pageNum,
+          totalPages: Math.ceil(total / limitNum)
+        }
+      });
+    }
 
+    // Fallback: return all blogs (for public frontend compatibility)
+    const blogs = await blogsPromise;
     return NextResponse.json({ success: true, blogs });
   } catch (error) {
     console.error("GET Blogs Error:", error);
