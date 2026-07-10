@@ -3,6 +3,7 @@ import User from "@/models/User";
 import jwt from "jsonwebtoken";
 import { OAuth2Client } from "google-auth-library";
 import { generateUserId } from "@/lib/generateUserId";
+import Blocklist from "@/models/Blocklist";
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
@@ -29,6 +30,24 @@ export async function POST(req: Request) {
     if (!email.toLowerCase().endsWith("@gmail.com")) {
       return Response.json(
         { success: false, message: "Only @gmail.com accounts are allowed." },
+        { status: 403 }
+      );
+    }
+
+    /* ================= BLOCKLIST CHECK ================= */
+    const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown";
+    
+    // Check if email or IP is blocklisted
+    const blocklistItems = await Blocklist.find({
+      $or: [
+        { type: "email", value: email.toLowerCase().trim() },
+        { type: "ip", value: ip }
+      ]
+    }).lean();
+
+    if (blocklistItems.length > 0) {
+      return Response.json(
+        { success: false, message: "Something went wrong. Please try again." },
         { status: 403 }
       );
     }

@@ -25,6 +25,7 @@ import {
   FiLayout,
   FiSmartphone,
   FiFileText,
+  FiShield,
 } from "react-icons/fi";
 
 import AuthGuard from "@/components/AuthGuard";
@@ -48,6 +49,7 @@ import TournamentsAdminTab from "@/components/admin/TournamentsAdminTab";
 import UiSettingsTab from "@/components/admin/UiSettingsTab";
 import PwaStatsTab from "@/components/admin/PwaStatsTab";
 import GiveawayAdminTab from "@/components/admin/GiveawayAdminTab";
+import BlocklistTab from "@/components/admin/BlocklistTab";
 
 
 
@@ -81,6 +83,7 @@ const MENU_CATEGORIES = [
       { id: "queries", label: "Support Queries", icon: FiMessageSquare },
       { id: "pricing", label: "Pricing", icon: FiTag },
       { id: "api-keys", label: "API Keys", icon: FiKey },
+      { id: "blocklist", label: "Blocklist", icon: FiShield },
       { id: "ui-settings", label: "UI Settings", icon: FiLayout },
       { id: "settings", label: "Settings", icon: FiSettings },
     ]
@@ -514,6 +517,9 @@ export default function AdminPanalPage() {
             )}
             {activeTab === "giveaway" && (
               <GiveawayAdminTab />
+            )}
+            {activeTab === "blocklist" && (
+              <BlocklistTab />
             )}
             {activeTab === "settings" && (
               <SettingsTab />

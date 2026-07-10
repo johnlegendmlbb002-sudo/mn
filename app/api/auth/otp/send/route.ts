@@ -3,15 +3,19 @@ import User from "@/models/User";
 import { generateUserId } from "@/lib/generateUserId";
 import { sendOtpMail } from "@/lib/sendOtpMail";
 import { checkRateLimit } from "@/lib/rateLimit";
+import Blocklist from "@/models/Blocklist";
+import { autoBlocklist } from "@/lib/autoBlocklist";
 
 export async function POST(request: Request) {
     try {
         await connectDB();
         
         const ip = request.headers.get("x-forwarded-for") || "unknown_ip";
-        const isAllowed = await checkRateLimit(`otp_${ip}`, 3, 10); // 3 requests per 10 mins
+        const isAllowed = await checkRateLimit(`otp_${ip}`, 5, 10); // 5 requests per 10 mins
         if (!isAllowed) {
-            return Response.json({ success: false, message: "Too many requests. Please try again later." }, { status: 429 });
+            // Auto blocklist on spamming OTPs
+            await autoBlocklist("ip", ip, "OTP Spamming / Rate Limit Exceeded");
+            return Response.json({ success: false, message: "Something went wrong. Please try again." }, { status: 403 });
         }
 
         const { email } = await request.json();
@@ -25,6 +29,23 @@ export async function POST(request: Request) {
         if (!normalizedEmail.endsWith("@gmail.com")) {
             return Response.json({ success: false, message: "Only @gmail.com addresses are allowed." }, { status: 400 });
         }
+
+        /* ================= BLOCKLIST CHECK ================= */
+        // Check if email or IP is blocklisted
+        const blocklistItems = await Blocklist.find({
+            $or: [
+                { type: "email", value: normalizedEmail },
+                { type: "ip", value: ip }
+            ]
+        }).lean();
+
+        if (blocklistItems.length > 0) {
+            return Response.json(
+                { success: false, message: "Something went wrong. Please try again." },
+                { status: 403 }
+            );
+        }
+
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
         const expiry = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
 

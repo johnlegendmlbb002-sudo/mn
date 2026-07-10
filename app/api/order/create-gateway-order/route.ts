@@ -5,6 +5,8 @@ import Order from "@/models/Order";
 import User from "@/models/User";
 import PricingConfig from "@/models/PricingConfig";
 import AppSettings from "@/models/AppSettings";
+import Blocklist from "@/models/Blocklist";
+import { autoBlocklist } from "@/lib/autoBlocklist";
 import crypto from "crypto";
 
 /* =====================================================
@@ -127,7 +129,7 @@ async function resolvePrice(
 
     multiplier = parseInt(match[1]);
     if (!ALLOWED_MULTIPLIERS.includes(multiplier)) {
-      throw new Error(`Combo multiplier ${multiplier}x is not allowed`);
+      throw new Error(`AutoBlock: Combo multiplier ${multiplier}x is not allowed`);
     }
 
     baseItem = data.data.itemId.find((i: any) => i.itemSlug === "weekly-pass816");
@@ -262,6 +264,27 @@ export async function POST(req: Request) {
       return NextResponse.json({
         success: false,
         message: "Only @gmail.com addresses are allowed.",
+      }, { status: 403 });
+    }
+
+    /* ---------- BLOCKLIST CHECK ---------- */
+    // Get client IP
+    const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown";
+    
+    // Build query to check if email, playerId, or IP is blocklisted
+    const blocklistItems = await Blocklist.find({
+      $or: [
+        { type: "email", value: email.toLowerCase().trim() },
+        { type: "gameId", value: playerId.trim() },
+        { type: "ip", value: ip }
+      ]
+    }).lean();
+
+    if (blocklistItems.length > 0) {
+      // Return a generic error message as requested by the user
+      return NextResponse.json({
+        success: false,
+        message: "Something went wrong. Please try again.",
       }, { status: 403 });
     }
 
@@ -406,6 +429,21 @@ export async function POST(req: Request) {
     });
   } catch (err: any) {
     console.error("CREATE ORDER ERROR:", err);
+
+    // If it's a known rigging attempt
+    if (err.message && err.message.startsWith("AutoBlock:")) {
+      const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown";
+      
+      // We parse out email and playerId from body if we can
+      // But body is already consumed. However, we can just block the IP.
+      await autoBlocklist("ip", ip, err.message);
+      
+      return NextResponse.json(
+        { success: false, message: "Something went wrong. Please try again." },
+        { status: 403 }
+      );
+    }
+
     return NextResponse.json(
       { success: false, message: err.message },
       { status: 500 }

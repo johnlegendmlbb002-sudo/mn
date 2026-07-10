@@ -1,5 +1,6 @@
 import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
+import Blocklist from "@/models/Blocklist";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
@@ -22,6 +23,24 @@ export async function POST(request: Request) {
     const foundUser = await User.findOne({
       $or: [{ email: user }, { phone: user }],
     });
+
+    /* ================= BLOCKLIST CHECK ================= */
+    const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown";
+    
+    // Check if email or IP is blocklisted
+    const blocklistItems = await Blocklist.find({
+      $or: [
+        { type: "email", value: user.toLowerCase().trim() },
+        { type: "ip", value: ip }
+      ]
+    }).lean();
+
+    if (blocklistItems.length > 0) {
+      return Response.json(
+        { success: false, message: "Something went wrong. Please try again." },
+        { status: 403 }
+      );
+    }
 
     if (!foundUser) {
       return Response.json(
@@ -66,7 +85,6 @@ export async function POST(request: Request) {
     }
 
     /* ================= UPDATE LAST LOGIN ================= */
-    const ip = request.headers.get("x-forwarded-for") || "unknown";
     foundUser.lastLogin = new Date();
     foundUser.lastLoginIp = ip;
     await foundUser.save();

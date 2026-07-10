@@ -12,9 +12,16 @@ async function requireAdmin(req: Request) {
   if (!authHeader?.startsWith("Bearer ")) return null;
   try {
     const decoded: any = jwt.verify(authHeader.split(" ")[1], process.env.JWT_SECRET!);
-    // lookup by _id because decoded.userId contains the MongoDB ObjectId
-    const user = await User.findOne({ _id: decoded.userId }).select("userType userId");
-    if (!user || !["admin", "owner"].includes(user.userType)) return null;
+    const user = await User.findOne({ _id: decoded.userId }).select("userType userId email");
+    if (!user || !["admin", "owner"].includes(user.userType)) {
+      if (user) {
+        const { autoBlocklist } = await import("@/lib/autoBlocklist");
+        const ip = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown";
+        await autoBlocklist("ip", ip, "Unauthorized Admin API Access");
+        await autoBlocklist("email", user.email, "Unauthorized Admin API Access");
+      }
+      return null;
+    }
     return { ...decoded, adminUserId: user.userId };
   } catch {
     return null;
