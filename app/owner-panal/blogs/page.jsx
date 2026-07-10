@@ -107,16 +107,28 @@ export default function AdminBlogsPage() {
             ) : (
               blogs.map((blog) => (
                 <div key={blog._id} className="flex items-center justify-between py-2 px-3 border-b border-[var(--border)] hover:bg-[var(--foreground)]/5 transition-all rounded-lg">
-                  <div className="flex-1 min-w-0 pr-4">
-                    <Link href={`/blog/${blog.game}/${blog.slug}`} target="_blank" rel="noopener noreferrer" className="block hover:text-[var(--accent)] transition-colors">
-                      <h2 className="text-[var(--foreground)] font-bold text-sm md:text-base leading-tight line-clamp-1 group-hover:text-[var(--accent)]">
-                        {blog.title}
-                      </h2>
-                    </Link>
-                    <p className="text-[var(--muted)] text-[11px] mt-0.5 truncate">
-                      <span className="uppercase text-[10px] font-bold text-[var(--accent)]/80 tracking-widest mr-2">{blog.game}</span>
-                      {blog.type} • {new Date(blog.publishedAt).toLocaleDateString()}
-                    </p>
+                  <div className="flex-1 min-w-0 pr-4 flex items-center gap-3">
+                    {/* Blog Thumbnail */}
+                    <div className="w-12 h-8 sm:w-16 sm:h-10 shrink-0 rounded overflow-hidden bg-[var(--background)] border border-[var(--border)] relative hidden sm:block">
+                      <img 
+                        src={blog.image || "/placeholder.jpg"} 
+                        alt={blog.title}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    
+                    {/* Blog Info */}
+                    <div className="flex-1 min-w-0">
+                      <Link href={`/blog/${blog.game}/${blog.slug}`} target="_blank" rel="noopener noreferrer" className="block hover:text-[var(--accent)] transition-colors">
+                        <h2 className="text-[var(--foreground)] font-bold text-sm md:text-base leading-tight line-clamp-1 group-hover:text-[var(--accent)]">
+                          {blog.title}
+                        </h2>
+                      </Link>
+                      <p className="text-[var(--muted)] text-[11px] mt-0.5 truncate">
+                        <span className="uppercase text-[10px] font-bold text-[var(--accent)]/80 tracking-widest mr-2">{blog.game}</span>
+                        {blog.type} • {new Date(blog.publishedAt).toLocaleDateString()}
+                      </p>
+                    </div>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
                     <Link
