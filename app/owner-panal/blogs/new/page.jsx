@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import AuthGuard from "@/components/AuthGuard";
 import api from "@/lib/axios";
-import { FaArrowLeft, FaSave } from "react-icons/fa";
+import { FaArrowLeft, FaSave, FaPlus } from "react-icons/fa";
 
 export default function NewBlogPage() {
   const router = useRouter();

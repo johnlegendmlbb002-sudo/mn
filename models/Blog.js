@@ -54,7 +54,6 @@ const BlogSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-BlogSchema.index({ slug: 1 });
 BlogSchema.index({ game: 1 });
 BlogSchema.index({ type: 1 });
 BlogSchema.index({ publishedAt: -1 });
