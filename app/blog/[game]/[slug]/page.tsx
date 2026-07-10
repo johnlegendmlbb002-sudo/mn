@@ -3,8 +3,12 @@ import BlogPostLayout from "@/components/Blog/BlogPostLayout";
 import { connectDB } from "@/lib/mongodb";
 import Blog from "@/models/Blog";
 
+type Props = {
+  params: Promise<{ game: string; slug: string }>;
+};
+
 // Generate metadata dynamically
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   await connectDB();
   const blog = await Blog.findOne({ slug });
@@ -38,7 +42,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function DynamicBlogPage({ params }) {
+export default async function DynamicBlogPage({ params }: Props) {
   const { slug } = await params;
   
   await connectDB();

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import BlogListing from "@/components/Blog/BlogListing";
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+type Props = {
+  params: Promise<{ game: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { game } = await params;
   
   const title = `${game.toUpperCase()} Guides & Insights – Tips & News`;
@@ -37,7 +41,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
   };
 }
 
-export default async function GameBlogPage({ params }) {
+export default async function GameBlogPage({ params }: Props) {
   const { game } = await params;
   return <BlogListing initialGame={game} />;
 }
