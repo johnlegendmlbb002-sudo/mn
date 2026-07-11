@@ -82,10 +82,10 @@ export default function HomeQuickActions() {
             {isHighlight && (
               <>
                 <div
-                  className="absolute inset-0 rounded-xl shadow-lg opacity-80"
+                  className="absolute inset-0 rounded-xl shadow-md opacity-90"
                   style={{
-                    background: `linear-gradient(to bottom right, ${highlightColor}, ${highlightColor}CC)`,
-                    boxShadow: `0 0 15px ${highlightColor}66`
+                    background: `linear-gradient(to bottom right, ${highlightColor}, ${highlightColor}DD)`,
+                    boxShadow: `0 0 8px ${highlightColor}33`
                   }}
                 />
                 <div className="absolute inset-0 border border-white/20 rounded-xl" />
