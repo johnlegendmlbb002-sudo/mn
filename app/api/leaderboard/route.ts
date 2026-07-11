@@ -4,6 +4,8 @@ import User from "@/models/User";
 import jwt from "jsonwebtoken";
 import { unstable_cache } from "next/cache";
 
+export const dynamic = 'force-dynamic';
+
 /* ================= AUTH (ANY USER) ================= */
 function verifyUser(req: Request) {
   const auth = req.headers.get("authorization");

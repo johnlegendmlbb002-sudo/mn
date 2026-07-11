@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { validateApiKey } from "@/lib/apiKeyAuth";
+
+export const dynamic = 'force-dynamic';
 import { calculateItemPrice } from "@/lib/pricingUtils";
 import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";

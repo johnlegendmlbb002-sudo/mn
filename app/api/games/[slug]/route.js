@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
+
+export const dynamic = 'force-dynamic';
 import { connectDB } from "@/lib/mongodb";
 import PricingConfig from "@/models/PricingConfig";
 import { applyPricingToItems } from "@/lib/pricingUtils";
