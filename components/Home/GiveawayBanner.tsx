@@ -44,15 +44,15 @@ export default function GiveawayBanner() {
       <section className="w-full max-w-7xl mx-auto px-4 mt-2 mb-1 relative z-30">
         <div 
           onClick={() => setShowModal(true)}
-          className="group cursor-pointer relative flex items-center justify-between px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-[2rem] bg-[#eef8fe] dark:bg-[var(--accent)]/10 border border-[#b8e2f8] dark:border-[var(--accent)]/20 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md hover:border-[#0ea5e9]/50 dark:hover:border-[var(--accent)]/50"
+          className="group cursor-pointer relative flex items-center justify-between px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-[2rem] bg-[var(--card)] dark:bg-[var(--accent)]/10 border border-[var(--border)] dark:border-[var(--accent)]/20 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md hover:border-[var(--accent)]/50"
         >
           {/* Subtle Ambient Glow */}
-          <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-[#0ea5e9]/10 dark:via-[var(--accent)]/10 to-transparent" />
+          <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-[var(--accent)]/10 to-transparent" />
           
           <div className="relative z-10 flex items-center gap-3 sm:gap-4 min-w-0">
             {/* Icon */}
             <div className="flex items-center ml-1 shrink-0">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-[0.8rem] sm:rounded-[1rem] flex items-center justify-center border-[2px] border-[#eef8fe] dark:border-[var(--card)] z-30 shadow-sm transition-transform group-hover:scale-105 bg-[#d2efff] dark:bg-[var(--accent)]/20 text-[#0ea5e9] dark:text-[var(--accent)]">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-[0.8rem] sm:rounded-[1rem] flex items-center justify-center border-[2px] border-[var(--background)] dark:border-[var(--card)] z-30 shadow-sm transition-transform group-hover:scale-105 bg-[var(--accent)]/10 dark:bg-[var(--accent)]/20 text-[var(--accent)]">
                 <FiGift size={16} className="sm:w-4 sm:h-4 drop-shadow-sm" />
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function GiveawayBanner() {
                   </span>
                 )}
               </div>
-              <p key={animKey} className="gw-content text-[12px] sm:text-[14px] font-black tracking-wide text-[#115b9c] dark:text-[var(--foreground)] mt-0.5 truncate">
+              <p key={animKey} className="gw-content text-[12px] sm:text-[14px] font-black tracking-wide text-[var(--foreground)] mt-0.5 truncate">
                 {g.title}
               </p>
             </div>
@@ -89,7 +89,7 @@ export default function GiveawayBanner() {
                 {giveaways.map((_, i) => (
                   <div
                     key={i}
-                    className={`h-1 rounded-full transition-all duration-300 ${i === current ? "w-3 bg-[#0ea5e9] dark:bg-[var(--accent)]" : "w-1 bg-[#0ea5e9]/30 dark:bg-[var(--accent)]/30"}`}
+                    className={`h-1 rounded-full transition-all duration-300 ${i === current ? "w-3 bg-[var(--accent)]" : "w-1 bg-[var(--accent)]/30"}`}
                     onClick={e => { e.stopPropagation(); setCurrent(i); setAnimKey(k => k+1); }}
                   />
                 ))}
@@ -98,7 +98,7 @@ export default function GiveawayBanner() {
 
             {/* Action Button */}
             <button 
-              className="h-7 sm:h-8 px-3 sm:px-4 rounded-full sm:rounded-[0.5rem] bg-[#0ea5e9] dark:bg-[var(--accent)] text-white flex items-center justify-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] font-black uppercase tracking-wider shadow-md shadow-[#0ea5e9]/20 transition-transform hover:scale-105"
+              className="h-7 sm:h-8 px-3 sm:px-4 rounded-full sm:rounded-[0.5rem] bg-[var(--accent)] text-white flex items-center justify-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] font-black uppercase tracking-wider shadow-md shadow-[var(--accent)]/20 transition-transform hover:scale-105"
               onClick={e => { e.stopPropagation(); setShowModal(true); }}
             >
               Enter <FiChevronRight size={12} />

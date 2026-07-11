@@ -24,6 +24,7 @@ export async function GET(req) {
       query.$or = [
         { title: searchRegex },
         { game: searchRegex },
+        { slug: searchRegex },
       ];
     }
 

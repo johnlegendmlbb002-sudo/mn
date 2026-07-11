@@ -28,10 +28,10 @@ export default function GamesWebBanner() {
             {/* Text Content */}
             <div className="flex flex-col justify-center">
               <h3 className="text-[13px] sm:text-[14px] font-black italic tracking-wide text-[var(--foreground)] leading-tight uppercase drop-shadow-md">
-                Games Store
+                Play 500+ Online Games
               </h3>
               <p className="text-[8px] sm:text-[10px] font-bold text-[var(--muted)] mt-1 tracking-[0.1em] uppercase flex items-center gap-1.5">
-                Play <span className="text-[var(--muted)]/50 text-[6px]">●</span> Compete <span className="text-[var(--muted)]/50 text-[6px]">●</span> Win
+                Free on Browser <span className="text-[var(--muted)]/50 text-[6px]">●</span> No Download
               </p>
             </div>
           </div>

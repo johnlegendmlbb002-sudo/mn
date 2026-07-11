@@ -94,7 +94,7 @@ export default function AdminBlogsPage() {
             </div>
             <input
               type="text"
-              placeholder="Search by title or game..."
+              placeholder="Search by title, game, or slug..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-[var(--accent)] transition-colors"
@@ -126,7 +126,7 @@ export default function AdminBlogsPage() {
                       </Link>
                       <p className="text-[var(--muted)] text-[11px] mt-0.5 truncate">
                         <span className="uppercase text-[10px] font-bold text-[var(--accent)]/80 tracking-widest mr-2">{blog.game}</span>
-                        {blog.type} • {new Date(blog.publishedAt).toLocaleDateString()}
+                        {blog.type} • Created: {new Date(blog.createdAt || blog.publishedAt).toLocaleDateString()} • Updated: {new Date(blog.updatedAt || blog.publishedAt).toLocaleDateString()}
                       </p>
                     </div>
                   </div>
