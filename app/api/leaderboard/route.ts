@@ -13,7 +13,11 @@ function verifyUser(req: Request) {
   }
 
   const token = auth.split(" ")[1];
-  return jwt.verify(token, process.env.JWT_SECRET!);
+  try {
+    return jwt.verify(token, process.env.JWT_SECRET!);
+  } catch (err) {
+    throw { status: 401, message: "Invalid or expired token" };
+  }
 }
 
 /* ================= DATE HELPERS ================= */

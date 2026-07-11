@@ -10,7 +10,12 @@ function verifyAdmin(req) {
   }
 
   const token = auth.split(" ")[1];
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    throw { status: 401, message: "Invalid or expired token" };
+  }
 
   if (decoded.userType !== "admin" && decoded.userType !== "owner") {
     throw { status: 403, message: "Forbidden" };
