@@ -45,7 +45,6 @@ const getGameName = (slug: string) => {
 /* ================= MAIN ITEM COMPONENT ================= */
 
 export default function OrderItem({ order }: { order: OrderType }) {
-  const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [verifyLoading, setVerifyLoading] = useState(false);
   const [localStatus, setLocalStatus] = useState(order.status);
@@ -162,76 +161,45 @@ export default function OrderItem({ order }: { order: OrderType }) {
       </div>
 
       {/* CONTENT AREA */}
-      <div className="p-3.5 cursor-pointer" onClick={() => setOpen(!open)}>
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex-1 min-w-0">
-            <h3 className="text-sm font-black text-[var(--foreground)] uppercase leading-none mb-1.5">
+      <div className="p-3.5">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1 min-w-0 flex flex-col gap-1.5">
+            <h3 className="text-sm md:text-base font-black text-[var(--foreground)] uppercase leading-none mt-1">
               {getGameName(order.gameSlug)}
             </h3>
-            <div className="flex items-center gap-3">
-              <span className="text-[9px] font-bold text-[var(--muted)] uppercase tracking-wider">{order.itemName}</span>
-              <div className="flex items-center gap-1.5 opacity-60">
-                <FiUser className="text-[var(--accent)]" size={10} />
-                <span className="text-[9px] font-bold font-mono">{order.playerId} {order.playerName ? `• ${order.playerName}` : ""}</span>
-              </div>
+            <span className="text-[10px] font-bold text-[var(--accent)] uppercase tracking-wider leading-none">
+              {order.itemName}
+            </span>
+            <div className="flex items-start gap-1.5 opacity-60 mt-0.5">
+              <FiUser className="text-[var(--foreground)] flex-shrink-0 mt-[1px]" size={10} />
+              <span className="text-[9px] font-bold font-mono leading-snug break-words">
+                {order.playerId} {order.zoneId ? `(${order.zoneId})` : ""} {order.playerName ? `• ${order.playerName}` : ""}
+              </span>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="flex flex-col items-end leading-none">
-              <div className="text-base font-black text-[var(--foreground)]">₹{order.price}</div>
-              <div className="text-[8px] font-bold text-[var(--muted)] uppercase mt-1">
-                {new Date(order.createdAt).toLocaleDateString()}
-              </div>
+          <div className="flex flex-col items-end leading-none gap-2 mt-1">
+            <div className="text-base md:text-lg font-black text-[var(--foreground)]">₹{order.price}</div>
+            <div className="flex flex-col items-end gap-1 text-[8px] sm:text-[9px] font-bold text-[var(--muted)] uppercase text-right">
+              <span className="text-[var(--accent)]">{order.paymentMethod}</span>
+              <span>{new Date(order.createdAt).toLocaleString('en-IN', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</span>
             </div>
-            <motion.div animate={{ rotate: open ? 180 : 0 }} className="text-[var(--muted)] opacity-50">
-              <FiChevronDown size={16} />
-            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* EXPANDED DATA */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="px-5 pb-5 overflow-hidden"
-          >
-            <div className="border-t border-[var(--border)] pt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              <InfoNode label="Player Name" value={order.playerName} icon={FiUser} />
-              <InfoNode label="Player ID" value={order.playerId} icon={FiUser} mono />
-              <InfoNode label="Zone ID" value={order.zoneId} icon={FiGrid} mono />
-              <InfoNode label="Payment" value={order.paymentMethod.toUpperCase()} icon={FiCreditCard} />
-            </div>
-            
-            {/* Additional info for pending UPI status */}
-            {config.label === 'PENDING' && order.paymentMethod?.toLowerCase() === 'upi' && (
-              <div className="mt-4 p-3 rounded-xl bg-amber-500/5 border border-amber-500/10">
-                <p className="text-[9px] font-medium text-amber-500/80 uppercase tracking-widest leading-relaxed">
-                  Paid via UPI but order still shows pending? Tap "Check Status" above to update it.
-                </p>
-              </div>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Additional info for pending UPI status */}
+      {config.label === 'PENDING' && order.paymentMethod?.toLowerCase() === 'upi' && (
+        <div className="px-3.5 pb-3.5 mt-[-2px]">
+          <div className="p-2 rounded-lg bg-amber-500/5 border border-amber-500/10">
+            <p className="text-[7.5px] font-bold text-amber-500/80 uppercase tracking-widest leading-relaxed">
+              Paid via UPI but order still shows pending? Tap "Check Status" above to update it.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-function InfoNode({ label, value, icon: Icon, mono }: any) {
-  return (
-    <div className="flex items-center justify-between p-3 rounded-xl bg-[var(--background)] border border-[var(--border)]">
-      <div className="flex items-center gap-2 text-[var(--muted)] font-bold uppercase text-[9px] tracking-widest">
-        <Icon size={14} />
-        {label}
-      </div>
-      <div className={`text-[var(--foreground)] uppercase font-bold text-[11px] ${mono ? 'font-mono' : ''}`}>
-        {value || 'N/A'}
-      </div>
-    </div>
-  );
-}
+

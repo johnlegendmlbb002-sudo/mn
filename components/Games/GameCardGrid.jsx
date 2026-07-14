@@ -21,8 +21,8 @@ export default function GameCardGrid({ game, isOutOfStock, index = 0 }) {
         {/* IMAGE CONTAINER */}
         <div className="relative w-full aspect-square p-2 sm:p-3 flex items-center justify-center shrink-0 bg-black/10 overflow-hidden">
           
-          {/* Left card */}
-          <div className="absolute w-[75%] h-[85%] z-0 transform -rotate-[10deg] -translate-x-4 sm:-translate-x-6 scale-95 opacity-40 shadow-xl transition-all duration-300 group-hover:-rotate-[12deg] group-hover:-translate-x-6 sm:group-hover:-translate-x-8 group-hover:opacity-60">
+          {/* Left background image */}
+          <div className="absolute w-[75%] h-[85%] z-0 transform -rotate-[10deg] -translate-x-4 sm:-translate-x-6 scale-95 opacity-40 blur-[2px] shadow-xl transition-all duration-300 group-hover:-rotate-[12deg] group-hover:-translate-x-6 sm:group-hover:-translate-x-8 group-hover:opacity-60">
             <Image
               src={game.gameImageId?.image || logo}
               alt=""
@@ -35,8 +35,8 @@ export default function GameCardGrid({ game, isOutOfStock, index = 0 }) {
             />
           </div>
 
-          {/* Right card */}
-          <div className="absolute w-[75%] h-[85%] z-0 transform rotate-[10deg] translate-x-4 sm:translate-x-6 scale-95 opacity-40 shadow-xl transition-all duration-300 group-hover:rotate-[12deg] group-hover:translate-x-6 sm:group-hover:translate-x-8 group-hover:opacity-60">
+          {/* Right background image */}
+          <div className="absolute w-[75%] h-[85%] z-0 transform rotate-[10deg] translate-x-4 sm:translate-x-6 scale-95 opacity-40 blur-[2px] shadow-xl transition-all duration-300 group-hover:rotate-[12deg] group-hover:translate-x-6 sm:group-hover:translate-x-8 group-hover:opacity-60">
             <Image
               src={game.gameImageId?.image || logo}
               alt=""

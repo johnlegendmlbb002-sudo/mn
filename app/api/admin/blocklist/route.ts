@@ -16,9 +16,9 @@ async function requireAdmin(req: Request) {
     );
     
     await connectDB();
-    const user = await User.findOne({ userId: decoded.userId }).lean();
+    const user = await User.findOne({ _id: decoded.userId }).lean();
     
-    if (!user || !["admin", "owner"].includes(user.userType)) {
+    if (!user || ![ "owner"].includes(user.userType)) {
       if (user) {
         // Auto blocklist for unauthorized admin access attempt
         const { autoBlocklist } = await import("@/lib/autoBlocklist");

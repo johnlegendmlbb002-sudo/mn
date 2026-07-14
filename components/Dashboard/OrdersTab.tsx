@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FiSearch,
   FiChevronLeft,
   FiChevronRight,
-  FiTerminal,
+  FiShoppingBag,
   FiActivity,
   FiLayers,
+  FiFilter,
 } from "react-icons/fi";
 import OrderItem, { OrderType } from "./OrderItem";
 import { OrderSkeleton } from "../Skeleton/Skeleton";
@@ -17,6 +18,8 @@ import api from "@/lib/axios";
 export default function OrdersTab() {
   const [orders, setOrders] = useState<OrderType[]>([]);
   const [search, setSearch] = useState("");
+  const [searchValue, setSearchValue] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
   const [page, setPage] = useState(1);
   const [limit] = useState(10);
   const [totalCount, setTotalCount] = useState(0);
@@ -34,7 +37,7 @@ export default function OrdersTab() {
     if (!token) return;
 
     setLoading(true);
-    api.post("/api/order/user", { page, limit, search })
+    api.post("/api/order/user", { page, limit, search, status: statusFilter })
       .then((res) => res.data)
       .then((data) => {
         if (!data.success) return;
@@ -43,12 +46,12 @@ export default function OrdersTab() {
         setTotalCount(data.totalCount || 0);
       })
       .finally(() => setLoading(false));
-  }, [token, page, search, limit]);
+  }, [token, page, search, limit, statusFilter]);
 
   /* ================= RESET PAGE ON SEARCH ================= */
   useEffect(() => {
     setPage(1);
-  }, [search]);
+  }, [search, statusFilter]);
 
   /* ================= PAGE RANGE ================= */
   const getPageNumbers = () => {
@@ -67,25 +70,30 @@ export default function OrdersTab() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] border border-[var(--accent)]/10 shadow-[0_0_15px_rgba(var(--accent-rgb),0.1)]">
-            <FiTerminal size={18} />
+            <FiShoppingBag size={18} />
           </div>
-          <div>
-            <h3 className="text-xl font-[900] uppercase italic tracking-tighter text-[var(--foreground)]">Your Orders</h3>
-            <p className="text-[10px] font-bold text-[var(--muted)] uppercase tracking-wider">
-              {loading ? "Getting your orders..." : `You have ${totalCount} order${totalCount !== 1 ? 's' : ''}`}
-            </p>
+          <div className="flex items-center gap-3">
+            <h3 className="text-xl font-[900] uppercase italic tracking-tighter text-[var(--foreground)] leading-none mt-1">Your Orders</h3>
+            <div className="px-2.5 py-1 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-[var(--accent)] text-[9px] font-black uppercase tracking-widest mt-1">
+              {loading ? "..." : `${totalCount} Order${totalCount !== 1 ? 's' : ''}`}
+            </div>
           </div>
         </div>
 
         {/* SEARCH CONSOLE */}
-        <div className="relative w-full sm:w-64 group">
-          <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--muted)] group-focus-within:text-[var(--accent)] transition-colors" />
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by order ID or item..."
-            className="w-full pl-11 pr-4 py-3 rounded-xl bg-[var(--background)] border border-[var(--border)] focus:border-[var(--accent)] text-[11px] uppercase font-bold tracking-widest outline-none transition-all placeholder:text-[var(--muted)] text-[var(--foreground)]"
-          />
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="relative w-full sm:w-64 group flex-1">
+            <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--muted)] group-focus-within:text-[var(--accent)] transition-colors" />
+            <input
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && setSearch(searchValue)}
+              onBlur={() => setSearch(searchValue)}
+              placeholder="Search orders..."
+              className="w-full pl-11 pr-4 py-3 rounded-xl bg-[var(--background)] border border-[var(--border)] focus:border-[var(--accent)] text-[11px] uppercase font-bold tracking-widest outline-none transition-all placeholder:text-[var(--muted)] text-[var(--foreground)]"
+            />
+          </div>
+          <FilterDropdown status={statusFilter} setStatus={setStatusFilter} />
         </div>
       </div>
 
@@ -161,6 +169,53 @@ export default function OrdersTab() {
           </button>
         </div>
       )}
+    </div>
+  );
+}
+
+function FilterDropdown({ status, setStatus }: { status: string, setStatus: (s: string) => void }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: any) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button aria-label="filter" onClick={() => setIsOpen(!isOpen)} className={`p-3.5 rounded-xl border transition-all flex items-center gap-2 text-xs font-bold ${isOpen || status !== 'all' ? 'bg-[var(--accent)]/10 border-[var(--accent)]/40 text-[var(--accent)]' : 'bg-[var(--background)] border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.05]'}`}>
+        <FiFilter size={16} />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            className="absolute right-0 top-full mt-2 w-56 bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-xl z-50 p-4"
+          >
+            <div className="space-y-4">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--muted)] mb-2">Status</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {["all", "pending", "success", "failed"].map(f => (
+                    <button aria-label="button" key={f} onClick={() => { setStatus(f); setIsOpen(false); }} className={`px-2.5 py-1 rounded-lg text-[10px] font-bold capitalize transition-all ${status === f ? "bg-[var(--accent)] text-black" : "bg-[var(--foreground)]/[0.03] text-[var(--muted)] hover:text-[var(--foreground)]"}`}>
+                      {f}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

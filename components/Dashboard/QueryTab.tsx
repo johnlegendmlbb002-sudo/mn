@@ -287,7 +287,7 @@ export default function QueryTab() {
                     ))}
                   </div>
                 ) : myQueries.length === 0 ? (
-                  <div className="flex flex-col items-center justify-center py-10 gap-2 text-[var(--muted)]/30">
+                  <div className="flex flex-col items-center justify-center py-10 gap-2 text-[var(--muted)]">
                     <FiMail size={24} />
                     <span className="text-[9px] font-black uppercase tracking-widest">No queries submitted yet</span>
                   </div>
@@ -311,7 +311,7 @@ export default function QueryTab() {
                             <span className="text-[var(--accent)] text-[9px] font-black uppercase tracking-widest italic">{q.type}</span>
                             <p className="text-[11px] font-semibold text-[var(--foreground)] leading-snug">{q.message}</p>
                             {q.orderId && (
-                              <span className="text-[8px] font-mono text-[var(--muted)]/50 truncate">Order: {q.orderId}</span>
+                              <span className="text-[8px] font-mono text-[var(--muted)] truncate">Order: {q.orderId}</span>
                             )}
                           </div>
                           <span className={`shrink-0 inline-flex items-center gap-1 px-2 py-1 rounded-full border text-[8px] font-black uppercase tracking-widest ${statusCfg.color}`}>
@@ -329,7 +329,7 @@ export default function QueryTab() {
                             <p className="text-[11px] text-[var(--foreground)] leading-snug font-medium">{q.adminReply}</p>
                           </div>
                         )}
-                        <p className="text-[8px] text-[var(--muted)]/40 font-medium flex items-center gap-1">
+                        <p className="text-[8px] text-[var(--muted)] font-medium flex items-center gap-1">
                           <FiClock size={8} /> {date}
                         </p>
                       </motion.div>
@@ -339,8 +339,8 @@ export default function QueryTab() {
 
                 {/* Pagination */}
                 {queryPagination.totalPages > 1 && (
-                  <div className="flex items-center justify-between pt-3 mt-1 border-t border-white/5">
-                    <p className="text-[8px] font-bold uppercase tracking-widest text-[var(--muted)]/40">
+                  <div className="flex items-center justify-between pt-3 mt-1 border-t border-[var(--border)]">
+                    <p className="text-[8px] font-bold uppercase tracking-widest text-[var(--muted)]">
                       {queryPagination.total} total &middot; page {queryPage}/{queryPagination.totalPages}
                     </p>
                     <div className="flex items-center gap-1.5">

@@ -200,33 +200,6 @@ export default function OrdersTab() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-        {/* Order Volume Column */}
-        <div className="space-y-2 sm:space-y-3">
-          <div className="flex items-center gap-2 px-1">
-            <ShoppingBag size={12} className="text-amber-500" />
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-[var(--muted)]">Order Count</h4>
-          </div>
-          <div className="grid grid-cols-3 gap-2 sm:gap-3">
-            <InsightCard label="Today" value={orderStats.counts?.day} color="amber" compact pulse={orderStats.counts?.day > 0} />
-            <InsightCard label="Week" value={orderStats.counts?.week} color="amber" compact />
-            <InsightCard label="Month" value={orderStats.counts?.month} color="amber" compact />
-          </div>
-        </div>
-
-        {/* Revenue Snapshot Column */}
-        <div className="space-y-2 sm:space-y-3">
-          <div className="flex items-center gap-2 px-1">
-            <IndianRupee size={12} className="text-emerald-500" />
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-[var(--muted)]">Earnings Summary</h4>
-          </div>
-          <div className="grid grid-cols-3 gap-2 sm:gap-3">
-            <InsightCard label="Today" value={`₹${(orderStats.revenue?.day || 0).toLocaleString()}`} color="emerald" compact />
-            <InsightCard label="Week" value={`₹${(orderStats.revenue?.week || 0).toLocaleString()}`} color="emerald" compact />
-            <InsightCard label="Month" value={`₹${(orderStats.revenue?.month || 0).toLocaleString()}`} color="emerald" compact />
-          </div>
-        </div>
-      </div>
 
       <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">

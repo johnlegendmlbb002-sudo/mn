@@ -35,7 +35,7 @@ const HEADER_CONFIG = {
       { label: "Refer & Earn", href: "/dashboard/referral", icon: <FiUsers size={14} />, desc: "Earn rewards", colorClass: "bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-indigo-400 border-indigo-500/20" },
       { label: "My Tournaments", href: "/dashboard/tournaments", icon: <FiAward size={14} />, desc: "View your joined scrims", colorClass: "bg-gradient-to-br from-rose-500/20 to-orange-500/20 text-rose-400 border-rose-500/20" },
 
-      { label: "API Setup", href: "/dashboard/api-keys", icon: <FiKey size={14} />, desc: "Developer API Access", colorClass: "bg-gradient-to-br from-slate-500/20 to-gray-500/20 text-slate-300 border-slate-500/20" },
+      { label: "API Setup", href: "https://bluebuff.in", icon: <FiKey size={14} />, desc: "Developer API Access", colorClass: "bg-gradient-to-br from-slate-500/20 to-gray-500/20 text-slate-600 border-slate-500/20" },
       { label: "Support", href: "/dashboard/support", icon: <FiMessageSquare size={14} />, desc: "Get help 24/7", colorClass: "bg-gradient-to-br from-sky-500/20 to-blue-500/20 text-sky-400 border-sky-500/20" },
     ],
     roles: {
@@ -370,10 +370,23 @@ export default function Header() {
                             ))}
                           </div>
 
+                          {/* 4 Items in 2x2 Grid */}
+                          <div className="grid grid-cols-2 gap-1.5">
+                            {HEADER_CONFIG.userMenu.common.slice(2, 6).map((item) => (
+                              <Link key={item.label} href={item.href} onClick={() => setUserMenuOpen(false)} className="flex items-center gap-2 p-2 rounded-xl bg-[var(--foreground)]/[0.02] border border-[var(--border)] hover:border-[var(--accent)]/30 hover:bg-[var(--accent)]/5 transition-all group">
+                                <div className={`shrink-0 w-7 h-7 rounded-lg flex items-center justify-center border transition-all ${item.colorClass || "bg-[var(--foreground)]/5 text-[var(--muted)] border-transparent group-hover:text-[var(--accent)]"}`}>{item.icon}</div>
+                                <div className="flex flex-col min-w-0 flex-1">
+                                  <p className="text-[9px] font-bold text-[var(--foreground)] leading-tight uppercase tracking-tight truncate">{item.label}</p>
+                                  <p className="text-[8px] text-[var(--foreground)] font-medium opacity-70 truncate">{item.desc}</p>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+
                           {/* Remaining items list */}
                           <div className="grid grid-cols-1 gap-1">
-                            {HEADER_CONFIG.userMenu.common.slice(2).map((item) => (
-                              <Link key={item.label} href={item.href} onClick={() => setUserMenuOpen(false)} className="flex items-center justify-between py-1.5 px-2 rounded-xl bg-[var(--foreground)]/[0.01] border border-transparent hover:border-[var(--accent)]/10 hover:bg-[var(--accent)]/5 transition-all group">
+                            {HEADER_CONFIG.userMenu.common.slice(6).map((item) => (
+                              <Link key={item.label} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} onClick={() => setUserMenuOpen(false)} className="flex items-center justify-between py-1.5 px-2 rounded-xl bg-[var(--foreground)]/[0.01] border border-transparent hover:border-[var(--accent)]/10 hover:bg-[var(--accent)]/5 transition-all group">
                                 <div className="flex items-center gap-2">
                                   <div className={`w-6 h-6 rounded-lg flex items-center justify-center border transition-all scale-90 ${item.colorClass || "bg-[var(--foreground)]/5 text-[var(--muted)] border-transparent group-hover:text-[var(--accent)]"}`}>{item.icon}</div>
                                   <div className="flex flex-col">

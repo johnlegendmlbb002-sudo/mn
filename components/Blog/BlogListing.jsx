@@ -293,9 +293,9 @@ function BlogCard({ blog, index }) {
         href={`/blog/${blog.game}/${blog.slug}`}
         className="group block relative rounded-2xl bg-[var(--card)] border border-[var(--border)] p-1.5 hover:border-[var(--accent)]/40 hover:shadow-lg hover:shadow-[var(--accent)]/5 transition-all duration-300"
       >
-        <div className="flex flex-row h-[120px] sm:h-[140px]">
+        <div className="flex flex-row h-[90px] sm:h-[110px]">
           {/* Image Section */}
-          <div className="relative w-[110px] sm:w-[150px] h-full rounded-xl overflow-hidden flex-shrink-0 bg-[var(--background)]">
+          <div className="relative w-[130px] sm:w-[160px] h-full rounded-xl overflow-hidden flex-shrink-0 bg-[var(--background)]">
             <img 
               src={blog.image} 
               alt={blog.title} 
@@ -315,9 +315,6 @@ function BlogCard({ blog, index }) {
               <h2 className="text-xs sm:text-[15px] font-bold text-[var(--foreground)] leading-snug group-hover:text-[var(--accent)] transition-colors mb-0.5 sm:mb-1 line-clamp-2">
                 {blog.title}
               </h2>
-              <p className="text-[var(--muted)] text-[9px] sm:text-[11px] leading-tight opacity-80 line-clamp-1 mt-0.5 sm:mt-1">
-                {blog.excerpt}
-              </p>
             </div>
             
             {/* Author Footer */}

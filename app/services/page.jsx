@@ -8,45 +8,49 @@ export default function ServicesPage() {
 
   const services = [
     {
-      title: "Reseller Program",
-      desc: "Get our lowest prices for your business. Fast delivery and big profits.",
-      icon: FiUsers,
-      badge: "BEST PRICE",
+      title: "Game Topup APIs",
+      desc: "Get our lowest prices for your business. Fast delivery and big profits via API.",
+      icon: FiCode,
+      badge: "API ACCESS",
       active: true,
+      href: "https://bluebuff.in",
     },
     {
-      title: "Whitelabel Site",
+      title: "Free Manual Web / Link in Bio",
       desc: "Start your own brand. Get a full website with your name and easy payments.",
       icon: FiGlobe,
       badge: "FAST SETUP",
       active: true,
+      href: "https://web.bluebuff.in",
     },
     {
-      title: "Custom Design",
-      desc: "We build special top-up websites with the look and features you want.",
+      title: "Free Online Gameplay",
+      desc: "Play games directly online for free. Instantly accessible.",
       icon: FiZap,
+      badge: "PLAY NOW",
+      active: true,
+      href: "https://games.bluebuff.in",
+    },
+    {
+      title: "Custom Web Dev",
+      desc: "We build special websites with the look and features you want.",
+      icon: FiGlobe,
       badge: "EXCLUSIVE",
       active: true,
+      href: "https://bluebuff.in",
     },
     {
-      title: "Business API",
-      desc: "Connect your system for automatic orders. Available for reseller accounts.",
-      icon: FiCode,
-      badge: "API ACCESS",
+      title: "WhatsApp Bot / Telegram Bot",
+      desc: "Automate your customer support and orders directly through chat.",
+      icon: FiMessageCircle,
+      badge: "AUTOMATION",
       active: true,
-    },
-    {
-      title: "Build Your Own Web Platform",
-      desc: "Fully customisable • web.bluebuff.in",
-      icon: FiGlobe,
-      badge: "FREE",
-      active: true,
-      href: "https://web.bluebuff.in",
+      href: "https://bluebuff.in",
     },
   ];
 
   return (
-    <section className="min-h-screen bg-[var(--background)] text-[var(--foreground)] pb-20 transition-colors duration-300 px-6">
+    <section className="min-h-screen bg-[var(--background)] text-[var(--foreground)] pb-20 transition-colors duration-300 px-3 sm:px-6">
       <div className="max-w-3xl mx-auto pt-12 md:pt-16 relative z-10">
 
         {/* HEADER */}
@@ -62,7 +66,7 @@ export default function ServicesPage() {
           <h1 className="text-3xl md:text-4xl font-black italic tracking-tighter uppercase leading-none">
             <span className="text-[var(--accent)]">OUR</span> SERVICES
           </h1>
-          <p className="text-[var(--muted)] text-[9px] font-bold uppercase tracking-widest opacity-40 mt-1 italic font-sans italic">
+          <p className="text-[var(--muted)] text-[9px] font-bold uppercase tracking-widest opacity-70 mt-1 italic font-sans">
             Scale your business.
           </p>
         </motion.div>
@@ -78,7 +82,7 @@ export default function ServicesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 onClick={() => service.active && window.open(service.href || whatsappLink, "_blank")}
-                className={`group relative p-4 sm:p-5 rounded-2xl bg-[var(--card)]/30 border border-white/5 transition-all duration-300 flex items-center gap-5 ${service.active
+                className={`group relative p-4 sm:p-5 rounded-2xl bg-[var(--card)]/30 border border-white/5 transition-all duration-300 flex items-center gap-3 sm:gap-5 ${service.active
                   ? "cursor-pointer hover:border-[var(--accent)]/30 hover:bg-[var(--card)]/50"
                   : "opacity-30 grayscale cursor-not-allowed border-dashed"
                   }`}
@@ -90,7 +94,7 @@ export default function ServicesPage() {
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
                     <h3 className="text-sm md:text-base font-black uppercase tracking-tighter italic text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors leading-none">
                       {service.title}
                     </h3>
@@ -98,7 +102,7 @@ export default function ServicesPage() {
                       {service.badge}
                     </span>
                   </div>
-                  <p className="text-[var(--muted)] text-[10px] md:text-[11px] leading-tight opacity-40 font-bold uppercase tracking-tight">
+                  <p className="text-[var(--muted)] text-[10px] md:text-[11px] leading-tight opacity-80 font-bold uppercase tracking-tight">
                     {service.desc}
                   </p>
                 </div>
@@ -120,7 +124,7 @@ export default function ServicesPage() {
         >
           <div>
             <h4 className="text-base font-black italic uppercase tracking-tighter mb-1">Need more?</h4>
-            <p className="text-[var(--muted)] text-[8px] font-black uppercase tracking-widest opacity-30 italic">Contact us for custom deals.</p>
+            <p className="text-[var(--muted)] text-[8px] font-black uppercase tracking-widest opacity-70 italic">Contact us for custom deals.</p>
           </div>
           <button aria-label="button"
             onClick={() => window.open(whatsappLink, "_blank")}

@@ -24,7 +24,7 @@ export default function GameCardList({ game, isOutOfStock, index = 0 }) {
         <div className="relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 ml-2 mr-2">
           
           {/* Left background image */}
-          <div className="absolute inset-0 z-0 transform -rotate-[15deg] -translate-x-4 sm:-translate-x-5 scale-90 opacity-50 transition-transform duration-300 group-hover:-rotate-[20deg] group-hover:-translate-x-6">
+          <div className="absolute inset-0 z-0 transform -rotate-[15deg] -translate-x-4 sm:-translate-x-5 scale-90 opacity-50 blur-[2px] transition-transform duration-300 group-hover:-rotate-[20deg] group-hover:-translate-x-6">
             <Image
               src={game.gameImageId?.image || logo}
               alt=""
@@ -37,7 +37,7 @@ export default function GameCardList({ game, isOutOfStock, index = 0 }) {
           </div>
 
           {/* Right background image */}
-          <div className="absolute inset-0 z-0 transform rotate-[15deg] translate-x-4 sm:translate-x-5 scale-90 opacity-50 transition-transform duration-300 group-hover:rotate-[20deg] group-hover:translate-x-6">
+          <div className="absolute inset-0 z-0 transform rotate-[15deg] translate-x-4 sm:translate-x-5 scale-90 opacity-50 blur-[2px] transition-transform duration-300 group-hover:rotate-[20deg] group-hover:translate-x-6">
             <Image
               src={game.gameImageId?.image || logo}
               alt=""

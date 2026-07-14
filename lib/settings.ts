@@ -72,7 +72,6 @@ export const getAppSettings = unstable_cache(
     },
     ["app-settings"],
     {
-        tags: ["app-settings"],
-        revalidate: 60, // Fallback revalidation (1 minute)
+        tags: ["app-settings"]
     }
 );

@@ -88,17 +88,17 @@ export default function PwaStatsTab() {
 
       {/* ── Charts row ── */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <BarChart
+        <LineChart
           title={`Daily Installs — Last ${days} Days`}
           data={data.dailyInstalls}
           color="#ef4444"
-          glow="rgba(239,68,68,0.5)"
+          glow="rgba(239,68,68,0.25)"
         />
-        <BarChart
+        <LineChart
           title={`Active Users — Last ${days} Days`}
           data={data.dailyActive}
           color="#22c55e"
-          glow="rgba(34,197,94,0.5)"
+          glow="rgba(34,197,94,0.25)"
         />
       </div>
 
@@ -219,9 +219,17 @@ function StatCard({ label, value, icon, color, glow }) {
   );
 }
 
-/* ── Bar chart (CSS-based, no external lib) ── */
-function BarChart({ title, data, color, glow }) {
+/* ── Line chart (SVG-based) ── */
+function LineChart({ title, data, color, glow }) {
   const max = Math.max(...data.map((d) => d.count), 1);
+  
+  const points = data.map((d, i) => {
+    const x = (i / Math.max(data.length - 1, 1)) * 100;
+    const y = 100 - (d.count / max) * 100;
+    return `${x},${y}`;
+  }).join(" ");
+  
+  const fillPoints = `0,100 ${points} 100,100`;
 
   return (
     <div className="rounded-xl border border-[var(--border)] bg-[var(--background)] overflow-hidden">
@@ -229,29 +237,53 @@ function BarChart({ title, data, color, glow }) {
         <h3 className="text-[11px] font-black uppercase tracking-widest text-[var(--muted)]">{title}</h3>
       </div>
       <div className="px-4 pt-4 pb-3">
-        <div className="flex items-end gap-1.5 h-24">
-          {data.map((d, i) => {
-            const pct = Math.round((d.count / max) * 100);
-            const label = d.date.slice(5); // MM-DD
-            return (
-              <div key={i} className="flex-1 flex flex-col items-center gap-1 group relative">
-                {/* Tooltip */}
-                <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[var(--card)] border border-[var(--border)] rounded px-1.5 py-0.5 text-[9px] font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10" style={{ color }}>
-                  {d.count}
+        <div className="relative h-24 w-full">
+          {/* SVG Area & Line */}
+          <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <defs>
+              <linearGradient id={`gradient-${color.replace('#', '')}`} x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor={color} stopOpacity="0.15" />
+                <stop offset="100%" stopColor={color} stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            <polygon points={fillPoints} fill={`url(#gradient-${color.replace('#', '')})`} />
+            <polyline 
+              points={points} 
+              fill="none" 
+              stroke={color} 
+              strokeWidth="2.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              style={{ filter: `drop-shadow(0 2px 4px ${glow})` }} 
+            />
+          </svg>
+
+          {/* Interactive Overlay for Tooltips */}
+          <div className="absolute inset-0 flex items-end">
+            {data.map((d, i) => {
+              const pct = Math.round((d.count / max) * 100);
+              return (
+                <div key={i} className="flex-1 h-full flex flex-col items-center justify-end group relative z-10 cursor-crosshair">
+                  {/* Tooltip */}
+                  <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[var(--card)] border border-[var(--border)] rounded px-1.5 py-0.5 text-[9px] font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" style={{ color }}>
+                    {d.count}
+                  </div>
+                  {/* Hover Marker Dot */}
+                  <div className="absolute w-2.5 h-2.5 rounded-full border-2 border-[var(--background)] opacity-0 group-hover:opacity-100 transition-all pointer-events-none" style={{
+                    background: color,
+                    bottom: `${pct}%`,
+                    transform: 'translateY(50%)',
+                    boxShadow: `0 0 8px ${glow}`
+                  }} />
+                  {/* Hover Vertical Line */}
+                  <div className="absolute top-0 bottom-0 w-px opacity-0 group-hover:opacity-10 pointer-events-none" style={{ background: color }} />
                 </div>
-                {/* Bar */}
-                <div className="w-full rounded-t-sm transition-all duration-500" style={{
-                  height: `${Math.max(pct, 2)}%`,
-                  background: pct > 0 ? color : "rgba(255,255,255,0.05)",
-                  boxShadow: pct > 0 ? `0 0 8px ${glow}` : "none",
-                  minHeight: "3px",
-                }} />
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
         {/* X-axis labels — show every nth */}
-        <div className="flex gap-1.5 mt-1.5">
+        <div className="flex gap-1.5 mt-2">
           {data.map((d, i) => {
             const show = data.length <= 10 || i % Math.ceil(data.length / 7) === 0 || i === data.length - 1;
             return (

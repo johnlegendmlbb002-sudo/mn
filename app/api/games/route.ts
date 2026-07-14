@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import PricingConfig from "@/models/PricingConfig";
 
+export const revalidate = 7200; // Cache this route handler for 2 hours
+
 /* ================= IMAGES ================= */
 const MLBB_MAIN_IMAGE = "/game-assets/mlbbindia.jpg";
 

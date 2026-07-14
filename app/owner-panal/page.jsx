@@ -26,6 +26,7 @@ import {
   FiSmartphone,
   FiFileText,
   FiShield,
+  FiBarChart2,
 } from "react-icons/fi";
 
 import AuthGuard from "@/components/AuthGuard";
@@ -50,6 +51,7 @@ import UiSettingsTab from "@/components/admin/UiSettingsTab";
 import PwaStatsTab from "@/components/admin/PwaStatsTab";
 import GiveawayAdminTab from "@/components/admin/GiveawayAdminTab";
 import BlocklistTab from "@/components/admin/BlocklistTab";
+import AnalyticsTab from "@/components/admin/AnalyticsTab";
 
 
 
@@ -72,6 +74,7 @@ const MENU_CATEGORIES = [
       { id: "promotional", label: "Promotional", icon: FiStar },
       { id: "banners", label: "Banners", icon: FiImage },
       { id: "tournaments", label: "Tournaments", icon: FiAward },
+      { id: "analytics", label: "Analytics", icon: FiBarChart2 },
       { id: "pwa-stats", label: "PWA Stats", icon: FiSmartphone },
       { id: "giveaway", label: "Giveaway", icon: FiGift },
     ]
@@ -100,10 +103,42 @@ export default function AdminPanalPage() {
   const [pinPrompt, setPinPrompt] = useState(true);
   const [pinInput, setPinInput] = useState("");
 
+  const SECRET_KEY = "bb_admin_secure_key_99";
+  
+  const encryptData = (text) => {
+    let result = "";
+    for (let i = 0; i < text.length; i++) {
+      result += String.fromCharCode(text.charCodeAt(i) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length));
+    }
+    return btoa(result);
+  };
+
+  const decryptData = (base64) => {
+    let text = atob(base64);
+    let result = "";
+    for (let i = 0; i < text.length; i++) {
+      result += String.fromCharCode(text.charCodeAt(i) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length));
+    }
+    return result;
+  };
+
   useEffect(() => {
-    const savedPin = sessionStorage.getItem("adminPin");
-    if (savedPin) {
-      setPinPrompt(false);
+    // 12-hour expiration check
+    const savedAuth = localStorage.getItem("adminAuth");
+    if (savedAuth) {
+      try {
+        const authData = JSON.parse(decryptData(savedAuth));
+        const isExpired = new Date().getTime() > authData.expiresAt;
+        if (!isExpired && authData.pin) {
+          setPinPrompt(false);
+          // Store temporarily in sessionStorage for the interceptor
+          sessionStorage.setItem("adminPin", authData.pin);
+        } else {
+          localStorage.removeItem("adminAuth");
+        }
+      } catch (e) {
+        localStorage.removeItem("adminAuth");
+      }
     }
     
     const originalFetch = window.fetch;
@@ -129,6 +164,9 @@ export default function AdminPanalPage() {
   const handlePinSubmit = (e) => {
     e.preventDefault();
     if (pinInput) {
+      const expiresAt = new Date().getTime() + (12 * 60 * 60 * 1000); // 12 hours from now
+      const authData = encryptData(JSON.stringify({ pin: pinInput, expiresAt }));
+      localStorage.setItem("adminAuth", authData);
       sessionStorage.setItem("adminPin", pinInput);
       setPinPrompt(false);
       window.location.reload();
@@ -323,41 +361,33 @@ export default function AdminPanalPage() {
       <section className="min-h-screen bg-[var(--background)] px-2 sm:px-6 py-3">
         <div className="w-full max-w-[1600px] mx-auto">
           {/* HEADER & BALANCE (COMPACT) */}
-          <div className="mb-5 flex flex-wrap sm:flex-nowrap items-center justify-between gap-4 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 shadow-sm">
+          <div className="mb-4 flex items-center justify-between gap-3 bg-gradient-to-r from-[var(--card)] to-[var(--background)] border border-[var(--border)] rounded-lg px-4 py-3 shadow-sm">
             
-            <div className="min-w-0 flex-1 order-1 sm:order-1">
-              <div className="flex items-center gap-2">
-                <h1 className="text-lg md:text-xl font-extrabold tracking-tight text-[var(--foreground)] truncate">
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2 mb-0.5">
+                <h1 className="text-sm font-black tracking-wide text-[var(--foreground)] truncate uppercase">
                   Admin Panel
                 </h1>
-                <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.8)] shrink-0" />
+                <span className="h-1.5 w-1.5 rounded-sm bg-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.8)] shrink-0 animate-pulse" />
               </div>
-              <p className="text-[10px] sm:text-xs text-[var(--muted)] leading-snug truncate">
-                Manage users, orders, transactions, queries & pricing
-              </p>
-            </div>
-
-            {/* COMPACT BALANCE */}
-            <div className="order-3 sm:order-2 w-full sm:w-auto shrink-0 bg-[var(--background)] px-4 py-2 rounded-xl border border-[var(--border)] relative overflow-hidden">
-              <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[var(--accent)] to-purple-500" />
-              <div className="flex flex-col">
-                <span className="text-[9px] uppercase tracking-widest text-[var(--muted)] font-bold">Balance</span>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-sm sm:text-base font-black text-[var(--foreground)]">
-                    {balance !== null ? balance : "Loading…"}
-                  </span>
-                  <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest">
-                    Available
-                  </span>
-                </div>
+              
+              {/* BALANCE BELOW TEXT */}
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-[9px] uppercase tracking-widest text-[var(--muted)] font-black">Balance:</span>
+                <span className="text-sm font-black text-[var(--foreground)] tabular-nums">
+                  {balance !== null ? balance : "---"}
+                </span>
+                <span className="text-[8px] font-bold text-green-500 uppercase tracking-widest bg-green-500/10 px-1 py-0.5 rounded-sm">
+                  Active
+                </span>
               </div>
             </div>
 
             <button aria-label="button" 
               onClick={() => setIsSidebarOpen(true)}
-              className="order-2 sm:order-3 p-2 rounded-xl bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--accent)]/10 hover:border-[var(--accent)]/30 hover:text-[var(--accent)] transition-all shadow-sm group shrink-0"
+              className="p-1.5 rounded-md bg-[var(--background)] border border-[var(--border)] hover:bg-[var(--accent)]/10 hover:border-[var(--accent)]/30 hover:text-[var(--accent)] transition-all shadow-sm group shrink-0"
             >
-              <FiMenu size={20} className="group-active:scale-90 transition-transform" />
+              <FiMenu size={18} className="group-active:scale-95 transition-transform" />
             </button>
           </div>
 
@@ -511,6 +541,9 @@ export default function AdminPanalPage() {
             )}
             {activeTab === "ui-settings" && (
               <UiSettingsTab />
+            )}
+            {activeTab === "analytics" && (
+              <AnalyticsTab />
             )}
             {activeTab === "pwa-stats" && (
               <PwaStatsTab />

@@ -14,7 +14,11 @@ import {
   FiAlertCircle,
   FiArrowLeft,
   FiRefreshCw,
+  FiSearch,
+  FiFilter,
   FiClock,
+  FiArrowDownLeft,
+  FiArrowUpRight,
 } from "react-icons/fi";
 import { TransactionSkeleton } from "../Skeleton/Skeleton";
 import api from "@/lib/axios";
@@ -41,8 +45,9 @@ export default function WalletTab({
   const isMemberOnly = userReferral?.userType === "member";
   const isAdminOrOwner = userReferral?.userType === "admin" || userReferral?.userType === "owner";
 
-  const [method, setMethod] = useState(isMemberOnly ? "usdt" : "upi");
+  const [method, setMethod] = useState("upi");
   const [loading, setLoading] = useState(false);
+  const [showAddFunds, setShowAddFunds] = useState(false);
 
   // USDT flow state
   const [usdtStep, setUsdtStep] = useState<"idle" | "amount" | "deposit" | "submitted" | "confirmed">("idle");
@@ -123,15 +128,21 @@ export default function WalletTab({
 
   // Auto-resume active deposit on mount if user is on USDT tab
   useEffect(() => {
+    const controller = new AbortController();
     const checkActive = async () => {
        try {
-         const { data } = await api.get("/api/wallet/history?filter=usdt&page=1&limit=5");
+         const { data } = await api.get("/api/wallet/history?filter=usdt&page=1&limit=20", { signal: controller.signal });
          if (data.success && data.data?.[0]?.status === "waiting") {
             handleResumeUsdt(data.data[0]);
          }
-       } catch (err) { console.error("Auto-resume check failed", err); }
+       } catch (err: any) { 
+         if (err.name !== 'CanceledError' && err.name !== 'AbortError') {
+           console.error("Auto-resume check failed", err); 
+         }
+       }
     };
     checkActive();
+    return () => controller.abort();
   }, []);
 
   // ============ UPI PROCEED ============
@@ -255,13 +266,13 @@ export default function WalletTab({
   };
 
   return (
-    <div className="max-w-2xl mx-auto space-y-10">
+    <div className="max-w-2xl mx-auto space-y-6">
       {/* TACTICAL BALANCE MODULE */}
       <div className="relative group overflow-hidden">
         <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent)]/30 to-transparent blur-3xl opacity-20 pointer-events-none" />
-        <div className="relative p-6 sm:p-8 rounded-[2.5rem] bg-[var(--card)] border border-[var(--border)] flex items-center justify-between overflow-hidden shadow-sm">
+        <div className="relative p-5 sm:p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] flex items-center justify-between overflow-hidden shadow-sm">
           <div className="absolute right-[-20px] top-[-20px] text-[var(--accent)]/5 rotate-12">
-            <FiZap size={140} />
+            <FiZap size={120} />
           </div>
 
           <div className="relative z-10">
@@ -269,7 +280,7 @@ export default function WalletTab({
               Wallet Balance
             </p>
             <div className="flex items-baseline gap-2">
-              <span className="text-4xl md:text-5xl font-black italic tracking-tighter uppercase text-[var(--foreground)]">
+              <span className="text-3xl md:text-4xl font-black italic tracking-tighter uppercase text-[var(--foreground)]">
                 ₹{walletBalance}
               </span>
               <span className="text-[10px] font-bold text-[var(--muted)]/60 uppercase tracking-widest leading-none">
@@ -278,16 +289,31 @@ export default function WalletTab({
             </div>
           </div>
 
-          <div className="relative z-10 w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] border border-[var(--accent)]/20 shadow-[0_0_20px_var(--accent)]/10">
+          <div className="relative z-10 w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] border border-[var(--accent)]/20 shadow-[0_0_15px_var(--accent)]/10">
             <FiDollarSign size={24} />
           </div>
         </div>
       </div>
 
       {/* ACQUISITION INTERFACE */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      {!showAddFunds ? (
+        <button aria-label="button"
+          onClick={() => setShowAddFunds(true)}
+          className="w-full p-3.5 sm:p-4 rounded-xl bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 font-black uppercase tracking-[0.2em] italic text-xs shadow-[0_10px_30px_-10px_rgba(var(--accent-rgb),0.2)] hover:bg-[var(--accent)]/15 active:scale-[0.98] transition-all flex items-center justify-center gap-3"
+        >
+          <FiPlusCircle size={18} /> ADD FUNDS TO WALLET
+        </button>
+      ) : (
         <div className="space-y-6">
-          <AnimatePresence mode="wait">
+          <div className="flex items-center gap-3">
+             <button aria-label="button" onClick={() => setShowAddFunds(false)} className="p-2.5 rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.05] transition-all">
+                <FiArrowLeft size={16} />
+             </button>
+             <h3 className="text-sm font-black uppercase tracking-widest text-[var(--foreground)] italic">Add Funds Options</h3>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div className="space-y-6">
+              <AnimatePresence mode="wait">
             {/* ─── INR Input (UPI / no method selected) ─── */}
             {method !== "usdt" && (
               <motion.div
@@ -348,9 +374,13 @@ export default function WalletTab({
                 <button aria-label="button"
                   onClick={handleProceed}
                   disabled={loading}
-                  className="w-full mt-2 p-4 rounded-2xl bg-[var(--accent)] text-black font-black uppercase tracking-[0.2em] italic text-xs shadow-[0_20px_40px_-10px_rgba(var(--accent-rgb),0.3)] hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:grayscale transition-all flex items-center justify-center gap-3"
+                  className="w-full mt-2 p-4 rounded-2xl bg-[var(--accent)] text-black font-black uppercase tracking-[0.2em] italic text-xs shadow-[0_20px_40px_-10px_rgba(var(--accent-rgb),0.3)] hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:grayscale transition-all flex items-center justify-center gap-2"
                 >
-                  {loading ? <FiLoader className="animate-spin" size={18} /> : "Add Funds"}
+                  {loading ? <FiLoader className="animate-spin" size={18} /> : (
+                    <>
+                      <FiZap size={16} /> ADD FUNDS
+                    </>
+                  )}
                 </button>
               </motion.div>
             )}
@@ -456,29 +486,26 @@ export default function WalletTab({
                 </button>
               )}
 
-              {/* USDT (Available to Everyone) */}
+              {/* USDT (Available to Everyone but disabled for now) */}
               <button aria-label="button"
+                disabled={true}
                 onClick={() => { setMethod("usdt"); setUsdtStep("amount"); }}
-                className={`flex items-center justify-between p-4 rounded-2xl border transition-all duration-300
-                  ${method === "usdt"
-                    ? "border-green-500 bg-green-500/10 shadow-[0_0_20px_rgba(34,197,94,0.15)]"
-                    : "border-[var(--border)] bg-[var(--card)] hover:bg-green-500/5 hover:border-green-500/30"
-                  }`}
+                className="flex items-center justify-between p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] opacity-50 grayscale cursor-not-allowed transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
-                  <div className={`p-2.5 rounded-xl ${method === 'usdt' ? 'bg-green-500 text-black' : 'bg-green-500/10 text-green-500'}`}>
+                  <div className="p-2.5 rounded-xl bg-[var(--foreground)]/[0.05] text-[var(--muted)]">
                     <FiDollarSign size={18} />
                   </div>
                   <div className="text-left">
-                    <span className={`text-[11px] font-black uppercase tracking-widest italic leading-none ${method === 'usdt' ? 'text-green-400' : 'text-[var(--foreground)]'}`}>
+                    <span className="text-[11px] font-black uppercase tracking-widest italic leading-none text-[var(--foreground)]">
                       Crypto / USDT
                     </span>
-                    <p className="text-[9px] font-bold text-green-500/70 uppercase tracking-wider mt-1">1 USDT = 98 Coins • BEP20 Only</p>
+                    <p className="text-[9px] font-bold text-[var(--muted)] uppercase tracking-wider mt-1">Currently Disabled</p>
                   </div>
                 </div>
-                {method === "usdt" && (
-                  <span className="text-[9px] font-black text-green-500 uppercase tracking-widest bg-green-500/10 px-2 py-1 rounded-lg">Selected</span>
-                )}
+                <div className="text-[10px] font-black uppercase tracking-widest text-red-500 bg-red-500/10 px-2 py-1 rounded">
+                  OFF
+                </div>
               </button>
             </div>
           </div>
@@ -636,7 +663,8 @@ export default function WalletTab({
           )}
         </AnimatePresence>
       </div>
-
+    </div>
+  )}
 
       {/* TRANSACTION HISTORY SECTION */}
       <TransactionHistorySection onResumeUsdt={handleResumeUsdt} />
@@ -645,8 +673,10 @@ export default function WalletTab({
 }
 
 function TransactionHistorySection({ onResumeUsdt }: { onResumeUsdt: (txn: any) => void }) {
-  const [showHistory, setShowHistory] = useState(true);
-  const [filter, setFilter] = useState("all"); // all, inr, usdt
+  const [status, setStatus] = useState("all");
+  const [typeFilter, setTypeFilter] = useState("all");
+  const [search, setSearch] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
   return (
     <div className="pt-8 border-t border-[var(--border)]/20">
@@ -654,51 +684,93 @@ function TransactionHistorySection({ onResumeUsdt }: { onResumeUsdt: (txn: any) 
         <h3 className="text-lg font-bold tracking-tight text-[var(--foreground)] flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
           Transaction History
+          <TransactionHistoryRefresh />
         </h3>
-        
-        <div className="flex items-center gap-2">
-          {showHistory && (
-            <div className="flex items-center gap-1 bg-[var(--card)] border border-[var(--border)] p-1 rounded-xl mr-2">
-              {["all", "inr", "usdt"].map(f => (
-                <button aria-label="button"
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  className={`px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all ${
-                    filter === f 
-                      ? "bg-[var(--accent)] text-black" 
-                      : "text-[var(--muted)] hover:text-[var(--foreground)]"
-                  }`}
-                >
-                  {f}
-                </button>
-              ))}
-            </div>
-          )}
-          <div className="flex items-center gap-2">
-            {showHistory && <TransactionHistoryRefresh />}
-            <button aria-label="button"
-              onClick={() => setShowHistory((v) => !v)}
-              className={`px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-widest border transition-all ${
-                showHistory
-                  ? "bg-[var(--accent)]/10 border-[var(--accent)]/40 text-[var(--accent)]"
-                  : "bg-[var(--card)] border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--accent)]/30"
-              }`}
-            >
-              {showHistory ? "Hide History" : "Show History"}
+
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="relative w-full sm:w-auto flex-1">
+            <input 
+              type="text" 
+              placeholder="Search..."
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && setSearch(searchValue)}
+              className="bg-[var(--card)] border border-[var(--border)] rounded-xl px-3 py-1.5 text-xs text-[var(--foreground)] outline-none focus:border-[var(--accent)] transition-all w-full sm:w-48"
+            />
+            <button aria-label="search" onClick={() => setSearch(searchValue)} className="absolute right-2 top-1/2 -translate-y-1/2 text-[var(--muted)] hover:text-[var(--foreground)]">
+              <FiSearch size={14} />
             </button>
           </div>
+          <FilterDropdown status={status} setStatus={setStatus} typeFilter={typeFilter} setTypeFilter={setTypeFilter} />
         </div>
       </div>
 
-      {showHistory && (
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          <TransactionHistoryWrapper filter={filter} onResumeUsdt={onResumeUsdt} />
-        </motion.div>
-      )}
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <TransactionHistoryWrapper filter="all" status={status} typeFilter={typeFilter} search={search} onResumeUsdt={onResumeUsdt} />
+      </motion.div>
+    </div>
+  );
+}
+
+function FilterDropdown({ status, setStatus, typeFilter, setTypeFilter }: any) {
+  const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: any) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button aria-label="filter" onClick={() => setIsOpen(!isOpen)} className={`p-2 rounded-xl border transition-all flex items-center gap-2 text-xs font-bold ${isOpen || status !== 'all' || typeFilter !== 'all' ? 'bg-[var(--accent)]/10 border-[var(--accent)]/40 text-[var(--accent)]' : 'bg-[var(--card)] border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/[0.05]'}`}>
+        <FiFilter size={14} />
+        <span className="hidden sm:inline">Filters</span>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            className="absolute right-0 top-full mt-2 w-56 bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-xl z-50 p-4"
+          >
+            <div className="space-y-4">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--muted)] mb-2">Status</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {["all", "pending", "success", "failed"].map(f => (
+                    <button aria-label="button" key={f} onClick={() => setStatus(f)} className={`px-2.5 py-1 rounded-lg text-[10px] font-bold capitalize transition-all ${status === f ? "bg-[var(--accent)] text-black" : "bg-[var(--foreground)]/[0.03] text-[var(--muted)] hover:text-[var(--foreground)]"}`}>
+                      {f}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[var(--muted)] mb-2">Type</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {["all", "credit", "debit"].map(f => (
+                    <button aria-label="button" key={f} onClick={() => setTypeFilter(f)} className={`px-2.5 py-1 rounded-lg text-[10px] font-bold capitalize transition-all ${typeFilter === f ? "bg-[var(--accent)] text-black" : "bg-[var(--foreground)]/[0.03] text-[var(--muted)] hover:text-[var(--foreground)]"}`}>
+                      {f}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -715,7 +787,7 @@ function TransactionHistoryRefresh() {
   );
 }
 
-function TransactionHistoryWrapper({ filter, onResumeUsdt }: { filter: string, onResumeUsdt?: (txn: any) => void }) {
+function TransactionHistoryWrapper({ filter, status, typeFilter, search, onResumeUsdt }: { filter: string, status?: string, typeFilter?: string, search?: string, onResumeUsdt?: (txn: any) => void }) {
   const [key, setKey] = useState(0);
 
   useEffect(() => {
@@ -724,19 +796,19 @@ function TransactionHistoryWrapper({ filter, onResumeUsdt }: { filter: string, o
     return () => window.removeEventListener("refreshTransactionHistory", handleRefresh);
   }, []);
 
-  return <TransactionHistory key={`${key}-${filter}`} filter={filter} onResumeUsdt={onResumeUsdt} />;
+  return <TransactionHistory key={`${key}-${filter}-${status}-${typeFilter}-${search}`} filter={filter} status={status} typeFilter={typeFilter} search={search} onResumeUsdt={onResumeUsdt} />;
 }
 
-function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResumeUsdt?: (txn: any) => void }) {
+function TransactionHistory({ filter, status, typeFilter, search, onResumeUsdt }: { filter: string, status?: string, typeFilter?: string, search?: string, onResumeUsdt?: (txn: any) => void }) {
   const [history, setHistory] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const fetchHistory = async () => {
+  const fetchHistory = async (signal?: AbortSignal) => {
     try {
       setLoading(true);
-      const { data: json } = await api.get(`/api/wallet/history?page=${page}&limit=5&filter=${filter}`);
+      const { data: json } = await api.get(`/api/wallet/history?page=${page}&limit=20&filter=${filter}&status=${status || 'all'}&type=${typeFilter || 'all'}&search=${search || ''}`, { signal });
       if (json.success) {
         setHistory(json.data);
         if (json.pagination) {
@@ -749,8 +821,10 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
           checkPendingStatuses(pendingTxns);
         }
       }
-    } catch (err) {
-      console.error(err);
+    } catch (err: any) {
+      if (err.name !== 'CanceledError' && err.name !== 'AbortError') {
+        console.error(err);
+      }
     } finally {
       setLoading(false);
     }
@@ -773,7 +847,7 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
 
     if (updated) {
       try {
-        const { data: json } = await api.get(`/api/wallet/history?page=${page}&limit=5&filter=${filter}`);
+        const { data: json } = await api.get(`/api/wallet/history?page=${page}&limit=20&filter=${filter}&status=${status || 'all'}&type=${typeFilter || 'all'}&search=${search || ''}`);
         if (json.success) setHistory(json.data);
       } catch (e) {
         // ignore
@@ -782,13 +856,15 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
   };
 
   useEffect(() => {
-    fetchHistory();
-  }, [page, filter]);
+    const controller = new AbortController();
+    fetchHistory(controller.signal);
+    return () => controller.abort();
+  }, [page, filter, status, typeFilter, search]);
 
   if (loading) {
     return (
       <div className="space-y-1">
-        {[1, 2, 3, 4, 5].map((i) => (
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
           <TransactionSkeleton key={i} />
         ))}
       </div>
@@ -829,16 +905,27 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
                     </span>
                   </td>
                   <td className="px-4 py-3">
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
-                      txn.type === 'credit'
-                        ? 'bg-green-500/10 text-green-500 border border-green-500/20'
-                        : 'bg-red-500/10 text-red-500 border border-red-500/20'
-                    }`}>
-                      {txn.type}
-                    </span>
-                    <p className="text-[10px] text-[var(--muted)] mt-0.5 max-w-[120px] truncate">
-                      {txn.description}
-                    </p>
+                    <div className="flex items-start gap-3">
+                      <div className={`p-1.5 rounded-lg flex-shrink-0 ${
+                          txn.type === 'credit'
+                            ? 'bg-green-500/10 text-green-500'
+                            : 'bg-red-500/10 text-red-500'
+                        }`}>
+                          {txn.type === 'credit' ? <FiArrowDownLeft size={14} /> : <FiArrowUpRight size={14} />}
+                      </div>
+                      <div>
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
+                          txn.type === 'credit'
+                            ? 'bg-green-500/10 text-green-500 border border-green-500/20'
+                            : 'bg-red-500/10 text-red-500 border border-red-500/20'
+                        }`}>
+                          {txn.type}
+                        </span>
+                        <p className="text-[10px] text-[var(--foreground)] font-medium mt-1 max-w-[200px] truncate">
+                          {txn.description}
+                        </p>
+                      </div>
+                    </div>
                   </td>
                   <td className="px-4 py-3 font-mono font-bold">
                     <span className={txn.type === 'credit' ? 'text-green-500' : 'text-red-500'}>
@@ -880,43 +967,59 @@ function TransactionHistory({ filter, onResumeUsdt }: { filter: string, onResume
       {/* MOBILE CARD VIEW */}
       <div className="sm:hidden space-y-3">
         {history.map((txn) => (
-          <div key={txn._id} className="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] space-y-3">
-            <div className="flex items-start justify-between">
-              <div>
-                <p className="text-[9px] font-mono text-[var(--muted)] uppercase tracking-tighter">
-                  ID: {txn.transactionId || txn._id?.slice(0, 10)}
-                </p>
-                <div className="flex items-center gap-2 mt-1">
-                  <span className={`px-1.5 py-0.5 rounded text-[8px] font-black uppercase tracking-wider border ${
-                    txn.type === 'credit' 
-                      ? 'bg-green-500/10 text-green-500 border-green-500/20' 
-                      : 'bg-red-500/10 text-red-500 border-red-500/20'
+          <div key={txn._id} className="p-4 rounded-2xl border border-[var(--border)] bg-[var(--card)] flex flex-col relative overflow-hidden">
+            <div className="flex items-start justify-between relative z-10">
+              <div className="flex gap-3 items-start">
+                <div className={`mt-0.5 p-2 rounded-xl flex-shrink-0 ${
+                    txn.type === 'credit'
+                      ? 'bg-green-500/10 text-green-500'
+                      : 'bg-red-500/10 text-red-500'
                   }`}>
-                    {txn.type}
-                  </span>
-                  <p className="text-[11px] font-bold text-[var(--foreground)]">{txn.description}</p>
+                    {txn.type === 'credit' ? <FiArrowDownLeft size={16} /> : <FiArrowUpRight size={16} />}
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className={`px-1.5 py-0.5 rounded text-[8px] font-black uppercase tracking-wider border ${
+                      txn.type === 'credit' 
+                        ? 'bg-green-500/10 text-green-500 border-green-500/20' 
+                        : 'bg-red-500/10 text-red-500 border-red-500/20'
+                    }`}>
+                      {txn.type}
+                    </span>
+                    <p className="text-[9px] font-mono text-[var(--muted)] uppercase tracking-tighter truncate max-w-[120px]">
+                      ID: {txn.transactionId || txn._id?.slice(0, 10)}
+                    </p>
+                  </div>
+                  <p className="text-xs font-bold text-[var(--foreground)] leading-tight">{txn.description}</p>
                 </div>
               </div>
-              <span className={`text-[10px] font-black uppercase tracking-widest italic ${
-                txn.status === 'success' ? 'text-green-500'
-                : txn.status === 'failed' ? 'text-red-500'
-                : txn.status === 'waiting' ? 'text-amber-500'
-                : 'text-yellow-500'
-              }`}>
-                {txn.status}
+              
+              <div className="flex flex-col items-end">
+                <span className={`text-[10px] font-black uppercase tracking-widest italic ${
+                  txn.status === 'success' ? 'text-green-500'
+                  : txn.status === 'failed' ? 'text-red-500'
+                  : txn.status === 'waiting' ? 'text-amber-500'
+                  : 'text-yellow-500'
+                }`}>
+                  {txn.status}
+                </span>
                 {txn.status === 'waiting' && onResumeUsdt && (
                   <button aria-label="button" 
                     onClick={() => onResumeUsdt(txn)}
-                    className="block mt-1 text-[8px] font-black uppercase tracking-[0.2em] bg-green-500 text-black px-2 py-1 rounded-lg"
+                    className="mt-1 text-[8px] font-black uppercase tracking-[0.2em] bg-green-500 text-black px-2 py-1 rounded-lg hover:scale-105 active:scale-95 transition-all"
                   >
                     Submit Hash
                   </button>
                 )}
-              </span>
+              </div>
             </div>
-            <div className="flex items-end justify-between border-t border-[var(--border)]/10 pt-3">
-              <div className="text-[10px] text-[var(--muted)]">
-                {new Date(txn.createdAt).toLocaleDateString()} • {new Date(txn.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+            
+            <div className="flex items-center justify-between mt-3 pt-3 border-t border-[var(--border)]/20 relative z-10">
+              <div className="text-[10px] text-[var(--muted)] flex items-center gap-1 font-mono">
+                 <FiClock size={10} />
+                 <span>{new Date(txn.createdAt).toLocaleDateString()} &bull; {new Date(txn.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+              </div>
+              <div className="text-right flex items-center gap-2">
                 {txn.balanceAfter !== undefined && (
                   <p className="mt-1 font-mono">After: ₹{txn.balanceAfter}</p>
                 )}

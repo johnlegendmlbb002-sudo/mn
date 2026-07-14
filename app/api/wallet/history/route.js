@@ -32,6 +32,9 @@ export async function GET(req) {
         const limit = Math.min(parseInt(searchParams.get("limit") || "10"), 50);
         const skip = (page - 1) * limit;
         const filter = searchParams.get("filter") || "all"; // all, inr, usdt
+        const status = searchParams.get("status") || "all";
+        const search = searchParams.get("search") || "";
+        const filterType = searchParams.get("type") || "all";
 
         /* ================= QUERY ================= */
         // Try findById first (since decoded.userId is typically the _id)
@@ -51,21 +54,80 @@ export async function GET(req) {
             }, { status: 401 });
         }
 
+        let conditions = [
+            {
+                $or: [
+                    { userId: user.userId }, // Custom ID
+                    { userObjectId: user._id } // Mongo ID
+                ]
+            }
+        ];
+
+        if (filter === "inr") {
+            conditions.push({ referenceId: { $not: /^USDT/ } });
+        } else if (filter === "usdt") {
+            conditions.push({ referenceId: /^USDT/ });
+        }
+
+        if (status !== "all") {
+            conditions.push({ status });
+        }
+
+        if (filterType !== "all") {
+            conditions.push({ type: filterType });
+        }
+
+        if (search) {
+            conditions.push({
+                $or: [
+                    { transactionId: { $regex: search, $options: "i" } },
+                    { referenceId: { $regex: search, $options: "i" } },
+                    { description: { $regex: search, $options: "i" } }
+                ]
+            });
+        }
+
+        let txnQuery = { $and: conditions };
+
+        let usdtConditions = [
+            {
+                $or: [
+                    { userId: user.userId }, // Custom ID
+                    { userObjectId: user._id } // Mongo ID
+                ]
+            }
+        ];
+
+        if (status !== "all") {
+            if (status === "success") usdtConditions.push({ status: "confirmed" });
+            else if (status === "pending") usdtConditions.push({ status: { $in: ["waiting", "submitted"] } });
+            else if (status === "failed") usdtConditions.push({ status: { $in: ["failed", "expired"] } });
+        } else {
+            usdtConditions.push({ status: { $in: ["waiting", "submitted", "confirmed", "failed", "expired"] } });
+        }
+
+        if (filterType === "debit") {
+            // USDT deposits are always credits, so if debit is selected, match nothing
+            usdtConditions.push({ _id: null });
+        }
+
+        if (search) {
+            usdtConditions.push({
+                $or: [
+                    { depositId: { $regex: search, $options: "i" } },
+                    { network: { $regex: search, $options: "i" } }
+                ]
+            });
+        }
+
+        let usdtQuery = { $and: usdtConditions };
+
         const baseQuery = {
             $or: [
                 { userId: user.userId }, // Custom ID
                 { userObjectId: user._id } // Mongo ID
             ]
         };
-
-        let txnQuery = { ...baseQuery };
-        if (filter === "inr") {
-            // Filter out transactions that have a referenceId starting with "USDT" or are from UsdtDeposit
-            txnQuery.referenceId = { $not: /^USDT/ }; 
-        } else if (filter === "usdt") {
-            // Only transactions with referenceId starting with "USDT" 
-            txnQuery.referenceId = /^USDT/;
-        }
 
         // Update any waiting USDT deposits that have expired
         const now = new Date();
@@ -86,10 +148,7 @@ export async function GET(req) {
                 .select("-userObjectId -__v")
                 .lean(),
             (filter === "all" || filter === "usdt") 
-                ? UsdtDeposit.find({ 
-                    ...baseQuery, 
-                    status: { $in: ["waiting", "submitted", "confirmed", "failed", "expired"] } 
-                }).lean() 
+                ? UsdtDeposit.find(usdtQuery).lean() 
                 : Promise.resolve([]),
             WalletTransaction.countDocuments(txnQuery),
         ]);

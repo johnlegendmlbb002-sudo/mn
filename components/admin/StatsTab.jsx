@@ -22,7 +22,7 @@ import {
     FiActivity,
     FiMoreVertical
 } from "react-icons/fi";
-import { Loader2, Zap, ArrowUpRight, ArrowDownRight, User, Wallet } from "lucide-react";
+import { Loader2, Zap, ArrowUpRight, ArrowDownRight, User, Wallet, ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function StatsTab() {
@@ -47,6 +47,7 @@ export default function StatsTab() {
     const [manageAmount, setManageAmount] = useState("");
     const [manageDescription, setManageDescription] = useState("");
     const [updating, setUpdating] = useState(false);
+    const [showManualForm, setShowManualForm] = useState(false);
 
     // History State
     const [history, setHistory] = useState([]);
@@ -252,26 +253,21 @@ export default function StatsTab() {
         <div className="space-y-4 sm:space-y-8 pb-10">
 
             {/* HEADER */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                    <h2 className="text-lg sm:text-xl font-bold tracking-tight text-[var(--foreground)]">Wallet Management</h2>
-                    <p className="hidden sm:block text-sm text-[var(--muted)] mt-1">
-                        View stats, add or remove money manually, and check history.
-                    </p>
-                </div>
+            <div className="flex items-center justify-between gap-2 sm:gap-3">
+                <h2 className="text-base sm:text-lg font-bold tracking-tight text-[var(--foreground)] shrink-0">Wallet</h2>
 
-                <div className="flex items-center justify-between sm:justify-end gap-3">
+                <div className="flex items-center justify-end gap-2 flex-1 min-w-0">
                     {/* TABS */}
-                    <div className="flex bg-[var(--foreground)]/[0.03] p-1 rounded-xl border border-[var(--border)] flex-1 sm:flex-none">
+                    <div className="flex bg-[var(--foreground)]/[0.03] p-0.5 rounded-lg border border-[var(--border)] flex-1 sm:flex-none">
                         <button aria-label="button"
                             onClick={() => setActiveTab("history")}
-                            className={`flex-1 sm:px-4 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all ${activeTab === 'history' ? 'bg-[var(--card)] text-[var(--foreground)] shadow-sm' : 'text-[var(--muted)] hover:text-[var(--foreground)]'}`}
+                            className={`flex-1 sm:px-3 py-1 rounded-md text-[9px] font-bold uppercase tracking-wider transition-all ${activeTab === 'history' ? 'bg-[var(--card)] text-[var(--foreground)] shadow-sm' : 'text-[var(--muted)] hover:text-[var(--foreground)]'}`}
                         >
                             History
                         </button>
                         <button aria-label="button"
                             onClick={() => setActiveTab("wallets")}
-                            className={`flex-1 sm:px-4 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all ${activeTab === 'wallets' ? 'bg-[var(--card)] text-[var(--foreground)] shadow-sm' : 'text-[var(--muted)] hover:text-[var(--foreground)]'}`}
+                            className={`flex-1 sm:px-3 py-1 rounded-md text-[9px] font-bold uppercase tracking-wider transition-all ${activeTab === 'wallets' ? 'bg-[var(--card)] text-[var(--foreground)] shadow-sm' : 'text-[var(--muted)] hover:text-[var(--foreground)]'}`}
                         >
                             Wallets
                         </button>
@@ -284,12 +280,12 @@ export default function StatsTab() {
                             else fetchWallets();
                         }}
                         disabled={loading || (activeTab === "history" ? historyLoading : walletLoading)}
-                        className="p-2 sm:p-2.5 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] active:scale-95 transition-all outline-none disabled:opacity-50"
+                        className="p-1.5 rounded-lg bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] active:scale-95 transition-all outline-none disabled:opacity-50"
                     >
                         {loading || (activeTab === "history" ? historyLoading : walletLoading) ? (
-                            <Loader2 className="animate-spin" size={14} />
+                            <Loader2 className="animate-spin" size={12} />
                         ) : (
-                            <FiRefreshCw size={14} />
+                            <FiRefreshCw size={12} />
                         )}
                     </button>
                 </div>
@@ -303,7 +299,7 @@ export default function StatsTab() {
             ) : (
                 <>
                     {/* TOP LEVEL OVERVIEW */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-6">
                         <PremiumInsightCard
                             label="Customer Pool"
                             value={`₹${(data.totalBalance || 0).toLocaleString()}`}
@@ -318,15 +314,13 @@ export default function StatsTab() {
                             icon={<Zap size={20} />}
                             description="Number of accounts with active balances"
                         />
-                        <div className="hidden lg:block">
-                            <PremiumInsightCard
-                                label="Total Transactions"
-                                value={data.pagination?.total || 0}
-                                color="purple"
-                                icon={<FiActivity size={20} />}
-                                description="Total recorded wallet operations"
-                            />
-                        </div>
+                        <PremiumInsightCard
+                            label="Total Transactions"
+                            value={data.pagination?.total || 0}
+                            color="purple"
+                            icon={<FiActivity size={20} />}
+                            description="Total recorded wallet operations"
+                        />
                     </div>
 
                     {/* SNAPSHOT GRID */}
@@ -360,12 +354,21 @@ export default function StatsTab() {
 
                     {/* MANUAL WALLET ADJUSTMENT */}
                     <div className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-4 sm:p-6 relative overflow-hidden">
-                        <div className="flex items-center gap-2 mb-4 sm:mb-6">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
-                            <h3 className="text-base sm:text-lg font-bold text-[var(--foreground)]">Add or Remove Money Manually</h3>
+                        <div 
+                            className="flex items-center justify-between cursor-pointer group"
+                            onClick={() => setShowManualForm(!showManualForm)}
+                        >
+                            <div className="flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
+                                <h3 className="text-base sm:text-lg font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">Add or Remove Money Manually</h3>
+                            </div>
+                            <div className="p-1 rounded-md bg-[var(--foreground)]/[0.03] text-[var(--muted)] group-hover:text-[var(--foreground)] transition-colors">
+                                {showManualForm ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                            </div>
                         </div>
 
-                        <div className="flex flex-col gap-3 sm:gap-4">
+                        {showManualForm && (
+                            <div className="flex flex-col gap-3 sm:gap-4 mt-4 sm:mt-6 animate-in fade-in slide-in-from-top-2 duration-200">
                             <div className="flex flex-col md:flex-row items-stretch md:items-end gap-3 sm:gap-4">
                                 <div className="flex-1 space-y-1.5">
                                     <label className="text-[10px] sm:text-xs font-semibold text-[var(--muted)] ml-1 uppercase tracking-wider">User Email</label>
@@ -432,7 +435,8 @@ export default function StatsTab() {
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                            </div>
+                        )}
                     </div>
 
                     {/* TRANSACTION HISTORY */}
@@ -457,7 +461,7 @@ export default function StatsTab() {
                                             className="w-full h-10 pl-9 pr-4 rounded-xl bg-[var(--card)] border border-[var(--border)] text-sm text-[var(--foreground)] outline-none focus:border-[var(--accent)] transition-all placeholder:text-[var(--muted)]/50"
                                         />
                                     </div>
-                                    <div className="sm:col-span-3">
+                                    <div className="sm:col-span-6 grid grid-cols-2 gap-3">
                                         <div className="relative">
                                             <select
                                                 value={historyType}
@@ -472,8 +476,6 @@ export default function StatsTab() {
                                                 <FiFilter size={14} />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="sm:col-span-3">
                                         <div className="relative">
                                             <select
                                                 value={historyStatus}
@@ -789,28 +791,25 @@ export default function StatsTab() {
                                             transition={{ delay: idx * 0.05 }}
                                             className="group relative bg-gradient-to-br from-[var(--card)] to-[var(--foreground)]/[0.03] border border-[var(--border)] rounded-2xl p-4 overflow-hidden transition-all hover:border-[var(--accent)]/30"
                                         >
-                                            <div className="relative z-10 flex items-center justify-between">
-                                                <div className="flex items-center gap-4">
-                                                    <div className="relative">
-                                                        <Avatar name={user.name} type={user.userType} size="md" />
-                                                        {user.userType === 'owner' && (
-                                                            <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-[var(--card)] shadow-lg shadow-red-500/40" />
-                                                        )}
-                                                    </div>
-                                                    <div className="min-w-0">
+                                            <div className="relative z-10 flex items-center justify-between gap-2 w-full">
+                                                <div className="flex items-center gap-3 flex-1 min-w-0">
+                                                    <div className="min-w-0 flex-1">
                                                         <div className="flex items-center gap-2 mb-0.5">
                                                             <h4 className="font-black text-[var(--foreground)] text-sm truncate tracking-tight">{user.name || "Unknown"}</h4>
                                                             {user.userType === 'owner' && (
-                                                                <span className="px-1.5 py-0.5 rounded text-[7px] bg-red-500/10 text-red-500 border border-red-500/20 font-black uppercase tracking-widest">
+                                                                <span className="px-1.5 py-0.5 rounded text-[7px] bg-red-500/10 text-red-500 border border-red-500/20 font-black uppercase tracking-widest shrink-0">
                                                                     OWNER
                                                                 </span>
                                                             )}
                                                         </div>
-                                                        <p className="text-[10px] text-[var(--muted)] font-medium opacity-60 truncate max-w-[140px] lowercase">{user.email}</p>
+                                                        <p className="text-[10px] text-[var(--muted)] font-medium opacity-60 truncate lowercase">{user.email}</p>
+                                                        <p className="text-[9px] font-mono text-[var(--muted)] opacity-50 mt-1 truncate">
+                                                            Active: {user.lastLogin ? new Date(user.lastLogin).toLocaleString('en-IN', {day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit'}) : 'Never'}
+                                                        </p>
                                                     </div>
                                                 </div>
 
-                                                <div className="flex items-center gap-4">
+                                                <div className="flex items-center gap-3 shrink-0">
                                                     <div className="text-right">
                                                         <p className="text-[8px] font-black text-[var(--muted)] uppercase tracking-[0.2em] mb-1 opacity-40">Wallet</p>
                                                         <p className="text-xl font-black text-[var(--foreground)] tabular-nums tracking-tighter shadow-sm">
@@ -875,9 +874,6 @@ export default function StatsTab() {
                                                         </td>
                                                         <td className="px-6 py-4">
                                                             <div className="flex items-center gap-3">
-                                                                <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--accent)]/10 text-[var(--accent)] font-bold text-xs">
-                                                                    {user.name?.[0]?.toUpperCase() || <FiUser />}
-                                                                </div>
                                                                 <span className="font-medium text-[var(--foreground)]">
                                                                     {user.name || "Unknown"}
                                                                 </span>
@@ -1085,25 +1081,25 @@ function PremiumInsightCard({ label, value, color, icon, description }) {
     return (
         <motion.div 
             whileHover={{ y: -2 }}
-            className={`relative p-3 sm:p-3.5 rounded-2xl border bg-gradient-to-b ${colors[color]} bg-[var(--card)]/40 backdrop-blur-xl overflow-hidden group transition-all`}
+            className={`relative p-1.5 sm:p-3 rounded-xl border bg-gradient-to-b ${colors[color]} bg-[var(--card)]/40 backdrop-blur-xl overflow-hidden group transition-all`}
         >
-            <div className="relative z-10 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                    <div className={`p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 text-white shadow-lg`}>
+            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-1 sm:gap-0">
+                <div className="flex flex-col sm:flex-row items-center sm:items-center gap-1 sm:gap-2.5 text-center sm:text-left">
+                    <div className={`p-1 sm:p-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/10 text-white shadow-sm scale-75 sm:scale-100`}>
                         {icon}
                     </div>
                     <div>
-                        <p className="text-[9px] font-black uppercase tracking-[0.15em] opacity-40 mb-0.5">{label}</p>
-                        <p className="text-lg sm:text-xl font-black tabular-nums tracking-tighter text-[var(--foreground)] leading-none">{value}</p>
+                        <p className="text-[7px] sm:text-[8px] font-black uppercase tracking-widest opacity-60 sm:opacity-40 mb-0.5">{label}</p>
+                        <p className="text-xs sm:text-lg font-black tabular-nums tracking-tighter text-[var(--foreground)] leading-none">{value}</p>
                     </div>
                 </div>
-                <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/5 text-[7px] font-black uppercase tracking-[0.1em] opacity-50 shrink-0">
+                <div className="hidden sm:flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/5 text-[7px] font-black uppercase tracking-[0.1em] opacity-50 shrink-0">
                     <FiTrendingUp className="text-emerald-500" /> Live
                 </div>
             </div>
             
             {description && (
-                <div className="relative z-10 mt-2 pt-1.5 text-[9px] font-medium opacity-30 border-t border-white/5 truncate">
+                <div className="hidden sm:block relative z-10 mt-2 pt-1.5 text-[9px] font-medium opacity-30 border-t border-white/5 truncate">
                     {description}
                 </div>
             )}

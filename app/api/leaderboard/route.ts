@@ -199,7 +199,7 @@ export async function GET(req: Request) {
         }
       },
       ["leaderboard-cache"],
-      { revalidate: 600, tags: ["leaderboard"] } // Cache for 10 minutes
+      { revalidate: 7200, tags: ["leaderboard"] } // Cache for 2 hours
     );
 
     const result = await getCachedLeaderboard(type, range, start, end, skip, limit);
