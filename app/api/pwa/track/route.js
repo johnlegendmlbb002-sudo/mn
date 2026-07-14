@@ -197,10 +197,13 @@ export async function GET(req) {
       user: userMap[r.userId] || null,
     }));
 
+    const periodInstalls = dailyInstalls.reduce((sum, d) => sum + d.count, 0);
+
     return NextResponse.json({
       totalInstalls,
       totalActive,
       dismissCount,
+      periodInstalls,
       byDevice,
       byOS,
       byBrowser,

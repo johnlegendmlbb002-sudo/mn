@@ -57,7 +57,7 @@ export default function PwaStatsTab() {
         <div className="flex items-center gap-2">
           {/* Day toggle */}
           <div className="flex p-0.5 bg-[var(--border)] rounded-lg gap-0.5">
-            {[7, 30].map((d) => (
+            {[1, 7, 30].map((d) => (
               <button aria-label="button"
                 key={d}
                 onClick={() => setDays(d)}
@@ -79,8 +79,9 @@ export default function PwaStatsTab() {
       </div>
 
       {/* ── Stat cards ── */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
         <StatCard label="Total Installs"  value={data.totalInstalls}  icon={<FiDownload size={16}  />} color="#ef4444" glow="rgba(239,68,68,0.15)"  />
+        <StatCard label={`Installs (${days === 1 ? '1D' : days === 7 ? '7D' : '30D'})`} value={data.periodInstalls || 0} icon={<FiDownload size={16} />} color="#6366f1" glow="rgba(99,102,241,0.15)" />
         <StatCard label="Active Devices"  value={data.totalActive}    icon={<FiActivity size={16}  />} color="#22c55e" glow="rgba(34,197,94,0.15)"  />
         <StatCard label="Dismissed"       value={data.dismissCount}   icon={<FiXCircle size={16}   />} color="#f59e0b" glow="rgba(245,158,11,0.15)" />
         <StatCard label="Conversion Rate" value={`${conversionRate}%`} icon={<FiUser size={16}     />} color="#60a5fa" glow="rgba(96,165,250,0.15)" />

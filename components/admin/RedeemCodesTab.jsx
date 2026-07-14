@@ -109,21 +109,7 @@ export default function RedeemCodesTab() {
 
     return (
         <div className="space-y-8 animate-in fade-in duration-500">
-            {/* SUMMARY CARDS */}
-            <div className="flex items-center gap-2">
-                <div className="flex-1 px-2 py-2 rounded-xl bg-[var(--card)] border border-[var(--border)] flex flex-col items-center justify-center text-center shadow-sm">
-                    <span className="text-[8px] font-black uppercase tracking-widest text-[var(--muted)]/40 mb-0.5">Total Codes</span>
-                    <span className="text-base font-black text-[var(--foreground)] tabular-nums">{summary.total}</span>
-                </div>
-                <div className="flex-1 px-2 py-2 rounded-xl bg-emerald-500/5 border border-emerald-500/10 flex flex-col items-center justify-center text-center shadow-sm">
-                    <span className="text-[8px] font-black uppercase tracking-widest text-emerald-500/40 mb-0.5">Claimed</span>
-                    <span className="text-base font-black text-emerald-500 tabular-nums">{summary.totalUsed}</span>
-                </div>
-                <div className="flex-1 px-2 py-2 rounded-xl bg-amber-500/5 border border-amber-500/10 flex flex-col items-center justify-center text-center shadow-sm">
-                    <span className="text-[8px] font-black uppercase tracking-widest text-amber-500/40 mb-0.5">Available</span>
-                    <span className="text-base font-black text-amber-500 tabular-nums">{summary.total - summary.totalUsed}</span>
-                </div>
-            </div>
+
 
             {/* GENERATOR CARD */}
             <div className="p-5 rounded-2xl border border-[var(--border)] bg-gradient-to-br from-[var(--card)] to-[var(--foreground)]/[0.03] shadow-xl shadow-black/5">

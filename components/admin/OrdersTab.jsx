@@ -30,18 +30,7 @@ export default function OrdersTab() {
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
-  const [orderStats, setOrderStats] = useState({
-    revenue: {
-      day: 0,
-      week: 0,
-      month: 0,
-    },
-    counts: {
-      day: 0,
-      week: 0,
-      month: 0,
-    }
-  });
+
 
   const [page, setPage] = useState(1);
   const [limit] = useState(30);
@@ -61,32 +50,8 @@ export default function OrdersTab() {
   const [showFilters, setShowFilters] = useState(false);
 
   useEffect(() => {
-    fetchOrdersStats();
-  }, []);
-
-  useEffect(() => {
     fetchOrdersList();
   }, [page, limit, search, filters]);
-
-  /* ================= FETCH ORDERS STATS ================= */
-  const fetchOrdersStats = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const res = await fetch(`/api/admin/orders`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      const data = await res.json();
-      if (data.success) {
-        setOrderStats(data.orderStats || {
-          revenue: { day: 0, week: 0, month: 0 },
-          counts: { day: 0, week: 0, month: 0 }
-        });
-        setPagination(prev => ({ ...prev, total: data.total }));
-      }
-    } catch (err) {
-      console.error("Fetch orders stats failed", err);
-    }
-  };
 
   /* ================= FETCH ORDERS LIST ================= */
   const fetchOrdersList = async () => {
@@ -144,8 +109,7 @@ export default function OrdersTab() {
       }
 
       fetchOrdersList();
-      fetchOrdersStats(); // Refresh stats too as status change affects revenue
-    } finally {
+    } catch (err) {
       setUpdating(false);
     }
   };
@@ -192,7 +156,7 @@ export default function OrdersTab() {
             </span>
           </div>
           <button aria-label="button"
-            onClick={() => { fetchOrdersStats(); fetchOrdersList(); }}
+            onClick={() => { fetchOrdersList(); }}
             className="p-2 sm:p-2.5 rounded-xl bg-[var(--foreground)]/[0.03] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] active:scale-95 transition-all"
           >
             <RefreshCcw size={16} className={loading ? "animate-spin" : ""} />

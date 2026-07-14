@@ -33,8 +33,7 @@ export async function GET(req) {
     /* ================= STATS ================= */
     const startOfDay = new Date(new Date().setHours(0, 0, 0, 0));
 
-    const [totalQueries, openCount, todayCount] = await Promise.all([
-      SupportQuery.countDocuments({}),
+    const [openCount, todayCount] = await Promise.all([
       SupportQuery.countDocuments({ status: { $in: ["open", "in_progress"] } }),
       SupportQuery.countDocuments({ createdAt: { $gte: startOfDay } }),
     ]);
@@ -42,7 +41,6 @@ export async function GET(req) {
     return Response.json({
       success: true,
       stats: {
-        total: totalQueries,
         open: openCount,
         today: todayCount,
       },

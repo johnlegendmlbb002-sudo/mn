@@ -63,7 +63,7 @@ export default function CoinsAdminTab() {
   const [userSearch, setUserSearch] = useState("");
   const [claimStatus, setClaimStatus] = useState("pending");
   const [pendingCount, setPendingCount] = useState(0);
-  const [coinStats, setCoinStats] = useState({ totalEarned: 0, totalSpent: 0, todayEarned: 0, todaySpent: 0, totalAvailable: 0 });
+
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -138,7 +138,7 @@ export default function CoinsAdminTab() {
       if (data.success) {
         setHistory(data.transactions || []);
         setPages(data.pages || 1);
-        if (data.stats) setCoinStats(data.stats);
+
       }
     } finally {
       setLoading(false);
@@ -259,14 +259,7 @@ export default function CoinsAdminTab() {
     <div className="space-y-5">
       <AnimatePresence>{toast && <Toast {...toast} />}</AnimatePresence>
       
-      {/* Stats Overview */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 gap-2">
-        <StatCard label="Total Available" value={coinStats.totalAvailable} icon={<FiList />} color="blue" />
-        <StatCard label="Total Earned" value={coinStats.totalEarned} icon={<FiStar />} color="amber" />
-        <StatCard label="Total Spent" value={coinStats.totalSpent} icon={<FiX />} color="rose" />
-        <StatCard label="Today Earned" value={coinStats.todayEarned} icon={<FiCheck />} color="emerald" pulse />
-        <StatCard label="Today Spent" value={coinStats.todaySpent} icon={<FiRefreshCw />} color="blue" />
-      </div>
+
 
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-3">

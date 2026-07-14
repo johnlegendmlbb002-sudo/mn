@@ -210,12 +210,7 @@ export default function SupportQueriesTab() {
       </div>
 
       {/* ================= STATS GRID ================= */}
-      <div className="grid grid-cols-3 gap-2 sm:gap-4">
-        <InsightCard
-          label="Total"
-          value={stats.total}
-          color="blue"
-        />
+      <div className="grid grid-cols-2 gap-2 sm:gap-4">
         <InsightCard
           label="Pending"
           value={stats.open}
