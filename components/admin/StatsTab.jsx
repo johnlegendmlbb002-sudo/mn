@@ -88,6 +88,7 @@ export default function StatsTab() {
             console.error("Failed to fetch wallet list", err);
         } finally {
             setWalletLoading(false);
+            setLoading(false);
         }
     };
 
@@ -116,6 +117,7 @@ export default function StatsTab() {
             console.error("Failed to fetch history", err);
         } finally {
             setHistoryLoading(false);
+            setLoading(false);
         }
     };
 
@@ -242,7 +244,6 @@ export default function StatsTab() {
 
                     <button aria-label="button"
                         onClick={() => {
-                            fetchStats();
                             if (activeTab === "history") fetchHistory();
                             else fetchWallets();
                         }}

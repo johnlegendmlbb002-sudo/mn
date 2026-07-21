@@ -12,7 +12,6 @@ import MaintenanceWrapper from "@/components/Layout/MaintenanceWrapper";
 import { FEATURE_FLAGS } from "@/lib/featureFlags";
 import { getAppSettings } from "@/lib/settings";
 
-const SocialFloat = nextDynamic(() => import("@/components/SocialFloat/SocialFloat"));
 const SeasonalEffectManager = nextDynamic(() => import("@/components/Seasonal/SeasonalEffectManager"));
 const PWAInstallBanner = nextDynamic(() => import("@/components/Layout/PWAInstallBanner"));
 const BottomNav = nextDynamic(() => import("@/components/Layout/BottomNav"));
@@ -154,7 +153,6 @@ export default async function RootLayout({
 
 
           <Footer />
-          <SocialFloat />
           {settings.showBottomNav !== false && <BottomNav />}
           <PWAInstallBanner />
           <div />

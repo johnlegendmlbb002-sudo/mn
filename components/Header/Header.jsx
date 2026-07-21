@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import CustomWebBanner from "../Home/CustomWebBanner";
 import api from "@/lib/axios";
-import { FiChevronRight, FiChevronDown, FiLogOut, FiCheckCircle, FiShield, FiZap, FiMenu, FiX, FiLayers, FiCompass, FiGrid, FiShoppingBag, FiMessageSquare, FiUser, FiUsers, FiKey, FiGift, FiAward, FiDownload } from "react-icons/fi";
+import { FiHeart, FiChevronRight, FiChevronDown, FiLogOut, FiCheckCircle, FiShield, FiZap, FiMenu, FiX, FiLayers, FiCompass, FiGrid, FiShoppingBag, FiMessageSquare, FiUser, FiUsers, FiKey, FiGift, FiAward, FiDownload } from "react-icons/fi";
 
 import { useAuthStore } from "@/store/useAuthStore";
 
@@ -170,27 +170,31 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14">
 
-          <Link
-            href="/"
-            className="relative z-10 flex-shrink-0"
-            onClick={() => {
-              setUserMenuOpen(false);
-              setActiveNav("/");
-            }}
-          >
-            <div className="hover:scale-105 active:scale-95 transition-transform duration-300">
-              <Image
-                src={HEADER_CONFIG.logo.src}
-                alt={HEADER_CONFIG.logo.alt}
-                width={HEADER_CONFIG.logo.width}
-                height={HEADER_CONFIG.logo.height}
-                priority
-                className="h-9 w-auto transition-all duration-300"
-              />
-            </div>
-          </Link>
+          {/* Left section */}
+          <div className="flex items-center xl:flex-1 justify-start">
+            <Link
+              href="/"
+              className="relative z-10 flex-shrink-0"
+              onClick={() => {
+                setUserMenuOpen(false);
+                setActiveNav("/");
+              }}
+            >
+              <div className="hover:scale-105 active:scale-95 transition-transform duration-300">
+                <Image
+                  src={HEADER_CONFIG.logo.src}
+                  alt={HEADER_CONFIG.logo.alt}
+                  width={HEADER_CONFIG.logo.width}
+                  height={HEADER_CONFIG.logo.height}
+                  priority
+                  className="h-9 w-auto transition-all duration-300"
+                />
+              </div>
+            </Link>
+          </div>
 
-          <nav className="hidden xl:flex items-center space-x-1 flex-1 justify-center mr-4">
+          {/* Center section */}
+          <nav className="hidden xl:flex items-center space-x-1 shrink-0 justify-center">
             {HEADER_CONFIG.nav.map((item) => (
               <Link
                 key={item.href}
@@ -208,56 +212,48 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex-1 flex items-center justify-end gap-1.5 sm:gap-2 pr-2">
-
-
-            <div className="flex-1 flex justify-end mr-1">
-              <div className="relative">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handleInstallPWA}
-                  className="relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[var(--foreground)]/5 border border-[var(--border)]/30 text-[var(--foreground)]/60 hover:text-[var(--accent)] transition-colors group backdrop-blur-md"
-                  aria-label="Install App"
-                  title="Install App"
-                >
-                  <FiDownload size={14} className="group-hover:translate-y-[1px] transition-transform z-10" />
-                  
-                  {/* SPINNING RING */}
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 rounded-full border border-dashed border-[var(--foreground)]/20 pointer-events-none"
-                  />
-                  
-                  {/* INDICATOR */}
-                  <div className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full border-2 border-[var(--background)] bg-[#0088cc] z-20 shadow-[0_0_8px_rgba(0,136,204,0.6)]" />
-                </motion.button>
-              </div>
+          {/* Right section */}
+          <div className="flex items-center justify-end gap-1.5 sm:gap-2 xl:flex-1">
+            <div className="relative">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleInstallPWA}
+                className="relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[var(--foreground)]/5 border border-[var(--border)]/30 text-[var(--foreground)]/60 hover:text-[var(--accent)] transition-colors group backdrop-blur-md"
+                aria-label="Install App"
+                title="Install App"
+              >
+                <FiDownload size={14} className="group-hover:translate-y-[1px] transition-transform z-10" />
+                
+                {/* SPINNING RING */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 rounded-full border border-dashed border-[var(--foreground)]/20 pointer-events-none"
+                />
+                
+                {/* INDICATOR */}
+                <div className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full border-2 border-[var(--background)] bg-[#0088cc] z-20 shadow-[0_0_8px_rgba(0,136,204,0.6)]" />
+              </motion.button>
             </div>
 
-          </div>
+            <div className="flex items-center gap-1.5 sm:gap-2" ref={dropdownRef}>
+              <ThemeToggle />
 
-          <div className="flex items-center gap-1.5 sm:gap-2" ref={dropdownRef}>
-            <ThemeToggle />
-
-
-
-
-            <button
-              onClick={() => user ? setUserMenuOpen((p) => !p) : window.location.href = "/login"}
-              className="relative flex items-center gap-1 pl-1 pr-1.5 py-1 rounded-[2rem] transition-all duration-300 group hover:scale-105 active:scale-95 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 border border-[var(--border)]"
-              aria-label="User Menu"
-            >
-              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full overflow-hidden flex items-center justify-center bg-[var(--background)] shadow-sm">
-                {user?.avatar ? (
-                  <Image src={user.avatar} alt={`${user.name || "User"} Profile Avatar`} width={28} height={28} className="object-cover" />
-                ) : (
-                  <FiUser className="text-[var(--foreground)]/60 text-xs" />
-                )}
-              </div>
-              <FiChevronRight className="text-[var(--foreground)]/60 text-[10px] sm:text-xs group-hover:translate-x-0.5 transition-transform" />
-            </button>
+              <button
+                onClick={() => user ? setUserMenuOpen((p) => !p) : window.location.href = "/login"}
+                className="relative flex items-center gap-1 pl-1 pr-1.5 py-1 rounded-[2rem] transition-all duration-300 group hover:scale-105 active:scale-95 bg-[var(--foreground)]/5 hover:bg-[var(--foreground)]/10 border border-[var(--border)]"
+                aria-label="User Menu"
+              >
+                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full overflow-hidden flex items-center justify-center bg-[var(--background)] shadow-sm">
+                  {user?.avatar ? (
+                    <Image src={user.avatar} alt={`${user.name || "User"} Profile Avatar`} width={28} height={28} className="object-cover" />
+                  ) : (
+                    <FiUser className="text-[var(--foreground)]/60 text-xs" />
+                  )}
+                </div>
+                <FiChevronRight className="text-[var(--foreground)]/60 text-[10px] sm:text-xs group-hover:translate-x-0.5 transition-transform" />
+              </button>
 
               <>
                 <div
@@ -447,6 +443,7 @@ export default function Header() {
                 </div>
               </>
             </div>
+          </div>
         </div>
       </div>
 

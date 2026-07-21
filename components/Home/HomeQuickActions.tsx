@@ -154,17 +154,17 @@ export default function HomeQuickActions() {
 
   return (
     <section className="relative max-w-7xl mx-auto px-4 mt-1">
-      <div className="relative z-10 max-w-2xl mx-auto">
-        <div className="flex flex-col gap-0.5">
+      <div className="relative z-10 max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-0.5 md:gap-1">
           {/* ================= TOP ROW ================= */}
-          <div className="flex justify-between gap-1">
+          <div className="flex justify-between gap-1 flex-1">
             {topRow.map((item) => (
               <ActionCard key={item.title} item={item} />
             ))}
           </div>
 
           {/* ================= BOTTOM ROW ================= */}
-          <div className="flex justify-between gap-1">
+          <div className="flex justify-between gap-1 flex-1">
             {bottomRow.map((item) => (
               <ActionCard key={item.title} item={item} />
             ))}

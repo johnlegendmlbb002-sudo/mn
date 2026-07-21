@@ -164,22 +164,43 @@ function GamesContent() {
 
   /* ================= RENDER COMPONENTS ================= */
   const SectionHeader = ({ title, icon: Icon, count, gradient }) => (
-    <div className="flex items-center gap-3 mb-6">
-      <div className={`w-11 h-11 rounded-[0.9rem] bg-gradient-to-br ${gradient} flex items-center justify-center text-white shadow-xl shrink-0`}>
-        <Icon size={20} />
+    <div className="group relative flex items-center gap-4 mb-8">
+      {/* Premium Icon Box */}
+      <div className="relative shrink-0 flex items-center justify-center">
+        {/* Animated Glow Behind */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-700`} />
+        
+        {/* Main Box */}
+        <div className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-[1.2rem] bg-gradient-to-br ${gradient} flex items-center justify-center text-white shadow-[0_8px_20px_rgba(0,0,0,0.3)] overflow-hidden border border-white/20 transition-all duration-500 group-hover:scale-105 group-hover:rotate-3`}>
+          {/* Glass reflection */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-50 pointer-events-none" />
+          <Icon size={24} className="relative z-10 drop-shadow-md group-hover:scale-110 transition-transform duration-500" />
+        </div>
       </div>
-      <div>
-        <h2 className="text-lg sm:text-xl font-black uppercase tracking-tighter italic text-[var(--foreground)] leading-none mb-1.5">
+
+      {/* Text Content */}
+      <div className="flex flex-col gap-1.5 z-10">
+        <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tighter italic text-transparent bg-clip-text bg-gradient-to-r from-[var(--foreground)] to-[var(--muted)] leading-none drop-shadow-sm group-hover:translate-x-1 transition-transform duration-500">
           {title}
         </h2>
-        <div className="flex items-center gap-2.5">
-          <div className="h-1 w-8 bg-[var(--accent)] rounded-full shadow-[0_0_10px_rgba(var(--accent-rgb),0.5)]" />
-          <span className="text-[9px] font-black text-[var(--muted)] uppercase tracking-[0.15em]">
-            {count} Items Found
+        
+        <div className="flex items-center gap-3">
+          {/* Glowing Line */}
+          <div className="relative h-1 w-10 overflow-hidden rounded-full bg-[var(--foreground)]/10">
+            <div className={`absolute inset-y-0 left-0 w-full bg-gradient-to-r ${gradient} shadow-[0_0_10px_currentColor]`} />
+          </div>
+          
+          <span className="text-[10px] font-black text-[var(--muted)] uppercase tracking-[0.2em] group-hover:text-[var(--foreground)] transition-colors duration-500">
+            {count} <span className="opacity-50">Items Found</span>
           </span>
         </div>
       </div>
-      <div className="flex-1 h-px bg-gradient-to-r from-[var(--border)] to-transparent ml-2" />
+
+      {/* Decorative trailing line */}
+      <div className="flex-1 flex items-center ml-4 opacity-30 group-hover:opacity-100 transition-opacity duration-700">
+        <div className={`w-1.5 h-1.5 rotate-45 bg-gradient-to-br ${gradient} shadow-[0_0_8px_currentColor]`} />
+        <div className="flex-1 h-[1px] bg-gradient-to-r from-[var(--border)] to-transparent ml-[2px]" />
+      </div>
     </div>
   );
 

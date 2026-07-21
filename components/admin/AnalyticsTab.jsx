@@ -5,57 +5,107 @@ import { FiRefreshCw, FiGift } from "react-icons/fi";
 import { ShoppingBag, IndianRupee, Hash, ArrowUp, ArrowDown, Wallet, Zap, Users, UserPlus, Activity, Download, MousePointerClick, MessageSquare, Send, Coins, Ticket, Sparkles, TrendingUp, Database, CheckCircle, HelpCircle, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
-function InsightCard({ label, value, color, pulse, icon: Icon, footerLabel }) {
-  const colors = {
-    blue: "text-blue-500 border-blue-500/10 bg-blue-500/5",
-    amber: "text-amber-500 border-amber-500/10 bg-amber-500/5",
-    purple: "text-purple-500 border-purple-500/10 bg-purple-500/5",
-    emerald: "text-emerald-500 border-emerald-500/10 bg-emerald-500/5",
-    indigo: "text-indigo-500 border-indigo-500/10 bg-indigo-500/5",
-  };
-  
-  const iconBgs = {
-    blue: "bg-blue-500/20 text-blue-400",
-    amber: "bg-amber-500/20 text-amber-400",
-    purple: "bg-purple-500/20 text-purple-400",
-    emerald: "bg-emerald-500/20 text-emerald-400",
-    indigo: "bg-indigo-500/20 text-indigo-400",
+function CompactMetricCard({
+  title,
+  titleIcon: TitleIcon,
+  theme,
+  primaryStats,
+  footerStats,
+  timeframeLabel
+}) {
+  const themeTokens = {
+    purple: { blob: "bg-purple-500/20", border: "hover:border-purple-500/30", title: "text-purple-500", time: "text-purple-500" },
+    blue: { blob: "bg-blue-500/20", border: "hover:border-blue-500/30", title: "text-blue-500", time: "text-blue-500" },
+    emerald: { blob: "bg-emerald-500/20", border: "hover:border-emerald-500/30", title: "text-emerald-500", time: "text-emerald-500" },
+    amber: { blob: "bg-amber-500/20", border: "hover:border-amber-500/30", title: "text-amber-500", time: "text-amber-500" },
+    indigo: { blob: "bg-indigo-500/20", border: "hover:border-indigo-500/30", title: "text-indigo-500", time: "text-indigo-500" },
+    rose: { blob: "bg-rose-500/20", border: "hover:border-rose-500/30", title: "text-rose-500", time: "text-rose-500" },
   };
 
+  const statTokens = {
+    purple: { bg: "bg-purple-500/10", text: "text-purple-500", textMuted: "text-purple-500/70", textBright: "text-purple-500/90", solid: "bg-purple-500" },
+    blue: { bg: "bg-blue-500/10", text: "text-blue-500", textMuted: "text-blue-500/70", textBright: "text-blue-500/90", solid: "bg-blue-500" },
+    emerald: { bg: "bg-emerald-500/10", text: "text-emerald-500", textMuted: "text-emerald-500/70", textBright: "text-emerald-500/90", solid: "bg-emerald-500" },
+    amber: { bg: "bg-amber-500/10", text: "text-amber-500", textMuted: "text-amber-500/70", textBright: "text-amber-500/90", solid: "bg-amber-500" },
+    indigo: { bg: "bg-indigo-500/10", text: "text-indigo-500", textMuted: "text-indigo-500/70", textBright: "text-indigo-500/90", solid: "bg-indigo-500" },
+    rose: { bg: "bg-rose-500/10", text: "text-rose-500", textMuted: "text-rose-500/70", textBright: "text-rose-500/90", solid: "bg-rose-500" },
+  };
+
+  const activeTheme = themeTokens[theme] || themeTokens.blue;
+
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      className={`px-3 py-3 sm:px-4 sm:py-4 rounded-xl border ${colors[color]} flex flex-col items-start text-left relative overflow-hidden gap-2`}
+    <motion.div 
+      initial={{ opacity: 0, y: 15, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className={`relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] p-4 sm:p-5 group ${activeTheme.border} transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-1`}
     >
-      {/* Background glow simulation */}
-      <div className={`absolute -right-4 -top-4 w-24 h-24 blur-2xl rounded-full opacity-20 ${iconBgs[color]?.split(' ')[0]}`} />
+      <div className={`absolute -right-12 -top-12 w-48 h-48 rounded-full blur-3xl opacity-30 ${activeTheme.blob} group-hover:scale-[2] group-hover:opacity-60 transition-all duration-1000 ease-out pointer-events-none`} />
+      <div className={`absolute -left-12 -bottom-12 w-32 h-32 rounded-full blur-2xl opacity-10 ${activeTheme.blob} group-hover:scale-[1.5] group-hover:opacity-30 transition-all duration-700 ease-out pointer-events-none delay-100`} />
       
-      <div className="flex items-center gap-2 sm:gap-3 w-full">
-        {Icon && (
-          <div className={`p-1.5 sm:p-2 rounded-lg sm:rounded-xl ${iconBgs[color]} flex-shrink-0 z-10`}>
-            <Icon size={16} strokeWidth={2.5} />
-          </div>
-        )}
-        <div className="flex-1 min-w-0 flex flex-col z-10">
-          <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-widest opacity-70 truncate">{label}</span>
-          <span className="text-sm sm:text-lg font-black tabular-nums whitespace-nowrap mt-0.5">{value}</span>
+      <div className="flex items-center gap-2.5 mb-5 relative z-10">
+        <div className={`p-2 rounded-xl bg-[var(--background)] border border-[var(--border)] shadow-sm ${activeTheme.title} group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+          <TitleIcon size={14} strokeWidth={2.5} />
         </div>
+        <h4 className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)] group-hover:text-[var(--foreground)] transition-colors">{title}</h4>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4 relative z-10">
+        {primaryStats.map((stat, i) => {
+          const sToken = statTokens[stat.color] || statTokens.blue;
+          return (
+            <div key={i} className="flex items-center gap-3">
+              <div className={`p-2.5 sm:p-3 rounded-2xl ${sToken.bg} ${sToken.text} flex-shrink-0 relative group-hover:scale-105 transition-transform duration-300 shadow-inner`}>
+                {stat.pulse && (
+                  <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${sToken.solid} opacity-75`}></span>
+                    <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${sToken.solid}`}></span>
+                  </span>
+                )}
+                <stat.icon size={18} strokeWidth={2.5} />
+              </div>
+              <div className="flex-1 min-w-0 flex flex-col justify-center">
+                <span className={`text-[9px] font-bold uppercase tracking-widest ${sToken.textMuted} truncate`}>{stat.label}</span>
+                <span className={`text-lg sm:text-2xl font-black tabular-nums whitespace-nowrap ${sToken.text} leading-tight mt-1`}>
+                  {stat.value}
+                </span>
+              </div>
+            </div>
+          );
+        })}
       </div>
       
-      {footerLabel && (
-        <div className="mt-1 flex items-center gap-1.5 opacity-80 text-[8px] sm:text-[9px] font-bold z-10">
-          {pulse ? (
-            <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-current opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-current"></span>
-            </span>
-          ) : (
-             <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-sm bg-current opacity-50" />
-          )}
-          <span>{footerLabel}</span>
+      <div className="mt-5 w-full flex items-center justify-between border-t border-[var(--border)] pt-4 relative z-10">
+        <div className="flex flex-wrap items-center gap-4">
+          {footerStats.map((stat, i) => {
+            if (stat.customEl) return <div key={i}>{stat.customEl}</div>;
+            const sToken = statTokens[stat.color] || statTokens.blue;
+            return (
+              <div key={i} className="flex items-center gap-1.5 text-[10px] font-bold">
+                {stat.pulseDot ? (
+                   <span className="relative flex h-1.5 w-1.5">
+                     <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${sToken.solid} opacity-75`}></span>
+                     <span className={`relative inline-flex rounded-full h-1.5 w-1.5 ${sToken.solid}`}></span>
+                   </span>
+                ) : (
+                  <span className={`w-1.5 h-1.5 rounded-sm ${sToken.solid} opacity-80`} />
+                )}
+                <span className={`${sToken.textBright} flex items-center gap-1`}>
+                  {stat.icon && <stat.icon size={10} />}
+                  {stat.label}
+                </span>
+              </div>
+            );
+          })}
         </div>
-      )}
+        
+        {timeframeLabel && (
+          <div className={`flex items-center gap-1.5 text-[9px] font-bold opacity-70 ${activeTheme.time}`}>
+            <span className="w-1 h-1 rounded-full bg-current opacity-50" />
+            <span className="uppercase tracking-wider">{timeframeLabel}</span>
+          </div>
+        )}
+      </div>
     </motion.div>
   );
 }
@@ -237,199 +287,135 @@ export default function AnalyticsTab() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
         
-        {/* ================= USERS ================= */}
-        <div className="md:col-span-2 space-y-2 sm:space-y-3 bg-[var(--card)] p-4 rounded-xl border border-[var(--border)]">
-          <div className="flex items-center gap-2 px-1">
-            <div className="text-emerald-500">
-              <Users size={14} />
-            </div>
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)]">User Activity</h4>
-          </div>
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-2">
-            <InsightCard 
-              label="Total Users"
-              value={userStats.total}
-              color="purple" 
-              icon={Users}
-              footerLabel="All time"
-            />
-            <InsightCard 
-              label={`Active Users`}
-              value={userStats.activeStats?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0}
-              color="blue" 
-              icon={Zap}
-              footerLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
-            />
-            <InsightCard 
-              label={`New Signups`}
-              value={userStats.newStats?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0}
-              color="emerald" 
-              icon={UserPlus}
-              footerLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
-            />
-          </div>
-        </div>
+        {/* USERS */}
+        <CompactMetricCard
+          title="User Activity"
+          titleIcon={Users}
+          theme="purple"
+          primaryStats={[
+            { label: "Total Users", value: userStats.total, icon: Users, color: "purple" },
+            { label: "Active Users", value: userStats.activeStats?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0, icon: Zap, color: "blue" }
+          ]}
+          footerStats={[
+            { label: "All Time", color: "purple" },
+            { label: `${userStats.newStats?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0} New`, color: "emerald", icon: UserPlus }
+          ]}
+          timeframeLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
+        />
 
-        {/* ================= ORDERS & TRANSACTIONS ================= */}
-        <div className="md:col-span-2 space-y-2 sm:space-y-3 bg-[var(--card)] p-4 rounded-xl border border-[var(--border)]">
-          <div className="flex items-center gap-2 px-1">
-            <ShoppingBag size={14} className="text-amber-500" />
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)]">Orders & Transactions Snapshot</h4>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 mt-2">
-            <InsightCard 
-              label={`Order Count`} 
-              value={orderStats.counts?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0} 
-              color="amber" 
-              icon={ShoppingBag}
-              pulse={days === 1 && orderStats.counts?.day > 0} 
-              footerLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
-            />
-            <InsightCard 
-              label={`Order Earnings`} 
-              value={`₹${(orderStats.revenue?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0).toLocaleString()}`} 
-              color="emerald" 
-              icon={IndianRupee}
-              footerLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
-            />
-            <InsightCard 
-              label={`Txn Count`} 
-              value={txStats.counts?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0} 
-              color="blue" 
-              icon={Hash}
-              pulse={days === 1 && txStats.counts?.day > 0} 
-              footerLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
-            />
-            <InsightCard 
-              label={`Txn Earnings`} 
-              value={`₹${(txStats.volume?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0).toLocaleString()}`} 
-              color="emerald" 
-              icon={IndianRupee}
-              pulse={days === 1 && txStats.volume?.day > 0} 
-              footerLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
-            />
-          </div>
-        </div>
+        {/* ORDERS & TRANSACTIONS */}
+        <CompactMetricCard
+          title="Orders & Transactions"
+          titleIcon={ShoppingBag}
+          theme="emerald"
+          primaryStats={[
+            { label: "Order Earnings", value: `₹${(orderStats.revenue?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0).toLocaleString()}`, icon: ShoppingBag, color: "amber" },
+            { label: "Txn Earnings", value: `₹${(txStats.volume?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0).toLocaleString()}`, icon: IndianRupee, color: "blue" }
+          ]}
+          footerStats={[
+            { label: `Orders: ${orderStats.counts?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0}`, color: "amber", pulseDot: days === 1 && orderStats.counts?.day > 0 },
+            { label: `Txns: ${txStats.counts?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0}`, color: "blue", pulseDot: days === 1 && txStats.counts?.day > 0 }
+          ]}
+          timeframeLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
+        />
 
-        {/* ================= WALLETS ================= */}
-        <div className="md:col-span-2 space-y-2 sm:space-y-3 bg-[var(--card)] p-4 rounded-xl border border-[var(--border)]">
-          <div className="flex items-center gap-2 px-1">
-            <Wallet size={14} className="text-blue-500" />
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)]">Wallet Snapshot</h4>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 mt-2">
-            <InsightCard 
-              label={`Money Added`} 
-              value={`₹${(walletStats.deposits?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0).toLocaleString()}`} 
-              color="emerald" 
-              icon={ArrowUp}
-              pulse={days === 1 && walletStats.deposits?.day > 0} 
-              footerLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
-            />
-            <InsightCard 
-              label={`Money Spent`} 
-              value={`₹${(walletStats.usage?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0).toLocaleString()}`} 
-              color="purple" 
-              icon={ArrowDown}
-              pulse={days === 1 && walletStats.usage?.day > 0} 
-              footerLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
-            />
-            <InsightCard label="Customer Pool" value={`₹${(walletStats.totalBalance || 0).toLocaleString()}`} color="blue" icon={Database} footerLabel="Total Balance" />
-            <InsightCard label="Active Wallets" value={walletStats.activeWallets} color="amber" icon={Wallet} footerLabel="Active" />
-          </div>
-        </div>
+        {/* WALLETS */}
+        <CompactMetricCard
+          title="Wallet Snapshot"
+          titleIcon={Wallet}
+          theme="blue"
+          primaryStats={[
+            { label: "Money Added", value: `₹${(walletStats.deposits?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0).toLocaleString()}`, icon: ArrowUp, color: "emerald", pulse: days === 1 && walletStats.deposits?.day > 0 },
+            { label: "Money Spent", value: `₹${(walletStats.usage?.[days === 1 ? "day" : days === 7 ? "week" : "month"] || 0).toLocaleString()}`, icon: ArrowDown, color: "purple", pulse: days === 1 && walletStats.usage?.day > 0 }
+          ]}
+          footerStats={[
+            { label: `Customer Pool: ₹${(walletStats.totalBalance || 0).toLocaleString()}`, color: "blue" },
+            { label: `Active Wallets: ${walletStats.activeWallets}`, color: "amber" }
+          ]}
+          timeframeLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
+        />
 
-        {/* ================= REDEEM CODES ================= */}
-        <div className="md:col-span-2 space-y-2 sm:space-y-3 bg-[var(--card)] p-4 rounded-xl border border-[var(--border)]">
-          <div className="flex items-center gap-2 px-1">
-            <FiGift size={14} className="text-purple-500" />
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)]">Redeem Codes Snapshot</h4>
-          </div>
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-2">
-            <InsightCard label="Total Codes" value={redeemStats.total} color="blue" icon={Ticket} footerLabel="Codes" />
-            <InsightCard label="Claimed" value={redeemStats.totalUsed} color="emerald" icon={CheckCircle} footerLabel="Claimed" />
-            <InsightCard label="Available" value={redeemStats.total - redeemStats.totalUsed} color="amber" icon={Sparkles} footerLabel="Available" />
-          </div>
-        </div>
+        {/* REDEEM CODES */}
+        <CompactMetricCard
+          title="Redeem Codes"
+          titleIcon={FiGift}
+          theme="indigo"
+          primaryStats={[
+            { label: "Total Codes", value: redeemStats.total, icon: Ticket, color: "indigo" },
+            { label: "Available Codes", value: redeemStats.total - redeemStats.totalUsed, icon: FiGift, color: "amber" }
+          ]}
+          footerStats={[
+            { label: `Claimed: ${redeemStats.totalUsed}`, color: "emerald" }
+          ]}
+          timeframeLabel="All Time"
+        />
 
-        {/* ================= COINS ================= */}
-        <div className="md:col-span-2 space-y-2 sm:space-y-3 bg-[var(--card)] p-4 rounded-xl border border-[var(--border)]">
-          <div className="flex items-center gap-2 px-1">
-            <div className="text-amber-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)]">BBC Coins Snapshot</h4>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-4 mt-2">
-            <InsightCard label="Total Available" value={coinStats.totalAvailable} color="blue" icon={Coins} footerLabel="Available" />
-            <InsightCard label="Total Earned" value={coinStats.totalEarned} color="amber" icon={TrendingUp} footerLabel="All time" />
-            <InsightCard label="Total Spent" value={coinStats.totalSpent} color="purple" icon={TrendingUp} footerLabel="All time" />
-            <InsightCard label="Today Earned" value={coinStats.todayEarned} color="emerald" icon={ArrowUp} pulse={coinStats.todayEarned > 0} footerLabel="Today" />
-            <InsightCard label="Today Spent" value={coinStats.todaySpent} color="blue" icon={ArrowDown} footerLabel="Today" />
-          </div>
-        </div>
+        {/* COINS */}
+        <CompactMetricCard
+          title="BBC Coins"
+          titleIcon={Coins}
+          theme="amber"
+          primaryStats={[
+            { label: "Total Available", value: coinStats.totalAvailable, icon: Coins, color: "blue" },
+            { label: "Today Earned", value: coinStats.todayEarned, icon: ArrowUp, color: "emerald", pulse: coinStats.todayEarned > 0 }
+          ]}
+          footerStats={[
+            { label: `Earned: ${coinStats.totalEarned}`, color: "amber" },
+            { label: `Spent: ${coinStats.totalSpent}`, color: "purple" },
+            { label: `Today Spent: ${coinStats.todaySpent}`, color: "rose" }
+          ]}
+          timeframeLabel="Coins Overview"
+        />
 
-        {/* ================= PWA STATS ================= */}
-        <div className="md:col-span-2 space-y-2 sm:space-y-3 bg-[var(--card)] p-4 rounded-xl border border-[var(--border)]">
-          <div className="flex items-center gap-2 px-1">
-            <div className="text-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-            </div>
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)]">PWA Install Stats</h4>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-4 mt-2">
-            <InsightCard label="Total Installs" value={pwaStats.totalInstalls || 0} color="emerald" icon={Download} footerLabel="Lifetime" />
-            <InsightCard 
-              label={`Installs`} 
-              value={pwaStats.periodInstalls || 0} 
-              color="indigo" 
-              icon={Download}
-              footerLabel={days === 1 ? "Today" : days === 7 ? "Week" : "Month"}
-            />
-            <InsightCard label="Active Devices" value={pwaStats.activeDevices || 0} color="blue" icon={Activity} footerLabel="Active" />
-            <InsightCard label="Dismissed" value={pwaStats.dismissCount || 0} color="amber" icon={MousePointerClick} footerLabel="Dismissed" />
-            <InsightCard 
-              label="Conversion Rate" 
-              value={`${(pwaStats.totalInstalls || 0) + (pwaStats.dismissCount || 0) > 0 ? Math.round(((pwaStats.totalInstalls || 0) / ((pwaStats.totalInstalls || 0) + (pwaStats.dismissCount || 0))) * 100) : 0}%`} 
-              color="purple" 
-              icon={TrendingUp}
-              footerLabel="Total"
-            />
-          </div>
-        </div>
+        {/* PWA STATS */}
+        <CompactMetricCard
+          title="PWA Installs"
+          titleIcon={Download}
+          theme="blue"
+          primaryStats={[
+            { label: "Total Installs", value: pwaStats.totalInstalls || 0, icon: Download, color: "emerald" },
+            { label: "Conversion Rate", value: `${(pwaStats.totalInstalls || 0) + (pwaStats.dismissCount || 0) > 0 ? Math.round(((pwaStats.totalInstalls || 0) / ((pwaStats.totalInstalls || 0) + (pwaStats.dismissCount || 0))) * 100) : 0}%`, icon: TrendingUp, color: "purple" }
+          ]}
+          footerStats={[
+            { label: `${days === 1 ? "Today" : days === 7 ? "Week" : "Month"}: ${pwaStats.periodInstalls || 0}`, color: "indigo" },
+            { label: `Active Devices: ${pwaStats.activeDevices || 0}`, color: "blue" },
+            { label: `Dismissed: ${pwaStats.dismissCount || 0}`, color: "amber" }
+          ]}
+          timeframeLabel="PWA Snapshot"
+        />
 
-        {/* ================= SUPPORT QUERIES ================= */}
-        <div className="md:col-span-2 space-y-2 sm:space-y-3 bg-[var(--card)] p-4 rounded-xl border border-[var(--border)]">
-          <div className="flex items-center gap-2 px-1">
-            <div className="text-rose-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-            </div>
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)]">Support Queries</h4>
-          </div>
-          <div className="grid grid-cols-2 gap-2 sm:gap-4 mt-2">
-            <InsightCard label="Pending" value={supportStats.open || 0} color="amber" icon={HelpCircle} footerLabel="Open" pulse={supportStats.open > 0} />
-            <InsightCard label="Today" value={supportStats.today || 0} color="purple" icon={MessageSquare} footerLabel="Today" pulse={supportStats.today > 0} />
-          </div>
-        </div>
+        {/* SUPPORT QUERIES */}
+        <CompactMetricCard
+          title="Support Queries"
+          titleIcon={HelpCircle}
+          theme="rose"
+          primaryStats={[
+            { label: "Pending Queries", value: supportStats.open || 0, icon: HelpCircle, color: "amber", pulse: supportStats.open > 0 },
+            { label: "Today's Queries", value: supportStats.today || 0, icon: MessageSquare, color: "purple", pulse: supportStats.today > 0 }
+          ]}
+          footerStats={[
+            { label: `Total Queries: ${supportStats.total || 0}`, color: "rose" }
+          ]}
+          timeframeLabel="Support Snapshot"
+        />
 
-
-        {/* ================= PROMO MAIL ================= */}
-        <div className="md:col-span-2 space-y-2 sm:space-y-3 bg-[var(--card)] p-4 rounded-xl border border-[var(--border)]">
-          <div className="flex items-center gap-2 px-1">
-            <div className="text-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-            </div>
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-[var(--muted)]">Promo Mail Snapshot</h4>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 mt-2">
-            <InsightCard label="Mails Today" value={promoStats.todayEmails || 0} color="emerald" icon={Send} footerLabel="Today" pulse={promoStats.todayEmails > 0} />
-            <InsightCard label="Total Reach" value={promoStats.totalEmails || 0} color="amber" icon={Mail} footerLabel="Lifetime" />
-            <InsightCard label="External" value={0} color="blue" icon={Mail} footerLabel="Lifetime" />
-            <InsightCard label="Database" value={userStats.total || 0} color="purple" icon={Database} footerLabel="Lifetime" />
-          </div>
-        </div>
+        {/* PROMO MAIL */}
+        <CompactMetricCard
+          title="Promo Mail"
+          titleIcon={Mail}
+          theme="indigo"
+          primaryStats={[
+            { label: "Mails Today", value: promoStats.todayEmails || 0, icon: Send, color: "emerald" },
+            { label: "Total Reach", value: promoStats.totalEmails || 0, icon: Mail, color: "amber" }
+          ]}
+          footerStats={[
+            { label: `Database: ${userStats.total || 0}`, color: "purple" },
+            { label: `External: 0`, color: "blue" }
+          ]}
+          timeframeLabel="Promo Snapshot"
+        />
       </div>
       
     </div>
